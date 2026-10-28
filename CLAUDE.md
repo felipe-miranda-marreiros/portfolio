@@ -4,7 +4,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Current state
 
-This repository is a scaffold for a portfolio project: there is no application source, build system or linter yet, only the tooling that enforces the conventions below (Husky hooks, commitlint, GitHub workflows, Claude Code rules, hook and skills).
+This repository is a scaffold for a portfolio project: there is no application source or build system yet, only the tooling that enforces the conventions below (Husky hooks, commitlint, Biome, GitHub workflows, Claude Code rules, hook and skills).
 
 ## Commands
 
