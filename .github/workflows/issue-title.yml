@@ -1,0 +1,40 @@
+name: Issue title
+
+on:
+  issues:
+    types: [opened, edited]
+
+permissions:
+  contents: read
+  issues: write
+
+env:
+  HUSKY: 0
+
+jobs:
+  title:
+    name: Issue title
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: oven-sh/setup-bun@v2
+      - run: bun install --frozen-lockfile
+      - name: Lint issue title
+        id: lint
+        continue-on-error: true
+        env:
+          ISSUE_TITLE: ${{ github.event.issue.title }}
+        run: printf '%s\n' "$ISSUE_TITLE" | bunx --no-install commitlint --verbose
+      - name: Comment on non-conforming title
+        if: steps.lint.outcome == 'failure'
+        env:
+          GH_TOKEN: ${{ github.token }}
+          ISSUE: ${{ github.event.issue.number }}
+          REPO: ${{ github.repository }}
+        run: |
+          marker='<!-- issue-title-lint -->'
+          existing=$(gh issue view "$ISSUE" --repo "$REPO" --json comments --jq "[.comments[].body | select(contains(\"$marker\"))] | length")
+          if [ "$existing" = "0" ]; then
+            gh issue comment "$ISSUE" --repo "$REPO" --body "$marker
+          Issue titles follow Conventional Commits: \`<type>[scope][!]: <description>\`, e.g. \`feat(nav): add dark mode toggle\`. Allowed types: feat, fix, docs, chore, ci, build, refactor, perf, style, test, revert. See \`.claude/rules/issues-and-branches.md\`. Please edit the title."
+          fi
