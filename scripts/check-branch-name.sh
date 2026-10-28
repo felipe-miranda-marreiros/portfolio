@@ -1,5 +1,5 @@
 #!/bin/sh
-# Validate a branch name: <type>/<kebab-case-description> (see .claude/rules/issues-and-branches.md)
+# Validate a branch name: <type>/<kebab-case-description> (see .claude/rules/issues-branches-and-prs.md)
 # Usage: check-branch-name.sh <branch>
 branch=$1
 pattern='^(feat|fix|docs|chore|ci|build|refactor|perf|style|test|revert)/[a-z0-9]+(-[a-z0-9]+)*$'

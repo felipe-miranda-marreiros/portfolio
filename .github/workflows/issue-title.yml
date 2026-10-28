@@ -36,5 +36,5 @@ jobs:
           existing=$(gh issue view "$ISSUE" --repo "$REPO" --json comments --jq "[.comments[].body | select(contains(\"$marker\"))] | length")
           if [ "$existing" = "0" ]; then
             gh issue comment "$ISSUE" --repo "$REPO" --body "$marker
-          Issue titles follow Conventional Commits: \`<type>[scope][!]: <description>\`, e.g. \`feat(nav): add dark mode toggle\`. Allowed types: feat, fix, docs, chore, ci, build, refactor, perf, style, test, revert. See \`.claude/rules/issues-and-branches.md\`. Please edit the title."
+          Issue titles follow Conventional Commits: \`<type>[scope][!]: <description>\`, e.g. \`feat(nav): add dark mode toggle\`. Allowed types: feat, fix, docs, chore, ci, build, refactor, perf, style, test, revert. See \`.claude/rules/issues-branches-and-prs.md\`. Please edit the title."
           fi
