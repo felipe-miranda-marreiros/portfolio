@@ -12,6 +12,10 @@ Follow Conventional Commits and keep commits small; the full rules are in `.clau
 
 CI (`.github/workflows/`) repeats these checks for pull requests (`pr.yml`: every commit message, the PR title, and the branch name) and checks issue titles (`issue-title.yml`). The branch-name rule lives only in `scripts/check-branch-name.sh`, shared by the hook and CI. Workflows install with `bun install --frozen-lockfile` and set `HUSKY=0`.
 
+## File size
+
+A Husky `pre-commit` hook (`scripts/check-file-size.ts`) rejects staged files over 5,000 tokens (bytes / 4, so about 20 KB), measuring the staged content only. Lockfiles, codegen, binaries and files marked `linguist-generated` or `linguist-vendored` in `.gitattributes` are skipped. Keep files small and split by responsibility up front; the error message lists the splitting steps.
+
 ## Language
 
 English is the main language for code, comments, commits, branches, issues, PRs and docs. Other languages only for explicitly localized content. See `.claude/rules/language.md`.
