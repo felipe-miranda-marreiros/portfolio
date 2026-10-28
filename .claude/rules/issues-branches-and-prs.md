@@ -38,5 +38,6 @@ Issues, branches and pull requests follow the same Conventional Commits vocabula
 - Enforced by the `title` job in `.github/workflows/pr.yml` (commitlint), alongside the per-commit and branch-name checks; fix the title with `gh pr edit --title` instead of merging a failing PR.
 - The type matches the branch type (`feat/claude-config` -> `feat...`); the scope, if any, matches the branch scope.
 - One PR per logical change, kept small: a PR that needs "and" in its title should be split. Its commits stay small and conventional too.
-- The body explains what and why, and links issues with `Closes #123` or `Refs #123`.
+- Every PR body must follow the `pr` skill (`.claude/skills/pr/`, invoked as `/pr`): `## Summary`, `## Evidence`, `## Merge Danger`. Invoke `/pr` before running `gh pr create` or `gh pr edit --body`; never use `--fill`. Also link issues with `Closes #123` or `Refs #123`.
+- Enforced twice: a Claude Code `PreToolUse` hook (`.claude/hooks/check-pr-body.ts`) denies `gh pr create`/`gh pr edit` when the body lacks those three headings, and the `body` job in `pr.yml` fails the PR check for the same reason. Pass the body inline or with `--body-file` so the hook can verify it.
 - Mark breaking changes with `!` in the title and a `BREAKING CHANGE:` line in the body.
