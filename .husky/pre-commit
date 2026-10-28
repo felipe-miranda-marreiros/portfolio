@@ -1,1 +1,2 @@
+bunx --no-install biome check --staged --no-errors-on-unmatched
 bun scripts/check-file-size.ts
