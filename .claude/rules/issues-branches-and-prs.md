@@ -1,6 +1,6 @@
-# Issue and branch conventions
+# Issue, branch and pull request conventions
 
-Issues and branches follow the same Conventional Commits vocabulary as commit messages (see `commits.md`): the same types (`feat`, `fix`, `docs`, `chore`, `ci`, `build`, `refactor`, `perf`, `style`, `test`, `revert`) and the same optional scope.
+Issues, branches and pull requests follow the same Conventional Commits vocabulary as commit messages (see `commits.md`): the same types (`feat`, `fix`, `docs`, `chore`, `ci`, `build`, `refactor`, `perf`, `style`, `test`, `revert`) and the same optional scope.
 
 ## Branches
 
@@ -26,4 +26,17 @@ Issues and branches follow the same Conventional Commits vocabulary as commit me
 - The body is free-form: context, expected behavior, and acceptance criteria for `feat`; steps to reproduce, expected vs. actual behavior for `fix`.
 - One issue per logical change. Split an issue whose title needs "and".
 - Link related work with `Refs: #123` or `Closes: #123` in commit footers and PR descriptions.
-- A branch resolving an issue uses the issue's type, and its commits and PR title use the issue's title.
+- A branch resolving an issue uses the issue's type, and the PR title reuses the issue's title.
+
+## Pull requests
+
+```
+<type>[optional scope][!]: <description>
+```
+
+- The title is a Conventional Commits header, same format as an issue title. It matters most because a squash merge turns it into the commit message on `main`.
+- Enforced by the `title` job in `.github/workflows/pr.yml` (commitlint), alongside the per-commit and branch-name checks; fix the title with `gh pr edit --title` instead of merging a failing PR.
+- The type matches the branch type (`feat/claude-config` -> `feat...`); the scope, if any, matches the branch scope.
+- One PR per logical change, kept small: a PR that needs "and" in its title should be split. Its commits stay small and conventional too.
+- The body explains what and why, and links issues with `Closes #123` or `Refs #123`.
+- Mark breaking changes with `!` in the title and a `BREAKING CHANGE:` line in the body.
