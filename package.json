@@ -18,6 +18,7 @@
     "lint": "biome check .",
     "fix": "biome check --write .",
     "dev:portfolio": "bun --filter @portfolio/portfolio dev",
+    "dev:cms": "bun --filter @portfolio/cms dev",
     "build": "bun --filter '*' build"
   }
 }
