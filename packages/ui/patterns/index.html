@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Patterns</title>
+    <script>
+      try {
+        if (localStorage.getItem("theme") === "light") document.documentElement.dataset.theme = "light";
+      } catch {}
+    </script>
+    <script type="module" src="./patterns.js"></script>
+  </head>
+  <body>
+    <a class="ui-skip-link ui-button" href="#main">Skip to content</a>
+    <header class="top">
+      <div>
+        <h1>Patterns</h1>
+        <p>Components composed into the situations that repeat across both apps. Everything here works: switch the theme, reload the loading demo, submit the form empty.</p>
+      </div>
+      <!-- biome-ignore lint/a11y/useSemanticElements: a toggle group of pressed buttons, not form fields, so a fieldset and legend would misdescribe it -->
+      <div class="ui-segmented" role="group" aria-label="Theme" id="theme-switch">
+        <button type="button" data-theme-choice="dark" aria-label="Dark theme"><span data-icon="moon"></span></button>
+        <button type="button" data-theme-choice="light" aria-label="Light theme"><span data-icon="sun"></span></button>
+      </div>
+    </header>
+
+    <main id="main" tabindex="-1">
+      <section class="pattern" aria-labelledby="p-theme">
+        <h2 id="p-theme">Theme switching <code>docs/design/patterns/theme-switcher.md</code></h2>
+        <p class="lede">The switch above is the real pattern. Dark is the default; choosing light is remembered on this device and applied before the page paints, so a reload never flashes dark first.</p>
+      </section>
+
+      <section class="pattern" aria-labelledby="p-language">
+        <h2 id="p-language">Language switching <code>docs/design/patterns/language-switcher.md</code></h2>
+        <p class="lede">Each Locale has its own URL. Switching goes to the same page and section in the other Locale.</p>
+        <div class="demo" id="language-demo">
+          <nav class="ui-segmented" aria-label="Language">
+            <a href="/en/#experience" lang="en" aria-label="English" aria-current="true" data-locale="en">EN</a>
+            <a href="/pt-br/#experience" lang="pt-BR" aria-label="Português" data-locale="pt-BR">PT</a>
+          </nav>
+          <p class="url"><code id="language-url">/en/#experience</code></p>
+          <div class="ui-entry" data-variant="compact" id="language-entry"></div>
+        </div>
+      </section>
+
+      <section class="pattern" aria-labelledby="p-loading">
+        <h2 id="p-loading">Loading <code>docs/design/patterns/loading.md</code></h2>
+        <p class="lede">Skeletons for content with a known shape, after 200ms only; a button spinner for actions. Try a slow load and a fast one.</p>
+        <div class="row">
+          <button type="button" class="ui-button" data-variant="secondary" data-load="1600">Slow load (1.6s)</button>
+          <button type="button" class="ui-button" data-variant="secondary" data-load="120">Fast load (0.12s)</button>
+        </div>
+        <section class="ui-work-band ui-inverse demo-band" id="loading-band" aria-labelledby="loading-label">
+          <div class="ui-work-band__inner">
+            <h3 class="ui-work-band__label" id="loading-label">Lately</h3>
+            <ol class="ui-work-band__list" id="loading-list"></ol>
+          </div>
+        </section>
+        <p class="ui-visually-hidden" role="status" id="loading-status"></p>
+      </section>
+
+      <section class="pattern" aria-labelledby="p-empty">
+        <h2 id="p-empty">Empty <code>docs/design/patterns/empty.md</code></h2>
+        <p class="lede">The CMS explains and offers the first action. The Portfolio leaves out what has no Content rather than showing an empty frame.</p>
+        <div class="demo">
+          <div class="ui-content-list__empty">
+            <strong>No experience yet</strong>
+            <p>Add a role to show it on the Portfolio once it’s Published in both Locales.</p>
+            <a class="ui-button" href="#p-forms"><span data-icon="plus"></span><span>Add experience</span></a>
+          </div>
+        </div>
+      </section>
+
+      <section class="pattern" aria-labelledby="p-error">
+        <h2 id="p-error">Errors <code>docs/design/patterns/error.md</code></h2>
+        <p class="lede">Field errors sit at the field, the summary lists them (see Forms), and failures to load or save say what happened and offer a retry.</p>
+        <div class="demo stack">
+          <div class="ui-message" data-tone="danger" role="alert">
+            <span data-icon="circleAlert"></span>
+            <p class="ui-message__title">Couldn’t load experience</p>
+            <div class="ui-message__body">
+              <p>The API didn’t answer. Nothing was lost.</p>
+              <p class="row"><button type="button" class="ui-button" data-variant="secondary" data-size="sm">Try again</button></p>
+            </div>
+          </div>
+          <div class="portfolio-error" lang="en">
+            <h3>Something went wrong on our side.</h3>
+            <p>This page couldn’t load. Try again in a moment, or write to <a class="ui-link" href="mailto:hello@example.com">hello@example.com</a>.</p>
+            <a class="ui-button" href="/patterns/">Reload the page</a>
+          </div>
+        </div>
+      </section>
+
+      <section class="pattern" aria-labelledby="p-forms">
+        <h2 id="p-forms">Forms <code>docs/design/patterns/forms.md</code></h2>
+        <p class="lede">An Experience edit page. Submit it as it is to see validation timing, the error summary and the Publish rule.</p>
+        <form class="demo form" id="experience-form" novalidate></form>
+      </section>
+    </main>
+
+    <ol class="ui-toast-region" aria-live="polite" id="toasts"></ol>
+  </body>
+</html>
