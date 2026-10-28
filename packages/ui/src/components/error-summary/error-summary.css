@@ -1,0 +1,15 @@
+/**
+ * Form error summary: a danger `.ui-message` with `.ui-error-summary`, `role="alert"` and `tabindex="-1"`,
+ * listing a link to each invalid field. It receives focus after a failed save.
+ */
+@layer components {
+  .ui-error-summary:focus-visible,
+  .ui-error-summary[data-gallery-state~="focus"] {
+    outline: var(--border-width-focus) var(--border-style-default) var(--color-focus);
+    outline-offset: var(--border-focus-offset);
+  }
+
+  .ui-error-summary li + li {
+    margin-top: var(--space-stack-xs);
+  }
+}

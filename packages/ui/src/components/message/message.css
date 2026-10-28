@@ -1,0 +1,57 @@
+/**
+ * Inline message: `<div class="ui-message" data-tone="info|success|warning|danger">` with an icon, a title and text.
+ * The tone colours the outline and the icon; the title states the tone in words, so colour is never the only signal.
+ */
+@layer components {
+  .ui-message {
+    --message-tone: var(--color-info);
+
+    display: grid;
+    grid-template-columns: auto minmax(0, 1fr);
+    gap: var(--space-inset-xs) var(--space-inset-sm);
+    padding: var(--space-inset-md);
+    border: var(--border-width-control) var(--border-style-default) var(--message-tone);
+    border-radius: var(--radius-surface);
+    background: var(--color-surface-raised);
+    color: var(--color-text);
+    font: var(--text-body);
+  }
+
+  .ui-message[data-tone="success"] {
+    --message-tone: var(--color-success);
+  }
+
+  .ui-message[data-tone="warning"] {
+    --message-tone: var(--color-warning);
+  }
+
+  .ui-message[data-tone="danger"] {
+    --message-tone: var(--color-danger);
+  }
+
+  .ui-message > .ui-icon {
+    grid-row: span 2;
+    color: var(--message-tone);
+  }
+
+  .ui-message > .ui-icon svg {
+    width: var(--size-icon-md);
+    height: var(--size-icon-md);
+  }
+
+  .ui-message__title {
+    margin: 0;
+    font: var(--text-label);
+  }
+
+  .ui-message__body {
+    margin: 0;
+    color: var(--color-text-muted);
+  }
+
+  .ui-message__body :is(ul, ol) {
+    margin: var(--space-stack-xs) 0 0;
+    padding-inline-start: var(--space-inset-lg);
+    color: var(--color-text);
+  }
+}

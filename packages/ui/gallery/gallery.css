@@ -1,0 +1,145 @@
+body {
+  margin: 0;
+}
+
+.top {
+  padding: var(--space-page-block) var(--space-page-inline);
+}
+
+.top h1 {
+  font: var(--text-headline);
+  letter-spacing: var(--text-tracking-headline);
+  margin: 0 0 var(--space-stack-sm);
+}
+
+.top p {
+  margin: 0;
+  max-width: var(--text-measure);
+  color: var(--color-text-muted);
+}
+
+.themes {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+@media (width < 56rem) {
+  .themes {
+    grid-template-columns: 1fr;
+  }
+}
+
+.themes > section {
+  padding: var(--space-page-block) var(--space-page-inline);
+  min-width: 0;
+}
+
+.theme-title {
+  font: var(--text-headline);
+  letter-spacing: var(--text-tracking-headline);
+  margin: 0;
+}
+
+.batch {
+  font: var(--text-title);
+  color: var(--color-text-muted);
+  margin: var(--space-stack-lg) 0 0;
+}
+
+.component {
+  border-top: var(--border-width-divider) var(--border-style-default) var(--color-border);
+  padding-block: var(--space-stack-lg);
+}
+
+.component > h3 {
+  font: var(--text-title);
+  letter-spacing: var(--text-tracking-title);
+  margin: 0 0 var(--space-stack-md);
+}
+
+.component > h3 code {
+  font: var(--text-caption);
+  font-family: var(--font-code);
+  color: var(--color-text-muted);
+  margin-inline-start: var(--space-inset-sm);
+}
+
+.component > h4 {
+  font: var(--text-label);
+  color: var(--color-text-muted);
+  margin: var(--space-stack-md) 0 var(--space-stack-sm);
+}
+
+.states {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-gap-md);
+  align-items: end;
+}
+
+.states li {
+  display: grid;
+  gap: var(--space-stack-xs);
+  justify-items: start;
+}
+
+.state-label {
+  font: var(--text-caption);
+  color: var(--color-text-muted);
+}
+
+.state-demo > p {
+  margin: 0;
+}
+
+.gallery-display {
+  font: var(--text-headline);
+  letter-spacing: var(--text-tracking-headline);
+}
+
+.gallery-title {
+  font: var(--text-title);
+}
+
+.full > section {
+  padding-block: var(--space-page-block);
+}
+
+.full .theme-title,
+.full .component > :is(h3, h4) {
+  padding-inline: var(--space-page-inline);
+}
+
+.full .component {
+  padding-block: var(--space-stack-lg) 0;
+}
+
+.states[data-layout="stack"] {
+  display: grid;
+  gap: var(--space-stack-lg);
+}
+
+.states[data-layout="stack"] li {
+  justify-items: stretch;
+}
+
+.states[data-layout="stack"] .state-label {
+  padding-inline: var(--space-page-inline);
+}
+
+.full .state-demo > .ui-entry {
+  padding-inline: var(--space-page-inline);
+}
+
+.gallery-pad {
+  max-width: 56rem;
+  padding-inline: var(--space-page-inline);
+}
+
+.gallery-shell {
+  min-height: 40rem;
+  border-block: var(--border-width-divider) var(--border-style-default) var(--color-border);
+}

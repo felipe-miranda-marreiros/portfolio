@@ -1,0 +1,117 @@
+/**
+ * Button: `<button class="ui-button">` or `<a class="ui-button">`.
+ * Variants (`data-variant`): primary (default), secondary, ghost, danger. Sizes (`data-size`): sm, md (default), lg.
+ * Loading: `aria-busy="true"` plus a `.ui-button__spinner` child. `[data-gallery-state]` only forces states on the gallery.
+ */
+@layer components {
+  .ui-button {
+    --button-height: var(--size-control-md);
+    --button-padding-inline: var(--space-inset-lg);
+    --button-bg: var(--color-action);
+    --button-bg-hover: var(--color-action-hover);
+    --button-bg-active: var(--color-action-active);
+    --button-fg: var(--color-on-action);
+    --button-border: transparent;
+
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--space-inset-sm);
+    min-height: var(--button-height);
+    min-width: var(--size-target-min);
+    padding: var(--space-inset-xs) var(--button-padding-inline);
+    border: var(--border-width-control) var(--border-style-default) var(--button-border);
+    border-radius: var(--radius-action);
+    background: var(--button-bg);
+    color: var(--button-fg);
+    font: var(--text-label);
+    text-align: center;
+    text-decoration: none;
+    cursor: pointer;
+    transition:
+      background-color var(--duration-quick) var(--ease-out),
+      border-color var(--duration-quick) var(--ease-out);
+  }
+
+  .ui-button[data-size="sm"] {
+    --button-height: var(--size-control-sm);
+    --button-padding-inline: var(--space-inset-md);
+  }
+
+  .ui-button[data-size="lg"] {
+    --button-height: var(--size-control-lg);
+    font-size: var(--text-size-md);
+  }
+
+  @media (pointer: coarse) {
+    .ui-button[data-size="sm"] {
+      --button-height: var(--size-target-touch);
+    }
+  }
+
+  .ui-button:is([data-variant="secondary"], [data-variant="ghost"], [data-variant="danger"]) {
+    --button-bg: transparent;
+    --button-bg-hover: var(--color-surface-hover);
+    --button-bg-active: var(--color-surface-active);
+    --button-fg: var(--color-text);
+  }
+
+  .ui-button[data-variant="secondary"] {
+    --button-border: var(--color-border-control);
+  }
+
+  .ui-button[data-variant="danger"] {
+    --button-fg: var(--color-danger);
+    --button-border: var(--color-danger);
+  }
+
+  .ui-button:is(:hover, [data-gallery-state~="hover"]):not(:disabled, [aria-disabled="true"], [aria-busy="true"]) {
+    background: var(--button-bg-hover);
+  }
+
+  .ui-button:is(:active, [data-gallery-state~="active"]):not(:disabled, [aria-disabled="true"], [aria-busy="true"]) {
+    background: var(--button-bg-active);
+    transition-duration: var(--duration-instant);
+  }
+
+  .ui-button[data-gallery-state~="focus"] {
+    outline: var(--border-width-focus) var(--border-style-default) var(--color-focus);
+    outline-offset: var(--border-focus-offset);
+  }
+
+  .ui-button:is(:disabled, [aria-disabled="true"]) {
+    opacity: var(--opacity-disabled);
+    cursor: not-allowed;
+  }
+
+  .ui-button[aria-busy="true"] {
+    cursor: progress;
+  }
+
+  .ui-button svg {
+    flex: none;
+    width: var(--size-icon-sm);
+    height: var(--size-icon-sm);
+  }
+
+  .ui-button__spinner {
+    display: none;
+  }
+
+  .ui-button[aria-busy="true"] .ui-button__spinner {
+    display: inline-flex;
+    animation: ui-spin var(--duration-spinner) linear infinite;
+  }
+
+  @keyframes ui-spin {
+    to {
+      rotate: 1turn;
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .ui-button[aria-busy="true"] .ui-button__spinner {
+      animation: none;
+    }
+  }
+}

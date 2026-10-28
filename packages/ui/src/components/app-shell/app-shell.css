@@ -1,0 +1,132 @@
+/**
+ * App shell: the CMS frame. A sidebar (brand, Content navigation, footer with theme switch, Portfolio link and sign out)
+ * beside the work area, whose header holds the page title and its actions. Below 56rem the sidebar stacks on top.
+ */
+@layer components {
+  .ui-app-shell {
+    display: grid;
+    grid-template-columns: var(--size-sidebar) minmax(0, 1fr);
+    min-height: 100dvh;
+  }
+
+  .ui-app-shell__sidebar {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-stack-lg);
+    padding: var(--space-inset-lg) var(--space-inset-md);
+    border-inline-end: var(--border-width-divider) var(--border-style-default) var(--color-border);
+    background: var(--color-surface-raised);
+  }
+
+  .ui-app-shell__brand {
+    padding-inline: var(--space-inset-sm);
+    font: var(--text-label);
+    font-family: var(--font-display);
+    font-size: var(--text-size-md);
+    text-decoration: none;
+  }
+
+  .ui-app-shell__nav {
+    display: grid;
+    gap: var(--space-stack-xs);
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  .ui-app-shell__nav :is(a, button) {
+    width: 100%;
+    border: 0;
+    background: transparent;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: var(--space-inset-sm);
+    min-height: var(--size-control-sm);
+    padding: var(--space-inset-xs) var(--space-inset-sm);
+    border-radius: var(--radius-field);
+    color: var(--color-text-muted);
+    font: var(--text-label);
+    text-decoration: none;
+    transition:
+      background-color var(--duration-quick) var(--ease-out),
+      color var(--duration-quick) var(--ease-out);
+  }
+
+  .ui-app-shell__nav :is(a, button):is(:hover, [data-gallery-state~="hover"]) {
+    background: var(--color-surface-hover);
+    color: var(--color-text);
+  }
+
+  .ui-app-shell__nav a[aria-current="page"] {
+    background: var(--color-surface-selected);
+    color: var(--color-text-selected);
+  }
+
+  .ui-app-shell__footer {
+    display: grid;
+    gap: var(--space-stack-sm);
+    margin-top: auto;
+  }
+
+  .ui-app-shell__footer > .ui-segmented {
+    justify-self: start;
+  }
+
+  .ui-app-shell__main {
+    display: grid;
+    align-content: start;
+    gap: var(--space-stack-lg);
+    padding: var(--space-inset-lg) var(--space-page-inline);
+    min-width: 0;
+  }
+
+  .ui-app-shell__header {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--space-gap-sm);
+  }
+
+  .ui-app-shell__title {
+    margin: 0;
+    font: var(--text-title);
+    letter-spacing: var(--text-tracking-title);
+  }
+
+  .ui-app-shell__actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-gap-sm);
+  }
+
+  @media (width < 56rem) {
+    .ui-app-shell {
+      grid-template-columns: minmax(0, 1fr);
+    }
+
+    .ui-app-shell__sidebar {
+      gap: var(--space-stack-md);
+      border-inline-end: 0;
+      border-block-end: var(--border-width-divider) var(--border-style-default) var(--color-border);
+    }
+
+    .ui-app-shell__nav {
+      display: flex;
+      flex-wrap: wrap;
+    }
+
+    .ui-app-shell__nav :is(a, button) {
+      width: auto;
+      min-height: var(--size-target-touch);
+    }
+
+    .ui-app-shell__footer {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      margin-top: 0;
+    }
+  }
+}

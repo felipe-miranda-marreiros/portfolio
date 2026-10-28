@@ -1,0 +1,29 @@
+/**
+ * Status badge: `<span class="ui-status" data-status="draft|published">`. Draft and Published differ by shape
+ * (dashed outline, solid fill) and by their words, never by colour alone.
+ */
+@layer components {
+  .ui-status {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-inset-xs);
+    padding: 0 var(--space-inset-sm);
+    border: var(--border-width-control) var(--border-style-draft) var(--color-border-control);
+    border-radius: var(--radius-chip);
+    color: var(--color-text-muted);
+    font: var(--text-label);
+    white-space: nowrap;
+  }
+
+  .ui-status[data-status="published"] {
+    border-style: var(--border-style-default);
+    border-color: var(--color-surface-inverse);
+    background: var(--color-surface-inverse);
+    color: var(--color-text-inverse);
+  }
+
+  .ui-status svg {
+    width: var(--size-icon-sm);
+    height: var(--size-icon-sm);
+  }
+}

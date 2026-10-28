@@ -1,0 +1,85 @@
+/**
+ * Image upload: `<div class="ui-upload">` with a preview, a drop zone holding a visually hidden file input and its label,
+ * a hint, and progress or error. State lives on `data-state`: empty, dragover, uploading, done, error.
+ */
+@layer components {
+  .ui-upload {
+    display: grid;
+    grid-template-columns: auto minmax(0, 1fr);
+    gap: var(--space-gap-md);
+    align-items: center;
+    padding: var(--space-inset-lg);
+    border: var(--border-width-control) var(--border-style-draft) var(--color-border-control);
+    border-radius: var(--radius-surface);
+    background: var(--color-surface-raised);
+    transition:
+      background-color var(--duration-quick) var(--ease-out),
+      border-color var(--duration-quick) var(--ease-out);
+  }
+
+  .ui-upload[data-state="done"] {
+    border-style: var(--border-style-default);
+  }
+
+  .ui-upload[data-state="dragover"] {
+    border-style: var(--border-style-default);
+    border-color: var(--color-text);
+    background: var(--color-surface-hover);
+  }
+
+  .ui-upload[data-state="error"] {
+    border-color: var(--color-danger);
+  }
+
+  .ui-upload__body {
+    display: grid;
+    gap: var(--space-stack-sm);
+    justify-items: start;
+  }
+
+  .ui-upload__title {
+    margin: 0;
+    font: var(--text-label);
+  }
+
+  .ui-upload__actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-gap-sm);
+  }
+
+  .ui-upload input[type="file"]:focus-visible + label {
+    outline: var(--border-width-focus) var(--border-style-default) var(--color-focus);
+    outline-offset: var(--border-focus-offset);
+  }
+
+  .ui-upload progress {
+    appearance: none;
+    width: 100%;
+    max-width: var(--text-measure-lead);
+    height: var(--space-2);
+    border: 0;
+    border-radius: var(--radius-full);
+    background: var(--color-surface-active);
+    overflow: hidden;
+  }
+
+  .ui-upload progress::-webkit-progress-bar {
+    background: var(--color-surface-active);
+  }
+
+  .ui-upload progress::-webkit-progress-value {
+    background: var(--color-text);
+  }
+
+  .ui-upload progress::-moz-progress-bar {
+    background: var(--color-text);
+  }
+
+  @media (width < 56rem) {
+    .ui-upload {
+      grid-template-columns: minmax(0, 1fr);
+      justify-items: start;
+    }
+  }
+}

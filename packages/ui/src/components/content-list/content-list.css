@@ -1,0 +1,86 @@
+/**
+ * Content list: `<table class="ui-content-list">` of Content entries with title, detail, status and row actions.
+ * Below 56rem each row becomes a stacked card-free block. Empty and loading states replace the body.
+ */
+@layer components {
+  .ui-content-list {
+    width: 100%;
+    border-collapse: collapse;
+    font: var(--text-body);
+  }
+
+  .ui-content-list th {
+    padding: var(--space-inset-sm) var(--space-inset-md);
+    border-bottom: var(--border-width-divider) var(--border-style-default) var(--color-border);
+    color: var(--color-text-muted);
+    font: var(--text-caption);
+    font-weight: var(--font-weight-semibold);
+    text-align: start;
+  }
+
+  .ui-content-list td {
+    padding: var(--space-inset-sm) var(--space-inset-md);
+    border-bottom: var(--border-width-divider) var(--border-style-default) var(--color-border);
+    vertical-align: middle;
+  }
+
+  .ui-content-list tbody tr {
+    transition: background-color var(--duration-quick) var(--ease-out);
+  }
+
+  .ui-content-list tbody tr:is(:hover, [data-gallery-state~="hover"]) {
+    background: var(--color-surface-hover);
+  }
+
+  .ui-content-list__title {
+    font-weight: var(--font-weight-semibold);
+  }
+
+  .ui-content-list__detail {
+    color: var(--color-text-muted);
+    font-variant-numeric: tabular-nums;
+  }
+
+  .ui-content-list__actions {
+    display: flex;
+    justify-content: end;
+    gap: var(--space-inset-xs);
+  }
+
+  .ui-content-list__empty {
+    display: grid;
+    gap: var(--space-stack-sm);
+    justify-items: start;
+    padding: var(--space-stack-xl) var(--space-inset-md);
+    color: var(--color-text-muted);
+  }
+
+  .ui-content-list__empty strong {
+    color: var(--color-text);
+    font: var(--text-title);
+  }
+
+  @media (width < 56rem) {
+    .ui-content-list thead {
+      display: none;
+    }
+
+    .ui-content-list :is(tbody, tr, td) {
+      display: block;
+    }
+
+    .ui-content-list tr {
+      padding-block: var(--space-inset-sm);
+      border-bottom: var(--border-width-divider) var(--border-style-default) var(--color-border);
+    }
+
+    .ui-content-list td {
+      padding-block: var(--space-inset-xs);
+      border: 0;
+    }
+
+    .ui-content-list__actions {
+      justify-content: start;
+    }
+  }
+}

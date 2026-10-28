@@ -1,4 +1,7 @@
-/** Shared styles for the Portfolio and the CMS: tokens first, then document defaults. */
+/** Shared styles for the Portfolio and the CMS: tokens, then document defaults, then components. */
+
+@layer base, components;
 
 @import "./tokens/index.css";
 @import "./base.css";
+@import "./components/index.css";

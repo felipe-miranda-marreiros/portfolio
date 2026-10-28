@@ -1,0 +1,49 @@
+/**
+ * Locale field pair: `<fieldset class="ui-locale-pair">` holding one translatable field as an `en` and a `pt-BR` field.
+ * A Locale still missing before Publish gets `data-missing` on its `.ui-field`: dashed border and a warning, not an error.
+ */
+@layer components {
+  .ui-locale-pair {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: var(--space-stack-sm) var(--space-gap-md);
+    margin: 0;
+    padding: 0;
+    border: 0;
+    min-width: 0;
+  }
+
+  .ui-locale-pair__legend {
+    grid-column: 1 / -1;
+    padding: 0;
+    margin-bottom: var(--space-stack-xs);
+    font: var(--text-label);
+  }
+
+  .ui-locale-pair .ui-field__label {
+    display: flex;
+    align-items: center;
+    gap: var(--space-inset-sm);
+    color: var(--color-text-muted);
+    font-weight: var(--font-weight-regular);
+  }
+
+  .ui-locale-pair .ui-field[data-missing] .ui-input {
+    border-style: var(--border-style-draft);
+  }
+
+  .ui-locale-pair__missing {
+    display: flex;
+    gap: var(--space-inset-xs);
+    align-items: start;
+    margin: 0;
+    font: var(--text-caption);
+    color: var(--color-warning);
+  }
+
+  @media (width < 56rem) {
+    .ui-locale-pair {
+      grid-template-columns: minmax(0, 1fr);
+    }
+  }
+}

@@ -1,0 +1,37 @@
+/**
+ * Work band: `<section class="ui-work-band ui-inverse">`, the full-bleed inverted band holding the latest roles.
+ * A label column and up to three compact entries side by side from 56rem; stacked below.
+ */
+@layer components {
+  .ui-work-band {
+    padding: var(--space-page-block) var(--space-page-inline) var(--space-stack-xl);
+  }
+
+  .ui-work-band__inner {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) repeat(3, minmax(0, 2fr));
+    gap: var(--space-stack-lg) var(--layout-gutter);
+    max-width: var(--size-container-page);
+    margin-inline: auto;
+  }
+
+  .ui-work-band__label {
+    margin: 0;
+    color: var(--color-text-muted);
+    font: var(--text-label);
+  }
+
+  .ui-work-band__list {
+    display: contents;
+  }
+
+  .ui-work-band__list > li {
+    list-style: none;
+  }
+
+  @media (width < 56rem) {
+    .ui-work-band__inner {
+      grid-template-columns: minmax(0, 1fr);
+    }
+  }
+}

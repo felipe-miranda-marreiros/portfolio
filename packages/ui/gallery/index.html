@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Component gallery</title>
+    <script type="module" src="./gallery.js"></script>
+  </head>
+  <body>
+    <a class="ui-skip-link ui-button" href="#main">Skip to content</a>
+    <header class="top">
+      <h1>Component gallery</h1>
+      <p>Every component in every state, in both themes. Hover, active and focus are forced with <code>data-gallery-state</code>; try the real ones with a mouse and the keyboard.</p>
+    </header>
+    <main id="main" tabindex="-1">
+      <div class="themes">
+        <section id="shared-dark" data-theme="dark" aria-label="Shared components, dark theme"></section>
+        <section id="shared-light" data-theme="light" aria-label="Shared components, light theme"></section>
+      </div>
+      <div id="portfolio" class="full">
+        <section id="portfolio-dark" data-theme="dark" aria-label="Portfolio components, dark theme"></section>
+        <section id="portfolio-light" data-theme="light" aria-label="Portfolio components, light theme"></section>
+      </div>
+      <div id="cms" class="full">
+        <section id="cms-dark" data-theme="dark" aria-label="CMS components, dark theme"></section>
+        <section id="cms-light" data-theme="light" aria-label="CMS components, light theme"></section>
+      </div>
+    </main>
+  </body>
+</html>

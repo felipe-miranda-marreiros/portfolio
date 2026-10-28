@@ -1,0 +1,51 @@
+/**
+ * Link: `<a class="ui-link">`. Inline links are always underlined so they never rely on colour.
+ * `data-variant="standalone"` (navigation, lists) underlines on hover and when `aria-current` is set.
+ * `data-tone="muted"` uses secondary text colour.
+ */
+@layer components {
+  .ui-link {
+    color: inherit;
+    text-decoration-line: underline;
+    text-decoration-thickness: var(--border-width-1);
+    text-underline-offset: var(--text-underline-offset);
+    border-radius: var(--radius-chip);
+    transition: text-decoration-thickness var(--duration-quick) var(--ease-out);
+  }
+
+  .ui-link:is(:hover, [data-gallery-state~="hover"]) {
+    text-decoration-thickness: var(--border-width-2);
+  }
+
+  .ui-link[data-variant="standalone"] {
+    text-decoration-line: none;
+  }
+
+  .ui-link[data-variant="standalone"]:is(
+    :hover,
+    [data-gallery-state~="hover"],
+    [aria-current]:not([aria-current="false"])
+  ) {
+    text-decoration-line: underline;
+    text-decoration-thickness: var(--border-width-2);
+  }
+
+  .ui-link[data-tone="muted"] {
+    color: var(--color-text-muted);
+  }
+
+  .ui-link[data-tone="muted"]:is(:hover, [data-gallery-state~="hover"]) {
+    color: var(--color-text);
+  }
+
+  /* Inline links sit between words, so the ring hugs the text instead of covering its neighbours. */
+  .ui-link:not([data-variant]):focus-visible,
+  .ui-link[data-gallery-state~="focus"] {
+    outline: var(--border-width-focus) var(--border-style-default) var(--color-focus);
+    outline-offset: var(--border-width-1);
+  }
+
+  .ui-link[data-variant="standalone"][data-gallery-state~="focus"] {
+    outline-offset: var(--border-focus-offset);
+  }
+}

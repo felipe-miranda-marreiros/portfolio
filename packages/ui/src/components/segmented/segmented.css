@@ -1,0 +1,67 @@
+/**
+ * Segmented switch: `<div class="ui-segmented" role="group" aria-label="…">` holding buttons or links.
+ * Buttons mark the chosen option with `aria-pressed="true"` (theme); links with `aria-current="true"` (Locale).
+ */
+@layer components {
+  .ui-segmented {
+    display: inline-flex;
+    padding: var(--space-1);
+    gap: var(--space-1);
+    border: var(--border-width-divider) var(--border-style-default) var(--color-border);
+    border-radius: var(--radius-action);
+  }
+
+  .ui-segmented > :is(button, a) {
+    display: inline-grid;
+    place-items: center;
+    min-height: var(--size-control-sm);
+    min-width: var(--size-control-md);
+    padding-inline: var(--space-inset-sm);
+    border: 0;
+    border-radius: var(--radius-action);
+    background: transparent;
+    color: var(--color-text-muted);
+    font: var(--text-label);
+    text-decoration: none;
+    cursor: pointer;
+    transition:
+      background-color var(--duration-quick) var(--ease-out),
+      color var(--duration-quick) var(--ease-out);
+  }
+
+  @media (pointer: coarse) {
+    .ui-segmented > :is(button, a) {
+      min-height: var(--size-target-touch);
+    }
+  }
+
+  .ui-segmented > :is(button, a):is(:hover, [data-gallery-state~="hover"]) {
+    background: var(--color-surface-hover);
+    color: var(--color-text);
+  }
+
+  .ui-segmented > :is(button, a):is(:active, [data-gallery-state~="active"]) {
+    background: var(--color-surface-active);
+  }
+
+  .ui-segmented > :is([aria-pressed="true"], [aria-current]:not([aria-current="false"])) {
+    background: var(--color-surface-selected);
+    color: var(--color-text-selected);
+    cursor: default;
+  }
+
+  .ui-segmented > :is(button, a)[data-gallery-state~="focus"] {
+    outline: var(--border-width-focus) var(--border-style-default) var(--color-focus);
+    outline-offset: var(--border-focus-offset);
+  }
+
+  .ui-segmented > :is(button, a):disabled {
+    opacity: var(--opacity-disabled);
+    cursor: not-allowed;
+  }
+
+  .ui-segmented svg {
+    width: var(--size-icon-sm);
+    height: var(--size-icon-sm);
+  }
+}
