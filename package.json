@@ -1,6 +1,7 @@
 {
   "name": "portfolio",
   "devDependencies": {
+    "@biomejs/biome": "2.6.3",
     "@commitlint/cli": "^21.2.4",
     "@commitlint/config-conventional": "^21.2.4",
     "@types/bun": "latest",
@@ -8,6 +9,8 @@
   },
   "scripts": {
     "prepare": "husky",
-    "test": "bun test"
+    "test": "bun test",
+    "lint": "biome check .",
+    "fix": "biome check --write ."
   }
 }
