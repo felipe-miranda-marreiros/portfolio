@@ -43,12 +43,7 @@ Deferred work lives in [backlog.md](backlog.md).
 
 ## Phase 0: foundations
 
-Already in the repo: the harness (hooks, CI, commitlint, Biome), the `pr`, `code-review`, `ponytail`, `impeccable`, `grilling`, `grill-me`, `grill-with-docs`, `domain-modeling`, `codebase-design`, `to-spec`, `to-tickets`, `implement` and `tdd` skills, `GLOSSARY.md` and ADRs 0001-0005.
-
-Remaining:
-
-- Configure GitHub Issues as the tracker and create the triage labels (`ready-for-agent` at least). The skills point to `/setup-matt-pocock-skills` for this; it is not vendored, so either install it or write the label vocabulary down by hand.
-- Merge these roadmap docs.
+Done. In the repo: the harness (hooks, CI, commitlint, Biome), the `pr`, `code-review`, `ponytail`, `impeccable`, `grilling`, `grill-me`, `grill-with-docs`, `domain-modeling`, `codebase-design`, `to-spec`, `to-tickets`, `implement`, `tdd`, `triage` and `setup-matt-pocock-skills` skills, `GLOSSARY.md`, ADRs 0001-0005 and this roadmap. GitHub Issues is the tracker, with the five triage labels; the configuration is in `docs/agents/`.
 
 Exit criteria: labels exist, the roadmap is on `main`.
 
