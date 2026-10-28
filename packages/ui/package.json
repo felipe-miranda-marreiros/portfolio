@@ -3,7 +3,8 @@
   "private": true,
   "type": "module",
   "exports": {
-    "./styles.css": "./src/styles.css"
+    "./styles.css": "./src/styles.css",
+    "./theme": "./src/theme/theme.ts"
   },
   "scripts": {
     "dev": "vite --port 5174 --strictPort"

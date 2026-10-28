@@ -1,0 +1,126 @@
+body {
+  margin: 0;
+}
+
+.top {
+  display: flex;
+  justify-content: space-between;
+  align-items: start;
+  gap: var(--space-gap-md);
+  padding: var(--space-page-block) var(--space-page-inline);
+}
+
+.top h1 {
+  font: var(--text-headline);
+  letter-spacing: var(--text-tracking-headline);
+  margin: 0 0 var(--space-stack-sm);
+}
+
+.top p,
+.lede {
+  margin: 0;
+  max-width: var(--text-measure);
+  color: var(--color-text-muted);
+}
+
+.pattern {
+  display: grid;
+  gap: var(--space-stack-md);
+  padding: var(--space-stack-lg) var(--space-page-inline);
+  border-top: var(--border-width-divider) var(--border-style-default) var(--color-border);
+}
+
+.pattern > h2 {
+  margin: 0;
+  font: var(--text-title);
+  letter-spacing: var(--text-tracking-title);
+}
+
+.pattern > h2 code {
+  margin-inline-start: var(--space-inset-sm);
+  font: var(--text-caption);
+  font-family: var(--font-code);
+  color: var(--color-text-muted);
+}
+
+.demo {
+  max-width: 56rem;
+}
+
+.stack,
+.form {
+  display: grid;
+  gap: var(--space-stack-lg);
+}
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--space-gap-sm);
+}
+
+.url {
+  margin: var(--space-stack-sm) 0;
+  color: var(--color-text-muted);
+}
+
+.demo-band {
+  margin-inline: calc(-1 * var(--space-page-inline));
+}
+
+.portfolio-error {
+  display: grid;
+  gap: var(--space-stack-md);
+  justify-items: start;
+  padding-block: var(--space-stack-lg);
+}
+
+.portfolio-error h3 {
+  margin: 0;
+  max-width: 18ch;
+  font: var(--text-headline);
+  letter-spacing: var(--text-tracking-headline);
+}
+
+.portfolio-error p {
+  margin: 0;
+  max-width: var(--text-measure-lead);
+  color: var(--color-text-muted);
+}
+
+.form-header {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  gap: var(--space-gap-sm);
+}
+
+.form-header h3 {
+  display: flex;
+  align-items: center;
+  gap: var(--space-inset-sm);
+  margin: 0;
+  font: var(--text-title);
+}
+
+.form-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: var(--space-stack-lg) var(--space-gap-md);
+}
+
+.form-grid > .wide {
+  grid-column: 1 / -1;
+}
+
+@media (width < 56rem) {
+  .top {
+    flex-direction: column;
+  }
+
+  .form-grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
