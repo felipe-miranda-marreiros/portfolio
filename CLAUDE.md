@@ -10,12 +10,17 @@ This repository is a scaffold for a portfolio project: there is no application s
 
 - `bun install`: installs dependencies and sets up the Husky hooks via the `prepare` script.
 - `bun test`: runs the tests (currently `scripts/check-pr-body.test.ts`, which covers the PR body hook). Run a single test with `bun test -t "<name>"`.
+- `bun run lint`: runs Biome (`biome check .`: format, lint, import order). `bun run fix` applies the safe fixes.
 
 ## Commits
 
 Follow Conventional Commits and keep commits small; the full rules are in `.claude/rules/commits.md`. Message format is enforced deterministically by a Husky `commit-msg` hook running commitlint (`@commitlint/config-conventional`, configured in `commitlint.config.mjs`); a non-conforming commit is rejected, so fix the message instead of bypassing with `--no-verify`. Hooks are installed by `bun install` via the `prepare` script. Branch names, issue titles and pull request titles follow the same convention, see `.claude/rules/issues-branches-and-prs.md`; branch names are enforced on push by a Husky `pre-push` hook, so create branches as `<type>/<kebab-description>` from the start.
 
 CI (`.github/workflows/`) repeats these checks for pull requests (`pr.yml`: every commit message, the PR title, and the branch name) and checks issue titles (`issue-title.yml`). The branch-name rule lives only in `scripts/check-branch-name.sh`, shared by the hook and CI. Workflows install with `bun install --frozen-lockfile` and set `HUSKY=0`.
+
+## Linting and formatting
+
+[Biome](https://biomejs.dev) (`biome.json`) formats and lints code and config: 2 spaces, 120 columns, double quotes, LF. A Husky `pre-commit` hook runs `biome check --staged` and `lint.yml` runs `biome ci .` in CI. Markdown, vendored skills, `.agents/`, `.impeccable/`, `.rtk/` and `skills-lock.json` are excluded. `.gitattributes` forces LF checkouts so Windows (CRLF) and CI agree.
 
 ## File size
 
