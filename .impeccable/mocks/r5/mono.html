@@ -1,0 +1,132 @@
+<!doctype html>
+<html lang="en" data-locale="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Voz com Cor, Mono — boldness mock</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Funnel+Display:wght@400..700&family=Funnel+Sans:wght@400..700&display=swap">
+<style>
+:root {
+  --acc-l: #121212; --acc-d: #ffffff; --hl-l: #d4d4d4; --hl-d: #ffffff; --chip: #ffffff; --on-chip: #121212;
+  --ground: #f6f6f6; --ink: #121212; --muted: #5f5f5f; --rule: #dedede;
+  --band: #121212; --band-ink: #ffffff; --band-soft: #b3b3b3;
+  --accent: var(--acc-l); --on-accent: #ffffff; --mark: var(--hl-l);
+  --display: "Funnel Display", system-ui, sans-serif; --text: "Funnel Sans", system-ui, sans-serif; --ease: cubic-bezier(.16, 1, .3, 1);
+  color-scheme: light;
+}
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) { --ground: #121212; --ink: #ffffff; --muted: #b3b3b3; --rule: #2a2a2a; --band: #181818; --accent: var(--acc-d); --on-accent: #121212; --mark: var(--hl-d); color-scheme: dark; }
+  :root:not([data-theme="light"]):is([data-variant="b"], [data-variant="c"]) { --band: #ffffff; --band-ink: #121212; --band-soft: #5f5f5f; --chip: #121212; --on-chip: #ffffff; } }
+:root[data-theme="dark"] { --ground: #121212; --ink: #ffffff; --muted: #b3b3b3; --rule: #2a2a2a; --band: #181818; --accent: var(--acc-d); --on-accent: #121212; --mark: var(--hl-d); color-scheme: dark; }
+:root[data-theme="dark"]:is([data-variant="b"], [data-variant="c"]) { --band: #ffffff; --band-ink: #121212; --band-soft: #5f5f5f; --chip: #121212; --on-chip: #ffffff; }
+* { box-sizing: border-box; margin: 0; }
+html { background: var(--ground); color: var(--ink); font: 400 17px/1.5 var(--text); }
+::selection { background: var(--mark); color: #121212; }
+html[data-locale="en"] [lang="pt-BR"], html[data-locale="pt-BR"] [lang="en"] { display: none; }
+a { color: inherit; text-underline-offset: .22em; text-decoration-thickness: 1.5px; }
+:focus-visible { outline: 3px solid var(--mark); outline-offset: 3px; border-radius: 4px; }
+
+.first { height: var(--vh, 100vh); min-height: 720px; display: grid; grid-template-rows: auto 1fr auto; }
+header { display: flex; justify-content: space-between; align-items: center; gap: 24px; font-size: 15px; padding: 28px clamp(24px, 5vw, 88px) 0; }
+.mark { font-family: var(--display); font-weight: 650; font-size: 18px; text-decoration: none; }
+.right { display: flex; align-items: center; gap: 24px; }
+.right nav { display: flex; gap: 22px; } .right nav a { text-decoration: none; } .right nav a:hover { text-decoration: underline; }
+.seg { display: flex; border: 1px solid var(--rule); border-radius: 99px; padding: 3px; }
+.seg button { font: 600 13px/1 var(--text); min-height: 30px; min-width: 40px; padding: 0 10px; border: 0; border-radius: 99px; background: none; color: inherit; cursor: pointer; display: grid; place-items: center; }
+.seg button[aria-pressed="true"] { background: var(--ink); color: var(--ground); }
+
+.voice { align-self: center; padding: 0 clamp(24px, 5vw, 88px); }
+h1 { font-family: var(--display); font-weight: 480; font-size: clamp(2.6rem, 4.6vw, 4.6rem); line-height: 1.06; letter-spacing: -.03em; max-width: 23ch; text-wrap: pretty; }
+html[data-locale="pt-BR"] h1 { max-width: 25ch; font-size: clamp(2.4rem, 4.1vw, 4.1rem); }
+h1 mark { background: none; color: inherit; font-weight: 650; background-image: linear-gradient(var(--mark), var(--mark)); background-size: 100% .34em; background-position: 0 88%; background-repeat: no-repeat; }
+.avatar { display: inline-block; width: .92em; height: .92em; border-radius: 50%; vertical-align: -.12em; margin: 0 .08em; object-fit: cover; object-position: 50% 20%; box-shadow: 0 6px 18px rgb(29 20 25 / .22); }
+h1 .soft { color: var(--muted); }
+.actions { display: flex; flex-wrap: wrap; gap: 14px 28px; align-items: center; margin-top: 36px; font-size: 18px; }
+.btn { display: inline-flex; align-items: center; min-height: 52px; padding: 0 24px; border-radius: 14px; background: var(--accent); color: var(--on-accent); font-weight: 650; text-decoration: none; border-radius: 99px; transition: transform .3s var(--ease); }
+.btn:hover { transform: translateY(-2px); }
+.note { font-size: 13px; color: var(--muted); }
+
+.lately { background: var(--band); color: var(--band-ink); display: grid; grid-template-columns: 9rem repeat(3, 1fr); gap: 32px; padding: 34px clamp(24px, 5vw, 88px) 40px; }
+.lately :focus-visible { outline-color: var(--band-ink); }
+.lately h2 { font: 600 15px/1.3 var(--text); color: var(--band-soft); }
+.lately div { font-size: 15px; line-height: 1.4; color: var(--band-soft); }
+.yr { display: block; font-variant-numeric: tabular-nums; margin-bottom: 6px; }
+.lately strong { display: block; color: var(--band-ink); font-family: var(--display); font-weight: 600; font-size: 22px; letter-spacing: -.01em; }
+.lately .cur .yr { display: inline-block; background: var(--chip); color: var(--on-chip); font-weight: 600; padding: 0 8px; border-radius: 6px; }
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) h1 mark { background-image: none; color: var(--mark); } }
+:root[data-theme="dark"] h1 mark { background-image: none; color: var(--mark); }
+footer { padding: 18px clamp(24px, 5vw, 88px); font-size: 13px; color: var(--muted); }
+
+header { grid-row: 1; grid-column: 1; position: relative; z-index: 1; }
+.voice { grid-row: 2; grid-column: 1; position: relative; z-index: 1; }
+.lately { grid-row: 3; grid-column: 1; }
+:root[data-variant] h1 { font-weight: 650; font-size: clamp(3.6rem, 7vw, 7rem); line-height: .96; letter-spacing: -.035em; max-width: 13ch; }
+html[data-locale="pt-BR"][data-variant] h1 { font-size: clamp(3.2rem, 6vw, 6rem); max-width: 14ch; }
+:root[data-variant] h1 .soft { display: block; font-family: var(--text); font-size: clamp(1.25rem, 1.7vw, 1.6rem); font-weight: 400; line-height: 1.4; letter-spacing: 0; max-width: 40ch; margin-top: 28px; }
+:root[data-variant] .lately strong { font-size: 26px; font-weight: 650; }
+.nb { white-space: nowrap; }
+.portrait { display: none; }
+:root[data-variant="c"] .portrait { display: block; grid-row: 1 / 3; grid-column: 1; justify-self: end; width: 48%; height: 100%; object-fit: cover; object-position: 50% 12%; filter: grayscale(1) contrast(1.12);
+  -webkit-mask-image: linear-gradient(to right, transparent, #000 45%), linear-gradient(to top, transparent, #000 30%); -webkit-mask-composite: source-in;
+  mask-image: linear-gradient(to right, transparent, #000 45%), linear-gradient(to top, transparent, #000 30%); mask-composite: intersect; }
+:root[data-variant="c"] .avatar { display: none; }
+.portrait-note { display: none; }
+:root[data-variant="c"] .portrait-note { display: inline; }
+:root[data-variant="c"] .avatar-note { display: none; }
+
+@media (prefers-reduced-motion: reduce) { .btn { transition: none; } }
+@media (max-width: 860px) {
+  .first { height: auto; gap: 48px; } header { padding: 20px 16px 0; } .right nav { display: none; }
+  .voice { padding: 0 16px; } h1, html[data-locale="pt-BR"] h1 { font-size: 10.4vw; }
+  .lately { grid-template-columns: 1fr; gap: 18px; padding: 28px 16px; }
+  :root[data-variant] h1, html[data-locale="pt-BR"][data-variant] h1 { font-size: 12.4vw; }
+  :root[data-variant="c"] .portrait { width: 70%; height: 60%; opacity: .55; }
+}
+</style>
+</head>
+<body>
+<main class="first">
+  <header>
+    <a class="mark" href="#">Felipe Miranda Marreiros</a>
+    <div class="right">
+      <nav aria-label="Sections"><a href="#lately"><span lang="en">Experience</span><span lang="pt-BR">Experiência</span></a><a href="#contact"><span lang="en">Contact</span><span lang="pt-BR">Contato</span></a></nav>
+      <div class="seg" role="group" aria-label="Language"><button data-locale="en" aria-pressed="true">EN</button><button data-locale="pt-BR" aria-pressed="false">PT</button></div>
+      <div class="seg" role="group" aria-label="Theme"><button data-theme="light" aria-label="Light theme"><svg width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><circle cx="8" cy="8" r="3" fill="currentColor"/><path d="M8 1v2M8 13v2M1 8h2M13 8h2M3 3l1.4 1.4M11.6 11.6 13 13M3 13l1.4-1.4M11.6 4.4 13 3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></button><button data-theme="dark" aria-label="Dark theme"><svg width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><path d="M13 10.5A6 6 0 0 1 5.5 3a6 6 0 1 0 7.5 7.5z" fill="currentColor"/></svg></button></div>
+    </div>
+  </header>
+  <img class="portrait" src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=1400&q=80&auto=format&fit=crop" alt="Portrait of Felipe Miranda Marreiros">
+  <div class="voice">
+    <h1>
+      <span lang="en">Hi, I’m <span class="nb"><mark>Felipe</mark><img class="avatar" src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=300&q=80&auto=format&fit=crop" alt="">,</span> an AI engineer. <span class="soft">I ship software where language models do real work, and the tests that keep them honest.</span></span>
+      <span lang="pt-BR">Oi, eu sou o <span class="nb"><mark>Felipe</mark><img class="avatar" src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=300&q=80&auto=format&fit=crop" alt="">,</span> engenheiro de IA. <span class="soft">Entrego software em que modelos de linguagem fazem trabalho de verdade, e os testes que os mantêm confiáveis.</span></span>
+    </h1>
+    <div class="actions" id="contact"><a class="btn" href="#"><span lang="en">Download CV</span><span lang="pt-BR">Baixar currículo</span></a><a href="#">hello@example.com</a><span class="note avatar-note"><span lang="en">Avatar is a stock placeholder.</span><span lang="pt-BR">Avatar é foto de banco.</span></span><span class="note portrait-note"><span lang="en">Photo is a stock placeholder.</span><span lang="pt-BR">Foto de banco provisória.</span></span></div>
+  </div>
+  <section class="lately" id="lately">
+    <h2><span lang="en">Lately</span><span lang="pt-BR">Ultimamente</span></h2>
+    <div class="cur"><span class="yr">2024 —</span><strong lang="en">AI Engineer</strong><strong lang="pt-BR">Engenheiro de IA</strong>Ponte Labs</div>
+    <div><span class="yr">2022 — 24</span><strong lang="en">Senior Software Engineer</strong><strong lang="pt-BR">Engenheiro de Software Sênior</strong>Tessera Saúde</div>
+    <div><span class="yr">2020 — 22</span><strong lang="en">Software Engineer</strong><strong lang="pt-BR">Engenheiro de Software</strong>Atlas Pagamentos</div>
+  </section>
+</main>
+<footer><span lang="en">Sample Content: fixtures, not real history.</span><span lang="pt-BR">Conteúdo de exemplo: fixtures, não histórico real.</span></footer>
+<script>
+const root = document.documentElement;
+document.querySelectorAll("button[data-locale]").forEach((b) => b.addEventListener("click", () => {
+  root.dataset.locale = b.dataset.locale; root.lang = b.dataset.locale;
+  document.querySelectorAll("button[data-locale]").forEach((x) => x.setAttribute("aria-pressed", x === b));
+}));
+const themeButtons = document.querySelectorAll("button[data-theme]");
+const syncTheme = () => { const dark = root.dataset.theme ? root.dataset.theme === "dark" : matchMedia("(prefers-color-scheme: dark)").matches;
+  themeButtons.forEach((x) => x.setAttribute("aria-pressed", (x.dataset.theme === "dark") === dark)); };
+themeButtons.forEach((b) => b.addEventListener("click", () => { root.dataset.theme = b.dataset.theme; syncTheme(); }));
+syncTheme();
+const hash = location.hash.slice(1).split(",");
+const forced = hash.find((t) => t === "light" || t === "dark");
+if (forced) { root.dataset.theme = forced; syncTheme(); }
+if (hash.includes("pt")) document.querySelector('button[data-locale="pt-BR"]').click();
+const variant = hash.find((t) => ["a", "b", "c"].includes(t)); if (variant) root.dataset.variant = variant;
+if (hash.includes("full")) root.style.setProperty("--vh", "900px");
+</script>
+</body>
+</html>
