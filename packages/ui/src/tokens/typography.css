@@ -1,0 +1,65 @@
+/** Typography tokens: self-hosted Funnel faces, a fluid type scale, and the role shorthands components use. */
+
+@import "@fontsource-variable/funnel-display/index.css";
+@import "@fontsource-variable/funnel-sans/index.css";
+
+/* Fallbacks are matched to Funnel's measured width and line metrics so the swap causes no layout shift. */
+@font-face {
+  font-family: "Funnel Display Fallback";
+  src: local("Arial Bold"), local("Arial-BoldMT"), local("Arial");
+  font-weight: 650;
+  size-adjust: 100.9%;
+  ascent-override: 99.1%;
+  descent-override: 24.8%;
+  line-gap-override: 0%;
+}
+
+@font-face {
+  font-family: "Funnel Sans Fallback";
+  src: local("Arial"), local("ArialMT");
+  size-adjust: 99.6%;
+  ascent-override: 100.4%;
+  descent-override: 25.1%;
+  line-gap-override: 0%;
+}
+
+:root {
+  --font-display: "Funnel Display Variable", "Funnel Display Fallback", system-ui, sans-serif;
+  --font-text: "Funnel Sans Variable", "Funnel Sans Fallback", system-ui, sans-serif;
+  --font-code: ui-monospace, "Cascadia Code", "SFMono-Regular", Menlo, Consolas, monospace;
+
+  --font-weight-regular: 400;
+  --font-weight-semibold: 600;
+  --font-weight-heavy: 650;
+
+  --text-size-xs: 0.8125rem;
+  --text-size-sm: 0.9375rem;
+  --text-size-md: 1.0625rem;
+  --text-size-lg: clamp(1.25rem, 1.1rem + 0.45vw, 1.5rem);
+  --text-size-xl: clamp(1.375rem, 1.25rem + 0.35vw, 1.625rem);
+  --text-size-2xl: clamp(2rem, 1.4rem + 2.6vw, 3.25rem);
+  --text-size-display: clamp(3.25rem, 1.6rem + 6vw, 7rem);
+
+  --text-leading-tight: 0.96;
+  --text-leading-snug: 1.35;
+  --text-leading-normal: 1.5;
+
+  --text-tracking-display: -0.035em;
+  --text-tracking-headline: -0.02em;
+  --text-tracking-title: -0.01em;
+  --text-tracking-normal: 0;
+
+  --text-underline-offset: 0.22em;
+
+  --text-measure: 66ch;
+  --text-measure-lead: 40ch;
+
+  --text-display: var(--font-weight-heavy) var(--text-size-display) / var(--text-leading-tight) var(--font-display);
+  --text-headline: var(--font-weight-heavy) var(--text-size-2xl) / var(--text-leading-tight) var(--font-display);
+  --text-title: var(--font-weight-semibold) var(--text-size-xl) / var(--text-leading-snug) var(--font-display);
+  --text-lead: var(--font-weight-regular) var(--text-size-lg) / var(--text-leading-snug) var(--font-text);
+  --text-body: var(--font-weight-regular) var(--text-size-md) / var(--text-leading-normal) var(--font-text);
+  --text-label: var(--font-weight-semibold) var(--text-size-sm) / var(--text-leading-snug) var(--font-text);
+  --text-caption: var(--font-weight-regular) var(--text-size-xs) / var(--text-leading-snug) var(--font-text);
+  --text-code: var(--font-weight-regular) var(--text-size-sm) / var(--text-leading-normal) var(--font-code);
+}

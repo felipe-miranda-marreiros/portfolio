@@ -1,0 +1,47 @@
+/** Document defaults and browser surfaces (selection, caret, focus, scrollbars), styled from tokens in both themes. */
+
+@layer base {
+  *,
+  *::before,
+  *::after {
+    box-sizing: border-box;
+  }
+
+  :root,
+  [data-theme="dark"] {
+    color-scheme: dark;
+  }
+
+  [data-theme="light"] {
+    color-scheme: light;
+  }
+
+  html {
+    background: var(--color-bg);
+    color: var(--color-text);
+    font: var(--text-body);
+    caret-color: var(--color-text);
+    scrollbar-color: var(--color-border-control) var(--color-bg);
+  }
+
+  [data-theme] {
+    background: var(--color-bg);
+    color: var(--color-text);
+  }
+
+  ::selection {
+    background: var(--color-surface-inverse);
+    color: var(--color-text-inverse);
+  }
+
+  :focus-visible {
+    outline: var(--border-width-focus) var(--border-style-default) var(--color-focus);
+    outline-offset: var(--border-focus-offset);
+  }
+
+  a {
+    color: inherit;
+    text-underline-offset: var(--text-underline-offset);
+    text-decoration-thickness: var(--border-width-1);
+  }
+}

@@ -1,0 +1,29 @@
+/** Motion tokens: durations by job, two easings, and the reduced-motion rule that zeroes every semantic duration. */
+
+:root {
+  --duration-100: 100ms;
+  --duration-200: 200ms;
+  --duration-300: 300ms;
+  --duration-600: 600ms;
+  --duration-1600: 1600ms;
+
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-in-out: cubic-bezier(0.65, 0, 0.35, 1);
+
+  --duration-instant: var(--duration-100);
+  --duration-quick: var(--duration-200);
+  --duration-moderate: var(--duration-300);
+  --duration-slow: var(--duration-600);
+  --duration-skeleton: var(--duration-1600);
+  --duration-skeleton-delay: var(--duration-200);
+  --duration-spinner: var(--duration-600);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  :root {
+    --duration-instant: 0ms;
+    --duration-quick: 0ms;
+    --duration-moderate: 0ms;
+    --duration-slow: 0ms;
+  }
+}

@@ -1,0 +1,135 @@
+/** Colour tokens: a neutral grey ramp, functional status hues, and semantic roles for both themes. Dark is the default. */
+
+:root {
+  --color-gray-0: #ffffff;
+  --color-gray-50: #f6f6f6;
+  --color-gray-100: #ececec;
+  --color-gray-200: #dedede;
+  --color-gray-400: #b3b3b3;
+  --color-gray-500: #858585;
+  --color-gray-600: #5f5f5f;
+  --color-gray-800: #2a2a2a;
+  --color-gray-850: #1f1f1f;
+  --color-gray-900: #181818;
+  --color-gray-950: #121212;
+
+  --color-red-300: #ff8080;
+  --color-red-700: #c0262d;
+  --color-green-300: #5ccf8a;
+  --color-green-700: #1f7a45;
+  --color-amber-300: #f5b83d;
+  --color-amber-700: #8a5a00;
+  --color-blue-300: #6ea8ff;
+  --color-blue-700: #1f5fbf;
+}
+
+:root,
+[data-theme="dark"] {
+  --color-bg: var(--color-gray-950);
+  --color-surface-raised: var(--color-gray-900);
+  --color-surface-hover: var(--color-gray-850);
+  --color-surface-active: var(--color-gray-800);
+  --color-surface-inverse: var(--color-gray-0);
+  --color-surface-selected: var(--color-surface-inverse);
+
+  --color-text: var(--color-gray-0);
+  --color-text-muted: var(--color-gray-400);
+  --color-text-inverse: var(--color-gray-950);
+  --color-text-inverse-muted: var(--color-gray-600);
+  --color-text-selected: var(--color-text-inverse);
+
+  --color-border: var(--color-gray-800);
+  --color-border-control: var(--color-gray-500);
+  --color-focus: var(--color-text);
+  --color-focus-inverse: var(--color-text-inverse);
+
+  --color-action: var(--color-gray-0);
+  --color-action-hover: var(--color-gray-200);
+  --color-action-active: var(--color-gray-400);
+  --color-on-action: var(--color-gray-950);
+
+  --color-danger: var(--color-red-300);
+  --color-success: var(--color-green-300);
+  --color-warning: var(--color-amber-300);
+  --color-info: var(--color-blue-300);
+
+  --color-skeleton-base: var(--color-gray-850);
+  --color-skeleton-highlight: var(--color-gray-800);
+  --color-skeleton-inverse-base: var(--color-gray-200);
+  --color-skeleton-inverse-highlight: var(--color-gray-100);
+  --color-scrim: rgb(from var(--color-gray-950) r g b / var(--opacity-scrim));
+}
+
+[data-theme="light"] {
+  --color-bg: var(--color-gray-50);
+  --color-surface-raised: var(--color-gray-0);
+  --color-surface-hover: var(--color-gray-100);
+  --color-surface-active: var(--color-gray-200);
+  --color-surface-inverse: var(--color-gray-950);
+  --color-surface-selected: var(--color-surface-inverse);
+
+  --color-text: var(--color-gray-950);
+  --color-text-muted: var(--color-gray-600);
+  --color-text-inverse: var(--color-gray-0);
+  --color-text-inverse-muted: var(--color-gray-400);
+  --color-text-selected: var(--color-text-inverse);
+
+  --color-border: var(--color-gray-200);
+  --color-border-control: var(--color-gray-500);
+  --color-focus: var(--color-text);
+  --color-focus-inverse: var(--color-text-inverse);
+
+  --color-action: var(--color-gray-950);
+  --color-action-hover: var(--color-gray-800);
+  --color-action-active: var(--color-gray-600);
+  --color-on-action: var(--color-gray-0);
+
+  --color-danger: var(--color-red-700);
+  --color-success: var(--color-green-700);
+  --color-warning: var(--color-amber-700);
+  --color-info: var(--color-blue-700);
+
+  --color-skeleton-base: var(--color-gray-200);
+  --color-skeleton-highlight: var(--color-gray-100);
+  --color-skeleton-inverse-base: var(--color-gray-850);
+  --color-skeleton-inverse-highlight: var(--color-gray-800);
+}
+
+/*
+ * Inverse regions (`.ui-inverse`) swap ground and ink inside them: white on a dark page, black on a light one.
+ * Each theme root records its own values under `--page-*`; a custom property inherits as a resolved colour,
+ * so the region can read the page's values while redefining the same roles without a reference cycle.
+ */
+:root,
+[data-theme] {
+  --page-bg: var(--color-bg);
+  --page-text: var(--color-text);
+  --page-text-muted: var(--color-text-muted);
+  --page-surface-inverse: var(--color-surface-inverse);
+  --page-text-inverse: var(--color-text-inverse);
+  --page-text-inverse-muted: var(--color-text-inverse-muted);
+  --page-skeleton-base: var(--color-skeleton-base);
+  --page-skeleton-highlight: var(--color-skeleton-highlight);
+  --page-skeleton-inverse-base: var(--color-skeleton-inverse-base);
+  --page-skeleton-inverse-highlight: var(--color-skeleton-inverse-highlight);
+}
+
+.ui-inverse {
+  --color-bg: var(--page-surface-inverse);
+  --color-text: var(--page-text-inverse);
+  --color-text-muted: var(--page-text-inverse-muted);
+  --color-surface-inverse: var(--page-bg);
+  --color-text-inverse: var(--page-text);
+  --color-text-inverse-muted: var(--page-text-muted);
+  --color-surface-selected: var(--page-bg);
+  --color-text-selected: var(--page-text);
+  --color-focus: var(--page-text-inverse);
+  --color-focus-inverse: var(--page-text);
+  --color-skeleton-base: var(--page-skeleton-inverse-base);
+  --color-skeleton-highlight: var(--page-skeleton-inverse-highlight);
+  --color-skeleton-inverse-base: var(--page-skeleton-base);
+  --color-skeleton-inverse-highlight: var(--page-skeleton-highlight);
+
+  background: var(--color-bg);
+  color: var(--color-text);
+}

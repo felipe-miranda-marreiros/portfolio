@@ -1,1 +1,4 @@
-/** Shared styles for the Portfolio and the CMS; the design system lands here in phase 1. */
+/** Shared styles for the Portfolio and the CMS: tokens first, then document defaults. */
+
+@import "./tokens/index.css";
+@import "./base.css";

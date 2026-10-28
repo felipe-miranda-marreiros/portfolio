@@ -1,0 +1,12 @@
+/**
+ * Layout tokens: the grid and the breakpoint.
+ * Custom properties don't work inside @media, so components write the breakpoint as its literal value:
+ * `@media (width < 56rem)` for --breakpoint-md.
+ */
+
+:root {
+  --breakpoint-md: 56rem;
+
+  --layout-columns: 12;
+  --layout-gutter: var(--space-gap-lg);
+}

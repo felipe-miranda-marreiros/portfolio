@@ -1,0 +1,6 @@
+/** Opacity tokens: disabled controls and the scrim behind overlays. */
+
+:root {
+  --opacity-disabled: 0.45;
+  --opacity-scrim: 0.72;
+}

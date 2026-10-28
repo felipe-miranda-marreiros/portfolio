@@ -1,0 +1,14 @@
+/** Border tokens: widths and styles. Solid marks structure; dashed marks a Draft, so state never relies on colour. */
+
+:root {
+  --border-width-1: 1px;
+  --border-width-2: 2px;
+
+  --border-width-divider: var(--border-width-1);
+  --border-width-control: var(--border-width-1);
+  --border-width-focus: var(--border-width-2);
+  --border-focus-offset: var(--space-1);
+
+  --border-style-default: solid;
+  --border-style-draft: dashed;
+}
