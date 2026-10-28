@@ -33,6 +33,10 @@ Keep files free of comment bloat: document with JSDoc (`/** */`) when something 
 
 Every PR body must follow the `pr` skill in `.claude/skills/pr/` (from [mattpocock/skills](https://github.com/mattpocock/skills/tree/main/skills/engineering/pr), MIT): invoke `/pr` before `gh pr create` or `gh pr edit --body`, and write `## Summary`, `## Evidence` and `## Merge Danger` sections. A `PreToolUse` hook in `.claude/settings.json` blocks `gh pr create`/`gh pr new`/`gh pr edit` when the body lacks them (and any `--fill`), and the `body` job in `pr.yml` checks it again in CI. Both use `missingSections` from `scripts/pr-body.ts`, the single definition of the required sections. Project skills live in `.claude/skills/` as real files (not symlinks: `core.symlinks` is off on Windows); `skills-lock.json` and `.agents/skills/` come from the skills installer. The skill mentions a `GLOSSARY.md` for domain language, which this repo doesn't have yet.
 
+## Ponytail
+
+The `ponytail` skill (`.claude/skills/ponytail/`, from [DietrichGebert/ponytail](https://github.com/DietrichGebert/ponytail), MIT, license kept beside it) makes coding tasks aim for the smallest complete change: reuse before writing, no unrequested abstractions, one small test for non-trivial logic. It triggers on coding tasks, or invoke `/ponytail lite|full|ultra|off`. Only `skills/ponytail/SKILL.md` is vendored, as a real file; the upstream plugin's hooks (mode tracker, status band, `~/.config` ledger, webhook) are deliberately not installed, and it is not in `skills-lock.json` because it didn't come from the skills installer. Where it conflicts with the rules here (comments, commits), the rules win.
+
 ## Tooling
 
 - Package manager and runtime: **Bun** (lockfile is `bun.lock`; use `bun install`, not npm/yarn/pnpm).
