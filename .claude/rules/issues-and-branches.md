@@ -1,6 +1,6 @@
 # Issue and branch conventions
 
-Issues and branches follow the same Conventional Commits vocabulary as commit messages (see `commits.md`): the same types (`feat`, `fix`, `docs`, `chore`, `ci`, `build`, `refactor`, `perf`, `style`, `test`) and the same optional scope.
+Issues and branches follow the same Conventional Commits vocabulary as commit messages (see `commits.md`): the same types (`feat`, `fix`, `docs`, `chore`, `ci`, `build`, `refactor`, `perf`, `style`, `test`, `revert`) and the same optional scope.
 
 ## Branches
 
@@ -9,7 +9,8 @@ Issues and branches follow the same Conventional Commits vocabulary as commit me
 ```
 
 - `type` is a Conventional Commits type, followed by `/`.
-- Description is lowercase kebab-case, short, and says what the branch does, e.g. `feat/claude-config`, `fix/header-overflow`, `docs/readme-setup`.
+- Enforced by the Husky `pre-push` hook (`.husky/pre-push`), which rejects pushes of branches not matching `^(type)/[a-z0-9]+(-[a-z0-9]+)*$`; `main`, tags and branch deletions are exempt. Rename with `git branch -m` instead of bypassing with `--no-verify`.
+- Description is lowercase kebab-case (letters, digits and single hyphens only), short, and says what the branch does, e.g. `feat/claude-config`, `fix/header-overflow`, `docs/readme-setup`.
 - Use the optional scope as a prefix of the description when it helps, e.g. `fix/parser-empty-input`.
 - One branch per logical change, matching the small-commits rule; keep branches short-lived.
 - Mark a breaking change in the PR/commit (`!` or `BREAKING CHANGE:`), not in the branch name.

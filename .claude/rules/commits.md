@@ -22,7 +22,7 @@ Sources: [Make Small Commits](https://dev.to/oculus42/make-small-commits-22cd), 
 [optional footer(s)]
 ```
 
-- `type` is required: `feat` (new feature, SemVer MINOR), `fix` (bug fix, SemVer PATCH), or one of `build`, `chore`, `ci`, `docs`, `style`, `refactor`, `perf`, `test`.
+- `type` is required: `feat` (new feature, SemVer MINOR), `fix` (bug fix, SemVer PATCH), or one of `build`, `chore`, `ci`, `docs`, `style`, `refactor`, `perf`, `test`, `revert`.
 - `scope` is an optional noun in parentheses, e.g. `fix(parser):`.
 - `description` is required: a short summary right after `: `, lowercase, imperative, no trailing period.
 - Body is free-form and starts after one blank line; explain what and why, not how.
