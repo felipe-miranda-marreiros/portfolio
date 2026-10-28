@@ -1,0 +1,6 @@
+{
+  "name": "portfolio",
+  "devDependencies": {
+    "@types/bun": "latest"
+  }
+}
