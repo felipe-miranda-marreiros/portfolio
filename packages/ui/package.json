@@ -4,5 +4,16 @@
   "type": "module",
   "exports": {
     "./styles.css": "./src/styles.css"
+  },
+  "scripts": {
+    "dev": "vite --port 5174 --strictPort"
+  },
+  "dependencies": {
+    "@fontsource-variable/funnel-display": "5.3.0",
+    "@fontsource-variable/funnel-sans": "5.3.0",
+    "lucide-static": "1.57.0"
+  },
+  "devDependencies": {
+    "vite": "8.3.5"
   }
 }

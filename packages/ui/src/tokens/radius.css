@@ -1,0 +1,14 @@
+/** Radius tokens: three steps, and which component family uses which. */
+
+:root {
+  --radius-1: 0.375rem;
+  --radius-2: 0.625rem;
+  --radius-full: 9999px;
+
+  --radius-chip: var(--radius-1);
+  --radius-skeleton: var(--radius-1);
+  --radius-field: var(--radius-2);
+  --radius-surface: var(--radius-2);
+  --radius-action: var(--radius-full);
+  --radius-avatar: var(--radius-full);
+}
