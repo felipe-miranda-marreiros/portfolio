@@ -47,6 +47,20 @@ The `ponytail` skill (`.claude/skills/ponytail/`, from [DietrichGebert/ponytail]
 - Package manager and runtime: **Bun** (lockfile is `bun.lock`; use `bun install`, not npm/yarn/pnpm).
 - `.gitignore` covers `node_modules/`, build output, env files, logs and coverage. `bun.lock` is tracked.
 
+## Agent skills
+
+### Issue tracker
+
+Issues and specs live in GitHub Issues (`felipe-miranda-marreiros/portfolio`), managed with `gh`. See `docs/agents/issue-tracker.md`.
+
+### Triage labels
+
+The five default triage roles, each label named after its role: `needs-triage`, `needs-info`, `ready-for-agent`, `ready-for-human`, `wontfix`. See `docs/agents/triage-labels.md`.
+
+### Domain docs
+
+Single-context: `GLOSSARY.md` and `docs/adr/` at the repo root. See `docs/agents/domain.md`.
+
 <!-- rtk-instructions v2 -->
 # Command output
 
