@@ -1,21 +1,22 @@
-// PreToolUse hook: block `gh pr create` / `gh pr edit` unless the PR body follows the `pr` skill
-// (.claude/skills/pr): Summary, Evidence and Merge Danger sections. Exit 2 denies the tool call.
+/**
+ * PreToolUse hook that blocks `gh pr create` and `gh pr edit` unless the PR body follows the
+ * `pr` skill (`.claude/skills/pr`): Summary, Evidence and Merge Danger sections.
+ * Exits 2 to deny the tool call.
+ */
 import { existsSync, readFileSync } from "node:fs";
 
 const input = JSON.parse(await Bun.stdin.text());
 const command: string = input.tool_input?.command ?? "";
 
-// only where a command can start (line start, after ; & | ( or $( ), so text in quoted args doesn't trigger it
+// anchored to command position so `gh pr create` inside a quoted argument doesn't trigger it
 const match = command.match(/(?:^|[;&|(\n]|\$\()\s*gh\s+pr\s+(create|edit)\b/);
 if (!match) process.exit(0);
 
 const bodyFile = command.match(/(?:--body-file|-F)[\s=]+["']?([^\s"']+)/)?.[1];
 const setsBody = /(?:--body\b|-b\s|--body-file|-F\b|--fill)/.test(command);
 
-// `gh pr edit` without a body flag (e.g. --title) leaves the body alone
 if (match[1] === "edit" && !setsBody) process.exit(0);
 
-// the body is inline in the command (flag value or heredoc), or in a file we can read
 const body = bodyFile && bodyFile !== "-" && existsSync(bodyFile) ? readFileSync(bodyFile, "utf8") : command;
 
 const missing = ["Summary", "Evidence", "Merge Danger"].filter((s) => !new RegExp(String.raw`##\s+${s}\b`).test(body));
