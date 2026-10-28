@@ -1,5 +1,10 @@
 {
   "name": "portfolio",
+  "private": true,
+  "workspaces": [
+    "apps/*",
+    "packages/*"
+  ],
   "devDependencies": {
     "@biomejs/biome": "2.6.3",
     "@commitlint/cli": "^21.2.4",
