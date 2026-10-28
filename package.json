@@ -1,6 +1,12 @@
 {
   "name": "portfolio",
   "devDependencies": {
-    "@types/bun": "latest"
+    "@commitlint/cli": "^21.2.4",
+    "@commitlint/config-conventional": "^21.2.4",
+    "@types/bun": "latest",
+    "husky": "^9.1.7"
+  },
+  "scripts": {
+    "prepare": "husky"
   }
 }
