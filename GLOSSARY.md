@@ -1,6 +1,6 @@
 # Portfolio
 
-A dynamic portfolio for a software engineer: the owner manages content in an admin app, and visitors read it on a public site.
+A dynamic portfolio for a software engineer: the Owner manages Content in the CMS, and Visitors read it on the Portfolio.
 
 ## Language
 
@@ -9,7 +9,7 @@ The single person who authors and publishes all content. The only authenticated 
 _Avoid_: Admin, user, author
 
 **Visitor**:
-Anyone browsing the public site. Never authenticated.
+Anyone browsing the Portfolio. Never authenticated.
 _Avoid_: User, reader, client
 
 **Content**:

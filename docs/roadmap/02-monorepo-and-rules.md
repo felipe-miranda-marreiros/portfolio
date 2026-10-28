@@ -20,7 +20,7 @@ Work:
 Exit criteria:
 
 - [ ] `bun install` and each app's dev command work from a clean checkout.
-- [ ] Both front-ends import from `packages/ui`.
+- [ ] The Portfolio and the CMS import from `packages/ui`.
 - [ ] Hooks and CI pass on the skeleton.
 
 ## 2b: rules, CI, shared UI
@@ -32,8 +32,8 @@ Exit criteria:
 Work:
 
 - **Rules** in `.claude/rules/`, path-scoped where possible:
-  - Back-end invariants and front-end invariants (listed in [05-parallel-build.md](05-parallel-build.md)).
-  - The `packages/ui` import rule: front-ends import UI from `packages/ui`. It is a rule, not a mapper or adapter layer.
+  - API invariants and Portfolio/CMS invariants (listed in [05-parallel-build.md](05-parallel-build.md)).
+  - The `packages/ui` import rule: the Portfolio and the CMS import UI from `packages/ui`. It is a rule, not a mapper or adapter layer.
   - Test seams and how to use `tdd`.
 - **Rebase-only repository.** GitHub allows only "Rebase and merge", with linear history required on `main`. Update `issues-branches-and-prs.md` and `CLAUDE.md`, which currently describe a squash merge: the PR title becomes the review summary, and every commit is the history, so every commit must be conventional and atomic. Agents rebase onto `main` before asking for merge.
 - **Local infrastructure:** a `docker compose` Postgres, and a setup script that creates one database per worktree (named from the worktree) and a throwaway database per test run.

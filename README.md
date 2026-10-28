@@ -49,6 +49,11 @@ The diagram source is [`docs/workflow.excalidraw`](docs/workflow.excalidraw); op
 | `impeccable` skill and subagents | `.claude/skills/impeccable/`, `.claude/agents/` | Frontend design, review and documentation |
 | `code-review` skill | `.claude/skills/code-review/` | Reviews a diff for Standards and Spec |
 | `pr` skill | `.claude/skills/pr/` | Writes the PR body the hook then verifies |
+| `grilling`, `grill-me`, `grill-with-docs` skills | `.claude/skills/` | Stress-test a plan by relentless questioning |
+| `domain-modeling` skill | `.claude/skills/domain-modeling/` | Keeps `GLOSSARY.md` and `docs/adr/` current |
+| `codebase-design` skill | `.claude/skills/codebase-design/` | Vocabulary for designing deep modules |
+| `to-spec`, `to-tickets`, `implement` skills | `.claude/skills/` | Spec, then tickets with blocking edges, then the build |
+| `tdd` skill | `.claude/skills/tdd/` | Red-green-refactor at agreed seams |
 
 The two kinds work together: a rule or skill tells the agent what good looks like, and a deterministic gate rejects the work when it still misses.
 

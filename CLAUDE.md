@@ -4,7 +4,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Current state
 
-This repository is a scaffold for a portfolio project: there is no application source or build system yet, only the tooling that enforces the conventions below (Husky hooks, commitlint, Biome, GitHub workflows, Claude Code rules, hook and skills).
+This repository is a scaffold for a portfolio project: there is no application source or build system yet, only the tooling that enforces the conventions below (Husky hooks, commitlint, Biome, GitHub workflows, Claude Code rules, hook and skills). Domain vocabulary is in `GLOSSARY.md`, decisions in `docs/adr/` and the plan in `docs/roadmap/`.
 
 ## Commands
 
@@ -36,7 +36,7 @@ Keep files free of comment bloat: document with JSDoc (`/** */`) when something 
 
 ## Pull requests
 
-Every PR body must follow the `pr` skill in `.claude/skills/pr/` (from [mattpocock/skills](https://github.com/mattpocock/skills/tree/main/skills/engineering/pr), MIT): invoke `/pr` before `gh pr create` or `gh pr edit --body`, and write `## Summary`, `## Evidence` and `## Merge Danger` sections. A `PreToolUse` hook in `.claude/settings.json` blocks `gh pr create`/`gh pr new`/`gh pr edit` when the body lacks them (and any `--fill`), and the `body` job in `pr.yml` checks it again in CI. Both use `missingSections` from `scripts/pr-body.ts`, the single definition of the required sections. Project skills live in `.claude/skills/` as real files (not symlinks: `core.symlinks` is off on Windows); `skills-lock.json` and `.agents/skills/` come from the skills installer. The skill mentions a `GLOSSARY.md` for domain language, which this repo doesn't have yet.
+Every PR body must follow the `pr` skill in `.claude/skills/pr/` (from [mattpocock/skills](https://github.com/mattpocock/skills/tree/main/skills/engineering/pr), MIT): invoke `/pr` before `gh pr create` or `gh pr edit --body`, and write `## Summary`, `## Evidence` and `## Merge Danger` sections. A `PreToolUse` hook in `.claude/settings.json` blocks `gh pr create`/`gh pr new`/`gh pr edit` when the body lacks them (and any `--fill`), and the `body` job in `pr.yml` checks it again in CI. Both use `missingSections` from `scripts/pr-body.ts`, the single definition of the required sections. Project skills live in `.claude/skills/` as real files (not symlinks: `core.symlinks` is off on Windows); `skills-lock.json` and `.agents/skills/` come from the skills installer.
 
 ## Ponytail
 

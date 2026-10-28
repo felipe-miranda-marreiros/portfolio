@@ -1,6 +1,6 @@
 # Roadmap overview
 
-This is a **pre-roadmap**: it fixes the process, the gates and the stack, and deliberately leaves the contents of v1 (pages, Content types, fields) to be derived from the approved design. Nothing here is implemented yet. Vocabulary is in [`GLOSSARY.md`](../../GLOSSARY.md) and decisions in [`docs/adr/`](../adr/).
+This is a **pre-roadmap**: it fixes the process, the gates and the stack, and deliberately leaves the contents of v1 (pages, Content types, fields) to be derived from the approved design. Apart from Phase 0, nothing here is implemented yet. Vocabulary is in [`GLOSSARY.md`](../../GLOSSARY.md) and decisions in [`docs/adr/`](../adr/).
 
 ## Goals
 
@@ -43,7 +43,7 @@ Deferred work lives in [backlog.md](backlog.md).
 
 ## Phase 0: foundations
 
-Already in the repo: the harness (hooks, CI, commitlint, Biome), the `pr`, `code-review`, `ponytail`, `impeccable`, `grilling`, `grill-with-docs`, `domain-modeling`, `to-spec`, `to-tickets`, `implement` and `tdd` skills, `GLOSSARY.md` and ADRs 0001-0005.
+Already in the repo: the harness (hooks, CI, commitlint, Biome), the `pr`, `code-review`, `ponytail`, `impeccable`, `grilling`, `grill-me`, `grill-with-docs`, `domain-modeling`, `codebase-design`, `to-spec`, `to-tickets`, `implement` and `tdd` skills, `GLOSSARY.md` and ADRs 0001-0005.
 
 Remaining:
 
@@ -59,11 +59,11 @@ Independent of the design:
 | Area | Decision |
 | --- | --- |
 | Runtime and language | TypeScript on Bun, Bun workspaces only (no Turborepo or Nx) |
-| API | Fastify, Zod, OpenAPI (Swagger), Drizzle, PostgreSQL in Docker, Better Auth ([ADR 0003](../adr/0003-backend-stack.md)) |
-| Source of truth | The API owns Content and its invariants; the CMS is a custom admin over it ([ADR 0001](../adr/0001-api-owns-content-and-invariants.md)) |
+| API | Fastify, Zod, OpenAPI (Swagger), Drizzle, PostgreSQL in Docker, Better Auth ([ADR 0003](../adr/0003-api-stack.md)) |
+| Source of truth | The API owns Content and its invariants; the CMS is a custom client of it ([ADR 0001](../adr/0001-api-owns-content-and-invariants.md)) |
 | Portfolio | Astro; i18next for hardcoded strings; locale-prefixed routes (`/en`, `/pt-br`), `/` redirects by `Accept-Language`, default `en` |
 | CMS | Vite + React SPA, TanStack Router and Query, React Hook Form, Zod; English constants, no i18next |
-| Shared UI | Both front-ends import UI from `packages/ui`, as a plain rule ([ADR 0005](../adr/0005-shared-ui-package-before-css-framework.md)) |
+| Shared UI | The Portfolio and the CMS import UI from `packages/ui`, as a plain rule ([ADR 0005](../adr/0005-shared-ui-package-before-css-framework.md)) |
 | CSS framework | Not chosen. Decided at the gate after the design |
 | Independence | Contract-first: `packages/contracts` is the seam between the apps ([ADR 0002](../adr/0002-contract-first-independent-apps.md)) |
 | Publishing | Content is Published only when complete in both Locales ([ADR 0004](../adr/0004-publish-requires-both-locales.md)) |
