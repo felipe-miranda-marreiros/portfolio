@@ -4,27 +4,39 @@
  * Exits 2 to deny the tool call.
  */
 import { existsSync, readFileSync } from "node:fs";
+import { missingSections } from "../../scripts/pr-body.ts";
+
+function deny(reason: string): never {
+  console.error(`${reason} See .claude/skills/pr/SKILL.md; invoke /pr before writing the body.`);
+  process.exit(2);
+}
 
 const input = JSON.parse(await Bun.stdin.text());
 const command: string = input.tool_input?.command ?? "";
 
 // anchored to command position so `gh pr create` inside a quoted argument doesn't trigger it
-const match = command.match(/(?:^|[;&|(\n]|\$\()\s*gh\s+pr\s+(create|edit)\b/);
-if (!match) process.exit(0);
+const subcommand = command.match(/(?:^|[;&|(\n]|\$\()\s*gh\s+pr\s+(create|new|edit)\b/)?.[1];
+if (!subcommand) process.exit(0);
 
-const bodyFile = command.match(/(?:--body-file|-F)[\s=]+["']?([^\s"']+)/)?.[1];
-const setsBody = /(?:--body\b|-b\s|--body-file|-F\b|--fill)/.test(command);
+// flags are only looked for outside quotes, so a body that mentions `--fill` isn't mistaken for the flag
+const unquoted = command.replace(/"(?:\\.|[^"\\])*"|'[^']*'/g, '""');
 
-if (match[1] === "edit" && !setsBody) process.exit(0);
+if (/(?:^|\s)--fill(?:-first|-verbose)?(?=\s|$)/.test(unquoted)) {
+  deny("--fill builds the PR body from commits, which skips the required sections.");
+}
 
-const body = bodyFile && bodyFile !== "-" && existsSync(bodyFile) ? readFileSync(bodyFile, "utf8") : command;
+const setsBody = /(?<=\s)(?:--body|-b|--body-file|-F)(?=[\s="']|$)/.test(unquoted);
+if (subcommand === "edit" && !setsBody) process.exit(0);
 
-const missing = ["Summary", "Evidence", "Merge Danger"].filter((s) => !new RegExp(String.raw`##\s+${s}\b`).test(body));
-if (missing.length === 0) process.exit(0);
+const bodyFile = command.match(/(?<=\s)(?:--body-file|-F)[\s=]+["']?([^\s"']+)/)?.[1];
+const withoutTitle = command.replace(/(?<=\s)(?:--title|-t)[\s=]+("(?:\\.|[^"\\])*"|'[^']*'|\S+)/g, "");
+const body = bodyFile && bodyFile !== "-" && existsSync(bodyFile) ? readFileSync(bodyFile, "utf8") : withoutTitle;
 
-console.error(
-  `PR body must follow the pr skill (.claude/skills/pr/SKILL.md). Missing section(s): ${missing.join(", ")}. ` +
-    "Invoke /pr, then pass a body with '## Summary', '## Evidence' and '## Merge Danger'. " +
-    "--fill and bodies read from stdin cannot be verified; pass the body inline or via --body-file.",
-);
-process.exit(2);
+const missing = missingSections(body);
+if (missing.length > 0) {
+  const headings = missing.map((section) => `'## ${section}'`).join(", ");
+  deny(
+    `PR body is missing section(s): ${headings}. Pass the body inline or with --body-file; ` +
+      "bodies read from stdin cannot be verified.",
+  );
+}
