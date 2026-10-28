@@ -11,7 +11,7 @@ This repository is a Bun workspaces monorepo at the skeleton stage (roadmap phas
 - `bun install`: installs dependencies and sets up the Husky hooks via the `prepare` script.
 - `bun test`: runs the tests (currently `scripts/check-pr-body.test.ts`, which covers the PR body hook). Run a single test with `bun test -t "<name>"`.
 - `bun run lint`: runs Biome (`biome check .`: format, lint, import order). `bun run fix` applies the safe fixes.
-- `bun run dev:portfolio` (http://localhost:4321) and `bun run dev:cms` (http://localhost:5173): start an app's dev server.
+- `bun run dev:portfolio` (http://localhost:4321) and `bun run dev:cms` (http://localhost:5173): start an app's dev server. `bun run dev:ui` (http://localhost:5174) serves the design system dev pages from `packages/ui`: the token specimen (`/specimen/`), the component gallery (`/gallery/`) and the working patterns (`/patterns/`).
 - `bun run build`: runs every workspace's `build` script (the CMS typechecks with `tsc` first).
 
 ## Commits
