@@ -1,19 +1,22 @@
 # Portfolio
 
-A portfolio project built to work with AI coding agents. There is no application source yet: this repository is the **harness**, the tooling that keeps an agent's work correct and consistent from the first line of code.
+A portfolio project built to work with AI coding agents. The apps are still placeholders: most of this repository is the **harness**, the tooling that keeps an agent's work correct and consistent from the first line of code.
 
 ## Install and run
 
 Requires [Bun](https://bun.sh).
 
 ```sh
-bun install      # installs dependencies and sets up the Husky git hooks
-bun test         # runs the tests
-bun run lint     # Biome: format, lint, import order
-bun run fix      # applies Biome's safe fixes
+bun install            # installs dependencies and sets up the Husky git hooks
+bun test               # runs the tests
+bun run lint           # Biome: format, lint, import order
+bun run fix            # applies Biome's safe fixes
+bun run dev:portfolio  # Portfolio (Astro) at http://localhost:4321
+bun run dev:cms        # CMS (Vite + React) at http://localhost:5173
+bun run build          # builds every workspace
 ```
 
-There is no app to start yet. Once the source lands, its run command goes here.
+The apps live in `apps/` (`portfolio`, `cms`, `api`) and shared code in `packages/` (`ui`, `contracts`).
 
 ## Workflow and quality gates
 

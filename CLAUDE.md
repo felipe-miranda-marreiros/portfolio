@@ -4,13 +4,15 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Current state
 
-This repository is a scaffold for a portfolio project: there is no application source or build system yet, only the tooling that enforces the conventions below (Husky hooks, commitlint, Biome, GitHub workflows, Claude Code rules, hook and skills). Domain vocabulary is in `GLOSSARY.md`, decisions in `docs/adr/` and the plan in `docs/roadmap/`.
+This repository is a Bun workspaces monorepo at the skeleton stage (roadmap phase 2a): `apps/portfolio` (Astro, placeholder pages under `/en` and `/pt-br`), `apps/cms` (Vite + React with TanStack Router file-based routes), `apps/api` (placeholder only), and `packages/ui` and `packages/contracts` (empty, imported by both apps), plus the tooling that enforces the conventions below (Husky hooks, commitlint, Biome, GitHub workflows, Claude Code rules, hook and skills). Domain vocabulary is in `GLOSSARY.md`, decisions in `docs/adr/` and the plan in `docs/roadmap/`.
 
 ## Commands
 
 - `bun install`: installs dependencies and sets up the Husky hooks via the `prepare` script.
 - `bun test`: runs the tests (currently `scripts/check-pr-body.test.ts`, which covers the PR body hook). Run a single test with `bun test -t "<name>"`.
 - `bun run lint`: runs Biome (`biome check .`: format, lint, import order). `bun run fix` applies the safe fixes.
+- `bun run dev:portfolio` (http://localhost:4321) and `bun run dev:cms` (http://localhost:5173): start an app's dev server.
+- `bun run build`: runs every workspace's `build` script (the CMS typechecks with `tsc` first).
 
 ## Commits
 
