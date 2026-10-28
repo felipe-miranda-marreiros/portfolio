@@ -19,9 +19,9 @@ Work:
 
 Exit criteria:
 
-- [ ] `bun install` and each app's dev command work from a clean checkout.
-- [ ] The Portfolio and the CMS import from `packages/ui`.
-- [ ] Hooks and CI pass on the skeleton.
+- [x] `bun install` and each app's dev command work from a clean checkout.
+- [x] The Portfolio and the CMS import from `packages/ui`.
+- [x] Hooks and CI pass on the skeleton.
 
 ## 2b: rules, CI, shared UI
 
