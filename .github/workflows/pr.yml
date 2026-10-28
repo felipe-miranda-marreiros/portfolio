@@ -49,15 +49,9 @@ jobs:
     name: PR body
     runs-on: ubuntu-latest
     steps:
+      - uses: actions/checkout@v4
+      - uses: oven-sh/setup-bun@v2
       - name: Check body follows the pr skill
         env:
           PR_BODY: ${{ github.event.pull_request.body }}
-        run: |
-          status=0
-          for section in "Summary" "Evidence" "Merge Danger"; do
-            if ! printf '%s\n' "$PR_BODY" | grep -Eq "^##[[:space:]]+$section"; then
-              echo "✖ PR body is missing a '## $section' section (see .claude/skills/pr/SKILL.md)" >&2
-              status=1
-            fi
-          done
-          exit $status
+        run: bun scripts/pr-body.ts
