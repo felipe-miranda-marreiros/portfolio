@@ -10,7 +10,7 @@ One design system covers the Portfolio and the CMS. These rules bind every desig
 - The mode of each surface (the Portfolio is expressive, the CMS is quiet and utilitarian), and what changes between them (density, expression, motion) while the tokens stay shared.
 - Accessibility: WCAG 2.2 AA, visible focus everywhere, 24px minimum targets (44px on touch), `prefers-reduced-motion` honored, no information carried by color alone.
 - i18n: layouts take `pt-BR` text running about 30% longer than `en` with no truncation or overflow; no text in images; dates and numbers formatted per locale.
-- Themes: light and dark, both first-class. Semantic tokens carry both themes; the default follows `prefers-color-scheme`.
+- Themes: light and dark, both first-class. Semantic tokens carry both themes. Both apps open in dark whatever the system preference; an explicit choice of light overrides it and is remembered.
 
 ### Tokens
 
