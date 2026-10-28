@@ -43,14 +43,14 @@ No unit tests of individual components.
 
 ## Invariants
 
-Back-end (the API enforces; the Contract describes):
+API (enforced by the API; the Contract describes them):
 
 - Content is Published only when complete in every Locale.
 - Public endpoints return only Published Content.
 - Owner endpoints require a session; there is no public sign-up.
 - Further rules (slug uniqueness, deletion of referenced Content, Media alt text) are provisional until phase 4.
 
-Front-end (rules for both apps):
+Portfolio and CMS (rules for both apps):
 
 1. UI is imported only from `packages/ui`.
 2. Forms validate with the Contract's Zod schemas and never redefine them.
