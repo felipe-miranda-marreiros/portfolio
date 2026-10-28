@@ -1,0 +1,28 @@
+/**
+ * Chip: `<span class="ui-chip">`, a short non-interactive label. `data-variant="outline"` for a quieter chip.
+ */
+@layer components {
+  .ui-chip {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-inset-xs);
+    padding: 0 var(--space-inset-sm);
+    border: var(--border-width-control) var(--border-style-default) var(--color-surface-inverse);
+    border-radius: var(--radius-chip);
+    background: var(--color-surface-inverse);
+    color: var(--color-text-inverse);
+    font: var(--text-label);
+    font-variant-numeric: tabular-nums;
+  }
+
+  .ui-chip[data-variant="outline"] {
+    border-color: var(--color-border-control);
+    background: transparent;
+    color: var(--color-text);
+  }
+
+  .ui-chip svg {
+    width: var(--size-icon-sm);
+    height: var(--size-icon-sm);
+  }
+}

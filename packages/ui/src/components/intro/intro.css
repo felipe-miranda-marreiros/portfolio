@@ -1,0 +1,51 @@
+/**
+ * Introduction: the Owner's first-person sentence at display size, the inline portrait, the statement and the actions.
+ * The name, avatar and the punctuation after them sit in `.ui-intro__name` so they never break apart.
+ */
+@layer components {
+  .ui-intro {
+    /* The title wraps at about two lines of a short sentence; pt-BR runs longer, so it gets a wider measure and a step down. */
+    --intro-measure: 13ch;
+    --intro-measure-long: 14ch;
+    --intro-size-long: calc(var(--text-size-display) * 0.86);
+
+    padding-inline: var(--space-page-inline);
+    max-width: var(--size-container-page);
+    margin-inline: auto;
+  }
+
+  .ui-intro__title {
+    margin: 0;
+    max-width: var(--intro-measure);
+    font: var(--text-display);
+    letter-spacing: var(--text-tracking-display);
+    text-wrap: balance;
+  }
+
+  .ui-intro__title:lang(pt-BR) {
+    max-width: var(--intro-measure-long);
+    font-size: var(--intro-size-long);
+  }
+
+  .ui-intro__name {
+    white-space: nowrap;
+  }
+
+  /* Display descenders hang below the tight line box, so the lead needs the larger stack step to clear them. */
+  .ui-intro__lead {
+    margin: var(--space-stack-xl) 0 0;
+    max-width: var(--text-measure-lead);
+    font: var(--text-lead);
+    color: var(--color-text-muted);
+    text-wrap: pretty;
+  }
+
+  .ui-intro__actions {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: var(--space-gap-sm) var(--space-gap-md);
+    margin-top: var(--space-stack-lg);
+    font: var(--text-body);
+  }
+}

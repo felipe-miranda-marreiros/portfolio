@@ -1,0 +1,91 @@
+/**
+ * Field: `<div class="ui-field">` with a label, an optional hint, a control and an optional error.
+ * The control is `.ui-input` on `<input>`, `<textarea>` (text area) or `<select>`.
+ * Invalid: `aria-invalid="true"` on the control plus a `.ui-field__error` it points to with `aria-describedby`.
+ */
+@layer components {
+  .ui-field {
+    display: grid;
+    gap: var(--space-stack-xs);
+    align-content: start;
+    min-width: 0;
+  }
+
+  .ui-field__label {
+    font: var(--text-label);
+    color: var(--color-text);
+  }
+
+  .ui-field__hint {
+    margin: 0;
+    font: var(--text-caption);
+    color: var(--color-text-muted);
+  }
+
+  .ui-field__error {
+    display: flex;
+    gap: var(--space-inset-xs);
+    align-items: start;
+    margin: 0;
+    font: var(--text-caption);
+    font-weight: var(--font-weight-semibold);
+    color: var(--color-danger);
+  }
+
+  .ui-input {
+    width: 100%;
+    min-height: var(--size-control-md);
+    padding: var(--space-inset-sm) var(--space-inset-md);
+    border: var(--border-width-control) var(--border-style-default) var(--color-border-control);
+    border-radius: var(--radius-field);
+    background: var(--color-surface-raised);
+    color: var(--color-text);
+    font: var(--text-body);
+    transition: border-color var(--duration-quick) var(--ease-out);
+  }
+
+  .ui-input::placeholder {
+    color: var(--color-text-muted);
+  }
+
+  .ui-input:is(:hover, [data-gallery-state~="hover"]):not(:disabled, [readonly]) {
+    border-color: var(--color-text-muted);
+  }
+
+  .ui-input:is(:focus-visible, [data-gallery-state~="focus"]) {
+    border-color: var(--color-text);
+    outline: var(--border-width-focus) var(--border-style-default) var(--color-focus);
+    outline-offset: var(--border-width-1);
+  }
+
+  .ui-input[aria-invalid="true"] {
+    border-color: var(--color-danger);
+  }
+
+  .ui-input:disabled {
+    opacity: var(--opacity-disabled);
+    cursor: not-allowed;
+  }
+
+  .ui-input[readonly] {
+    background: transparent;
+    border-style: var(--border-style-draft);
+  }
+
+  textarea.ui-input {
+    min-height: calc(var(--size-control-md) * 3);
+    resize: vertical;
+    line-height: var(--text-leading-normal);
+  }
+
+  select.ui-input {
+    cursor: pointer;
+  }
+
+  .ui-field__count {
+    justify-self: end;
+    font: var(--text-caption);
+    font-variant-numeric: tabular-nums;
+    color: var(--color-text-muted);
+  }
+}

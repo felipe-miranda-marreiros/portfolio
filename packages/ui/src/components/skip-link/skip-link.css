@@ -1,0 +1,22 @@
+/**
+ * Skip link: `<a class="ui-skip-link ui-button" href="#main">`, the first focusable element on every page.
+ * Off-screen until focused, then pinned to the top-left corner above everything.
+ */
+@layer components {
+  .ui-skip-link {
+    position: fixed;
+    inset-block-start: var(--space-4);
+    inset-inline-start: var(--space-4);
+    z-index: var(--z-toast);
+    translate: 0 calc(-100% - var(--space-8));
+    transition: translate var(--duration-quick) var(--ease-out);
+  }
+
+  .ui-skip-link:is(:focus, [data-gallery-state~="focus"]) {
+    translate: 0 0;
+  }
+
+  .ui-skip-link[data-gallery-state] {
+    position: static;
+  }
+}

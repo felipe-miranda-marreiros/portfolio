@@ -1,0 +1,20 @@
+/**
+ * Icon: `<span class="ui-icon" aria-hidden="true">` wrapping an SVG from Lucide (`lucide-static`, ISC).
+ * Icons inherit text colour and are decorative; the control or text next to them carries the meaning.
+ */
+@layer components {
+  .ui-icon {
+    display: inline-flex;
+    flex: none;
+  }
+
+  .ui-icon svg {
+    width: var(--size-icon-sm);
+    height: var(--size-icon-sm);
+  }
+
+  .ui-icon[data-size="md"] svg {
+    width: var(--size-icon-md);
+    height: var(--size-icon-md);
+  }
+}

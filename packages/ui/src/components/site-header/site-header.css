@@ -1,0 +1,66 @@
+/**
+ * Site header: wordmark, section links and the Locale and theme switches.
+ * Below 56rem the wordmark, the switches and the links each take a row; the links never hide.
+ */
+@layer components {
+  .ui-site-header {
+    display: grid;
+    grid-template-columns: 1fr auto auto;
+    grid-template-areas: "mark nav controls";
+    align-items: center;
+    gap: var(--space-gap-sm) var(--space-gap-md);
+    padding: var(--space-page-block) var(--space-page-inline) 0;
+    max-width: var(--size-container-page);
+    margin-inline: auto;
+  }
+
+  .ui-site-header__mark {
+    grid-area: mark;
+    justify-self: start;
+    font: var(--text-label);
+    font-family: var(--font-display);
+    font-size: var(--text-size-md);
+    text-decoration: none;
+    border-radius: var(--radius-chip);
+  }
+
+  .ui-site-header__nav {
+    grid-area: nav;
+  }
+
+  .ui-site-header__nav ul {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-gap-sm) var(--space-gap-md);
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    font: var(--text-label);
+  }
+
+  .ui-site-header__nav a {
+    display: inline-flex;
+    align-items: center;
+    min-height: var(--size-target-min);
+  }
+
+  .ui-site-header__controls {
+    grid-area: controls;
+    display: flex;
+    gap: var(--space-gap-sm);
+  }
+
+  @media (width < 56rem) {
+    .ui-site-header {
+      grid-template-columns: minmax(0, 1fr);
+      grid-template-areas:
+        "mark"
+        "controls"
+        "nav";
+    }
+
+    .ui-site-header__nav a {
+      min-height: var(--size-target-touch);
+    }
+  }
+}

@@ -1,0 +1,41 @@
+/** Site footer: the Owner's name and secondary links (email, profiles), quiet and last. */
+@layer components {
+  .ui-site-footer {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    gap: var(--space-gap-sm) var(--space-gap-md);
+    padding: var(--space-page-block) var(--space-page-inline);
+    max-width: var(--size-container-page);
+    margin-inline: auto;
+    color: var(--color-text-muted);
+    font: var(--text-caption);
+  }
+
+  .ui-site-footer p {
+    margin: 0;
+  }
+
+  .ui-site-footer ul {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-gap-sm) var(--space-gap-md);
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    font: var(--text-label);
+  }
+
+  .ui-site-footer a {
+    display: inline-flex;
+    align-items: center;
+    min-height: var(--size-target-min);
+  }
+
+  @media (pointer: coarse) {
+    .ui-site-footer a {
+      min-height: var(--size-target-touch);
+    }
+  }
+}

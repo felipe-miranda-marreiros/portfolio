@@ -1,0 +1,55 @@
+/**
+ * Skeleton: `<span class="ui-skeleton" data-shape="line|block|circle" aria-hidden="true">`.
+ * A line takes the font size of where it sits; a block takes its height from the component it stands in for;
+ * a circle takes `--skeleton-size`. The loading region around it carries `aria-busy="true"` and a polite status.
+ * Each skeleton fades in after `--duration-skeleton-delay`, so fast loads never flash it.
+ */
+@layer components {
+  .ui-skeleton {
+    --skeleton-size: var(--size-portrait-md);
+
+    display: block;
+    border-radius: var(--radius-skeleton);
+    background:
+      linear-gradient(
+        90deg,
+        var(--color-skeleton-base) 0%,
+        var(--color-skeleton-highlight) 50%,
+        var(--color-skeleton-base) 100%
+      )
+      0 0 / 200% 100%;
+    animation:
+      ui-skeleton-in var(--duration-quick) var(--ease-out) var(--duration-skeleton-delay) both,
+      ui-skeleton-shimmer var(--duration-skeleton) var(--ease-in-out) infinite;
+  }
+
+  .ui-skeleton[data-shape="line"] {
+    height: 1em;
+    margin-block: calc((1lh - 1em) / 2);
+  }
+
+  .ui-skeleton[data-shape="circle"] {
+    width: var(--skeleton-size);
+    height: var(--skeleton-size);
+    border-radius: var(--radius-avatar);
+  }
+
+  @keyframes ui-skeleton-in {
+    from {
+      opacity: 0;
+    }
+  }
+
+  @keyframes ui-skeleton-shimmer {
+    to {
+      background-position: -200% 0;
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .ui-skeleton {
+      animation: none;
+      background: var(--color-skeleton-base);
+    }
+  }
+}
