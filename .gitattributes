@@ -1,3 +1,4 @@
 * text=auto eol=lf
 .claude/skills/impeccable/** linguist-vendored
 **/routeTree.gen.ts linguist-generated
+.impeccable/design.json linguist-generated
