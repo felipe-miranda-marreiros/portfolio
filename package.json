@@ -16,6 +16,8 @@
     "prepare": "husky",
     "test": "bun test",
     "lint": "biome check .",
-    "fix": "biome check --write ."
+    "fix": "biome check --write .",
+    "dev:portfolio": "bun --filter @portfolio/portfolio dev",
+    "build": "bun --filter '*' build"
   }
 }
