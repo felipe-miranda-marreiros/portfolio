@@ -41,3 +41,14 @@ The `ponytail` skill (`.claude/skills/ponytail/`, from [DietrichGebert/ponytail]
 
 - Package manager and runtime: **Bun** (lockfile is `bun.lock`; use `bun install`, not npm/yarn/pnpm).
 - `.gitignore` covers `node_modules/`, build output, env files, logs and coverage. `bun.lock` is tracked.
+
+<!-- rtk-instructions v2 -->
+# Command output
+
+Command output here is condensed to save tokens, keeping every signal and
+dropping costly noise. Treat it as the complete result: run commands
+normally, and batch related commands into one call to avoid extra turns.
+Truncated results state their recovery path in their own output. Re-run a
+command as `rtk bypass <cmd>` only when its result is unusable: empty when
+output was clearly expected, contradicting its exit code, or garbled.
+<!-- /rtk-instructions -->
