@@ -1,0 +1,19 @@
+.sign-in {
+  display: grid;
+  place-items: center;
+  min-block-size: 100svh;
+  padding: var(--space-page-block) var(--space-page-inline);
+}
+
+.sign-in__form {
+  display: grid;
+  gap: var(--space-stack-md);
+  inline-size: 100%;
+  max-inline-size: var(--size-dialog);
+}
+
+.sign-in__title {
+  margin: 0 0 var(--space-stack-sm);
+  font: var(--text-title);
+  letter-spacing: var(--text-tracking-title);
+}

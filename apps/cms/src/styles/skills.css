@@ -1,0 +1,22 @@
+.skills__lede {
+  margin: 0;
+  max-width: var(--text-measure);
+  color: var(--color-text-muted);
+}
+
+.skills__add {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: start;
+  gap: var(--space-gap-sm);
+  max-width: var(--size-dialog);
+}
+
+.skills__add .ui-field {
+  flex: 1;
+}
+
+/* Lines the button up with the input, under the field's label. */
+.skills__add .ui-button {
+  margin-top: calc(var(--text-size-sm) * var(--text-leading-snug) + var(--space-stack-xs));
+}
