@@ -22,7 +22,7 @@ const field = (id, label, { value = "", hint = "", lang = "", area = false } = {
   </div>`;
 };
 
-const pair = (name, legend, en, pt, area = false) => `<fieldset class="ui-locale-pair wide">
+const pair = (name, legend, en, pt, area = false) => `<fieldset class="ui-locale-pair ui-form__wide">
     <legend class="ui-locale-pair__legend">${legend}</legend>
     ${field(`${name}-en`, 'English <span class="ui-chip" data-variant="outline">en</span>', { value: en, lang: "en", area })}
     ${field(`${name}-pt`, 'Portuguese <span class="ui-chip" data-variant="outline">pt-BR</span>', { value: pt, lang: "pt-BR", area })}
@@ -49,7 +49,7 @@ export const renderForm = (icons) => `
     </div>
   </div>
   <div id="summary-slot"></div>
-  <div class="form-grid">
+  <div class="ui-form__grid">
     ${pair("role", "Role", "Software Engineer", "")}
     ${field("company", "Company", { value: "" })}
     ${field("location", "Location", { hint: "City, or Remote.", value: "São Paulo" })}

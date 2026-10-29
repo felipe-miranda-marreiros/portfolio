@@ -4,10 +4,11 @@ Demo: `/patterns/#p-forms` (an Experience edit page that validates for real). Co
 
 ## Layout
 
-- **Header**: the item's title with its [status badge](../components/status.md), and the actions on the right: "Save draft" (secondary) then "Publish" (primary). The actions sit at the top, so they don't move as the form grows.
+- **Header**: the [app shell](../components/app-shell.md) header carries the item's title with its [status badge](../components/status.md), and the actions on the right: "Save draft" (secondary) then "Publish" (primary), tied to the form with the `form` attribute. The actions sit at the top, so they don't move as the form grows.
 - **Summary slot**: directly under the header, where the [form error summary](../components/error-summary.md) appears.
 - **Fields**: a two-column grid from 56rem; [locale field pairs](../components/locale-pair.md) and text areas span both columns; one column below 56rem. Order follows how the Owner thinks about the item (what, where, when, details).
 - Labels above controls, hints between label and control, errors under the control.
+- Code: `packages/ui/src/components/form/form.css`: `.ui-form` (up to `--size-container-form`) holds the summary slot and `.ui-form__grid`, where `.ui-form__wide` spans both columns.
 
 ## Two submit intents
 

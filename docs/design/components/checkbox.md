@@ -4,11 +4,13 @@ Code: `packages/ui/src/components/checkbox/checkbox.css`. CMS.
 
 ## Purpose
 
-A single yes/no choice, such as "Present (I still work here)" in the [date field](date-field.md). Not for choosing between options that exclude each other (radio buttons) or for settings that act immediately (the [segmented switch](segmented.md)).
+A single yes/no choice, such as "Present (I still work here)" in the [date field](date-field.md), or several independent choices in a group, such as the technologies used in a role. Not for choosing between options that exclude each other (radio buttons) or for settings that act immediately (the [segmented switch](segmented.md)).
 
 ## Anatomy
 
 A `<label class="ui-checkbox">` wrapping the native `<input type="checkbox">` and its text. The box is the native input restyled; the check mark is Lucide's `check`, inlined as a mask so it takes the inverse text colour.
+
+**Group**: a `<fieldset class="ui-checkbox-group">` with a `<legend class="ui-checkbox-group__legend">` names related checkboxes and lays them out in a wrapping row.
 
 ## States
 
@@ -35,10 +37,15 @@ A statement that's true when checked, sentence case, no trailing period: "Show o
 
 ## Tokens
 
-`--size-icon-md|sm`, `--size-target-min`, `--size-target-touch`, `--color-border-control`, `--color-surface-raised`, `--color-surface-inverse`, `--color-text-inverse`, `--color-text`, `--color-danger`, `--color-focus`, `--radius-chip`, `--border-width-control|focus|2`, `--space-inset-sm`, `--text-body`, `--opacity-disabled`, `--duration-quick`, `--ease-out`.
+`--size-icon-md|sm`, `--size-target-min`, `--size-target-touch`, `--color-border-control`, `--color-surface-raised`, `--color-surface-inverse`, `--color-text-inverse`, `--color-text`, `--color-danger`, `--color-focus`, `--radius-chip`, `--border-width-control|focus|2`, `--space-inset-sm`, `--space-stack-xs`, `--space-gap-md`, `--text-body`, `--text-label`, `--opacity-disabled`, `--duration-quick`, `--ease-out`.
 
 ## Markup
 
 ```html
 <label class="ui-checkbox"><input type="checkbox" checked> Show on the Portfolio</label>
+
+<fieldset class="ui-checkbox-group">
+  <legend class="ui-checkbox-group__legend">Stack (optional)</legend>
+  <label class="ui-checkbox"><input type="checkbox" name="stack" value="react"> React</label>
+</fieldset>
 ```

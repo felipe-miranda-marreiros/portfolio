@@ -1,0 +1,27 @@
+/**
+ * Form layout from the forms pattern: the error summary slot, then a two-column field grid from 56rem
+ * where `.ui-form__wide` spans both columns; one column below. The title and actions live in the app shell header.
+ */
+@layer components {
+  .ui-form {
+    display: grid;
+    gap: var(--space-stack-lg);
+    max-width: var(--size-container-form);
+  }
+
+  .ui-form__grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: var(--space-stack-lg) var(--space-gap-md);
+  }
+
+  .ui-form__wide {
+    grid-column: 1 / -1;
+  }
+
+  @media (width < 56rem) {
+    .ui-form__grid {
+      grid-template-columns: minmax(0, 1fr);
+    }
+  }
+}

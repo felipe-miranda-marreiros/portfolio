@@ -25,4 +25,5 @@
 @import "./error-summary/error-summary.css";
 @import "./dialog/dialog.css";
 @import "./toast/toast.css";
+@import "./form/form.css";
 @import "./app-shell/app-shell.css";

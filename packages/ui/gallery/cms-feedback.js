@@ -81,7 +81,6 @@ const shell = `<div class="ui-app-shell gallery-shell">
         <li><a href="#">${icons.user}<span>Profile</span></a></li>
         <li><a href="#" aria-current="page">${icons.briefcase}<span>Experience</span></a></li>
         <li><a href="#" data-gallery-state="hover">${icons.list}<span>Skills</span></a></li>
-        <li><a href="#">${icons.image}<span>Media</span></a></li>
       </ul></nav>
       <div class="ui-app-shell__footer">
         <div class="ui-segmented" role="group" aria-label="Theme">

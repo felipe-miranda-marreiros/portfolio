@@ -74,4 +74,20 @@
       min-height: var(--size-target-touch);
     }
   }
+
+  /* A group of related choices, such as the technologies used in a role. */
+  .ui-checkbox-group {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-stack-xs) var(--space-gap-md);
+    margin: 0;
+    padding: 0;
+    border: 0;
+  }
+
+  .ui-checkbox-group__legend {
+    padding: 0;
+    margin-bottom: var(--space-stack-xs);
+    font: var(--text-label);
+  }
 }

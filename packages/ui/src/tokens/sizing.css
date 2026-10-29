@@ -11,6 +11,7 @@
   --size-64: 16rem;
   --size-96: 24rem;
   --size-128: 32rem;
+  --size-224: 56rem;
   --size-400: 100rem;
 
   --size-target-min: var(--size-6);
@@ -27,6 +28,7 @@
   --size-portrait-md: var(--size-24);
 
   --size-container-page: var(--size-400);
+  --size-container-form: var(--size-224);
   --size-sidebar: var(--size-64);
   --size-toast: var(--size-96);
   --size-dialog: var(--size-128);

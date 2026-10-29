@@ -173,6 +173,13 @@ export const cmsForms = [
           ["Focus", pad(checkbox("Show on the Portfolio", 'checked data-gallery-state="focus"'))],
           ["Invalid", pad(checkbox("I confirm both Locales are reviewed", 'aria-invalid="true"'))],
           ["Disabled", pad(checkbox("Show on the Portfolio", "disabled checked"))],
+          [
+            "Group",
+            pad(`<fieldset class="ui-checkbox-group">
+              <legend class="ui-checkbox-group__legend">Stack (optional)</legend>
+              ${checkbox("React", "checked")}${checkbox("React Native")}${checkbox("TypeScript", "checked")}${checkbox("PostgreSQL")}
+            </fieldset>`),
+          ],
         ],
       ],
     ],
