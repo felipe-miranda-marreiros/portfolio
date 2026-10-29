@@ -1,0 +1,77 @@
+/**
+ * Section overview: `<ul class="ui-overview">` of links, one per page in a CMS section, each with its name,
+ * what it holds, and its state ("Published", "3 roles", "Not started") with anything waiting on the Owner.
+ */
+@layer components {
+  .ui-overview {
+    display: grid;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    border-block-start: var(--border-width-divider) var(--border-style-default) var(--color-border);
+  }
+
+  .ui-overview > li {
+    border-block-end: var(--border-width-divider) var(--border-style-default) var(--color-border);
+  }
+
+  .ui-overview__item {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto auto;
+    align-items: center;
+    gap: var(--space-gap-md);
+    padding: var(--space-inset-md) var(--space-inset-sm);
+    color: var(--color-text);
+    text-decoration: none;
+    transition: background-color var(--duration-quick) var(--ease-out);
+  }
+
+  .ui-overview__item:is(:hover, [data-gallery-state~="hover"]) {
+    background: var(--color-surface-hover);
+  }
+
+  .ui-overview__name {
+    display: block;
+    font: var(--text-body);
+    font-weight: var(--font-weight-semibold);
+  }
+
+  .ui-overview__description {
+    display: block;
+    color: var(--color-text-muted);
+    font: var(--text-caption);
+  }
+
+  .ui-overview__state {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: end;
+    gap: var(--space-inset-sm);
+    color: var(--color-text-muted);
+    font: var(--text-label);
+    font-weight: var(--font-weight-regular);
+    font-variant-numeric: tabular-nums;
+  }
+
+  .ui-overview__item > .ui-icon {
+    color: var(--color-text-muted);
+  }
+
+  @media (width < 56rem) {
+    .ui-overview__item {
+      grid-template-columns: minmax(0, 1fr) auto;
+      row-gap: var(--space-stack-sm);
+    }
+
+    .ui-overview__state {
+      grid-row: 2;
+      justify-content: start;
+    }
+
+    .ui-overview__item > .ui-icon {
+      grid-row: 1 / span 2;
+      grid-column: 2;
+    }
+  }
+}

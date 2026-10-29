@@ -1,0 +1,32 @@
+/**
+ * Breadcrumb: `<nav class="ui-breadcrumb" aria-label="Breadcrumb">` with an `<ol>` of links to the pages above
+ * the current one, separated by slashes. The current page is the `<h1>` under it, not a crumb.
+ */
+@layer components {
+  .ui-breadcrumb ol {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    color: var(--color-text-muted);
+    font: var(--text-label);
+  }
+
+  .ui-breadcrumb li + li::before {
+    content: "/" / "";
+    margin-inline: var(--space-inset-sm);
+  }
+
+  .ui-breadcrumb a {
+    display: inline-flex;
+    align-items: center;
+    min-height: var(--size-target-min);
+  }
+
+  @media (width < 56rem) {
+    .ui-breadcrumb a {
+      min-height: var(--size-target-touch);
+    }
+  }
+}

@@ -8,7 +8,6 @@
   --size-11: 2.75rem;
   --size-13: 3.25rem;
   --size-24: 6rem;
-  --size-64: 16rem;
   --size-96: 24rem;
   --size-128: 32rem;
   --size-224: 56rem;
@@ -29,7 +28,7 @@
 
   --size-container-page: var(--size-400);
   --size-container-form: var(--size-224);
-  --size-sidebar: var(--size-64);
+  --size-rail: var(--size-24);
   --size-toast: var(--size-96);
   --size-dialog: var(--size-128);
 }

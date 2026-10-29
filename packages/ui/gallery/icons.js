@@ -1,5 +1,6 @@
 import briefcase from "lucide-static/icons/briefcase.svg?raw";
 import check from "lucide-static/icons/check.svg?raw";
+import chevronRight from "lucide-static/icons/chevron-right.svg?raw";
 import circleAlert from "lucide-static/icons/circle-alert.svg?raw";
 import circleCheck from "lucide-static/icons/circle-check.svg?raw";
 import download from "lucide-static/icons/download.svg?raw";
@@ -25,6 +26,7 @@ const icon = (svg, extra = "") => `<span class="ui-icon ${extra}" aria-hidden="t
 export const icons = {
   briefcase: icon(briefcase),
   check: icon(check),
+  chevronRight: icon(chevronRight),
   circleAlert: icon(circleAlert),
   circleCheck: icon(circleCheck),
   download: icon(download),

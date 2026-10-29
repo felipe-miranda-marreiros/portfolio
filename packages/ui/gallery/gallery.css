@@ -143,3 +143,9 @@ body {
   min-height: 40rem;
   border-block: var(--border-width-divider) var(--border-style-default) var(--color-border);
 }
+
+/* The rail is sticky and viewport-tall in the app; inside the gallery it sizes to its frame. */
+.gallery-shell .ui-app-shell__rail {
+  position: static;
+  height: auto;
+}

@@ -14,7 +14,7 @@ No illustrations: they'd be the only image in a quiet tool, and they'd need tran
 
 ### First setup
 
-When nothing is saved yet, the CMS opens on the Profile (its landing page), with a blank form and an info [message](../components/message.md): "Your Portfolio is empty", then the order to fill it in (profile in both Locales and Publish, then skills and experience). There's no status badge until the first save. Experience and Skills show their empty lists.
+When nothing is saved yet, the CMS opens on the Portfolio [overview](../components/overview.md) (its landing page), with an info [message](../components/message.md): "Your Portfolio is empty", that Visitors see a holding page until the profile is Published, and the order to fill it in (profile, then skills and experience). Every row reads "Not started" or "None yet". The Profile opens as a blank form with no status badge until the first save; Experience and Skills show their empty lists.
 
 ## The Portfolio: leave it out
 

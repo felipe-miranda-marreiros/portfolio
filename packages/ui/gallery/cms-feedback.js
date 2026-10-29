@@ -74,13 +74,35 @@ const toast = (tone, icon, text, action = "") => `<div class="ui-toast" data-ton
     <button type="button" class="ui-button" data-variant="ghost" data-size="sm" aria-label="Dismiss">${icons.x}</button>
   </div>`;
 
+const md = (icon) => icon.replace('class="ui-icon"', 'class="ui-icon" data-size="md"');
+
+const crumbs = (...labels) => `<nav class="ui-breadcrumb" aria-label="Breadcrumb"><ol>
+    ${labels.map((label) => `<li><a class="ui-link" data-variant="standalone" data-tone="muted" href="#">${label}</a></li>`).join("")}
+  </ol></nav>`;
+
+const row = (name, description, state, hover = false) => `<li>
+    <a class="ui-overview__item" href="#" ${hover ? 'data-gallery-state="hover"' : ""}>
+      <span><span class="ui-overview__name">${name}</span><span class="ui-overview__description">${description}</span></span>
+      <span class="ui-overview__state">${state}</span>${icons.chevronRight}
+    </a>
+  </li>`;
+
+const line = '<span class="ui-skeleton" data-shape="line" aria-hidden="true" style="width: 6rem"></span>';
+
+const overview = (state = "loaded") => {
+  const pick = (loaded, empty) => ({ loaded, empty, loading: line })[state];
+  return `<ul class="ui-overview" ${state === "loading" ? 'aria-busy="true"' : ""}>
+    ${row("Profile", "Your name, introduction, portrait and contact links", pick(published, "Not started"), state === "loaded")}
+    ${row("Experience", "Your roles, newest first, with the stack each one used", pick(`3 roles <span class="ui-status" data-status="draft">1 Draft</span>`, "None yet"))}
+    ${row("Skills", "The technologies in the Stack band, in your order", pick("7 skills", "None yet"))}
+  </ul>`;
+};
+
 const shell = `<div class="ui-app-shell gallery-shell">
-    <aside class="ui-app-shell__sidebar">
-      <a class="ui-app-shell__brand" href="#">Portfolio CMS</a>
-      <nav aria-label="Content"><ul class="ui-app-shell__nav">
-        <li><a href="#">${icons.user}<span>Profile</span></a></li>
-        <li><a href="#" aria-current="page">${icons.briefcase}<span>Experience</span></a></li>
-        <li><a href="#" data-gallery-state="hover">${icons.list}<span>Skills</span></a></li>
+    <aside class="ui-app-shell__rail">
+      <a class="ui-app-shell__brand" href="#" aria-label="Portfolio CMS home">CMS</a>
+      <nav aria-label="Sections"><ul class="ui-app-shell__nav">
+        <li><a href="#" aria-current="page">${md(icons.briefcase)}<span>Portfolio</span></a></li>
       </ul></nav>
       <div class="ui-app-shell__footer">
         <div class="ui-segmented" role="group" aria-label="Theme">
@@ -88,14 +110,17 @@ const shell = `<div class="ui-app-shell gallery-shell">
           <button type="button" aria-pressed="false" aria-label="Light theme">${icons.sun}</button>
         </div>
         <ul class="ui-app-shell__nav">
-          <li><a href="#">${icons.externalLink}<span>View Portfolio</span></a></li>
-          <li><button type="button">${icons.logOut}<span>Sign out</span></button></li>
+          <li><a href="#" data-gallery-state="hover">${md(icons.externalLink)}<span>View Portfolio</span></a></li>
+          <li><button type="button">${md(icons.logOut)}<span>Sign out</span></button></li>
         </ul>
       </div>
     </aside>
     <main class="ui-app-shell__main">
       <header class="ui-app-shell__header">
-        <h1 class="ui-app-shell__title">Experience</h1>
+        <div class="ui-app-shell__heading">
+          ${crumbs("Portfolio")}
+          <div class="ui-app-shell__title-row"><h1 class="ui-app-shell__title">Experience</h1></div>
+        </div>
         <div class="ui-app-shell__actions"><a class="ui-button" href="#">${icons.plus}<span>Add experience</span></a></div>
       </header>
       ${list()}
@@ -214,5 +239,32 @@ export const cmsFeedback = [
       ],
     ],
   },
-  { name: "App shell", doc: "app-shell", groups: [["Experience page", [["Desktop", shell]]]] },
+  {
+    name: "Breadcrumb",
+    doc: "breadcrumb",
+    groups: [
+      [
+        "Depth",
+        [
+          ["Inside a section", pad(crumbs("Portfolio"))],
+          ["Editing an item", pad(crumbs("Portfolio", "Experience"))],
+        ],
+      ],
+    ],
+  },
+  {
+    name: "Section overview",
+    doc: "overview",
+    groups: [
+      [
+        "Loaded (Profile hovered), loading, first setup",
+        [
+          ["Loaded", pad(overview())],
+          ["Loading", pad(overview("loading"))],
+          ["First setup", pad(overview("empty"))],
+        ],
+      ],
+    ],
+  },
+  { name: "App shell", doc: "app-shell", groups: [["Experience page inside Portfolio", [["Desktop", shell]]]] },
 ];

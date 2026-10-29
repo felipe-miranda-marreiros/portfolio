@@ -1,6 +1,6 @@
 # Sizing
 
-Code: `packages/ui/src/tokens/sizing.css`. Primitives on the 4px base: `--size-4` 1rem, `--size-5` 1.25rem, `--size-6` 1.5rem, `--size-8` 2rem, `--size-11` 2.75rem, `--size-13` 3.25rem, `--size-24` 6rem, `--size-64` 16rem, `--size-96` 24rem, `--size-128` 32rem, `--size-224` 56rem, `--size-400` 100rem.
+Code: `packages/ui/src/tokens/sizing.css`. Primitives on the 4px base: `--size-4` 1rem, `--size-5` 1.25rem, `--size-6` 1.5rem, `--size-8` 2rem, `--size-11` 2.75rem, `--size-13` 3.25rem, `--size-24` 6rem, `--size-96` 24rem, `--size-128` 32rem, `--size-224` 56rem, `--size-400` 100rem.
 
 | Token | Value | Use |
 | --- | --- | --- |
@@ -15,7 +15,7 @@ Code: `packages/ui/src/tokens/sizing.css`. Primitives on the 4px base: `--size-4
 | `--size-portrait-md` | 6rem (96px) | Avatar in the CMS profile and upload preview; default skeleton circle |
 | `--size-container-page` | 100rem (1600px) | Maximum page width; wider screens get more margin |
 | `--size-container-form` | 56rem (896px) | Maximum CMS form width, so two field columns stay readable |
-| `--size-sidebar` | 16rem | The CMS sidebar |
+| `--size-rail` | 6rem | The CMS navigation rail: an icon over a label such as "Portfolio" or "View Portfolio" |
 | `--size-toast` | 24rem | Maximum toast width |
 | `--size-dialog` | 32rem | Maximum dialog width |
 

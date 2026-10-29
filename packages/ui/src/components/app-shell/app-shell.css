@@ -1,25 +1,31 @@
 /**
- * App shell: the CMS frame. A sidebar (brand, Content navigation, footer with theme switch, Portfolio link and sign out)
- * beside the work area, whose header holds the page title and its actions. Below 56rem the sidebar stacks on top.
+ * App shell: the CMS frame. A narrow rail (brand, the top-level sections, then theme switch, Portfolio link and
+ * sign out) beside the work area, whose header holds the breadcrumb, the page title and its actions.
+ * Rail items stack an icon over a visible label; below 56rem the rail becomes a bar across the top.
  */
 @layer components {
   .ui-app-shell {
     display: grid;
-    grid-template-columns: var(--size-sidebar) minmax(0, 1fr);
+    grid-template-columns: var(--size-rail) minmax(0, 1fr);
     min-height: 100dvh;
   }
 
-  .ui-app-shell__sidebar {
+  .ui-app-shell__rail {
+    position: sticky;
+    inset-block-start: 0;
     display: flex;
     flex-direction: column;
+    align-items: stretch;
     gap: var(--space-stack-lg);
-    padding: var(--space-inset-lg) var(--space-inset-md);
+    height: 100dvh;
+    padding: var(--space-inset-lg) var(--space-inset-xs);
     border-inline-end: var(--border-width-divider) var(--border-style-default) var(--color-border);
     background: var(--color-surface-raised);
   }
 
   .ui-app-shell__brand {
-    padding-inline: var(--space-inset-sm);
+    align-self: center;
+    border-radius: var(--radius-field);
     font: var(--text-label);
     font-family: var(--font-display);
     font-size: var(--text-size-md);
@@ -35,19 +41,22 @@
   }
 
   .ui-app-shell__nav :is(a, button) {
+    display: grid;
+    justify-items: center;
+    align-content: center;
+    gap: var(--space-stack-xs);
     width: 100%;
+    min-height: var(--size-control-lg);
+    padding: var(--space-inset-sm) var(--space-inset-xs);
     border: 0;
-    background: transparent;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    gap: var(--space-inset-sm);
-    min-height: var(--size-control-sm);
-    padding: var(--space-inset-xs) var(--space-inset-sm);
     border-radius: var(--radius-field);
+    background: transparent;
     color: var(--color-text-muted);
-    font: var(--text-label);
+    font: var(--text-caption);
+    font-weight: var(--font-weight-semibold);
+    text-align: center;
     text-decoration: none;
+    cursor: pointer;
     transition:
       background-color var(--duration-quick) var(--ease-out),
       color var(--duration-quick) var(--ease-out);
@@ -65,12 +74,18 @@
 
   .ui-app-shell__footer {
     display: grid;
+    justify-items: center;
     gap: var(--space-stack-sm);
     margin-top: auto;
   }
 
+  .ui-app-shell__footer > .ui-app-shell__nav {
+    width: 100%;
+  }
+
+  /* Side by side, the two theme buttons are wider than the rail. */
   .ui-app-shell__footer > .ui-segmented {
-    justify-self: start;
+    flex-direction: column;
   }
 
   .ui-app-shell__main {
@@ -84,12 +99,17 @@
   .ui-app-shell__header {
     display: flex;
     flex-wrap: wrap;
-    align-items: center;
+    align-items: end;
     justify-content: space-between;
     gap: var(--space-gap-sm);
   }
 
   .ui-app-shell__heading {
+    display: grid;
+    gap: var(--space-stack-xs);
+  }
+
+  .ui-app-shell__title-row {
     display: flex;
     flex-wrap: wrap;
     align-items: center;
@@ -113,8 +133,14 @@
       grid-template-columns: minmax(0, 1fr);
     }
 
-    .ui-app-shell__sidebar {
-      gap: var(--space-stack-md);
+    .ui-app-shell__rail {
+      position: static;
+      flex-direction: row;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: var(--space-gap-sm);
+      height: auto;
+      padding: var(--space-inset-sm) var(--space-page-inline);
       border-inline-end: 0;
       border-block-end: var(--border-width-divider) var(--border-style-default) var(--color-border);
     }
@@ -125,8 +151,12 @@
     }
 
     .ui-app-shell__nav :is(a, button) {
+      display: flex;
+      align-items: center;
+      gap: var(--space-inset-sm);
       width: auto;
       min-height: var(--size-target-touch);
+      font: var(--text-label);
     }
 
     .ui-app-shell__footer {
@@ -134,6 +164,15 @@
       flex-wrap: wrap;
       align-items: center;
       margin-top: 0;
+      margin-inline-start: auto;
+    }
+
+    .ui-app-shell__footer > .ui-app-shell__nav {
+      width: auto;
+    }
+
+    .ui-app-shell__footer > .ui-segmented {
+      flex-direction: row;
     }
   }
 }
