@@ -18,7 +18,8 @@ Visitors never see an empty frame ([principle 2](../foundations/principles.md#2-
 
 | Missing Content | What the Portfolio does |
 | --- | --- |
-| No Published experience | The [work band](../components/work-band.md) and the experience list aren't rendered |
+| No Published experience | The experience list isn’t rendered |
+| No skills | The [work band](../components/work-band.md) isn’t rendered |
 | No portrait | The introduction reads the same without the inline avatar |
 | No CV file | The Download CV button is left out; the email link stays |
 | No profile links | The footer shows only the name |

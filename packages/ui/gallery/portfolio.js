@@ -9,7 +9,6 @@ const COPY = {
     role: "an AI engineer.",
     lead: "I ship software where language models do real work, and the tests that keep them honest.",
     cv: "Download CV",
-    lately: "Lately",
     present: "Present",
     roles: ["AI Engineer", "Senior Software Engineer", "Software Engineer"],
     summary: "Agent workflows for internal tooling and the evaluation harness that gates every LLM feature.",
@@ -20,7 +19,6 @@ const COPY = {
     role: "engenheiro de IA.",
     lead: "Entrego software em que modelos de linguagem fazem trabalho de verdade, e os testes que os mantêm confiáveis.",
     cv: "Baixar currículo",
-    lately: "Ultimamente",
     present: "Atual",
     roles: ["Engenheiro de IA", "Engenheiro de Software Sênior", "Engenheiro de Software"],
     summary: "Fluxos com agentes para ferramentas internas e o harness de avaliação que controla cada recurso com LLM.",
@@ -91,19 +89,24 @@ const entrySkeleton = (variant) => `<article class="ui-entry" data-variant="${va
     <p class="ui-entry__org"><span class="ui-skeleton" data-shape="line" style="width: 9rem"></span></p>
   </article>`;
 
-const band = (lang, count = 3, loading = false) => {
-  const t = COPY[lang];
+const STACK = ["React", "React Native", "TypeScript", "Node.js", "Python", "PostgreSQL", "Docker"];
+
+const band = (lang, count = STACK.length, loading = false) => {
   const items = loading
-    ? [0, 1, 2].map(() => `<li>${entrySkeleton("compact")}</li>`).join("")
-    : [0, 1, 2]
-        .slice(0, count)
-        .map((i) => `<li>${entry(lang, i, "compact")}</li>`)
+    ? ["100%", "60%"]
+        .map(
+          (width) =>
+            `<li style="width: ${width}" aria-hidden="true"><span class="ui-skeleton" data-shape="line"></span></li>`,
+        )
+        .join("")
+    : STACK.slice(0, count)
+        .map((name) => `<li>${name}</li>`)
         .join("");
   return `<section class="ui-work-band ui-inverse" lang="${lang}" aria-labelledby="band-${lang}-${count}-${loading}" ${loading ? 'aria-busy="true"' : ""}>
     <div class="ui-work-band__inner">
-      <h2 class="ui-work-band__label" id="band-${lang}-${count}-${loading}">${t.lately}</h2>
-      <ol class="ui-work-band__list">${items}</ol>
-      ${loading ? '<p class="ui-visually-hidden" role="status">Loading experience</p>' : ""}
+      <h2 class="ui-work-band__label" id="band-${lang}-${count}-${loading}">Stack</h2>
+      <ul class="ui-work-band__list">${items}</ul>
+      ${loading ? '<p class="ui-visually-hidden" role="status">Loading stack</p>' : ""}
     </div>
   </section>`;
 };
@@ -165,12 +168,11 @@ export const portfolio = [
     doc: "work-band",
     groups: [
       [
-        "Three entries, one entry, loading",
+        "Seven names, three names, loading",
         [
-          ["en", band("en")],
-          ["pt-BR", band("pt-BR")],
-          ["One entry", band("en", 1)],
-          ["Loading", band("en", 3, true)],
+          ["Seven names", band("en")],
+          ["Three names", band("en", 3)],
+          ["Loading", band("en", 0, true)],
         ],
       ],
     ],

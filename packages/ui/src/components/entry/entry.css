@@ -1,6 +1,6 @@
 /**
  * Experience entry: period, role, organisation and an optional summary.
- * `data-variant="compact"` stacks them (the work band); `row` lays them across three columns from 56rem.
+ * Stacked by default; `data-variant="row"` lays them across three columns from 56rem.
  * The current role carries `data-current` and shows its period in a chip.
  */
 @layer components {

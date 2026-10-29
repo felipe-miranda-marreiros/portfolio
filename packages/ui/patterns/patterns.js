@@ -36,38 +36,29 @@ languageDemo.addEventListener("click", (event) => {
 });
 showLocale(languageDemo.querySelector('[data-locale="en"]'));
 
-const ROLES = [
-  ["2024 — Present", "AI Engineer", "Ponte Labs · São Paulo"],
-  ["2022 — 2024", "Senior Software Engineer", "Tessera Saúde · Recife"],
-  ["2020 — 2022", "Software Engineer", "Atlas Pagamentos · São Paulo"],
-];
+const STACK = ["React", "React Native", "TypeScript", "Node.js", "Python", "PostgreSQL", "Docker"];
 const band = document.getElementById("loading-band");
 const list = document.getElementById("loading-list");
 const status = document.getElementById("loading-status");
-const loaded = () =>
-  ROLES.map(
-    ([period, role, org], i) => `<li><article class="ui-entry" data-variant="compact">
-      <p class="ui-entry__period"><time>${i === 0 ? `<span class="ui-chip">${period}</span>` : period}</time></p>
-      <h4 class="ui-entry__role">${role}</h4><p class="ui-entry__org">${org}</p></article></li>`,
-  ).join("");
+const loaded = () => STACK.map((name) => `<li>${name}</li>`).join("");
 const skeletons = () =>
-  ROLES.map(
-    () => `<li><article class="ui-entry" data-variant="compact" aria-hidden="true">
-      <p class="ui-entry__period"><span class="ui-skeleton" data-shape="line" style="width: 7rem"></span></p>
-      <h4 class="ui-entry__role"><span class="ui-skeleton" data-shape="line" style="width: 12ch"></span></h4>
-      <p class="ui-entry__org"><span class="ui-skeleton" data-shape="line" style="width: 9rem"></span></p></article></li>`,
-  ).join("");
+  ["100%", "60%"]
+    .map(
+      (width) =>
+        `<li style="width: ${width}" aria-hidden="true"><span class="ui-skeleton" data-shape="line"></span></li>`,
+    )
+    .join("");
 
 list.innerHTML = loaded();
 for (const button of document.querySelectorAll("[data-load]")) {
   button.addEventListener("click", () => {
     band.setAttribute("aria-busy", "true");
     list.innerHTML = skeletons();
-    status.textContent = "Loading experience";
+    status.textContent = "Loading stack";
     setTimeout(() => {
       list.innerHTML = loaded();
       band.removeAttribute("aria-busy");
-      status.textContent = "Experience loaded";
+      status.textContent = "Stack loaded";
     }, Number(button.dataset.load));
   });
 }
