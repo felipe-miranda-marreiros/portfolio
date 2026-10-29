@@ -5,7 +5,8 @@ import Icon from "./Icon.astro";
 
 interface Props {
   locale: Locale;
-  name: string;
+  /** Absent on the holding page: without a Published profile there's no name and nothing to link to. */
+  name?: string;
 }
 
 const { locale, name } = Astro.props;
@@ -17,13 +18,29 @@ const locales = [
 ---
 
 <header class="ui-site-header">
-  <a class="ui-site-header__mark ui-link" data-variant="standalone" href={`/${LOCALE_PATHS[locale]}/`}>{name}</a>
-  <nav class="ui-site-header__nav" aria-label={t("sections")}>
-    <ul>
-      <li><a class="ui-link" data-variant="standalone" href="#experience">{t("experience")}</a></li>
-      <li><a class="ui-link" data-variant="standalone" href="#contact">{t("contact")}</a></li>
-    </ul>
-  </nav>
+  {
+    name && (
+      <>
+        <a class="ui-site-header__mark ui-link" data-variant="standalone" href={`/${LOCALE_PATHS[locale]}/`}>
+          {name}
+        </a>
+        <nav class="ui-site-header__nav" aria-label={t("sections")}>
+          <ul>
+            <li>
+              <a class="ui-link" data-variant="standalone" href="#experience">
+                {t("experience")}
+              </a>
+            </li>
+            <li>
+              <a class="ui-link" data-variant="standalone" href="#contact">
+                {t("contact")}
+              </a>
+            </li>
+          </ul>
+        </nav>
+      </>
+    )
+  }
   <div class="ui-site-header__controls">
     <nav class="ui-segmented" aria-label={t("language")} data-locale-switch>
       {

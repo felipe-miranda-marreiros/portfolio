@@ -2,6 +2,7 @@
 import "@portfolio/ui/styles.css";
 import { THEME_BOOT_SCRIPT } from "@portfolio/ui/theme";
 import ExperienceList from "../../components/ExperienceList.astro";
+import Holding from "../../components/Holding.astro";
 import Intro from "../../components/Intro.astro";
 import SiteFooter from "../../components/SiteFooter.astro";
 import SiteHeader from "../../components/SiteHeader.astro";
@@ -25,8 +26,8 @@ const t = translator(locale);
     <script is:inline set:html={THEME_BOOT_SCRIPT} />
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>{profile.name}</title>
-    <meta name="description" content={profile.lead[locale]} />
+    <title>{profile?.name ?? t("holdingTitle")}</title>
+    {profile ? <meta name="description" content={profile.lead[locale]} /> : <meta name="robots" content="noindex" />}
     {
       (Object.entries(LOCALE_PATHS) as [Locale, string][]).map(([hreflang, path]) => (
         <link rel="alternate" hreflang={hreflang} href={`/${path}/`} />
@@ -36,14 +37,28 @@ const t = translator(locale);
   <body>
     <a class="ui-skip-link ui-button" href="#main">{t("skip")}</a>
     <div class="first">
-      <SiteHeader locale={locale} name={profile.name} />
+      <SiteHeader locale={locale} name={profile?.name} />
       <main id="main" tabindex="-1">
-        <Intro locale={locale} profile={profile} />
-        <WorkBand locale={locale} skills={skills} />
+        {
+          profile ? (
+            <>
+              <Intro locale={locale} profile={profile} />
+              <WorkBand locale={locale} skills={skills} />
+            </>
+          ) : (
+            <Holding locale={locale} />
+          )
+        }
       </main>
     </div>
-    <ExperienceList locale={locale} items={experience} />
-    <SiteFooter locale={locale} profile={profile} />
+    {
+      profile && (
+        <>
+          <ExperienceList locale={locale} items={experience} />
+          <SiteFooter locale={locale} profile={profile} />
+        </>
+      )
+    }
   </body>
 </html>
 

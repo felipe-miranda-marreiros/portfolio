@@ -19,6 +19,8 @@ const resources = {
       stack: "Stack",
       ongoing: "{{start}} – Present",
       email: "Email",
+      holdingTitle: "This portfolio is being set up.",
+      holdingBody: "Check back soon.",
     },
   },
   "pt-BR": {
@@ -35,6 +37,8 @@ const resources = {
       stack: "Stack",
       ongoing: "{{start}} – Atual",
       email: "E-mail",
+      holdingTitle: "Este portfólio está sendo preparado.",
+      holdingBody: "Volte em breve.",
     },
   },
 };

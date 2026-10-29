@@ -26,6 +26,7 @@ The top of every Portfolio page: who this is (the wordmark), where to go (sectio
 | Current section | The section's link has `aria-current="true"` and a 2px underline |
 | Locale | The current Locale's segment is selected |
 | Theme | The current theme's segment is pressed |
+| No Published profile | Only the controls: without a name there's no wordmark, and the holding page has no sections to link to ([empty states](../patterns/empty.md#the-portfolio-leave-it-out)) |
 | Hover, focus | Per [link](link.md) and [segmented switch](segmented.md) |
 
 Loading, error, empty and skeleton don't apply: the header renders from the Owner's name and fixed labels before any other Content.

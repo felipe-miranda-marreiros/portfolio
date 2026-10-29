@@ -18,6 +18,7 @@ Visitors never see an empty frame ([principle 2](../foundations/principles.md#2-
 
 | Missing Content | What the Portfolio does |
 | --- | --- |
+| No Published profile (the first setup) | A holding page in the URL's Locale: the header with only the Locale and theme switches, then "This portfolio is being set up." / "Este portfólio está sendo preparado." at headline size and "Check back soon." / "Volte em breve." muted. No other sections, and `noindex` so search engines don't keep it. Preview it with `FIXTURES=empty bun run dev:portfolio` |
 | No Published experience | The experience list isn’t rendered |
 | No skills | The [work band](../components/work-band.md) isn’t rendered |
 | No portrait | The introduction reads the same without the inline avatar |
