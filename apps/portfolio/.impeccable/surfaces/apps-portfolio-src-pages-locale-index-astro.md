@@ -32,5 +32,5 @@ FINISH: unreviewed and undocumented is unfinished; this build ends with the fini
 ## Unresolved
 
 - The real portrait and CV replace the stock placeholder and Sample Content.
-- Whether the full experience list continues in the white band or below it.
+- Resolved: the band holds the latest three roles; the full history follows below it as `row` entries under an "Experience" heading.
 - How the CMS (Operate mode) uses the monochrome tokens at a quieter density: decided in Foundations.
