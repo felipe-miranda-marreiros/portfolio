@@ -1,6 +1,6 @@
 /**
- * Work band: `<section class="ui-work-band ui-inverse">`, the full-bleed inverted band holding the latest roles.
- * A label column and up to three compact entries side by side from 56rem; stacked below.
+ * Work band: `<section class="ui-work-band ui-inverse">`, the full-bleed inverted band naming the Owner's stack.
+ * A label column beside the stack, set at headline size and wrapping, from 56rem; stacked below.
  */
 @layer components {
   .ui-work-band {
@@ -9,8 +9,9 @@
 
   .ui-work-band__inner {
     display: grid;
-    grid-template-columns: minmax(0, 1fr) repeat(3, minmax(0, 2fr));
-    gap: var(--space-stack-lg) var(--layout-gutter);
+    grid-template-columns: minmax(0, 1fr) minmax(0, 6fr);
+    align-items: first baseline;
+    gap: var(--space-stack-md) var(--layout-gutter);
     max-width: var(--size-container-page);
     margin-inline: auto;
   }
@@ -22,11 +23,19 @@
   }
 
   .ui-work-band__list {
-    display: contents;
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-stack-xs) var(--space-gap-lg);
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    font: var(--text-headline);
+    letter-spacing: var(--text-tracking-headline);
   }
 
+  /* A multi-word name ("React Native") must never read as two items. */
   .ui-work-band__list > li {
-    list-style: none;
+    white-space: nowrap;
   }
 
   @media (width < 56rem) {

@@ -17,7 +17,7 @@ One role in the Owner's work history: when, what, where, and optionally what it 
 
 | `data-variant` | Layout | Use |
 | --- | --- | --- |
-| `compact` | Stacked: period, role, organisation | The [work band](work-band.md) |
+| (none) | Stacked: period, role, organisation | Narrow spaces and demos |
 | `row` | From 56rem: period / role and organisation / summary in three columns (1 : 2 : 3). Stacked below | The full experience list |
 
 ## States
@@ -29,7 +29,7 @@ One role in the Owner's work history: when, what, where, and optionally what it 
 | Loading | Three [skeleton](skeleton.md) lines at the period, title and organisation sizes, so the swap doesn't move anything |
 | No summary | The summary is left out; the row keeps its columns |
 
-Not interactive: no hover, focus, active, disabled or selected. Empty is a list state (no entries), handled by the [work band](work-band.md) and the list pattern.
+Not interactive: no hover, focus, active, disabled or selected. Empty is a list state (no entries), handled by the [empty pattern](../patterns/empty.md).
 
 ## Accessibility
 
@@ -50,7 +50,7 @@ Not interactive: no hover, focus, active, disabled or selected. Empty is a list 
 ## Markup
 
 ```html
-<article class="ui-entry" data-variant="compact" data-current>
+<article class="ui-entry" data-variant="row" data-current>
   <p class="ui-entry__period"><time datetime="2024-03"><span class="ui-chip">2024 — Present</span></time></p>
   <h3 class="ui-entry__role">AI Engineer</h3>
   <p class="ui-entry__org">Ponte Labs · São Paulo</p>
