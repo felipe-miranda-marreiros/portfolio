@@ -20,5 +20,14 @@ const period = formatPeriod(locale, item.start, item.end, (start) => t("ongoing"
   </p>
   <h3 class="ui-entry__role">{item.role[locale]}</h3>
   <p class="ui-entry__org">{item.organization} · {item.location}</p>
+  {
+    item.stack && (
+      <ul class="ui-entry__stack" aria-label={t("stack")}>
+        {item.stack.map((name) => (
+          <li>{name}</li>
+        ))}
+      </ul>
+    )
+  }
   {item.summary && <p class="ui-entry__summary">{item.summary[locale]}</p>}
 </article>

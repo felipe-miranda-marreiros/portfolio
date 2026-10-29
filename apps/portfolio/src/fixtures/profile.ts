@@ -27,6 +27,8 @@ export interface Experience {
   start: string;
   /** Absent while the role is current. */
   end?: string;
+  /** Technologies used in this role; product names, so they don't translate. */
+  stack?: string[];
   summary?: Localized;
 }
 
@@ -56,6 +58,7 @@ export const experience: Experience[] = [
     organization: "Ponte Labs",
     location: "São Paulo",
     start: "2024-03",
+    stack: ["Python", "TypeScript", "Node.js", "PostgreSQL"],
     summary: {
       en: "Agent workflows for internal tooling and the evaluation harness that gates every LLM feature.",
       "pt-BR":
@@ -68,6 +71,7 @@ export const experience: Experience[] = [
     location: "Recife",
     start: "2022-01",
     end: "2024-02",
+    stack: ["React", "React Native", "TypeScript", "Node.js"],
     summary: {
       en: "Led the scheduling platform for a network of clinics, from the booking API to the patient app.",
       "pt-BR": "Liderei a plataforma de agendamento de uma rede de clínicas, da API de reservas ao app do paciente.",
@@ -79,6 +83,7 @@ export const experience: Experience[] = [
     location: "São Paulo",
     start: "2020-02",
     end: "2021-12",
+    stack: ["Node.js", "TypeScript", "PostgreSQL", "Docker"],
     summary: {
       en: "Payments API and the reconciliation services behind it.",
       "pt-BR": "API de pagamentos e os serviços de conciliação por trás dela.",
@@ -90,5 +95,6 @@ export const experience: Experience[] = [
     location: "Recife",
     start: "2018-06",
     end: "2020-01",
+    stack: ["React", "JavaScript"],
   },
 ];
