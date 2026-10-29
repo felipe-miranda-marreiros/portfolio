@@ -6,7 +6,7 @@ import Intro from "../../components/Intro.astro";
 import SiteFooter from "../../components/SiteFooter.astro";
 import SiteHeader from "../../components/SiteHeader.astro";
 import WorkBand from "../../components/WorkBand.astro";
-import { experience, type Locale, profile } from "../../fixtures/profile";
+import { experience, type Locale, profile, skills } from "../../fixtures/profile";
 import { LOCALE_PATHS, translator } from "../../i18n";
 
 export function getStaticPaths() {
@@ -39,7 +39,7 @@ const t = translator(locale);
       <SiteHeader locale={locale} name={profile.name} />
       <main id="main" tabindex="-1">
         <Intro locale={locale} profile={profile} />
-        <WorkBand locale={locale} items={experience} />
+        <WorkBand locale={locale} skills={skills} />
       </main>
     </div>
     <ExperienceList locale={locale} items={experience} />
@@ -52,7 +52,7 @@ const t = translator(locale);
     margin: 0;
   }
 
-  /* The header, the introduction and the latest roles share the first viewport, with the band closing it. */
+  /* The header, the introduction and the stack share the first viewport, with the band closing it. */
   .first {
     display: grid;
     grid-template-rows: auto 1fr;
