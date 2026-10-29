@@ -40,7 +40,21 @@ export const profileFields: FieldMap = {
   linkedin: { id: "linkedin", label: "LinkedIn" },
 };
 
-export const toValues = (profile: Profile): ProfileValues => ({
+const blank: ProfileValues = {
+  name: "",
+  shortName: "",
+  greeting: { en: "", pt: "" },
+  role: { en: "", pt: "" },
+  lead: { en: "", pt: "" },
+  email: "",
+  portrait: undefined,
+  github: "",
+  linkedin: "",
+};
+
+export const toValues = (profile: Profile | null): ProfileValues => (profile ? fromProfile(profile) : blank);
+
+const fromProfile = (profile: Profile): ProfileValues => ({
   name: profile.name,
   shortName: profile.shortName,
   greeting: { en: profile.greeting.en, pt: profile.greeting["pt-BR"] },

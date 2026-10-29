@@ -5,6 +5,7 @@ import check from "lucide-static/icons/check.svg?raw";
 import circleAlert from "lucide-static/icons/circle-alert.svg?raw";
 import circleCheck from "lucide-static/icons/circle-check.svg?raw";
 import externalLink from "lucide-static/icons/external-link.svg?raw";
+import info from "lucide-static/icons/info.svg?raw";
 import list from "lucide-static/icons/list.svg?raw";
 import loader from "lucide-static/icons/loader-circle.svg?raw";
 import logOut from "lucide-static/icons/log-out.svg?raw";
@@ -26,6 +27,7 @@ const svgs = {
   circleAlert,
   circleCheck,
   externalLink,
+  info,
   list,
   loader,
   logOut,

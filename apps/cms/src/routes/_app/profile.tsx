@@ -8,6 +8,7 @@ import { PageHeader } from "../../components/AppShell";
 import { ConfirmDialog, ErrorSummary, LoadError, StatusBadge } from "../../components/feedback";
 import { LocalePair, TextField } from "../../components/fields";
 import { FormSkeleton, SubmitButtons, UnsavedChanges } from "../../components/form";
+import { Icon } from "../../components/Icon";
 import { PortraitUpload } from "../../components/PortraitUpload";
 import { useToast } from "../../components/Toasts";
 import { type ProfileValues, profileFields, profileSchema, toInput, toValues } from "../../forms/profile";
@@ -17,7 +18,8 @@ export const Route = createFileRoute("/_app/profile")({ component: ProfilePage }
 
 function ProfilePage() {
   const profile = useQuery(profileQuery);
-  if (profile.data) return <ProfileForm profile={profile.data} />;
+  // `null` is the first setup: nothing saved yet, so the form starts blank.
+  if (profile.data !== undefined) return <ProfileForm profile={profile.data} />;
   return (
     <>
       <PageHeader title="Profile" />
@@ -30,11 +32,12 @@ function ProfilePage() {
   );
 }
 
-function ProfileForm({ profile }: { profile: Profile }) {
+function ProfileForm({ profile }: { profile: Profile | null }) {
   const toast = useToast();
   const { form, problems, attempt, onSubmit, error } = useIntentForm(profileSchema, toValues(profile), profileFields);
   const { register, watch, setValue, reset } = form;
   const [confirming, setConfirming] = useState<ProfileValues | null>(null);
+  const [discarding, setDiscarding] = useState(false);
 
   const save = useMutation({
     mutationFn: ({ values, intent }: { values: ProfileValues; intent: Intent }) =>
@@ -59,7 +62,7 @@ function ProfileForm({ profile }: { profile: Profile }) {
       en={register(`${name}.en`)}
       pt={register(`${name}.pt`)}
       errors={{ en: error(`${name}.en`), pt: error(`${name}.pt`) }}
-      ptMissing={!watch(`${name}.pt`).trim()}
+      ptMissing={Boolean(watch(`${name}.en`).trim()) && !watch(`${name}.pt`).trim()}
       area={area}
     />
   );
@@ -68,8 +71,17 @@ function ProfileForm({ profile }: { profile: Profile }) {
     <>
       <PageHeader
         title="Profile"
-        status={<StatusBadge status={profile.status} />}
-        actions={<SubmitButtons form="profile-form" pending={save.isPending ? save.variables.intent : null} />}
+        status={profile && <StatusBadge status={profile.status} />}
+        actions={
+          <>
+            {form.formState.isDirty && (
+              <button type="button" className="ui-button" data-variant="ghost" onClick={() => setDiscarding(true)}>
+                Discard changes
+              </button>
+            )}
+            <SubmitButtons form="profile-form" pending={save.isPending ? save.variables.intent : null} />
+          </>
+        }
       />
       <form
         id="profile-form"
@@ -80,6 +92,16 @@ function ProfileForm({ profile }: { profile: Profile }) {
         )}
       >
         <ErrorSummary problems={problems} attempt={attempt} />
+        {!profile && (
+          <div className="ui-message" data-tone="info" role="status">
+            <Icon name="info" />
+            <p className="ui-message__title">Your Portfolio is empty</p>
+            <p className="ui-message__body">
+              Start with who you are: fill in your profile in both Locales and publish it. Then add your skills and
+              experience.
+            </p>
+          </div>
+        )}
         <div className="ui-form__grid">
           <TextField id="name" label="Full name" registration={register("name")} error={error("name")} />
           <TextField
@@ -137,6 +159,19 @@ function ProfileForm({ profile }: { profile: Profile }) {
         }}
       >
         <p>It will appear on the Portfolio in English and Portuguese.</p>
+      </ConfirmDialog>
+      <ConfirmDialog
+        open={discarding}
+        title="Discard your changes?"
+        confirm="Discard"
+        danger
+        onCancel={() => setDiscarding(false)}
+        onConfirm={() => {
+          reset();
+          setDiscarding(false);
+        }}
+      >
+        <p>The profile goes back to how it was last saved.</p>
       </ConfirmDialog>
       <UnsavedChanges dirty={form.formState.isDirty} />
     </>

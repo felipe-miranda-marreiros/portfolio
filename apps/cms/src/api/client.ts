@@ -3,17 +3,16 @@ import type { Experience, ExperienceInput, Intent, Profile, ProfileInput, Skill 
 
 /**
  * An in-memory stand-in for the API, so the pages can be designed before it exists.
- * Add `?slow`, `?fail` or `?empty` to the URL to review the loading, error and empty states.
+ * Add `?slow`, `?fail` or `?empty` to the URL to review the loading, error and empty states;
+ * `?empty` is the first setup, with no profile, experience or skills saved.
  */
 
 export class ApiError extends Error {}
 
 const mode = new URLSearchParams(location.search);
-const store = structuredClone({ experience: fixtures.experience, profile: fixtures.profile, skills: fixtures.skills });
-if (mode.has("empty")) {
-  store.experience = [];
-  store.skills = [];
-}
+const store: { experience: Experience[]; profile: Profile | null; skills: Skill[] } = mode.has("empty")
+  ? { experience: [], profile: null, skills: [] }
+  : structuredClone({ experience: fixtures.experience, profile: fixtures.profile, skills: fixtures.skills });
 
 async function respond<T>(value: () => T): Promise<T> {
   await new Promise((resolve) => setTimeout(resolve, mode.has("slow") ? 1600 : 250));
@@ -69,12 +68,14 @@ export const api = {
       store.experience = store.experience.filter((item) => item.id !== id);
     }),
 
+  /** `null` until the Owner first saves a profile. */
   getProfile: () => respond(() => store.profile),
   saveProfile: (input: ProfileInput, intent: Intent) =>
     respond((): Profile => {
       assertComplete({ ...input }, intent);
-      store.profile = { ...input, status: intent === "publish" ? "published" : "draft" };
-      return store.profile;
+      const saved: Profile = { ...input, status: intent === "publish" ? "published" : "draft" };
+      store.profile = saved;
+      return saved;
     }),
 
   listSkills: () => respond(() => store.skills),

@@ -9,7 +9,7 @@ The frame of every CMS page: where the Owner is, where else they can go, and the
 ## Anatomy
 
 - **Sidebar** `.ui-app-shell__sidebar` (`--size-sidebar`, 16rem, raised surface, divider on its edge):
-  - **Brand** `.ui-app-shell__brand`: "Portfolio CMS", linking to the dashboard.
+  - **Brand** `.ui-app-shell__brand`: "Portfolio CMS", linking to the Profile, the CMS's landing page.
   - **Content navigation**: a `<nav aria-label="Content">` with `.ui-app-shell__nav` items (icon and label): Profile, Experience, Skills. Media joins when it has a page; the final list follows the Content types decided in roadmap phase 4.
   - **Footer** `.ui-app-shell__footer`: the theme [segmented switch](segmented.md), then a second `.ui-app-shell__nav` list with "View Portfolio" and "Sign out".
 - **Main** `.ui-app-shell__main` (`<main>`): a **header** with a **heading** group (`.ui-app-shell__heading`: the page **title**, `<h1>` in the title role, and on edit pages the item's [status badge](status.md)) and its **actions** (one primary [button](button.md); Save draft and Publish on edit pages), then the page content.

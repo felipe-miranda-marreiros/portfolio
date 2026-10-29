@@ -11,7 +11,7 @@ import "../styles/sign-in.css";
 
 export const Route = createFileRoute("/sign-in")({
   beforeLoad: () => {
-    if (isSignedIn()) throw redirect({ to: "/experience" });
+    if (isSignedIn()) throw redirect({ to: "/profile" });
   },
   component: SignIn,
 });
@@ -31,7 +31,7 @@ function SignIn() {
     mutationFn: (values: z.infer<typeof schema>) => api.signIn(values.email, values.password),
     onSuccess: ({ email }) => {
       setSignedIn(email);
-      navigate({ to: "/experience" });
+      navigate({ to: "/profile" });
     },
   });
 

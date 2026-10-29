@@ -68,7 +68,7 @@ interface LocalePairProps {
   en: UseFormRegisterReturn;
   pt: UseFormRegisterReturn;
   errors: { en?: string; pt?: string };
-  /** True while the pt-BR value is empty: a warning on a Draft, an error once Publish is attempted. */
+  /** True while English has text and pt-BR doesn't: a warning on a Draft, an error once Publish is attempted. */
   ptMissing: boolean;
   area?: boolean;
 }

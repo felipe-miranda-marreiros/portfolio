@@ -93,7 +93,7 @@ export function PortraitUpload({
         <img className="ui-avatar" src={value} alt="Current portrait" />
       ) : (
         <span className="ui-avatar" role="img" aria-label="No portrait yet">
-          {initials}
+          {initials || <Icon name="user" />}
         </span>
       )}
       <div className="ui-upload__body">

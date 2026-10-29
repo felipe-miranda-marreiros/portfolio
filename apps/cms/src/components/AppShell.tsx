@@ -23,7 +23,7 @@ export function AppShell({ children }: { children: ReactNode }) {
         Skip to content
       </a>
       <aside className="ui-app-shell__sidebar">
-        <Link className="ui-app-shell__brand" to="/experience">
+        <Link className="ui-app-shell__brand" to="/profile">
           Portfolio CMS
         </Link>
         <nav aria-label="Content">

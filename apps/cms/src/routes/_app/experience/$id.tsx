@@ -1,5 +1,5 @@
 import { useMutation, useQuery } from "@tanstack/react-query";
-import { createFileRoute, useNavigate } from "@tanstack/react-router";
+import { createFileRoute, Link, useNavigate } from "@tanstack/react-router";
 import { useState } from "react";
 import { api } from "../../../api/client";
 import { experienceItem, experienceList, queryClient, skillList } from "../../../api/queries";
@@ -77,7 +77,14 @@ function ExperienceForm({ item }: { item?: Experience }) {
       <PageHeader
         title={item ? item.role.en : "New experience"}
         status={<StatusBadge status={item?.status ?? "draft"} />}
-        actions={<SubmitButtons form="experience-form" pending={save.isPending ? save.variables.intent : null} />}
+        actions={
+          <>
+            <Link className="ui-button" data-variant="ghost" to="/experience">
+              Cancel
+            </Link>
+            <SubmitButtons form="experience-form" pending={save.isPending ? save.variables.intent : null} />
+          </>
+        }
       />
       <form
         id="experience-form"
@@ -95,7 +102,7 @@ function ExperienceForm({ item }: { item?: Experience }) {
             en={register("role.en")}
             pt={register("role.pt")}
             errors={{ en: error("role.en"), pt: error("role.pt") }}
-            ptMissing={!watch("role.pt").trim()}
+            ptMissing={Boolean(watch("role.en").trim()) && !watch("role.pt").trim()}
           />
           <TextField
             id="organization"

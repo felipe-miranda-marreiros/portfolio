@@ -12,6 +12,10 @@ An empty list is the Owner's starting point, not an error:
 
 No illustrations: they'd be the only image in a quiet tool, and they'd need translating in spirit if not in words.
 
+### First setup
+
+When nothing is saved yet, the CMS opens on the Profile (its landing page), with a blank form and an info [message](../components/message.md): "Your Portfolio is empty", then the order to fill it in (profile in both Locales and Publish, then skills and experience). There's no status badge until the first save. Experience and Skills show their empty lists.
+
 ## The Portfolio: leave it out
 
 Visitors never see an empty frame ([principle 2](../foundations/principles.md#2-scan-before-story)):
