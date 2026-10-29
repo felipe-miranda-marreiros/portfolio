@@ -1,6 +1,6 @@
 /**
  * Sample Content standing in for the API until the Contract (roadmap phase 4) defines Profile and Experience.
- * The name and GitHub link are the Owner's; the roles, companies, email and portrait are placeholders, not real history.
+ * The name and GitHub link are the Owner's; the skills, roles, companies, email and portrait are placeholders, not real history.
  */
 
 export type Locale = "en" | "pt-BR";
@@ -45,6 +45,9 @@ export const profile: Profile = {
   portrait: { src: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=300&q=80&auto=format&fit=crop" },
   links: [{ label: "GitHub", href: "https://github.com/felipe-miranda-marreiros" }],
 };
+
+/** Technology names in the Owner's order; product names, so they don't translate. */
+export const skills: string[] = ["React", "React Native", "TypeScript", "Node.js", "Python", "PostgreSQL", "Docker"];
 
 /** Newest first. */
 export const experience: Experience[] = [
