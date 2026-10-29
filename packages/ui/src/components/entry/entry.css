@@ -1,5 +1,5 @@
 /**
- * Experience entry: period, role, organisation and an optional summary.
+ * Experience entry: period, role, organisation, and an optional stack line and summary.
  * Stacked by default; `data-variant="row"` lays them across three columns from 56rem.
  * The current role carries `data-current` and shows its period in a chip.
  */
@@ -34,6 +34,27 @@
     font-weight: var(--font-weight-regular);
   }
 
+  .ui-entry__stack {
+    display: flex;
+    flex-wrap: wrap;
+    margin: var(--space-stack-xs) 0 0;
+    padding: 0;
+    list-style: none;
+    color: var(--color-text-muted);
+    font: var(--text-label);
+    font-weight: var(--font-weight-regular);
+  }
+
+  .ui-entry__stack > li {
+    white-space: nowrap;
+  }
+
+  /* The separator is decoration: the empty alt text keeps screen readers from announcing it. */
+  .ui-entry__stack > li + li::before {
+    content: "·" / "";
+    margin-inline: var(--space-inset-sm);
+  }
+
   .ui-entry__summary {
     margin: var(--space-stack-sm) 0 0;
     max-width: var(--text-measure);
@@ -43,8 +64,8 @@
   @media (width >= 56rem) {
     .ui-entry[data-variant="row"] {
       grid-template-columns: minmax(0, 1fr) minmax(0, 2fr) minmax(0, 3fr);
-      grid-template-rows: auto 1fr;
-      grid-template-areas: "period role summary" "period org summary";
+      grid-template-rows: auto auto 1fr;
+      grid-template-areas: "period role summary" "period org summary" "period stack summary";
       column-gap: var(--layout-gutter);
       padding-block: var(--space-stack-md);
     }
@@ -59,6 +80,10 @@
 
     .ui-entry[data-variant="row"] .ui-entry__org {
       grid-area: org;
+    }
+
+    .ui-entry[data-variant="row"] .ui-entry__stack {
+      grid-area: stack;
     }
 
     .ui-entry[data-variant="row"] .ui-entry__summary {

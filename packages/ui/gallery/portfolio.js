@@ -71,6 +71,12 @@ const introSkeleton = () => `<section class="ui-intro" aria-busy="true">
     <p class="ui-visually-hidden" role="status">Loading introduction</p>
   </section>`;
 
+const ROLE_STACKS = [
+  ["Python", "TypeScript", "Node.js", "PostgreSQL"],
+  ["React", "React Native", "TypeScript", "Node.js"],
+  ["Node.js", "TypeScript", "PostgreSQL", "Docker"],
+];
+
 const entry = (lang, i, variant, withSummary = false) => {
   const t = COPY[lang];
   const [datetime, label] = PERIODS[i];
@@ -79,6 +85,7 @@ const entry = (lang, i, variant, withSummary = false) => {
     <p class="ui-entry__period"><time datetime="${datetime}">${period}</time></p>
     <h3 class="ui-entry__role">${t.roles[i]}</h3>
     <p class="ui-entry__org">${ORGS[i]}</p>
+    ${withSummary ? `<ul class="ui-entry__stack" aria-label="Stack">${ROLE_STACKS[i].map((name) => `<li>${name}</li>`).join("")}</ul>` : ""}
     ${withSummary ? `<p class="ui-entry__summary">${t.summary}</p>` : ""}
   </article>`;
 };
