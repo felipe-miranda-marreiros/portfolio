@@ -1,0 +1,52 @@
+---
+import type { Experience, Locale } from "../fixtures/profile";
+import { translator } from "../i18n";
+import ExperienceEntry from "./ExperienceEntry.astro";
+
+interface Props {
+  locale: Locale;
+  items: Experience[];
+}
+
+const { locale, items } = Astro.props;
+const t = translator(locale);
+---
+
+{
+  items.length > 0 && (
+    <section class="experience" id="experience" aria-labelledby="experience-title">
+      <h2 class="experience__title" id="experience-title">
+        {t("experience")}
+      </h2>
+      <ol class="experience__list">
+        {items.map((item) => (
+          <li>
+            <ExperienceEntry locale={locale} item={item} variant="row" />
+          </li>
+        ))}
+      </ol>
+    </section>
+  )
+}
+
+<style>
+  .experience {
+    max-width: var(--size-container-page);
+    margin-inline: auto;
+    padding: var(--space-section) var(--space-page-inline) 0;
+  }
+
+  .experience__title {
+    margin: 0 0 var(--space-stack-lg);
+    font: var(--text-headline);
+    letter-spacing: var(--text-tracking-headline);
+  }
+
+  .experience__list {
+    display: grid;
+    gap: var(--space-stack-lg);
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+</style>

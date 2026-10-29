@@ -1,0 +1,25 @@
+---
+import type { Experience, Locale } from "../fixtures/profile";
+import { translator } from "../i18n";
+import { formatPeriod } from "../period";
+
+interface Props {
+  locale: Locale;
+  item: Experience;
+  variant: "compact" | "row";
+}
+
+const { locale, item, variant } = Astro.props;
+const t = translator(locale);
+const current = !item.end;
+const period = formatPeriod(locale, item.start, item.end, (start) => t("ongoing", { start }));
+---
+
+<article class="ui-entry" data-variant={variant} data-current={current ? "" : undefined}>
+  <p class="ui-entry__period">
+    <time datetime={period.datetime}>{current ? <span class="ui-chip">{period.label}</span> : period.label}</time>
+  </p>
+  <h3 class="ui-entry__role">{item.role[locale]}</h3>
+  <p class="ui-entry__org">{item.organization} · {item.location}</p>
+  {variant === "row" && item.summary && <p class="ui-entry__summary">{item.summary[locale]}</p>}
+</article>

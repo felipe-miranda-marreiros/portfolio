@@ -1,0 +1,15 @@
+---
+import download from "lucide-static/icons/download.svg?raw";
+import moon from "lucide-static/icons/moon.svg?raw";
+import sun from "lucide-static/icons/sun.svg?raw";
+
+const svgs = { download, moon, sun };
+
+interface Props {
+  name: keyof typeof svgs;
+}
+
+const { name } = Astro.props;
+---
+
+<span class="ui-icon" aria-hidden="true" set:html={svgs[name]} />

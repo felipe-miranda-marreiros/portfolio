@@ -1,0 +1,28 @@
+---
+import type { Locale, Profile } from "../fixtures/profile";
+import { translator } from "../i18n";
+
+interface Props {
+  locale: Locale;
+  profile: Profile;
+}
+
+const { locale, profile } = Astro.props;
+const t = translator(locale);
+const links = [{ label: t("email"), href: `mailto:${profile.email}` }, ...profile.links];
+---
+
+<footer class="ui-site-footer" id="contact">
+  <p>{profile.name}</p>
+  <ul>
+    {
+      links.map((link) => (
+        <li>
+          <a class="ui-link" data-variant="standalone" data-tone="muted" href={link.href}>
+            {link.label}
+          </a>
+        </li>
+      ))
+    }
+  </ul>
+</footer>
