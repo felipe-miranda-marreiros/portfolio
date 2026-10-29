@@ -1,0 +1,65 @@
+---
+import type { Locale } from "../fixtures/profile";
+import { LOCALE_PATHS, translator } from "../i18n";
+import Icon from "./Icon.astro";
+
+interface Props {
+  locale: Locale;
+  name: string;
+}
+
+const { locale, name } = Astro.props;
+const t = translator(locale);
+const locales = [
+  { locale: "en", code: "EN", label: "English" },
+  { locale: "pt-BR", code: "PT", label: "Português" },
+] as const;
+---
+
+<header class="ui-site-header">
+  <a class="ui-site-header__mark ui-link" data-variant="standalone" href={`/${LOCALE_PATHS[locale]}/`}>{name}</a>
+  <nav class="ui-site-header__nav" aria-label={t("sections")}>
+    <ul>
+      <li><a class="ui-link" data-variant="standalone" href="#experience">{t("experience")}</a></li>
+      <li><a class="ui-link" data-variant="standalone" href="#contact">{t("contact")}</a></li>
+    </ul>
+  </nav>
+  <div class="ui-site-header__controls">
+    <nav class="ui-segmented" aria-label={t("language")} data-locale-switch>
+      {
+        locales.map((option) => (
+          <a
+            href={`/${LOCALE_PATHS[option.locale]}/`}
+            lang={option.locale}
+            hreflang={option.locale}
+            aria-label={option.label}
+            aria-current={option.locale === locale ? "true" : undefined}
+          >
+            {option.code}
+          </a>
+        ))
+      }
+    </nav>
+    <div class="ui-segmented" role="group" aria-label={t("theme")} data-theme-switch>
+      <button type="button" data-theme-choice="dark" aria-pressed="true" aria-label={t("darkTheme")}>
+        <Icon name="moon" />
+      </button>
+      <button type="button" data-theme-choice="light" aria-pressed="false" aria-label={t("lightTheme")}>
+        <Icon name="sun" />
+      </button>
+    </div>
+  </div>
+</header>
+
+<script>
+  import { bindThemeSwitch } from "@portfolio/ui/theme";
+
+  for (const group of document.querySelectorAll<HTMLElement>("[data-theme-switch]")) bindThemeSwitch(group);
+
+  // The switch keeps the Visitor on the same section in the other Locale.
+  for (const link of document.querySelectorAll<HTMLAnchorElement>("[data-locale-switch] a")) {
+    link.addEventListener("click", () => {
+      link.hash = location.hash;
+    });
+  }
+</script>

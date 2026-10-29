@@ -1,23 +1,78 @@
 ---
 import "@portfolio/ui/styles.css";
+import { THEME_BOOT_SCRIPT } from "@portfolio/ui/theme";
+import ExperienceList from "../../components/ExperienceList.astro";
+import Intro from "../../components/Intro.astro";
+import SiteFooter from "../../components/SiteFooter.astro";
+import SiteHeader from "../../components/SiteHeader.astro";
+import WorkBand from "../../components/WorkBand.astro";
+import { experience, type Locale, profile } from "../../fixtures/profile";
+import { LOCALE_PATHS, translator } from "../../i18n";
 
 export function getStaticPaths() {
-  return [
-    { params: { locale: "en" }, props: { lang: "en" } },
-    { params: { locale: "pt-br" }, props: { lang: "pt-BR" } },
-  ];
+  return (Object.entries(LOCALE_PATHS) as [Locale, string][]).map(([locale, path]) => ({
+    params: { locale: path },
+    props: { locale },
+  }));
 }
 
-const { lang } = Astro.props;
+const { locale } = Astro.props;
+const t = translator(locale);
 ---
 
-<html lang={lang}>
+<html lang={locale}>
   <head>
+    <script is:inline set:html={THEME_BOOT_SCRIPT} />
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Portfolio</title>
+    <title>{profile.name}</title>
+    <meta name="description" content={profile.lead[locale]} />
+    {
+      (Object.entries(LOCALE_PATHS) as [Locale, string][]).map(([hreflang, path]) => (
+        <link rel="alternate" hreflang={hreflang} href={`/${path}/`} />
+      ))
+    }
   </head>
   <body>
-    <h1>Portfolio</h1>
+    <a class="ui-skip-link ui-button" href="#main">{t("skip")}</a>
+    <div class="first">
+      <SiteHeader locale={locale} name={profile.name} />
+      <main id="main" tabindex="-1">
+        <Intro locale={locale} profile={profile} />
+        <WorkBand locale={locale} items={experience} />
+      </main>
+    </div>
+    <ExperienceList locale={locale} items={experience} />
+    <SiteFooter locale={locale} profile={profile} />
   </body>
 </html>
+
+<style>
+  body {
+    margin: 0;
+  }
+
+  /* The header, the introduction and the latest roles share the first viewport, with the band closing it. */
+  .first {
+    display: grid;
+    grid-template-rows: auto 1fr;
+    min-block-size: 100svh;
+  }
+
+  main {
+    display: grid;
+    grid-template-rows: 1fr auto;
+    gap: var(--space-stack-xl);
+  }
+
+  /* Grid items with auto inline margins shrink to their content, so the centred containers need an explicit width. */
+  .first > :global(.ui-site-header),
+  main > :global(.ui-intro) {
+    width: 100%;
+  }
+
+  main > :global(.ui-intro) {
+    align-self: center;
+    padding-block-start: var(--space-stack-xl);
+  }
+</style>

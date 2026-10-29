@@ -1,0 +1,33 @@
+---
+import type { Experience, Locale } from "../fixtures/profile";
+import { translator } from "../i18n";
+import ExperienceEntry from "./ExperienceEntry.astro";
+
+interface Props {
+  locale: Locale;
+  items: Experience[];
+}
+
+const { locale, items } = Astro.props;
+const t = translator(locale);
+const latest = items.slice(0, 3);
+---
+
+{
+  latest.length > 0 && (
+    <section class="ui-work-band ui-inverse" aria-labelledby="lately">
+      <div class="ui-work-band__inner">
+        <h2 class="ui-work-band__label" id="lately">
+          {t("lately")}
+        </h2>
+        <ol class="ui-work-band__list">
+          {latest.map((item) => (
+            <li>
+              <ExperienceEntry locale={locale} item={item} variant="compact" />
+            </li>
+          ))}
+        </ol>
+      </div>
+    </section>
+  )
+}

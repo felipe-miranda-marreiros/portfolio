@@ -1,0 +1,33 @@
+---
+import type { Locale, Profile } from "../fixtures/profile";
+import { translator } from "../i18n";
+import Icon from "./Icon.astro";
+
+interface Props {
+  locale: Locale;
+  profile: Profile;
+}
+
+const { locale, profile } = Astro.props;
+const t = translator(locale);
+---
+
+<section class="ui-intro">
+  <h1 class="ui-intro__title">
+    {`${profile.greeting[locale]} `}<span class="ui-intro__name"
+      >{profile.shortName}{profile.portrait && <img class="ui-avatar" data-size="inline" src={profile.portrait.src} alt="" />},</span
+    >{` ${profile.role[locale]}`}
+  </h1>
+  <p class="ui-intro__lead">{profile.lead[locale]}</p>
+  <div class="ui-intro__actions">
+    {
+      profile.cv && (
+        <a class="ui-button" data-size="lg" href={profile.cv.href} download>
+          <Icon name="download" />
+          <span>{t("downloadCv")}</span>
+        </a>
+      )
+    }
+    <a class="ui-link" href={`mailto:${profile.email}`}>{profile.email}</a>
+  </div>
+</section>
