@@ -1,19 +1,19 @@
 import { useMutation, useQuery } from "@tanstack/react-query";
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { useState } from "react";
-import { api } from "../../../api/client";
-import { experienceList, queryClient } from "../../../api/queries";
-import type { Experience } from "../../../api/types";
-import { PageHeader } from "../../../components/AppShell";
-import { ConfirmDialog, LoadError, StatusBadge } from "../../../components/feedback";
-import { Icon } from "../../../components/Icon";
-import { useToast } from "../../../components/Toasts";
-import { formatPeriod } from "../../../format";
+import { api } from "../../../../api/client";
+import { experienceList, queryClient } from "../../../../api/queries";
+import type { Experience } from "../../../../api/types";
+import { PageHeader, PORTFOLIO } from "../../../../components/AppShell";
+import { ConfirmDialog, LoadError, StatusBadge } from "../../../../components/feedback";
+import { Icon } from "../../../../components/Icon";
+import { useToast } from "../../../../components/Toasts";
+import { formatPeriod } from "../../../../format";
 
-export const Route = createFileRoute("/_app/experience/")({ component: ExperienceList });
+export const Route = createFileRoute("/_app/portfolio/experience/")({ component: ExperienceList });
 
 const addButton = (
-  <Link className="ui-button" to="/experience/$id" params={{ id: "new" }}>
+  <Link className="ui-button" to="/portfolio/experience/$id" params={{ id: "new" }}>
     <Icon name="plus" />
     <span>Add experience</span>
   </Link>
@@ -34,7 +34,7 @@ function ExperienceList() {
 
   return (
     <>
-      <PageHeader title="Experience" actions={list.data?.length ? addButton : undefined} />
+      <PageHeader title="Experience" crumbs={[PORTFOLIO]} actions={list.data?.length ? addButton : undefined} />
       <p className="ui-visually-hidden" role="status">
         {list.isPending ? "Loading experience" : list.isSuccess ? "Experience loaded" : ""}
       </p>
@@ -75,7 +75,7 @@ function ExperienceList() {
                       className="ui-button"
                       data-variant="ghost"
                       data-size="sm"
-                      to="/experience/$id"
+                      to="/portfolio/experience/$id"
                       params={{ id: item.id }}
                     >
                       <Icon name="pencil" />

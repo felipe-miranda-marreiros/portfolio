@@ -12,10 +12,11 @@ import { Route as rootRouteImport } from './routes/__root'
 import { Route as AppRouteImport } from './routes/_app'
 import { Route as SignInRouteImport } from './routes/sign-in'
 import { Route as AppIndexRouteImport } from './routes/_app/index'
-import { Route as AppProfileRouteImport } from './routes/_app/profile'
-import { Route as AppSkillsRouteImport } from './routes/_app/skills'
-import { Route as AppExperienceIndexRouteImport } from './routes/_app/experience/index'
-import { Route as AppExperienceIdRouteImport } from './routes/_app/experience/$id'
+import { Route as AppPortfolioIndexRouteImport } from './routes/_app/portfolio/index'
+import { Route as AppPortfolioProfileRouteImport } from './routes/_app/portfolio/profile'
+import { Route as AppPortfolioSkillsRouteImport } from './routes/_app/portfolio/skills'
+import { Route as AppPortfolioExperienceIndexRouteImport } from './routes/_app/portfolio/experience/index'
+import { Route as AppPortfolioExperienceIdRouteImport } from './routes/_app/portfolio/experience/$id'
 
 const AppRoute = AppRouteImport.update({
   id: '/_app',
@@ -31,79 +32,92 @@ const AppIndexRoute = AppIndexRouteImport.update({
   path: '/',
   getParentRoute: () => AppRoute,
 } as any)
-const AppProfileRoute = AppProfileRouteImport.update({
-  id: '/profile',
-  path: '/profile',
+const AppPortfolioIndexRoute = AppPortfolioIndexRouteImport.update({
+  id: '/portfolio/',
+  path: '/portfolio/',
   getParentRoute: () => AppRoute,
 } as any)
-const AppSkillsRoute = AppSkillsRouteImport.update({
-  id: '/skills',
-  path: '/skills',
+const AppPortfolioProfileRoute = AppPortfolioProfileRouteImport.update({
+  id: '/portfolio/profile',
+  path: '/portfolio/profile',
   getParentRoute: () => AppRoute,
 } as any)
-const AppExperienceIndexRoute = AppExperienceIndexRouteImport.update({
-  id: '/experience/',
-  path: '/experience/',
+const AppPortfolioSkillsRoute = AppPortfolioSkillsRouteImport.update({
+  id: '/portfolio/skills',
+  path: '/portfolio/skills',
   getParentRoute: () => AppRoute,
 } as any)
-const AppExperienceIdRoute = AppExperienceIdRouteImport.update({
-  id: '/experience/$id',
-  path: '/experience/$id',
-  getParentRoute: () => AppRoute,
-} as any)
+const AppPortfolioExperienceIndexRoute =
+  AppPortfolioExperienceIndexRouteImport.update({
+    id: '/portfolio/experience/',
+    path: '/portfolio/experience/',
+    getParentRoute: () => AppRoute,
+  } as any)
+const AppPortfolioExperienceIdRoute =
+  AppPortfolioExperienceIdRouteImport.update({
+    id: '/portfolio/experience/$id',
+    path: '/portfolio/experience/$id',
+    getParentRoute: () => AppRoute,
+  } as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof AppIndexRoute
   '/sign-in': typeof SignInRoute
-  '/profile': typeof AppProfileRoute
-  '/skills': typeof AppSkillsRoute
-  '/experience/$id': typeof AppExperienceIdRoute
-  '/experience/': typeof AppExperienceIndexRoute
+  '/portfolio/profile': typeof AppPortfolioProfileRoute
+  '/portfolio/skills': typeof AppPortfolioSkillsRoute
+  '/portfolio/': typeof AppPortfolioIndexRoute
+  '/portfolio/experience/$id': typeof AppPortfolioExperienceIdRoute
+  '/portfolio/experience/': typeof AppPortfolioExperienceIndexRoute
 }
 export interface FileRoutesByTo {
   '/sign-in': typeof SignInRoute
-  '/profile': typeof AppProfileRoute
-  '/skills': typeof AppSkillsRoute
   '/': typeof AppIndexRoute
-  '/experience/$id': typeof AppExperienceIdRoute
-  '/experience': typeof AppExperienceIndexRoute
+  '/portfolio/profile': typeof AppPortfolioProfileRoute
+  '/portfolio/skills': typeof AppPortfolioSkillsRoute
+  '/portfolio': typeof AppPortfolioIndexRoute
+  '/portfolio/experience/$id': typeof AppPortfolioExperienceIdRoute
+  '/portfolio/experience': typeof AppPortfolioExperienceIndexRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/_app': typeof AppRouteWithChildren
   '/sign-in': typeof SignInRoute
-  '/_app/profile': typeof AppProfileRoute
-  '/_app/skills': typeof AppSkillsRoute
   '/_app/': typeof AppIndexRoute
-  '/_app/experience/$id': typeof AppExperienceIdRoute
-  '/_app/experience/': typeof AppExperienceIndexRoute
+  '/_app/portfolio/profile': typeof AppPortfolioProfileRoute
+  '/_app/portfolio/skills': typeof AppPortfolioSkillsRoute
+  '/_app/portfolio/': typeof AppPortfolioIndexRoute
+  '/_app/portfolio/experience/$id': typeof AppPortfolioExperienceIdRoute
+  '/_app/portfolio/experience/': typeof AppPortfolioExperienceIndexRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
   fullPaths:
     | '/'
     | '/sign-in'
-    | '/profile'
-    | '/skills'
-    | '/experience/$id'
-    | '/experience/'
+    | '/portfolio/profile'
+    | '/portfolio/skills'
+    | '/portfolio/'
+    | '/portfolio/experience/$id'
+    | '/portfolio/experience/'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/sign-in'
-    | '/profile'
-    | '/skills'
     | '/'
-    | '/experience/$id'
-    | '/experience'
+    | '/portfolio/profile'
+    | '/portfolio/skills'
+    | '/portfolio'
+    | '/portfolio/experience/$id'
+    | '/portfolio/experience'
   id:
     | '__root__'
     | '/_app'
     | '/sign-in'
-    | '/_app/profile'
-    | '/_app/skills'
     | '/_app/'
-    | '/_app/experience/$id'
-    | '/_app/experience/'
+    | '/_app/portfolio/profile'
+    | '/_app/portfolio/skills'
+    | '/_app/portfolio/'
+    | '/_app/portfolio/experience/$id'
+    | '/_app/portfolio/experience/'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
@@ -134,51 +148,60 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof AppIndexRouteImport
       parentRoute: typeof AppRoute
     }
-    '/_app/profile': {
-      id: '/_app/profile'
-      path: '/profile'
-      fullPath: '/profile'
-      preLoaderRoute: typeof AppProfileRouteImport
+    '/_app/portfolio/': {
+      id: '/_app/portfolio/'
+      path: '/portfolio'
+      fullPath: '/portfolio/'
+      preLoaderRoute: typeof AppPortfolioIndexRouteImport
       parentRoute: typeof AppRoute
     }
-    '/_app/skills': {
-      id: '/_app/skills'
-      path: '/skills'
-      fullPath: '/skills'
-      preLoaderRoute: typeof AppSkillsRouteImport
+    '/_app/portfolio/profile': {
+      id: '/_app/portfolio/profile'
+      path: '/portfolio/profile'
+      fullPath: '/portfolio/profile'
+      preLoaderRoute: typeof AppPortfolioProfileRouteImport
       parentRoute: typeof AppRoute
     }
-    '/_app/experience/': {
-      id: '/_app/experience/'
-      path: '/experience'
-      fullPath: '/experience/'
-      preLoaderRoute: typeof AppExperienceIndexRouteImport
+    '/_app/portfolio/skills': {
+      id: '/_app/portfolio/skills'
+      path: '/portfolio/skills'
+      fullPath: '/portfolio/skills'
+      preLoaderRoute: typeof AppPortfolioSkillsRouteImport
       parentRoute: typeof AppRoute
     }
-    '/_app/experience/$id': {
-      id: '/_app/experience/$id'
-      path: '/experience/$id'
-      fullPath: '/experience/$id'
-      preLoaderRoute: typeof AppExperienceIdRouteImport
+    '/_app/portfolio/experience/': {
+      id: '/_app/portfolio/experience/'
+      path: '/portfolio/experience'
+      fullPath: '/portfolio/experience/'
+      preLoaderRoute: typeof AppPortfolioExperienceIndexRouteImport
+      parentRoute: typeof AppRoute
+    }
+    '/_app/portfolio/experience/$id': {
+      id: '/_app/portfolio/experience/$id'
+      path: '/portfolio/experience/$id'
+      fullPath: '/portfolio/experience/$id'
+      preLoaderRoute: typeof AppPortfolioExperienceIdRouteImport
       parentRoute: typeof AppRoute
     }
   }
 }
 
 interface AppRouteChildren {
-  AppProfileRoute: typeof AppProfileRoute
-  AppSkillsRoute: typeof AppSkillsRoute
   AppIndexRoute: typeof AppIndexRoute
-  AppExperienceIdRoute: typeof AppExperienceIdRoute
-  AppExperienceIndexRoute: typeof AppExperienceIndexRoute
+  AppPortfolioProfileRoute: typeof AppPortfolioProfileRoute
+  AppPortfolioSkillsRoute: typeof AppPortfolioSkillsRoute
+  AppPortfolioIndexRoute: typeof AppPortfolioIndexRoute
+  AppPortfolioExperienceIdRoute: typeof AppPortfolioExperienceIdRoute
+  AppPortfolioExperienceIndexRoute: typeof AppPortfolioExperienceIndexRoute
 }
 
 const AppRouteChildren: AppRouteChildren = {
-  AppProfileRoute: AppProfileRoute,
-  AppSkillsRoute: AppSkillsRoute,
   AppIndexRoute: AppIndexRoute,
-  AppExperienceIdRoute: AppExperienceIdRoute,
-  AppExperienceIndexRoute: AppExperienceIndexRoute,
+  AppPortfolioProfileRoute: AppPortfolioProfileRoute,
+  AppPortfolioSkillsRoute: AppPortfolioSkillsRoute,
+  AppPortfolioIndexRoute: AppPortfolioIndexRoute,
+  AppPortfolioExperienceIdRoute: AppPortfolioExperienceIdRoute,
+  AppPortfolioExperienceIndexRoute: AppPortfolioExperienceIndexRoute,
 }
 
 const AppRouteWithChildren = AppRoute._addFileChildren(AppRouteChildren)

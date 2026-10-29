@@ -4,17 +4,17 @@ import { createFileRoute } from "@tanstack/react-router";
 import { useState } from "react";
 import { useForm } from "react-hook-form";
 import { z } from "zod";
-import { api } from "../../api/client";
-import { experienceList, queryClient, skillList } from "../../api/queries";
-import type { Skill } from "../../api/types";
-import { PageHeader } from "../../components/AppShell";
-import { ConfirmDialog, LoadError } from "../../components/feedback";
-import { TextField } from "../../components/fields";
-import { Icon, Spinner } from "../../components/Icon";
-import { useToast } from "../../components/Toasts";
-import "../../styles/skills.css";
+import { api } from "../../../api/client";
+import { experienceList, queryClient, skillList } from "../../../api/queries";
+import type { Skill } from "../../../api/types";
+import { PageHeader, PORTFOLIO } from "../../../components/AppShell";
+import { ConfirmDialog, LoadError } from "../../../components/feedback";
+import { TextField } from "../../../components/fields";
+import { Icon, Spinner } from "../../../components/Icon";
+import { useToast } from "../../../components/Toasts";
+import "../../../styles/skills.css";
 
-export const Route = createFileRoute("/_app/skills")({ component: SkillsPage });
+export const Route = createFileRoute("/_app/portfolio/skills")({ component: SkillsPage });
 
 const schema = z.object({ name: z.string().trim().min(1, "enter the technology’s name") });
 
@@ -58,7 +58,7 @@ function SkillsPage() {
 
   return (
     <>
-      <PageHeader title="Skills" />
+      <PageHeader title="Skills" crumbs={[PORTFOLIO]} />
       <p className="skills__lede">
         The technologies you work with. The Portfolio’s Stack band shows them in this order.
       </p>

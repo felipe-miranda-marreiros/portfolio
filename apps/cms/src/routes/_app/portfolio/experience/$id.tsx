@@ -1,24 +1,26 @@
 import { useMutation, useQuery } from "@tanstack/react-query";
 import { createFileRoute, Link, useNavigate } from "@tanstack/react-router";
 import { useState } from "react";
-import { api } from "../../../api/client";
-import { experienceItem, experienceList, queryClient, skillList } from "../../../api/queries";
-import type { Experience, Intent } from "../../../api/types";
-import { PageHeader } from "../../../components/AppShell";
-import { ConfirmDialog, ErrorSummary, LoadError, StatusBadge } from "../../../components/feedback";
-import { DateField, LocalePair, TextField } from "../../../components/fields";
-import { FormSkeleton, SubmitButtons, UnsavedChanges } from "../../../components/form";
-import { useToast } from "../../../components/Toasts";
+import { api } from "../../../../api/client";
+import { experienceItem, experienceList, queryClient, skillList } from "../../../../api/queries";
+import type { Experience, Intent } from "../../../../api/types";
+import { PageHeader, PORTFOLIO } from "../../../../components/AppShell";
+import { ConfirmDialog, ErrorSummary, LoadError, StatusBadge } from "../../../../components/feedback";
+import { DateField, LocalePair, TextField } from "../../../../components/fields";
+import { FormSkeleton, SubmitButtons, UnsavedChanges } from "../../../../components/form";
+import { useToast } from "../../../../components/Toasts";
 import {
   type ExperienceValues,
   experienceFields,
   experienceSchema,
   toInput,
   toValues,
-} from "../../../forms/experience";
-import { useIntentForm } from "../../../forms/useIntentForm";
+} from "../../../../forms/experience";
+import { useIntentForm } from "../../../../forms/useIntentForm";
 
-export const Route = createFileRoute("/_app/experience/$id")({ component: ExperiencePage });
+export const Route = createFileRoute("/_app/portfolio/experience/$id")({ component: ExperiencePage });
+
+const CRUMBS = [PORTFOLIO, { label: "Experience", to: "/portfolio/experience" } as const];
 
 function ExperiencePage() {
   const { id } = Route.useParams();
@@ -28,7 +30,7 @@ function ExperiencePage() {
   if (isNew || item.data) return <ExperienceForm key={id} item={item.data} />;
   return (
     <>
-      <PageHeader title="Experience" />
+      <PageHeader title="Experience" crumbs={CRUMBS} />
       {item.isError ? (
         <LoadError what="this experience" onRetry={() => item.refetch()} retrying={item.isFetching} />
       ) : (
@@ -58,7 +60,8 @@ function ExperienceForm({ item }: { item?: Experience }) {
       queryClient.setQueryData(experienceItem(saved.id).queryKey, saved);
       queryClient.invalidateQueries({ queryKey: experienceList.queryKey });
       toast({ tone: "success", message: intent === "publish" ? "Published." : "Saved as Draft." });
-      if (!item) navigate({ to: "/experience/$id", params: { id: saved.id }, replace: true, ignoreBlocker: true });
+      if (!item)
+        navigate({ to: "/portfolio/experience/$id", params: { id: saved.id }, replace: true, ignoreBlocker: true });
     },
     onError: (failure, variables) =>
       toast({
@@ -76,10 +79,11 @@ function ExperienceForm({ item }: { item?: Experience }) {
     <>
       <PageHeader
         title={item ? item.role.en : "New experience"}
+        crumbs={CRUMBS}
         status={<StatusBadge status={item?.status ?? "draft"} />}
         actions={
           <>
-            <Link className="ui-button" data-variant="ghost" to="/experience">
+            <Link className="ui-button" data-variant="ghost" to="/portfolio/experience">
               Cancel
             </Link>
             <SubmitButtons form="experience-form" pending={save.isPending ? save.variables.intent : null} />

@@ -4,13 +4,12 @@ import { type ReactNode, useEffect, useRef } from "react";
 import { setSignedIn } from "../auth";
 import { Icon, type IconName } from "./Icon";
 
-const NAV: { to: "/profile" | "/experience" | "/skills"; label: string; icon: IconName }[] = [
-  { to: "/profile", label: "Profile", icon: "user" },
-  { to: "/experience", label: "Experience", icon: "briefcase" },
-  { to: "/skills", label: "Skills", icon: "list" },
+/** Top-level sections; About me and Articles join when they have pages. */
+const SECTIONS: { to: "/portfolio"; label: string; icon: IconName }[] = [
+  { to: "/portfolio", label: "Portfolio", icon: "briefcase" },
 ];
 
-/** The CMS frame: sidebar navigation, theme switch, View Portfolio and Sign out around the page. */
+/** The CMS frame: a rail with the sections, theme switch, View Portfolio and Sign out, beside the page. */
 export function AppShell({ children }: { children: ReactNode }) {
   const navigate = useNavigate();
   const themeSwitch = useRef<HTMLDivElement>(null);
@@ -22,17 +21,17 @@ export function AppShell({ children }: { children: ReactNode }) {
       <a className="ui-skip-link ui-button" href="#main">
         Skip to content
       </a>
-      <aside className="ui-app-shell__sidebar">
-        <Link className="ui-app-shell__brand" to="/profile">
-          Portfolio CMS
+      <aside className="ui-app-shell__rail">
+        <Link className="ui-app-shell__brand" to="/portfolio" aria-label="Portfolio CMS home">
+          CMS
         </Link>
-        <nav aria-label="Content">
+        <nav aria-label="Sections">
           <ul className="ui-app-shell__nav">
-            {NAV.map((item) => (
-              <li key={item.to}>
-                <Link to={item.to} activeProps={{ "aria-current": "page" }}>
-                  <Icon name={item.icon} />
-                  <span>{item.label}</span>
+            {SECTIONS.map((section) => (
+              <li key={section.to}>
+                <Link to={section.to} activeProps={{ "aria-current": "page" }}>
+                  <Icon name={section.icon} size="md" />
+                  <span>{section.label}</span>
                 </Link>
               </li>
             ))}
@@ -55,7 +54,7 @@ export function AppShell({ children }: { children: ReactNode }) {
                 target="_blank"
                 rel="noreferrer"
               >
-                <Icon name="externalLink" />
+                <Icon name="externalLink" size="md" />
                 <span>View Portfolio</span>
               </a>
             </li>
@@ -67,7 +66,7 @@ export function AppShell({ children }: { children: ReactNode }) {
                   navigate({ to: "/sign-in" });
                 }}
               >
-                <Icon name="logOut" />
+                <Icon name="logOut" size="md" />
                 <span>Sign out</span>
               </button>
             </li>
@@ -81,13 +80,43 @@ export function AppShell({ children }: { children: ReactNode }) {
   );
 }
 
-/** The page's `<h1>`, optional status and its actions, at the top of main. */
-export function PageHeader({ title, status, actions }: { title: string; status?: ReactNode; actions?: ReactNode }) {
+type Crumb = { label: string; to: "/portfolio" | "/portfolio/experience" };
+
+/** The crumb back to the Portfolio section overview. */
+export const PORTFOLIO: Crumb = { label: "Portfolio", to: "/portfolio" };
+
+/** The page's breadcrumb, `<h1>`, optional status and its actions, at the top of main. */
+export function PageHeader({
+  title,
+  crumbs,
+  status,
+  actions,
+}: {
+  title: string;
+  crumbs?: Crumb[];
+  status?: ReactNode;
+  actions?: ReactNode;
+}) {
   return (
     <header className="ui-app-shell__header">
       <div className="ui-app-shell__heading">
-        <h1 className="ui-app-shell__title">{title}</h1>
-        {status}
+        {crumbs && (
+          <nav className="ui-breadcrumb" aria-label="Breadcrumb">
+            <ol>
+              {crumbs.map((crumb) => (
+                <li key={crumb.to}>
+                  <Link className="ui-link" data-variant="standalone" data-tone="muted" to={crumb.to}>
+                    {crumb.label}
+                  </Link>
+                </li>
+              ))}
+            </ol>
+          </nav>
+        )}
+        <div className="ui-app-shell__title-row">
+          <h1 className="ui-app-shell__title">{title}</h1>
+          {status}
+        </div>
       </div>
       {actions && <div className="ui-app-shell__actions">{actions}</div>}
     </header>

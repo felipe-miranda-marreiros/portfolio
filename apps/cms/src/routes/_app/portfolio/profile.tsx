@@ -1,20 +1,19 @@
 import { useMutation, useQuery } from "@tanstack/react-query";
 import { createFileRoute } from "@tanstack/react-router";
 import { useState } from "react";
-import { api } from "../../api/client";
-import { profileQuery, queryClient } from "../../api/queries";
-import type { Intent, Profile } from "../../api/types";
-import { PageHeader } from "../../components/AppShell";
-import { ConfirmDialog, ErrorSummary, LoadError, StatusBadge } from "../../components/feedback";
-import { LocalePair, TextField } from "../../components/fields";
-import { FormSkeleton, SubmitButtons, UnsavedChanges } from "../../components/form";
-import { Icon } from "../../components/Icon";
-import { PortraitUpload } from "../../components/PortraitUpload";
-import { useToast } from "../../components/Toasts";
-import { type ProfileValues, profileFields, profileSchema, toInput, toValues } from "../../forms/profile";
-import { useIntentForm } from "../../forms/useIntentForm";
+import { api } from "../../../api/client";
+import { profileQuery, queryClient } from "../../../api/queries";
+import type { Intent, Profile } from "../../../api/types";
+import { PageHeader, PORTFOLIO } from "../../../components/AppShell";
+import { ConfirmDialog, ErrorSummary, LoadError, StatusBadge } from "../../../components/feedback";
+import { LocalePair, TextField } from "../../../components/fields";
+import { FormSkeleton, SubmitButtons, UnsavedChanges } from "../../../components/form";
+import { PortraitUpload } from "../../../components/PortraitUpload";
+import { useToast } from "../../../components/Toasts";
+import { type ProfileValues, profileFields, profileSchema, toInput, toValues } from "../../../forms/profile";
+import { useIntentForm } from "../../../forms/useIntentForm";
 
-export const Route = createFileRoute("/_app/profile")({ component: ProfilePage });
+export const Route = createFileRoute("/_app/portfolio/profile")({ component: ProfilePage });
 
 function ProfilePage() {
   const profile = useQuery(profileQuery);
@@ -22,7 +21,7 @@ function ProfilePage() {
   if (profile.data !== undefined) return <ProfileForm profile={profile.data} />;
   return (
     <>
-      <PageHeader title="Profile" />
+      <PageHeader title="Profile" crumbs={[PORTFOLIO]} />
       {profile.isError ? (
         <LoadError what="your profile" onRetry={() => profile.refetch()} retrying={profile.isFetching} />
       ) : (
@@ -71,6 +70,7 @@ function ProfileForm({ profile }: { profile: Profile | null }) {
     <>
       <PageHeader
         title="Profile"
+        crumbs={[PORTFOLIO]}
         status={profile && <StatusBadge status={profile.status} />}
         actions={
           <>
@@ -92,16 +92,6 @@ function ProfileForm({ profile }: { profile: Profile | null }) {
         )}
       >
         <ErrorSummary problems={problems} attempt={attempt} />
-        {!profile && (
-          <div className="ui-message" data-tone="info" role="status">
-            <Icon name="info" />
-            <p className="ui-message__title">Your Portfolio is empty</p>
-            <p className="ui-message__body">
-              Start with who you are: fill in your profile in both Locales and publish it. Then add your skills and
-              experience.
-            </p>
-          </div>
-        )}
         <div className="ui-form__grid">
           <TextField id="name" label="Full name" registration={register("name")} error={error("name")} />
           <TextField

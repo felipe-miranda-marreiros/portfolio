@@ -2,11 +2,11 @@ import arrowDown from "lucide-static/icons/arrow-down.svg?raw";
 import arrowUp from "lucide-static/icons/arrow-up.svg?raw";
 import briefcase from "lucide-static/icons/briefcase.svg?raw";
 import check from "lucide-static/icons/check.svg?raw";
+import chevronRight from "lucide-static/icons/chevron-right.svg?raw";
 import circleAlert from "lucide-static/icons/circle-alert.svg?raw";
 import circleCheck from "lucide-static/icons/circle-check.svg?raw";
 import externalLink from "lucide-static/icons/external-link.svg?raw";
 import info from "lucide-static/icons/info.svg?raw";
-import list from "lucide-static/icons/list.svg?raw";
 import loader from "lucide-static/icons/loader-circle.svg?raw";
 import logOut from "lucide-static/icons/log-out.svg?raw";
 import moon from "lucide-static/icons/moon.svg?raw";
@@ -24,11 +24,11 @@ const svgs = {
   arrowUp,
   briefcase,
   check,
+  chevronRight,
   circleAlert,
   circleCheck,
   externalLink,
   info,
-  list,
   loader,
   logOut,
   moon,
@@ -45,10 +45,11 @@ const svgs = {
 export type IconName = keyof typeof svgs;
 
 /** A decorative Lucide icon; the text or accessible name next to it carries the meaning. */
-export function Icon({ name, className = "" }: { name: IconName; className?: string }) {
+export function Icon({ name, className = "", size }: { name: IconName; className?: string; size?: "md" }) {
   return (
     <span
       className={`ui-icon ${className}`.trim()}
+      data-size={size}
       aria-hidden="true"
       // biome-ignore lint/security/noDangerouslySetInnerHtml: the SVGs are bundled Lucide files, not user input.
       dangerouslySetInnerHTML={{ __html: svgs[name] }}
