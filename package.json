@@ -12,6 +12,7 @@
     "test": "bun test",
     "lint": "biome check .",
     "fix": "biome check --write .",
-    "check:planning": "bun scripts/planning-docs.ts"
+    "check:planning": "bun scripts/planning-docs.ts",
+    "frontier": "bun scripts/frontier.ts"
   }
 }
