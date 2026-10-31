@@ -59,6 +59,20 @@ The `impeccable` skill (`.claude/skills/impeccable/`, from [impeccable.style](ht
 - Package manager and runtime: **Bun** (lockfile is `bun.lock`; use `bun install`, not npm/yarn/pnpm).
 - `.gitignore` covers `node_modules/`, build output, env files, logs and coverage. `bun.lock` is tracked.
 
+## Agent skills
+
+### Issue tracker
+
+Specs and Tickets live as GitHub issues in this repo, managed with `gh`: Tickets are sub-issues of their Spec with native blockers, claimed by assignee, and closed only by a merged PR. See `docs/agents/issue-tracker.md`.
+
+### Triage labels
+
+The five default labels, unchanged: `needs-triage`, `needs-info`, `ready-for-agent`, `ready-for-human`, `wontfix`. See `docs/agents/triage-labels.md`.
+
+### Domain docs
+
+Single-context: one root `GLOSSARY.md` and `docs/adr/`. See `docs/agents/domain.md`.
+
 <!-- rtk-instructions v2 -->
 # Command output
 
