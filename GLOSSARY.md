@@ -4,6 +4,44 @@ A portfolio project, and the harness that keeps the work AI agents do on it plan
 
 ## Language
 
+### Product
+
+**Portfolio**:
+The public, bilingual site that Visitors read. It renders only Published Content.
+_Avoid_: site, frontend, website
+
+**CMS**:
+The application where the Owner edits Content. It never changes layout or visual design.
+_Avoid_: admin, dashboard, back office
+
+**Owner**:
+The person the Portfolio presents, and the only user of the CMS.
+_Avoid_: admin, author, user
+
+**Visitor**:
+Anyone reading the Portfolio, mainly recruiters and engineers.
+_Avoid_: user, guest, reader
+
+**Page**:
+A top-level destination of the Portfolio: Home, Experience or About me. A Page is made of Sections.
+_Avoid_: screen, route, view
+
+**Section**:
+A distinct part of a Page, such as Education and certifications on Experience. The Footer is the Section shown on every Page.
+_Avoid_: block, area, module
+
+**Content**:
+Everything a Visitor reads or downloads on the Portfolio, edited in the CMS, in both languages.
+_Avoid_: data, copy, entries
+
+**Draft**:
+A Content item's unpublished version, visible only to the Owner in the CMS.
+_Avoid_: unpublished, pending
+
+**Published**:
+A Content item's live version, the only one Visitors see. Editing it creates a Draft over it.
+_Avoid_: live, public, released
+
 ### Planning workflow
 
 **Vision**:
