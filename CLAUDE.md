@@ -20,7 +20,7 @@ CI (`.github/workflows/`) repeats these checks for pull requests (`pr.yml`: ever
 
 ## Linting and formatting
 
-[Biome](https://biomejs.dev) (`biome.json`) formats and lints code and config: 2 spaces, 120 columns, double quotes, LF. A Husky `pre-commit` hook runs `biome check --staged` and `lint.yml` runs `biome ci .` in CI. Markdown, vendored skills, `.agents/`, `.impeccable/`, `.rtk/` and `skills-lock.json` are excluded. `.gitattributes` forces LF checkouts so Windows (CRLF) and CI agree.
+[Biome](https://biomejs.dev) (`biome.json`) formats and lints code and config: 2 spaces, 120 columns, double quotes, LF. A Husky `pre-commit` hook runs `biome check --staged` and `lint.yml` runs `biome ci .` in CI. Markdown, vendored skills, `.agents/`, `.rtk/` and `skills-lock.json` are excluded. `.gitattributes` forces LF checkouts so Windows (CRLF) and CI agree.
 
 ## File size
 
