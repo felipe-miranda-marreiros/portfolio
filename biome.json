@@ -10,6 +10,7 @@
       "**",
       "!.agents",
       "!.claude/skills",
+      "!.impeccable",
       "!.rtk",
       "!skills-lock.json",
       "!.claude/settings.local.json",
