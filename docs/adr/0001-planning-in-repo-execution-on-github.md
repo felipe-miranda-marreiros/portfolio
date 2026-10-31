@@ -11,3 +11,5 @@ The Vision and Roadmap are markdown files in `docs/`, while Specs and Tickets ar
 ## Consequences
 
 Each Milestone transition costs one small planning PR, and a Ticket closed outside a merge would unblock its dependents early, so agents are denied `gh issue close`.
+
+The act of Approval is superseded by [ADR-0002](0002-approval-is-a-manual-workflow-run.md): a manual workflow run, not a merged PR.
