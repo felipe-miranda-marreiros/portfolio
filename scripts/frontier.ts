@@ -63,6 +63,7 @@ export function ticketErrors(number: number, milestones: Milestone[], specTicket
     const ticket = ticketsOf(milestone, specTickets).find((t) => t.number === number);
     if (!ticket) continue;
     const errors: string[] = [];
+    if (ticket.state === "closed") errors.push(`#${number}: is already closed`);
     if (milestone.status !== "in-progress") {
       errors.push(`#${number}: its Milestone ${milestone.id} is ${milestone.status}, not in-progress`);
     }
