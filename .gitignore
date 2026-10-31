@@ -27,3 +27,12 @@ coverage/
 .idea/
 .DS_Store
 Thumbs.db
+
+# impeccable working state
+.impeccable/config.local.json
+.impeccable/hook.*.json
+.impeccable/live/
+.impeccable/review/
+.impeccable/build/
+.impeccable/mocks/
+.impeccable/questions/

@@ -1,3 +1,5 @@
 * text=auto eol=lf
 .claude/skills/impeccable/** linguist-vendored
 docs/workflow.excalidraw linguist-generated
+DESIGN.md linguist-generated
+.impeccable/** linguist-generated
