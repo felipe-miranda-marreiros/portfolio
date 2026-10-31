@@ -1,6 +1,6 @@
 # Vision
 
-Status: draft
+Status: approved
 
 ## Why
 
