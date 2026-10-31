@@ -12,6 +12,7 @@ Work moves through stages, and only a human moves it to the next one. Vocabulary
 - `docs/adr/`: one ADR per hard-to-reverse decision, usually closing an open decision from the Vision.
 - `docs/ROADMAP.md`: the Milestones, each with its status, its blockers and a link to its Spec.
 - Specs are GitHub issues written by `/to-spec`, one per Milestone. Tickets are its sub-issues, written by `/to-tickets`, with blockers set as native GitHub issue dependencies.
+- `/vision` and `/roadmap` are project skills that write the Vision and Roadmap in docs-only PRs; glossary changes go in a separate PR, because a PR that changes a `Status:` line touches nothing outside `docs/`.
 
 ## Roadmap format
 
