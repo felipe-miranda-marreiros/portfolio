@@ -2,6 +2,8 @@ import { afterAll, describe, expect, test } from "bun:test";
 import { mkdtempSync, rmSync, writeFileSync } from "node:fs";
 import { tmpdir } from "node:os";
 import { join } from "node:path";
+import { denyReason, type HookSources } from "../.claude/hooks/check-pr-body.ts";
+import type { Milestone } from "./planning-docs.ts";
 import { missingSections } from "./pr-body.ts";
 
 const hookPath = join(import.meta.dir, "..", ".claude", "hooks", "check-pr-body.ts");
@@ -11,14 +13,49 @@ afterAll(() => rmSync(tempDir, { recursive: true, force: true }));
 const GOOD_BODY = "## Summary\nA\n## Evidence\nB\n## Merge Danger\nC";
 const goodFile = join(tempDir, "good.md");
 const badFile = join(tempDir, "bad.md");
+const closingFile = join(tempDir, "closing.md");
 writeFileSync(goodFile, GOOD_BODY);
 writeFileSync(badFile, "just a body\n");
+writeFileSync(closingFile, `${GOOD_BODY}\nCloses #21`);
 
 function hookExitCode(command: string): number {
   const result = Bun.spawnSync(["bun", hookPath], {
     stdin: new TextEncoder().encode(JSON.stringify({ tool_name: "Bash", tool_input: { command } })),
   });
   return result.exitCode;
+}
+
+const unreachable = () => {
+  throw new Error("should not be loaded");
+};
+
+const noRoadmap: HookSources = {
+  roadmap: () => undefined,
+  repo: unreachable,
+  specTickets: unreachable,
+  pr: () => ({ title: "feat: x", body: GOOD_BODY }),
+};
+
+const milestones: Milestone[] = [{ id: "M1", title: "Now", status: "in-progress", blockedBy: [], spec: 20 }];
+const openTicket = { title: "T", state: "open", labels: [], assignees: [] } as const;
+
+function withRoadmap(overrides: Partial<HookSources> = {}): HookSources {
+  return {
+    roadmap: () => milestones,
+    repo: () => "owner/repo",
+    specTickets: () =>
+      new Map([
+        [
+          20,
+          [
+            { ...openTicket, number: 21, openBlockers: [] },
+            { ...openTicket, number: 22, openBlockers: [21] },
+          ],
+        ],
+      ]),
+    pr: unreachable,
+    ...overrides,
+  };
 }
 
 describe("missingSections", () => {
@@ -64,10 +101,70 @@ describe("check-pr-body hook", () => {
   ];
 
   test.each(allowed)("allows %s", (_label, command) => {
-    expect(hookExitCode(command)).toBe(0);
+    expect(denyReason(command, noRoadmap)).toBeUndefined();
   });
 
   test.each(denied)("denies %s", (_label, command) => {
-    expect(hookExitCode(command)).toBe(2);
+    expect(denyReason(command, noRoadmap)).toBeDefined();
+  });
+
+  test("exits 0 to allow and 2 to deny", () => {
+    expect(hookExitCode("git status")).toBe(0);
+    expect(hookExitCode('gh pr create --title "docs: x" --body "nope"')).toBe(2);
+  });
+});
+
+describe("check-pr-body hook ticket gate", () => {
+  const create = (title: string, file = goodFile) => `gh pr create --title "${title}" --body-file ${file}`;
+
+  test("allows a code PR that closes a Ticket on the Frontier", () => {
+    expect(denyReason(create("feat: x", closingFile), withRoadmap())).toBeUndefined();
+  });
+
+  test("allows an exempt PR without loading anything", () => {
+    const loadNothing = withRoadmap({ roadmap: unreachable, repo: unreachable, specTickets: unreachable });
+    expect(denyReason(create("ci(hooks)!: x"), loadNothing)).toBeUndefined();
+  });
+
+  test("denies a code PR that closes no issue", () => {
+    expect(denyReason(create("feat: x"), withRoadmap())).toContain("closes exactly one Ticket");
+  });
+
+  test("denies a code PR that closes a blocked Ticket", () => {
+    expect(denyReason(`gh pr create -t "fix: x" -b "${GOOD_BODY} Closes #22"`, withRoadmap())).toContain(
+      "#22: is blocked by open issue(s) #21",
+    );
+  });
+
+  test("checks a new body against the PR's current title", () => {
+    const sources = withRoadmap({ pr: () => ({ title: "feat: x", body: "" }) });
+    expect(denyReason(`gh pr edit 5 --body "${GOOD_BODY}"`, sources)).toContain("closes exactly one Ticket");
+    expect(denyReason(`gh pr edit 5 --body "${GOOD_BODY} fixes #21"`, sources)).toBeUndefined();
+  });
+
+  test("checks a new title against the PR's current body", () => {
+    let selector: string | undefined;
+    const sources = withRoadmap({
+      pr: (s) => {
+        selector = s;
+        return { title: "docs: x", body: "no ticket" };
+      },
+    });
+    expect(denyReason('gh pr edit 5 --title "feat: x"', sources)).toContain("closes exactly one Ticket");
+    expect(selector).toBe("5");
+    expect(denyReason('gh pr edit --title "docs: y"', sources)).toBeUndefined();
+  });
+
+  test("ignores an edit that changes neither title nor body", () => {
+    expect(denyReason("gh pr edit 5 --add-label bug", withRoadmap())).toBeUndefined();
+  });
+
+  test("denies with the error when gh fails", () => {
+    const failing = withRoadmap({
+      specTickets: () => {
+        throw new Error("gh api issues/20/sub_issues failed: HTTP 401");
+      },
+    });
+    expect(denyReason(create("feat: x", closingFile), failing)).toContain("HTTP 401");
   });
 });
