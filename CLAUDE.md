@@ -9,9 +9,10 @@ This repository is a scaffold for a portfolio project: there is no application s
 ## Commands
 
 - `bun install`: installs dependencies and sets up the Husky hooks via the `prepare` script.
-- `bun test`: runs the tests (currently `scripts/check-pr-body.test.ts` and `scripts/deny-issue-close.test.ts`, which cover the PR body and issue close hooks, and `scripts/planning-docs.test.ts` and `scripts/status-isolation.test.ts`, which cover the planning checks). Run a single test with `bun test -t "<name>"`.
+- `bun test`: runs the tests (currently `scripts/check-pr-body.test.ts` and `scripts/deny-issue-close.test.ts`, which cover the PR body and issue close hooks, and `scripts/planning-docs.test.ts`, `scripts/status-isolation.test.ts` and `scripts/frontier.test.ts`, which cover the planning checks and the Frontier). Run a single test with `bun test -t "<name>"`.
 - `bun run lint`: runs Biome (`biome check .`: format, lint, import order). `bun run fix` applies the safe fixes.
 - `bun run check:planning`: validates `docs/VISION.md` and `docs/ROADMAP.md` (`scripts/planning-docs.ts`); passes when they don't exist.
+- `bun run frontier`: lists whose turn it is (`scripts/frontier.ts`): the Milestone Frontier, the Milestones awaiting a Spec and the Ticket Frontier, read from `docs/ROADMAP.md` and GitHub with `gh api`.
 
 ## Commits
 
@@ -41,7 +42,7 @@ Every PR body must follow the `pr` skill in `.claude/skills/pr/` (from [mattpoco
 
 ## Planning
 
-Work follows a staged pipeline: Vision (`docs/VISION.md`), ADRs (`docs/adr/`), Roadmap (`docs/ROADMAP.md`), then one Spec issue per Milestone and its Tickets as sub-issues with native blockers. Only a human advances a stage, by merging the PR that changes a `Status:` line; never change one yourself. Specify only an `in-progress` Milestone, claim a Ticket by assignee only when it is on the Frontier, close exactly one Ticket per code PR, and never close issues or remove blockers by hand (a `PreToolUse` hook, `.claude/hooks/deny-issue-close.ts`, denies it). Vocabulary is in `GLOSSARY.md`, the decision in `docs/adr/0001-planning-in-repo-execution-on-github.md`, the full rules in `.claude/rules/planning.md`. `planning.yml` enforces the formats with `scripts/planning-docs.ts` and keeps `Status:` changes out of code PRs with `scripts/status-isolation.ts`.
+Work follows a staged pipeline: Vision (`docs/VISION.md`), ADRs (`docs/adr/`), Roadmap (`docs/ROADMAP.md`), then one Spec issue per Milestone and its Tickets as sub-issues with native blockers. Only a human advances a stage, by merging the PR that changes a `Status:` line; never change one yourself. Run `bun run frontier` first, then specify only an `in-progress` Milestone, claim a Ticket by assignee only when it is on the Frontier, close exactly one Ticket per code PR, and never close issues or remove blockers by hand (a `PreToolUse` hook, `.claude/hooks/deny-issue-close.ts`, denies it). Vocabulary is in `GLOSSARY.md`, the decision in `docs/adr/0001-planning-in-repo-execution-on-github.md`, the full rules in `.claude/rules/planning.md`. `planning.yml` enforces the formats with `scripts/planning-docs.ts` and keeps `Status:` changes out of code PRs with `scripts/status-isolation.ts`.
 
 ## Engineering skills
 
