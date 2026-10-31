@@ -124,15 +124,22 @@ export function loadSpecTickets(specs: number[]): SpecTickets {
 }
 
 /**
+ * Returns the Milestones of a Roadmap's text.
+ * @throws when the Roadmap is invalid
+ */
+export function roadmapMilestones(text: string): Milestone[] {
+  const { milestones, errors } = parseRoadmap(text);
+  if (errors.length > 0) throw new Error(`${errors.join("\n")}\nRun bun run check:planning to see every error.`);
+  return milestones;
+}
+
+/**
  * Reads the Milestones of docs/ROADMAP.md, or returns undefined when it doesn't exist.
  * @throws when the Roadmap is invalid
  */
 export function readRoadmap(): Milestone[] | undefined {
   const file = join(import.meta.dir, "..", ROADMAP_PATH);
-  if (!existsSync(file)) return undefined;
-  const { milestones, errors } = parseRoadmap(readFileSync(file, "utf8"));
-  if (errors.length > 0) throw new Error(`${errors.join("\n")}\nRun bun run check:planning to see every error.`);
-  return milestones;
+  return existsSync(file) ? roadmapMilestones(readFileSync(file, "utf8")) : undefined;
 }
 
 function printList(heading: string, items: string[]): void {
