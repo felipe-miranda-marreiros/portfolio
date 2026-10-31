@@ -115,4 +115,10 @@ describe("ticketErrors", () => {
       "#21: is blocked by open issue(s) #22, #23",
     ]);
   });
+
+  test("rejects a Ticket that is already closed", () => {
+    expect(ticketErrors(21, milestones, new Map([[20, [ticket(21, { state: "closed" })]]]))).toEqual([
+      "#21: is already closed",
+    ]);
+  });
 });
