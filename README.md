@@ -47,11 +47,12 @@ The diagram source is [`docs/workflow.excalidraw`](docs/workflow.excalidraw); op
 | `git commit` | Husky `pre-commit` | Biome on staged files; no file over 5,000 tokens |
 | `git commit` | Husky `commit-msg` + commitlint | Conventional Commits message |
 | `git push` | Husky `pre-push` | Branch is `<type>/<kebab-description>` |
-| Pull request | `pr.yml` | Every commit message, PR title, branch name, PR body; `ticket` job: a code PR closes exactly one Ticket on the Frontier of `main`'s Roadmap |
+| Pull request | `pr.yml` | Every commit message, PR title, branch name, PR body; `ticket` job: a code PR closes exactly one Ticket on the Frontier of `main`'s Roadmap; `tdd` job: every `feat`/`fix` commit follows a `test` commit whose tests fail, and passes `bun test` |
 | Pull request | `planning.yml` | Vision and Roadmap format; a PR changing a `Status:` line touches only `docs/` |
 | Pull request / `main` | `lint.yml` | `biome ci .` |
+| Pull request / `main` | `test.yml` | `bun test` |
 | Issue opened | `issue-title.yml` | Conventional Commits title (comments, does not block) |
-| Any time | `bun test` | Tests for the hooks, planning checks, Frontier and Ticket gate |
+| Any time | `bun test` | Tests for the hooks, planning checks, Frontier, Ticket gate and test-first gate |
 | Any time | `bun run frontier` | Whose turn it is, read from the Roadmap and GitHub |
 
 ### Non-deterministic
@@ -59,7 +60,7 @@ The diagram source is [`docs/workflow.excalidraw`](docs/workflow.excalidraw); op
 | Tool | Where | Purpose |
 | --- | --- | --- |
 | `CLAUDE.md` | root | Project guidance loaded into every session |
-| Rules | `.claude/rules/` | Comments, commits, branches/issues/PRs, language, planning |
+| Rules | `.claude/rules/` | Comments, commits, branches/issues/PRs, language, planning, TDD |
 | `vision`, `roadmap` skills | `.claude/skills/` | Interview the user and write the Vision or Roadmap in the validated format |
 | `grill-me`, `grill-with-docs`, `grilling` skills | `.claude/skills/` | Stress-test a plan; `grill-with-docs` also records ADRs and glossary terms |
 | `domain-modeling` skill | `.claude/skills/domain-modeling/` | Glossary and ADRs |
