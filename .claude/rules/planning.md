@@ -42,4 +42,4 @@ Spec: #20
 - Claim only a Ticket on the Frontier: open, labelled `ready-for-agent`, every native blocker closed, no assignee, and its Milestone `in-progress`. Check all five before claiming.
 - Claim a Ticket by assigning it to yourself (`gh issue edit <n> --add-assignee @me`) before starting.
 - One code PR closes exactly one Ticket, with a single `Closes #N`. `docs`, `chore`, `ci`, `build` and `revert` PRs are exempt.
-- Never close an issue or remove a blocker (`gh issue close`, `gh issue edit --remove-blocked-by`). A Ticket closes only when its PR is merged, so its dependents unblock only then.
+- Never close an issue or remove a blocker (`gh issue close`, `gh issue edit --remove-blocked-by`). A Ticket closes only when its PR is merged, so its dependents unblock only then. A `PreToolUse` hook (`.claude/hooks/deny-issue-close.ts`) denies these commands and their `gh api` equivalents.
