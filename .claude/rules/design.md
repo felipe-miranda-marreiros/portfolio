@@ -13,7 +13,7 @@ Frontend design work uses the `impeccable` skill (`.claude/skills/impeccable/`),
 
 ## Workflow
 
-Work happens on a component catalog, a style guide page that every Impeccable command targets until Pages exist. Each
+Work happens on the component catalog (see Catalog), which every Impeccable command targets until Pages exist. Each
 step lands in its own PRs.
 
 1. **Design system.** `/impeccable document --seed` sets the Portfolio's Visual language with the catalog as the first
@@ -31,3 +31,23 @@ step lands in its own PRs.
 4. **Pages.** Compose Pages from the catalog's components. `extract` applies only from here on.
 
 Components with behavior, such as the language toggle, follow `tdd.md`.
+
+## Catalog
+
+The catalog is plain HTML and CSS: no framework, no build step and no JavaScript, until an ADR says otherwise. It is
+split by folder so no file grows large:
+
+```
+catalog/
+├── index.html          # links to every token and component page
+├── tokens/             # one CSS file per token group (color.css, typography.css, spacing.css, ...)
+├── tokens.css          # @imports every file in tokens/
+└── components/
+    └── button/
+        ├── button.css  # the component's styles, from tokens only
+        └── index.html  # the component in every state
+```
+
+- One folder per component, with its own CSS and its own catalog page; never put several components in one file.
+- Each page links only the CSS it needs: `tokens.css` and its components' files.
+- Catalog pages may hold placeholder text to show a component; components themselves still hold none.
