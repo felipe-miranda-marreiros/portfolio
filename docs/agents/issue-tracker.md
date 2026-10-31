@@ -33,7 +33,7 @@ A Ticket may be claimed only when all of these hold:
 4. It has no assignee.
 5. Its Spec's Milestone is `in-progress` in `docs/ROADMAP.md`.
 
-Check all five before claiming. Several agents may work the Frontier in parallel, each on a different Ticket.
+`bun run frontier` lists the Tickets that pass all five; run it before claiming. Several agents may work the Frontier in parallel, each on a different Ticket.
 
 ## Pull requests as a triage surface
 
