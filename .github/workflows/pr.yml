@@ -78,3 +78,28 @@ jobs:
         run: |
           if [ -f scripts/ticket-gate.ts ]; then bun scripts/ticket-gate.ts
           else echo "✔ scripts/ticket-gate.ts is not on the base branch yet, so the gate is inactive"; fi
+
+  tdd:
+    name: Test first
+    runs-on: ubuntu-latest
+    steps:
+      # the gate runs from the base branch so a PR can't edit it to pass; it checks out the PR's commits beside it
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.base_ref }}
+          path: gate
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.pull_request.head.sha }}
+          fetch-depth: 0
+          path: pr
+      - uses: oven-sh/setup-bun@v2
+      - name: Check every feat and fix commit follows its failing test
+        working-directory: gate
+        env:
+          PR_TITLE: ${{ github.event.pull_request.title }}
+          TDD_REPO: ${{ github.workspace }}/pr
+        run: |
+          if [ -f scripts/tdd-gate.ts ]; then
+            bun scripts/tdd-gate.ts "${{ github.event.pull_request.base.sha }}" "${{ github.event.pull_request.head.sha }}"
+          else echo "✔ scripts/tdd-gate.ts is not on the base branch yet, so the gate is inactive"; fi
