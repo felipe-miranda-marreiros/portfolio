@@ -1,4 +1,4 @@
-# Portfolio
+# Portfolio project
 
 A portfolio project, and the harness that keeps the work AI agents do on it planned, ordered and verifiable.
 
@@ -7,15 +7,15 @@ A portfolio project, and the harness that keeps the work AI agents do on it plan
 ### Product
 
 **Portfolio**:
-The public, bilingual site that Visitors read. It renders only Published Content.
+The public, bilingual presentation of the Owner that Visitors read. It shows only Published Content.
 _Avoid_: site, frontend, website
 
 **CMS**:
-The application where the Owner edits Content. It never changes layout or visual design.
+The application where the Owner edits Content.
 _Avoid_: admin, dashboard, back office
 
 **Owner**:
-The person the Portfolio presents, and the only user of the CMS.
+The person the Portfolio presents, and the only person who edits in the CMS.
 _Avoid_: admin, author, user
 
 **Visitor**:
@@ -23,23 +23,31 @@ Anyone reading the Portfolio, mainly recruiters and engineers.
 _Avoid_: user, guest, reader
 
 **Page**:
-A top-level destination of the Portfolio: Home, Experience or About me. A Page is made of Sections.
+A top-level destination of the Portfolio, such as Home, Experience or About me. A Page is made of Sections.
 _Avoid_: screen, route, view
 
 **Section**:
 A distinct part of a Page, such as Education and certifications on Experience. The Footer is the Section shown on every Page.
 _Avoid_: block, area, module
 
+**Visual language**:
+The look shared by a set of Pages. The Portfolio has one, About me has its own, and the CMS uses the Portfolio's.
+_Avoid_: theme, skin, style
+
 **Content**:
 Everything a Visitor reads or downloads on the Portfolio, edited in the CMS, in both languages.
-_Avoid_: data, copy, entries
+_Avoid_: data, copy
+
+**Content item**:
+One piece of Content the Owner edits and publishes on its own, such as a role, a Footer link or a CV.
+_Avoid_: entry, record, document
 
 **Draft**:
-A Content item's unpublished version, visible only to the Owner in the CMS.
+A Content item's version not yet Published, visible only to the Owner in the CMS. Not to be confused with a draft Vision.
 _Avoid_: unpublished, pending
 
 **Published**:
-A Content item's live version, the only one Visitors see. Editing it creates a Draft over it.
+A Content item's version that Visitors see. Editing it creates a Draft over it.
 _Avoid_: live, public, released
 
 ### Planning workflow
