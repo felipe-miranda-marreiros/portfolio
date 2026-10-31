@@ -5,7 +5,8 @@ Sources: [Make Small Commits](https://dev.to/oculus42/make-small-commits-22cd), 
 ## Small commits
 
 - One logical change per commit. If the message needs "and" or several sentences, split it.
-- Every commit leaves the project in a working state.
+- Every commit leaves the project in a working state, except the red `test` commit that comes right before its `feat` or `fix` commit (see `tdd.md`).
+- Behavior changes are test first: commit the failing test, then the code, as two commits (see `tdd.md`).
 - Review the diff before committing and stage selectively (`git add -p`) so unrelated edits land in separate commits.
 - Commit often; don't let work pile up uncommitted.
 - Keep refactors in their own commits, separate from feature or fix work.
