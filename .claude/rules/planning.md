@@ -1,6 +1,6 @@
 # Planning workflow
 
-Work moves through stages, and only a human moves it to the next one. Vocabulary is in `GLOSSARY.md`; the reasoning is in `docs/adr/0001-planning-in-repo-execution-on-github.md`.
+Work moves through stages, and only a human moves it to the next one. Vocabulary is in `GLOSSARY.md`; the reasoning is in `docs/adr/0001-planning-in-repo-execution-on-github.md` and `docs/adr/0002-approval-is-a-manual-workflow-run.md`.
 
 ## Pipeline
 
@@ -35,7 +35,8 @@ Spec: #20
 
 ## Approval
 
-- Never change a `Status:` line in `docs/VISION.md` or `docs/ROADMAP.md`. Vision status (`draft` -> `approved`) and Milestone status change only through a PR the human merges.
+- Never change a `Status:` line in `docs/VISION.md` or `docs/ROADMAP.md`. The human approves the Vision (`draft` -> `approved`) and moves a Milestone (`planned` -> `in-progress` -> `done`) by dispatching the `Approve` workflow (`.github/workflows/approve.yml`) on `main` with a target, `vision` or a Milestone id. It runs `scripts/approve.ts`, which changes only that line and requires the planning checks to pass, and commits to `main`.
+- Never dispatch the `Approve` workflow. A `PreToolUse` hook (`.claude/hooks/deny-approval.ts`) denies `gh workflow run approve` and its `gh api` equivalent.
 - A PR that changes a `Status:` line touches nothing outside `docs/`.
 - CI (`planning.yml`, `scripts/status-isolation.ts`) fails a PR that breaks this.
 

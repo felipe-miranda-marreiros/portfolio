@@ -25,7 +25,7 @@ Work moves through stages, and only a human moves it to the next one:
 /vision -> /grill-with-docs -> /roadmap -> /to-spec -> /to-tickets -> /implement
 ```
 
-The Vision (`docs/VISION.md`), ADRs (`docs/adr/`) and Roadmap (`docs/ROADMAP.md`) live in the repo; each Milestone of the Roadmap gets one Spec issue on GitHub, with its Tickets as sub-issues and native blockers. A stage advances when the human merges the PR that changes a `Status:` line. Every Milestone and Ticket names its blockers, so several agents can work the Frontier in parallel. Vocabulary is in [`GLOSSARY.md`](GLOSSARY.md), the reasoning in [ADR-0001](docs/adr/0001-planning-in-repo-execution-on-github.md).
+The Vision (`docs/VISION.md`), ADRs (`docs/adr/`) and Roadmap (`docs/ROADMAP.md`) live in the repo; each Milestone of the Roadmap gets one Spec issue on GitHub, with its Tickets as sub-issues and native blockers. A stage advances when the human runs the `Approve` workflow, which commits the `Status:` change to `main`. Every Milestone and Ticket names its blockers, so several agents can work the Frontier in parallel. Vocabulary is in [`GLOSSARY.md`](GLOSSARY.md), the reasoning in [ADR-0001](docs/adr/0001-planning-in-repo-execution-on-github.md) and [ADR-0002](docs/adr/0002-approval-is-a-manual-workflow-run.md).
 
 ## Workflow and quality gates
 
