@@ -1,0 +1,44 @@
+name: Approve
+
+on:
+  workflow_dispatch:
+    inputs:
+      target:
+        description: "vision, or a Milestone id such as M2"
+        required: true
+        type: string
+
+permissions:
+  contents: write
+
+concurrency: approve
+
+env:
+  HUSKY: 0
+
+jobs:
+  approve:
+    name: Approve
+    runs-on: ubuntu-latest
+    steps:
+      - name: Only the repository owner approves, on main
+        env:
+          ACTOR: ${{ github.actor }}
+          OWNER: ${{ github.repository_owner }}
+          REF: ${{ github.ref }}
+        run: |
+          if [ "$ACTOR" != "$OWNER" ]; then echo "::error::$ACTOR is not the repository owner"; exit 1; fi
+          if [ "$REF" != "refs/heads/main" ]; then echo "::error::run it on main, not $REF"; exit 1; fi
+      - uses: actions/checkout@v4
+      - uses: oven-sh/setup-bun@v2
+      - run: bun install --frozen-lockfile
+      - name: Record the Approval on main
+        env:
+          TARGET: ${{ inputs.target }}
+          ACTOR: ${{ github.actor }}
+        run: |
+          message=$(bun scripts/approve.ts "$TARGET")
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git commit -a -m "$message" -m "Approved-by: $ACTOR"
+          git push
