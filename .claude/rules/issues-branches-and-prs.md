@@ -35,6 +35,7 @@ Issues, branches and pull requests follow the same Conventional Commits vocabula
 ```
 
 - The title is a Conventional Commits header, same format as an issue title. PRs are merged with a rebase or a merge commit, never squashed, so their test-first commit pairs reach `main` (see `tdd.md`).
+- Never merge a PR: only the human merges, with a rebase or a merge commit, never a squash. A Claude Code `PreToolUse` hook (`.claude/hooks/deny-pr-merge.ts`) denies `gh pr merge` and its `gh api` equivalents.
 - Enforced by the `title` job in `.github/workflows/pr.yml` (commitlint), alongside the per-commit and branch-name checks; fix the title with `gh pr edit --title` instead of merging a failing PR.
 - The type matches the branch type (`feat/claude-config` -> `feat...`); the scope, if any, matches the branch scope.
 - One PR per logical change, kept small: a PR that needs "and" in its title should be split. Its commits stay small and conventional too.
