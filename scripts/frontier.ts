@@ -1,8 +1,11 @@
 /**
  * Single definition of whose turn it is (see .claude/rules/planning.md): the Milestone Frontier, the Milestones
- * awaiting a Spec, the Ticket Frontier, and whether one issue is a Ticket that may be closed now.
+ * awaiting a Spec, the Ticket Frontier, and whether one issue is a Ticket that may be closed now. Run directly, it
+ * prints the three lists from docs/ROADMAP.md and GitHub, and exits 1 on an invalid Roadmap or a gh failure.
  */
-import { type Milestone, ROADMAP_PATH } from "./planning-docs.ts";
+import { existsSync, readFileSync } from "node:fs";
+import { join } from "node:path";
+import { type Milestone, parseRoadmap, ROADMAP_PATH } from "./planning-docs.ts";
 
 export const READY_LABEL = "ready-for-agent";
 
@@ -69,4 +72,91 @@ export function ticketErrors(number: number, milestones: Milestone[], specTicket
     return errors;
   }
   return [`#${number} is not a sub-issue of any Spec in ${ROADMAP_PATH}`];
+}
+
+interface GitHubIssue {
+  number: number;
+  title: string;
+  state: string;
+  labels: { name: string }[];
+  assignees: { login: string }[];
+  issue_dependencies_summary?: { blocked_by: number } | null;
+}
+
+/**
+ * Returns every item of a paginated list endpoint of the current repo, through `gh api`.
+ * @throws when gh fails or isn't installed
+ */
+function ghList<T>(path: string): T[] {
+  const args = ["gh", "api", "--paginate", "--slurp", `repos/{owner}/{repo}/${path}?per_page=100`];
+  const result = Bun.spawnSync(args, { stderr: "pipe" });
+  if (result.exitCode !== 0) throw new Error(`gh api ${path} failed: ${result.stderr.toString().trim()}`);
+  return (JSON.parse(result.stdout.toString()) as T[][]).flat();
+}
+
+function openBlockers(issue: GitHubIssue): number[] {
+  // the summary counts open blockers only, so 0 saves a request
+  if (issue.state !== "open" || issue.issue_dependencies_summary?.blocked_by === 0) return [];
+  return ghList<GitHubIssue>(`issues/${issue.number}/dependencies/blocked_by`)
+    .filter((blocker) => blocker.state === "open")
+    .map((blocker) => blocker.number);
+}
+
+/**
+ * Fetches the sub-issues of each Spec, with the open blockers of the open ones.
+ * @throws when a gh call fails
+ */
+export function loadSpecTickets(specs: number[]): SpecTickets {
+  return new Map(
+    specs.map((spec) => [
+      spec,
+      ghList<GitHubIssue>(`issues/${spec}/sub_issues`).map((issue) => ({
+        number: issue.number,
+        title: issue.title,
+        state: issue.state === "open" ? "open" : "closed",
+        labels: issue.labels.map((label) => label.name),
+        assignees: issue.assignees.map((assignee) => assignee.login),
+        openBlockers: openBlockers(issue),
+      })),
+    ]),
+  );
+}
+
+/**
+ * Reads the Milestones of docs/ROADMAP.md, or returns undefined when it doesn't exist.
+ * @throws when the Roadmap is invalid
+ */
+export function readRoadmap(): Milestone[] | undefined {
+  const file = join(import.meta.dir, "..", ROADMAP_PATH);
+  if (!existsSync(file)) return undefined;
+  const { milestones, errors } = parseRoadmap(readFileSync(file, "utf8"));
+  if (errors.length > 0) throw new Error(`${errors.join("\n")}\nRun bun run check:planning to see every error.`);
+  return milestones;
+}
+
+function printList(heading: string, items: string[]): void {
+  console.log(heading);
+  for (const item of items.length > 0 ? items : ["none"]) console.log(`  ${item}`);
+}
+
+if (import.meta.main) {
+  try {
+    const milestones = readRoadmap();
+    if (!milestones) {
+      console.log(`No ${ROADMAP_PATH} yet, so there is no Milestone or Ticket to pick up.`);
+      process.exit(0);
+    }
+    const specs = milestones.flatMap((m) => (m.status === "in-progress" && m.spec !== null ? [m.spec] : []));
+    const tickets = ticketFrontier(milestones, loadSpecTickets(specs));
+    const label = (m: Milestone) => `${m.id}: ${m.title}`;
+    printList("Milestone Frontier (a human may approve one):", milestoneFrontier(milestones).map(label));
+    printList("Milestones awaiting a Spec (run /to-spec):", awaitingSpec(milestones).map(label));
+    printList(
+      "Ticket Frontier (an agent may claim one):",
+      tickets.map(({ milestone, ticket }) => `#${ticket.number} ${ticket.title} (${milestone.id})`),
+    );
+  } catch (error) {
+    console.error(`✖ ${error instanceof Error ? error.message : error}`);
+    process.exit(1);
+  }
 }
