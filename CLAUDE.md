@@ -20,7 +20,7 @@ CI (`.github/workflows/`) repeats these checks for pull requests (`pr.yml`: ever
 
 ## Linting and formatting
 
-[Biome](https://biomejs.dev) (`biome.json`) formats and lints code and config: 2 spaces, 120 columns, double quotes, LF. A Husky `pre-commit` hook runs `biome check --staged` and `lint.yml` runs `biome ci .` in CI. Markdown, vendored skills, `.agents/`, `.rtk/` and `skills-lock.json` are excluded. `.gitattributes` forces LF checkouts so Windows (CRLF) and CI agree.
+[Biome](https://biomejs.dev) (`biome.json`) formats and lints code and config: 2 spaces, 120 columns, double quotes, LF. A Husky `pre-commit` hook runs `biome check --staged` and `lint.yml` runs `biome ci .` in CI. Markdown, vendored skills, `.agents/`, `.impeccable/`, `.rtk/` and `skills-lock.json` are excluded. `.gitattributes` forces LF checkouts so Windows (CRLF) and CI agree.
 
 ## File size
 
@@ -41,6 +41,10 @@ Every PR body must follow the `pr` skill in `.claude/skills/pr/` (from [mattpoco
 ## Ponytail
 
 The `ponytail` skill (`.claude/skills/ponytail/`, from [DietrichGebert/ponytail](https://github.com/DietrichGebert/ponytail), MIT, license kept beside it) makes coding tasks aim for the smallest complete change: reuse before writing, no unrequested abstractions, one small test for non-trivial logic. It triggers on coding tasks, or invoke `/ponytail lite|full|ultra|off`. Only `skills/ponytail/SKILL.md` is vendored, as a real file; the upstream plugin's hooks (mode tracker, status band, `~/.config` ledger, webhook) are deliberately not installed, and it is not in `skills-lock.json` because it didn't come from the skills installer. Where it conflicts with the rules here (comments, commits), the rules win.
+
+## Impeccable
+
+The `impeccable` skill (`.claude/skills/impeccable/`, from [impeccable.style](https://impeccable.style), Apache 2.0) handles frontend design work: shaping, critique, audit, polish and design-system docs (`PRODUCT.md`, `DESIGN.md`). It ships four subagents in `.claude/agents/impeccable-*.md` and a launcher, `scripts/impeccable` (`impeccable.cmd` on Windows), that runs a bundled engine binary; `impeccable detect <file|dir|url>` scans UI for anti-patterns. The skill folder is marked `linguist-vendored` so the file-size hook skips it, and its `.impeccable/` project state is excluded from Biome. Run `/impeccable init` to write `PRODUCT.md` before the first design task.
 
 ## Tooling
 

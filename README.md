@@ -46,6 +46,7 @@ The diagram source is [`docs/workflow.excalidraw`](docs/workflow.excalidraw); op
 | `CLAUDE.md` | root | Project guidance loaded into every session |
 | Rules | `.claude/rules/` | Comments, commits, branches/issues/PRs, language |
 | `ponytail` skill | `.claude/skills/ponytail/` | Smallest complete change, no unrequested abstractions |
+| `impeccable` skill and subagents | `.claude/skills/impeccable/`, `.claude/agents/` | Frontend design, review and documentation |
 | `code-review` skill | `.claude/skills/code-review/` | Reviews a diff for Standards and Spec |
 | `pr` skill | `.claude/skills/pr/` | Writes the PR body the hook then verifies |
 
