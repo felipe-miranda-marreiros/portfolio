@@ -57,6 +57,14 @@ values of them.
 - Mobile and desktop have equal priority.
 - Built by the Owner alone with AI agents, no budget, no fixed deadline.
 
+## Brand Commitments
+
+- The Portfolio's Visual language is a dark, confident engineering page: near-black ground, warm off-white ink, a bold
+  tightly tracked grotesk, monospace for labels only, hairline-bordered panels and one warm accent.
+- Dark first, with a complete light theme that follows the system preference.
+- The Owner prefers not to be the visual focus: Home leads with the facts, and the Owner's photo stays small and plain
+  beside the name.
+
 ## Evidence on Hand
 
 The Owner holds, outside the repository: CV PDFs in English and Brazilian Portuguese, a photo for Home, a written role
