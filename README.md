@@ -45,6 +45,12 @@ The diagram source is [`docs/workflow.excalidraw`](docs/workflow.excalidraw); op
 | --- | --- | --- |
 | `CLAUDE.md` | root | Project guidance loaded into every session |
 | Rules | `.claude/rules/` | Comments, commits, branches/issues/PRs, language |
+| `grill-me`, `grill-with-docs`, `grilling` skills | `.claude/skills/` | Stress-test a plan; `grill-with-docs` also records ADRs and glossary terms |
+| `domain-modeling` skill | `.claude/skills/domain-modeling/` | Glossary and ADRs |
+| `to-spec`, `to-tickets`, `triage` skills | `.claude/skills/` | Turn a plan into a spec, tickets and agent-ready briefs |
+| `improve-codebase-architecture` skill | `.claude/skills/improve-codebase-architecture/` | Reports deepening opportunities |
+| `implement`, `tdd` skills | `.claude/skills/` | Build from a spec or tickets, test first |
+| `codebase-design` skill | `.claude/skills/codebase-design/` | Deep-module vocabulary for interfaces and seams |
 | `ponytail` skill | `.claude/skills/ponytail/` | Smallest complete change, no unrequested abstractions |
 | `impeccable` skill and subagents | `.claude/skills/impeccable/`, `.claude/agents/` | Frontend design, review and documentation |
 | `code-review` skill | `.claude/skills/code-review/` | Reviews a diff for Standards and Spec |
