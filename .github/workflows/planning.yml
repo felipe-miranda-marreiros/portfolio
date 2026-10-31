@@ -1,0 +1,32 @@
+name: Planning docs
+
+on:
+  pull_request:
+
+permissions:
+  contents: read
+
+env:
+  HUSKY: 0
+
+jobs:
+  docs:
+    name: Vision and Roadmap
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: oven-sh/setup-bun@v2
+      - run: bun install --frozen-lockfile
+      - run: bun run check:planning
+
+  isolation:
+    name: Status change isolation
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: oven-sh/setup-bun@v2
+      - run: bun install --frozen-lockfile
+      - name: Check Status changes touch only docs/
+        run: bun scripts/status-isolation.ts "${{ github.event.pull_request.base.sha }}" "${{ github.event.pull_request.head.sha }}"
