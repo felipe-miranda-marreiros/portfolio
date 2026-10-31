@@ -25,6 +25,7 @@ Spec: #20
 - `Status:` is `planned`, `in-progress` or `done`. `in-progress` means its turn has come: write the Spec.
 - `Blocked by:` is `none` or a list of existing `M<n>` ids, with no cycles.
 - `Spec:` is an issue reference, or `(not written)` until the Spec exists.
+- CI (`planning.yml`, `scripts/planning-docs.ts`) enforces this format and the Vision's, rejects a Milestone `in-progress` or `done` before its blockers are `done`, and requires an `approved` Vision for any Roadmap.
 
 ## Blockers
 
@@ -35,6 +36,7 @@ Spec: #20
 
 - Never change a `Status:` line in `docs/VISION.md` or `docs/ROADMAP.md`. Vision status (`draft` -> `approved`) and Milestone status change only through a PR the human merges.
 - A PR that changes a `Status:` line touches nothing outside `docs/`.
+- CI (`planning.yml`, `scripts/status-isolation.ts`) fails a PR that breaks this.
 
 ## Picking up work
 
