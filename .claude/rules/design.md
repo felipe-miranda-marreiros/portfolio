@@ -13,41 +13,45 @@ Frontend design work uses the `impeccable` skill (`.claude/skills/impeccable/`),
 
 ## Workflow
 
-Work happens on the component catalog (see Catalog), which every Impeccable command targets until Pages exist. Each
-step lands in its own PRs.
+Work happens on the prototype (see Prototype), which every Impeccable command targets. Each step lands in its own PRs.
 
-1. **Design system.** `/impeccable document --seed` sets the Portfolio's Visual language with the catalog as the first
-   surface. Then build the tokens (color, typography, spacing, radii, shadows, motion, and the state tokens: focus
+1. **Design system.** `/impeccable document --seed` sets the Portfolio's Visual language with the prototype as the
+   first surface. Then build the tokens (color, typography, spacing, radii, shadows, motion, and the state tokens: focus
    ring, disabled, error) and refine them with `typeset`, `colorize` and `layout`. Run `document` in scan mode to write
    the real tokens into `DESIGN.md`. Repeat for About me's Visual language as a second token set over the same
    components.
-2. **Components.** Build one component per PR on the catalog (buttons, inputs, lists, forms, errors), each complete with
-   every state it has: default, hover, focus, active, disabled, and loading, error or success where they apply. A
+2. **Components.** Build one component per PR in the prototype (buttons, inputs, lists, forms, errors), each complete
+   with every state it has: default, hover, focus, active, disabled, and loading, error or success where they apply. A
    component without its states is not done. Review with `critique` and `audit`; use `generate` or `live` for variants
-   once the catalog runs.
-3. **States pass.** Across the whole catalog: `polish` for missing or inconsistent states, `harden` for long content,
+   once the prototype runs.
+3. **States pass.** Across the whole prototype: `polish` for missing or inconsistent states, `harden` for long content,
    missing content and both languages, `animate` for state transitions, `colorize` for state contrast, and `audit` for
    WCAG 2.2 AA.
-4. **Pages.** Compose Pages from the catalog's components. `extract` applies only from here on.
+4. **Pages.** Compose prototype Pages from the prototype's components. `extract` applies only from here on.
 
-Components with behavior, such as the language toggle, follow `tdd.md`.
+## Prototype
 
-## Catalog
+The prototype is the design phase's reference, not the final front end: the place where the design system, the
+components and their states are built and consulted. The final front end is built later, on the stack the ADRs choose,
+following the prototype.
 
-The catalog is plain HTML and CSS: no framework, no build step and no JavaScript, until an ADR says otherwise. It is
-split by folder so no file grows large:
+- It is HTML, CSS and JavaScript, with no framework and no build step.
+- Its code is not production code: the final front end reimplements it rather than reusing it, so `tdd.md` doesn't apply
+  to it. Its commits use the `docs(prototype)` type and scope.
+- It is split by folder so no file grows large:
 
 ```
-catalog/
+prototype/
 ├── index.html          # links to every token and component page
-├── tokens/             # one CSS file per token group (color.css, typography.css, spacing.css, ...)
 ├── tokens.css          # @imports every file in tokens/
+├── tokens/             # one CSS file per token group (color.css, typography.css, spacing.css, ...)
 └── components/
     └── button/
         ├── button.css  # the component's styles, from tokens only
+        ├── button.js   # only when the component has behavior
         └── index.html  # the component in every state
 ```
 
-- One folder per component, with its own CSS and its own catalog page; never put several components in one file.
-- Each page links only the CSS it needs: `tokens.css` and its components' files.
-- Catalog pages may hold placeholder text to show a component; components themselves still hold none.
+- One folder per component, with its own files and its own prototype page; never put several components in one file.
+- Each page links only the files it needs: `tokens.css` and its components' files.
+- Prototype pages may hold placeholder text to show a component; components themselves still hold none.
