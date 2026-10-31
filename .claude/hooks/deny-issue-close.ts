@@ -4,16 +4,10 @@
  * A Ticket closes only when its PR is merged, so its dependents unblock only then.
  * Exits 2 to deny the tool call.
  */
+import { commandSegments } from "./command-segments.ts";
 
 const input = JSON.parse(await Bun.stdin.text());
 const command: string = input.tool_input?.command ?? "";
-
-// quoted text with spaces or separators is blanked so a body that mentions `gh issue close` doesn't
-// trigger it; single-token quotes (an endpoint, `'state=closed'`) are unwrapped so they still count
-const unquoted = command.replace(/"((?:\\.|[^"\\])*)"|'([^']*)'/g, (_match, double, single) => {
-  const inner: string = double ?? single;
-  return /[\s;&|()]/.test(inner) ? '""' : inner;
-});
 
 const issue = String.raw`^gh\s+issue\s+(?:(?:-R|--repo)[\s=]+\S+\s+)?`;
 const closesIssue = new RegExp(`${issue}close\\b`);
@@ -27,8 +21,7 @@ function isDenied(segment: string): boolean {
   return /issues\/\d+(?![/\w])/.test(segment) && /state=closed\b/.test(segment);
 }
 
-// split at command boundaries so `gh` only counts in command position
-if (unquoted.split(/\$\(|[;&|\n()]/).some((segment) => isDenied(segment.trim()))) {
+if (commandSegments(command).some(isDenied)) {
   console.error(
     "Closing an issue or removing a blocker by hand is denied: a Ticket closes only when its PR is merged, " +
       "so its dependents unblock only then. See .claude/rules/planning.md.",
