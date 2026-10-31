@@ -63,17 +63,18 @@ jobs:
       contents: read
       issues: read
     steps:
+      # the script and the Roadmap come from the base branch, so a PR can't edit either to pass;
+      # the branch rather than base.sha, so a re-run sees a Milestone approved since the PR was opened
       - uses: actions/checkout@v4
-      # the Roadmap comes from the base branch, so a PR can't approve its own Milestone
-      - name: Fetch the base branch
-        env:
-          BASE_REF: ${{ github.base_ref }}
-        run: git fetch --depth=1 origin "+refs/heads/$BASE_REF:refs/remotes/origin/$BASE_REF"
+        with:
+          ref: ${{ github.base_ref }}
       - uses: oven-sh/setup-bun@v2
       - name: Check the PR closes one Ticket whose turn has come
         env:
           PR_TITLE: ${{ github.event.pull_request.title }}
           PR_BODY: ${{ github.event.pull_request.body }}
-          ROADMAP_REF: origin/${{ github.base_ref }}
+          ROADMAP_REF: HEAD
           GH_TOKEN: ${{ github.token }}
-        run: bun scripts/ticket-gate.ts
+        run: |
+          if [ -f scripts/ticket-gate.ts ]; then bun scripts/ticket-gate.ts
+          else echo "✔ scripts/ticket-gate.ts is not on the base branch yet, so the gate is inactive"; fi
