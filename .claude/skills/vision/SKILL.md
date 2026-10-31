@@ -56,5 +56,5 @@ Who it is for, and what they need from it.
 
 Tell the user:
 
-- Merging the PR records the Vision as `draft`. Approval is a separate docs-only PR that changes only `Status: draft` to `Status: approved`, and only they make and merge it.
+- Merging the PR records the Vision as `draft`. Only they approve it, by running the `Approve` workflow on `main` with target `vision` (from GitHub Actions, or `gh workflow run approve.yml -f target=vision`).
 - Next, run `/grill-with-docs` to close the Open decisions with ADRs. `/roadmap` needs an approved Vision.

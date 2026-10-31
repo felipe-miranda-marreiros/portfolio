@@ -8,7 +8,7 @@ Write or revise `docs/ROADMAP.md`, the stage after the Vision and its ADRs in `.
 
 ## Before starting
 
-If `docs/VISION.md` doesn't exist or its `Status:` line isn't `approved`, stop. Tell the user the Roadmap needs an approved Vision (`/vision`, then their Approval PR), and write nothing.
+If `docs/VISION.md` doesn't exist or its `Status:` line isn't `approved`, stop. Tell the user the Roadmap needs an approved Vision (`/vision`, then their run of the `Approve` workflow with target `vision`), and write nothing.
 
 ## Process
 
@@ -48,5 +48,5 @@ One or two sentences on what is true for the user once it ships.
 
 Tell the user:
 
-- Only they move a Milestone to `in-progress`, in a docs-only PR they merge, and only once its blockers are `done`.
+- Only they move a Milestone to `in-progress`, once its blockers are `done`, by running the `Approve` workflow on `main` with its id as the target (from GitHub Actions, or `gh workflow run approve.yml -f target=M1`).
 - Next, once a Milestone is `in-progress`, run `/to-spec` for it.
