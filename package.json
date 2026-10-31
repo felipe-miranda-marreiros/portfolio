@@ -11,6 +11,7 @@
     "prepare": "husky",
     "test": "bun test",
     "lint": "biome check .",
-    "fix": "biome check --write ."
+    "fix": "biome check --write .",
+    "check:planning": "bun scripts/planning-docs.ts"
   }
 }
