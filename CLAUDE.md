@@ -9,7 +9,7 @@ This repository is a scaffold for a portfolio project: there is no application s
 ## Commands
 
 - `bun install`: installs dependencies and sets up the Husky hooks via the `prepare` script.
-- `bun test`: runs the tests (currently `scripts/check-pr-body.test.ts` and `scripts/deny-issue-close.test.ts`, which cover the PR body and issue close hooks, and `scripts/planning-docs.test.ts`, `scripts/status-isolation.test.ts`, `scripts/frontier.test.ts` and `scripts/ticket-gate.test.ts`, which cover the planning checks, the Frontier and the Ticket gate). Run a single test with `bun test -t "<name>"`.
+- `bun test`: runs the tests (currently `scripts/check-pr-body.test.ts` and `scripts/deny-issue-close.test.ts`, which cover the PR body and issue close hooks, and `scripts/planning-docs.test.ts`, `scripts/status-isolation.test.ts`, `scripts/frontier.test.ts` and `scripts/ticket-gate.test.ts`, which cover the planning checks, the Frontier and the Ticket gate, and `scripts/tdd-gate.test.ts`, which covers the test-first gate). Run a single test with `bun test -t "<name>"`.
 - `bun run lint`: runs Biome (`biome check .`: format, lint, import order). `bun run fix` applies the safe fixes.
 - `bun run check:planning`: validates `docs/VISION.md` and `docs/ROADMAP.md` (`scripts/planning-docs.ts`); passes when they don't exist.
 - `bun run frontier`: lists whose turn it is (`scripts/frontier.ts`): the Milestone Frontier, the Milestones awaiting a Spec and the Ticket Frontier, read from `docs/ROADMAP.md` and GitHub with `gh api`.
@@ -19,6 +19,10 @@ This repository is a scaffold for a portfolio project: there is no application s
 Follow Conventional Commits and keep commits small; the full rules are in `.claude/rules/commits.md`. Message format is enforced deterministically by a Husky `commit-msg` hook running commitlint (`@commitlint/config-conventional`, configured in `commitlint.config.mjs`); a non-conforming commit is rejected, so fix the message instead of bypassing with `--no-verify`. Hooks are installed by `bun install` via the `prepare` script. Branch names, issue titles and pull request titles follow the same convention, see `.claude/rules/issues-branches-and-prs.md`; branch names are enforced on push by a Husky `pre-push` hook, so create branches as `<type>/<kebab-description>` from the start.
 
 CI (`.github/workflows/`) repeats these checks for pull requests (`pr.yml`: every commit message, the PR title, and the branch name) and checks issue titles (`issue-title.yml`). The branch-name rule lives only in `scripts/check-branch-name.sh`, shared by the hook and CI. Workflows install with `bun install --frozen-lockfile` and set `HUSKY=0`.
+
+## Test-driven development
+
+Every behavior change is test first, with the `tdd` skill: commit the failing test as a `test` commit that changes only test files, then the code that makes it pass as a `feat` or `fix` commit that changes no test files, one pair per red → green cycle. The red `test` commit is the only exception to "every commit leaves the project in a working state". PRs are merged with a rebase or a merge commit, never squashed, so the pairs reach `main`. The `tdd` job in `pr.yml` runs `scripts/tdd-gate.ts` from the base branch: it requires the commit right before every `feat` or `fix` commit to be a `test` commit whose tests fail, `bun test` to pass at the `feat` or `fix` commit, and a `feat` or `fix` PR to have at least one such commit. `test.yml` runs `bun test` on PRs and `main`. The full rules are in `.claude/rules/tdd.md`.
 
 ## Linting and formatting
 
