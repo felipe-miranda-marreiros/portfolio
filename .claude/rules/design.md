@@ -55,3 +55,27 @@ prototype/
 - One folder per component, with its own files and its own prototype page; never put several components in one file.
 - Each page links only the files it needs: `tokens.css` and its components' files.
 - Prototype pages may hold placeholder text to show a component; components themselves still hold none.
+
+## Impeccable artifacts
+
+Impeccable keeps its work in the repository, and these files are committed with the PR that produces them:
+
+| File | Written by | Holds |
+| --- | --- | --- |
+| `PRODUCT.md` | `init` | Product context |
+| `DESIGN.md` | `document`, the documenter subagent | Token primitives and how to apply them |
+| `.impeccable/design.json` | `document` | Shadows, motion, focus rings and other tokens `DESIGN.md` can't hold |
+| `.impeccable/surfaces/<slug>.md` | `new-work`, `shape` | Each surface's brief and direction contract |
+| `.impeccable/critique/` | `critique` | Critique snapshots, which `polish` reads as its backlog |
+| `.impeccable/config.json` | `init`, `hooks` | Shared settings: hook, detector ignores, build path |
+
+- Briefs, snapshots and the seed are keyed by the target's path. `prototype/index.html` is the primary target from the
+  first `document --seed`, with component pages as related targets; moving it orphans its brief.
+- The CSS in `prototype/tokens/` is the source of truth. `DESIGN.md` and `.impeccable/design.json` are generated from
+  it with `/impeccable document`, never edited by hand.
+- A direction contract stays in its brief. Never copy it into the prototype, not even as an HTML comment or a `data-*`
+  attribute.
+- Per-developer and working state (`config.local.json`, the hook cache, `live/`, `review/`, `build/`, `mocks/`,
+  `questions/`) is not committed; `.gitignore` lists it.
+- `DESIGN.md` and `.impeccable/**` are marked `linguist-generated` in `.gitattributes`, so the file size hook skips
+  them: they are tool output that can't be split.
