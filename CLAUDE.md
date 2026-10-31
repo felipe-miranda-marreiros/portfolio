@@ -36,7 +36,11 @@ Keep files free of comment bloat: document with JSDoc (`/** */`) when something 
 
 ## Pull requests
 
-Every PR body must follow the `pr` skill in `.claude/skills/pr/` (from [mattpocock/skills](https://github.com/mattpocock/skills/tree/main/skills/engineering/pr), MIT): invoke `/pr` before `gh pr create` or `gh pr edit --body`, and write `## Summary`, `## Evidence` and `## Merge Danger` sections. A `PreToolUse` hook in `.claude/settings.json` blocks `gh pr create`/`gh pr new`/`gh pr edit` when the body lacks them (and any `--fill`), and the `body` job in `pr.yml` checks it again in CI. Both use `missingSections` from `scripts/pr-body.ts`, the single definition of the required sections. Project skills live in `.claude/skills/` as real files (not symlinks: `core.symlinks` is off on Windows); `skills-lock.json` and `.agents/skills/` come from the skills installer. The skill mentions a `GLOSSARY.md` for domain language, which this repo doesn't have yet.
+Every PR body must follow the `pr` skill in `.claude/skills/pr/` (from [mattpocock/skills](https://github.com/mattpocock/skills/tree/main/skills/engineering/pr), MIT): invoke `/pr` before `gh pr create` or `gh pr edit --body`, and write `## Summary`, `## Evidence` and `## Merge Danger` sections. A `PreToolUse` hook in `.claude/settings.json` blocks `gh pr create`/`gh pr new`/`gh pr edit` when the body lacks them (and any `--fill`), and the `body` job in `pr.yml` checks it again in CI. Both use `missingSections` from `scripts/pr-body.ts`, the single definition of the required sections. Project skills live in `.claude/skills/` as real files (not symlinks: `core.symlinks` is off on Windows); `skills-lock.json` and `.agents/skills/` come from the skills installer. The skill's domain language comes from `GLOSSARY.md`.
+
+## Planning
+
+Work follows a staged pipeline: Vision (`docs/VISION.md`), ADRs (`docs/adr/`), Roadmap (`docs/ROADMAP.md`), then one Spec issue per Milestone and its Tickets as sub-issues with native blockers. Only a human advances a stage, by merging the PR that changes a `Status:` line; never change one yourself. Specify only an `in-progress` Milestone, claim a Ticket by assignee only when it is on the Frontier, close exactly one Ticket per code PR, and never close issues or remove blockers by hand. Vocabulary is in `GLOSSARY.md`, the decision in `docs/adr/0001-planning-in-repo-execution-on-github.md`, the full rules in `.claude/rules/planning.md`.
 
 ## Engineering skills
 
