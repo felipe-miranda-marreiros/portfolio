@@ -451,11 +451,6 @@ code,
   border-radius: var(--corner);
 }
 
-.corner--float {
-  border: 0;
-  box-shadow: var(--shadow-float);
-}
-
 .state-row {
   display: flex;
   flex-wrap: wrap;
