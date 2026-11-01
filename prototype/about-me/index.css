@@ -125,6 +125,7 @@ code,
   font: inherit;
   font-size: var(--text-label);
   font-weight: var(--weight-label);
+  line-height: var(--leading-label);
   letter-spacing: var(--tracking-label);
   text-transform: var(--case-label);
   color: var(--color-ink);
@@ -249,6 +250,7 @@ code,
 .band-link {
   font-size: var(--text-label);
   font-weight: var(--weight-label);
+  line-height: var(--leading-label);
   letter-spacing: var(--tracking-label);
   text-transform: var(--case-label);
 }
@@ -367,6 +369,7 @@ code,
   line-height: var(--leading-headline);
   letter-spacing: var(--tracking-headline);
   text-transform: var(--case-display);
+  color: var(--color-display);
 }
 
 .type-specimen__title {
