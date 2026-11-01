@@ -1,0 +1,46 @@
+/** Typography tokens: Schibsted Grotesk for display and body, Martian Mono for labels, tags, chips and numerals. */
+@font-face {
+  font-family: "Schibsted Grotesk";
+  src: url("../fonts/schibsted-grotesk.woff2") format("woff2");
+  font-weight: 400 900;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Martian Mono";
+  src: url("../fonts/martian-mono.woff2") format("woff2");
+  font-weight: 100 800;
+  font-display: swap;
+}
+
+:root {
+  --font-sans: "Schibsted Grotesk", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "Martian Mono", ui-monospace, monospace;
+
+  --text-display: clamp(3rem, 1.6rem + 5.6vw, 6rem);
+  --text-headline: clamp(2rem, 1.5rem + 2vw, 3rem);
+  --text-title: 1.25rem;
+  --text-body: 1rem;
+  --text-small: 0.875rem;
+  --text-label: 0.6875rem;
+
+  --leading-display: 0.95;
+  --leading-headline: 1.05;
+  --leading-title: 1.3;
+  --leading-body: 1.6;
+  --leading-label: 1.4;
+
+  --tracking-display: -0.04em;
+  --tracking-headline: -0.03em;
+  --tracking-title: -0.01em;
+  --tracking-body: 0;
+  --tracking-label: 0.08em;
+
+  --weight-display: 800;
+  --weight-headline: 700;
+  --weight-title: 600;
+  --weight-body: 400;
+  --weight-label: 500;
+
+  --measure: 68ch;
+}
