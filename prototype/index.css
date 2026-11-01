@@ -225,7 +225,7 @@ a {
 
 .cell__title {
   font-size: var(--text-title);
-  font-weight: var(--weight-headline);
+  font-weight: var(--weight-title);
   line-height: var(--leading-title);
   letter-spacing: var(--tracking-title);
 }
