@@ -89,9 +89,11 @@ a {
 }
 
 .bar__name {
+  font-family: var(--font-display);
   font-weight: var(--weight-display);
   font-size: var(--text-title);
   letter-spacing: var(--tracking-headline);
+  text-transform: var(--case-display);
   text-decoration: none;
 }
 
@@ -147,10 +149,13 @@ a {
 }
 
 .intro__title {
+  font-family: var(--font-display);
   font-size: var(--text-display);
   font-weight: var(--weight-display);
   line-height: var(--leading-display);
   letter-spacing: var(--tracking-display);
+  text-transform: var(--case-display);
+  color: var(--color-display);
   text-wrap: balance;
   margin-bottom: var(--space-5);
 }
@@ -397,10 +402,13 @@ a {
 }
 
 .type-specimen__display {
+  font-family: var(--font-display);
   font-size: var(--text-display);
   font-weight: var(--weight-display);
   line-height: var(--leading-display);
   letter-spacing: var(--tracking-display);
+  text-transform: var(--case-display);
+  color: var(--color-display);
 }
 
 .type-specimen__headline {
@@ -440,7 +448,7 @@ a {
   font-weight: var(--weight-label);
   line-height: var(--leading-label);
   letter-spacing: var(--tracking-label);
-  text-transform: uppercase;
+  text-transform: var(--case-label);
   color: var(--color-ink-muted);
 }
 
@@ -627,7 +635,7 @@ a {
 }
 
 .sample-field--error .sample-field__box {
-  border: var(--error-line-width) solid var(--error-color);
+  border: var(--error-line-width) var(--error-line-style) var(--error-color);
   color: var(--color-ink);
 }
 
