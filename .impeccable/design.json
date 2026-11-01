@@ -1,6 +1,6 @@
 {
   "schemaVersion": 2,
-  "generatedAt": "2026-11-01T19:54:57Z",
+  "generatedAt": "2026-11-01T20:17:36Z",
   "title": "Design System: Portfolio",
   "extensions": {
     "colorMeta": {
@@ -46,16 +46,18 @@
       { "name": "--color-ink", "value": "light-dark(#1a1815, #e8e2d6)", "purpose": "Text, primary action fill, focus ring, selection." },
       { "name": "--color-wash", "value": "color-mix(in srgb, var(--color-ink) 2%, var(--color-ground))", "purpose": "Hovered or focused panel cell; opaque so it covers the grid's hairline." },
       { "name": "--color-display", "value": "var(--color-ink)", "purpose": "Display type; the ink on the Portfolio, a band colour on About me." },
+      { "name": "--color-key", "value": "var(--color-ink)", "purpose": "Billing categories and hover underlines; the ink on the Portfolio, a band's key colour on About me." },
+      { "name": "--color-key-alt", "value": "var(--color-ink)", "purpose": "Alternate billing categories; the ink on the Portfolio, a band's second key colour on About me." },
       { "name": "--color-action", "value": "var(--color-ink)", "purpose": "Primary action fill." },
       { "name": "--color-on-action", "value": "var(--color-ground)", "purpose": "Primary action text." },
       { "name": "--color-error", "value": "light-dark(#ac312c, #ed756a)", "purpose": "Error borders and messages; the only hue." },
       { "name": "--color-selection", "value": "var(--color-ink)", "purpose": "Inverted text selection, with --color-on-selection = ground." },
       { "name": "--color-ground (about me)", "value": "purple #4a2390, sunset #e8582f, lime #d6e45a, charcoal #1f1d21", "purpose": "Each band's ground; one band per Section, rotating." },
       { "name": "--color-ink (about me)", "value": "purple and charcoal: lilac #f7f0ff; sunset and lime: charcoal #1f1d21", "purpose": "The band's one ink: text, rules, input borders, focus ring, selection, error. Secondary, muted, hairline and control colours are the ink itself; tints are transparent." },
-      { "name": "--color-display (about me)", "value": "purple: lime, sunset: cream, lime: magenta, charcoal: peach", "purpose": "Display type and Section titles; also --color-hairline-hover. Cream is large type only." },
-      { "name": "--color-key (about me)", "value": "purple: lime, sunset: charcoal, lime: magenta, charcoal: lime", "purpose": "Billing categories and hover underlines." },
+      { "name": "--color-display (about me)", "value": "purple: lime, sunset: cream, lime: magenta, charcoal: peach", "purpose": "Display type and Section titles; also --color-hairline-hover. On the sunset ground cream is large type only." },
+      { "name": "--color-key (about me)", "value": "purple: lime, sunset: charcoal, lime: magenta, charcoal: lime", "purpose": "Billing categories, the lineup's block rules and hover underlines." },
       { "name": "--color-key-alt (about me)", "value": "purple: blush, sunset: cream, lime: purple, charcoal: peach", "purpose": "Alternate billing categories." },
-      { "name": "--color-action (about me)", "value": "purple: lime, sunset: charcoal, lime: magenta, charcoal: peach", "purpose": "Primary action fill, with --color-on-action: purple, cream, lime, charcoal." },
+      { "name": "--color-action (about me)", "value": "purple: lime, sunset: charcoal, lime: magenta, charcoal: peach", "purpose": "Primary action fill, with --color-on-action: purple, cream (15:1 on charcoal), lime, charcoal." },
       { "name": "--color-error (about me)", "value": "var(--color-ink)", "purpose": "No error hue: a dashed ink rule and its message." }
     ],
     "typographyMeta": {
@@ -68,12 +70,12 @@
       "label": { "displayName": "Label", "purpose": "Martian Mono for stat labels and dates (uppercase, 0.08em); chips and code set as-is." },
       "about-me-display": { "displayName": "About me Display", "purpose": "Big Shoulders Display 900, uppercase, sized 24cqi so the Page title runs the band's width; Display colour." },
       "about-me-headline": { "displayName": "About me Headline", "purpose": "Big Shoulders Display 900, uppercase: Section titles in the Display colour." },
-      "about-me-title": { "displayName": "About me Title", "purpose": "Big Shoulders Display 800, uppercase: billing categories and item titles; the bar's name at 900." },
-      "about-me-billing": { "displayName": "About me Billing", "purpose": "Archivo 800, uppercase: the items of a lineup, in the band's ink." },
+      "about-me-title": { "displayName": "About me Title", "purpose": "Big Shoulders Display 800, uppercase: billing categories in the band's two key colours, and item titles; the bar's name at 900." },
+      "about-me-billing": { "displayName": "About me Billing", "purpose": "Archivo 800, uppercase: the items of a lineup, in the band's ink. --text-billing is named in both sets; the title size on the Portfolio." },
       "about-me-lede": { "displayName": "About me Lede", "purpose": "One line under the Page title, 52ch measure." },
       "about-me-body": { "displayName": "About me Body", "purpose": "Stories and notes in the band's ink, 68ch measure." },
       "about-me-small": { "displayName": "About me Small", "purpose": "Controls and error messages at the control weight (700)." },
-      "about-me-label": { "displayName": "About me Label", "purpose": "Archivo 800, uppercase, 0.06em: chips, code, the language toggle and band links. No monospace on About me." }
+      "about-me-label": { "displayName": "About me Label", "purpose": "Archivo 800, 0.06em: labels, the language toggle and band links, uppercase through --case-label; chips and code set as-is, because token names are case-sensitive. No monospace on About me." }
     },
     "shadows": [
       { "name": "shadow-float", "value": "0 0 0 1px var(--shadow-ring), 0 12px 32px -12px var(--shadow-color)", "purpose": "Floating surfaces only (menus, popovers). Ring: ink 6% on paper, bone 30% on night. Shadow: ink 22% on paper, black 60% on night, the one non-ink colour, because no ink is darker than the night ground; the ring keeps floats legible there." },
@@ -154,9 +156,9 @@
       "name": "Lineup",
       "kind": "custom",
       "refersTo": "about-me-lineup",
-      "description": "About me's billing rows, shown on the lime band with its resolved colours: category in a key colour, item in heavy uppercase Archivo, underlined in its category colour on hover and focus.",
+      "description": "About me's billing rows, shown on the lime band with its resolved colours: category in large display type in the band's two key colours, item in heavy uppercase Archivo, underlined in its category colour on hover and focus; rows stack below 36rem.",
       "html": "<div class=\"ds-band-lime\"><ul class=\"ds-lineup\"><li><span class=\"ds-key\">Books</span><a href=\"#\">Placeholder title</a></li><li><span class=\"ds-key ds-key--alt\">Authors</span><a href=\"#\">Placeholder author</a></li><li><span class=\"ds-key\">Music</span><a href=\"#\">Placeholder track</a></li></ul></div>",
-      "css": ".ds-band-lime { padding: 1.5rem; background: #d6e45a; color: #1f1d21; } .ds-lineup { display: flex; flex-direction: column; gap: 0.5rem; margin: 0; padding: 1rem 0; list-style: none; border-block: 3px solid #8a1158; } .ds-lineup li { display: grid; grid-template-columns: 9rem 1fr; gap: 1rem; align-items: baseline; } .ds-key { font-family: \"Big Shoulders Display\", \"Arial Narrow\", sans-serif; font-size: 1.375rem; font-weight: 800; line-height: 1.1; letter-spacing: 0.01em; text-transform: uppercase; color: #8a1158; } .ds-key--alt { color: #4a2390; } .ds-lineup a { font-family: Archivo, ui-sans-serif, system-ui, sans-serif; font-size: clamp(1.5rem, 1.25rem + 1vw, 2rem); font-weight: 800; text-transform: uppercase; text-decoration: none; color: inherit; } .ds-lineup a:hover, .ds-lineup a:focus-visible { text-decoration: underline 3px #8a1158; text-underline-offset: 0.2em; } .ds-lineup li:has(.ds-key--alt) a:hover, .ds-lineup li:has(.ds-key--alt) a:focus-visible { text-decoration-color: #4a2390; } .ds-lineup a:focus-visible { outline: 3px solid #1f1d21; outline-offset: 3px; }"
+      "css": ".ds-band-lime { padding: 1.5rem; background: #d6e45a; color: #1f1d21; } .ds-lineup { display: flex; flex-direction: column; gap: 0.5rem; margin: 0; padding: 1rem 0; list-style: none; border-block: 3px solid #8a1158; } .ds-lineup li { display: grid; align-items: baseline; } @media (min-width: 36rem) { .ds-lineup li { grid-template-columns: 9rem 1fr; gap: 1rem; } } .ds-key { font-family: \"Big Shoulders Display\", \"Arial Narrow\", sans-serif; font-size: 1.375rem; font-weight: 800; line-height: 1.1; letter-spacing: 0.01em; text-transform: uppercase; color: #8a1158; } .ds-key--alt { color: #4a2390; } .ds-lineup a { font-family: Archivo, ui-sans-serif, system-ui, sans-serif; font-size: clamp(1.5rem, 1.25rem + 1vw, 2rem); font-weight: 800; text-transform: uppercase; text-decoration: none; color: inherit; } .ds-lineup a:hover, .ds-lineup a:focus-visible { text-decoration: underline 3px #8a1158; text-underline-offset: 0.2em; } .ds-lineup li:has(.ds-key--alt) a:hover, .ds-lineup li:has(.ds-key--alt) a:focus-visible { text-decoration-color: #4a2390; } .ds-lineup a:focus-visible { outline: 3px solid #1f1d21; outline-offset: 3px; }"
     }
   ],
   "narrative": {
@@ -199,31 +201,31 @@
       "Don't let expression cost the 30-second read: role, seniority, technologies, location, CV and contact stay findable at a glance."
     ],
     "aboutMe": {
-      "northStar": "The Gig Poster",
-      "overview": "About me's Visual language sets the Owner's interests, recommendations and studies like a gig poster: flat colour bands, one per Section, a condensed uppercase display that runs the band's width, and lists set as a poster's billing. It is loud and warm where the Portfolio is quiet, and it never looks like a social profile, a gamer costume, the Portfolio recoloured, or anything corporate or cold.\n\nIt loads over the Portfolio's tokens and redefines the same names, so the shared components take its look through tokens alone; spacing and motion stay the Portfolio's. It has one theme and no photo. Each band sets every colour token itself, so a component inside a band takes that band's colours. Illustration is optional: the language works without it, and the first band reserves a slot for one.",
+      "northStar": "Loud Bands, Quiet Person",
+      "overview": "About me's Visual language sets the Owner's interests, recommendations and studies like a gig poster: flat colour bands, one per Section, a condensed uppercase display that runs the band's width, and lists set as a poster's billing. It is loud and warm where the Portfolio is quiet, and it never looks like a social profile, a gamer costume, the Portfolio recoloured, or anything corporate or cold.\n\nIt loads over the Portfolio's tokens and redefines the same names, so the shared components take most of its look through tokens; the differences that have no token yet are listed under Components. Spacing and motion stay the Portfolio's. It has one theme and no photo. Each band sets every colour token itself, so a component inside a band takes that band's colours. Illustration is optional: the language works without it, and the first band reserves a slot for one.",
       "keyCharacteristics": [
         "Four flat bands, purple, sunset orange, lime and charcoal, rotating one per Section.",
         "One theme and no theme switch; no photo; the language toggle keeps its place.",
         "Big Shoulders Display, condensed and uppercase, sized to the band's width; Archivo for everything else.",
-        "Lists as poster billing: the category in a key colour, the item in heavy uppercase Archivo in the band's ink.",
+        "Lists as poster billing: the category in large display type in the band's two key colours, the item in heavy uppercase Archivo in the band's ink.",
         "One ink per band at full strength, no alpha steps; 3px ink rules and square corners.",
         "No shadows, no blur, no gradients, no neon; an error is a dashed ink rule and its message, never a hue."
       ],
       "rules": [
         { "name": "The One Band Per Section Rule", "body": "Every Section owns one band, and the bands rotate purple, sunset, lime, charcoal. A component never sets a palette colour; it reads the tokens of the band it sits in.", "section": "colors" },
-        { "name": "The One Ink Rule", "body": "Each band has one ink at full strength: secondary, muted, hairline, control and input colours are the ink itself, and tints are transparent. On sunset any alpha step below full ink drops under 4.5:1.", "section": "colors" },
-        { "name": "The Cream Is Large Rule", "body": "Cream holds only 3.3:1 on sunset, so it sets large type only: display, headlines and the billing keys.", "section": "colors" },
+        { "name": "The One Ink Rule", "body": "Each band has one ink at full strength: secondary, muted, hairline, control and input colours are the ink itself, and tints are transparent. On sunset any alpha step below full ink drops under 4.5:1. Two lines take another colour: the lineup's block rules are in Key, and a hovered edge (`--color-hairline-hover`) is the Display colour.", "section": "colors" },
+        { "name": "The Cream Is Large Rule", "body": "Cream holds only 3.3:1 on sunset, so on the sunset ground it sets large type only: display, headlines and the billing keys. On the charcoal action fill it is the action's text, at 15:1.", "section": "colors" },
         { "name": "The No Error Hue Rule", "body": "No single hue reads on all four bands, so error is the band's ink, drawn as a dashed rule with its message, never a colour alone.", "section": "colors" },
         { "name": "The Band-Wide Title Rule", "body": "The Page title is sized from its container's width (24cqi, from 3.5rem to 20rem), so it runs the band's width like a poster's lettering.", "section": "typography" },
-        { "name": "The Billing Rule", "body": "A list is a lineup: the category in Big Shoulders at title size in a key colour, the item in heavy uppercase Archivo at billing size in the band's ink, between two 3px rules in the key colour. Categories alternate Key and Key Alt down the list.", "section": "typography" },
+        { "name": "The Billing Rule", "body": "A list is a lineup: the category in the display face at title size, large type, in the band's two key colours, alternating Key and Key Alt down the list; the item in heavy uppercase Archivo at billing size in the band's ink; two 3px rules in Key above and below. On sunset the keys are charcoal and cream, so half the categories share the ink and stand apart by face and size.", "section": "typography" },
         { "name": "The Printed Flat Rule", "body": "Nothing on About me casts or blurs; separate with a 3px ink rule or a change of band.", "section": "elevation" }
       ],
       "dos": [
-        "Do give every Section one band, rotating purple, sunset, lime and charcoal, with the bar, intro and Footer on purple.",
+        "Do give every Section one band, rotating purple, sunset, lime and charcoal, with the bar and intro on purple and the Footer on the next band in the rotation.",
         "Do let a component read its band's tokens; never set a palette colour on a component.",
         "Do set text in the band's one ink at full strength, and cream only at large sizes on sunset.",
         "Do size the Page title from its container so it runs the band's width, in Big Shoulders Display, uppercase.",
-        "Do set lists as billing: the category in a key colour, the item in heavy uppercase Archivo, underlined in its category colour on hover and focus.",
+        "Do set lists as billing: the category in large display type in the band's two key colours, the item in heavy uppercase Archivo, underlined in its category colour on hover and focus.",
         "Do mark an error with a dashed 3px ink rule and its message.",
         "Do keep the language toggle in its place and leave the theme switch out.",
         "Do make every band work without an illustration; the slot is optional."
