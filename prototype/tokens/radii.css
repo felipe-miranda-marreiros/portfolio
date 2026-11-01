@@ -1,0 +1,8 @@
+/** Corner tokens: small, product-like radii; panel grids round only their outer corners. */
+:root {
+  --radius-chip: 4px;
+  --radius-control: 8px;
+  --radius-photo: 10px;
+  --radius-panel: 12px;
+  --radius-round: 999px;
+}
