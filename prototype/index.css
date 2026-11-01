@@ -384,6 +384,11 @@ a {
   color: var(--color-ink-secondary);
 }
 
+.type-specimen__small {
+  font-size: var(--text-small);
+  color: var(--color-ink-muted);
+}
+
 .type-specimen__label {
   font-family: var(--font-mono);
   font-size: var(--text-label);
