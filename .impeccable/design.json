@@ -1,6 +1,6 @@
 {
   "schemaVersion": 2,
-  "generatedAt": "2026-11-01T20:27:45Z",
+  "generatedAt": "2026-11-01T20:38:13Z",
   "title": "Design System: Portfolio",
   "extensions": {
     "colorMeta": {
@@ -74,7 +74,7 @@
       "about-me-billing": { "displayName": "About me Billing", "purpose": "Archivo 800, uppercase: the items of a lineup, in the band's ink. --text-billing is named in both sets; the title size on the Portfolio." },
       "about-me-lede": { "displayName": "About me Lede", "purpose": "One line under the Page title, 52ch measure." },
       "about-me-body": { "displayName": "About me Body", "purpose": "Stories and notes in the band's ink, 68ch measure." },
-      "about-me-small": { "displayName": "About me Small", "purpose": "Controls and error messages at the control weight (700)." },
+      "about-me-small": { "displayName": "About me Small", "purpose": "400: the Footer and notes; controls and error messages take it at the control weight (700)." },
       "about-me-label": { "displayName": "About me Label", "purpose": "Archivo 800, 0.06em: labels, the language toggle and band links, uppercase through --case-label; chips and code set as-is, because token names are case-sensitive. No monospace on About me." }
     },
     "shadows": [
@@ -163,7 +163,7 @@
   ],
   "narrative": {
     "northStar": "Bold Facts, Quiet Person",
-    "overview": "The Portfolio's Visual language is a dark, confident engineering page where bold, tightly tracked type and hairline panels carry the authority and the facts lead. The Owner stays in the background: a small, plain photo beside the name, never a portrait as the centrepiece.\n\nThe system is monochrome bone and ink. Dark is the default, always: a near-black ground carries warm bone ink. The complete light theme puts the same ink on bone paper and appears only when the visitor picks it in the dark and light switch, never from the system preference. Every colour token resolves both themes through `light-dark()`, so the active colour scheme picks one. Secondary text, metadata, hairlines and tints are the ink itself at fixed alpha steps; there is no hued accent anywhere. The primary action is the ink, filled; focus is an ink ring. The only hue in the system is error.\n\nAbout me has its own, entirely distinct Visual language. It restyles the shared navigation, language toggle and Footer through tokens alone; their place and behavior never change.",
+    "overview": "The Portfolio's Visual language is a dark, confident engineering page where bold, tightly tracked type and hairline panels carry the authority and the facts lead. The Owner stays in the background: a small, plain photo beside the name, never a portrait as the centrepiece.\n\nThe Portfolio's Visual language is monochrome bone and ink. Dark is the default, always: a near-black ground carries warm bone ink. The complete light theme puts the same ink on bone paper and appears only when the visitor picks it in the dark and light switch, never from the system preference. Every colour token resolves both themes through `light-dark()`, so the active colour scheme picks one. Secondary text, metadata, hairlines and tints are the ink itself at fixed alpha steps; there is no hued accent anywhere. The primary action is the ink, filled; focus is an ink ring. The only hue in the system is error.\n\nAbout me has its own, entirely distinct Visual language. It restyles the shared navigation, language toggle and Footer through tokens alone; their place and behavior never change.",
     "keyCharacteristics": [
       "Dark by default, always; light a complete equal the visitor switches to; both WCAG 2.2 AA.",
       "Monochrome: bone ink on near-black, ink on bone paper, secondary ink and hairlines by alpha steps of the ink.",
@@ -213,7 +213,7 @@
       ],
       "rules": [
         { "name": "The One Band Per Section Rule", "body": "Every Section owns one band, and the bands rotate purple, sunset, lime, charcoal. A component never sets a palette colour; it reads the tokens of the band it sits in.", "section": "colors" },
-        { "name": "The One Ink Rule", "body": "Each band has one ink at full strength: secondary, muted, hairline, control and input colours are the ink itself, and tints are transparent. On sunset any alpha step below full ink drops under 4.5:1. Three lines take another colour: the lineup's block rules are in Key; a hovered edge (`--color-hairline-hover`) is the Display colour; and hover and focus underlines on the language toggle, band links and lineup items are 3px in Key or Key Alt.", "section": "colors" },
+        { "name": "The One Ink Rule", "body": "Each band has one ink at full strength: secondary, muted, hairline, control and input colours are the ink itself, and tints are transparent. On sunset any alpha step below full ink drops under 4.5:1. Three lines take another colour: the lineup's block rules are in Key; a hovered edge (`--color-hairline-hover`) is the Display colour; and underlines are 3px in Key or Key Alt, on hover for the language toggle, whose focus already shows the 3px ring, and on hover and focus for band links and lineup items.", "section": "colors" },
         { "name": "The Cream Is Large Rule", "body": "Cream holds only 3.3:1 on sunset, so on the sunset ground it sets large type only: display, headlines and the billing keys. On the charcoal action fill it is the action's text, at 15:1.", "section": "colors" },
         { "name": "The No Error Hue Rule", "body": "No single hue reads on all four bands, so error is the band's ink, drawn as a dashed rule with its message, never a colour alone.", "section": "colors" },
         { "name": "The Band-Wide Title Rule", "body": "The Page title is sized from its container's width (24cqi, from 3.5rem to 20rem), so it runs the band's width like a poster's lettering.", "section": "typography" },

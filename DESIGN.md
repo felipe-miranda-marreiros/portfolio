@@ -161,12 +161,12 @@ The Portfolio's Visual language is a dark, confident engineering page where bold
 panels carry the authority and the facts lead. The Owner stays in the background: a small, plain photo beside the name,
 never a portrait as the centrepiece.
 
-The system is monochrome bone and ink. Dark is the default, always: a near-black ground carries warm bone ink. The
-complete light theme puts the same ink on bone paper and appears only when the visitor picks it in the dark and light
-switch, never from the system preference. Every colour token resolves both themes through `light-dark()`, so the active
-colour scheme picks one. Secondary text, metadata, hairlines and tints are the ink itself at fixed alpha steps; there is
-no hued accent anywhere. The primary action is the ink, filled; focus is an ink ring. The only hue in the system is
-error.
+The Portfolio's Visual language is monochrome bone and ink. Dark is the default, always: a near-black ground carries
+warm bone ink. The complete light theme puts the same ink on bone paper and appears only when the visitor picks it in
+the dark and light switch, never from the system preference. Every colour token resolves both themes through
+`light-dark()`, so the active colour scheme picks one. Secondary text, metadata, hairlines and tints are the ink itself
+at fixed alpha steps; there is no hued accent anywhere. The primary action is the ink, filled; focus is an ink ring. The
+only hue in the system is error.
 
 About me has its own, entirely distinct Visual language. It restyles the shared navigation, language toggle and Footer
 through tokens alone; their place and behavior never change.
@@ -271,11 +271,16 @@ action, on action), so nothing on About me picks a palette colour directly.
 - **Charcoal** (`about-me-charcoal`): Lilac ink, Peach display, Lime and Peach keys, a Peach action with Charcoal text.
 
 **Inks** (only ever on a band):
-- **Lilac** and **Charcoal**: the band's ink on the dark and the light bands: text, rules, input borders, the focus
-  ring, selection and error.
-- **Lime**, **Cream**, **Magenta** and **Peach**: display type and Section titles, and the hovered edge of a control
-  (`--color-hairline-hover` is the display colour).
-- **Blush**, Purple and Charcoal, with the display inks: the key colours of billing categories and of hover underlines.
+- **Lilac**: the ink on purple and charcoal: text, rules, input borders, the focus ring, selection and error.
+- **Peach**: on charcoal, display type and titles, Key Alt and the action fill.
+- **Blush**: on purple, Key Alt.
+- **Magenta**: on lime, display type and titles, Key and the action fill.
+- **Cream**: on sunset, display type and titles and Key Alt, all large type; and the action's text on the charcoal fill.
+- The band colours serve as inks too: **Charcoal** is the ink on sunset and lime and Key on sunset; **Lime** is display
+  type, Key and the action fill on purple, and Key on charcoal; **Purple** is Key Alt on lime.
+
+The display colour also draws the hovered edge of a control (`--color-hairline-hover`), and the key colours draw billing
+categories and hover underlines.
 
 #### Named Rules
 **The One Band Per Section Rule.** Every Section owns one band, and the bands rotate purple, sunset, lime, charcoal. A
@@ -284,7 +289,8 @@ component never sets a palette colour; it reads the tokens of the band it sits i
 **The One Ink Rule.** Each band has one ink at full strength: secondary, muted, hairline, control and input colours are
 the ink itself, and tints are transparent. On sunset any alpha step below full ink drops under 4.5:1. Three lines take
 another colour: the lineup's block rules are in Key; a hovered edge (`--color-hairline-hover`) is the Display colour;
-and hover and focus underlines on the language toggle, band links and lineup items are 3px in Key or Key Alt.
+and underlines are 3px in Key or Key Alt, on hover for the language toggle, whose focus already shows the 3px ring, and
+on hover and focus for band links and lineup items.
 
 **The Cream Is Large Rule.** Cream holds only 3.3:1 on sunset, so on the sunset ground it sets large type only: display,
 headlines and the billing keys. On the charcoal action fill it is the action's text, at 15:1.
@@ -344,7 +350,7 @@ that sets the billing heavy and uppercase and reads plainly at body size.
 - **Billing** (Archivo 800, fluid 1.5rem to 2rem, uppercase): the items of a lineup.
 - **Lede** (400, fluid 1.125rem to 1.25rem, line-height 1.45): one line under the Page title, measure 52ch.
 - **Body** (400, 1rem, line-height 1.6): stories and notes in the band's ink, measure 68ch.
-- **Small** (0.875rem): controls and error messages, at the control weight (700).
+- **Small** (400, 0.875rem): the Footer and notes; controls and error messages take it at the control weight (700).
 - **Label** (Archivo 800, 0.8125rem, line-height 1.3, 0.06em): labels, the language toggle and band links, uppercase
   through `--case-label`; chips and code at the same size are set as-is, with no case change, because token names are
   case-sensitive.
@@ -416,8 +422,8 @@ is small, in a softly rounded square with a hairline edge, plain, with no effect
 
 Square, like a printed poster: chips, controls, the photo radius and panels at 0; only truly round things stay round
 (999px). Every line is a 3px rule in the band's ink, except the lineup's block rules, in Key; a hovered edge, in the
-Display colour; and the hover and focus underlines of the language toggle, band links and lineup items, in Key or Key
-Alt. The illustration slot is 3:1 on narrow screens and 4:5 from 44rem.
+Display colour; and underlines, in Key or Key Alt, on hover for the language toggle and on hover and focus for band
+links and lineup items. The illustration slot is 3:1 on narrow screens and 4:5 from 44rem.
 
 ## Components
 
