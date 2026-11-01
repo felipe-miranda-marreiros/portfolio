@@ -1,0 +1,11 @@
+/**
+ * About me's state tokens. No single hue reads on all four bands, so an error is a dashed rule in the band's ink
+ * with its message, never a colour alone.
+ */
+:root {
+  --focus-ring-width: 3px;
+  --focus-ring-offset: 3px;
+  --disabled-opacity: 0.4;
+  --error-line-width: 3px;
+  --error-line-style: dashed;
+}
