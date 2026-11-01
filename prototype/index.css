@@ -267,10 +267,12 @@ a {
 }
 
 .cell__title {
+  font-family: var(--font-display);
   font-size: var(--text-title);
   font-weight: var(--weight-title);
   line-height: var(--leading-title);
   letter-spacing: var(--tracking-title);
+  text-transform: var(--case-display);
 }
 
 .cell__note {
@@ -412,17 +414,22 @@ a {
 }
 
 .type-specimen__headline {
+  font-family: var(--font-display);
   font-size: var(--text-headline);
   font-weight: var(--weight-headline);
   line-height: var(--leading-headline);
   letter-spacing: var(--tracking-headline);
+  text-transform: var(--case-display);
+  color: var(--color-display);
 }
 
 .type-specimen__title {
+  font-family: var(--font-display);
   font-size: var(--text-title);
   font-weight: var(--weight-title);
   line-height: var(--leading-title);
   letter-spacing: var(--tracking-title);
+  text-transform: var(--case-display);
 }
 
 .type-specimen__lede {
