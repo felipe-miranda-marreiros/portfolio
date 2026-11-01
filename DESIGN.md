@@ -49,9 +49,9 @@ typography:
     letterSpacing: "-0.01em"
   lede:
     fontFamily: "Schibsted Grotesk, ui-sans-serif, system-ui, sans-serif"
-    fontSize: "1.25rem"
+    fontSize: "clamp(1.125rem, 1rem + 0.5vw, 1.25rem)"
     fontWeight: 400
-    lineHeight: 1.3
+    lineHeight: 1.4
     letterSpacing: "0em"
   body:
     fontFamily: "Schibsted Grotesk, ui-sans-serif, system-ui, sans-serif"
@@ -179,11 +179,16 @@ monospace that labels facts the way a codebase labels things: commands, tags, co
 - **Display** (800, fluid up to 6rem, line-height 0.95, -0.04em): the Owner's name and Page titles, balanced wrapping.
 - **Headline** (700, fluid up to 3rem, line-height 1.05, -0.03em): Section titles.
 - **Title** (600, 1.25rem, line-height 1.3, -0.01em): role titles, panel titles and list rows.
-- **Lede** (400, 1.25rem, line-height 1.3): the supporting line under a Page title, in secondary ink.
+- **Lede** (400, fluid 1.125rem to 1.25rem, line-height 1.4): the supporting line under a Page title, in secondary
+  ink, measure 52ch.
 - **Body** (400, 1rem, line-height 1.6): summaries and supporting lines in secondary ink, measure 68ch.
-- **Small** (400, 0.875rem): captions, notes, metadata in muted ink; also the size of row links and controls (600).
+- **Small** (400, 0.875rem): captions, notes, metadata in muted ink; also the size of row links and controls, which
+  take the control weight (600), kept apart from the title weight so each can change alone.
 - **Label** (Martian Mono 500, 0.6875rem, 0.08em, uppercase, tabular numerals): stat labels and dates. Inside chips and
   code, the same mono size is set as-is, with no tracking or case change.
+
+Headings hyphenate and, where the browser has no dictionary, break long words rather than overflow a narrow column: a
+Portuguese title such as "Responsabilidades" at display size must fit a 320px screen. Paragraphs wrap with a pretty rag.
 
 ### Named Rules
 **The Mono Labels Rule.** Monospace sets labels, tags, chips and numerals, never sentences or headings, and never as an
@@ -193,13 +198,15 @@ eyebrow above a heading: the heading carries its own weight.
 
 A single content column (76rem max) with a fluid gutter (1.25rem to 3rem) and a shared left edge; the top bar and footer
 span the full width but align their content to the same edge. One 4px-based spacing rhythm (0.25rem to 8rem), with more
-space above a heading than below it: the Page opens with 6rem above the title.
+space above a heading than below it: the Page opens with 4rem above the title on narrow screens and 6rem from 44rem.
 
 Collections read as hairline panel grids: cells share one-pixel borders drawn by the grid's hairline showing through a
-one-pixel gap, and each cell (2rem padding, 1.5rem internal gap) ends in a row link pushed to its foot. The grid is one
-column on mobile and three columns from 68rem, where wide cells span two and full-width rows close the grid across all
-three. Mobile and desktop have equal priority: grids collapse to one column and splits stack, heading first, and nothing
-a desktop row shows is dropped on mobile.
+one-pixel gap, and each cell (1.5rem internal gap) ends in a row link pushed to its foot, so neighbouring plain row links
+share a baseline. Cells pad 1.5rem on narrow screens and 2rem from 44rem. The grid takes three steps, always in source order:
+one column on mobile; two columns from 44rem, where wide cells span both and compact ones pair up; three columns from
+68rem, where wide cells span two and full-width rows close the grid across all three. Mobile and desktop have equal
+priority: grids collapse to one column and splits stack, heading first, and nothing a desktop row shows is dropped on
+mobile. A specimen that is a single row of samples shrinks its samples to stay on one row rather than orphan the last.
 
 ## Elevation & Depth
 
@@ -229,7 +236,7 @@ No component library exists yet; these are the primitives the prototype's token 
 by each component's own PR. Every component takes every visual value from tokens and holds no visible text.
 
 ### Buttons
-- **Shape:** gently rounded (8px), Small text at 600, padding 0.5rem by 1rem.
+- **Shape:** gently rounded (8px), Small text at the control weight (600), padding 0.5rem by 1rem.
 - **Primary:** filled ink with the ground as text, no border. One per view.
 - **Secondary:** transparent, ink text, outlined in Hairline Control; on hover the outline moves to Hairline Hover and
   the fill to Tint Hover.
@@ -242,8 +249,8 @@ by each component's own PR. Every component takes every visual value from tokens
 - **Corner Style:** the grid rounds its outer corners (12px); cells are square.
 - **Background:** the ground; on hover or focus within, the Wash and an inset Hairline Hover edge (200ms).
 - **Title:** the Title role (600).
-- **Border:** shared one-pixel hairlines. **Internal Padding:** 2rem.
-- **Row link:** Small text at 600 in Secondary Ink with an arrow; on panel hover or focus it goes to full ink and the
+- **Border:** shared one-pixel hairlines. **Internal Padding:** 1.5rem on narrow screens, 2rem from 44rem.
+- **Row link:** Small text at the control weight in Secondary Ink with an arrow; on panel hover or focus it goes to full ink and the
   arrow nudges 2px. The first cell's row link is the filled-ink primary action.
 
 ### Inputs / Fields
@@ -254,7 +261,7 @@ by each component's own PR. Every component takes every visual value from tokens
 ### Navigation
 - **Top bar:** on a bottom hairline, the name left (800, title size, -0.03em), controls right.
 - **Theme switch:** a two-option segmented control, Dark and Light, with Dark pressed until the visitor picks Light, in
-  a Hairline Control outline (8px); options in Small text at 600, Secondary Ink, full ink on hover, Tint fill and full
+  a Hairline Control outline (8px); options in Small text at the control weight, Secondary Ink, full ink on hover, Tint fill and full
   ink when pressed. Switching crossfades every token at once (240ms).
 
 ## Do's and Don'ts
