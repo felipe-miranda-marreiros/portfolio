@@ -52,7 +52,7 @@ what they are studying now.
 FIRST VIEWPORT: A purple band: the bar on top (name left, language toggle right), then a band-wide condensed title and a
 one-line lede; the illustration slot sits on the band's right when artwork exists. The orange band starts within view.
 
-FORM: Direction pinned by the Owner from references; no roll. seed: none (pinned, no roll)
+FORM: Direction pinned by the Owner from references; it beat the roll. seed:f0d5ba375351a4af
 
 FINISH: unreviewed and undocumented is unfinished; this build ends with the finish review, the verdict, DESIGN.md, and
 every shipping raster carrying its provenance
