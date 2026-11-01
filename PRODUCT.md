@@ -59,8 +59,10 @@ values of them.
 
 ## Brand Commitments
 
-- The Portfolio's Visual language is a dark, confident engineering page: near-black ground, warm off-white ink, a bold
-  tightly tracked grotesk, monospace for labels only, hairline-bordered panels and one warm accent.
+- The Portfolio's Visual language is a dark, confident engineering page: near-black ground, bone ink, a bold tightly
+  tracked grotesk, monospace for labels only and hairline-bordered panels.
+- The Portfolio is monochrome: no hued accent. The primary action is the ink itself, filled; the Owner turned down
+  every hued accent, gradient and multi-colour palette offered.
 - Dark first, with a complete light theme that follows the system preference.
 - The Owner prefers not to be the visual focus: Home leads with the facts, and the Owner's photo stays small and plain
   beside the name.
