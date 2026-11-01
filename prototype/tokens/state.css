@@ -1,0 +1,11 @@
+/** State tokens shared by every component: focus ring, disabled and error. */
+:root {
+  --focus-ring-width: 2px;
+  --focus-ring-offset: 2px;
+  --focus-ring-color: var(--color-ink);
+
+  --disabled-opacity: 0.4;
+
+  --error-color: var(--color-error);
+  --error-line-width: 1px;
+}
