@@ -97,7 +97,7 @@ a {
 .theme-switch button {
   font: inherit;
   font-size: var(--text-small);
-  font-weight: var(--weight-title);
+  font-weight: var(--weight-control);
   color: var(--color-ink-secondary);
   background: none;
   border: 0;
@@ -243,7 +243,7 @@ a {
   align-self: flex-start;
   margin-top: auto;
   font-size: var(--text-small);
-  font-weight: var(--weight-title);
+  font-weight: var(--weight-control);
   color: var(--color-ink-secondary);
   text-decoration: none;
   transition: color var(--duration-fast) var(--ease-out);
@@ -522,7 +522,7 @@ a {
   border: var(--line-width) solid var(--color-hairline-control);
   border-radius: var(--radius-control);
   font-size: var(--text-small);
-  font-weight: var(--weight-title);
+  font-weight: var(--weight-control);
 }
 
 .sample-control--focus {
@@ -550,7 +550,7 @@ a {
 .motion-run .sample-control {
   font: inherit;
   font-size: var(--text-small);
-  font-weight: var(--weight-title);
+  font-weight: var(--weight-control);
   color: var(--color-ink);
   background: none;
   cursor: pointer;
