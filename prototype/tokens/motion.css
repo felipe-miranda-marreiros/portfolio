@@ -1,0 +1,15 @@
+/** Motion tokens: short exponential ease-out, no bounce, nothing under reduced motion. */
+:root {
+  --duration-fast: 150ms;
+  --duration-base: 200ms;
+  --duration-theme: 240ms;
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  :root {
+    --duration-fast: 0ms;
+    --duration-base: 0ms;
+    --duration-theme: 0ms;
+  }
+}
