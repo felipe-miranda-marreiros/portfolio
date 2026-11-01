@@ -1,4 +1,4 @@
-/** The prototype index's theme switch and arrow-key movement between grid cells. */
+/** The prototype index's theme switch, motion specimen and arrow-key movement between grid cells. */
 const root = document.documentElement;
 const storageKey = "prototype-theme";
 const buttons = [...document.querySelectorAll("[data-theme-choice]")];
@@ -57,4 +57,12 @@ grid.addEventListener("keydown", (event) => {
   if (!target) return;
   event.preventDefault();
   target.focus();
+});
+
+const runButton = document.querySelector("[data-run]");
+runButton.addEventListener("click", () => {
+  const cell = runButton.closest(".cell");
+  const running = !cell.hasAttribute("data-running");
+  cell.toggleAttribute("data-running", running);
+  runButton.setAttribute("aria-pressed", String(running));
 });
