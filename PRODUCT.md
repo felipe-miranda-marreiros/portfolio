@@ -65,10 +65,10 @@ values of them.
 
 - The Portfolio's Visual language is a dark, confident engineering page: near-black ground, bone ink, a bold tightly
   tracked grotesk, monospace for labels only and hairline-bordered panels.
-- The Portfolio is monochrome: no hued accent. The primary action is the ink itself, filled; the Owner turned down
-  every hued accent, gradient and multi-colour palette offered.
-- The Portfolio is dark always by default, with a complete light theme the visitor chooses in a dark and light switch;
-  the system preference is never followed.
+- The Portfolio's Visual language is monochrome: no hued accent. The primary action is the ink itself, filled; the
+  Owner turned down every hued accent, gradient and multi-colour palette offered.
+- The Portfolio's Visual language is dark always by default, with a complete light theme the visitor chooses in a dark
+  and light switch; the system preference is never followed.
 - The Owner prefers not to be the visual focus: Home leads with the facts, and the Owner's photo stays small and plain
   beside the name.
 - About me's Visual language is a gig poster: flat colour bands in purple, sunset orange, lime and charcoal, one per
