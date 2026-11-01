@@ -21,6 +21,7 @@
   --text-display: clamp(3rem, 1.6rem + 5.6vw, 6rem);
   --text-headline: clamp(2rem, 1.5rem + 2vw, 3rem);
   --text-title: 1.25rem;
+  --text-billing: var(--text-title);
   --text-lede: clamp(1.125rem, 1rem + 0.5vw, 1.25rem);
   --text-body: 1rem;
   --text-small: 0.875rem;

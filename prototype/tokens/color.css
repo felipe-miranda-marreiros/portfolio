@@ -36,6 +36,8 @@
   --color-wash: color-mix(in srgb, var(--color-ink) 2%, var(--color-ground));
 
   --color-display: var(--color-ink);
+  --color-key: var(--color-ink);
+  --color-key-alt: var(--color-ink);
 
   --color-action: var(--color-ink);
   --color-on-action: var(--color-ground);
