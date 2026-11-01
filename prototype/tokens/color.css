@@ -1,0 +1,51 @@
+/**
+ * Colour tokens. Monochrome: bone ink on near-black, ink on bone paper, no hued accent.
+ * Semantic tokens hold both themes through light-dark(), so the active colour scheme picks one.
+ */
+:root {
+  color-scheme: light dark;
+
+  --palette-night: #141311;
+  --palette-night-raised: #1c1a18;
+  --palette-bone: #e8e2d6;
+  --palette-paper: #efe9dd;
+  --palette-paper-raised: #f6f2e9;
+  --palette-ink: #1a1815;
+  --palette-error-on-night: #ed756a;
+  --palette-error-on-paper: #ac312c;
+
+  --color-ground: light-dark(var(--palette-paper), var(--palette-night));
+  --color-surface: light-dark(var(--palette-paper-raised), var(--palette-night-raised));
+  --color-ink: light-dark(var(--palette-ink), var(--palette-bone));
+
+  --color-ink-secondary: color-mix(in srgb, var(--color-ink) 72%, transparent);
+  --color-ink-muted: color-mix(in srgb, var(--color-ink) 64%, transparent);
+
+  --color-hairline: color-mix(in srgb, var(--color-ink) 10%, transparent);
+  --color-hairline-hover: color-mix(in srgb, var(--color-ink) 26%, transparent);
+  --color-hairline-control: color-mix(in srgb, var(--color-ink) 22%, transparent);
+  /* Input borders identify the control, so they need 3:1 against the ground. */
+  --color-hairline-input: light-dark(
+    color-mix(in srgb, var(--palette-ink) 52%, transparent),
+    color-mix(in srgb, var(--palette-bone) 44%, transparent)
+  );
+
+  --color-tint: color-mix(in srgb, var(--color-ink) 7%, transparent);
+  --color-tint-hover: color-mix(in srgb, var(--color-ink) 4%, transparent);
+
+  --color-action: var(--color-ink);
+  --color-on-action: var(--color-ground);
+
+  --color-error: light-dark(var(--palette-error-on-paper), var(--palette-error-on-night));
+
+  --color-selection: var(--color-ink);
+  --color-on-selection: var(--color-ground);
+}
+
+:root[data-theme="dark"] {
+  color-scheme: dark;
+}
+
+:root[data-theme="light"] {
+  color-scheme: light;
+}
