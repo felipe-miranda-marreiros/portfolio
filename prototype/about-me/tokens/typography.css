@@ -18,8 +18,8 @@
   --font-sans: "Archivo", ui-sans-serif, system-ui, sans-serif;
   --font-mono: var(--font-sans);
 
-  /* Past the usual 6rem cap: the face is condensed, so 8rem sets a band-wide title in the width 6rem would at normal width. */
-  --text-display: clamp(3.5rem, 1rem + 8.5vw, 8rem);
+  /* Sized from the container's width so a title runs the band's width like a poster's lettering; without a container, cqi falls back to the viewport. */
+  --text-display: clamp(3.5rem, 24cqi, 20rem);
   --text-headline: clamp(2.25rem, 1.5rem + 3vw, 3.5rem);
   --text-title: 1.375rem;
   --text-lede: clamp(1.125rem, 1rem + 0.5vw, 1.25rem);
