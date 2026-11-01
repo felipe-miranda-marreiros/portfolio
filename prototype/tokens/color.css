@@ -6,7 +6,7 @@
   color-scheme: light dark;
 
   --palette-night: #141311;
-  --palette-night-raised: #1c1a18;
+  --palette-night-raised: #23211e;
   --palette-bone: #e8e2d6;
   --palette-paper: #efe9dd;
   --palette-paper-raised: #f6f2e9;
@@ -18,7 +18,7 @@
   --color-surface: light-dark(var(--palette-paper-raised), var(--palette-night-raised));
   --color-ink: light-dark(var(--palette-ink), var(--palette-bone));
 
-  --color-ink-secondary: color-mix(in srgb, var(--color-ink) 72%, transparent);
+  --color-ink-secondary: color-mix(in srgb, var(--color-ink) 84%, transparent);
   --color-ink-muted: color-mix(in srgb, var(--color-ink) 64%, transparent);
 
   --color-hairline: color-mix(in srgb, var(--color-ink) 10%, transparent);
