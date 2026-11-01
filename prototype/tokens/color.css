@@ -3,7 +3,7 @@
  * Semantic tokens hold both themes through light-dark(), so the active colour scheme picks one.
  */
 :root {
-  color-scheme: light dark;
+  color-scheme: dark;
 
   --palette-night: #141311;
   --palette-night-raised: #23211e;
@@ -40,10 +40,6 @@
 
   --color-selection: var(--color-ink);
   --color-on-selection: var(--color-ground);
-}
-
-:root[data-theme="dark"] {
-  color-scheme: dark;
 }
 
 :root[data-theme="light"] {

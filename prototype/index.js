@@ -5,10 +5,10 @@ const buttons = [...document.querySelectorAll("[data-theme-choice]")];
 const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
 
 function applyTheme(choice) {
-  if (choice === "system") {
-    delete root.dataset.theme;
+  if (choice === "light") {
+    root.dataset.theme = "light";
   } else {
-    root.dataset.theme = choice;
+    delete root.dataset.theme;
   }
   for (const button of buttons) {
     button.setAttribute("aria-pressed", String(button.dataset.themeChoice === choice));
@@ -24,7 +24,7 @@ function chooseTheme(choice) {
   document.startViewTransition(() => applyTheme(choice));
 }
 
-applyTheme(localStorage.getItem(storageKey) ?? "system");
+applyTheme(localStorage.getItem(storageKey) === "light" ? "light" : "dark");
 for (const button of buttons) {
   button.addEventListener("click", () => chooseTheme(button.dataset.themeChoice));
 }
