@@ -126,6 +126,7 @@ code,
   font-size: var(--text-label);
   font-weight: var(--weight-label);
   letter-spacing: var(--tracking-label);
+  text-transform: var(--case-label);
   color: var(--color-ink);
   background: none;
   border: 0;
