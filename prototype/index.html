@@ -1,0 +1,218 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Visual language · Portfolio prototype</title>
+    <link rel="preload" href="fonts/schibsted-grotesk.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="preload" href="fonts/martian-mono.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="stylesheet" href="tokens.css" />
+    <link rel="stylesheet" href="index.css" />
+    <script src="index.js" defer></script>
+  </head>
+  <body>
+    <header class="bar">
+      <a class="bar__name" href="index.html">Portfolio</a>
+      <fieldset class="theme-switch">
+        <legend class="visually-hidden">Theme</legend>
+        <button type="button" data-theme-choice="system" aria-pressed="true">System</button>
+        <button type="button" data-theme-choice="dark" aria-pressed="false">Dark</button>
+        <button type="button" data-theme-choice="light" aria-pressed="false">Light</button>
+      </fieldset>
+    </header>
+
+    <main class="page">
+      <div class="intro">
+        <h1 class="intro__title">Visual language</h1>
+        <p class="intro__lede">
+          Every token the Portfolio's components draw from, working in both themes. Open any group to read its source.
+        </p>
+      </div>
+
+      <div class="grid" data-grid>
+        <section class="cell cell--wide" aria-labelledby="color-title">
+          <h2 class="cell__title" id="color-title">Color</h2>
+          <div class="schemes">
+            <div class="scheme" data-scheme="dark">
+              <p class="scheme__name">Dark</p>
+              <ul class="swatches">
+                <li><span class="swatch" style="--swatch: var(--color-ground)"></span><code>ground</code></li>
+                <li><span class="swatch" style="--swatch: var(--color-surface)"></span><code>surface</code></li>
+                <li><span class="swatch" style="--swatch: var(--color-ink)"></span><code>ink</code></li>
+                <li>
+                  <span class="swatch" style="--swatch: var(--color-ink-secondary)"></span><code>ink-secondary</code>
+                </li>
+                <li><span class="swatch" style="--swatch: var(--color-ink-muted)"></span><code>ink-muted</code></li>
+                <li><span class="swatch" style="--swatch: var(--color-tint)"></span><code>tint</code></li>
+                <li><span class="swatch" style="--swatch: var(--color-error)"></span><code>error</code></li>
+              </ul>
+              <p class="scheme__text">Secondary ink, for supporting lines.</p>
+              <p class="scheme__text scheme__text--muted">Muted ink, for metadata.</p>
+            </div>
+            <div class="scheme" data-scheme="light">
+              <p class="scheme__name">Light</p>
+              <ul class="swatches">
+                <li><span class="swatch" style="--swatch: var(--color-ground)"></span><code>ground</code></li>
+                <li><span class="swatch" style="--swatch: var(--color-surface)"></span><code>surface</code></li>
+                <li><span class="swatch" style="--swatch: var(--color-ink)"></span><code>ink</code></li>
+                <li>
+                  <span class="swatch" style="--swatch: var(--color-ink-secondary)"></span><code>ink-secondary</code>
+                </li>
+                <li><span class="swatch" style="--swatch: var(--color-ink-muted)"></span><code>ink-muted</code></li>
+                <li><span class="swatch" style="--swatch: var(--color-tint)"></span><code>tint</code></li>
+                <li><span class="swatch" style="--swatch: var(--color-error)"></span><code>error</code></li>
+              </ul>
+              <p class="scheme__text">Secondary ink, for supporting lines.</p>
+              <p class="scheme__text scheme__text--muted">Muted ink, for metadata.</p>
+            </div>
+          </div>
+          <ul class="chips" aria-label="Color tokens">
+            <li>--color-ground</li>
+            <li>--color-surface</li>
+            <li>--color-ink</li>
+            <li>--color-ink-secondary</li>
+            <li>--color-ink-muted</li>
+            <li>--color-hairline</li>
+            <li>--color-hairline-hover</li>
+            <li>--color-hairline-control</li>
+            <li>--color-hairline-input</li>
+            <li>--color-tint</li>
+            <li>--color-action</li>
+            <li>--color-on-action</li>
+            <li>--color-error</li>
+          </ul>
+          <a class="cell__link cell__link--primary" href="tokens/color.css">Open color.css</a>
+        </section>
+
+
+        <section class="cell" aria-labelledby="spacing-title">
+          <h2 class="cell__title" id="spacing-title">Spacing</h2>
+          <ul class="spacing-specimen">
+            <li><span class="bar-sample" style="--size: var(--space-1)"></span><code>1</code></li>
+            <li><span class="bar-sample" style="--size: var(--space-2)"></span><code>2</code></li>
+            <li><span class="bar-sample" style="--size: var(--space-3)"></span><code>3</code></li>
+            <li><span class="bar-sample" style="--size: var(--space-4)"></span><code>4</code></li>
+            <li><span class="bar-sample" style="--size: var(--space-5)"></span><code>5</code></li>
+            <li><span class="bar-sample" style="--size: var(--space-6)"></span><code>6</code></li>
+            <li><span class="bar-sample" style="--size: var(--space-7)"></span><code>7</code></li>
+            <li><span class="bar-sample" style="--size: var(--space-8)"></span><code>8</code></li>
+            <li><span class="bar-sample" style="--size: var(--space-9)"></span><code>9</code></li>
+            <li><span class="bar-sample" style="--size: var(--space-10)"></span><code>10</code></li>
+          </ul>
+          <ul class="chips" aria-label="Spacing tokens">
+            <li>--space-1 … --space-10</li>
+            <li>--content-max</li>
+            <li>--gutter</li>
+          </ul>
+          <a class="cell__link" href="tokens/spacing.css">Open spacing.css</a>
+        </section>
+
+<section class="cell cell--wide" aria-labelledby="type-title">
+          <h2 class="cell__title" id="type-title">Typography</h2>
+          <div class="type-specimen">
+            <p class="type-specimen__display">Bold facts</p>
+            <p class="type-specimen__headline">Quiet person</p>
+            <p class="type-specimen__title">Senior software engineer</p>
+            <p class="type-specimen__body">Body text in Schibsted Grotesk at a reading measure, set in secondary ink.</p>
+            <p class="type-specimen__label">Label · 2019–2026</p>
+          </div>
+          <ul class="chips" aria-label="Typography tokens">
+            <li>--font-sans</li>
+            <li>--font-mono</li>
+            <li>--text-display</li>
+            <li>--text-headline</li>
+            <li>--text-title</li>
+            <li>--text-body</li>
+            <li>--text-label</li>
+            <li>--measure</li>
+          </ul>
+          <a class="cell__link" href="tokens/typography.css">Open typography.css</a>
+        </section>
+
+        <section class="cell" aria-labelledby="radii-title">
+          <h2 class="cell__title" id="radii-title">Radii</h2>
+          <ul class="radii-specimen">
+            <li><span class="corner" style="--corner: var(--radius-chip)"></span><code>chip</code></li>
+            <li><span class="corner" style="--corner: var(--radius-control)"></span><code>control</code></li>
+            <li><span class="corner" style="--corner: var(--radius-photo)"></span><code>photo</code></li>
+            <li><span class="corner" style="--corner: var(--radius-panel)"></span><code>panel</code></li>
+          </ul>
+          <ul class="chips" aria-label="Radius tokens">
+            <li>--radius-chip</li>
+            <li>--radius-control</li>
+            <li>--radius-photo</li>
+            <li>--radius-panel</li>
+            <li>--radius-round</li>
+          </ul>
+          <a class="cell__link" href="tokens/radii.css">Open radii.css</a>
+        </section>
+
+        <section class="cell" aria-labelledby="elevation-title">
+          <h2 class="cell__title" id="elevation-title">Elevation</h2>
+          <ul class="elevation-specimen">
+            <li><span class="plane plane--flat"></span><code>flat</code></li>
+            <li><span class="plane plane--hover"></span><code>hover</code></li>
+            <li><span class="plane plane--float"></span><code>float</code></li>
+          </ul>
+          <ul class="chips" aria-label="Elevation tokens">
+            <li>--line-width</li>
+            <li>--shadow-color</li>
+            <li>--shadow-float</li>
+          </ul>
+          <a class="cell__link" href="tokens/elevation.css">Open elevation.css</a>
+        </section>
+
+        <section class="cell" aria-labelledby="motion-title">
+          <h2 class="cell__title" id="motion-title">Motion</h2>
+          <ul class="motion-specimen">
+            <li><span class="track"><span class="runner" style="--run: var(--duration-fast)"></span></span><code>150ms</code></li>
+            <li><span class="track"><span class="runner" style="--run: var(--duration-base)"></span></span><code>200ms</code></li>
+            <li><span class="track"><span class="runner" style="--run: var(--duration-theme)"></span></span><code>240ms</code></li>
+          </ul>
+          <p class="cell__note">Hover or focus this panel to run them. Nothing moves under reduced motion.</p>
+          <ul class="chips" aria-label="Motion tokens">
+            <li>--duration-fast</li>
+            <li>--duration-base</li>
+            <li>--duration-theme</li>
+            <li>--ease-out</li>
+          </ul>
+          <a class="cell__link" href="tokens/motion.css">Open motion.css</a>
+        </section>
+
+        <section class="cell" aria-labelledby="state-title">
+          <h2 class="cell__title" id="state-title">State</h2>
+          <div class="state-specimen">
+            <span class="sample-control sample-control--focus">Focus</span>
+            <span class="sample-control sample-control--disabled" aria-disabled="true">Disabled</span>
+            <div class="sample-field">
+              <span class="sample-field__box">name@example</span>
+              <span class="sample-field__message">Placeholder error message.</span>
+            </div>
+          </div>
+          <ul class="chips" aria-label="State tokens">
+            <li>--focus-ring-width</li>
+            <li>--focus-ring-offset</li>
+            <li>--focus-ring-color</li>
+            <li>--disabled-opacity</li>
+            <li>--error-color</li>
+          </ul>
+          <a class="cell__link" href="tokens/state.css">Open state.css</a>
+        </section>
+
+        <section class="cell cell--empty" aria-labelledby="components-title">
+          <h2 class="cell__title" id="components-title">Components</h2>
+          <p class="cell__note">
+            None yet. Each component lands in its own pull request, with every state it has, and appears here.
+          </p>
+          <a class="cell__link" href="https://github.com/felipe-miranda-marreiros/portfolio/blob/main/.claude/rules/design.md"
+            >Read the design rule</a
+          >
+        </section>
+      </div>
+    </main>
+
+    <footer class="foot">
+      <p>Design prototype. A reference for the front end, not production code.</p>
+    </footer>
+  </body>
+</html>
