@@ -106,9 +106,9 @@ never a portrait as the centrepiece.
 The system is monochrome bone and ink. Dark is the default, always: a near-black ground carries warm bone ink. The
 complete light theme puts the same ink on bone paper and appears only when the visitor picks it in the dark and light
 switch, never from the system preference. Every colour token resolves both themes through `light-dark()`, so the active
-colour scheme picks one. Secondary text, metadata,
-hairlines and tints are the ink itself at fixed alpha steps; there is no hued accent anywhere. The primary action is
-the ink, filled; focus is an ink ring. The only hue in the system is error.
+colour scheme picks one. Secondary text, metadata, hairlines and tints are the ink itself at fixed alpha steps; there is
+no hued accent anywhere. The primary action is the ink, filled; focus is an ink ring. The only hue in the system is
+error.
 
 About me has its own, entirely distinct Visual language. It restyles the shared navigation, language toggle and Footer
 through tokens alone; their place and behavior never change.
@@ -116,7 +116,8 @@ through tokens alone; their place and behavior never change.
 **Key Characteristics:**
 - Dark by default, always; light a complete equal the visitor switches to; both WCAG 2.2 AA.
 - Monochrome: bone ink on near-black, ink on bone paper, secondary ink and hairlines by alpha steps of the ink.
-- No hued accent: the primary action is filled ink, every other action is outlined in a hairline, focus is an ink ring.
+- No hued accent: the primary action is filled ink, every other button is outlined in a hairline, row links are
+  unboxed text, focus is an ink ring.
 - Bold display grotesk with tight tracking; monospace only for labels, tags, chips and numerals.
 - Hairline-bordered panel grids whose cells share borders, instead of cards and shadows.
 - Facts over the person: a hairline facts panel leads Home, the photo stays small.
@@ -152,8 +153,8 @@ ground, and error is the only hue.
 
 ### Named Rules
 **The Ink Is The Action Rule.** There is no accent colour. The primary action is the ink filled, with the ground as its
-text: one per view. Secondary actions are outlined in Hairline Control. Focus is an ink ring. If a view needs colour to
-show what to do next, the hierarchy is wrong, not the palette.
+text: one per view. Secondary buttons are outlined in Hairline Control; row links stay unboxed. Focus is an ink ring.
+If a view needs colour to show what to do next, the hierarchy is wrong, not the palette.
 
 **The Alpha Steps Rule.** Secondary, muted, hairline and tint colours are always the ink mixed toward transparent at
 their fixed steps (84, 64, 26, 22, 10, 7, 4), and the Wash is the ink at 2% mixed into the ground; never new greys. The
@@ -196,8 +197,9 @@ space above a heading than below it: the Page opens with 6rem above the title.
 
 Collections read as hairline panel grids: cells share one-pixel borders drawn by the grid's hairline showing through a
 one-pixel gap, and each cell (2rem padding, 1.5rem internal gap) ends in a row link pushed to its foot. The grid is one
-column on mobile and three columns from 68rem, where wide cells span two and a closing full-width row spans all three. Mobile and desktop have equal priority: grids
-collapse to one column and splits stack, heading first, and nothing a desktop row shows is dropped on mobile.
+column on mobile and three columns from 68rem, where wide cells span two and full-width rows close the grid across all
+three. Mobile and desktop have equal priority: grids collapse to one column and splits stack, heading first, and nothing
+a desktop row shows is dropped on mobile.
 
 ## Elevation & Depth
 
@@ -208,7 +210,7 @@ to Hairline Hover over the Wash, a hovered control gains Tint Hover. Only a surf
 ### Shadow Vocabulary
 - **Float** (`box-shadow: 0 0 0 1px <ring>, 0 12px 32px -12px <shadow>`): floating surfaces only. On night the ring is
   bone at 30% over a black shadow at 60%, because a dark shadow vanishes on the near-black ground; on paper it is ink at
-  6% over an ink shadow at 22%. Both derive from the palette.
+  6% over an ink shadow at 22%. Every part derives from the palette except the night shadow, which is black.
 
 ### Named Rules
 **The Hairline Before Shadow Rule.** Reach for a hairline or a tint step first; a shadow is the last resort and only
@@ -260,7 +262,7 @@ by each component's own PR. Every component takes every visual value from tokens
 ### Do:
 - **Do** design the dark theme first and keep the light theme a complete equal, both at WCAG 2.2 AA.
 - **Do** open every Page in dark; show light only after the visitor picks it in the switch.
-- **Do** make the one primary action per view filled ink, and outline every other action in a hairline.
+- **Do** make the one primary action per view filled ink, and outline every other button in a hairline.
 - **Do** derive every secondary, muted, hairline and tint colour from the ink at its fixed alpha step.
 - **Do** lead Home with the facts in a hairline panel (role, seniority, location, work model, technologies) and keep
   the Owner's photo small and plain beside the name.

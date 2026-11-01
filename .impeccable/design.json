@@ -125,13 +125,13 @@
     "keyCharacteristics": [
       "Dark by default, always; light a complete equal the visitor switches to; both WCAG 2.2 AA.",
       "Monochrome: bone ink on near-black, ink on bone paper, secondary ink and hairlines by alpha steps of the ink.",
-      "No hued accent: the primary action is filled ink, every other action is outlined in a hairline, focus is an ink ring.",
+      "No hued accent: the primary action is filled ink, every other button is outlined in a hairline, row links are unboxed text, focus is an ink ring.",
       "Bold display grotesk with tight tracking; monospace only for labels, tags, chips and numerals.",
       "Hairline-bordered panel grids whose cells share borders, instead of cards and shadows.",
       "Facts over the person: a hairline facts panel leads Home, the photo stays small."
     ],
     "rules": [
-      { "name": "The Ink Is The Action Rule", "body": "There is no accent colour. The primary action is the ink filled, with the ground as its text: one per view. Secondary actions are outlined in Hairline Control. Focus is an ink ring. If a view needs colour to show what to do next, the hierarchy is wrong, not the palette.", "section": "colors" },
+      { "name": "The Ink Is The Action Rule", "body": "There is no accent colour. The primary action is the ink filled, with the ground as its text: one per view. Secondary buttons are outlined in Hairline Control; row links stay unboxed. Focus is an ink ring. If a view needs colour to show what to do next, the hierarchy is wrong, not the palette.", "section": "colors" },
       { "name": "The Alpha Steps Rule", "body": "Secondary, muted, hairline and tint colours are always the ink mixed toward transparent at their fixed steps (84, 64, 26, 22, 10, 7, 4), and the Wash is the ink at 2% mixed into the ground; never new greys. The exceptions are few and named: input borders, set per theme to hold 3:1 (52% ink on paper, 44% bone on night); the raised surfaces (Night Raised, Paper Raised); and the float shadow, whose ring and shadow are the ink at 6% and 22% on paper and bone at 30% over black at 60% on night, because no ink is darker than the night ground.", "section": "colors" },
       { "name": "The Only Hue Is Error Rule", "body": "Error is the sole hued colour, and it appears only where something went wrong.", "section": "colors" },
       { "name": "The Two Equal Themes Rule", "body": "Every colour token exists in both themes and passes AA in both; dark is designed first, never light inverted.", "section": "colors" },
@@ -141,7 +141,7 @@
     "dos": [
       "Do design the dark theme first and keep the light theme a complete equal, both at WCAG 2.2 AA.",
       "Do open every Page in dark; show light only after the visitor picks it in the switch.",
-      "Do make the one primary action per view filled ink, and outline every other action in a hairline.",
+      "Do make the one primary action per view filled ink, and outline every other button in a hairline.",
       "Do derive every secondary, muted, hairline and tint colour from the ink at its fixed alpha step.",
       "Do lead Home with the facts in a hairline panel (role, seniority, location, work model, technologies) and keep the Owner's photo small and plain beside the name.",
       "Do take every visual value from tokens, so About me can restyle the shared navigation, language toggle and Footer through tokens alone.",
