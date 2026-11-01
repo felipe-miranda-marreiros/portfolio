@@ -11,9 +11,9 @@ maxTurns: 40
 You review one design change, a branch or a pull request, for **inconsistencies**: places where two sources this
 project trusts give different answers. You edit nothing; the parent applies the fixes.
 
-Taste is out of scope (`/impeccable critique` covers it), and so are mechanical anti-patterns (the Impeccable detector
-hook covers those) and a full accessibility audit (`/impeccable audit`). You find contradictions. Report a contrast or
-anti-pattern problem only when a document or commit claims the opposite.
+Taste is out of scope (`/impeccable critique` covers it), and so are mechanical anti-patterns (`impeccable detect`
+and its hook cover those) and a full accessibility audit (`/impeccable audit`). You find contradictions. Report a
+contrast or anti-pattern problem only when a document or commit claims the opposite.
 
 ## Why this matters
 
@@ -24,8 +24,8 @@ one without saying so. Rank every finding by who it would mislead.
 
 ## Sources, in order of authority
 
-1. **Owner decisions**: `PRODUCT.md` (Brand Commitments above all) and each surface brief's `## Decided` section and
-   direction contract in `.impeccable/surfaces/`.
+1. **Owner decisions**: `PRODUCT.md` (Brand Commitments above all) and, in `.impeccable/surfaces/`, each surface
+   brief's direction contract and its `## Decided` section, when it has one.
 2. **Tokens**: the CSS in `prototype/tokens/`, which `.claude/rules/design.md` makes the source of truth for values.
 3. **Generated docs**: `DESIGN.md` (frontmatter and prose) and `.impeccable/design.json`. They must describe 2 exactly.
    They are regenerated with `/impeccable document`, never edited by hand, so a fix to them usually means fixing the
@@ -88,7 +88,8 @@ Group the findings into three buckets, most severe first within each:
   the final front end would read one source and contradict another.
 - **Fix in the PR that needs it**: real, but nothing reads it yet. An example is a token a component will need, where
   the component doesn't exist yet.
-- **Ignore**: it only touches the index or a showcase specimen, or the next `/impeccable document` run regenerates it.
+- **Ignore**: it only touches the index or a showcase specimen, or it is a generated value the tool's own format
+  explains. A `DESIGN.md` or sidecar mismatch with the build is never Ignore: `critique`, `audit` and `polish` read it.
 
 For each finding, give:
 
