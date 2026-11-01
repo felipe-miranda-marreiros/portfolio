@@ -133,7 +133,13 @@ a {
   width: 100%;
   max-width: var(--content-max);
   margin: 0 auto;
-  padding: var(--space-9) var(--gutter) var(--space-8);
+  padding: var(--space-8) var(--gutter);
+}
+
+@media (min-width: 44rem) {
+  .page {
+    padding-top: var(--space-9);
+  }
 }
 
 .intro {
@@ -230,11 +236,17 @@ a {
   flex-direction: column;
   gap: var(--space-5);
   min-width: 0;
-  padding: var(--space-6);
+  padding: var(--space-5);
   background: var(--color-ground);
   transition:
     box-shadow var(--duration-base) var(--ease-out),
     background-color var(--duration-base) var(--ease-out);
+}
+
+@media (min-width: 44rem) {
+  .cell {
+    padding: var(--space-6);
+  }
 }
 
 .cell:hover,
