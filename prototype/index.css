@@ -485,9 +485,13 @@ a {
   color: var(--color-ink-muted);
 }
 
+.radii-specimen {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 3.5rem));
+}
+
 .corner {
-  width: 3.5rem;
-  height: 3.5rem;
+  aspect-ratio: 1;
   border: var(--line-width) solid var(--color-hairline-control);
   border-radius: var(--corner);
   background: var(--color-tint);
