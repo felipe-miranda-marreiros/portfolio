@@ -29,6 +29,14 @@ Work happens on the prototype (see Prototype), which every Impeccable command ta
    WCAG 2.2 AA.
 4. **Pages.** Compose prototype Pages from the prototype's components. `extract` applies only from here on.
 
+## Design review
+
+Every PR that touches design (`prototype/`, `DESIGN.md`, `PRODUCT.md`, `.impeccable/` or this file) runs `/design-review`
+before `gh pr create`, and again before a `gh pr edit` that follows new design commits. The skill runs the
+`design-review` agent (`.claude/agents/design-review.md`) in a subagent, which finds contradictions between the Owner's
+decisions, the tokens, `DESIGN.md` and its sidecar, the prototype, and the rules. Fix its **Fix before merge** findings
+in the same PR, ask the Owner about the ones it marks **Owner decides**, and record the result in the PR's `## Evidence`.
+
 ## Prototype
 
 The prototype is the design phase's reference, not the final front end: the place where the design system, the
