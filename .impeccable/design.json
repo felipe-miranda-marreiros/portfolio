@@ -1,6 +1,6 @@
 {
   "schemaVersion": 2,
-  "generatedAt": "2026-11-01T17:26:41Z",
+  "generatedAt": "2026-11-01T19:54:57Z",
   "title": "Design System: Portfolio",
   "extensions": {
     "colorMeta": {
@@ -29,17 +29,34 @@
       "ink-hairline-control": { "role": "neutral", "displayName": "Hairline Control (paper)", "canonical": "color-mix(in srgb, #1a1815 22%, transparent)" },
       "ink-hairline-input": { "role": "neutral", "displayName": "Hairline Input (paper)", "canonical": "color-mix(in srgb, #1a1815 52%, transparent)" },
       "ink-tint": { "role": "neutral", "displayName": "Tint (paper)", "canonical": "color-mix(in srgb, #1a1815 7%, transparent)" },
-      "ink-tint-hover": { "role": "neutral", "displayName": "Tint Hover (paper)", "canonical": "color-mix(in srgb, #1a1815 4%, transparent)" }
+      "ink-tint-hover": { "role": "neutral", "displayName": "Tint Hover (paper)", "canonical": "color-mix(in srgb, #1a1815 4%, transparent)" },
+      "about-me-purple": { "role": "primary", "displayName": "Purple", "canonical": "#4a2390", "tonalRamp": ["#0f002a", "#2c0061", "#48208d", "#6443b1", "#8668d9", "#aa8fff", "#ccc0ff", "#efecfe"] },
+      "about-me-sunset": { "role": "primary", "displayName": "Sunset Orange", "canonical": "#e8582f", "tonalRamp": ["#1c0300", "#450e01", "#731d01", "#a52d01", "#d8491e", "#ff754f", "#ffb6a2", "#ffe9e3"] },
+      "about-me-lime": { "role": "primary", "displayName": "Lime", "canonical": "#d6e45a", "tonalRamp": ["#0b0d00", "#242701", "#3f4401", "#5d6404", "#7f8903", "#a3af0a", "#c8d379", "#edf2d3"] },
+      "about-me-charcoal": { "role": "primary", "displayName": "Charcoal", "canonical": "#1f1d21", "tonalRamp": ["#0c0b0d", "#252327", "#413f43", "#5f5c61", "#817f84", "#a6a3a9", "#cbc9cd", "#efeeef"] },
+      "about-me-lilac": { "role": "secondary", "displayName": "Lilac", "canonical": "#f7f0ff", "tonalRamp": ["#0d0a10", "#27212c", "#433d49", "#615b67", "#837d8a", "#a8a1af", "#cdc8d2", "#efedf1"] },
+      "about-me-cream": { "role": "secondary", "displayName": "Cream", "canonical": "#fff4e0", "tonalRamp": ["#0f0a03", "#2b2313", "#473f2e", "#665c4b", "#897f6d", "#aea391", "#d1cabc", "#f1eee9"] },
+      "about-me-peach": { "role": "secondary", "displayName": "Peach", "canonical": "#ff8a5c", "tonalRamp": ["#1a0400", "#421300", "#6d2502", "#9d3802", "#ca5a2a", "#f37f52", "#feb79c", "#fee9e2"] },
+      "about-me-blush": { "role": "secondary", "displayName": "Blush", "canonical": "#ffd0b8", "tonalRamp": ["#180500", "#3b1905", "#5a3521", "#7b533e", "#a0755f", "#c69983", "#e4c3b2", "#f8ece5"] },
+      "about-me-magenta": { "role": "secondary", "displayName": "Magenta", "canonical": "#8a1158", "tonalRamp": ["#1c000e", "#46012a", "#750249", "#9d2868", "#c54f8b", "#ef74b0", "#feafd2", "#fee7f0"] }
     },
     "semanticColors": [
       { "name": "--color-ground", "value": "light-dark(#efe9dd, #141311)", "purpose": "Page ground; text on a filled-ink action." },
       { "name": "--color-surface", "value": "light-dark(#f6f2e9, #23211e)", "purpose": "Floating surfaces only, with --shadow-float." },
       { "name": "--color-ink", "value": "light-dark(#1a1815, #e8e2d6)", "purpose": "Text, primary action fill, focus ring, selection." },
       { "name": "--color-wash", "value": "color-mix(in srgb, var(--color-ink) 2%, var(--color-ground))", "purpose": "Hovered or focused panel cell; opaque so it covers the grid's hairline." },
+      { "name": "--color-display", "value": "var(--color-ink)", "purpose": "Display type; the ink on the Portfolio, a band colour on About me." },
       { "name": "--color-action", "value": "var(--color-ink)", "purpose": "Primary action fill." },
       { "name": "--color-on-action", "value": "var(--color-ground)", "purpose": "Primary action text." },
       { "name": "--color-error", "value": "light-dark(#ac312c, #ed756a)", "purpose": "Error borders and messages; the only hue." },
-      { "name": "--color-selection", "value": "var(--color-ink)", "purpose": "Inverted text selection, with --color-on-selection = ground." }
+      { "name": "--color-selection", "value": "var(--color-ink)", "purpose": "Inverted text selection, with --color-on-selection = ground." },
+      { "name": "--color-ground (about me)", "value": "purple #4a2390, sunset #e8582f, lime #d6e45a, charcoal #1f1d21", "purpose": "Each band's ground; one band per Section, rotating." },
+      { "name": "--color-ink (about me)", "value": "purple and charcoal: lilac #f7f0ff; sunset and lime: charcoal #1f1d21", "purpose": "The band's one ink: text, rules, input borders, focus ring, selection, error. Secondary, muted, hairline and control colours are the ink itself; tints are transparent." },
+      { "name": "--color-display (about me)", "value": "purple: lime, sunset: cream, lime: magenta, charcoal: peach", "purpose": "Display type and Section titles; also --color-hairline-hover. Cream is large type only." },
+      { "name": "--color-key (about me)", "value": "purple: lime, sunset: charcoal, lime: magenta, charcoal: lime", "purpose": "Billing categories and hover underlines." },
+      { "name": "--color-key-alt (about me)", "value": "purple: blush, sunset: cream, lime: purple, charcoal: peach", "purpose": "Alternate billing categories." },
+      { "name": "--color-action (about me)", "value": "purple: lime, sunset: charcoal, lime: magenta, charcoal: peach", "purpose": "Primary action fill, with --color-on-action: purple, cream, lime, charcoal." },
+      { "name": "--color-error (about me)", "value": "var(--color-ink)", "purpose": "No error hue: a dashed ink rule and its message." }
     ],
     "typographyMeta": {
       "display": { "displayName": "Display", "purpose": "The Owner's name and Page titles." },
@@ -48,10 +65,19 @@
       "lede": { "displayName": "Lede", "purpose": "The supporting line under a Page title, in secondary ink, 52ch measure." },
       "body": { "displayName": "Body", "purpose": "Summaries and supporting lines in secondary ink, 68ch measure." },
       "small": { "displayName": "Small", "purpose": "Captions, notes and metadata in muted ink; row links and controls at the control weight (600)." },
-      "label": { "displayName": "Label", "purpose": "Martian Mono for stat labels and dates (uppercase, 0.08em); chips and code set as-is." }
+      "label": { "displayName": "Label", "purpose": "Martian Mono for stat labels and dates (uppercase, 0.08em); chips and code set as-is." },
+      "about-me-display": { "displayName": "About me Display", "purpose": "Big Shoulders Display 900, uppercase, sized 24cqi so the Page title runs the band's width; Display colour." },
+      "about-me-headline": { "displayName": "About me Headline", "purpose": "Big Shoulders Display 900, uppercase: Section titles in the Display colour." },
+      "about-me-title": { "displayName": "About me Title", "purpose": "Big Shoulders Display 800, uppercase: billing categories and item titles; the bar's name at 900." },
+      "about-me-billing": { "displayName": "About me Billing", "purpose": "Archivo 800, uppercase: the items of a lineup, in the band's ink." },
+      "about-me-lede": { "displayName": "About me Lede", "purpose": "One line under the Page title, 52ch measure." },
+      "about-me-body": { "displayName": "About me Body", "purpose": "Stories and notes in the band's ink, 68ch measure." },
+      "about-me-small": { "displayName": "About me Small", "purpose": "Controls and error messages at the control weight (700)." },
+      "about-me-label": { "displayName": "About me Label", "purpose": "Archivo 800, uppercase, 0.06em: chips, code, the language toggle and band links. No monospace on About me." }
     },
     "shadows": [
-      { "name": "shadow-float", "value": "0 0 0 1px var(--shadow-ring), 0 12px 32px -12px var(--shadow-color)", "purpose": "Floating surfaces only (menus, popovers). Ring: ink 6% on paper, bone 30% on night. Shadow: ink 22% on paper, black 60% on night, the one non-ink colour, because no ink is darker than the night ground; the ring keeps floats legible there." }
+      { "name": "shadow-float", "value": "0 0 0 1px var(--shadow-ring), 0 12px 32px -12px var(--shadow-color)", "purpose": "Floating surfaces only (menus, popovers). Ring: ink 6% on paper, bone 30% on night. Shadow: ink 22% on paper, black 60% on night, the one non-ink colour, because no ink is darker than the night ground; the ring keeps floats legible there." },
+      { "name": "about-me-shadow-float", "value": "0 0 0 var(--line-width) var(--color-ink)", "purpose": "About me: a solid 3px ring in the band's ink, no shadow and no blur (--shadow-color is transparent)." }
     ],
     "motion": [
       { "name": "duration-fast", "value": "150ms", "purpose": "Controls, row links, switch options. 0ms under reduced motion." },
@@ -63,11 +89,16 @@
       { "name": "focus-ring", "value": "outline: 2px solid var(--color-ink); outline-offset: 2px", "purpose": "Every focusable element." },
       { "name": "disabled", "value": "opacity: 0.4", "purpose": "Every disabled control." },
       { "name": "error", "value": "border: 1px solid var(--color-error)", "purpose": "Fields in error, with a Small message in error." },
-      { "name": "line-width", "value": "1px", "purpose": "Every hairline." }
+      { "name": "line-width", "value": "1px", "purpose": "Every hairline." },
+      { "name": "error-line-style", "value": "solid", "purpose": "The error line's style; About me sets it to dashed." },
+      { "name": "about-me-focus-ring", "value": "outline: 3px solid var(--color-ink); outline-offset: 3px", "purpose": "About me: every focusable element, in the band's ink." },
+      { "name": "about-me-error", "value": "border: 3px dashed var(--color-ink)", "purpose": "About me: fields in error, with a Small message at the control weight; never a hue." },
+      { "name": "about-me-line-width", "value": "3px", "purpose": "About me: every rule, outline and border." }
     ],
     "breakpoints": [
       { "name": "grid-2col", "value": "44rem" },
-      { "name": "grid-3col", "value": "68rem" }
+      { "name": "grid-3col", "value": "68rem" },
+      { "name": "about-me-lineup-2col", "value": "36rem" }
     ]
   },
   "components": [
@@ -118,6 +149,14 @@
       "description": "Two-option segmented switch in the top bar: Dark (pressed by default) and Light; never follows the system preference.",
       "html": "<div class=\"ds-switch\"><button aria-pressed=\"true\">Dark</button><button aria-pressed=\"false\">Light</button></div>",
       "css": ".ds-switch { display: inline-flex; padding: 3px; border: var(--line-width) solid var(--color-hairline-control); border-radius: var(--radius-control); } .ds-switch button { font-family: var(--font-sans); font-size: var(--text-small); font-weight: var(--weight-control); color: var(--color-ink-secondary); background: none; border: 0; border-radius: calc(var(--radius-control) - 3px); padding: var(--space-1) var(--space-3); cursor: pointer; transition: color var(--duration-fast) var(--ease-out), background-color var(--duration-fast) var(--ease-out); } .ds-switch button:hover { color: var(--color-ink); } .ds-switch button[aria-pressed=\"true\"] { color: var(--color-ink); background: var(--color-tint); } .ds-switch button:focus-visible { outline: var(--focus-ring-width) solid var(--focus-ring-color); outline-offset: var(--focus-ring-offset); }"
+    },
+    {
+      "name": "Lineup",
+      "kind": "custom",
+      "refersTo": "about-me-lineup",
+      "description": "About me's billing rows, shown on the lime band with its resolved colours: category in a key colour, item in heavy uppercase Archivo, underlined in its category colour on hover and focus.",
+      "html": "<div class=\"ds-band-lime\"><ul class=\"ds-lineup\"><li><span class=\"ds-key\">Books</span><a href=\"#\">Placeholder title</a></li><li><span class=\"ds-key ds-key--alt\">Authors</span><a href=\"#\">Placeholder author</a></li><li><span class=\"ds-key\">Music</span><a href=\"#\">Placeholder track</a></li></ul></div>",
+      "css": ".ds-band-lime { padding: 1.5rem; background: #d6e45a; color: #1f1d21; } .ds-lineup { display: flex; flex-direction: column; gap: 0.5rem; margin: 0; padding: 1rem 0; list-style: none; border-block: 3px solid #8a1158; } .ds-lineup li { display: grid; grid-template-columns: 9rem 1fr; gap: 1rem; align-items: baseline; } .ds-key { font-family: \"Big Shoulders Display\", \"Arial Narrow\", sans-serif; font-size: 1.375rem; font-weight: 800; line-height: 1.1; letter-spacing: 0.01em; text-transform: uppercase; color: #8a1158; } .ds-key--alt { color: #4a2390; } .ds-lineup a { font-family: Archivo, ui-sans-serif, system-ui, sans-serif; font-size: clamp(1.5rem, 1.25rem + 1vw, 2rem); font-weight: 800; text-transform: uppercase; text-decoration: none; color: inherit; } .ds-lineup a:hover, .ds-lineup a:focus-visible { text-decoration: underline 3px #8a1158; text-underline-offset: 0.2em; } .ds-lineup li:has(.ds-key--alt) a:hover, .ds-lineup li:has(.ds-key--alt) a:focus-visible { text-decoration-color: #4a2390; } .ds-lineup a:focus-visible { outline: 3px solid #1f1d21; outline-offset: 3px; }"
     }
   ],
   "narrative": {
@@ -158,6 +197,46 @@
       "Don't make the Owner's photo a centrepiece: no large portrait, no colour effects, no full-bleed photo.",
       "Don't put a shadow on anything that doesn't float above the page.",
       "Don't let expression cost the 30-second read: role, seniority, technologies, location, CV and contact stay findable at a glance."
-    ]
+    ],
+    "aboutMe": {
+      "northStar": "The Gig Poster",
+      "overview": "About me's Visual language sets the Owner's interests, recommendations and studies like a gig poster: flat colour bands, one per Section, a condensed uppercase display that runs the band's width, and lists set as a poster's billing. It is loud and warm where the Portfolio is quiet, and it never looks like a social profile, a gamer costume, the Portfolio recoloured, or anything corporate or cold.\n\nIt loads over the Portfolio's tokens and redefines the same names, so the shared components take its look through tokens alone; spacing and motion stay the Portfolio's. It has one theme and no photo. Each band sets every colour token itself, so a component inside a band takes that band's colours. Illustration is optional: the language works without it, and the first band reserves a slot for one.",
+      "keyCharacteristics": [
+        "Four flat bands, purple, sunset orange, lime and charcoal, rotating one per Section.",
+        "One theme and no theme switch; no photo; the language toggle keeps its place.",
+        "Big Shoulders Display, condensed and uppercase, sized to the band's width; Archivo for everything else.",
+        "Lists as poster billing: the category in a key colour, the item in heavy uppercase Archivo in the band's ink.",
+        "One ink per band at full strength, no alpha steps; 3px ink rules and square corners.",
+        "No shadows, no blur, no gradients, no neon; an error is a dashed ink rule and its message, never a hue."
+      ],
+      "rules": [
+        { "name": "The One Band Per Section Rule", "body": "Every Section owns one band, and the bands rotate purple, sunset, lime, charcoal. A component never sets a palette colour; it reads the tokens of the band it sits in.", "section": "colors" },
+        { "name": "The One Ink Rule", "body": "Each band has one ink at full strength: secondary, muted, hairline, control and input colours are the ink itself, and tints are transparent. On sunset any alpha step below full ink drops under 4.5:1.", "section": "colors" },
+        { "name": "The Cream Is Large Rule", "body": "Cream holds only 3.3:1 on sunset, so it sets large type only: display, headlines and the billing keys.", "section": "colors" },
+        { "name": "The No Error Hue Rule", "body": "No single hue reads on all four bands, so error is the band's ink, drawn as a dashed rule with its message, never a colour alone.", "section": "colors" },
+        { "name": "The Band-Wide Title Rule", "body": "The Page title is sized from its container's width (24cqi, from 3.5rem to 20rem), so it runs the band's width like a poster's lettering.", "section": "typography" },
+        { "name": "The Billing Rule", "body": "A list is a lineup: the category in Big Shoulders at title size in a key colour, the item in heavy uppercase Archivo at billing size in the band's ink, between two 3px rules in the key colour. Categories alternate Key and Key Alt down the list.", "section": "typography" },
+        { "name": "The Printed Flat Rule", "body": "Nothing on About me casts or blurs; separate with a 3px ink rule or a change of band.", "section": "elevation" }
+      ],
+      "dos": [
+        "Do give every Section one band, rotating purple, sunset, lime and charcoal, with the bar, intro and Footer on purple.",
+        "Do let a component read its band's tokens; never set a palette colour on a component.",
+        "Do set text in the band's one ink at full strength, and cream only at large sizes on sunset.",
+        "Do size the Page title from its container so it runs the band's width, in Big Shoulders Display, uppercase.",
+        "Do set lists as billing: the category in a key colour, the item in heavy uppercase Archivo, underlined in its category colour on hover and focus.",
+        "Do mark an error with a dashed 3px ink rule and its message.",
+        "Do keep the language toggle in its place and leave the theme switch out.",
+        "Do make every band work without an illustration; the slot is optional."
+      ],
+      "donts": [
+        "Don't add a shadow, a blur, a gradient or neon; the bands are flat and printed.",
+        "Don't step the ink down by alpha; on sunset every step below full ink falls under 4.5:1.",
+        "Don't give error a hue; no single hue reads on all four bands.",
+        "Don't let it look like a social profile (cards, counters, feeds), a gamer or childish costume, the Portfolio recoloured, or anything corporate or cold.",
+        "Don't use Dance Gavin Dance's artwork, lettering or logo; the poster grammar is an own version.",
+        "Don't add a photo or a second theme.",
+        "Don't round a corner unless the thing is truly round."
+      ]
+    }
   }
 }
