@@ -48,6 +48,10 @@ h2 {
   hyphens: auto;
 }
 
+p {
+  text-wrap: pretty;
+}
+
 .visually-hidden {
   position: absolute;
   width: 1px;
