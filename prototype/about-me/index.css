@@ -151,14 +151,12 @@ code,
 .intro {
   display: grid;
   gap: var(--space-6);
-  padding-top: var(--space-7);
 }
 
 @media (min-width: 44rem) {
   .intro {
     grid-template-columns: 1fr minmax(12rem, 18rem);
     align-items: end;
-    padding-top: var(--space-8);
   }
 }
 
