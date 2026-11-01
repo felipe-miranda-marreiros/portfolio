@@ -225,6 +225,12 @@ code,
 }
 
 .key {
+  font-family: var(--font-display);
+  font-size: var(--text-title);
+  font-weight: var(--weight-title);
+  line-height: var(--leading-title);
+  letter-spacing: var(--tracking-title);
+  text-transform: var(--case-display);
   color: var(--color-key);
 }
 
@@ -232,7 +238,6 @@ code,
   color: var(--color-key-alt);
 }
 
-.key,
 .type-specimen__label,
 .band-link {
   font-size: var(--text-label);
@@ -382,7 +387,7 @@ code,
   gap: var(--space-2);
   align-self: stretch;
   padding-block: var(--space-4);
-  border-block: var(--line-width) solid var(--color-hairline);
+  border-block: var(--line-width) solid var(--color-key);
 }
 
 .lineup li {
@@ -398,7 +403,7 @@ code,
 }
 
 .lineup a {
-  font-size: var(--text-title);
+  font-size: var(--text-billing);
   font-weight: var(--weight-title);
   text-transform: var(--case-label);
   text-decoration: none;
