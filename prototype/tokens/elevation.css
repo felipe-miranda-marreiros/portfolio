@@ -1,0 +1,6 @@
+/** Elevation tokens: flat by default; hairlines and tints carry depth, a shadow only for what floats. */
+:root {
+  --line-width: 1px;
+  --shadow-color: light-dark(rgb(26 24 21 / 0.22), rgb(0 0 0 / 0.6));
+  --shadow-float: 0 12px 32px -12px var(--shadow-color);
+}
