@@ -167,12 +167,22 @@ a {
   overflow: hidden;
 }
 
+@media (min-width: 44rem) {
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .cell--color,
+  .cell--type,
+  .cell--state,
+  .cell--components {
+    grid-column: span 2;
+  }
+}
+
 @media (min-width: 68rem) {
   .grid {
     grid-template-columns: repeat(3, 1fr);
-  }
-
-  .grid {
     grid-template-areas:
       "color color spacing"
       "color color radii"
