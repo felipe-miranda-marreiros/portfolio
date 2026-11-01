@@ -3,6 +3,6 @@
   --line-width: 1px;
   --shadow-color: light-dark(rgb(26 24 21 / 0.22), rgb(0 0 0 / 0.6));
   /* A dark shadow vanishes on the night ground, so floating surfaces there also get a faint ring. */
-  --shadow-ring: light-dark(rgb(26 24 21 / 0.06), rgb(232 226 214 / 0.14));
+  --shadow-ring: light-dark(rgb(26 24 21 / 0.06), rgb(232 226 214 / 0.3));
   --shadow-float: 0 0 0 1px var(--shadow-ring), 0 12px 32px -12px var(--shadow-color);
 }
