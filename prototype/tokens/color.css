@@ -32,6 +32,8 @@
 
   --color-tint: color-mix(in srgb, var(--color-ink) 7%, transparent);
   --color-tint-hover: color-mix(in srgb, var(--color-ink) 4%, transparent);
+  /* Opaque, because a panel cell has to cover the hairline drawn behind the grid. */
+  --color-wash: color-mix(in srgb, var(--color-ink) 2%, var(--color-ground));
 
   --color-action: var(--color-ink);
   --color-on-action: var(--color-ground);

@@ -219,7 +219,7 @@ a {
 
 .cell:hover,
 .cell:focus-within {
-  background: color-mix(in srgb, var(--color-ink) 2%, var(--color-ground));
+  background: var(--color-wash);
   box-shadow: inset 0 0 0 var(--line-width) var(--color-hairline-hover);
 }
 
