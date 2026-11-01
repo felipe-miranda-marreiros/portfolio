@@ -10,8 +10,8 @@ related_targets: []
 ## Scope
 
 `prototype/about-me/index.html`, the token page of About me's Visual language: the second token set over the same
-components, sibling of `prototype/index.html`. The world is built for Experience (About me's Page, where the visitor
-meets the Owner through what they listen to, play, run, watch, recommend and study); this page itself is a Read
+components, sibling of `prototype/index.html`. The world is built for About me's Page, where the visitor
+meets the Owner through what they listen to, play, run, watch, recommend and study; this page itself is a Read
 reference the Owner and agents consult.
 
 ## Job
@@ -32,10 +32,17 @@ On 2026-11-01 the Owner chose, from rendered comparison rounds:
 - The Owner wants to avoid: a social network look, a gamer or childish look, a recolour of the Portfolio, and anything
   corporate or cold.
 
+Later on 2026-11-01, after the finish review and the design review, the Owner confirmed:
+- Lineup categories are set in the display face at large size, in two key colours per band; on sunset those are
+  charcoal and cream, so half the categories share the ink and stand apart by face and size.
+- The Footer takes the next band in the rotation, like any Section; no band is fixed to it.
+- Creative North Star: "Loud Bands, Quiet Person".
+- About me is documented in the root DESIGN.md beside the Portfolio, an About me subsection in each section.
+- Spacing and motion stay the Portfolio's; radii, elevation and state are About me's own.
+
 ## Unresolved
 
-Spacing, radii, motion and state tokens are first set by the token build. The illustration slot has no artwork; it
-carries a marked placeholder until the Owner supplies one. Where About me's DESIGN.md lives is decided at the finish.
+The illustration slot has no artwork; it carries a marked placeholder until the Owner supplies one.
 
 ## Direction contract
 
@@ -43,8 +50,8 @@ THESIS: About me as a gig poster: the Owner's interests, recommendations and stu
 bands. It refuses the social profile (cards, counters, feeds), the gamer costume, and the Portfolio recoloured.
 
 OWN-WORLD: Four flat bands, purple, sunset orange, lime and charcoal, each Section owning one, rotating. Condensed
-uppercase display that fills the band's width; lists set as poster billing in heavy uppercase Archivo, category in a
-second band colour, item in the band's ink. Hard edges, thick rules, no shadows, no gradients, no neon.
+uppercase display that fills the band's width; lists set as poster billing, category in large display type in the band's
+two key colours, item in heavy uppercase Archivo in the band's ink. Hard edges, thick rules, no shadows, no gradients, no neon.
 
 STORY: The visitor learns who the Owner is outside code in one scroll, finds something to read, hear or watch, and sees
 what they are studying now.
