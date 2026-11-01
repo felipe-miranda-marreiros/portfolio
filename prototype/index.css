@@ -156,7 +156,7 @@ a {
 }
 
 .intro__lede {
-  max-width: 52ch;
+  max-width: var(--measure-lede);
   font-size: var(--text-lede);
   line-height: var(--leading-lede);
   color: var(--color-ink-secondary);
@@ -412,7 +412,7 @@ a {
 }
 
 .type-specimen__lede {
-  max-width: 52ch;
+  max-width: var(--measure-lede);
   font-size: var(--text-lede);
   line-height: var(--leading-lede);
   color: var(--color-ink-secondary);

@@ -8,4 +8,5 @@
 
   --error-color: var(--color-error);
   --error-line-width: 1px;
+  --error-line-style: solid;
 }
