@@ -40,6 +40,8 @@ values of them.
 - Contact goes only through the Footer: the public repository link first, then social links and email.
 - The Owner works in the CMS: edits Drafts, previews them in both languages exactly as the Portfolio will show them
   (About me's Visual language included), then publishes, unpublishes, deletes or discards.
+- About me's Sections cover the Owner's interests (such as music, games, running, films and series), recommendations
+  (books, authors, music, films and articles) and engineering, including what the Owner is studying now.
 
 ## Capabilities and Constraints
 
@@ -54,6 +56,8 @@ values of them.
 - The CMS edits Content only, never layout or visual design.
 - Two Visual languages: the Portfolio's, which the CMS also uses, and About me's own, entirely distinct. On About me,
   the navigation, language toggle and Footer stay in the same place and behave the same; only their styling changes.
+- The theme switch belongs to the Portfolio's Visual language. About me has one theme, so the switch is absent there and
+  the language toggle keeps its place.
 - Mobile and desktop have equal priority.
 - Built by the Owner alone with AI agents, no budget, no fixed deadline.
 
@@ -63,10 +67,13 @@ values of them.
   tracked grotesk, monospace for labels only and hairline-bordered panels.
 - The Portfolio is monochrome: no hued accent. The primary action is the ink itself, filled; the Owner turned down
   every hued accent, gradient and multi-colour palette offered.
-- Dark always by default, with a complete light theme the visitor chooses in a dark and light switch; the system
-  preference is never followed.
+- The Portfolio is dark always by default, with a complete light theme the visitor chooses in a dark and light switch;
+  the system preference is never followed.
 - The Owner prefers not to be the visual focus: Home leads with the facts, and the Owner's photo stays small and plain
   beside the name.
+- About me's Visual language is a gig poster: flat colour bands in purple, sunset orange, lime and charcoal, one per
+  Section, a condensed uppercase display and lists set like a poster's billing. It has one theme and no photo. It never
+  looks like a social profile, a gamer costume, the Portfolio recoloured, or anything corporate.
 
 ## Evidence on Hand
 
