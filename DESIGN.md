@@ -7,6 +7,8 @@ colors:
   bone: "#e8e2d6"
   paper: "#efe9dd"
   paper-raised: "#f6f2e9"
+  night-wash: "#181715"
+  paper-wash: "#ebe5d9"
   ink: "#1a1815"
   error-on-night: "#ed756a"
   error-on-paper: "#ac312c"
@@ -45,6 +47,12 @@ typography:
     fontWeight: 600
     lineHeight: 1.3
     letterSpacing: "-0.01em"
+  lede:
+    fontFamily: "Schibsted Grotesk, ui-sans-serif, system-ui, sans-serif"
+    fontSize: "1.25rem"
+    fontWeight: 400
+    lineHeight: 1.3
+    letterSpacing: "0em"
   body:
     fontFamily: "Schibsted Grotesk, ui-sans-serif, system-ui, sans-serif"
     fontSize: "1rem"
@@ -95,9 +103,10 @@ The Portfolio's Visual language is a dark, confident engineering page where bold
 panels carry the authority and the facts lead. The Owner stays in the background: a small, plain photo beside the name,
 never a portrait as the centrepiece.
 
-The system is monochrome bone and ink. Dark first, a near-black ground carries warm bone ink; the complete light theme
-puts the same ink on bone paper and follows the system preference, with a manual dark and light switch. Every colour
-token resolves both themes through `light-dark()`, so the active colour scheme picks one. Secondary text, metadata,
+The system is monochrome bone and ink. Dark is the default, always: a near-black ground carries warm bone ink. The
+complete light theme puts the same ink on bone paper and appears only when the visitor picks it in the dark and light
+switch, never from the system preference. Every colour token resolves both themes through `light-dark()`, so the active
+colour scheme picks one. Secondary text, metadata,
 hairlines and tints are the ink itself at fixed alpha steps; there is no hued accent anywhere. The primary action is
 the ink, filled; focus is an ink ring. The only hue in the system is error.
 
@@ -105,7 +114,7 @@ About me has its own, entirely distinct Visual language. It restyles the shared 
 through tokens alone; their place and behavior never change.
 
 **Key Characteristics:**
-- Dark first, light a complete equal following the system preference, both WCAG 2.2 AA.
+- Dark by default, always; light a complete equal the visitor switches to; both WCAG 2.2 AA.
 - Monochrome: bone ink on near-black, ink on bone paper, secondary ink and hairlines by alpha steps of the ink.
 - No hued accent: the primary action is filled ink, every other action is outlined in a hairline, focus is an ink ring.
 - Bold display grotesk with tight tracking; monospace only for labels, tags, chips and numerals.
@@ -114,8 +123,8 @@ through tokens alone; their place and behavior never change.
 
 ## Colors
 
-Strictly monochrome: one ink and one ground per theme, everything else is that ink at a lower alpha, and error is the
-only hue.
+Strictly monochrome: one ink and one ground per theme, every other colour is that ink at a lower alpha or mixed into the
+ground, and error is the only hue.
 
 ### Primary
 - **Bone** (night theme) and **Ink** (paper theme): the ink is the primary colour. It sets headings and body text,
@@ -135,6 +144,8 @@ only hue.
 - **Hairline Input** (52% ink on paper, 44% bone on night): input borders, which identify the control and so meet 3:1
   against the ground.
 - **Tint** (7%) and **Tint Hover** (4%): chip fills and the pressed theme option; the faint fill of a hovered control.
+- **Night Wash** and **Paper Wash** (2% of the ink mixed into the ground): the hovered or focused panel cell. Opaque,
+  because the cell covers the hairline drawn behind the grid.
 
 ### Error
 - **Error on Paper** and **Error on Night**: error borders and messages only, never decoration.
@@ -145,8 +156,10 @@ text: one per view. Secondary actions are outlined in Hairline Control. Focus is
 show what to do next, the hierarchy is wrong, not the palette.
 
 **The Alpha Steps Rule.** Secondary, muted, hairline and tint colours are always the ink mixed toward transparent at
-their fixed steps (84, 64, 26, 22, 10, 7, 4), never new greys. Input borders are the one exception, set per theme to
-hold 3:1.
+their fixed steps (84, 64, 26, 22, 10, 7, 4), and the Wash is the ink at 2% mixed into the ground; never new greys. The
+exceptions are few and named: input borders, set per theme to hold 3:1 (52% ink on paper, 44% bone on night); the
+raised surfaces (Night Raised, Paper Raised); and the float shadow, whose ring and shadow are the ink at 6% and 22% on
+paper and bone at 30% over black at 60% on night, because no ink is darker than the night ground.
 
 **The Only Hue Is Error Rule.** Error is the sole hued colour, and it appears only where something went wrong.
 
@@ -164,7 +177,8 @@ monospace that labels facts the way a codebase labels things: commands, tags, co
 ### Hierarchy
 - **Display** (800, fluid up to 6rem, line-height 0.95, -0.04em): the Owner's name and Page titles, balanced wrapping.
 - **Headline** (700, fluid up to 3rem, line-height 1.05, -0.03em): Section titles.
-- **Title** (600, 1.25rem, line-height 1.3, -0.01em): role titles, panel titles, list rows, ledes in secondary ink.
+- **Title** (600, 1.25rem, line-height 1.3, -0.01em): role titles, panel titles and list rows.
+- **Lede** (400, 1.25rem, line-height 1.3): the supporting line under a Page title, in secondary ink.
 - **Body** (400, 1rem, line-height 1.6): summaries and supporting lines in secondary ink, measure 68ch.
 - **Small** (400, 0.875rem): captions, notes, metadata in muted ink; also the size of row links and controls (600).
 - **Label** (Martian Mono 500, 0.6875rem, 0.08em, uppercase, tabular numerals): stat labels and dates. Inside chips and
@@ -182,19 +196,19 @@ space above a heading than below it: the Page opens with 6rem above the title.
 
 Collections read as hairline panel grids: cells share one-pixel borders drawn by the grid's hairline showing through a
 one-pixel gap, and each cell (2rem padding, 1.5rem internal gap) ends in a row link pushed to its foot. The grid is one
-column on mobile and three columns from 68rem, where wide cells span two. Mobile and desktop have equal priority: grids
+column on mobile and three columns from 68rem, where wide cells span two and a closing full-width row spans all three. Mobile and desktop have equal priority: grids
 collapse to one column and splits stack, heading first, and nothing a desktop row shows is dropped on mobile.
 
 ## Elevation & Depth
 
 Flat by default. Depth comes from hairlines and alpha tints, not shadows: a hovered or focused panel brightens its edge
-to Hairline Hover with a faint ink wash, a hovered control gains Tint Hover. Only a surface that floats above the page
+to Hairline Hover over the Wash, a hovered control gains Tint Hover. Only a surface that floats above the page
 (menu, popover) takes the raised surface colour and the float shadow. Nothing glows.
 
 ### Shadow Vocabulary
 - **Float** (`box-shadow: 0 0 0 1px <ring>, 0 12px 32px -12px <shadow>`): floating surfaces only. On night the ring is
-  bone at 30% because a dark shadow vanishes on the near-black ground; on paper it is ink at 6% with an ink shadow at
-  22%.
+  bone at 30% over a black shadow at 60%, because a dark shadow vanishes on the near-black ground; on paper it is ink at
+  6% over an ink shadow at 22%. Both derive from the palette.
 
 ### Named Rules
 **The Hairline Before Shadow Rule.** Reach for a hairline or a tint step first; a shadow is the last resort and only
@@ -224,7 +238,8 @@ by each component's own PR. Every component takes every visual value from tokens
 
 ### Panel grid cells
 - **Corner Style:** the grid rounds its outer corners (12px); cells are square.
-- **Background:** the ground; on hover or focus within, a faint ink wash and an inset Hairline Hover edge (200ms).
+- **Background:** the ground; on hover or focus within, the Wash and an inset Hairline Hover edge (200ms).
+- **Title:** the Title role (600).
 - **Border:** shared one-pixel hairlines. **Internal Padding:** 2rem.
 - **Row link:** Small text at 600 in Secondary Ink with an arrow; on panel hover or focus it goes to full ink and the
   arrow nudges 2px. The first cell's row link is the filled-ink primary action.
@@ -236,13 +251,15 @@ by each component's own PR. Every component takes every visual value from tokens
 
 ### Navigation
 - **Top bar:** on a bottom hairline, the name left (800, title size, -0.03em), controls right.
-- **Theme switch:** a segmented control in a Hairline Control outline (8px); options in Small text at 600, Secondary
-  Ink, full ink on hover, Tint fill and full ink when pressed. Switching crossfades every token at once (240ms).
+- **Theme switch:** a two-option segmented control, Dark and Light, with Dark pressed until the visitor picks Light, in
+  a Hairline Control outline (8px); options in Small text at 600, Secondary Ink, full ink on hover, Tint fill and full
+  ink when pressed. Switching crossfades every token at once (240ms).
 
 ## Do's and Don'ts
 
 ### Do:
 - **Do** design the dark theme first and keep the light theme a complete equal, both at WCAG 2.2 AA.
+- **Do** open every Page in dark; show light only after the visitor picks it in the switch.
 - **Do** make the one primary action per view filled ink, and outline every other action in a hairline.
 - **Do** derive every secondary, muted, hairline and tint colour from the ink at its fixed alpha step.
 - **Do** lead Home with the facts in a hairline panel (role, seniority, location, work model, technologies) and keep
@@ -257,6 +274,7 @@ by each component's own PR. Every component takes every visual value from tokens
 ### Don't:
 - **Don't** introduce a hued accent, a gradient or a multi-colour palette; the Owner turned down every one offered.
 - **Don't** use error red for anything but errors.
+- **Don't** follow the system colour scheme preference; the Owner chose dark always by default.
 - **Don't** build a template portfolio: no avatar hero, no skill pills, no grid of identical project cards.
 - **Don't** set a monospace eyebrow above a heading, or monospace prose.
 - **Don't** make the Owner's photo a centrepiece: no large portrait, no colour effects, no full-bleed photo.

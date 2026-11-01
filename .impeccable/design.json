@@ -1,6 +1,6 @@
 {
   "schemaVersion": 2,
-  "generatedAt": "2026-11-01T00:00:00Z",
+  "generatedAt": "2026-11-01T04:52:12Z",
   "title": "Design System: Portfolio",
   "extensions": {
     "colorMeta": {
@@ -10,6 +10,8 @@
       "paper": { "role": "neutral", "displayName": "Paper", "canonical": "#efe9dd", "tonalRamp": ["#141311", "#23211e", "#3a3732", "#57534c", "#7a756c", "#a29c91", "#cbc4b7", "#efe9dd"] },
       "paper-raised": { "role": "neutral", "displayName": "Paper Raised", "canonical": "#f6f2e9", "tonalRamp": ["#1a1815", "#2b2925", "#45423c", "#635f57", "#87827a", "#ada79c", "#d3cdc1", "#f6f2e9"] },
       "ink": { "role": "primary", "displayName": "Ink", "canonical": "#1a1815", "tonalRamp": ["#1a1815", "#2b2925", "#45423c", "#635f57", "#87827a", "#ada79c", "#d3cdc1", "#efe9dd"] },
+      "night-wash": { "role": "neutral", "displayName": "Night Wash", "canonical": "color-mix(in srgb, #e8e2d6 2%, #141311)", "tonalRamp": ["#141311", "#23211e", "#3a3732", "#57534c", "#7a756c", "#a29c91", "#cbc4b7", "#efe9dd"] },
+      "paper-wash": { "role": "neutral", "displayName": "Paper Wash", "canonical": "color-mix(in srgb, #1a1815 2%, #efe9dd)", "tonalRamp": ["#1a1815", "#2b2925", "#45423c", "#635f57", "#87827a", "#ada79c", "#d3cdc1", "#ebe5d9"] },
       "error-on-night": { "role": "error", "displayName": "Error on Night", "canonical": "#ed756a", "tonalRamp": ["#3d1210", "#5e1b18", "#802521", "#ac312c", "#cc4a42", "#ed756a", "#f4a59c", "#fad6d1"] },
       "error-on-paper": { "role": "error", "displayName": "Error on Paper", "canonical": "#ac312c", "tonalRamp": ["#3d1210", "#5e1b18", "#802521", "#ac312c", "#cc4a42", "#ed756a", "#f4a59c", "#fad6d1"] },
       "bone-secondary": { "role": "neutral", "displayName": "Secondary Ink (night)", "canonical": "color-mix(in srgb, #e8e2d6 84%, transparent)" },
@@ -33,6 +35,7 @@
       { "name": "--color-ground", "value": "light-dark(#efe9dd, #141311)", "purpose": "Page ground; text on a filled-ink action." },
       { "name": "--color-surface", "value": "light-dark(#f6f2e9, #23211e)", "purpose": "Floating surfaces only, with --shadow-float." },
       { "name": "--color-ink", "value": "light-dark(#1a1815, #e8e2d6)", "purpose": "Text, primary action fill, focus ring, selection." },
+      { "name": "--color-wash", "value": "color-mix(in srgb, var(--color-ink) 2%, var(--color-ground))", "purpose": "Hovered or focused panel cell; opaque so it covers the grid's hairline." },
       { "name": "--color-action", "value": "var(--color-ink)", "purpose": "Primary action fill." },
       { "name": "--color-on-action", "value": "var(--color-ground)", "purpose": "Primary action text." },
       { "name": "--color-error", "value": "light-dark(#ac312c, #ed756a)", "purpose": "Error borders and messages; the only hue." },
@@ -41,13 +44,14 @@
     "typographyMeta": {
       "display": { "displayName": "Display", "purpose": "The Owner's name and Page titles." },
       "headline": { "displayName": "Headline", "purpose": "Section titles." },
-      "title": { "displayName": "Title", "purpose": "Role titles, panel titles, list rows, ledes." },
+      "title": { "displayName": "Title", "purpose": "Role titles, panel titles and list rows." },
+      "lede": { "displayName": "Lede", "purpose": "The supporting line under a Page title, in secondary ink." },
       "body": { "displayName": "Body", "purpose": "Summaries and supporting lines in secondary ink, 68ch measure." },
       "small": { "displayName": "Small", "purpose": "Captions, notes and metadata in muted ink; row links and controls at 600." },
       "label": { "displayName": "Label", "purpose": "Martian Mono for stat labels and dates (uppercase, 0.08em); chips and code set as-is." }
     },
     "shadows": [
-      { "name": "shadow-float", "value": "0 0 0 1px light-dark(rgb(26 24 21 / 0.06), rgb(232 226 214 / 0.3)), 0 12px 32px -12px light-dark(rgb(26 24 21 / 0.22), rgb(0 0 0 / 0.6))", "purpose": "Floating surfaces only (menus, popovers); the ring keeps them legible on the night ground." }
+      { "name": "shadow-float", "value": "0 0 0 1px var(--shadow-ring), 0 12px 32px -12px var(--shadow-color)", "purpose": "Floating surfaces only (menus, popovers). Ring: ink 6% on paper, bone 30% on night. Shadow: ink 22% on paper, black 60% on night, the one non-ink colour, because no ink is darker than the night ground; the ring keeps floats legible there." }
     ],
     "motion": [
       { "name": "duration-fast", "value": "150ms", "purpose": "Controls, row links, switch options. 0ms under reduced motion." },
@@ -104,22 +108,22 @@
       "refersTo": "panel-cell",
       "description": "Hairline panel grid; cells share borders and end in a row link.",
       "html": "<div class=\"ds-grid\"><section class=\"ds-cell\"><h2 class=\"ds-cell-title\">Spacing</h2><a class=\"ds-cell-link\" href=\"#\">Open spacing.css &rarr;</a></section><section class=\"ds-cell\"><h2 class=\"ds-cell-title\">Radii</h2><a class=\"ds-cell-link\" href=\"#\">Open radii.css &rarr;</a></section></div>",
-      "css": ".ds-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: var(--line-width); background: var(--color-hairline); border: var(--line-width) solid var(--color-hairline); border-radius: var(--radius-panel); overflow: hidden; } .ds-cell { display: flex; flex-direction: column; gap: var(--space-5); padding: var(--space-6); background: var(--color-ground); transition: box-shadow var(--duration-base) var(--ease-out), background-color var(--duration-base) var(--ease-out); } .ds-cell:hover, .ds-cell:focus-within { background: color-mix(in srgb, var(--color-ink) 2%, var(--color-ground)); box-shadow: inset 0 0 0 var(--line-width) var(--color-hairline-hover); } .ds-cell-title { margin: 0; font-family: var(--font-sans); font-size: var(--text-title); font-weight: var(--weight-headline); letter-spacing: var(--tracking-title); color: var(--color-ink); } .ds-cell-link { font-family: var(--font-sans); font-size: var(--text-small); font-weight: var(--weight-title); color: var(--color-ink-secondary); text-decoration: none; transition: color var(--duration-fast) var(--ease-out); } .ds-cell:hover .ds-cell-link, .ds-cell:focus-within .ds-cell-link { color: var(--color-ink); }"
+      "css": ".ds-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: var(--line-width); background: var(--color-hairline); border: var(--line-width) solid var(--color-hairline); border-radius: var(--radius-panel); overflow: hidden; } .ds-cell { display: flex; flex-direction: column; gap: var(--space-5); padding: var(--space-6); background: var(--color-ground); transition: box-shadow var(--duration-base) var(--ease-out), background-color var(--duration-base) var(--ease-out); } .ds-cell:hover, .ds-cell:focus-within { background: var(--color-wash); box-shadow: inset 0 0 0 var(--line-width) var(--color-hairline-hover); } .ds-cell-title { margin: 0; font-family: var(--font-sans); font-size: var(--text-title); font-weight: var(--weight-title); line-height: var(--leading-title); letter-spacing: var(--tracking-title); color: var(--color-ink); } .ds-cell-link { font-family: var(--font-sans); font-size: var(--text-small); font-weight: var(--weight-title); color: var(--color-ink-secondary); text-decoration: none; transition: color var(--duration-fast) var(--ease-out); } .ds-cell:hover .ds-cell-link, .ds-cell:focus-within .ds-cell-link { color: var(--color-ink); }"
     },
     {
       "name": "Theme Switch",
       "kind": "nav",
       "refersTo": "theme-switch",
-      "description": "Segmented dark and light switch in the top bar.",
+      "description": "Two-option segmented switch in the top bar: Dark (pressed by default) and Light; never follows the system preference.",
       "html": "<div class=\"ds-switch\"><button aria-pressed=\"true\">Dark</button><button aria-pressed=\"false\">Light</button></div>",
       "css": ".ds-switch { display: inline-flex; padding: 3px; border: var(--line-width) solid var(--color-hairline-control); border-radius: var(--radius-control); } .ds-switch button { font-family: var(--font-sans); font-size: var(--text-small); font-weight: var(--weight-title); color: var(--color-ink-secondary); background: none; border: 0; border-radius: calc(var(--radius-control) - 3px); padding: var(--space-1) var(--space-3); cursor: pointer; transition: color var(--duration-fast) var(--ease-out), background-color var(--duration-fast) var(--ease-out); } .ds-switch button:hover { color: var(--color-ink); } .ds-switch button[aria-pressed=\"true\"] { color: var(--color-ink); background: var(--color-tint); } .ds-switch button:focus-visible { outline: var(--focus-ring-width) solid var(--focus-ring-color); outline-offset: var(--focus-ring-offset); }"
     }
   ],
   "narrative": {
     "northStar": "Bold Facts, Quiet Person",
-    "overview": "The Portfolio's Visual language is a dark, confident engineering page where bold, tightly tracked type and hairline panels carry the authority and the facts lead. The Owner stays in the background: a small, plain photo beside the name, never a portrait as the centrepiece.\n\nThe system is monochrome bone and ink. Dark first, a near-black ground carries warm bone ink; the complete light theme puts the same ink on bone paper and follows the system preference, with a manual dark and light switch. Every colour token resolves both themes through `light-dark()`, so the active colour scheme picks one. Secondary text, metadata, hairlines and tints are the ink itself at fixed alpha steps; there is no hued accent anywhere. The primary action is the ink, filled; focus is an ink ring. The only hue in the system is error.\n\nAbout me has its own, entirely distinct Visual language. It restyles the shared navigation, language toggle and Footer through tokens alone; their place and behavior never change.",
+    "overview": "The Portfolio's Visual language is a dark, confident engineering page where bold, tightly tracked type and hairline panels carry the authority and the facts lead. The Owner stays in the background: a small, plain photo beside the name, never a portrait as the centrepiece.\n\nThe system is monochrome bone and ink. Dark is the default, always: a near-black ground carries warm bone ink. The complete light theme puts the same ink on bone paper and appears only when the visitor picks it in the dark and light switch, never from the system preference. Every colour token resolves both themes through `light-dark()`, so the active colour scheme picks one. Secondary text, metadata, hairlines and tints are the ink itself at fixed alpha steps; there is no hued accent anywhere. The primary action is the ink, filled; focus is an ink ring. The only hue in the system is error.\n\nAbout me has its own, entirely distinct Visual language. It restyles the shared navigation, language toggle and Footer through tokens alone; their place and behavior never change.",
     "keyCharacteristics": [
-      "Dark first, light a complete equal following the system preference, both WCAG 2.2 AA.",
+      "Dark by default, always; light a complete equal the visitor switches to; both WCAG 2.2 AA.",
       "Monochrome: bone ink on near-black, ink on bone paper, secondary ink and hairlines by alpha steps of the ink.",
       "No hued accent: the primary action is filled ink, every other action is outlined in a hairline, focus is an ink ring.",
       "Bold display grotesk with tight tracking; monospace only for labels, tags, chips and numerals.",
@@ -128,7 +132,7 @@
     ],
     "rules": [
       { "name": "The Ink Is The Action Rule", "body": "There is no accent colour. The primary action is the ink filled, with the ground as its text: one per view. Secondary actions are outlined in Hairline Control. Focus is an ink ring. If a view needs colour to show what to do next, the hierarchy is wrong, not the palette.", "section": "colors" },
-      { "name": "The Alpha Steps Rule", "body": "Secondary, muted, hairline and tint colours are always the ink mixed toward transparent at their fixed steps (84, 64, 26, 22, 10, 7, 4), never new greys. Input borders are the one exception, set per theme to hold 3:1.", "section": "colors" },
+      { "name": "The Alpha Steps Rule", "body": "Secondary, muted, hairline and tint colours are always the ink mixed toward transparent at their fixed steps (84, 64, 26, 22, 10, 7, 4), and the Wash is the ink at 2% mixed into the ground; never new greys. The exceptions are few and named: input borders, set per theme to hold 3:1 (52% ink on paper, 44% bone on night); the raised surfaces (Night Raised, Paper Raised); and the float shadow, whose ring and shadow are the ink at 6% and 22% on paper and bone at 30% over black at 60% on night, because no ink is darker than the night ground.", "section": "colors" },
       { "name": "The Only Hue Is Error Rule", "body": "Error is the sole hued colour, and it appears only where something went wrong.", "section": "colors" },
       { "name": "The Two Equal Themes Rule", "body": "Every colour token exists in both themes and passes AA in both; dark is designed first, never light inverted.", "section": "colors" },
       { "name": "The Mono Labels Rule", "body": "Monospace sets labels, tags, chips and numerals, never sentences or headings, and never as an eyebrow above a heading: the heading carries its own weight.", "section": "typography" },
@@ -136,6 +140,7 @@
     ],
     "dos": [
       "Do design the dark theme first and keep the light theme a complete equal, both at WCAG 2.2 AA.",
+      "Do open every Page in dark; show light only after the visitor picks it in the switch.",
       "Do make the one primary action per view filled ink, and outline every other action in a hairline.",
       "Do derive every secondary, muted, hairline and tint colour from the ink at its fixed alpha step.",
       "Do lead Home with the facts in a hairline panel (role, seniority, location, work model, technologies) and keep the Owner's photo small and plain beside the name.",
@@ -146,6 +151,7 @@
     "donts": [
       "Don't introduce a hued accent, a gradient or a multi-colour palette; the Owner turned down every one offered.",
       "Don't use error red for anything but errors.",
+      "Don't follow the system colour scheme preference; the Owner chose dark always by default.",
       "Don't build a template portfolio: no avatar hero, no skill pills, no grid of identical project cards.",
       "Don't set a monospace eyebrow above a heading, or monospace prose.",
       "Don't make the Owner's photo a centrepiece: no large portrait, no colour effects, no full-bleed photo.",
