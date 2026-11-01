@@ -1,6 +1,6 @@
 ---
 name: Portfolio
-description: A bilingual engineer's portfolio, dark first, monochrome bone and ink, in a bold, hairline-framed engineering voice.
+description: A bilingual engineer's portfolio in two Visual languages, the Portfolio's dark first, monochrome bone and ink, in a bold, hairline-framed engineering voice, and About me's flat gig-poster bands.
 colors:
   night: "#141311"
   night-raised: "#23211e"
@@ -191,9 +191,9 @@ Portfolio recoloured, or anything corporate or cold.
 
 It loads over the Portfolio's tokens and redefines the same names, so the shared components take most of its look
 through tokens; the differences that have no token yet are listed under Components. Spacing and motion stay the
-Portfolio's. It has one theme and no photo. Each band sets every colour token
-itself, so a component inside a band takes that band's colours. Illustration is optional: the language works without
-it, and the first band reserves a slot for one.
+Portfolio's. It has one theme and no photo. Each band sets every colour token itself, so a component inside a band
+takes that band's colours. Illustration is optional: the language works without it, and the first band reserves a slot
+for one.
 
 **Key Characteristics:**
 - Four flat bands, purple, sunset orange, lime and charcoal, rotating one per Section.
@@ -206,15 +206,15 @@ it, and the first band reserves a slot for one.
 
 ## Colors
 
-Strictly monochrome: one ink and one ground per theme, every other colour is that ink at a lower alpha or mixed into the
-ground, and error is the only hue.
+The Portfolio's Visual language is strictly monochrome: one ink and one ground per theme, every other colour is that ink
+at a lower alpha or mixed into the ground, and error is the only hue.
 
 ### Primary
 - **Bone** (night theme) and **Ink** (paper theme): the ink is the primary colour. It sets headings and body text,
   fills the primary action (with the ground as its text), draws the focus ring, and inverts for text selection. Accent
   and caret colour are the ink too.
-- **Display Ink** (`--color-display`): the colour display type takes. On the Portfolio it is the ink itself; the token
-  exists so About me can set display type in a band colour through tokens alone.
+- **Display Ink** (`--color-display`): the colour display type and headlines take. On the Portfolio it is the ink
+  itself; the token exists so About me can set display type and headlines in a band colour through tokens alone.
 - **Key** and **Key Alt** (`--color-key`, `--color-key-alt`): the ink itself on the Portfolio. Both sets name them, so
   About me can set billing categories and hover underlines in its band's two key colours.
 
@@ -282,14 +282,15 @@ action, on action), so nothing on About me picks a palette colour directly.
 component never sets a palette colour; it reads the tokens of the band it sits in.
 
 **The One Ink Rule.** Each band has one ink at full strength: secondary, muted, hairline, control and input colours are
-the ink itself, and tints are transparent. On sunset any alpha step below full ink drops under 4.5:1. Two lines take
-another colour: the lineup's block rules are in Key, and a hovered edge (`--color-hairline-hover`) is the Display colour.
+the ink itself, and tints are transparent. On sunset any alpha step below full ink drops under 4.5:1. Three lines take
+another colour: the lineup's block rules are in Key; a hovered edge (`--color-hairline-hover`) is the Display colour;
+and hover and focus underlines on the language toggle, band links and lineup items are 3px in Key or Key Alt.
 
 **The Cream Is Large Rule.** Cream holds only 3.3:1 on sunset, so on the sunset ground it sets large type only: display,
 headlines and the billing keys. On the charcoal action fill it is the action's text, at 15:1.
 
-**The No Error Hue Rule.** No single hue reads on all four bands, so error is the band's ink, drawn as a dashed rule with
-its message, never a colour alone.
+**The No Error Hue Rule.** No single hue reads on all four bands, so error is the band's ink, drawn as a dashed rule
+with its message, never a colour alone.
 
 ## Typography
 
@@ -314,10 +315,11 @@ monospace that labels facts the way a codebase labels things: commands, tags, co
 Headings hyphenate and, where the browser has no dictionary, break long words rather than overflow a narrow column: a
 Portuguese title such as "Responsabilidades" at display size must fit a 320px screen. Paragraphs wrap with a pretty rag.
 
-Display type takes `--font-display` (the sans), `--case-display` (none) and `--color-display`, labels take
-`--case-label` (uppercase), the lede's measure is `--measure-lede` (52ch), and billing items take `--text-billing` (the
-title size). On the Portfolio they restate the hierarchy above; both sets name them, so About me can restyle a shared
-component through them.
+Display type and headlines take `--font-display` (the sans), `--case-display` (none) and `--color-display`; titles,
+including the bar's name and panel titles, take `--font-display` and `--case-display`; labels take `--case-label`
+(uppercase), the lede's measure is `--measure-lede` (52ch), and billing items take `--text-billing` (the title size). On
+the Portfolio they restate the hierarchy above; both sets name them, so About me can restyle a shared component through
+them.
 
 ### Named Rules
 **The Mono Labels Rule.** Monospace sets labels, tags, chips and numerals, never sentences or headings, and never as an
@@ -372,12 +374,12 @@ mobile. A specimen that is a single row of samples shrinks its samples to stay o
 
 ### About me
 
-The Portfolio's column (76rem max), gutter and spacing rhythm, unchanged. Each band runs full-bleed and pads its content
-to the shared edge: 4rem above and below on narrow screens, 6rem from 44rem; the intro follows it like every band. From
-44rem the intro splits into the title
-column and the illustration slot (12rem to 18rem), aligned to their foot; on narrow screens the slot stacks under the
-title. A lineup row stacks category over item, and from 36rem sets them in two columns (a 9rem category column, 1rem
-gap) on a shared baseline. Swatches fill an auto-fit grid with a 13rem minimum.
+The Portfolio's column (76rem max), gutter and spacing rhythm, unchanged. Every band runs full-bleed and aligns its
+content to the shared edge. Content bands pad 4rem above and below on narrow screens and 6rem from 44rem; the intro
+follows them like every content band. The bar pads 1rem above and below, the Footer 2rem. From 44rem the intro splits
+into the title column and the illustration slot (12rem to 18rem), aligned to their foot; on narrow screens the slot
+stacks under the title. A lineup row stacks category over item, and from 36rem sets them in two columns (a 9rem
+category column, 1rem gap) on a shared baseline. Swatches fill an auto-fit grid with a 13rem minimum.
 
 ## Elevation & Depth
 
@@ -413,8 +415,9 @@ is small, in a softly rounded square with a hairline edge, plain, with no effect
 ### About me
 
 Square, like a printed poster: chips, controls, the photo radius and panels at 0; only truly round things stay round
-(999px). Every line is a 3px rule in the band's ink, except the lineup's block rules, in Key, and a hovered edge, in the
-Display colour. The illustration slot is 3:1 on narrow screens and 4:5 from 44rem.
+(999px). Every line is a 3px rule in the band's ink, except the lineup's block rules, in Key; a hovered edge, in the
+Display colour; and the hover and focus underlines of the language toggle, band links and lineup items, in Key or Key
+Alt. The illustration slot is 3:1 on narrow screens and 4:5 from 44rem.
 
 ## Components
 
@@ -460,8 +463,10 @@ have no token yet, so the prototype sets them in About me's page CSS; each compo
 - the toggle's and links' type role: Label on About me, Small at the control weight on the Portfolio;
 - the link hover: an underline in Key, a 3px nudge and its own arrow on About me, a colour change and a 2px nudge on
   the Portfolio;
-- the error message's weight: the control weight (700) on About me.
-
+- the error message's weight: the control weight (700) on About me;
+- the chip's weight and gap: 400 and `--space-1` on the Portfolio, `--weight-label` and `--space-2` on About me;
+- the Footer: a hairline above it and 1.5rem block padding on the Portfolio, no top rule and 2rem block padding on About
+  me.
 
 - **Buttons:** the primary fills Action with On Action text, no border, at the control weight (700); the secondary is
   outlined in a 3px ink rule that moves to the Display colour on hover, with no fill. **Focus:** a 3px ink ring at 3px
@@ -471,8 +476,8 @@ have no token yet, so the prototype sets them in About me's page CSS; each compo
 - **Chips:** Archivo at label size, set as-is with no case change, square, outlined in a 3px ink rule on a transparent
   fill.
 - **Navigation:** the bar sits on purple over a 3px ink rule, the name left in Big Shoulders 900 uppercase at title
-  size, the language toggle right: a square, 3px-outlined EN and PT control in uppercase label type that underlines in the Key
-  colour on hover and fills with the ink, ground as text, when pressed. There is no theme switch.
+  size, the language toggle right: a square, 3px-outlined EN and PT control in uppercase label type that underlines in
+  the Key colour on hover and fills with the ink, ground as text, when pressed. There is no theme switch.
 - **Band link:** label type with an arrow; on hover or focus it underlines 3px in the Key colour and the arrow nudges
   3px (150ms). Its action variant fills Action and does not underline.
 - **Footer:** the next band in the rotation, like any Section; Small text, with a band link.

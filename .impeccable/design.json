@@ -1,6 +1,6 @@
 {
   "schemaVersion": 2,
-  "generatedAt": "2026-11-01T20:17:36Z",
+  "generatedAt": "2026-11-01T20:27:45Z",
   "title": "Design System: Portfolio",
   "extensions": {
     "colorMeta": {
@@ -45,7 +45,7 @@
       { "name": "--color-surface", "value": "light-dark(#f6f2e9, #23211e)", "purpose": "Floating surfaces only, with --shadow-float." },
       { "name": "--color-ink", "value": "light-dark(#1a1815, #e8e2d6)", "purpose": "Text, primary action fill, focus ring, selection." },
       { "name": "--color-wash", "value": "color-mix(in srgb, var(--color-ink) 2%, var(--color-ground))", "purpose": "Hovered or focused panel cell; opaque so it covers the grid's hairline." },
-      { "name": "--color-display", "value": "var(--color-ink)", "purpose": "Display type; the ink on the Portfolio, a band colour on About me." },
+      { "name": "--color-display", "value": "var(--color-ink)", "purpose": "Display type and headlines; the ink on the Portfolio, a band colour on About me." },
       { "name": "--color-key", "value": "var(--color-ink)", "purpose": "Billing categories and hover underlines; the ink on the Portfolio, a band's key colour on About me." },
       { "name": "--color-key-alt", "value": "var(--color-ink)", "purpose": "Alternate billing categories; the ink on the Portfolio, a band's second key colour on About me." },
       { "name": "--color-action", "value": "var(--color-ink)", "purpose": "Primary action fill." },
@@ -126,7 +126,7 @@
       "refersTo": "input",
       "description": "Input with a 3:1 hairline border; error swaps it for a 1px error line.",
       "html": "<label class=\"ds-field\"><input class=\"ds-input\" placeholder=\"Email\"></label>",
-      "css": ".ds-input { font-family: var(--font-sans); font-size: var(--text-small); padding: var(--space-2) var(--space-3); border: var(--line-width) solid var(--color-hairline-input); border-radius: var(--radius-control); background: none; color: var(--color-ink); } .ds-input::placeholder { color: var(--color-ink-muted); } .ds-input:focus-visible { outline: var(--focus-ring-width) solid var(--focus-ring-color); outline-offset: var(--focus-ring-offset); } .ds-input[aria-invalid=\"true\"] { border: var(--error-line-width) solid var(--error-color); } .ds-input:disabled { opacity: var(--disabled-opacity); }"
+      "css": ".ds-input { font-family: var(--font-sans); font-size: var(--text-small); padding: var(--space-2) var(--space-3); border: var(--line-width) solid var(--color-hairline-input); border-radius: var(--radius-control); background: none; color: var(--color-ink); } .ds-input::placeholder { color: var(--color-ink-muted); } .ds-input:focus-visible { outline: var(--focus-ring-width) solid var(--focus-ring-color); outline-offset: var(--focus-ring-offset); } .ds-input[aria-invalid=\"true\"] { border: var(--error-line-width) var(--error-line-style) var(--error-color); } .ds-input:disabled { opacity: var(--disabled-opacity); }"
     },
     {
       "name": "Chip",
@@ -142,7 +142,7 @@
       "refersTo": "panel-cell",
       "description": "Hairline panel grid; cells share borders and end in a row link.",
       "html": "<div class=\"ds-grid\"><section class=\"ds-cell\"><h2 class=\"ds-cell-title\">Spacing</h2><a class=\"ds-cell-link\" href=\"#\">Open spacing.css &rarr;</a></section><section class=\"ds-cell\"><h2 class=\"ds-cell-title\">Radii</h2><a class=\"ds-cell-link\" href=\"#\">Open radii.css &rarr;</a></section></div>",
-      "css": ".ds-grid { display: grid; grid-template-columns: 1fr; gap: var(--line-width); background: var(--color-hairline); border: var(--line-width) solid var(--color-hairline); border-radius: var(--radius-panel); overflow: hidden; } .ds-cell { display: flex; flex-direction: column; gap: var(--space-5); padding: var(--space-5); background: var(--color-ground); transition: box-shadow var(--duration-base) var(--ease-out), background-color var(--duration-base) var(--ease-out); } .ds-cell:hover, .ds-cell:focus-within { background: var(--color-wash); box-shadow: inset 0 0 0 var(--line-width) var(--color-hairline-hover); } .ds-cell-title { margin: 0; font-family: var(--font-sans); font-size: var(--text-title); font-weight: var(--weight-title); line-height: var(--leading-title); letter-spacing: var(--tracking-title); color: var(--color-ink); } .ds-cell-link { margin-top: auto; font-family: var(--font-sans); font-size: var(--text-small); font-weight: var(--weight-control); color: var(--color-ink-secondary); text-decoration: none; transition: color var(--duration-fast) var(--ease-out); } .ds-cell:hover .ds-cell-link, .ds-cell:focus-within .ds-cell-link { color: var(--color-ink); } @media (min-width: 44rem) { .ds-grid { grid-template-columns: repeat(2, 1fr); } .ds-cell { padding: var(--space-6); } }"
+      "css": ".ds-grid { display: grid; grid-template-columns: 1fr; gap: var(--line-width); background: var(--color-hairline); border: var(--line-width) solid var(--color-hairline); border-radius: var(--radius-panel); overflow: hidden; } .ds-cell { display: flex; flex-direction: column; gap: var(--space-5); padding: var(--space-5); background: var(--color-ground); transition: box-shadow var(--duration-base) var(--ease-out), background-color var(--duration-base) var(--ease-out); } .ds-cell:hover, .ds-cell:focus-within { background: var(--color-wash); box-shadow: inset 0 0 0 var(--line-width) var(--color-hairline-hover); } .ds-cell-title { margin: 0; font-family: var(--font-display); font-size: var(--text-title); font-weight: var(--weight-title); line-height: var(--leading-title); letter-spacing: var(--tracking-title); text-transform: var(--case-display); color: var(--color-ink); } .ds-cell-link { margin-top: auto; font-family: var(--font-sans); font-size: var(--text-small); font-weight: var(--weight-control); color: var(--color-ink-secondary); text-decoration: none; transition: color var(--duration-fast) var(--ease-out); } .ds-cell:hover .ds-cell-link, .ds-cell:focus-within .ds-cell-link { color: var(--color-ink); } @media (min-width: 44rem) { .ds-grid { grid-template-columns: repeat(2, 1fr); } .ds-cell { padding: var(--space-6); } }"
     },
     {
       "name": "Theme Switch",
@@ -213,7 +213,7 @@
       ],
       "rules": [
         { "name": "The One Band Per Section Rule", "body": "Every Section owns one band, and the bands rotate purple, sunset, lime, charcoal. A component never sets a palette colour; it reads the tokens of the band it sits in.", "section": "colors" },
-        { "name": "The One Ink Rule", "body": "Each band has one ink at full strength: secondary, muted, hairline, control and input colours are the ink itself, and tints are transparent. On sunset any alpha step below full ink drops under 4.5:1. Two lines take another colour: the lineup's block rules are in Key, and a hovered edge (`--color-hairline-hover`) is the Display colour.", "section": "colors" },
+        { "name": "The One Ink Rule", "body": "Each band has one ink at full strength: secondary, muted, hairline, control and input colours are the ink itself, and tints are transparent. On sunset any alpha step below full ink drops under 4.5:1. Three lines take another colour: the lineup's block rules are in Key; a hovered edge (`--color-hairline-hover`) is the Display colour; and hover and focus underlines on the language toggle, band links and lineup items are 3px in Key or Key Alt.", "section": "colors" },
         { "name": "The Cream Is Large Rule", "body": "Cream holds only 3.3:1 on sunset, so on the sunset ground it sets large type only: display, headlines and the billing keys. On the charcoal action fill it is the action's text, at 15:1.", "section": "colors" },
         { "name": "The No Error Hue Rule", "body": "No single hue reads on all four bands, so error is the band's ink, drawn as a dashed rule with its message, never a colour alone.", "section": "colors" },
         { "name": "The Band-Wide Title Rule", "body": "The Page title is sized from its container's width (24cqi, from 3.5rem to 20rem), so it runs the band's width like a poster's lettering.", "section": "typography" },
