@@ -141,8 +141,8 @@ a {
 
 .intro__lede {
   max-width: 52ch;
-  font-size: var(--text-title);
-  line-height: var(--leading-title);
+  font-size: var(--text-lede);
+  line-height: var(--leading-lede);
   color: var(--color-ink-secondary);
   text-wrap: pretty;
 }
@@ -377,6 +377,13 @@ a {
   font-weight: var(--weight-title);
   line-height: var(--leading-title);
   letter-spacing: var(--tracking-title);
+}
+
+.type-specimen__lede {
+  max-width: 52ch;
+  font-size: var(--text-lede);
+  line-height: var(--leading-lede);
+  color: var(--color-ink-secondary);
 }
 
 .type-specimen__body {
