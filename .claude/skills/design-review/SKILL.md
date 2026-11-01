@@ -13,7 +13,7 @@ decides when to run it and what to do with its findings.
    changes:
 
    ```bash
-   git diff --name-only main...HEAD -- prototype DESIGN.md PRODUCT.md .impeccable .claude/rules/design.md
+   git diff --name-only <base>...HEAD -- prototype DESIGN.md PRODUCT.md .impeccable .claude/rules/design.md
    ```
 
    If the list is empty and the user didn't ask for a review, stop: the change doesn't touch design.
@@ -22,12 +22,15 @@ decides when to run it and what to do with its findings.
    isn't anchored on yours.
 3. Relay the findings to the user in the agent's three buckets, in the user's language, with each finding's
    `file:line`.
-4. Fix every **Fix before merge** finding:
-   - For an **Owner decides** finding, ask the user before changing anything.
-   - Fix the higher source first (decision, then tokens, then the prototype), then regenerate `DESIGN.md` and
-     `.impeccable/design.json` with `/impeccable document`. Never hand-edit them to make a finding disappear.
+4. Ask the user about every **Owner decides** finding, in any bucket, before changing anything it touches.
+5. Fix every **Fix before merge** finding:
+   - Fix in authority order, top down: the decision (only with the Owner), then the tokens, then the prototype. A lower
+     source that contradicts a higher one changes to match it, never the reverse.
+   - Then regenerate `DESIGN.md` and `.impeccable/design.json` with `/impeccable document`. Never hand-edit them to make
+     a finding disappear.
    - Follow the commit rules: one change per commit, `docs(prototype)` for prototype code.
-5. Run the agent once more on the fixed branch. Don't fix the **Fix in the PR that needs it** findings now: list them so
-   the user can carry them into those PRs.
-6. Record the result in the PR's `## Evidence`: the number of findings per bucket, which were fixed, and which were
+6. Run the agent once more when the fixes changed the tokens, the prototype or a decision; a run costs about 100k
+   tokens, so a fix that only rewords the docs doesn't need one. Don't fix the **Fix in the PR that needs it** findings
+   now: list them so the user can carry them into those PRs.
+7. Record the result in the PR's `## Evidence`: the number of findings per bucket, which were fixed, and which were
    deferred and to where.
