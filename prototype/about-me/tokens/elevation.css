@@ -1,0 +1,8 @@
+/**
+ * About me's elevation tokens: flat and printed, thick ink rules instead of hairlines, no blur anywhere.
+ * The float ring takes each band's ink, so it lives with the band's colours in color.css.
+ */
+:root {
+  --line-width: 3px;
+  --shadow-color: transparent;
+}

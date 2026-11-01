@@ -1,0 +1,8 @@
+/** About me's corner tokens: square, like a printed poster; only truly round things stay round. */
+:root {
+  --radius-chip: 0;
+  --radius-control: 0;
+  --radius-photo: 0;
+  --radius-panel: 0;
+  --radius-round: 999px;
+}

@@ -1,0 +1,84 @@
+/**
+ * About me's colour tokens: four flat bands, one per Section, rotating purple, sunset, lime and charcoal.
+ * Each band sets every semantic colour token itself, so a component inside a band takes the band's colours.
+ */
+:root {
+  --palette-purple: #4a2390;
+  --palette-sunset: #e8582f;
+  --palette-lime: #d6e45a;
+  --palette-charcoal: #1f1d21;
+  --palette-lilac: #f7f0ff;
+  --palette-peach: #ff8a5c;
+  --palette-blush: #ffd0b8;
+  --palette-cream: #fff4e0;
+  --palette-wine: #3a0d2e;
+  --palette-magenta: #8a1158;
+}
+
+:root,
+[data-band="purple"] {
+  color-scheme: dark;
+  --color-ground: var(--palette-purple);
+  --color-ink: var(--palette-lilac);
+  --color-display: var(--palette-lime);
+  --color-key: var(--palette-lime);
+  --color-key-alt: var(--palette-blush);
+  --color-action: var(--palette-lime);
+  --color-on-action: var(--palette-purple);
+}
+
+[data-band="sunset"] {
+  color-scheme: light;
+  --color-ground: var(--palette-sunset);
+  --color-ink: var(--palette-charcoal);
+  /* Cream holds only 3.3:1 on sunset, so it sets display and headline sizes, never text. */
+  --color-display: var(--palette-cream);
+  --color-key: var(--palette-charcoal);
+  --color-key-alt: var(--palette-wine);
+  --color-action: var(--palette-charcoal);
+  --color-on-action: var(--palette-cream);
+}
+
+[data-band="lime"] {
+  color-scheme: light;
+  --color-ground: var(--palette-lime);
+  --color-ink: var(--palette-charcoal);
+  --color-display: var(--palette-magenta);
+  --color-key: var(--palette-magenta);
+  --color-key-alt: var(--palette-charcoal);
+  --color-action: var(--palette-magenta);
+  --color-on-action: var(--palette-lime);
+}
+
+[data-band="charcoal"] {
+  color-scheme: dark;
+  --color-ground: var(--palette-charcoal);
+  --color-ink: var(--palette-lilac);
+  --color-display: var(--palette-peach);
+  --color-key: var(--palette-lime);
+  --color-key-alt: var(--palette-peach);
+  --color-action: var(--palette-peach);
+  --color-on-action: var(--palette-charcoal);
+}
+
+/* One ink per band, no alpha steps: on sunset, any step below full ink drops under 4.5:1. */
+:root,
+[data-band] {
+  --color-surface: var(--color-ground);
+  --color-ink-secondary: var(--color-ink);
+  --color-ink-muted: var(--color-ink);
+  --color-hairline: var(--color-ink);
+  --color-hairline-hover: var(--color-display);
+  --color-hairline-control: var(--color-ink);
+  --color-hairline-input: var(--color-ink);
+  --color-tint: transparent;
+  --color-tint-hover: transparent;
+  --color-wash: var(--color-ground);
+  --color-error: var(--color-ink);
+  --color-selection: var(--color-ink);
+  --color-on-selection: var(--color-ground);
+  --focus-ring-color: var(--color-ink);
+  --error-color: var(--color-error);
+  --shadow-ring: var(--color-ink);
+  --shadow-float: 0 0 0 var(--line-width) var(--color-ink);
+}
