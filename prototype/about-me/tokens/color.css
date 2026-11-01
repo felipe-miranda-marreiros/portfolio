@@ -11,7 +11,6 @@
   --palette-peach: #ff8a5c;
   --palette-blush: #ffd0b8;
   --palette-cream: #fff4e0;
-  --palette-wine: #3a0d2e;
   --palette-magenta: #8a1158;
 }
 
@@ -31,10 +30,10 @@
   color-scheme: light;
   --color-ground: var(--palette-sunset);
   --color-ink: var(--palette-charcoal);
-  /* Cream holds only 3.3:1 on sunset, so it sets display and headline sizes, never text. */
+  /* Cream holds only 3.3:1 on sunset, so it sets large type only: display, headlines and the billing keys. */
   --color-display: var(--palette-cream);
   --color-key: var(--palette-charcoal);
-  --color-key-alt: var(--palette-wine);
+  --color-key-alt: var(--palette-cream);
   --color-action: var(--palette-charcoal);
   --color-on-action: var(--palette-cream);
 }
@@ -45,7 +44,7 @@
   --color-ink: var(--palette-charcoal);
   --color-display: var(--palette-magenta);
   --color-key: var(--palette-magenta);
-  --color-key-alt: var(--palette-charcoal);
+  --color-key-alt: var(--palette-purple);
   --color-action: var(--palette-magenta);
   --color-on-action: var(--palette-lime);
 }
