@@ -1,0 +1,165 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>About me's Visual language · Portfolio prototype</title>
+    <link rel="preload" href="../fonts/big-shoulders-display.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="preload" href="../fonts/archivo.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="stylesheet" href="../tokens.css" />
+    <link rel="stylesheet" href="tokens.css" />
+    <link rel="stylesheet" href="index.css" />
+    <script src="index.js" defer></script>
+  </head>
+  <body>
+    <header class="bar" data-band="purple">
+      <a class="bar__name" href="../index.html">Portfolio</a>
+      <fieldset class="lang-toggle">
+        <legend class="visually-hidden">Language</legend>
+        <button type="button" data-lang-choice="en" aria-pressed="true">EN</button>
+        <button type="button" data-lang-choice="pt" aria-pressed="false">PT</button>
+      </fieldset>
+    </header>
+
+    <main>
+      <div class="intro" data-band="purple">
+        <div class="intro__text">
+          <h1 class="intro__title">About me</h1>
+          <p class="intro__lede">
+            The second Visual language, set like a gig poster. Each Section owns a flat band, and every token below
+            restyles the shared components on the About me Page.
+          </p>
+        </div>
+        <p class="slot">Illustration slot. Placeholder: no artwork yet.</p>
+      </div>
+
+      <section class="band" data-band="sunset" aria-labelledby="color-title">
+        <h2 class="band__title" id="color-title">Color</h2>
+        <ul class="tiles">
+          <li class="tile" data-band="purple">
+            <p class="tile__name">Purple</p>
+            <p>Ink on the ground, body size.</p>
+            <p class="tile__keys"><span class="key">Key</span> <span class="key key--alt">Key alt</span></p>
+            <p class="action-sample">Action</p>
+            <code>#4a2390</code>
+          </li>
+          <li class="tile" data-band="sunset">
+            <p class="tile__name">Sunset</p>
+            <p>Ink on the ground, body size.</p>
+            <p class="tile__keys"><span class="key">Key</span> <span class="key key--alt">Key alt</span></p>
+            <p class="action-sample">Action</p>
+            <code>#e8582f</code>
+          </li>
+          <li class="tile" data-band="lime">
+            <p class="tile__name">Lime</p>
+            <p>Ink on the ground, body size.</p>
+            <p class="tile__keys"><span class="key">Key</span> <span class="key key--alt">Key alt</span></p>
+            <p class="action-sample">Action</p>
+            <code>#d6e45a</code>
+          </li>
+          <li class="tile" data-band="charcoal">
+            <p class="tile__name">Charcoal</p>
+            <p>Ink on the ground, body size.</p>
+            <p class="tile__keys"><span class="key">Key</span> <span class="key key--alt">Key alt</span></p>
+            <p class="action-sample">Action</p>
+            <code>#1f1d21</code>
+          </li>
+        </ul>
+        <p class="band__note">
+          Bands rotate purple, sunset, lime, charcoal, one per Section. Each band sets every colour token, so a component
+          inside it needs no band of its own. One ink per band, no alpha steps.
+        </p>
+        <ul class="chips" aria-label="Color tokens">
+          <li>--color-ground</li>
+          <li>--color-ink</li>
+          <li>--color-display</li>
+          <li>--color-key</li>
+          <li>--color-key-alt</li>
+          <li>--color-action</li>
+          <li>--color-on-action</li>
+          <li>--color-hairline</li>
+          <li>--color-hairline-hover</li>
+        </ul>
+        <a class="band-link band-link--action" href="tokens/color.css">Open color.css</a>
+      </section>
+
+      <section class="band" data-band="lime" aria-labelledby="type-title">
+        <h2 class="band__title" id="type-title">Typography</h2>
+        <div class="type-specimen">
+          <p class="type-specimen__display">Display</p>
+          <p class="type-specimen__headline">Headline for a Section</p>
+          <p class="type-specimen__title">Title for an item</p>
+          <p class="type-specimen__lede">A lede, the line under the Page title, in Archivo.</p>
+          <p class="type-specimen__body">
+            Body text in Archivo at the reading measure. Placeholder copy: a longer paragraph shows how a personal story
+            or a note on what the Owner is studying breaks across lines and holds together as a block.
+          </p>
+          <p class="type-specimen__label">Label · 0123456789</p>
+        </div>
+        <ul class="lineup" aria-label="Lineup specimen, placeholder rows">
+          <li><span class="key">Books</span><a href="#type-title">Placeholder title</a></li>
+          <li><span class="key key--alt">Authors</span><a href="#type-title">Placeholder author</a></li>
+          <li><span class="key">Music</span><a href="#type-title">Placeholder track</a></li>
+          <li><span class="key key--alt">Films</span><a href="#type-title">Placeholder film</a></li>
+          <li><span class="key">Articles</span><a href="#type-title">Placeholder article</a></li>
+        </ul>
+        <ul class="chips" aria-label="Typography tokens">
+          <li>--font-display</li>
+          <li>--font-sans</li>
+          <li>--text-display</li>
+          <li>--text-headline</li>
+          <li>--text-title</li>
+          <li>--text-lede</li>
+          <li>--text-label</li>
+          <li>--case-display</li>
+          <li>--case-label</li>
+          <li>--measure-lede</li>
+        </ul>
+        <a class="band-link" href="tokens/typography.css">Open typography.css</a>
+      </section>
+
+      <section class="band" data-band="charcoal" aria-labelledby="shape-title">
+        <h2 class="band__title" id="shape-title">Shape, line and state</h2>
+        <div class="shape-specimen">
+          <ul class="corners" aria-label="Radii">
+            <li><span class="corner" style="--corner: var(--radius-control)"></span><code>square</code></li>
+            <li><span class="corner" style="--corner: var(--radius-round)"></span><code>round</code></li>
+            <li><span class="corner corner--float"></span><code>float</code></li>
+          </ul>
+          <div class="state-row">
+            <span class="sample-control">Default</span>
+            <span class="sample-control sample-control--hover">Hover</span>
+            <span class="sample-control sample-control--focus">Focus</span>
+            <span class="sample-control sample-control--disabled" aria-disabled="true">Disabled</span>
+            <span class="sample-control sample-control--action">Action</span>
+          </div>
+          <div class="sample-field">
+            <span class="sample-field__box">Invalid input</span>
+            <span class="sample-field__message">Placeholder error message.</span>
+          </div>
+        </div>
+        <p class="band__note">
+          Square corners and 3px ink rules, no blur. An error is a dashed rule and its message, never a colour, since
+          no single hue reads on all four bands. Spacing and motion come from the Portfolio's tokens.
+        </p>
+        <ul class="chips" aria-label="Shape, line and state tokens">
+          <li>--radius-control</li>
+          <li>--line-width</li>
+          <li>--shadow-float</li>
+          <li>--focus-ring-width</li>
+          <li>--error-line-style</li>
+        </ul>
+        <ul class="band-links">
+          <li><a class="band-link" href="tokens/radii.css">Open radii.css</a></li>
+          <li><a class="band-link" href="tokens/elevation.css">Open elevation.css</a></li>
+          <li><a class="band-link" href="tokens/state.css">Open state.css</a></li>
+        </ul>
+      </section>
+    </main>
+
+    <footer class="foot" data-band="purple">
+      <p>Design prototype. A reference for the front end, not production code.</p>
+      <a class="band-link" href="../index.html">The Portfolio's Visual language</a>
+    </footer>
+  </body>
+</html>
