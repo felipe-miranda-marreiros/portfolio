@@ -37,6 +37,9 @@ Later on 2026-11-01, after the finish review and the design review, the Owner co
   charcoal and cream, so half the categories share the ink and stand apart by face and size.
 - The Footer takes the next band in the rotation, like any Section; no band is fixed to it.
 - Creative North Star: "Loud Bands, Quiet Person".
+- The supporting inks of option N stay: lilac #f7f0ff (text on purple and charcoal), peach #ff8a5c and blush #ffd0b8
+  (titles and keys on charcoal and purple), magenta #8a1158 (titles and keys on lime) and cream #fff4e0 (titles on
+  sunset). The "pink" turned down earlier was the flat pink palette, not these.
 - About me is documented in the root DESIGN.md beside the Portfolio, an About me subsection in each section.
 - Spacing and motion stay the Portfolio's; radii, elevation and state are About me's own.
 
