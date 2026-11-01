@@ -53,6 +53,8 @@ prototype/
 ├── index.html          # links to every token and component page
 ├── tokens.css          # @imports every file in tokens/
 ├── tokens/             # one CSS file per token group (color.css, typography.css, spacing.css, ...)
+├── about-me/           # About me's Visual language: its token page, tokens.css and tokens/, which redefine the
+│                       # same token names over the Portfolio's tokens.css
 └── components/
     └── button/
         ├── button.css  # the component's styles, from tokens only
