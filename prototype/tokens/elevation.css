@@ -1,8 +1,11 @@
 /** Elevation tokens: flat by default; hairlines and tints carry depth, a shadow only for what floats. */
 :root {
   --line-width: 1px;
-  --shadow-color: light-dark(rgb(26 24 21 / 0.22), rgb(0 0 0 / 0.6));
-  /* A dark shadow vanishes on the night ground, so floating surfaces there also get a faint ring. */
-  --shadow-ring: light-dark(rgb(26 24 21 / 0.06), rgb(232 226 214 / 0.3));
+  /* No ink is darker than the night ground, so the night shadow is black; it still vanishes there, hence the ring. */
+  --shadow-color: light-dark(color-mix(in srgb, var(--palette-ink) 22%, transparent), rgb(0 0 0 / 0.6));
+  --shadow-ring: light-dark(
+    color-mix(in srgb, var(--palette-ink) 6%, transparent),
+    color-mix(in srgb, var(--palette-bone) 30%, transparent)
+  );
   --shadow-float: 0 0 0 1px var(--shadow-ring), 0 12px 32px -12px var(--shadow-color);
 }
