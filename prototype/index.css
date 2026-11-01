@@ -181,6 +181,7 @@ a {
   .cell--color,
   .cell--type,
   .cell--state,
+  .cell--about-me,
   .cell--components {
     grid-column: span 2;
   }
@@ -195,6 +196,7 @@ a {
       "type type elevation"
       "type type motion"
       "state state state"
+      "about-me about-me about-me"
       "components components components";
   }
 
@@ -224,6 +226,10 @@ a {
 
   .cell--state {
     grid-area: state;
+  }
+
+  .cell--about-me {
+    grid-area: about-me;
   }
 
   .cell--components {
