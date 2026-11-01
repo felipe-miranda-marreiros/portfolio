@@ -23,7 +23,8 @@ carrying a live specimen, in both themes. Placeholder text is allowed here; comp
 On 2026-11-01 the Owner chose, from rendered comparison rounds: Schibsted Grotesk for display and body, Martian Mono for
 labels; and a monochrome "bone and ink" palette with no hued accent (dark: ground #141311, ink #e8e2d6; light: ground
 #efe9dd, ink #1a1815). The Owner turned down orange, amber, coral, copper, lime, cyan, green, gradients and multi-colour
-palettes along the way.
+palettes along the way. The Owner also set the theme: dark always by default, light only by choosing it in a dark and
+light switch, never from the system preference.
 
 ## Unresolved
 
@@ -37,7 +38,7 @@ THESIS: A dark, confident engineering page: bold tight type and hairline panels 
 lead while the Owner stays in the background. It refuses the template portfolio (avatar hero, skill pills, card grid)
 and any themed metaphor world.
 
-OWN-WORLD: Dark first, a complete light theme following the system. Bone ink on near-black, ink on bone paper, with
+OWN-WORLD: Dark by default, a complete light theme the visitor switches to. Bone ink on near-black, ink on bone paper, with
 alpha-stepped secondary ink and ten-percent hairlines. No hued accent: the primary action is the ink itself, filled,
 and focus is an ink ring. A bold grotesk with tight tracking for headings; a monospace for labels, tags, chips and
 numerals only. Hairline-bordered panel grids whose cells share borders. No colour fields; on Home, a hairline facts
