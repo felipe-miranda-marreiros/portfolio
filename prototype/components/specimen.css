@@ -122,14 +122,21 @@ a {
 
 .specimen-intro h1 {
   font-family: var(--font-display);
-  font-size: var(--text-display);
-  font-weight: var(--weight-display);
-  line-height: var(--leading-display);
-  letter-spacing: var(--tracking-display);
+  font-size: var(--text-headline);
+  font-weight: var(--weight-headline);
+  line-height: var(--leading-headline);
+  letter-spacing: var(--tracking-headline);
   text-transform: var(--case-display);
   color: var(--color-display);
   text-wrap: balance;
   margin-bottom: var(--space-4);
+}
+
+.specimen-intro[data-band] h1 {
+  font-size: var(--text-display);
+  font-weight: var(--weight-display);
+  line-height: var(--leading-display);
+  letter-spacing: var(--tracking-display);
 }
 
 .specimen-intro p {
@@ -190,12 +197,19 @@ a {
 
 .surface h2 {
   font-family: var(--font-display);
+  font-size: var(--text-title);
+  font-weight: var(--weight-title);
+  line-height: var(--leading-title);
+  letter-spacing: var(--tracking-title);
+  text-transform: var(--case-display);
+  color: var(--color-display);
+}
+
+.surface[data-band] h2 {
   font-size: var(--text-headline);
   font-weight: var(--weight-headline);
   line-height: var(--leading-headline);
   letter-spacing: var(--tracking-headline);
-  text-transform: var(--case-display);
-  color: var(--color-display);
 }
 
 .variant {
