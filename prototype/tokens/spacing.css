@@ -11,7 +11,7 @@
   --space-9: 6rem;
   --space-10: 8rem;
 
-  /* Off the 4px rhythm on purpose: a chip is a tag inside running text, so it stays as short as its label. */
+  /* Off the 4px rhythm on purpose, so a chip stays as short as its label. */
   --chip-padding-block: 2px;
   --chip-gap: var(--space-1);
 
