@@ -58,6 +58,12 @@
   --case-link: var(--case-label);
   --underline-offset: 0.2em;
 
+  --text-toggle: var(--text-label);
+  --weight-toggle: var(--weight-label);
+  --leading-toggle: var(--leading-label);
+  --tracking-toggle: var(--tracking-label);
+  --case-toggle: var(--case-label);
+
   --weight-chip: var(--weight-label);
   --tracking-chip: var(--tracking-label);
 

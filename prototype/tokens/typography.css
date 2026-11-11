@@ -57,6 +57,12 @@
   --case-link: none;
   --underline-offset: 0.25em;
 
+  --text-toggle: var(--text-small);
+  --weight-toggle: var(--weight-control);
+  --leading-toggle: var(--leading-body);
+  --tracking-toggle: var(--tracking-body);
+  --case-toggle: none;
+
   --weight-chip: var(--weight-body);
   --tracking-chip: var(--tracking-body);
 

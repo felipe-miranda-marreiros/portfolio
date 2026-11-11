@@ -44,6 +44,10 @@
   --color-action-hover: color-mix(in srgb, var(--color-action) 84%, transparent);
   --color-action-hover-edge: transparent;
 
+  --color-toggle-pressed: var(--color-tint);
+  --color-on-toggle-pressed: var(--color-ink);
+  --color-toggle-pressed-edge: var(--color-hairline-input);
+
   --color-error: light-dark(var(--palette-error-on-paper), var(--palette-error-on-night));
 
   --color-selection: var(--color-ink);

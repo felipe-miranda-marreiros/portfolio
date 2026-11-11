@@ -1,4 +1,8 @@
-/** About me's spacing tokens: the Portfolio's rhythm, with chips set further apart to clear their 3px outlines. */
+/**
+ * About me's spacing tokens: the Portfolio's rhythm, with chips set further apart to clear their 3px outlines and the
+ * Toggle's options touching its outline, like a printed block.
+ */
 :root {
   --chip-gap: var(--space-2);
+  --toggle-inset: 0px;
 }
