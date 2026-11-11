@@ -6,6 +6,7 @@
   --focus-ring-width: 3px;
   --focus-ring-offset: 3px;
   --disabled-opacity: 0.4;
+  --indicator-width: 3px;
   --error-line-width: 3px;
   --error-line-style: dashed;
 }

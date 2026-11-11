@@ -73,6 +73,8 @@
   --color-tint: transparent;
   --color-tint-hover: transparent;
   --color-wash: var(--color-ground);
+  --color-action-hover: var(--color-action);
+  --color-action-hover-edge: var(--color-display);
   --color-error: var(--color-ink);
   --color-selection: var(--color-ink);
   --color-on-selection: var(--color-ground);
