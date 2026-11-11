@@ -1,4 +1,4 @@
-/** State tokens shared by every component: focus ring, disabled, loading, error and the link's hover line. */
+/** State tokens shared by every component: focus ring, disabled, loading, error and the hover lines. */
 :root {
   --focus-ring-width: 2px;
   --focus-ring-offset: 2px;
@@ -9,6 +9,8 @@
   --indicator-width: 2px;
 
   --link-hover-line: none;
+  --toggle-hover-line: none;
+  --toggle-focus-offset: var(--focus-ring-offset);
 
   --error-color: var(--color-error);
   --error-line-width: 1px;

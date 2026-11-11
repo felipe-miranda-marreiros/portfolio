@@ -75,6 +75,9 @@
   --color-wash: var(--color-ground);
   --color-action-hover: var(--color-action);
   --color-action-hover-edge: var(--color-display);
+  --color-toggle-pressed: var(--color-ink);
+  --color-on-toggle-pressed: var(--color-ground);
+  --color-toggle-pressed-edge: transparent;
   --color-error: var(--color-ink);
   --color-selection: var(--color-ink);
   --color-on-selection: var(--color-ground);

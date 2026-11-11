@@ -8,6 +8,9 @@
   --disabled-opacity: 0.4;
   --indicator-width: 3px;
   --link-hover-line: underline;
+  --toggle-hover-line: underline;
+  /* With no inset, the ring has to clear the Toggle's own 3px outline before its gap. */
+  --toggle-focus-offset: calc(var(--line-width) + var(--focus-ring-offset));
   --error-line-width: 3px;
   --error-line-style: dashed;
 }
