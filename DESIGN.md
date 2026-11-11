@@ -152,6 +152,8 @@ spacing:
   chip-padding-block: "2px"
   chip-gap: "0.25rem"
   about-me-chip-gap: "0.5rem"
+  toggle-inset: "3px"
+  about-me-toggle-inset: "0px"
 ---
 
 # Design System: Portfolio
@@ -194,7 +196,8 @@ Portfolio recoloured, or anything corporate or cold.
 
 It loads over the Portfolio's tokens and redefines the same names, so the shared components take most of its look
 through tokens; the differences that have no token yet are listed under Components. Spacing and motion stay the
-Portfolio's, except a longer link nudge (3px) and a wider chip gap (0.5rem) to clear its 3px rules. It has one theme and no photo. Each band sets
+Portfolio's, except a longer link nudge (3px), a wider chip gap (0.5rem) and a Toggle with no inset, to suit its 3px
+rules. It has one theme and no photo. Each band sets
 every colour token itself, so a component inside a band takes that band's colours. Illustration is optional: the language works without it, and the first band reserves a slot
 for one.
 
@@ -231,11 +234,12 @@ at a lower alpha or mixed into the ground, and error is the only hue.
   switch options.
 - **Muted Ink** (64% of the ink): metadata, captions, notes and footer text. Still AA on the ground in both themes.
 - **Hairline** (10% of the ink): panel-grid borders and the rules under the top bar and above the footer.
-- **Hairline Hover** (26%): the brightened edge of a hovered or focused panel and of a hovered outlined control.
+- **Hairline Hover** (26%): the brightened edge of a hovered or focused panel and of a hovered secondary button.
 - **Hairline Control** (22%): the outline of secondary controls, the theme switch and swatch edges.
 - **Hairline Input** (52% ink on paper, 44% bone on night): input borders, which identify the control and so meet 3:1
   against the ground.
-- **Tint** (7%) and **Tint Hover** (4%): chip fills, the pressed theme option and the pressed secondary button; the faint fill of a hovered control.
+- **Tint** (7%) and **Tint Hover** (4%): chip fills, the pressed Toggle option and the pressed secondary button; the faint fill of a hovered secondary
+  button.
 - **Night Wash** and **Paper Wash** (2% of the ink mixed into the ground): the hovered or focused panel cell. Opaque,
   because the cell covers the hairline drawn behind the grid.
 
@@ -389,7 +393,8 @@ mobile. A specimen that is a single row of samples shrinks its samples to stay o
 
 ### About me
 
-The Portfolio's column (76rem max), gutter and spacing rhythm, unchanged, except chips 0.5rem apart. Every band runs full-bleed and aligns its
+The Portfolio's column (76rem max), gutter and spacing rhythm, unchanged, except chips 0.5rem apart and a Toggle with
+no inset. Every band runs full-bleed and aligns its
 content to the shared edge. Content bands pad 4rem above and below on narrow screens and 6rem from 44rem; the intro
 follows them like every content band. The bar pads 1rem above and below, the Footer 2rem. From 44rem the intro splits
 into the title column and the illustration slot (12rem to 18rem), aligned to their foot; on narrow screens the slot
@@ -399,7 +404,7 @@ category column, 1rem gap) on a shared baseline. Swatches fill an auto-fit grid 
 ## Elevation & Depth
 
 Flat by default. Depth comes from hairlines and alpha tints, not shadows: a hovered or focused panel brightens its edge
-to Hairline Hover over the Wash, a hovered control gains Tint Hover. Only a surface that floats above the page
+to Hairline Hover over the Wash, a hovered secondary button gains Tint Hover. Only a surface that floats above the page
 (menu, popover) takes the raised surface colour and the float shadow. Nothing glows.
 
 ### Shadow Vocabulary
@@ -436,9 +441,9 @@ links, and on hover and focus for lineup items. The illustration slot is 3:1 on 
 
 ## Components
 
-The Button, the Link and the Chip are built in the prototype (`prototype/components/button/`, `link/`, `chip/`); the
-rest are the primitives the prototype's token specimens establish, to be confirmed by each component's own PR. Every
-component takes every visual value from tokens and holds no visible text.
+The Button, the Link, the Chip and the Toggle are built in the prototype (`prototype/components/button/`, `link/`,
+`chip/`, `toggle/`); the rest are the primitives the prototype's token specimens establish, to be confirmed by each
+component's own PR. Every component takes every visual value from tokens and holds no visible text.
 
 ### Buttons
 - **Shape:** gently rounded (8px), Small text at the control weight (600), padding 0.5rem by 1rem, inside a one-pixel
@@ -491,18 +496,31 @@ Built in the prototype (`prototype/components/chip/`).
 - **Error:** the border becomes 1px Error and a Small message in Error sits under the field. **Disabled:** 0.4 opacity.
 - **Error line:** solid (`--error-line-style`); About me sets it to dashed.
 
+### Toggles
+Built in the prototype (`prototype/components/toggle/`): a segmented control with exactly one option pressed. The theme
+switch and the language toggle are both Toggles.
+- **Group:** a Hairline Control outline (8px corners) around its options, 3px inside it (`--toggle-inset`); the
+  options' corners nest at 5px. A legend names the group for assistive technology only.
+- **Option:** the toggle role (`--text-toggle`: Small at the control weight, no case change) in Secondary Ink, padding
+  0.5rem less the inset by 0.75rem. **Hover:** full ink, no underline (`--toggle-hover-line: none`). **Active** (held
+  down): looks like hover until it lands as pressed.
+- **Pressed:** the Tint fill (`--color-toggle-pressed`) with full ink (`--color-on-toggle-pressed`) and a one-pixel
+  inner edge in Hairline Input (`--color-toggle-pressed-edge`), which carries the state to 3:1; hover leaves it as it
+  is. In forced colours the pressed option takes the system's selection colours.
+- **Focus:** the shared 2px ink ring at 2px offset (`--toggle-focus-offset`).
+- **Disabled:** none; a Toggle always offers a choice.
+- **Behavior:** pressing an option presses it alone (`toggle.js`); a page that acts on the choice sets the pressed
+  state itself.
+
 ### Navigation
 - **Top bar:** on a bottom hairline, the name left (800, title size, -0.03em), controls right.
-- **Theme switch:** a two-option segmented control, Dark and Light, with Dark pressed until the visitor picks Light, in
-  a Hairline Control outline (8px); options in Small text at the control weight, Secondary Ink, full ink on hover, Tint fill and full
-  ink when pressed. Switching crossfades every token at once (240ms).
+- **Theme switch:** a Toggle of Dark and Light, with Dark pressed until the visitor picks Light. Switching crossfades
+  every token at once (240ms).
 
 ### About me
 
 The shared components take About me's square corners, 3px rules and band colours through tokens. These differences
 have no token yet, so the prototype sets them in About me's page CSS; each component's PR adds the token it needs:
-- the toggle's pressed state: an ink fill with ground text on About me, a Tint fill on the Portfolio;
-- the toggle's type role: Label on About me, Small at the control weight on the Portfolio;
 - the error message's weight: the control weight (700) on About me;
 - the Footer: a hairline above it and 1.5rem block padding on the Portfolio, no top rule and 2rem block padding on About
   me.
@@ -516,8 +534,10 @@ have no token yet, so the prototype sets them in About me's page CSS; each compo
 - **Chips:** the Chip, through tokens: Archivo at label size and the label weight (800), 0.06em tracking, set as-is
   with no case change, square, outlined in a 3px ink rule (`--chip-line-width`) on a transparent fill, 0.5rem apart.
 - **Navigation:** the bar sits on purple over a 3px ink rule, the name left in Big Shoulders 900 uppercase at title
-  size, the language toggle right: a square, 3px-outlined EN and PT control in uppercase label type that underlines in
-  the Key colour on hover and fills with the ink, ground as text, when pressed. There is no theme switch.
+  size, the language toggle right: the Toggle through tokens, a square, 3px-outlined EN and PT control with no inset,
+  in uppercase Label type, that underlines 3px in the Key colour on hover and while held, and fills with the ink,
+  ground as text, when pressed, with no edge. Its 3px focus ring sits 6px out, clearing the outline with a 3px gap.
+  There is no theme switch.
 - **Band link:** the Link, through tokens: uppercase Label type, a heavier arrow (1em, a 2 stroke with square ends); on
   hover, focus and press it underlines 3px in the Key colour (`--link-hover-line: underline`) and the arrow nudges 3px.
   Its action variant fills Action at the control weight (700), does not underline, and on hover keeps its fill with the
