@@ -1,0 +1,107 @@
+/**
+ * Button: a primary (the filled action, one per view) and a secondary (outlined), from tokens only.
+ * Markup: <button class="button button--primary"><span class="button__label">…</span></button>.
+ * Loading sets aria-busy="true" and aria-disabled="true"; the label stays in the accessible name.
+ * `data-force` pins a state so the prototype page can show it without interaction.
+ */
+.button {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  max-width: 100%;
+  margin: 0;
+  padding: var(--space-2) var(--space-4);
+  border: var(--line-width) solid transparent;
+  border-radius: var(--radius-control);
+  font-family: var(--font-sans);
+  font-size: var(--text-small);
+  font-weight: var(--weight-control);
+  line-height: var(--leading-body);
+  letter-spacing: var(--tracking-body);
+  text-align: center;
+  text-wrap: balance;
+  cursor: pointer;
+  touch-action: manipulation;
+  -webkit-tap-highlight-color: transparent;
+  transition:
+    background-color var(--duration-fast) var(--ease-out),
+    border-color var(--duration-fast) var(--ease-out),
+    outline-color var(--duration-fast) var(--ease-out),
+    translate var(--duration-fast) var(--ease-out);
+}
+
+.button--primary {
+  background: var(--color-action);
+  color: var(--color-on-action);
+  outline: var(--line-width) solid transparent;
+  outline-offset: var(--focus-ring-offset);
+}
+
+.button--secondary {
+  background: transparent;
+  color: var(--color-ink);
+  border-color: var(--color-hairline-control);
+}
+
+.button--primary:where(:hover, [data-force~="hover"]):not(:disabled, [aria-disabled="true"]) {
+  background: var(--color-action-hover);
+  outline-color: var(--color-action-hover-edge);
+}
+
+.button--secondary:where(:hover, [data-force~="hover"]):not(:disabled, [aria-disabled="true"]) {
+  border-color: var(--color-hairline-hover);
+  background: var(--color-tint-hover);
+}
+
+.button:where(:active, [data-force~="active"]):not(:disabled, [aria-disabled="true"]) {
+  translate: 0 var(--press-offset);
+}
+
+.button--secondary:where(:active, [data-force~="active"]):not(:disabled, [aria-disabled="true"]) {
+  background: var(--color-tint);
+}
+
+/* :is, not :where, so focus outranks the primary's hover edge when both apply. */
+.button:is(:focus-visible, [data-force~="focus"]) {
+  outline: var(--focus-ring-width) solid var(--focus-ring-color);
+  outline-offset: var(--focus-ring-offset);
+}
+
+.button:disabled,
+.button[aria-disabled="true"] {
+  cursor: not-allowed;
+}
+
+.button:disabled,
+.button[aria-disabled="true"]:not([aria-busy="true"]) {
+  opacity: var(--disabled-opacity);
+}
+
+.button[aria-busy="true"] {
+  cursor: progress;
+}
+
+/* Opacity, not visibility, so the label keeps the button's width and its accessible name. */
+.button[aria-busy="true"] .button__label {
+  opacity: 0;
+}
+
+.button[aria-busy="true"]::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  margin: auto;
+  width: 1em;
+  height: 1em;
+  border: var(--indicator-width) solid currentColor;
+  border-inline-end-color: transparent;
+  border-radius: var(--radius-round);
+  animation: button-spin var(--duration-spin) var(--ease-linear) infinite;
+}
+
+@keyframes button-spin {
+  to {
+    rotate: 1turn;
+  }
+}
