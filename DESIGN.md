@@ -191,7 +191,7 @@ Portfolio recoloured, or anything corporate or cold.
 
 It loads over the Portfolio's tokens and redefines the same names, so the shared components take most of its look
 through tokens; the differences that have no token yet are listed under Components. Spacing and motion stay the
-Portfolio's. It has one theme and no photo. Each band sets every colour token itself, so a component inside a band
+Portfolio's, except a longer link nudge (3px) to match its 3px rules. It has one theme and no photo. Each band sets every colour token itself, so a component inside a band
 takes that band's colours. Illustration is optional: the language works without it, and the first band reserves a slot
 for one.
 
@@ -326,7 +326,9 @@ Portuguese title such as "Responsabilidades" at display size must fit a 320px sc
 
 Display type and headlines take `--font-display` (the sans), `--case-display` (none) and `--color-display`; titles,
 including the bar's name and panel titles, take `--font-display` and `--case-display`; labels take `--case-label`
-(uppercase), the lede's measure is `--measure-lede` (52ch), and billing items take `--text-billing` (the title size). On
+(uppercase), the lede's measure is `--measure-lede` (52ch), billing items take `--text-billing` (the title size), and
+links take the link role (`--text-link`, `--weight-link`, `--leading-link`, `--tracking-link`, `--case-link`: Small at
+the control weight, as-is; About me sets them to its Label) with `--underline-offset` (0.25em; 0.2em on About me). On
 the Portfolio they restate the hierarchy above; both sets name them, so About me can restyle a shared component through
 them.
 
@@ -448,6 +450,17 @@ and holds no visible text.
   busy and disabled, at full opacity; under reduced motion the ring stands still.
 - Transitions run 150ms on the expo ease-out.
 
+### Links
+Built in the prototype (`prototype/components/link/`).
+- **Style:** the link role (`--text-link`: Small at the control weight, no case change) in Secondary Ink, unboxed, ending
+  in an arrow (0.875em, a 1.5 stroke with round ends, `--icon-arrow`) that follows the last line when the text wraps.
+- **Hover, focus and pressed:** full ink, and the arrow nudges 2px (`--nudge`); no underline (`--link-hover-line:
+  none`). Pressed looks like hover; nothing sinks. The arrow's nudge room is reserved, so it never meets the focus ring.
+- **Focus:** the shared 2px ink ring at 2px offset.
+- **Action:** the view's one filled action as a link: Action fill, On Action text, 8px corners, padding 0.5rem by 1rem;
+  on hover the fill steps to Action Hover, as the primary Button's.
+- No visited colour: every link reads the same, visited or not.
+
 ### Chips
 - **Style:** Martian Mono at label size, Tint fill, Secondary Ink text, 4px corners, padding 2px by 0.5rem, no border.
 
@@ -456,8 +469,8 @@ and holds no visible text.
 - **Background:** the ground; on hover or focus within, the Wash and an inset Hairline Hover edge (200ms).
 - **Title:** the Title role (600).
 - **Border:** shared one-pixel hairlines. **Internal Padding:** 1.5rem on narrow screens, 2rem from 44rem.
-- **Row link:** Small text at the control weight in Secondary Ink with an arrow; on panel hover or focus it goes to full ink and the
-  arrow nudges 2px. The first cell's row link is the filled-ink primary action.
+- **Row link:** a Link; on panel hover or focus within, it takes its hover look. The first cell's row link is the Link's
+  action variant.
 
 ### Inputs / Fields
 - **Style:** Hairline Input border (1px), 8px corners, padding 0.5rem by 0.75rem, Small text.
@@ -477,9 +490,7 @@ The shared components take About me's square corners, 3px rules and band colours
 have no token yet, so the prototype sets them in About me's page CSS; each component's PR adds the token it needs:
 - the chip's border and tracking: a 3px ink outline and 0.06em on About me, a Tint fill with no border on the Portfolio;
 - the toggle's pressed state: an ink fill with ground text on About me, a Tint fill on the Portfolio;
-- the toggle's and links' type role: Label on About me, Small at the control weight on the Portfolio;
-- the link hover: an underline in Key, a 3px nudge and its own arrow on About me, a colour change and a 2px nudge on
-  the Portfolio;
+- the toggle's type role: Label on About me, Small at the control weight on the Portfolio;
 - the error message's weight: the control weight (700) on About me;
 - the chip's weight and gap: 400 and `--space-1` on the Portfolio, `--weight-label` and `--space-2` on About me;
 - the Footer: a hairline above it and 1.5rem block padding on the Portfolio, no top rule and 2rem block padding on About
@@ -496,8 +507,10 @@ have no token yet, so the prototype sets them in About me's page CSS; each compo
 - **Navigation:** the bar sits on purple over a 3px ink rule, the name left in Big Shoulders 900 uppercase at title
   size, the language toggle right: a square, 3px-outlined EN and PT control in uppercase label type that underlines in
   the Key colour on hover and fills with the ink, ground as text, when pressed. There is no theme switch.
-- **Band link:** label type with an arrow; on hover or focus it underlines 3px in the Key colour and the arrow nudges
-  3px (150ms). Its action variant fills Action and does not underline.
+- **Band link:** the Link, through tokens: uppercase Label type, a heavier arrow (1em, a 2 stroke with square ends); on
+  hover, focus and press it underlines 3px in the Key colour (`--link-hover-line: underline`) and the arrow nudges 3px.
+  Its action variant fills Action, does not underline, and on hover keeps its fill with the Display ring, as the
+  primary Button's.
 - **Footer:** the next band in the rotation, like any Section; Small text, with a band link.
 
 #### Lineup
