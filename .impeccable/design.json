@@ -1,6 +1,6 @@
 {
   "schemaVersion": 2,
-  "generatedAt": "2026-11-01T20:38:13Z",
+  "generatedAt": "2026-11-10T12:00:00Z",
   "title": "Design System: Portfolio",
   "extensions": {
     "colorMeta": {
@@ -50,6 +50,8 @@
       { "name": "--color-key-alt", "value": "var(--color-ink)", "purpose": "Alternate billing categories; the ink on the Portfolio, a band's second key colour on About me." },
       { "name": "--color-action", "value": "var(--color-ink)", "purpose": "Primary action fill." },
       { "name": "--color-on-action", "value": "var(--color-ground)", "purpose": "Primary action text." },
+      { "name": "--color-action-hover", "value": "color-mix(in srgb, var(--color-action) 84%, transparent)", "purpose": "The hovered primary action's fill: the action one alpha step down (the Secondary Ink step)." },
+      { "name": "--color-action-hover-edge", "value": "transparent", "purpose": "The hovered primary action's edge; none on the Portfolio." },
       { "name": "--color-error", "value": "light-dark(#ac312c, #ed756a)", "purpose": "Error borders and messages; the only hue." },
       { "name": "--color-selection", "value": "var(--color-ink)", "purpose": "Inverted text selection, with --color-on-selection = ground." },
       { "name": "--color-ground (about me)", "value": "purple #4a2390, sunset #e8582f, lime #d6e45a, charcoal #1f1d21", "purpose": "Each band's ground; one band per Section, rotating." },
@@ -58,6 +60,8 @@
       { "name": "--color-key (about me)", "value": "purple: lime, sunset: charcoal, lime: magenta, charcoal: lime", "purpose": "Billing categories, the lineup's block rules and hover underlines." },
       { "name": "--color-key-alt (about me)", "value": "purple: blush, sunset: cream, lime: purple, charcoal: peach", "purpose": "Alternate billing categories." },
       { "name": "--color-action (about me)", "value": "purple: lime, sunset: charcoal, lime: magenta, charcoal: peach", "purpose": "Primary action fill, with --color-on-action: purple, cream (15:1 on charcoal), lime, charcoal." },
+      { "name": "--color-action-hover (about me)", "value": "var(--color-action)", "purpose": "The hovered primary action keeps its fill; One Ink, no alpha steps." },
+      { "name": "--color-action-hover-edge (about me)", "value": "var(--color-display)", "purpose": "The hovered primary action's edge: a ring in the band's Display colour at the focus offset, as every hovered edge on About me." },
       { "name": "--color-error (about me)", "value": "var(--color-ink)", "purpose": "No error hue: a dashed ink rule and its message." }
     ],
     "typographyMeta": {
@@ -85,17 +89,22 @@
       { "name": "duration-fast", "value": "150ms", "purpose": "Controls, row links, switch options. 0ms under reduced motion." },
       { "name": "duration-base", "value": "200ms", "purpose": "Panel hover edge and wash. 0ms under reduced motion." },
       { "name": "duration-theme", "value": "240ms", "purpose": "Theme crossfade of every token at once. 0ms under reduced motion." },
-      { "name": "ease-out", "value": "cubic-bezier(0.16, 1, 0.3, 1)", "purpose": "The only easing: exponential ease-out, no bounce." }
+      { "name": "duration-spin", "value": "800ms", "purpose": "One turn of the loading ring, on ease-linear. 0ms under reduced motion, which leaves the ring still." },
+      { "name": "ease-out", "value": "cubic-bezier(0.16, 1, 0.3, 1)", "purpose": "The only transition easing: exponential ease-out, no bounce." },
+      { "name": "ease-linear", "value": "linear", "purpose": "The loading ring's turn, the one loop." },
+      { "name": "press-offset", "value": "1px", "purpose": "How far a pressed control sinks. 0px under reduced motion." }
     ],
     "states": [
       { "name": "focus-ring", "value": "outline: 2px solid var(--color-ink); outline-offset: 2px", "purpose": "Every focusable element." },
       { "name": "disabled", "value": "opacity: 0.4", "purpose": "Every disabled control." },
+      { "name": "indicator-width", "value": "2px", "purpose": "The stroke of a loading ring; About me sets it to 3px." },
       { "name": "error", "value": "border: 1px solid var(--color-error)", "purpose": "Fields in error, with a Small message in error." },
       { "name": "line-width", "value": "1px", "purpose": "Every hairline." },
       { "name": "error-line-style", "value": "solid", "purpose": "The error line's style; About me sets it to dashed." },
       { "name": "about-me-focus-ring", "value": "outline: 3px solid var(--color-ink); outline-offset: 3px", "purpose": "About me: every focusable element, in the band's ink." },
       { "name": "about-me-error", "value": "border: 3px dashed var(--color-ink)", "purpose": "About me: fields in error, with a Small message at the control weight; never a hue." },
-      { "name": "about-me-line-width", "value": "3px", "purpose": "About me: every rule, outline and border." }
+      { "name": "about-me-line-width", "value": "3px", "purpose": "About me: every rule, outline and border." },
+      { "name": "about-me-indicator-width", "value": "3px", "purpose": "About me: the loading ring's stroke, matching its rules." }
     ],
     "breakpoints": [
       { "name": "grid-2col", "value": "44rem" },
@@ -108,17 +117,17 @@
       "name": "Primary Button",
       "kind": "button",
       "refersTo": "button-primary",
-      "description": "The one filled-ink action per view.",
-      "html": "<button class=\"ds-btn-primary\">Open color.css</button>",
-      "css": ".ds-btn-primary { font-family: var(--font-sans); font-size: var(--text-small); font-weight: var(--weight-control); padding: var(--space-2) var(--space-4); border: 0; border-radius: var(--radius-control); background: var(--color-action); color: var(--color-on-action); cursor: pointer; } .ds-btn-primary:focus-visible { outline: var(--focus-ring-width) solid var(--focus-ring-color); outline-offset: var(--focus-ring-offset); } .ds-btn-primary:disabled { opacity: var(--disabled-opacity); }"
+      "description": "The one filled-ink action per view. Built in prototype/components/button/.",
+      "html": "<button class=\"ds-btn-primary\"><span>Download CV</span></button>",
+      "css": ".ds-btn-primary { font-family: var(--font-sans); font-size: var(--text-small); font-weight: var(--weight-control); line-height: var(--leading-body); text-align: center; text-wrap: balance; max-width: 100%; padding: var(--space-2) var(--space-4); border-radius: var(--radius-control); cursor: pointer; position: relative; border: var(--line-width) solid transparent; background: var(--color-action); color: var(--color-on-action); outline: var(--line-width) solid transparent; outline-offset: var(--focus-ring-offset); transition: background-color var(--duration-fast) var(--ease-out), outline-color var(--duration-fast) var(--ease-out), translate var(--duration-fast) var(--ease-out); } .ds-btn-primary:where(:hover):not(:disabled, [aria-disabled=\"true\"]) { background: var(--color-action-hover); outline-color: var(--color-action-hover-edge); } .ds-btn-primary:active:not(:disabled, [aria-disabled=\"true\"]) { translate: 0 var(--press-offset); } .ds-btn-primary:is(:focus-visible) { outline: var(--focus-ring-width) solid var(--focus-ring-color); outline-offset: var(--focus-ring-offset); } .ds-btn-primary:disabled, .ds-btn-primary[aria-disabled=\"true\"] { cursor: not-allowed; } .ds-btn-primary:disabled, .ds-btn-primary[aria-disabled=\"true\"]:not([aria-busy=\"true\"]) { opacity: var(--disabled-opacity); } .ds-btn-primary[aria-busy=\"true\"] { cursor: progress; } .ds-btn-primary[aria-busy=\"true\"] span { opacity: 0; } .ds-btn-primary[aria-busy=\"true\"]::after { content: \"\"; position: absolute; inset: 0; margin: auto; width: 1em; height: 1em; border: var(--indicator-width) solid currentColor; border-inline-end-color: transparent; border-radius: var(--radius-round); animation: ds-btn-spin var(--duration-spin) var(--ease-linear) infinite; } @keyframes ds-btn-spin { to { rotate: 1turn; } }"
     },
     {
       "name": "Secondary Button",
       "kind": "button",
       "refersTo": "button-secondary",
       "description": "Every other action: transparent, outlined in a hairline.",
-      "html": "<button class=\"ds-btn-secondary\">Run motion</button>",
-      "css": ".ds-btn-secondary { font-family: var(--font-sans); font-size: var(--text-small); font-weight: var(--weight-control); padding: var(--space-2) var(--space-4); border: var(--line-width) solid var(--color-hairline-control); border-radius: var(--radius-control); background: none; color: var(--color-ink); cursor: pointer; transition: border-color var(--duration-fast) var(--ease-out), background-color var(--duration-fast) var(--ease-out); } .ds-btn-secondary:hover { border-color: var(--color-hairline-hover); background: var(--color-tint-hover); } .ds-btn-secondary:focus-visible { outline: var(--focus-ring-width) solid var(--focus-ring-color); outline-offset: var(--focus-ring-offset); } .ds-btn-secondary:disabled { opacity: var(--disabled-opacity); }"
+      "html": "<button class=\"ds-btn-secondary\"><span>View the code</span></button>",
+      "css": ".ds-btn-secondary { font-family: var(--font-sans); font-size: var(--text-small); font-weight: var(--weight-control); line-height: var(--leading-body); text-align: center; text-wrap: balance; max-width: 100%; padding: var(--space-2) var(--space-4); border-radius: var(--radius-control); cursor: pointer; position: relative; border: var(--line-width) solid var(--color-hairline-control); background: none; color: var(--color-ink); transition: border-color var(--duration-fast) var(--ease-out), background-color var(--duration-fast) var(--ease-out), translate var(--duration-fast) var(--ease-out); } .ds-btn-secondary:where(:hover):not(:disabled, [aria-disabled=\"true\"]) { border-color: var(--color-hairline-hover); background: var(--color-tint-hover); } .ds-btn-secondary:active:not(:disabled, [aria-disabled=\"true\"]) { background: var(--color-tint); } .ds-btn-secondary:active:not(:disabled, [aria-disabled=\"true\"]) { translate: 0 var(--press-offset); } .ds-btn-secondary:is(:focus-visible) { outline: var(--focus-ring-width) solid var(--focus-ring-color); outline-offset: var(--focus-ring-offset); } .ds-btn-secondary:disabled, .ds-btn-secondary[aria-disabled=\"true\"] { cursor: not-allowed; } .ds-btn-secondary:disabled, .ds-btn-secondary[aria-disabled=\"true\"]:not([aria-busy=\"true\"]) { opacity: var(--disabled-opacity); } .ds-btn-secondary[aria-busy=\"true\"] { cursor: progress; } .ds-btn-secondary[aria-busy=\"true\"] span { opacity: 0; } .ds-btn-secondary[aria-busy=\"true\"]::after { content: \"\"; position: absolute; inset: 0; margin: auto; width: 1em; height: 1em; border: var(--indicator-width) solid currentColor; border-inline-end-color: transparent; border-radius: var(--radius-round); animation: ds-btn-spin var(--duration-spin) var(--ease-linear) infinite; } @keyframes ds-btn-spin { to { rotate: 1turn; } }"
     },
     {
       "name": "Text Field",
@@ -188,7 +197,7 @@
       "Do lead Home with the facts in a hairline panel (role, seniority, location, work model, technologies) and keep the Owner's photo small and plain beside the name.",
       "Do take every visual value from tokens, so About me can restyle the shared navigation, language toggle and Footer through tokens alone.",
       "Do give every component all its states (default, hover, focus, active, disabled, and loading, error or success where they apply) before it counts as done.",
-      "Do keep motion to short expo ease-out transitions (150ms for controls, 200ms for panels, 240ms for the theme crossfade), no bounce, and 0ms under reduced motion."
+      "Do keep motion to short expo ease-out transitions (150ms for controls, 200ms for panels, 240ms for the theme crossfade), no bounce, and 0ms under reduced motion. The one loop is the loading ring, on the linear ease (`--ease-linear`), still under reduced motion."
     ],
     "donts": [
       "Don't introduce a hued accent, a gradient or a multi-colour palette; the Owner turned down every one offered.",
@@ -213,7 +222,7 @@
       ],
       "rules": [
         { "name": "The One Band Per Section Rule", "body": "Every Section owns one band, and the bands rotate purple, sunset, lime, charcoal. A component never sets a palette colour; it reads the tokens of the band it sits in.", "section": "colors" },
-        { "name": "The One Ink Rule", "body": "Each band has one ink at full strength: secondary, muted, hairline, control and input colours are the ink itself, and tints are transparent. On sunset any alpha step below full ink drops under 4.5:1. Three lines take another colour: the lineup's block rules are in Key; a hovered edge (`--color-hairline-hover`) is the Display colour; and underlines are 3px in Key or Key Alt, on hover for the language toggle, whose focus already shows the 3px ring, and on hover and focus for band links and lineup items.", "section": "colors" },
+        { "name": "The One Ink Rule", "body": "Each band has one ink at full strength: secondary, muted, hairline, control and input colours are the ink itself, and tints are transparent. On sunset any alpha step below full ink drops under 4.5:1. Three lines take another colour: the lineup's block rules are in Key; a hovered edge (`--color-hairline-hover`, `--color-action-hover-edge`) is the Display colour; and underlines are 3px in Key or Key Alt, on hover for the language toggle, whose focus already shows the 3px ring, and on hover and focus for band links and lineup items.", "section": "colors" },
         { "name": "The Cream Is Large Rule", "body": "Cream holds only 3.3:1 on sunset, so on the sunset ground it sets large type only: display, headlines and the billing keys. On the charcoal action fill it is the action's text, at 15:1.", "section": "colors" },
         { "name": "The No Error Hue Rule", "body": "No single hue reads on all four bands, so error is the band's ink, drawn as a dashed rule with its message, never a colour alone.", "section": "colors" },
         { "name": "The Band-Wide Title Rule", "body": "The Page title is sized from its container's width (24cqi, from 3.5rem to 20rem), so it runs the band's width like a poster's lettering.", "section": "typography" },
