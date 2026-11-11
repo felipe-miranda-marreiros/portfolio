@@ -1,0 +1,77 @@
+/**
+ * Toggle: a segmented control of options, exactly one pressed, from tokens only. The theme switch and the language
+ * toggle are both Toggles.
+ * Markup: <fieldset class="toggle"><legend>…</legend>
+ *   <button class="toggle__option" type="button" aria-pressed="true">…</button>…</fieldset>.
+ * toggle.js keeps one option pressed; a page that acts on the choice (the theme) sets aria-pressed itself.
+ * `data-force` pins a state so the prototype page can show it without interaction.
+ */
+.toggle {
+  display: inline-flex;
+  min-width: 0;
+  margin: 0;
+  padding: var(--toggle-inset);
+  border: var(--line-width) solid var(--color-hairline-control);
+  border-radius: var(--radius-control);
+}
+
+/* The legend names the group for assistive technology only; the options already say what they choose. */
+.toggle > legend {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+
+.toggle__option {
+  margin: 0;
+  padding: calc(var(--space-2) - var(--toggle-inset)) var(--space-3);
+  border: 0;
+  border-radius: calc(var(--radius-control) - var(--toggle-inset));
+  background: transparent;
+  color: var(--color-ink-secondary);
+  font-family: var(--font-sans);
+  font-size: var(--text-toggle);
+  font-weight: var(--weight-toggle);
+  line-height: var(--leading-toggle);
+  letter-spacing: var(--tracking-toggle);
+  text-transform: var(--case-toggle);
+  text-underline-offset: var(--underline-offset);
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+  transition:
+    color var(--duration-fast) var(--ease-out),
+    background-color var(--duration-fast) var(--ease-out);
+}
+
+/* A press looks like hover until it lands as pressed; a Toggle always offers a choice, so it has no disabled state. */
+.toggle__option:where(:hover, :active, [data-force~="hover"], [data-force~="active"]) {
+  color: var(--color-ink);
+  text-decoration-line: var(--toggle-hover-line);
+  text-decoration-thickness: var(--line-width);
+  text-decoration-color: var(--color-key);
+}
+
+/* The edge carries the pressed state to 3:1 where the fill alone is too faint. */
+.toggle__option[aria-pressed="true"] {
+  background: var(--color-toggle-pressed);
+  box-shadow: inset 0 0 0 var(--line-width) var(--color-toggle-pressed-edge);
+  color: var(--color-on-toggle-pressed);
+  text-decoration-line: none;
+}
+
+.toggle__option:is(:focus-visible, [data-force~="focus"]) {
+  outline: var(--focus-ring-width) solid var(--focus-ring-color);
+  outline-offset: var(--toggle-focus-offset);
+}
+
+/* Forced colours drop fills and shadows, so the pressed option takes the system's selection colours instead. */
+@media (forced-colors: active) {
+  .toggle__option[aria-pressed="true"] {
+    forced-color-adjust: none;
+    background: Highlight;
+    color: HighlightText;
+  }
+}
