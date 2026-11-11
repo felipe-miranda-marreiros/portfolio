@@ -1,9 +1,14 @@
 /**
  * Link: text with an arrow that leads somewhere, from tokens only. The action variant is the view's one filled action.
  * Markup: <a class="link" href="…">…</a>, or class="link link--action".
+ * A container marked `data-link-host` (a panel cell) gives its links their hover look on its own hover and focus-within.
  * `data-force` pins a state so the prototype page can show it without interaction.
  */
 .link {
+  /* The start padding mirrors the nudge room at the end, so the focus ring clears the first letter; the margin keeps
+     the text on its column. */
+  padding-inline-start: var(--nudge);
+  margin-inline-start: calc(-1 * var(--nudge));
   font-family: var(--font-sans);
   font-size: var(--text-link);
   font-weight: var(--weight-link);
@@ -34,7 +39,8 @@
   transition: translate var(--duration-fast) var(--ease-out);
 }
 
-.link:where(:hover, :focus-visible, :active, [data-force~="hover"], [data-force~="focus"], [data-force~="active"]) {
+.link:where(:hover, :focus-visible, :active, [data-force~="hover"], [data-force~="focus"], [data-force~="active"]),
+:where([data-link-host]:hover, [data-link-host]:focus-within) .link {
   color: var(--color-ink);
   text-decoration-line: var(--link-hover-line);
   text-decoration-thickness: var(--line-width);
@@ -48,7 +54,8 @@
   [data-force~="hover"],
   [data-force~="focus"],
   [data-force~="active"]
-)::after {
+)::after,
+:where([data-link-host]:hover, [data-link-host]:focus-within) .link::after {
   translate: var(--nudge) 0;
 }
 
@@ -57,9 +64,12 @@
   outline-offset: var(--focus-ring-offset);
 }
 
+/* The transparent border matches the primary Button's, so the two stand the same height. */
 .link--action {
   display: inline-block;
+  margin-inline-start: 0;
   padding: var(--space-2) var(--space-4);
+  border: var(--line-width) solid transparent;
   border-radius: var(--radius-control);
   background: var(--color-action);
   color: var(--color-on-action);
@@ -71,7 +81,8 @@
     outline-color var(--duration-fast) var(--ease-out);
 }
 
-.link--action:where(:hover, :active, [data-force~="hover"], [data-force~="active"]) {
+.link--action:where(:hover, :active, [data-force~="hover"], [data-force~="active"]),
+:where([data-link-host]:hover, [data-link-host]:focus-within) .link--action {
   color: var(--color-on-action);
   text-decoration-line: none;
   background: var(--color-action-hover);
