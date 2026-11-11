@@ -66,8 +66,7 @@ ul {
   list-style: none;
 }
 
-code,
-.chips {
+code {
   font-family: var(--font-mono);
   font-size: var(--text-label);
   font-variant-numeric: tabular-nums;
@@ -186,7 +185,8 @@ a {
   .cell--color,
   .cell--type,
   .cell--state,
-  .cell--about-me {
+  .cell--about-me,
+  .cell--chip {
     grid-column: span 2;
   }
 }
@@ -201,7 +201,7 @@ a {
       "type type motion"
       "state state state"
       "about-me about-me about-me"
-      "button button link";
+      "button link chip";
   }
 
   .cell--color {
@@ -242,6 +242,10 @@ a {
 
   .cell--link {
     grid-area: link;
+  }
+
+  .cell--chip {
+    grid-area: chip;
   }
 }
 
@@ -287,20 +291,6 @@ a {
 .cell__link {
   align-self: flex-start;
   margin-top: auto;
-}
-
-.chips {
-  display: flex;
-  flex-wrap: wrap;
-  gap: var(--space-1);
-}
-
-.chips li {
-  padding: 2px var(--space-2);
-  border-radius: var(--radius-chip);
-  background: var(--color-tint);
-  color: var(--color-ink-secondary);
-  line-height: var(--leading-label);
 }
 
 .schemes {

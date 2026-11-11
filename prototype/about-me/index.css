@@ -65,8 +65,7 @@ a {
   text-underline-offset: 0.2em;
 }
 
-code,
-.chips {
+code {
   font-family: var(--font-mono);
   font-size: var(--text-label);
   font-weight: var(--weight-label);
@@ -293,19 +292,6 @@ code,
   background: var(--color-action);
   color: var(--color-on-action);
   font-weight: var(--weight-control);
-}
-
-.chips {
-  display: flex;
-  flex-wrap: wrap;
-  gap: var(--space-2);
-}
-
-.chips li {
-  padding: 2px var(--space-2);
-  border: var(--line-width) solid var(--color-hairline-control);
-  border-radius: var(--radius-chip);
-  line-height: var(--leading-label);
 }
 
 .band-links {

@@ -8,6 +8,7 @@
     <link rel="preload" href="../fonts/archivo.woff2" as="font" type="font/woff2" crossorigin />
     <link rel="stylesheet" href="../tokens.css" />
     <link rel="stylesheet" href="tokens.css" />
+    <link rel="stylesheet" href="../components/chip/chip.css" />
     <link rel="stylesheet" href="index.css" />
     <script src="index.js" defer></script>
   </head>
@@ -68,15 +69,15 @@
         </p>
         <div class="band__tokens">
           <ul class="chips" aria-label="Color tokens">
-            <li>--color-ground</li>
-            <li>--color-ink</li>
-            <li>--color-display</li>
-            <li>--color-key</li>
-            <li>--color-key-alt</li>
-            <li>--color-action</li>
-            <li>--color-on-action</li>
-            <li>--color-hairline</li>
-            <li>--color-hairline-hover</li>
+            <li class="chip">--color-ground</li>
+            <li class="chip">--color-ink</li>
+            <li class="chip">--color-display</li>
+            <li class="chip">--color-key</li>
+            <li class="chip">--color-key-alt</li>
+            <li class="chip">--color-action</li>
+            <li class="chip">--color-on-action</li>
+            <li class="chip">--color-hairline</li>
+            <li class="chip">--color-hairline-hover</li>
           </ul>
           <a class="band-link band-link--action" href="tokens/color.css">Open color.css</a>
         </div>
@@ -104,16 +105,16 @@
         </ul>
         <div class="band__tokens">
           <ul class="chips" aria-label="Typography tokens">
-            <li>--font-display</li>
-            <li>--font-sans</li>
-            <li>--text-display</li>
-            <li>--text-headline</li>
-            <li>--text-title</li>
-            <li>--text-lede</li>
-            <li>--text-label</li>
-            <li>--case-display</li>
-            <li>--case-label</li>
-            <li>--measure-lede</li>
+            <li class="chip">--font-display</li>
+            <li class="chip">--font-sans</li>
+            <li class="chip">--text-display</li>
+            <li class="chip">--text-headline</li>
+            <li class="chip">--text-title</li>
+            <li class="chip">--text-lede</li>
+            <li class="chip">--text-label</li>
+            <li class="chip">--case-display</li>
+            <li class="chip">--case-label</li>
+            <li class="chip">--measure-lede</li>
           </ul>
           <a class="band-link" href="tokens/typography.css">Open typography.css</a>
         </div>
@@ -140,15 +141,16 @@
         </div>
         <p class="band__note">
           Square corners and 3px ink rules, no blur. An error is a dashed rule and its message, never a colour, since
-          no single hue reads on all four bands. Spacing and motion come from the Portfolio's tokens.
+          no single hue reads on all four bands. Spacing and motion come from the Portfolio's tokens, except a wider
+          chip gap and a longer link nudge to clear the 3px rules.
         </p>
         <div class="band__tokens">
           <ul class="chips" aria-label="Shape, line and state tokens">
-            <li>--radius-control</li>
-            <li>--line-width</li>
-            <li>--shadow-float</li>
-            <li>--focus-ring-width</li>
-            <li>--error-line-style</li>
+            <li class="chip">--radius-control</li>
+            <li class="chip">--line-width</li>
+            <li class="chip">--shadow-float</li>
+            <li class="chip">--focus-ring-width</li>
+            <li class="chip">--error-line-style</li>
           </ul>
           <ul class="band-links">
             <li><a class="band-link" href="tokens/radii.css">Open radii.css</a></li>
