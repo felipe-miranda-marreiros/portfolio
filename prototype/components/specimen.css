@@ -93,10 +93,24 @@ a {
 
 .specimen-bar a:hover {
   color: var(--color-ink);
+}
+
+.specimen-bar[data-band] a {
+  font-size: var(--text-label);
+  font-weight: var(--weight-label);
+  line-height: var(--leading-label);
+  letter-spacing: var(--tracking-label);
+  text-transform: var(--case-label);
+  color: var(--color-ink);
+}
+
+.specimen-bar[data-band] a:hover,
+.specimen-bar[data-band] a:focus-visible {
   text-decoration: underline var(--line-width) var(--color-key);
 }
 
 .specimen-intro {
+  container-type: inline-size;
   padding: var(--space-8) var(--edge) var(--space-7);
 }
 
@@ -108,10 +122,10 @@ a {
 
 .specimen-intro h1 {
   font-family: var(--font-display);
-  font-size: var(--text-headline);
-  font-weight: var(--weight-headline);
-  line-height: var(--leading-headline);
-  letter-spacing: var(--tracking-headline);
+  font-size: var(--text-display);
+  font-weight: var(--weight-display);
+  line-height: var(--leading-display);
+  letter-spacing: var(--tracking-display);
   text-transform: var(--case-display);
   color: var(--color-display);
   text-wrap: balance;
@@ -176,10 +190,10 @@ a {
 
 .surface h2 {
   font-family: var(--font-display);
-  font-size: var(--text-title);
-  font-weight: var(--weight-title);
-  line-height: var(--leading-title);
-  letter-spacing: var(--tracking-title);
+  font-size: var(--text-headline);
+  font-weight: var(--weight-headline);
+  line-height: var(--leading-headline);
+  letter-spacing: var(--tracking-headline);
   text-transform: var(--case-display);
   color: var(--color-display);
 }
@@ -220,4 +234,9 @@ a {
   border-top: var(--line-width) solid var(--color-hairline);
   font-size: var(--text-small);
   color: var(--color-ink-muted);
+}
+
+.foot[data-band] {
+  padding-block: var(--space-6);
+  border-top: 0;
 }
