@@ -191,8 +191,8 @@ Portfolio recoloured, or anything corporate or cold.
 
 It loads over the Portfolio's tokens and redefines the same names, so the shared components take most of its look
 through tokens; the differences that have no token yet are listed under Components. Spacing and motion stay the
-Portfolio's, except a longer link nudge (3px) to match its 3px rules. It has one theme and no photo. Each band sets every colour token itself, so a component inside a band
-takes that band's colours. Illustration is optional: the language works without it, and the first band reserves a slot
+Portfolio's, except a longer link nudge (3px) to match its 3px rules. It has one theme and no photo. Each band sets
+every colour token itself, so a component inside a band takes that band's colours. Illustration is optional: the language works without it, and the first band reserves a slot
 for one.
 
 **Key Characteristics:**
@@ -291,9 +291,10 @@ component never sets a palette colour; it reads the tokens of the band it sits i
 
 **The One Ink Rule.** Each band has one ink at full strength: secondary, muted, hairline, control and input colours are
 the ink itself, and tints are transparent. On sunset any alpha step below full ink drops under 4.5:1. Three lines take
-another colour: the lineup's block rules are in Key; a hovered edge (`--color-hairline-hover`, `--color-action-hover-edge`) is the Display colour;
-and underlines are 3px in Key or Key Alt, on hover for the language toggle, whose focus already shows the 3px ring, and
-on hover and focus for band links and lineup items.
+another colour: the lineup's block rules are in Key; a hovered edge (`--color-hairline-hover`,
+`--color-action-hover-edge`) is the Display colour; and underlines are 3px in Key or Key Alt, on hover for the language
+toggle, whose focus already shows the 3px ring, on hover, focus and press for band links, and on hover and focus for
+lineup items.
 
 **The Cream Is Large Rule.** Cream holds only 3.3:1 on sunset, so on the sunset ground it sets large type only: display,
 headlines and the billing keys. On the charcoal action fill it is the action's text, at 15:1.
@@ -427,13 +428,13 @@ is small, in a softly rounded square with a hairline edge, plain, with no effect
 
 Square, like a printed poster: chips, controls, the photo radius and panels at 0; only truly round things stay round
 (999px). Every line is a 3px rule in the band's ink, except the lineup's block rules, in Key; a hovered edge, in the
-Display colour; and underlines, in Key or Key Alt, on hover for the language toggle and on hover and focus for band
-links and lineup items. The illustration slot is 3:1 on narrow screens and 4:5 from 44rem.
+Display colour; and underlines, in Key or Key Alt, on hover for the language toggle, on hover, focus and press for band
+links, and on hover and focus for lineup items. The illustration slot is 3:1 on narrow screens and 4:5 from 44rem.
 
 ## Components
 
-The Button is built in the prototype (`prototype/components/button/`); the rest are the primitives the prototype's token
-specimens establish, to be confirmed by each component's own PR. Every component takes every visual value from tokens
+The Button and the Link are built in the prototype (`prototype/components/button/`, `prototype/components/link/`); the
+rest are the primitives the prototype's token specimens establish, to be confirmed by each component's own PR. Every component takes every visual value from tokens
 and holds no visible text.
 
 ### Buttons
@@ -455,10 +456,13 @@ Built in the prototype (`prototype/components/link/`).
 - **Style:** the link role (`--text-link`: Small at the control weight, no case change) in Secondary Ink, unboxed, ending
   in an arrow (0.875em, a 1.5 stroke with round ends, `--icon-arrow`) that follows the last line when the text wraps.
 - **Hover, focus and pressed:** full ink, and the arrow nudges 2px (`--nudge`); no underline (`--link-hover-line:
-  none`). Pressed looks like hover; nothing sinks. The arrow's nudge room is reserved, so it never meets the focus ring.
-- **Focus:** the shared 2px ink ring at 2px offset.
-- **Action:** the view's one filled action as a link: Action fill, On Action text, 8px corners, padding 0.5rem by 1rem;
-  on hover the fill steps to Action Hover, as the primary Button's.
+  none`). Pressed looks like hover; nothing sinks. A container marked as the link's host (a panel cell) gives its links
+  the same look on its own hover and focus within.
+- **Focus:** the shared 2px ink ring at 2px offset. The nudge's room is reserved at both ends of the link, so the ring
+  clears the first letter and the nudged arrow alike.
+- **Action:** the view's one filled action as a link: Action fill, On Action text at the control weight, 8px corners,
+  padding 0.5rem by 1rem inside a transparent one-pixel border, so it stands the primary Button's height; on hover the
+  fill steps to Action Hover, as the primary Button's.
 - No visited colour: every link reads the same, visited or not.
 
 ### Chips
@@ -509,8 +513,8 @@ have no token yet, so the prototype sets them in About me's page CSS; each compo
   the Key colour on hover and fills with the ink, ground as text, when pressed. There is no theme switch.
 - **Band link:** the Link, through tokens: uppercase Label type, a heavier arrow (1em, a 2 stroke with square ends); on
   hover, focus and press it underlines 3px in the Key colour (`--link-hover-line: underline`) and the arrow nudges 3px.
-  Its action variant fills Action, does not underline, and on hover keeps its fill with the Display ring, as the
-  primary Button's.
+  Its action variant fills Action at the control weight (700), does not underline, and on hover keeps its fill with the
+  Display ring, as the primary Button's.
 - **Footer:** the next band in the rotation, like any Section; Small text, with a band link.
 
 #### Lineup
