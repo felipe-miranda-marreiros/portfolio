@@ -217,6 +217,8 @@ at a lower alpha or mixed into the ground, and error is the only hue.
   itself; the token exists so About me can set display type and headlines in a band colour through tokens alone.
 - **Key** and **Key Alt** (`--color-key`, `--color-key-alt`): the ink itself on the Portfolio. Both sets name them, so
   About me can set billing categories and hover underlines in its band's two key colours.
+- **Action Hover** (`--color-action-hover`, `--color-action-hover-edge`): the hovered primary action. On the Portfolio
+  the fill steps down to the action at 84% (the Secondary Ink step) and there is no edge.
 
 ### Neutral
 - **Night** and **Paper**: the ground of the dark and light themes; also the text colour on a filled-ink action.
@@ -230,7 +232,7 @@ at a lower alpha or mixed into the ground, and error is the only hue.
 - **Hairline Control** (22%): the outline of secondary controls, the theme switch and swatch edges.
 - **Hairline Input** (52% ink on paper, 44% bone on night): input borders, which identify the control and so meet 3:1
   against the ground.
-- **Tint** (7%) and **Tint Hover** (4%): chip fills and the pressed theme option; the faint fill of a hovered control.
+- **Tint** (7%) and **Tint Hover** (4%): chip fills, the pressed theme option and the pressed secondary button; the faint fill of a hovered control.
 - **Night Wash** and **Paper Wash** (2% of the ink mixed into the ground): the hovered or focused panel cell. Opaque,
   because the cell covers the hairline drawn behind the grid.
 
@@ -279,8 +281,9 @@ action, on action), so nothing on About me picks a palette colour directly.
 - The band colours serve as inks too: **Charcoal** is the ink on sunset and lime and Key on sunset; **Lime** is display
   type, Key and the action fill on purple, and Key on charcoal; **Purple** is Key Alt on lime.
 
-The display colour also draws the hovered edge of a control (`--color-hairline-hover`), and the key colours draw billing
-categories and hover underlines.
+The display colour also draws the hovered edge of a control (`--color-hairline-hover`) and of the primary action
+(`--color-action-hover-edge`), whose fill stays the Action colour on hover, and the key colours draw billing categories
+and hover underlines.
 
 #### Named Rules
 **The One Band Per Section Rule.** Every Section owns one band, and the bands rotate purple, sunset, lime, charcoal. A
@@ -288,7 +291,7 @@ component never sets a palette colour; it reads the tokens of the band it sits i
 
 **The One Ink Rule.** Each band has one ink at full strength: secondary, muted, hairline, control and input colours are
 the ink itself, and tints are transparent. On sunset any alpha step below full ink drops under 4.5:1. Three lines take
-another colour: the lineup's block rules are in Key; a hovered edge (`--color-hairline-hover`) is the Display colour;
+another colour: the lineup's block rules are in Key; a hovered edge (`--color-hairline-hover`, `--color-action-hover-edge`) is the Display colour;
 and underlines are 3px in Key or Key Alt, on hover for the language toggle, whose focus already shows the 3px ring, and
 on hover and focus for band links and lineup items.
 
@@ -427,15 +430,23 @@ links and lineup items. The illustration slot is 3:1 on narrow screens and 4:5 f
 
 ## Components
 
-No component library exists yet; these are the primitives the prototype's token specimens establish, to be confirmed
-by each component's own PR. Every component takes every visual value from tokens and holds no visible text.
+The Button is built in the prototype (`prototype/components/button/`); the rest are the primitives the prototype's token
+specimens establish, to be confirmed by each component's own PR. Every component takes every visual value from tokens
+and holds no visible text.
 
 ### Buttons
-- **Shape:** gently rounded (8px), Small text at the control weight (600), padding 0.5rem by 1rem.
-- **Primary:** filled ink with the ground as text, no border. One per view.
+- **Shape:** gently rounded (8px), Small text at the control weight (600), padding 0.5rem by 1rem, inside a one-pixel
+  border on both variants (transparent on the primary) so they stand the same height. A long label wraps, balanced,
+  rather than overflow.
+- **Primary:** filled ink with the ground as text. One per view. On hover the fill steps down to Action Hover (84%).
 - **Secondary:** transparent, ink text, outlined in Hairline Control; on hover the outline moves to Hairline Hover and
-  the fill to Tint Hover.
-- **Focus:** a 2px ink ring at 2px offset. **Disabled:** 0.4 opacity. Transitions run 150ms on the expo ease-out.
+  the fill to Tint Hover; pressed, the fill is Tint.
+- **Pressed:** both sink 1px (`--press-offset`), not under reduced motion.
+- **Focus:** a 2px ink ring at 2px offset. **Disabled:** 0.4 opacity, a not-allowed cursor, no hover.
+- **Loading:** a 1em ring in the text colour, open on one side and drawn at the indicator width (2px), turns once every
+  800ms in place of the label, which goes transparent so the width holds and it stays the accessible name. The button is
+  busy and disabled, at full opacity; under reduced motion the ring stands still.
+- Transitions run 150ms on the expo ease-out.
 
 ### Chips
 - **Style:** Martian Mono at label size, Tint fill, Secondary Ink text, 4px corners, padding 2px by 0.5rem, no border.
@@ -474,9 +485,10 @@ have no token yet, so the prototype sets them in About me's page CSS; each compo
 - the Footer: a hairline above it and 1.5rem block padding on the Portfolio, no top rule and 2rem block padding on About
   me.
 
-- **Buttons:** the primary fills Action with On Action text, no border, at the control weight (700); the secondary is
-  outlined in a 3px ink rule that moves to the Display colour on hover, with no fill. **Focus:** a 3px ink ring at 3px
-  offset. **Disabled:** 0.4 opacity.
+- **Buttons:** the primary fills Action with On Action text at the control weight (700); on hover it keeps its fill and
+  a 3px ring in the Display colour appears at 3px offset. The secondary is outlined in a 3px ink rule that moves to the
+  Display colour on hover, with no fill. **Focus:** a 3px ink ring at 3px offset. **Disabled:** 0.4 opacity.
+  **Loading:** the ring is drawn at 3px. Both sink 1px when pressed, as on the Portfolio.
 - **Inputs / Fields:** a 3px ink border, square. **Error:** the border becomes a dashed 3px ink rule
   (`--error-line-style: dashed`) with a Small message at the control weight, in ink.
 - **Chips:** Archivo at label size, set as-is with no case change, square, outlined in a 3px ink rule on a transparent
@@ -509,7 +521,8 @@ Optional, on the intro band's right from 44rem. It carries a marked placeholder 
 - **Do** give every component all its states (default, hover, focus, active, disabled, and loading, error or success
   where they apply) before it counts as done.
 - **Do** keep motion to short expo ease-out transitions (150ms for controls, 200ms for panels, 240ms for the theme
-  crossfade), no bounce, and 0ms under reduced motion.
+  crossfade), no bounce, and 0ms under reduced motion. The one loop is the loading ring, on the linear ease
+  (`--ease-linear`), still under reduced motion.
 
 ### Don't:
 - **Don't** introduce a hued accent, a gradient or a multi-colour palette; the Owner turned down every one offered.
