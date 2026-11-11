@@ -234,6 +234,12 @@ a {
   gap: var(--space-5) var(--space-6);
 }
 
+/* Even tracks for samples of one width, so a narrow screen never orphans the last of them. */
+.states--even {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(11rem, 1fr));
+}
+
 .states li {
   display: flex;
   flex-direction: column;
