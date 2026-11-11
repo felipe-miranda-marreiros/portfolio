@@ -74,4 +74,9 @@
     background: Highlight;
     color: HighlightText;
   }
+
+  /* Opting out of forced colours also keeps the authored ring colour, so give it the system's text colour. */
+  .toggle__option[aria-pressed="true"]:is(:focus-visible, [data-force~="focus"]) {
+    outline-color: CanvasText;
+  }
 }
