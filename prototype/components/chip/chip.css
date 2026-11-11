@@ -1,0 +1,28 @@
+/**
+ * Chip: a short tag (a technology, a token name, a state), from tokens only. Static: it has no interactive states.
+ * Markup: <ul class="chips"><li class="chip">…</li></ul>. Text is set as-is, never cased, because names are exact.
+ */
+.chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--chip-gap);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.chip {
+  min-width: 0;
+  padding: var(--chip-padding-block) var(--space-2);
+  border: var(--chip-line-width) solid var(--color-hairline-control);
+  border-radius: var(--radius-chip);
+  background: var(--color-tint);
+  color: var(--color-ink-secondary);
+  font-family: var(--font-mono);
+  font-size: var(--text-label);
+  font-weight: var(--weight-chip);
+  line-height: var(--leading-label);
+  letter-spacing: var(--tracking-chip);
+  font-variant-numeric: tabular-nums;
+  overflow-wrap: anywhere;
+}

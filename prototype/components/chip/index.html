@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Chip · Portfolio prototype</title>
+    <link rel="preload" href="../../fonts/schibsted-grotesk.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="preload" href="../../fonts/martian-mono.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="stylesheet" href="../../tokens.css" />
+    <link rel="stylesheet" href="../specimen.css" />
+    <link rel="stylesheet" href="chip.css" />
+  </head>
+  <body>
+    <header class="specimen-bar">
+      <a href="../../index.html">Visual language</a>
+    </header>
+
+    <main>
+      <div class="specimen-intro">
+        <h1>Chip</h1>
+        <p>
+          A short tag in the monospace, for technologies, token names and states, on both themes. It has no
+          interactive states; long names wrap inside the chip.
+        </p>
+      </div>
+
+      <div class="surfaces">
+        <section class="surface" data-scheme="dark" aria-labelledby="dark-title">
+          <h2 id="dark-title">Dark</h2>
+          <div class="variant">
+            <h3>Default</h3>
+            <ul class="chips" aria-label="Default">
+              <li class="chip">TypeScript</li>
+              <li class="chip">React</li>
+              <li class="chip">Node.js</li>
+              <li class="chip">PostgreSQL</li>
+              <li class="chip">AWS</li>
+              <li class="chip">Docker</li>
+            </ul>
+          </div>
+          <div class="variant">
+            <h3>Numerals</h3>
+            <ul class="chips" aria-label="Numerals">
+              <li class="chip">2019–2024</li>
+              <li class="chip">v4.8.2</li>
+              <li class="chip">12 repos</li>
+              <li class="chip">3 yrs</li>
+            </ul>
+          </div>
+          <div class="variant">
+            <h3>Long content</h3>
+            <ul class="chips" aria-label="Long content">
+              <li class="chip">--color-hairline-control</li>
+              <li class="chip">Arquitetura orientada a eventos com filas e consumidores idempotentes</li>
+            </ul>
+          </div>
+        </section>
+
+        <section class="surface" data-scheme="light" aria-labelledby="light-title">
+          <h2 id="light-title">Light</h2>
+          <div class="variant">
+            <h3>Default</h3>
+            <ul class="chips" aria-label="Default">
+              <li class="chip">TypeScript</li>
+              <li class="chip">React</li>
+              <li class="chip">Node.js</li>
+              <li class="chip">PostgreSQL</li>
+              <li class="chip">AWS</li>
+              <li class="chip">Docker</li>
+            </ul>
+          </div>
+          <div class="variant">
+            <h3>Numerals</h3>
+            <ul class="chips" aria-label="Numerals">
+              <li class="chip">2019–2024</li>
+              <li class="chip">v4.8.2</li>
+              <li class="chip">12 repos</li>
+              <li class="chip">3 yrs</li>
+            </ul>
+          </div>
+          <div class="variant">
+            <h3>Long content</h3>
+            <ul class="chips" aria-label="Long content">
+              <li class="chip">--color-hairline-control</li>
+              <li class="chip">Arquitetura orientada a eventos com filas e consumidores idempotentes</li>
+            </ul>
+          </div>
+        </section>
+      </div>
+    </main>
+
+    <footer class="foot">
+      <p>Design prototype. A reference for the front end, not production code. <a href="about-me.html">See it on About me's bands</a>.</p>
+    </footer>
+  </body>
+</html>
