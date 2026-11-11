@@ -149,6 +149,9 @@ spacing:
   "10": "8rem"
   content-max: "76rem"
   gutter: "clamp(1.25rem, 0.5rem + 3.5vw, 3rem)"
+  chip-padding-block: "2px"
+  chip-gap: "0.25rem"
+  about-me-chip-gap: "0.5rem"
 ---
 
 # Design System: Portfolio
@@ -471,7 +474,8 @@ Built in the prototype (`prototype/components/chip/`).
   with tabular numerals; Tint fill, Secondary Ink text, 4px corners, padding 2px by 0.5rem (`--chip-padding-block`, off
   the 4px rhythm so a tag stays as short as its label), no border (`--chip-line-width: 0`).
 - **Set:** chips wrap in a row 0.25rem apart (`--chip-gap`); a long name wraps inside its chip rather than overflow.
-- **States:** none; a chip is a static tag.
+- **States:** none; a chip is a static tag. In forced colours, where the Tint fill drops, it takes a one-pixel border in
+  the system text colour so it keeps its shape.
 
 ### Panel grid cells
 - **Corner Style:** the grid rounds its outer corners (12px); cells are square.
