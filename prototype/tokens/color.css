@@ -41,6 +41,8 @@
 
   --color-action: var(--color-ink);
   --color-on-action: var(--color-ground);
+  --color-action-hover: color-mix(in srgb, var(--color-action) 84%, transparent);
+  --color-action-hover-edge: transparent;
 
   --color-error: light-dark(var(--palette-error-on-paper), var(--palette-error-on-night));
 

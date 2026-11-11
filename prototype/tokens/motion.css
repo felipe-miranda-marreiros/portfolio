@@ -3,7 +3,11 @@
   --duration-fast: 150ms;
   --duration-base: 200ms;
   --duration-theme: 240ms;
+  --duration-spin: 800ms;
   --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-linear: linear;
+
+  --press-offset: 1px;
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -11,5 +15,7 @@
     --duration-fast: 0ms;
     --duration-base: 0ms;
     --duration-theme: 0ms;
+    --duration-spin: 0ms;
+    --press-offset: 0px;
   }
 }
