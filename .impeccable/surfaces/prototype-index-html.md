@@ -30,6 +30,8 @@ On 2026-11-10 the Owner kept, from the rendered Button page, the states DESIGN.m
 down to 84% of the ink on hover; both buttons sink 1px when pressed, the secondary also taking the Tint fill; and while
 loading, a spinning ring replaces the label, which keeps the width and the accessible name.
 
+On 2026-11-10 the Owner kept, from the rendered Link page, a pressed Link that looks like a hovered one: nothing sinks.
+
 ## Unresolved
 
 The type scale, spacing scale and state tokens are first set by the token build, then refined with `typeset`, `layout`

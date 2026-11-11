@@ -45,6 +45,7 @@ Later on 2026-11-01, after the finish review and the design review, the Owner co
 - Spacing and motion stay the Portfolio's; radii, elevation and state are About me's own.
 - On 2026-11-10, from the rendered Button page: the primary keeps its fill on hover and a 3px ring in the band's Display
   colour appears at 3px offset; pressing and loading behave as on the Portfolio, the loading ring drawn at 3px.
+- On 2026-11-10, from the rendered Link page: a pressed Link looks like a hovered one, underlined in Key; nothing sinks.
 
 ## Unresolved
 
