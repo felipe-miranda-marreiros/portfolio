@@ -1,0 +1,5 @@
+/** About me's icon tokens: a heavier arrow with square ends, like a poster's printed mark. */
+:root {
+  --icon-arrow: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='none' stroke='black' stroke-width='2' stroke-linecap='square'%3E%3Cpath d='M3 8h10M9 4l4 4-4 4'/%3E%3C/svg%3E");
+  --icon-size: 1em;
+}
