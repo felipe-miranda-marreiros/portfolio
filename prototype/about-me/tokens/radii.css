@@ -1,8 +1,11 @@
-/** About me's corner tokens: square, like a printed poster; only truly round things stay round. */
+/**
+ * About me's corner tokens: square, like a printed poster; only truly round things stay round.
+ * Zeros carry a unit so components can do calc() with them.
+ */
 :root {
-  --radius-chip: 0;
-  --radius-control: 0;
-  --radius-photo: 0;
-  --radius-panel: 0;
+  --radius-chip: 0px;
+  --radius-control: 0px;
+  --radius-photo: 0px;
+  --radius-panel: 0px;
   --radius-round: 999px;
 }
