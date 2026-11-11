@@ -7,6 +7,7 @@
   --focus-ring-offset: 3px;
   --disabled-opacity: 0.4;
   --indicator-width: 3px;
+  --link-hover-line: underline;
   --error-line-width: 3px;
   --error-line-style: dashed;
 }

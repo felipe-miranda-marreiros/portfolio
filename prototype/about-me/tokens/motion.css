@@ -1,0 +1,10 @@
+/** About me's motion tokens: the Portfolio's timing, with a longer nudge to match its 3px rules. */
+:root {
+  --nudge: 3px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  :root {
+    --nudge: 0px;
+  }
+}

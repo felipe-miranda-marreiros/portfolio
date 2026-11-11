@@ -8,6 +8,7 @@
   --ease-linear: linear;
 
   --press-offset: 1px;
+  --nudge: 2px;
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -17,5 +18,6 @@
     --duration-theme: 0ms;
     --duration-spin: 0ms;
     --press-offset: 0px;
+    --nudge: 0px;
   }
 }

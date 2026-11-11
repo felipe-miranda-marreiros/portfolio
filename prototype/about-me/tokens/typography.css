@@ -51,6 +51,13 @@
   --case-display: uppercase;
   --case-label: uppercase;
 
+  --text-link: var(--text-label);
+  --weight-link: var(--weight-label);
+  --leading-link: var(--leading-label);
+  --tracking-link: var(--tracking-label);
+  --case-link: var(--case-label);
+  --underline-offset: 0.2em;
+
   --measure: 68ch;
   --measure-lede: 52ch;
 }
