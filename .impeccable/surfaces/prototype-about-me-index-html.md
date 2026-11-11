@@ -50,6 +50,9 @@ Later on 2026-11-01, after the finish review and the design review, the Owner co
   motion token About me sets.
 - On 2026-11-10 the Owner kept About me's chips 0.5rem apart, against the Portfolio's 0.25rem, so their 3px outlines
   don't crowd: the one spacing token About me sets.
+- On 2026-11-11 the Owner kept About me's Toggle with no inset, its options touching the 3px outline, against the
+  Portfolio's 3px: About me's second spacing token, beside the chip gap. Its Toggle presses straight to the ink fill,
+  looks like hover while held, and has no disabled state, as on the Portfolio.
 
 ## Unresolved
 

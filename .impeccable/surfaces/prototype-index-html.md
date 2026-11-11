@@ -32,6 +32,10 @@ loading, a spinning ring replaces the label, which keeps the width and the acces
 
 On 2026-11-10 the Owner kept, from the rendered Link page, a pressed Link that looks like a hovered one: nothing sinks.
 
+On 2026-11-11 the Owner chose, from rendered options, the Toggle's pressed option: the Tint fill plus a 1px edge in the
+input border colour, so the state clears 3:1. A Toggle option being pressed (mouse down) looks like hover, and a Toggle
+has no disabled state: it always offers a choice.
+
 ## Unresolved
 
 The type scale, spacing scale and state tokens are first set by the token build, then refined with `typeset`, `layout`
