@@ -8,6 +8,7 @@
     <link rel="preload" href="fonts/martian-mono.woff2" as="font" type="font/woff2" crossorigin />
     <link rel="stylesheet" href="tokens.css" />
     <link rel="stylesheet" href="components/link/link.css" />
+    <link rel="stylesheet" href="components/chip/chip.css" />
     <link rel="stylesheet" href="index.css" />
     <script src="index.js" defer></script>
   </head>
@@ -87,19 +88,19 @@
             </div>
           </div>
           <ul class="chips" aria-label="Color tokens">
-            <li>--color-ground</li>
-            <li>--color-surface</li>
-            <li>--color-ink</li>
-            <li>--color-ink-secondary</li>
-            <li>--color-ink-muted</li>
-            <li>--color-hairline</li>
-            <li>--color-hairline-hover</li>
-            <li>--color-hairline-control</li>
-            <li>--color-hairline-input</li>
-            <li>--color-tint</li>
-            <li>--color-action</li>
-            <li>--color-on-action</li>
-            <li>--color-error</li>
+            <li class="chip">--color-ground</li>
+            <li class="chip">--color-surface</li>
+            <li class="chip">--color-ink</li>
+            <li class="chip">--color-ink-secondary</li>
+            <li class="chip">--color-ink-muted</li>
+            <li class="chip">--color-hairline</li>
+            <li class="chip">--color-hairline-hover</li>
+            <li class="chip">--color-hairline-control</li>
+            <li class="chip">--color-hairline-input</li>
+            <li class="chip">--color-tint</li>
+            <li class="chip">--color-action</li>
+            <li class="chip">--color-on-action</li>
+            <li class="chip">--color-error</li>
           </ul>
           <a class="cell__link link link--action" href="tokens/color.css">Open color.css</a>
         </section>
@@ -119,9 +120,9 @@
             <li><code>10</code><span class="bar-sample" style="--size: var(--space-10)"></span><code>128px</code></li>
           </ul>
           <ul class="chips" aria-label="Spacing tokens">
-            <li>--space-1 … --space-10</li>
-            <li>--content-max</li>
-            <li>--gutter</li>
+            <li class="chip">--space-1 … --space-10</li>
+            <li class="chip">--content-max</li>
+            <li class="chip">--gutter</li>
           </ul>
           <a class="cell__link link" href="tokens/spacing.css">Open spacing.css</a>
         </section>
@@ -135,11 +136,11 @@
             <li><span class="corner" style="--corner: var(--radius-panel)"></span><code>panel</code></li>
           </ul>
           <ul class="chips" aria-label="Radius tokens">
-            <li>--radius-chip</li>
-            <li>--radius-control</li>
-            <li>--radius-photo</li>
-            <li>--radius-panel</li>
-            <li>--radius-round</li>
+            <li class="chip">--radius-chip</li>
+            <li class="chip">--radius-control</li>
+            <li class="chip">--radius-photo</li>
+            <li class="chip">--radius-panel</li>
+            <li class="chip">--radius-round</li>
           </ul>
           <a class="cell__link link" href="tokens/radii.css">Open radii.css</a>
         </section>
@@ -160,18 +161,18 @@
             <p class="type-specimen__label">Label · 0123456789</p>
           </div>
           <ul class="chips" aria-label="Typography tokens">
-            <li>--font-sans</li>
-            <li>--font-mono</li>
-            <li>--text-display</li>
-            <li>--text-headline</li>
-            <li>--text-title</li>
-            <li>--text-lede</li>
-            <li>--text-body</li>
-            <li>--text-small</li>
-            <li>--text-label</li>
-            <li>--leading-body</li>
-            <li>--weight-control</li>
-            <li>--measure</li>
+            <li class="chip">--font-sans</li>
+            <li class="chip">--font-mono</li>
+            <li class="chip">--text-display</li>
+            <li class="chip">--text-headline</li>
+            <li class="chip">--text-title</li>
+            <li class="chip">--text-lede</li>
+            <li class="chip">--text-body</li>
+            <li class="chip">--text-small</li>
+            <li class="chip">--text-label</li>
+            <li class="chip">--leading-body</li>
+            <li class="chip">--weight-control</li>
+            <li class="chip">--measure</li>
           </ul>
           <a class="cell__link link" href="tokens/typography.css">Open typography.css</a>
         </section>
@@ -184,10 +185,10 @@
             <li><span class="plane plane--float"></span><code>float</code></li>
           </ul>
           <ul class="chips" aria-label="Elevation tokens">
-            <li>--line-width</li>
-            <li>--shadow-color</li>
-            <li>--shadow-ring</li>
-            <li>--shadow-float</li>
+            <li class="chip">--line-width</li>
+            <li class="chip">--shadow-color</li>
+            <li class="chip">--shadow-ring</li>
+            <li class="chip">--shadow-float</li>
           </ul>
           <a class="cell__link link" href="tokens/elevation.css">Open elevation.css</a>
         </section>
@@ -204,10 +205,10 @@
             <p class="cell__note">Or hover this panel. Nothing moves under reduced motion.</p>
           </div>
           <ul class="chips" aria-label="Motion tokens">
-            <li>--duration-fast</li>
-            <li>--duration-base</li>
-            <li>--duration-theme</li>
-            <li>--ease-out</li>
+            <li class="chip">--duration-fast</li>
+            <li class="chip">--duration-base</li>
+            <li class="chip">--duration-theme</li>
+            <li class="chip">--ease-out</li>
           </ul>
           <a class="cell__link link" href="tokens/motion.css">Open motion.css</a>
         </section>
@@ -233,15 +234,15 @@
             </div>
           </div>
           <ul class="chips" aria-label="State tokens">
-            <li>--focus-ring-width</li>
-            <li>--focus-ring-offset</li>
-            <li>--focus-ring-color</li>
-            <li>--disabled-opacity</li>
-            <li>--error-color</li>
-            <li>--color-hairline-control</li>
-            <li>--color-hairline-input</li>
-            <li>--color-action</li>
-            <li>--color-on-action</li>
+            <li class="chip">--focus-ring-width</li>
+            <li class="chip">--focus-ring-offset</li>
+            <li class="chip">--focus-ring-color</li>
+            <li class="chip">--disabled-opacity</li>
+            <li class="chip">--error-color</li>
+            <li class="chip">--color-hairline-control</li>
+            <li class="chip">--color-hairline-input</li>
+            <li class="chip">--color-action</li>
+            <li class="chip">--color-on-action</li>
           </ul>
           <a class="cell__link link" href="tokens/state.css">Open state.css</a>
         </section>
@@ -261,12 +262,12 @@
             The filled action and the outlined secondary, on both themes and on About me's bands.
           </p>
           <ul class="chips" aria-label="Button states">
-            <li>default</li>
-            <li>hover</li>
-            <li>focus</li>
-            <li>active</li>
-            <li>disabled</li>
-            <li>loading</li>
+            <li class="chip">default</li>
+            <li class="chip">hover</li>
+            <li class="chip">focus</li>
+            <li class="chip">active</li>
+            <li class="chip">disabled</li>
+            <li class="chip">loading</li>
           </ul>
           <a class="cell__link link" href="components/button/index.html">Open the Button</a>
         </section>
@@ -275,12 +276,23 @@
           <h2 class="cell__title" id="link-title">Link</h2>
           <p class="cell__note">Text with an arrow that leads somewhere, and its filled action variant.</p>
           <ul class="chips" aria-label="Link states">
-            <li>default</li>
-            <li>hover</li>
-            <li>focus</li>
-            <li>active</li>
+            <li class="chip">default</li>
+            <li class="chip">hover</li>
+            <li class="chip">focus</li>
+            <li class="chip">active</li>
           </ul>
           <a class="cell__link link" href="components/link/index.html">Open the Link</a>
+        </section>
+
+        <section data-link-host class="cell cell--chip" aria-labelledby="chip-title">
+          <h2 class="cell__title" id="chip-title">Chip</h2>
+          <p class="cell__note">A short tag in the monospace, for technologies, token names and states. Static.</p>
+          <ul class="chips" aria-label="Chip cases">
+            <li class="chip">default</li>
+            <li class="chip">numerals</li>
+            <li class="chip">long content</li>
+          </ul>
+          <a class="cell__link link" href="components/chip/index.html">Open the Chip</a>
         </section>
       </div>
     </main>
