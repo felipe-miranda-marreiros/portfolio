@@ -1,0 +1,174 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Button · Portfolio prototype</title>
+    <link rel="preload" href="../../fonts/schibsted-grotesk.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="preload" href="../../fonts/martian-mono.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="stylesheet" href="../../tokens.css" />
+    <link rel="stylesheet" href="../specimen.css" />
+    <link rel="stylesheet" href="button.css" />
+  </head>
+  <body>
+    <header class="specimen-bar">
+      <a href="../../index.html">Visual language</a>
+    </header>
+
+    <main>
+      <div class="specimen-intro">
+        <h1>Button</h1>
+        <p>
+          The filled action, one per view, and the outlined secondary, in every state on both themes. The last row
+          responds to the pointer and the keyboard.
+        </p>
+      </div>
+
+      <div class="surfaces">
+        <section class="surface" data-scheme="dark" aria-labelledby="dark-title">
+          <h2 id="dark-title">Dark</h2>
+          <div class="variant">
+            <h3>Primary</h3>
+            <ul class="states" inert>
+              <li>
+                <button class="button button--primary" type="button"><span class="button__label">Download CV</span></button>
+                <code>default</code>
+              </li>
+              <li>
+                <button class="button button--primary" type="button" data-force="hover"><span class="button__label">Download CV</span></button>
+                <code>hover</code>
+              </li>
+              <li>
+                <button class="button button--primary" type="button" data-force="focus"><span class="button__label">Download CV</span></button>
+                <code>focus</code>
+              </li>
+              <li>
+                <button class="button button--primary" type="button" data-force="active"><span class="button__label">Download CV</span></button>
+                <code>active</code>
+              </li>
+              <li>
+                <button class="button button--primary" type="button" disabled><span class="button__label">Download CV</span></button>
+                <code>disabled</code>
+              </li>
+              <li>
+                <button class="button button--primary" type="button" aria-busy="true" aria-disabled="true"><span class="button__label">Download CV</span></button>
+                <code>loading</code>
+              </li>
+            </ul>
+          </div>
+          <div class="variant">
+            <h3>Secondary</h3>
+            <ul class="states" inert>
+              <li>
+                <button class="button button--secondary" type="button"><span class="button__label">View the code</span></button>
+                <code>default</code>
+              </li>
+              <li>
+                <button class="button button--secondary" type="button" data-force="hover"><span class="button__label">View the code</span></button>
+                <code>hover</code>
+              </li>
+              <li>
+                <button class="button button--secondary" type="button" data-force="focus"><span class="button__label">View the code</span></button>
+                <code>focus</code>
+              </li>
+              <li>
+                <button class="button button--secondary" type="button" data-force="active"><span class="button__label">View the code</span></button>
+                <code>active</code>
+              </li>
+              <li>
+                <button class="button button--secondary" type="button" disabled><span class="button__label">View the code</span></button>
+                <code>disabled</code>
+              </li>
+              <li>
+                <button class="button button--secondary" type="button" aria-busy="true" aria-disabled="true"><span class="button__label">View the code</span></button>
+                <code>loading</code>
+              </li>
+            </ul>
+          </div>
+          <div class="variant">
+            <h3>Try it</h3>
+            <ul class="states">
+              <li><button class="button button--primary" type="button"><span class="button__label">Download CV</span></button></li>
+              <li><button class="button button--secondary" type="button"><span class="button__label">View the code</span></button></li>
+              <li><button class="button button--secondary" type="button"><span class="button__label">Ver o repositório público no GitHub</span></button></li>
+            </ul>
+          </div>
+        </section>
+
+        <section class="surface" data-scheme="light" aria-labelledby="light-title">
+          <h2 id="light-title">Light</h2>
+          <div class="variant">
+            <h3>Primary</h3>
+            <ul class="states" inert>
+              <li>
+                <button class="button button--primary" type="button"><span class="button__label">Download CV</span></button>
+                <code>default</code>
+              </li>
+              <li>
+                <button class="button button--primary" type="button" data-force="hover"><span class="button__label">Download CV</span></button>
+                <code>hover</code>
+              </li>
+              <li>
+                <button class="button button--primary" type="button" data-force="focus"><span class="button__label">Download CV</span></button>
+                <code>focus</code>
+              </li>
+              <li>
+                <button class="button button--primary" type="button" data-force="active"><span class="button__label">Download CV</span></button>
+                <code>active</code>
+              </li>
+              <li>
+                <button class="button button--primary" type="button" disabled><span class="button__label">Download CV</span></button>
+                <code>disabled</code>
+              </li>
+              <li>
+                <button class="button button--primary" type="button" aria-busy="true" aria-disabled="true"><span class="button__label">Download CV</span></button>
+                <code>loading</code>
+              </li>
+            </ul>
+          </div>
+          <div class="variant">
+            <h3>Secondary</h3>
+            <ul class="states" inert>
+              <li>
+                <button class="button button--secondary" type="button"><span class="button__label">View the code</span></button>
+                <code>default</code>
+              </li>
+              <li>
+                <button class="button button--secondary" type="button" data-force="hover"><span class="button__label">View the code</span></button>
+                <code>hover</code>
+              </li>
+              <li>
+                <button class="button button--secondary" type="button" data-force="focus"><span class="button__label">View the code</span></button>
+                <code>focus</code>
+              </li>
+              <li>
+                <button class="button button--secondary" type="button" data-force="active"><span class="button__label">View the code</span></button>
+                <code>active</code>
+              </li>
+              <li>
+                <button class="button button--secondary" type="button" disabled><span class="button__label">View the code</span></button>
+                <code>disabled</code>
+              </li>
+              <li>
+                <button class="button button--secondary" type="button" aria-busy="true" aria-disabled="true"><span class="button__label">View the code</span></button>
+                <code>loading</code>
+              </li>
+            </ul>
+          </div>
+          <div class="variant">
+            <h3>Try it</h3>
+            <ul class="states">
+              <li><button class="button button--primary" type="button"><span class="button__label">Download CV</span></button></li>
+              <li><button class="button button--secondary" type="button"><span class="button__label">View the code</span></button></li>
+              <li><button class="button button--secondary" type="button"><span class="button__label">Ver o repositório público no GitHub</span></button></li>
+            </ul>
+          </div>
+        </section>
+      </div>
+    </main>
+
+    <footer class="foot">
+      <p>Design prototype. A reference for the front end, not production code. <a href="about-me.html">See it on About me's bands</a>.</p>
+    </footer>
+  </body>
+</html>

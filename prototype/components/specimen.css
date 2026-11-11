@@ -1,0 +1,223 @@
+/**
+ * The chrome of every component page: a back link, the title, and the component's states on each theme or band.
+ * Not a component; it styles only the page around one. From tokens only.
+ */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  background: var(--color-ground);
+  color: var(--color-ink);
+  font-family: var(--font-sans);
+  font-size: 100%;
+  line-height: var(--leading-body);
+  accent-color: var(--color-ink);
+  caret-color: var(--color-ink);
+  scrollbar-color: var(--color-hairline-control) transparent;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  --edge: max(var(--gutter), (100% - var(--content-max)) / 2 + var(--gutter));
+  margin: 0;
+  min-height: 100dvh;
+  display: flex;
+  flex-direction: column;
+}
+
+::selection {
+  background: var(--color-selection);
+  color: var(--color-on-selection);
+}
+
+:focus-visible {
+  outline: var(--focus-ring-width) solid var(--focus-ring-color);
+  outline-offset: var(--focus-ring-offset);
+}
+
+h1,
+h2,
+h3,
+p,
+ul {
+  margin: 0;
+}
+
+h1,
+h2 {
+  overflow-wrap: break-word;
+  hyphens: auto;
+}
+
+p {
+  text-wrap: pretty;
+}
+
+ul {
+  padding: 0;
+  list-style: none;
+}
+
+code {
+  font-family: var(--font-mono);
+  font-size: var(--text-label);
+  font-variant-numeric: tabular-nums;
+  color: var(--color-ink-muted);
+}
+
+a {
+  color: inherit;
+  text-underline-offset: 0.25em;
+}
+
+[data-band] {
+  background: var(--color-ground);
+  color: var(--color-ink);
+}
+
+.specimen-bar {
+  padding: var(--space-4) var(--edge);
+  border-bottom: var(--line-width) solid var(--color-hairline);
+}
+
+.specimen-bar a {
+  font-size: var(--text-small);
+  font-weight: var(--weight-control);
+  color: var(--color-ink-secondary);
+  text-decoration: none;
+  transition: color var(--duration-fast) var(--ease-out);
+}
+
+.specimen-bar a:hover {
+  color: var(--color-ink);
+  text-decoration: underline var(--line-width) var(--color-key);
+}
+
+.specimen-intro {
+  padding: var(--space-8) var(--edge) var(--space-7);
+}
+
+@media (min-width: 44rem) {
+  .specimen-intro {
+    padding-top: var(--space-9);
+  }
+}
+
+.specimen-intro h1 {
+  font-family: var(--font-display);
+  font-size: var(--text-headline);
+  font-weight: var(--weight-headline);
+  line-height: var(--leading-headline);
+  letter-spacing: var(--tracking-headline);
+  text-transform: var(--case-display);
+  color: var(--color-display);
+  text-wrap: balance;
+  margin-bottom: var(--space-4);
+}
+
+.specimen-intro p {
+  max-width: var(--measure-lede);
+  font-size: var(--text-lede);
+  line-height: var(--leading-lede);
+  color: var(--color-ink-secondary);
+}
+
+.surfaces {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+  padding: 0 var(--edge) var(--space-8);
+}
+
+.surface {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-6);
+  padding: var(--space-5);
+  border: var(--line-width) solid var(--color-hairline);
+  border-radius: var(--radius-panel);
+  background: var(--color-ground);
+  color: var(--color-ink);
+}
+
+@media (min-width: 44rem) {
+  .surface {
+    padding: var(--space-6);
+  }
+}
+
+.surface[data-scheme="dark"] {
+  color-scheme: dark;
+}
+
+.surface[data-scheme="light"] {
+  color-scheme: light;
+}
+
+.surfaces--bands {
+  gap: 0;
+  padding: 0;
+}
+
+.surfaces--bands .surface {
+  border: 0;
+  border-radius: 0;
+  padding: var(--space-8) var(--edge);
+}
+
+@media (min-width: 44rem) {
+  .surfaces--bands .surface {
+    padding-block: var(--space-9);
+  }
+}
+
+.surface h2 {
+  font-family: var(--font-display);
+  font-size: var(--text-title);
+  font-weight: var(--weight-title);
+  line-height: var(--leading-title);
+  letter-spacing: var(--tracking-title);
+  text-transform: var(--case-display);
+  color: var(--color-display);
+}
+
+.variant {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+
+.variant h3 {
+  font-family: var(--font-mono);
+  font-size: var(--text-label);
+  font-weight: var(--weight-label);
+  line-height: var(--leading-label);
+  letter-spacing: var(--tracking-label);
+  text-transform: var(--case-label);
+  color: var(--color-ink-secondary);
+}
+
+.states {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-5) var(--space-6);
+}
+
+.states li {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--space-2);
+  min-width: 0;
+}
+
+.foot {
+  margin-top: auto;
+  padding: var(--space-5) var(--edge);
+  border-top: var(--line-width) solid var(--color-hairline);
+  font-size: var(--text-small);
+  color: var(--color-ink-muted);
+}

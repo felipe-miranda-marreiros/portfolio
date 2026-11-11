@@ -1,0 +1,312 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Button on About me · Portfolio prototype</title>
+    <link rel="preload" href="../../fonts/big-shoulders-display.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="preload" href="../../fonts/archivo.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="stylesheet" href="../../tokens.css" />
+    <link rel="stylesheet" href="../../about-me/tokens.css" />
+    <link rel="stylesheet" href="../specimen.css" />
+    <link rel="stylesheet" href="button.css" />
+  </head>
+  <body>
+    <header class="specimen-bar" data-band="purple">
+      <a href="index.html">Button on the Portfolio</a>
+    </header>
+
+    <main>
+      <div class="specimen-intro" data-band="purple">
+        <h1>Button</h1>
+        <p>The same Button on each of About me's bands, restyled through tokens alone.</p>
+      </div>
+
+      <div class="surfaces surfaces--bands">
+        <section class="surface" data-band="purple" aria-labelledby="purple-title">
+          <h2 id="purple-title">Purple</h2>
+          <div class="variant">
+            <h3>Primary</h3>
+            <ul class="states" inert>
+              <li>
+                <button class="button button--primary" type="button"><span class="button__label">Open the playlist</span></button>
+                <code>default</code>
+              </li>
+              <li>
+                <button class="button button--primary" type="button" data-force="hover"><span class="button__label">Open the playlist</span></button>
+                <code>hover</code>
+              </li>
+              <li>
+                <button class="button button--primary" type="button" data-force="focus"><span class="button__label">Open the playlist</span></button>
+                <code>focus</code>
+              </li>
+              <li>
+                <button class="button button--primary" type="button" data-force="active"><span class="button__label">Open the playlist</span></button>
+                <code>active</code>
+              </li>
+              <li>
+                <button class="button button--primary" type="button" disabled><span class="button__label">Open the playlist</span></button>
+                <code>disabled</code>
+              </li>
+              <li>
+                <button class="button button--primary" type="button" aria-busy="true" aria-disabled="true"><span class="button__label">Open the playlist</span></button>
+                <code>loading</code>
+              </li>
+            </ul>
+          </div>
+          <div class="variant">
+            <h3>Secondary</h3>
+            <ul class="states" inert>
+              <li>
+                <button class="button button--secondary" type="button"><span class="button__label">All recommendations</span></button>
+                <code>default</code>
+              </li>
+              <li>
+                <button class="button button--secondary" type="button" data-force="hover"><span class="button__label">All recommendations</span></button>
+                <code>hover</code>
+              </li>
+              <li>
+                <button class="button button--secondary" type="button" data-force="focus"><span class="button__label">All recommendations</span></button>
+                <code>focus</code>
+              </li>
+              <li>
+                <button class="button button--secondary" type="button" data-force="active"><span class="button__label">All recommendations</span></button>
+                <code>active</code>
+              </li>
+              <li>
+                <button class="button button--secondary" type="button" disabled><span class="button__label">All recommendations</span></button>
+                <code>disabled</code>
+              </li>
+              <li>
+                <button class="button button--secondary" type="button" aria-busy="true" aria-disabled="true"><span class="button__label">All recommendations</span></button>
+                <code>loading</code>
+              </li>
+            </ul>
+          </div>
+          <div class="variant">
+            <h3>Try it</h3>
+            <ul class="states">
+              <li><button class="button button--primary" type="button"><span class="button__label">Open the playlist</span></button></li>
+              <li><button class="button button--secondary" type="button"><span class="button__label">All recommendations</span></button></li>
+              <li><button class="button button--secondary" type="button"><span class="button__label">Todas as recomendações de livros</span></button></li>
+            </ul>
+          </div>
+        </section>
+
+        <section class="surface" data-band="sunset" aria-labelledby="sunset-title">
+          <h2 id="sunset-title">Sunset</h2>
+          <div class="variant">
+            <h3>Primary</h3>
+            <ul class="states" inert>
+              <li>
+                <button class="button button--primary" type="button"><span class="button__label">Open the playlist</span></button>
+                <code>default</code>
+              </li>
+              <li>
+                <button class="button button--primary" type="button" data-force="hover"><span class="button__label">Open the playlist</span></button>
+                <code>hover</code>
+              </li>
+              <li>
+                <button class="button button--primary" type="button" data-force="focus"><span class="button__label">Open the playlist</span></button>
+                <code>focus</code>
+              </li>
+              <li>
+                <button class="button button--primary" type="button" data-force="active"><span class="button__label">Open the playlist</span></button>
+                <code>active</code>
+              </li>
+              <li>
+                <button class="button button--primary" type="button" disabled><span class="button__label">Open the playlist</span></button>
+                <code>disabled</code>
+              </li>
+              <li>
+                <button class="button button--primary" type="button" aria-busy="true" aria-disabled="true"><span class="button__label">Open the playlist</span></button>
+                <code>loading</code>
+              </li>
+            </ul>
+          </div>
+          <div class="variant">
+            <h3>Secondary</h3>
+            <ul class="states" inert>
+              <li>
+                <button class="button button--secondary" type="button"><span class="button__label">All recommendations</span></button>
+                <code>default</code>
+              </li>
+              <li>
+                <button class="button button--secondary" type="button" data-force="hover"><span class="button__label">All recommendations</span></button>
+                <code>hover</code>
+              </li>
+              <li>
+                <button class="button button--secondary" type="button" data-force="focus"><span class="button__label">All recommendations</span></button>
+                <code>focus</code>
+              </li>
+              <li>
+                <button class="button button--secondary" type="button" data-force="active"><span class="button__label">All recommendations</span></button>
+                <code>active</code>
+              </li>
+              <li>
+                <button class="button button--secondary" type="button" disabled><span class="button__label">All recommendations</span></button>
+                <code>disabled</code>
+              </li>
+              <li>
+                <button class="button button--secondary" type="button" aria-busy="true" aria-disabled="true"><span class="button__label">All recommendations</span></button>
+                <code>loading</code>
+              </li>
+            </ul>
+          </div>
+          <div class="variant">
+            <h3>Try it</h3>
+            <ul class="states">
+              <li><button class="button button--primary" type="button"><span class="button__label">Open the playlist</span></button></li>
+              <li><button class="button button--secondary" type="button"><span class="button__label">All recommendations</span></button></li>
+              <li><button class="button button--secondary" type="button"><span class="button__label">Todas as recomendações de livros</span></button></li>
+            </ul>
+          </div>
+        </section>
+
+        <section class="surface" data-band="lime" aria-labelledby="lime-title">
+          <h2 id="lime-title">Lime</h2>
+          <div class="variant">
+            <h3>Primary</h3>
+            <ul class="states" inert>
+              <li>
+                <button class="button button--primary" type="button"><span class="button__label">Open the playlist</span></button>
+                <code>default</code>
+              </li>
+              <li>
+                <button class="button button--primary" type="button" data-force="hover"><span class="button__label">Open the playlist</span></button>
+                <code>hover</code>
+              </li>
+              <li>
+                <button class="button button--primary" type="button" data-force="focus"><span class="button__label">Open the playlist</span></button>
+                <code>focus</code>
+              </li>
+              <li>
+                <button class="button button--primary" type="button" data-force="active"><span class="button__label">Open the playlist</span></button>
+                <code>active</code>
+              </li>
+              <li>
+                <button class="button button--primary" type="button" disabled><span class="button__label">Open the playlist</span></button>
+                <code>disabled</code>
+              </li>
+              <li>
+                <button class="button button--primary" type="button" aria-busy="true" aria-disabled="true"><span class="button__label">Open the playlist</span></button>
+                <code>loading</code>
+              </li>
+            </ul>
+          </div>
+          <div class="variant">
+            <h3>Secondary</h3>
+            <ul class="states" inert>
+              <li>
+                <button class="button button--secondary" type="button"><span class="button__label">All recommendations</span></button>
+                <code>default</code>
+              </li>
+              <li>
+                <button class="button button--secondary" type="button" data-force="hover"><span class="button__label">All recommendations</span></button>
+                <code>hover</code>
+              </li>
+              <li>
+                <button class="button button--secondary" type="button" data-force="focus"><span class="button__label">All recommendations</span></button>
+                <code>focus</code>
+              </li>
+              <li>
+                <button class="button button--secondary" type="button" data-force="active"><span class="button__label">All recommendations</span></button>
+                <code>active</code>
+              </li>
+              <li>
+                <button class="button button--secondary" type="button" disabled><span class="button__label">All recommendations</span></button>
+                <code>disabled</code>
+              </li>
+              <li>
+                <button class="button button--secondary" type="button" aria-busy="true" aria-disabled="true"><span class="button__label">All recommendations</span></button>
+                <code>loading</code>
+              </li>
+            </ul>
+          </div>
+          <div class="variant">
+            <h3>Try it</h3>
+            <ul class="states">
+              <li><button class="button button--primary" type="button"><span class="button__label">Open the playlist</span></button></li>
+              <li><button class="button button--secondary" type="button"><span class="button__label">All recommendations</span></button></li>
+              <li><button class="button button--secondary" type="button"><span class="button__label">Todas as recomendações de livros</span></button></li>
+            </ul>
+          </div>
+        </section>
+
+        <section class="surface" data-band="charcoal" aria-labelledby="charcoal-title">
+          <h2 id="charcoal-title">Charcoal</h2>
+          <div class="variant">
+            <h3>Primary</h3>
+            <ul class="states" inert>
+              <li>
+                <button class="button button--primary" type="button"><span class="button__label">Open the playlist</span></button>
+                <code>default</code>
+              </li>
+              <li>
+                <button class="button button--primary" type="button" data-force="hover"><span class="button__label">Open the playlist</span></button>
+                <code>hover</code>
+              </li>
+              <li>
+                <button class="button button--primary" type="button" data-force="focus"><span class="button__label">Open the playlist</span></button>
+                <code>focus</code>
+              </li>
+              <li>
+                <button class="button button--primary" type="button" data-force="active"><span class="button__label">Open the playlist</span></button>
+                <code>active</code>
+              </li>
+              <li>
+                <button class="button button--primary" type="button" disabled><span class="button__label">Open the playlist</span></button>
+                <code>disabled</code>
+              </li>
+              <li>
+                <button class="button button--primary" type="button" aria-busy="true" aria-disabled="true"><span class="button__label">Open the playlist</span></button>
+                <code>loading</code>
+              </li>
+            </ul>
+          </div>
+          <div class="variant">
+            <h3>Secondary</h3>
+            <ul class="states" inert>
+              <li>
+                <button class="button button--secondary" type="button"><span class="button__label">All recommendations</span></button>
+                <code>default</code>
+              </li>
+              <li>
+                <button class="button button--secondary" type="button" data-force="hover"><span class="button__label">All recommendations</span></button>
+                <code>hover</code>
+              </li>
+              <li>
+                <button class="button button--secondary" type="button" data-force="focus"><span class="button__label">All recommendations</span></button>
+                <code>focus</code>
+              </li>
+              <li>
+                <button class="button button--secondary" type="button" data-force="active"><span class="button__label">All recommendations</span></button>
+                <code>active</code>
+              </li>
+              <li>
+                <button class="button button--secondary" type="button" disabled><span class="button__label">All recommendations</span></button>
+                <code>disabled</code>
+              </li>
+              <li>
+                <button class="button button--secondary" type="button" aria-busy="true" aria-disabled="true"><span class="button__label">All recommendations</span></button>
+                <code>loading</code>
+              </li>
+            </ul>
+          </div>
+          <div class="variant">
+            <h3>Try it</h3>
+            <ul class="states">
+              <li><button class="button button--primary" type="button"><span class="button__label">Open the playlist</span></button></li>
+              <li><button class="button button--secondary" type="button"><span class="button__label">All recommendations</span></button></li>
+              <li><button class="button button--secondary" type="button"><span class="button__label">Todas as recomendações de livros</span></button></li>
+            </ul>
+          </div>
+        </section>
+      </div>
+    </main>
+
+    <footer class="foot" data-band="purple">
+      <p>Design prototype. A reference for the front end, not production code.</p>
+    </footer>
+  </body>
+</html>
