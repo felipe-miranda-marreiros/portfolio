@@ -64,7 +64,7 @@
   outline-offset: var(--focus-ring-offset);
 }
 
-/* The transparent border matches the primary Button's, so the two stand the same height. */
+/* The transparent border matches the primary Button's, so the two stand the same height on the Portfolio. */
 .link--action {
   display: inline-block;
   margin-inline-start: 0;
