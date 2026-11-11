@@ -26,3 +26,11 @@
   font-variant-numeric: tabular-nums;
   overflow-wrap: anywhere;
 }
+
+/* Forced colours drop the Portfolio's Tint fill, its chip's only edge, so draw one in the system's text colour. */
+@media (forced-colors: active) {
+  .chip {
+    border-width: max(var(--chip-line-width), var(--line-width));
+    border-color: CanvasText;
+  }
+}
