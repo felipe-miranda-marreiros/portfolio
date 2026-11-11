@@ -191,7 +191,7 @@ Portfolio recoloured, or anything corporate or cold.
 
 It loads over the Portfolio's tokens and redefines the same names, so the shared components take most of its look
 through tokens; the differences that have no token yet are listed under Components. Spacing and motion stay the
-Portfolio's, except a longer link nudge (3px) to match its 3px rules. It has one theme and no photo. Each band sets
+Portfolio's, except a longer link nudge (3px) and a wider chip gap (0.5rem) to clear its 3px rules. It has one theme and no photo. Each band sets
 every colour token itself, so a component inside a band takes that band's colours. Illustration is optional: the language works without it, and the first band reserves a slot
 for one.
 
@@ -386,7 +386,7 @@ mobile. A specimen that is a single row of samples shrinks its samples to stay o
 
 ### About me
 
-The Portfolio's column (76rem max), gutter and spacing rhythm, unchanged. Every band runs full-bleed and aligns its
+The Portfolio's column (76rem max), gutter and spacing rhythm, unchanged, except chips 0.5rem apart. Every band runs full-bleed and aligns its
 content to the shared edge. Content bands pad 4rem above and below on narrow screens and 6rem from 44rem; the intro
 follows them like every content band. The bar pads 1rem above and below, the Footer 2rem. From 44rem the intro splits
 into the title column and the illustration slot (12rem to 18rem), aligned to their foot; on narrow screens the slot
@@ -433,9 +433,9 @@ links, and on hover and focus for lineup items. The illustration slot is 3:1 on 
 
 ## Components
 
-The Button and the Link are built in the prototype (`prototype/components/button/`, `prototype/components/link/`); the
-rest are the primitives the prototype's token specimens establish, to be confirmed by each component's own PR. Every component takes every visual value from tokens
-and holds no visible text.
+The Button, the Link and the Chip are built in the prototype (`prototype/components/button/`, `link/`, `chip/`); the
+rest are the primitives the prototype's token specimens establish, to be confirmed by each component's own PR. Every
+component takes every visual value from tokens and holds no visible text.
 
 ### Buttons
 - **Shape:** gently rounded (8px), Small text at the control weight (600), padding 0.5rem by 1rem, inside a one-pixel
@@ -466,7 +466,12 @@ Built in the prototype (`prototype/components/link/`).
 - No visited colour: every link reads the same, visited or not.
 
 ### Chips
-- **Style:** Martian Mono at label size, Tint fill, Secondary Ink text, 4px corners, padding 2px by 0.5rem, no border.
+Built in the prototype (`prototype/components/chip/`).
+- **Style:** Martian Mono at label size and body weight (`--weight-chip`), no tracking (`--tracking-chip`), set as-is,
+  with tabular numerals; Tint fill, Secondary Ink text, 4px corners, padding 2px by 0.5rem (`--chip-padding-block`, off
+  the 4px rhythm so a tag stays as short as its label), no border (`--chip-line-width: 0`).
+- **Set:** chips wrap in a row 0.25rem apart (`--chip-gap`); a long name wraps inside its chip rather than overflow.
+- **States:** none; a chip is a static tag.
 
 ### Panel grid cells
 - **Corner Style:** the grid rounds its outer corners (12px); cells are square.
@@ -492,11 +497,9 @@ Built in the prototype (`prototype/components/link/`).
 
 The shared components take About me's square corners, 3px rules and band colours through tokens. These differences
 have no token yet, so the prototype sets them in About me's page CSS; each component's PR adds the token it needs:
-- the chip's border and tracking: a 3px ink outline and 0.06em on About me, a Tint fill with no border on the Portfolio;
 - the toggle's pressed state: an ink fill with ground text on About me, a Tint fill on the Portfolio;
 - the toggle's type role: Label on About me, Small at the control weight on the Portfolio;
 - the error message's weight: the control weight (700) on About me;
-- the chip's weight and gap: 400 and `--space-1` on the Portfolio, `--weight-label` and `--space-2` on About me;
 - the Footer: a hairline above it and 1.5rem block padding on the Portfolio, no top rule and 2rem block padding on About
   me.
 
@@ -506,8 +509,8 @@ have no token yet, so the prototype sets them in About me's page CSS; each compo
   **Loading:** the ring is drawn at 3px. Both sink 1px when pressed, as on the Portfolio.
 - **Inputs / Fields:** a 3px ink border, square. **Error:** the border becomes a dashed 3px ink rule
   (`--error-line-style: dashed`) with a Small message at the control weight, in ink.
-- **Chips:** Archivo at label size, set as-is with no case change, square, outlined in a 3px ink rule on a transparent
-  fill.
+- **Chips:** the Chip, through tokens: Archivo at label size and the label weight (800), 0.06em tracking, set as-is
+  with no case change, square, outlined in a 3px ink rule (`--chip-line-width`) on a transparent fill, 0.5rem apart.
 - **Navigation:** the bar sits on purple over a 3px ink rule, the name left in Big Shoulders 900 uppercase at title
   size, the language toggle right: a square, 3px-outlined EN and PT control in uppercase label type that underlines in
   the Key colour on hover and fills with the ink, ground as text, when pressed. There is no theme switch.

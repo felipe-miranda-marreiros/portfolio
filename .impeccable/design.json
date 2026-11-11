@@ -1,6 +1,6 @@
 {
   "schemaVersion": 2,
-  "generatedAt": "2026-11-10T18:00:00Z",
+  "generatedAt": "2026-11-11T00:00:00Z",
   "title": "Design System: Portfolio",
   "extensions": {
     "colorMeta": {
@@ -107,7 +107,11 @@
       { "name": "about-me-line-width", "value": "3px", "purpose": "About me: every rule, outline and border." },
       { "name": "about-me-indicator-width", "value": "3px", "purpose": "About me: the loading ring's stroke, matching its rules." },
       { "name": "link-hover-line", "value": "none", "purpose": "A link's hover, focus and press line; the Portfolio changes colour only." },
-      { "name": "about-me-link-hover-line", "value": "underline", "purpose": "About me: a 3px underline in Key on hover, focus and press." }
+      { "name": "about-me-link-hover-line", "value": "underline", "purpose": "About me: a 3px underline in Key on hover, focus and press." },
+      { "name": "chip-line-width", "value": "0px", "purpose": "The chip's outline; none on the Portfolio, the 3px rule on About me." },
+      { "name": "chip-padding-block", "value": "2px", "purpose": "A chip's block padding, off the 4px rhythm so a tag stays as short as its label." },
+      { "name": "chip-gap", "value": "var(--space-1)", "purpose": "The gap in a set of chips; About me sets --space-2 to clear its outlines." },
+      { "name": "chip-type", "value": "--weight-chip: 400, --tracking-chip: 0", "purpose": "The chip's weight and tracking; About me sets its label weight (800) and 0.06em." }
     ],
     "breakpoints": [
       { "name": "grid-2col", "value": "44rem" },
@@ -164,9 +168,9 @@
       "name": "Chip",
       "kind": "chip",
       "refersTo": "chip",
-      "description": "Mono tag on a faint ink tint.",
-      "html": "<ul class=\"ds-chips\"><li>--color-ink</li><li>--space-4</li></ul>",
-      "css": ".ds-chips { display: flex; flex-wrap: wrap; gap: var(--space-1); padding: 0; margin: 0; list-style: none; font-family: var(--font-mono); font-size: var(--text-label); font-variant-numeric: tabular-nums; } .ds-chips li { padding: 2px var(--space-2); border-radius: var(--radius-chip); background: var(--color-tint); color: var(--color-ink-secondary); line-height: var(--leading-label); }"
+      "description": "A static tag in the monospace. Built in prototype/components/chip/.",
+      "html": "<ul class=\"ds-chips\"><li class=\"ds-chip\">TypeScript</li><li class=\"ds-chip\">--color-ink</li><li class=\"ds-chip\">2019–2024</li></ul>",
+      "css": ".ds-chips { display: flex; flex-wrap: wrap; gap: var(--chip-gap); margin: 0; padding: 0; list-style: none; } .ds-chip { min-width: 0; padding: var(--chip-padding-block) var(--space-2); border: var(--chip-line-width) solid var(--color-hairline-control); border-radius: var(--radius-chip); background: var(--color-tint); color: var(--color-ink-secondary); font-family: var(--font-mono); font-size: var(--text-label); font-weight: var(--weight-chip); line-height: var(--leading-label); letter-spacing: var(--tracking-chip); font-variant-numeric: tabular-nums; overflow-wrap: anywhere; }"
     },
     {
       "name": "Panel Grid Cell",
@@ -234,7 +238,7 @@
     ],
     "aboutMe": {
       "northStar": "Loud Bands, Quiet Person",
-      "overview": "About me's Visual language sets the Owner's interests, recommendations and studies like a gig poster: flat colour bands, one per Section, a condensed uppercase display that runs the band's width, and lists set as a poster's billing. It is loud and warm where the Portfolio is quiet, and it never looks like a social profile, a gamer costume, the Portfolio recoloured, or anything corporate or cold.\n\nIt loads over the Portfolio's tokens and redefines the same names, so the shared components take most of its look through tokens; the differences that have no token yet are listed under Components. Spacing and motion stay the Portfolio's, except a longer link nudge (3px) to match its 3px rules. It has one theme and no photo. Each band sets every colour token itself, so a component inside a band takes that band's colours. Illustration is optional: the language works without it, and the first band reserves a slot for one.",
+      "overview": "About me's Visual language sets the Owner's interests, recommendations and studies like a gig poster: flat colour bands, one per Section, a condensed uppercase display that runs the band's width, and lists set as a poster's billing. It is loud and warm where the Portfolio is quiet, and it never looks like a social profile, a gamer costume, the Portfolio recoloured, or anything corporate or cold.\n\nIt loads over the Portfolio's tokens and redefines the same names, so the shared components take most of its look through tokens; the differences that have no token yet are listed under Components. Spacing and motion stay the Portfolio's, except a longer link nudge (3px) and a wider chip gap (0.5rem) to clear its 3px rules. It has one theme and no photo. Each band sets every colour token itself, so a component inside a band takes that band's colours. Illustration is optional: the language works without it, and the first band reserves a slot for one.",
       "keyCharacteristics": [
         "Four flat bands, purple, sunset orange, lime and charcoal, rotating one per Section.",
         "One theme and no theme switch; no photo; the language toggle keeps its place.",
