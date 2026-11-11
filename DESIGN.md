@@ -237,7 +237,7 @@ at a lower alpha or mixed into the ground, and error is the only hue.
 - **Hairline Hover** (26%): the brightened edge of a hovered or focused panel and of a hovered secondary button.
 - **Hairline Control** (22%): the outline of secondary controls, the theme switch and swatch edges.
 - **Hairline Input** (52% ink on paper, 44% bone on night): input borders, which identify the control and so meet 3:1
-  against the ground.
+  against the ground, and the pressed Toggle option's edge, which carries that state to 3:1.
 - **Tint** (7%) and **Tint Hover** (4%): chip fills, the pressed Toggle option and the pressed secondary button; the faint fill of a hovered secondary
   button.
 - **Night Wash** and **Paper Wash** (2% of the ink mixed into the ground): the hovered or focused panel cell. Opaque,
@@ -299,9 +299,9 @@ component never sets a palette colour; it reads the tokens of the band it sits i
 **The One Ink Rule.** Each band has one ink at full strength: secondary, muted, hairline, control and input colours are
 the ink itself, and tints are transparent. On sunset any alpha step below full ink drops under 4.5:1. Three lines take
 another colour: the lineup's block rules are in Key; a hovered edge (`--color-hairline-hover`,
-`--color-action-hover-edge`) is the Display colour; and underlines are 3px in Key or Key Alt, on hover for the language
-toggle, whose focus already shows the 3px ring, on hover, focus and press for band links, and on hover and focus for
-lineup items.
+`--color-action-hover-edge`) is the Display colour; and underlines are 3px in Key or Key Alt, on hover and while held
+for the language toggle, whose focus already shows the 3px ring, on hover, focus and press for band links, and on hover
+and focus for lineup items.
 
 **The Cream Is Large Rule.** Cream holds only 3.3:1 on sunset, so on the sunset ground it sets large type only: display,
 headlines and the billing keys. On the charcoal action fill it is the action's text, at 15:1.
@@ -389,7 +389,8 @@ share a baseline. Cells pad 1.5rem on narrow screens and 2rem from 44rem. The gr
 one column on mobile; two columns from 44rem, where wide cells span both and compact ones pair up; three columns from
 68rem, where wide cells span two and full-width rows close the grid across all three. Mobile and desktop have equal
 priority: grids collapse to one column and splits stack, heading first, and nothing a desktop row shows is dropped on
-mobile. A specimen that is a single row of samples shrinks its samples to stay on one row rather than orphan the last.
+mobile. A specimen that is a single row of samples shrinks its samples to stay on one row rather than orphan the last; a
+component page's state samples, all one width, sit on even tracks instead.
 
 ### About me
 
@@ -436,8 +437,8 @@ is small, in a softly rounded square with a hairline edge, plain, with no effect
 
 Square, like a printed poster: chips, controls, the photo radius and panels at 0; only truly round things stay round
 (999px). Every line is a 3px rule in the band's ink, except the lineup's block rules, in Key; a hovered edge, in the
-Display colour; and underlines, in Key or Key Alt, on hover for the language toggle, on hover, focus and press for band
-links, and on hover and focus for lineup items. The illustration slot is 3:1 on narrow screens and 4:5 from 44rem.
+Display colour; and underlines, in Key or Key Alt, on hover and while held for the language toggle, on hover,
+focus and press for band links, and on hover and focus for lineup items. The illustration slot is 3:1 on narrow screens and 4:5 from 44rem.
 
 ## Components
 
