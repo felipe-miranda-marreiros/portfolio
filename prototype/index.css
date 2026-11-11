@@ -186,8 +186,7 @@ a {
   .cell--color,
   .cell--type,
   .cell--state,
-  .cell--about-me,
-  .cell--components {
+  .cell--about-me {
     grid-column: span 2;
   }
 }
@@ -202,7 +201,7 @@ a {
       "type type motion"
       "state state state"
       "about-me about-me about-me"
-      "components components components";
+      "button button link";
   }
 
   .cell--color {
@@ -237,8 +236,12 @@ a {
     grid-area: about-me;
   }
 
-  .cell--components {
-    grid-area: components;
+  .cell--button {
+    grid-area: button;
+  }
+
+  .cell--link {
+    grid-area: link;
   }
 }
 
