@@ -1,0 +1,85 @@
+/**
+ * Link: text with an arrow that leads somewhere, from tokens only. The action variant is the view's one filled action.
+ * Markup: <a class="link" href="…">…</a>, or class="link link--action".
+ * `data-force` pins a state so the prototype page can show it without interaction.
+ */
+.link {
+  font-family: var(--font-sans);
+  font-size: var(--text-link);
+  font-weight: var(--weight-link);
+  line-height: var(--leading-link);
+  letter-spacing: var(--tracking-link);
+  text-transform: var(--case-link);
+  color: var(--color-ink-secondary);
+  text-decoration: none;
+  text-underline-offset: var(--underline-offset);
+  text-wrap: pretty;
+  -webkit-tap-highlight-color: transparent;
+  transition: color var(--duration-fast) var(--ease-out);
+}
+
+/*
+ * Inline-block keeps the arrow out of the underline and lets it follow the last line when the text wraps.
+ * The end margin reserves the nudge, so the hovered arrow never meets the focus ring.
+ */
+.link::after {
+  content: "";
+  display: inline-block;
+  width: var(--icon-size);
+  height: var(--icon-size);
+  margin-inline: var(--space-2) var(--nudge);
+  vertical-align: -0.125em;
+  background: currentColor;
+  mask: var(--icon-arrow) center / contain no-repeat;
+  transition: translate var(--duration-fast) var(--ease-out);
+}
+
+.link:where(:hover, :focus-visible, :active, [data-force~="hover"], [data-force~="focus"], [data-force~="active"]) {
+  color: var(--color-ink);
+  text-decoration-line: var(--link-hover-line);
+  text-decoration-thickness: var(--line-width);
+  text-decoration-color: var(--color-key);
+}
+
+.link:where(
+  :hover,
+  :focus-visible,
+  :active,
+  [data-force~="hover"],
+  [data-force~="focus"],
+  [data-force~="active"]
+)::after {
+  translate: var(--nudge) 0;
+}
+
+.link:is(:focus-visible, [data-force~="focus"]) {
+  outline: var(--focus-ring-width) solid var(--focus-ring-color);
+  outline-offset: var(--focus-ring-offset);
+}
+
+.link--action {
+  display: inline-block;
+  padding: var(--space-2) var(--space-4);
+  border-radius: var(--radius-control);
+  background: var(--color-action);
+  color: var(--color-on-action);
+  font-weight: var(--weight-control);
+  outline: var(--line-width) solid transparent;
+  outline-offset: var(--focus-ring-offset);
+  transition:
+    background-color var(--duration-fast) var(--ease-out),
+    outline-color var(--duration-fast) var(--ease-out);
+}
+
+.link--action:where(:hover, :active, [data-force~="hover"], [data-force~="active"]) {
+  color: var(--color-on-action);
+  text-decoration-line: none;
+  background: var(--color-action-hover);
+  outline-color: var(--color-action-hover-edge);
+}
+
+.link--action:is(:focus-visible, [data-force~="focus"]) {
+  color: var(--color-on-action);
+  text-decoration-line: none;
+  outline: var(--focus-ring-width) solid var(--focus-ring-color);
+}

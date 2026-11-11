@@ -1,0 +1,142 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Link · Portfolio prototype</title>
+    <link rel="preload" href="../../fonts/schibsted-grotesk.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="preload" href="../../fonts/martian-mono.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="stylesheet" href="../../tokens.css" />
+    <link rel="stylesheet" href="../specimen.css" />
+    <link rel="stylesheet" href="link.css" />
+  </head>
+  <body>
+    <header class="specimen-bar">
+      <a href="../../index.html">Visual language</a>
+    </header>
+
+    <main>
+      <div class="specimen-intro">
+        <h1>Link</h1>
+        <p>
+          Text with an arrow that leads somewhere, and its action variant, the view's one filled action, in every state
+          on both themes. The last row responds to the pointer and the keyboard.
+        </p>
+      </div>
+
+      <div class="surfaces">
+        <section class="surface" data-scheme="dark" aria-labelledby="dark-title">
+          <h2 id="dark-title">Dark</h2>
+          <div class="variant">
+            <h3>Link</h3>
+            <ul class="states" inert>
+              <li>
+                <a class="link" href="../../index.html">Read the experience</a>
+                <code>default</code>
+              </li>
+              <li>
+                <a class="link" href="../../index.html" data-force="hover">Read the experience</a>
+                <code>hover</code>
+              </li>
+              <li>
+                <a class="link" href="../../index.html" data-force="focus">Read the experience</a>
+                <code>focus</code>
+              </li>
+              <li>
+                <a class="link" href="../../index.html" data-force="active">Read the experience</a>
+                <code>active</code>
+              </li>
+            </ul>
+          </div>
+          <div class="variant">
+            <h3>Action</h3>
+            <ul class="states" inert>
+              <li>
+                <a class="link link--action" href="../../index.html">Download CV</a>
+                <code>default</code>
+              </li>
+              <li>
+                <a class="link link--action" href="../../index.html" data-force="hover">Download CV</a>
+                <code>hover</code>
+              </li>
+              <li>
+                <a class="link link--action" href="../../index.html" data-force="focus">Download CV</a>
+                <code>focus</code>
+              </li>
+              <li>
+                <a class="link link--action" href="../../index.html" data-force="active">Download CV</a>
+                <code>active</code>
+              </li>
+            </ul>
+          </div>
+          <div class="variant">
+            <h3>Try it</h3>
+            <ul class="states">
+              <li><a class="link link--action" href="../../index.html">Download CV</a></li>
+              <li><a class="link" href="../../index.html">Read the experience</a></li>
+              <li><a class="link" href="../../index.html">Ler a experiência completa, com cada função, seu impacto e as tecnologias usadas</a></li>
+            </ul>
+          </div>
+        </section>
+
+        <section class="surface" data-scheme="light" aria-labelledby="light-title">
+          <h2 id="light-title">Light</h2>
+          <div class="variant">
+            <h3>Link</h3>
+            <ul class="states" inert>
+              <li>
+                <a class="link" href="../../index.html">Read the experience</a>
+                <code>default</code>
+              </li>
+              <li>
+                <a class="link" href="../../index.html" data-force="hover">Read the experience</a>
+                <code>hover</code>
+              </li>
+              <li>
+                <a class="link" href="../../index.html" data-force="focus">Read the experience</a>
+                <code>focus</code>
+              </li>
+              <li>
+                <a class="link" href="../../index.html" data-force="active">Read the experience</a>
+                <code>active</code>
+              </li>
+            </ul>
+          </div>
+          <div class="variant">
+            <h3>Action</h3>
+            <ul class="states" inert>
+              <li>
+                <a class="link link--action" href="../../index.html">Download CV</a>
+                <code>default</code>
+              </li>
+              <li>
+                <a class="link link--action" href="../../index.html" data-force="hover">Download CV</a>
+                <code>hover</code>
+              </li>
+              <li>
+                <a class="link link--action" href="../../index.html" data-force="focus">Download CV</a>
+                <code>focus</code>
+              </li>
+              <li>
+                <a class="link link--action" href="../../index.html" data-force="active">Download CV</a>
+                <code>active</code>
+              </li>
+            </ul>
+          </div>
+          <div class="variant">
+            <h3>Try it</h3>
+            <ul class="states">
+              <li><a class="link link--action" href="../../index.html">Download CV</a></li>
+              <li><a class="link" href="../../index.html">Read the experience</a></li>
+              <li><a class="link" href="../../index.html">Ler a experiência completa, com cada função, seu impacto e as tecnologias usadas</a></li>
+            </ul>
+          </div>
+        </section>
+      </div>
+    </main>
+
+    <footer class="foot">
+      <p>Design prototype. A reference for the front end, not production code. <a href="about-me.html">See it on About me's bands</a>.</p>
+    </footer>
+  </body>
+</html>
