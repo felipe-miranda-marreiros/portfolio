@@ -8,6 +8,7 @@
     <link rel="preload" href="fonts/martian-mono.woff2" as="font" type="font/woff2" crossorigin />
     <link rel="stylesheet" href="tokens.css" />
     <link rel="stylesheet" href="components/link/link.css" />
+    <link rel="stylesheet" href="components/toggle/toggle.css" />
     <link rel="stylesheet" href="components/chip/chip.css" />
     <link rel="stylesheet" href="index.css" />
     <script src="index.js" defer></script>
@@ -15,10 +16,10 @@
   <body>
     <header class="bar">
       <a class="bar__name" href="index.html">Portfolio</a>
-      <fieldset class="theme-switch">
-        <legend class="visually-hidden">Theme</legend>
-        <button type="button" data-theme-choice="dark" aria-pressed="true">Dark</button>
-        <button type="button" data-theme-choice="light" aria-pressed="false">Light</button>
+      <fieldset class="toggle">
+        <legend>Theme</legend>
+        <button class="toggle__option" type="button" data-theme-choice="dark" aria-pressed="true">Dark</button>
+        <button class="toggle__option" type="button" data-theme-choice="light" aria-pressed="false">Light</button>
       </fieldset>
     </header>
 
@@ -298,6 +299,19 @@
             <li class="chip">long content</li>
           </ul>
           <a class="cell__link link" href="components/chip/index.html">Open the Chip</a>
+        </section>
+
+        <section data-link-host class="cell cell--toggle" aria-labelledby="toggle-title">
+          <h2 class="cell__title" id="toggle-title">Toggle</h2>
+          <p class="cell__note">A segmented control with one option pressed: the theme switch and the language toggle.</p>
+          <ul class="chips" aria-label="Toggle states">
+            <li class="chip">default</li>
+            <li class="chip">hover</li>
+            <li class="chip">active</li>
+            <li class="chip">focus</li>
+            <li class="chip">pressed</li>
+          </ul>
+          <a class="cell__link link" href="components/toggle/index.html">Open the Toggle</a>
         </section>
       </div>
     </main>
