@@ -9,16 +9,17 @@
     <link rel="stylesheet" href="../tokens.css" />
     <link rel="stylesheet" href="tokens.css" />
     <link rel="stylesheet" href="../components/chip/chip.css" />
+    <link rel="stylesheet" href="../components/toggle/toggle.css" />
     <link rel="stylesheet" href="index.css" />
-    <script src="index.js" defer></script>
+    <script src="../components/toggle/toggle.js" defer></script>
   </head>
   <body>
     <header class="bar" data-band="purple">
       <a class="bar__name" href="../index.html">Portfolio</a>
-      <fieldset class="lang-toggle">
-        <legend class="visually-hidden">Language</legend>
-        <button type="button" data-lang-choice="en" aria-pressed="true">EN</button>
-        <button type="button" data-lang-choice="pt" aria-pressed="false">PT</button>
+      <fieldset class="toggle">
+        <legend>Language</legend>
+        <button class="toggle__option" type="button" data-lang-choice="en" aria-pressed="true">EN</button>
+        <button class="toggle__option" type="button" data-lang-choice="pt" aria-pressed="false">PT</button>
       </fieldset>
     </header>
 
@@ -144,7 +145,7 @@
         <p class="band__note">
           Square corners and 3px ink rules, no blur. An error is a dashed rule and its message, never a colour, since
           no single hue reads on all four bands. Spacing and motion come from the Portfolio's tokens, except a wider
-          chip gap and a longer link nudge to clear the 3px rules.
+          chip gap, a longer link nudge and a Toggle with no inset, to suit the 3px rules.
         </p>
         <div class="band__tokens">
           <ul class="chips" aria-label="Shape, line, state, spacing and motion tokens">
