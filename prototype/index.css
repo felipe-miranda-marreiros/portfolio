@@ -285,46 +285,8 @@ a {
 }
 
 .cell__link {
-  display: inline-flex;
-  align-items: center;
-  gap: var(--space-2);
   align-self: flex-start;
   margin-top: auto;
-  font-size: var(--text-small);
-  font-weight: var(--weight-control);
-  color: var(--color-ink-secondary);
-  text-decoration: none;
-  transition: color var(--duration-fast) var(--ease-out);
-}
-
-.cell__link::after {
-  content: "";
-  width: 0.875em;
-  height: 0.875em;
-  background: currentColor;
-  mask:
-    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='none' stroke='black' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M3 8h10M9 4l4 4-4 4'/%3E%3C/svg%3E")
-    center / contain no-repeat;
-  transition: translate var(--duration-fast) var(--ease-out);
-}
-
-.cell:hover .cell__link,
-.cell:focus-within .cell__link {
-  color: var(--color-ink);
-}
-
-.cell:hover .cell__link::after,
-.cell:focus-within .cell__link::after {
-  translate: 2px 0;
-}
-
-.cell__link--primary,
-.cell:hover .cell__link--primary,
-.cell:focus-within .cell__link--primary {
-  padding: var(--space-2) var(--space-4);
-  border-radius: var(--radius-control);
-  background: var(--color-action);
-  color: var(--color-on-action);
 }
 
 .chips {
