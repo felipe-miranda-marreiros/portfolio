@@ -56,14 +56,17 @@ prototype/
 ├── about-me/           # About me's Visual language: its token page, tokens.css and tokens/, which redefine the
 │                       # same token names over the Portfolio's tokens.css
 └── components/
+    ├── specimen.css    # the chrome every component page shares; not a component
     └── button/
         ├── button.css  # the component's styles, from tokens only
         ├── button.js   # only when the component has behavior
-        └── index.html  # the component in every state
+        ├── index.html  # the component in every state, on both of the Portfolio's themes
+        └── about-me.html # the same states on each of About me's bands, over about-me/tokens.css
 ```
 
-- One folder per component, with its own files and its own prototype page; never put several components in one file.
-- Each page links only the files it needs: `tokens.css` and its components' files.
+- One folder per component, with its own files and its own prototype pages; never put several components in one file.
+- Each page links only the files it needs: `tokens.css` (and `about-me/tokens.css` on an About me page),
+  `components/specimen.css` and its components' files.
 - Prototype pages may hold placeholder text to show a component; components themselves still hold none.
 
 ## Impeccable artifacts
