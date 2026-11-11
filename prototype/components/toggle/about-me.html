@@ -1,0 +1,277 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Toggle on About me · Portfolio prototype</title>
+    <link rel="preload" href="../../fonts/big-shoulders-display.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="preload" href="../../fonts/archivo.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="stylesheet" href="../../tokens.css" />
+    <link rel="stylesheet" href="../../about-me/tokens.css" />
+    <link rel="stylesheet" href="../specimen.css" />
+    <link rel="stylesheet" href="toggle.css" />
+    <script src="toggle.js" defer></script>
+  </head>
+  <body>
+    <header class="specimen-bar" data-band="purple">
+      <a href="index.html">Toggle on the Portfolio</a>
+    </header>
+
+    <main>
+      <div class="specimen-intro" data-band="purple">
+        <h1>Toggle</h1>
+        <p>The language toggle on each of About me's bands, restyled through tokens alone. About me has no theme switch.</p>
+      </div>
+
+      <div class="surfaces surfaces--bands">
+        <section class="surface" data-band="purple" aria-labelledby="purple-title">
+          <h2 id="purple-title">Purple</h2>
+          <div class="variant">
+            <h3>Language</h3>
+            <ul class="states states--even" inert>
+              <li>
+                <fieldset class="toggle">
+                  <legend>Language</legend>
+                  <button class="toggle__option" type="button" aria-pressed="true">EN</button>
+                  <button class="toggle__option" type="button" aria-pressed="false">PT</button>
+                </fieldset>
+                <code>default</code>
+              </li>
+              <li>
+                <fieldset class="toggle">
+                  <legend>Language</legend>
+                  <button class="toggle__option" type="button" aria-pressed="true">EN</button>
+                  <button class="toggle__option" type="button" aria-pressed="false" data-force="hover">PT</button>
+                </fieldset>
+                <code>hover</code>
+              </li>
+              <li>
+                <fieldset class="toggle">
+                  <legend>Language</legend>
+                  <button class="toggle__option" type="button" aria-pressed="true">EN</button>
+                  <button class="toggle__option" type="button" aria-pressed="false" data-force="active">PT</button>
+                </fieldset>
+                <code>active</code>
+              </li>
+              <li>
+                <fieldset class="toggle">
+                  <legend>Language</legend>
+                  <button class="toggle__option" type="button" aria-pressed="true">EN</button>
+                  <button class="toggle__option" type="button" aria-pressed="false" data-force="focus">PT</button>
+                </fieldset>
+                <code>focus</code>
+              </li>
+              <li>
+                <fieldset class="toggle">
+                  <legend>Language</legend>
+                  <button class="toggle__option" type="button" aria-pressed="true" data-force="focus">EN</button>
+                  <button class="toggle__option" type="button" aria-pressed="false">PT</button>
+                </fieldset>
+                <code>pressed, focus</code>
+              </li>
+            </ul>
+          </div>
+          <div class="variant">
+            <h3>Try it</h3>
+            <ul class="states states--even">
+              <li>
+                <fieldset class="toggle">
+                  <legend>Language</legend>
+                  <button class="toggle__option" type="button" aria-pressed="true">EN</button>
+                  <button class="toggle__option" type="button" aria-pressed="false">PT</button>
+                </fieldset>
+              </li>
+            </ul>
+          </div>
+        </section>
+
+        <section class="surface" data-band="sunset" aria-labelledby="sunset-title">
+          <h2 id="sunset-title">Sunset</h2>
+          <div class="variant">
+            <h3>Language</h3>
+            <ul class="states states--even" inert>
+              <li>
+                <fieldset class="toggle">
+                  <legend>Language</legend>
+                  <button class="toggle__option" type="button" aria-pressed="true">EN</button>
+                  <button class="toggle__option" type="button" aria-pressed="false">PT</button>
+                </fieldset>
+                <code>default</code>
+              </li>
+              <li>
+                <fieldset class="toggle">
+                  <legend>Language</legend>
+                  <button class="toggle__option" type="button" aria-pressed="true">EN</button>
+                  <button class="toggle__option" type="button" aria-pressed="false" data-force="hover">PT</button>
+                </fieldset>
+                <code>hover</code>
+              </li>
+              <li>
+                <fieldset class="toggle">
+                  <legend>Language</legend>
+                  <button class="toggle__option" type="button" aria-pressed="true">EN</button>
+                  <button class="toggle__option" type="button" aria-pressed="false" data-force="active">PT</button>
+                </fieldset>
+                <code>active</code>
+              </li>
+              <li>
+                <fieldset class="toggle">
+                  <legend>Language</legend>
+                  <button class="toggle__option" type="button" aria-pressed="true">EN</button>
+                  <button class="toggle__option" type="button" aria-pressed="false" data-force="focus">PT</button>
+                </fieldset>
+                <code>focus</code>
+              </li>
+              <li>
+                <fieldset class="toggle">
+                  <legend>Language</legend>
+                  <button class="toggle__option" type="button" aria-pressed="true" data-force="focus">EN</button>
+                  <button class="toggle__option" type="button" aria-pressed="false">PT</button>
+                </fieldset>
+                <code>pressed, focus</code>
+              </li>
+            </ul>
+          </div>
+          <div class="variant">
+            <h3>Try it</h3>
+            <ul class="states states--even">
+              <li>
+                <fieldset class="toggle">
+                  <legend>Language</legend>
+                  <button class="toggle__option" type="button" aria-pressed="true">EN</button>
+                  <button class="toggle__option" type="button" aria-pressed="false">PT</button>
+                </fieldset>
+              </li>
+            </ul>
+          </div>
+        </section>
+
+        <section class="surface" data-band="lime" aria-labelledby="lime-title">
+          <h2 id="lime-title">Lime</h2>
+          <div class="variant">
+            <h3>Language</h3>
+            <ul class="states states--even" inert>
+              <li>
+                <fieldset class="toggle">
+                  <legend>Language</legend>
+                  <button class="toggle__option" type="button" aria-pressed="true">EN</button>
+                  <button class="toggle__option" type="button" aria-pressed="false">PT</button>
+                </fieldset>
+                <code>default</code>
+              </li>
+              <li>
+                <fieldset class="toggle">
+                  <legend>Language</legend>
+                  <button class="toggle__option" type="button" aria-pressed="true">EN</button>
+                  <button class="toggle__option" type="button" aria-pressed="false" data-force="hover">PT</button>
+                </fieldset>
+                <code>hover</code>
+              </li>
+              <li>
+                <fieldset class="toggle">
+                  <legend>Language</legend>
+                  <button class="toggle__option" type="button" aria-pressed="true">EN</button>
+                  <button class="toggle__option" type="button" aria-pressed="false" data-force="active">PT</button>
+                </fieldset>
+                <code>active</code>
+              </li>
+              <li>
+                <fieldset class="toggle">
+                  <legend>Language</legend>
+                  <button class="toggle__option" type="button" aria-pressed="true">EN</button>
+                  <button class="toggle__option" type="button" aria-pressed="false" data-force="focus">PT</button>
+                </fieldset>
+                <code>focus</code>
+              </li>
+              <li>
+                <fieldset class="toggle">
+                  <legend>Language</legend>
+                  <button class="toggle__option" type="button" aria-pressed="true" data-force="focus">EN</button>
+                  <button class="toggle__option" type="button" aria-pressed="false">PT</button>
+                </fieldset>
+                <code>pressed, focus</code>
+              </li>
+            </ul>
+          </div>
+          <div class="variant">
+            <h3>Try it</h3>
+            <ul class="states states--even">
+              <li>
+                <fieldset class="toggle">
+                  <legend>Language</legend>
+                  <button class="toggle__option" type="button" aria-pressed="true">EN</button>
+                  <button class="toggle__option" type="button" aria-pressed="false">PT</button>
+                </fieldset>
+              </li>
+            </ul>
+          </div>
+        </section>
+
+        <section class="surface" data-band="charcoal" aria-labelledby="charcoal-title">
+          <h2 id="charcoal-title">Charcoal</h2>
+          <div class="variant">
+            <h3>Language</h3>
+            <ul class="states states--even" inert>
+              <li>
+                <fieldset class="toggle">
+                  <legend>Language</legend>
+                  <button class="toggle__option" type="button" aria-pressed="true">EN</button>
+                  <button class="toggle__option" type="button" aria-pressed="false">PT</button>
+                </fieldset>
+                <code>default</code>
+              </li>
+              <li>
+                <fieldset class="toggle">
+                  <legend>Language</legend>
+                  <button class="toggle__option" type="button" aria-pressed="true">EN</button>
+                  <button class="toggle__option" type="button" aria-pressed="false" data-force="hover">PT</button>
+                </fieldset>
+                <code>hover</code>
+              </li>
+              <li>
+                <fieldset class="toggle">
+                  <legend>Language</legend>
+                  <button class="toggle__option" type="button" aria-pressed="true">EN</button>
+                  <button class="toggle__option" type="button" aria-pressed="false" data-force="active">PT</button>
+                </fieldset>
+                <code>active</code>
+              </li>
+              <li>
+                <fieldset class="toggle">
+                  <legend>Language</legend>
+                  <button class="toggle__option" type="button" aria-pressed="true">EN</button>
+                  <button class="toggle__option" type="button" aria-pressed="false" data-force="focus">PT</button>
+                </fieldset>
+                <code>focus</code>
+              </li>
+              <li>
+                <fieldset class="toggle">
+                  <legend>Language</legend>
+                  <button class="toggle__option" type="button" aria-pressed="true" data-force="focus">EN</button>
+                  <button class="toggle__option" type="button" aria-pressed="false">PT</button>
+                </fieldset>
+                <code>pressed, focus</code>
+              </li>
+            </ul>
+          </div>
+          <div class="variant">
+            <h3>Try it</h3>
+            <ul class="states states--even">
+              <li>
+                <fieldset class="toggle">
+                  <legend>Language</legend>
+                  <button class="toggle__option" type="button" aria-pressed="true">EN</button>
+                  <button class="toggle__option" type="button" aria-pressed="false">PT</button>
+                </fieldset>
+              </li>
+            </ul>
+          </div>
+        </section>
+      </div>
+    </main>
+
+    <footer class="foot" data-band="purple">
+      <p>Design prototype. A reference for the front end, not production code.</p>
+    </footer>
+  </body>
+</html>
