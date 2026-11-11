@@ -108,7 +108,7 @@
       { "name": "error", "value": "border: 1px solid var(--color-error)", "purpose": "Fields in error, with a Small message in error." },
       { "name": "line-width", "value": "1px", "purpose": "Every hairline." },
       { "name": "error-line-style", "value": "solid", "purpose": "The error line's style; About me sets it to dashed." },
-      { "name": "about-me-focus-ring", "value": "outline: 3px solid var(--color-ink); outline-offset: 3px", "purpose": "About me: every focusable element, in the band's ink." },
+      { "name": "about-me-focus-ring", "value": "outline: 3px solid var(--color-ink); outline-offset: 3px", "purpose": "About me: every focusable element, in the band's ink, except Toggle options at 6px (--toggle-focus-offset)." },
       { "name": "about-me-error", "value": "border: 3px dashed var(--color-ink)", "purpose": "About me: fields in error, with a Small message at the control weight; never a hue." },
       { "name": "about-me-line-width", "value": "3px", "purpose": "About me: every rule, outline and border." },
       { "name": "about-me-indicator-width", "value": "3px", "purpose": "About me: the loading ring's stroke, matching its rules." },
@@ -256,7 +256,7 @@
       ],
       "rules": [
         { "name": "The One Band Per Section Rule", "body": "Every Section owns one band, and the bands rotate purple, sunset, lime, charcoal. A component never sets a palette colour; it reads the tokens of the band it sits in.", "section": "colors" },
-        { "name": "The One Ink Rule", "body": "Each band has one ink at full strength: secondary, muted, hairline, control and input colours are the ink itself, and tints are transparent. On sunset any alpha step below full ink drops under 4.5:1. Three lines take another colour: the lineup's block rules are in Key; a hovered edge (`--color-hairline-hover`, `--color-action-hover-edge`) is the Display colour; and underlines are 3px in Key or Key Alt, on hover for the language toggle, whose focus already shows the 3px ring, on hover, focus and press for band links, and on hover and focus for lineup items.", "section": "colors" },
+        { "name": "The One Ink Rule", "body": "Each band has one ink at full strength: secondary, muted, hairline, control and input colours are the ink itself, and tints are transparent. On sunset any alpha step below full ink drops under 4.5:1. Three lines take another colour: the lineup's block rules are in Key; a hovered edge (`--color-hairline-hover`, `--color-action-hover-edge`) is the Display colour; and underlines are 3px in Key or Key Alt, on hover and while held for the language toggle, whose focus already shows the 3px ring, on hover, focus and press for band links, and on hover and focus for lineup items.", "section": "colors" },
         { "name": "The Cream Is Large Rule", "body": "Cream holds only 3.3:1 on sunset, so on the sunset ground it sets large type only: display, headlines and the billing keys. On the charcoal action fill it is the action's text, at 15:1.", "section": "colors" },
         { "name": "The No Error Hue Rule", "body": "No single hue reads on all four bands, so error is the band's ink, drawn as a dashed rule with its message, never a colour alone.", "section": "colors" },
         { "name": "The Band-Wide Title Rule", "body": "The Page title is sized from its container's width (24cqi, from 3.5rem to 20rem), so it runs the band's width like a poster's lettering.", "section": "typography" },
