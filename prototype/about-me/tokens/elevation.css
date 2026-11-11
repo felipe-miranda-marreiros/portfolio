@@ -4,5 +4,6 @@
  */
 :root {
   --line-width: 3px;
+  --chip-line-width: var(--line-width);
   --shadow-color: transparent;
 }

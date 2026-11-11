@@ -1,0 +1,4 @@
+/** About me's spacing tokens: the Portfolio's rhythm, with chips set further apart to clear their 3px outlines. */
+:root {
+  --chip-gap: var(--space-2);
+}

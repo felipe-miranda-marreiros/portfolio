@@ -57,6 +57,9 @@
   --case-link: none;
   --underline-offset: 0.25em;
 
+  --weight-chip: var(--weight-body);
+  --tracking-chip: 0;
+
   --measure: 68ch;
   --measure-lede: 52ch;
 }
