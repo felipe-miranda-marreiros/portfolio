@@ -234,7 +234,7 @@ a {
   gap: var(--space-5) var(--space-6);
 }
 
-/* Even tracks for samples of one width, so a narrow screen never orphans the last of them. */
+/* Even tracks for samples of one width: a narrow screen stacks them one per row instead of leaving a ragged wrap. */
 .states--even {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(11rem, 1fr));
