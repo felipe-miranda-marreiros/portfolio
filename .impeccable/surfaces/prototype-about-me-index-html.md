@@ -46,6 +46,8 @@ Later on 2026-11-01, after the finish review and the design review, the Owner co
 - On 2026-11-10, from the rendered Button page: the primary keeps its fill on hover and a 3px ring in the band's Display
   colour appears at 3px offset; pressing and loading behave as on the Portfolio, the loading ring drawn at 3px.
 - On 2026-11-10, from the rendered Link page: a pressed Link looks like a hovered one, underlined in Key; nothing sinks.
+- On 2026-11-10 the Owner kept About me's 3px link nudge, against the Portfolio's 2px, to match its 3px rules: the one
+  motion token About me sets.
 
 ## Unresolved
 
