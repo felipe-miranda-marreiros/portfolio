@@ -47,15 +47,18 @@
   transition: color var(--duration-fast) var(--ease-out);
 }
 
+/* Where hover underlines (About me), Key Alt keeps a hovered Page from reading as the current one. */
 .top-bar__page:where(:hover, :active, [data-force~="hover"], [data-force~="active"]) {
   color: var(--color-ink);
   text-decoration-line: var(--link-hover-line);
+  text-decoration-color: var(--color-key-alt);
 }
 
 /* The underline marks the current Page without relying on colour. */
 .top-bar__page[aria-current="page"] {
   color: var(--color-ink);
   text-decoration-line: underline;
+  text-decoration-color: var(--color-key);
 }
 
 .top-bar__page:is(:focus-visible, [data-force~="focus"]) {
