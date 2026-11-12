@@ -19,4 +19,6 @@
 
   --content-max: 76rem;
   --gutter: clamp(1.25rem, 0.5rem + 3.5vw, 3rem);
+  /* A full-width element's inline padding, so its content lines up with the column; 100% is that element's width. */
+  --edge: max(var(--gutter), (100% - var(--content-max)) / 2 + var(--gutter));
 }
