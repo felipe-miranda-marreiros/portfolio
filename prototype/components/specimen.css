@@ -255,8 +255,10 @@ a {
   border: var(--line-width) solid var(--color-hairline);
 }
 
+/* Inside its border, a 320px screen: the gutter there is 1.25rem, the low end of --gutter's clamp. */
 .frame--phone {
-  width: 20rem;
+  --edge: 1.25rem;
+  width: calc(20rem + 2 * var(--line-width));
 }
 
 .foot {
