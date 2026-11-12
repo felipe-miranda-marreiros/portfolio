@@ -73,7 +73,7 @@
     "typographyMeta": {
       "display": { "displayName": "Display", "purpose": "The Owner's name and Page titles." },
       "headline": { "displayName": "Headline", "purpose": "Section titles." },
-      "title": { "displayName": "Title", "purpose": "Role titles, panel titles and list rows." },
+      "title": { "displayName": "Title", "purpose": "Role titles, panel titles, list rows and the Footer's title." },
       "lede": { "displayName": "Lede", "purpose": "The supporting line under a Page title, in secondary ink, 52ch measure." },
       "body": { "displayName": "Body", "purpose": "Summaries and supporting lines in secondary ink, 68ch measure." },
       "small": { "displayName": "Small", "purpose": "Captions, notes and metadata in muted ink; row links and controls at the control weight (600)." },
