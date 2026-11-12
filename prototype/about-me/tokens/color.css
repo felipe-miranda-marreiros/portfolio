@@ -30,7 +30,8 @@
   color-scheme: light;
   --color-ground: var(--palette-sunset);
   --color-ink: var(--palette-charcoal);
-  /* Cream holds only 3.3:1 on sunset, so it sets large type only: display, headlines and the billing keys. */
+  /* Cream holds only 3.3:1 on sunset, so it sets large type only: display, headlines, the billing keys and the Footer's
+     title. */
   --color-display: var(--palette-cream);
   --color-key: var(--palette-charcoal);
   --color-key-alt: var(--palette-cream);
