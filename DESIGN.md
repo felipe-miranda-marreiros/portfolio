@@ -220,8 +220,8 @@ at a lower alpha or mixed into the ground, and error is the only hue.
 - **Bone** (night theme) and **Ink** (paper theme): the ink is the primary colour. It sets headings and body text,
   fills the primary action (with the ground as its text), draws the focus ring, and inverts for text selection. Accent
   and caret colour are the ink too.
-- **Display Ink** (`--color-display`): the colour display type and headlines take. On the Portfolio it is the ink
-  itself; the token exists so About me can set display type and headlines in a band colour through tokens alone.
+- **Display Ink** (`--color-display`): the colour display type, headlines and the Footer's title take. On the
+  Portfolio it is the ink itself; the token exists so About me can set them in a band colour through tokens alone.
 - **Key** and **Key Alt** (`--color-key`, `--color-key-alt`): the ink itself on the Portfolio. Both sets name them, so
   About me can set billing categories and hover underlines in its band's two key colours.
 - **Action Hover** (`--color-action-hover`, `--color-action-hover-edge`): the hovered primary action. On the Portfolio
@@ -234,7 +234,8 @@ at a lower alpha or mixed into the ground, and error is the only hue.
 - **Secondary Ink** (84% of the ink): supporting lines, ledes, body copy in panels, resting row links and inactive
   switch options.
 - **Muted Ink** (64% of the ink): metadata, captions and notes. Still AA on the ground in both themes.
-- **Hairline** (10% of the ink): panel-grid borders and the rules under the top bar and above the footer.
+- **Hairline** (10% of the ink): panel-grid borders, the rules under the top bar and above the footer, and the
+  Footer's rule between its repository link and the rest.
 - **Hairline Hover** (26%): the brightened edge of a hovered or focused panel and of a hovered secondary button.
 - **Hairline Control** (22%): the outline of secondary controls, the theme switch and swatch edges.
 - **Hairline Input** (52% ink on paper, 44% bone on night): input borders, which identify the control and so meet 3:1
@@ -322,7 +323,7 @@ monospace that labels facts the way a codebase labels things: commands, tags, co
 ### Hierarchy
 - **Display** (800, fluid up to 6rem, line-height 0.95, -0.04em): the Owner's name and Page titles, balanced wrapping.
 - **Headline** (700, fluid up to 3rem, line-height 1.05, -0.03em): Section titles.
-- **Title** (600, 1.25rem, line-height 1.3, -0.01em): role titles, panel titles and list rows.
+- **Title** (600, 1.25rem, line-height 1.3, -0.01em): role titles, panel titles, list rows and the Footer's title.
 - **Lede** (400, fluid 1.125rem to 1.25rem, line-height 1.4): the supporting line under a Page title, in secondary
   ink, measure 52ch.
 - **Body** (400, 1rem, line-height 1.6): summaries and supporting lines in secondary ink, measure 68ch.
@@ -335,7 +336,7 @@ Headings hyphenate and, where the browser has no dictionary, break long words ra
 Portuguese title such as "Responsabilidades" at display size must fit a 320px screen. Paragraphs wrap with a pretty rag.
 
 Display type and headlines take `--font-display` (the sans), `--case-display` (none) and `--color-display`; titles,
-including panel titles, take `--font-display` and `--case-display`; labels take `--case-label`
+including panel titles, take `--font-display` and `--case-display`, and the Footer's title also takes `--color-display`; labels take `--case-label`
 (uppercase), the lede's measure is `--measure-lede` (52ch), billing items take `--text-billing` (the title size), and
 links take the link role (`--text-link`, `--weight-link`, `--leading-link`, `--tracking-link`, `--case-link`: Small at
 the control weight, as-is; About me sets them to its Label) with `--underline-offset` (0.25em; 0.2em on About me). On
