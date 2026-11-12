@@ -1,0 +1,251 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Top bar · Portfolio prototype</title>
+    <link rel="preload" href="../../fonts/schibsted-grotesk.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="preload" href="../../fonts/martian-mono.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="stylesheet" href="../../tokens.css" />
+    <link rel="stylesheet" href="../specimen.css" />
+    <link rel="stylesheet" href="../toggle/toggle.css" />
+    <link rel="stylesheet" href="top-bar.css" />
+    <script src="../toggle/toggle.js" defer></script>
+  </head>
+  <body>
+    <header class="specimen-bar">
+      <a href="../../index.html">Visual language</a>
+    </header>
+
+    <main>
+      <div class="specimen-intro">
+        <h1>Top bar</h1>
+        <p>
+          The Pages on the start side, the theme switch and then the language toggle on the end side, with no name: on
+          both themes, at full width, at 320px and in Brazilian Portuguese. The bars respond to the pointer and the
+          keyboard.
+        </p>
+      </div>
+
+      <div class="surfaces">
+        <section class="surface" data-scheme="dark" aria-labelledby="dark-title">
+          <h2 id="dark-title">Dark</h2>
+          <div class="variant">
+            <h3>Pages</h3>
+            <ul class="states" inert>
+              <li>
+                <a class="top-bar__page" href="../../index.html">Experience</a>
+                <code>default</code>
+              </li>
+              <li>
+                <a class="top-bar__page" href="../../index.html" data-force="hover">Experience</a>
+                <code>hover</code>
+              </li>
+              <li>
+                <a class="top-bar__page" href="../../index.html" data-force="active">Experience</a>
+                <code>active</code>
+              </li>
+              <li>
+                <a class="top-bar__page" href="../../index.html" data-force="focus">Experience</a>
+                <code>focus</code>
+              </li>
+              <li>
+                <a class="top-bar__page" href="../../index.html" aria-current="page">Home</a>
+                <code>current</code>
+              </li>
+            </ul>
+          </div>
+          <div class="variant">
+            <h3>Bar</h3>
+            <div class="frame">
+              <header class="top-bar">
+                <nav class="top-bar__pages" aria-label="Pages">
+                  <ul>
+                    <li><a class="top-bar__page" href="../../index.html" aria-current="page">Home</a></li>
+                    <li><a class="top-bar__page" href="../../index.html">Experience</a></li>
+                    <li><a class="top-bar__page" href="../../about-me/index.html">About me</a></li>
+                  </ul>
+                </nav>
+                <div class="top-bar__controls">
+                  <fieldset class="toggle">
+                    <legend>Theme</legend>
+                    <button class="toggle__option" type="button" aria-pressed="true">Dark</button>
+                    <button class="toggle__option" type="button" aria-pressed="false">Light</button>
+                  </fieldset>
+                  <fieldset class="toggle">
+                    <legend>Language</legend>
+                    <button class="toggle__option" type="button" aria-pressed="true">EN</button>
+                    <button class="toggle__option" type="button" aria-pressed="false">PT</button>
+                  </fieldset>
+                </div>
+              </header>
+            </div>
+          </div>
+          <div class="variant">
+            <h3>Bar on a phone, 320px</h3>
+            <div class="frame frame--phone">
+              <header class="top-bar">
+                <nav class="top-bar__pages" aria-label="Pages">
+                  <ul>
+                    <li><a class="top-bar__page" href="../../index.html" aria-current="page">Home</a></li>
+                    <li><a class="top-bar__page" href="../../index.html">Experience</a></li>
+                    <li><a class="top-bar__page" href="../../about-me/index.html">About me</a></li>
+                  </ul>
+                </nav>
+                <div class="top-bar__controls">
+                  <fieldset class="toggle">
+                    <legend>Theme</legend>
+                    <button class="toggle__option" type="button" aria-pressed="true">Dark</button>
+                    <button class="toggle__option" type="button" aria-pressed="false">Light</button>
+                  </fieldset>
+                  <fieldset class="toggle">
+                    <legend>Language</legend>
+                    <button class="toggle__option" type="button" aria-pressed="true">EN</button>
+                    <button class="toggle__option" type="button" aria-pressed="false">PT</button>
+                  </fieldset>
+                </div>
+              </header>
+            </div>
+          </div>
+          <div class="variant">
+            <h3>Bar on a phone, Brazilian Portuguese</h3>
+            <div class="frame frame--phone" lang="pt-BR">
+              <header class="top-bar">
+                <nav class="top-bar__pages" aria-label="Páginas">
+                  <ul>
+                    <li><a class="top-bar__page" href="../../index.html" aria-current="page">Início</a></li>
+                    <li><a class="top-bar__page" href="../../index.html">Experiência</a></li>
+                    <li><a class="top-bar__page" href="../../about-me/index.html">Sobre mim</a></li>
+                  </ul>
+                </nav>
+                <div class="top-bar__controls">
+                  <fieldset class="toggle">
+                    <legend>Tema</legend>
+                    <button class="toggle__option" type="button" aria-pressed="true">Escuro</button>
+                    <button class="toggle__option" type="button" aria-pressed="false">Claro</button>
+                  </fieldset>
+                  <fieldset class="toggle">
+                    <legend>Idioma</legend>
+                    <button class="toggle__option" type="button" aria-pressed="false">EN</button>
+                    <button class="toggle__option" type="button" aria-pressed="true">PT</button>
+                  </fieldset>
+                </div>
+              </header>
+            </div>
+          </div>
+        </section>
+
+        <section class="surface" data-scheme="light" aria-labelledby="light-title">
+          <h2 id="light-title">Light</h2>
+          <div class="variant">
+            <h3>Pages</h3>
+            <ul class="states" inert>
+              <li>
+                <a class="top-bar__page" href="../../index.html">Experience</a>
+                <code>default</code>
+              </li>
+              <li>
+                <a class="top-bar__page" href="../../index.html" data-force="hover">Experience</a>
+                <code>hover</code>
+              </li>
+              <li>
+                <a class="top-bar__page" href="../../index.html" data-force="active">Experience</a>
+                <code>active</code>
+              </li>
+              <li>
+                <a class="top-bar__page" href="../../index.html" data-force="focus">Experience</a>
+                <code>focus</code>
+              </li>
+              <li>
+                <a class="top-bar__page" href="../../index.html" aria-current="page">Home</a>
+                <code>current</code>
+              </li>
+            </ul>
+          </div>
+          <div class="variant">
+            <h3>Bar</h3>
+            <div class="frame">
+              <header class="top-bar">
+                <nav class="top-bar__pages" aria-label="Pages">
+                  <ul>
+                    <li><a class="top-bar__page" href="../../index.html" aria-current="page">Home</a></li>
+                    <li><a class="top-bar__page" href="../../index.html">Experience</a></li>
+                    <li><a class="top-bar__page" href="../../about-me/index.html">About me</a></li>
+                  </ul>
+                </nav>
+                <div class="top-bar__controls">
+                  <fieldset class="toggle">
+                    <legend>Theme</legend>
+                    <button class="toggle__option" type="button" aria-pressed="false">Dark</button>
+                    <button class="toggle__option" type="button" aria-pressed="true">Light</button>
+                  </fieldset>
+                  <fieldset class="toggle">
+                    <legend>Language</legend>
+                    <button class="toggle__option" type="button" aria-pressed="true">EN</button>
+                    <button class="toggle__option" type="button" aria-pressed="false">PT</button>
+                  </fieldset>
+                </div>
+              </header>
+            </div>
+          </div>
+          <div class="variant">
+            <h3>Bar on a phone, 320px</h3>
+            <div class="frame frame--phone">
+              <header class="top-bar">
+                <nav class="top-bar__pages" aria-label="Pages">
+                  <ul>
+                    <li><a class="top-bar__page" href="../../index.html" aria-current="page">Home</a></li>
+                    <li><a class="top-bar__page" href="../../index.html">Experience</a></li>
+                    <li><a class="top-bar__page" href="../../about-me/index.html">About me</a></li>
+                  </ul>
+                </nav>
+                <div class="top-bar__controls">
+                  <fieldset class="toggle">
+                    <legend>Theme</legend>
+                    <button class="toggle__option" type="button" aria-pressed="false">Dark</button>
+                    <button class="toggle__option" type="button" aria-pressed="true">Light</button>
+                  </fieldset>
+                  <fieldset class="toggle">
+                    <legend>Language</legend>
+                    <button class="toggle__option" type="button" aria-pressed="true">EN</button>
+                    <button class="toggle__option" type="button" aria-pressed="false">PT</button>
+                  </fieldset>
+                </div>
+              </header>
+            </div>
+          </div>
+          <div class="variant">
+            <h3>Bar on a phone, Brazilian Portuguese</h3>
+            <div class="frame frame--phone" lang="pt-BR">
+              <header class="top-bar">
+                <nav class="top-bar__pages" aria-label="Páginas">
+                  <ul>
+                    <li><a class="top-bar__page" href="../../index.html" aria-current="page">Início</a></li>
+                    <li><a class="top-bar__page" href="../../index.html">Experiência</a></li>
+                    <li><a class="top-bar__page" href="../../about-me/index.html">Sobre mim</a></li>
+                  </ul>
+                </nav>
+                <div class="top-bar__controls">
+                  <fieldset class="toggle">
+                    <legend>Tema</legend>
+                    <button class="toggle__option" type="button" aria-pressed="false">Escuro</button>
+                    <button class="toggle__option" type="button" aria-pressed="true">Claro</button>
+                  </fieldset>
+                  <fieldset class="toggle">
+                    <legend>Idioma</legend>
+                    <button class="toggle__option" type="button" aria-pressed="false">EN</button>
+                    <button class="toggle__option" type="button" aria-pressed="true">PT</button>
+                  </fieldset>
+                </div>
+              </header>
+            </div>
+          </div>
+        </section>
+      </div>
+    </main>
+
+    <footer class="foot">
+      <p>Design prototype. A reference for the front end, not production code.</p>
+    </footer>
+  </body>
+</html>
