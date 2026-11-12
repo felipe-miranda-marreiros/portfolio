@@ -1,4 +1,32 @@
-/** The prototype index's theme switch, motion specimen and arrow-key movement between grid cells. */
+/** The prototype index's colour swatches, theme switch, motion specimen and arrow-key movement between grid cells. */
+const swatchNames = [
+  "ground",
+  "surface",
+  "ink",
+  "ink-secondary",
+  "ink-muted",
+  "tint",
+  "hairline",
+  "hairline-hover",
+  "hairline-control",
+  "hairline-input",
+  "error",
+];
+
+// Both themes list the same tokens, so the lists are built once here rather than written twice in the page.
+for (const list of document.querySelectorAll("[data-swatches]")) {
+  for (const name of swatchNames) {
+    const swatch = document.createElement("span");
+    swatch.className = "swatch";
+    swatch.style.setProperty("--swatch", `var(--color-${name})`);
+    const label = document.createElement("code");
+    label.textContent = name;
+    const item = document.createElement("li");
+    item.append(swatch, label);
+    list.append(item);
+  }
+}
+
 const root = document.documentElement;
 const storageKey = "prototype-theme";
 const buttons = [...document.querySelectorAll("[data-theme-choice]")];
