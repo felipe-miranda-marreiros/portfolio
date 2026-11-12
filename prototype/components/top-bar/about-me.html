@@ -1,0 +1,216 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Top bar on About me · Portfolio prototype</title>
+    <link rel="preload" href="../../fonts/big-shoulders-display.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="preload" href="../../fonts/archivo.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="stylesheet" href="../../tokens.css" />
+    <link rel="stylesheet" href="../../about-me/tokens.css" />
+    <link rel="stylesheet" href="../specimen.css" />
+    <link rel="stylesheet" href="../toggle/toggle.css" />
+    <link rel="stylesheet" href="top-bar.css" />
+    <script src="../toggle/toggle.js" defer></script>
+  </head>
+  <body>
+    <header class="specimen-bar" data-band="purple">
+      <a href="index.html">Top bar on the Portfolio</a>
+    </header>
+
+    <main>
+      <div class="specimen-intro" data-band="purple">
+        <h1>Top bar</h1>
+        <p>
+          The Top bar on purple, where it sits, with the language toggle in the theme switch's absence; its Pages' states
+          on each of About me's bands.
+        </p>
+      </div>
+
+      <div class="surfaces surfaces--bands">
+        <section class="surface" data-band="purple" aria-labelledby="purple-title">
+          <h2 id="purple-title">Purple</h2>
+          <div class="variant">
+            <h3>Pages</h3>
+            <ul class="states" inert>
+              <li>
+                <a class="top-bar__page" href="../../index.html">Experience</a>
+                <code>default</code>
+              </li>
+              <li>
+                <a class="top-bar__page" href="../../index.html" data-force="hover">Experience</a>
+                <code>hover</code>
+              </li>
+              <li>
+                <a class="top-bar__page" href="../../index.html" data-force="active">Experience</a>
+                <code>active</code>
+              </li>
+              <li>
+                <a class="top-bar__page" href="../../index.html" data-force="focus">Experience</a>
+                <code>focus</code>
+              </li>
+              <li>
+                <a class="top-bar__page" href="../../index.html" aria-current="page">Home</a>
+                <code>current</code>
+              </li>
+            </ul>
+          </div>
+          <div class="variant">
+            <h3>Bar</h3>
+            <div class="frame">
+              <header class="top-bar">
+                <nav class="top-bar__pages" aria-label="Pages">
+                  <ul>
+                    <li><a class="top-bar__page" href="../../index.html">Home</a></li>
+                    <li><a class="top-bar__page" href="../../index.html">Experience</a></li>
+                    <li><a class="top-bar__page" href="../../about-me/index.html" aria-current="page">About me</a></li>
+                  </ul>
+                </nav>
+                <div class="top-bar__controls">
+                  <fieldset class="toggle">
+                    <legend>Language</legend>
+                    <button class="toggle__option" type="button" aria-pressed="true">EN</button>
+                    <button class="toggle__option" type="button" aria-pressed="false">PT</button>
+                  </fieldset>
+                </div>
+              </header>
+            </div>
+          </div>
+          <div class="variant">
+            <h3>Bar on a phone, 320px</h3>
+            <div class="frame frame--phone">
+              <header class="top-bar">
+                <nav class="top-bar__pages" aria-label="Pages">
+                  <ul>
+                    <li><a class="top-bar__page" href="../../index.html">Home</a></li>
+                    <li><a class="top-bar__page" href="../../index.html">Experience</a></li>
+                    <li><a class="top-bar__page" href="../../about-me/index.html" aria-current="page">About me</a></li>
+                  </ul>
+                </nav>
+                <div class="top-bar__controls">
+                  <fieldset class="toggle">
+                    <legend>Language</legend>
+                    <button class="toggle__option" type="button" aria-pressed="true">EN</button>
+                    <button class="toggle__option" type="button" aria-pressed="false">PT</button>
+                  </fieldset>
+                </div>
+              </header>
+            </div>
+          </div>
+          <div class="variant">
+            <h3>Bar on a phone, Brazilian Portuguese</h3>
+            <div class="frame frame--phone" lang="pt-BR">
+              <header class="top-bar">
+                <nav class="top-bar__pages" aria-label="Páginas">
+                  <ul>
+                    <li><a class="top-bar__page" href="../../index.html">Início</a></li>
+                    <li><a class="top-bar__page" href="../../index.html">Experiência</a></li>
+                    <li><a class="top-bar__page" href="../../about-me/index.html" aria-current="page">Sobre mim</a></li>
+                  </ul>
+                </nav>
+                <div class="top-bar__controls">
+                  <fieldset class="toggle">
+                    <legend>Idioma</legend>
+                    <button class="toggle__option" type="button" aria-pressed="false">EN</button>
+                    <button class="toggle__option" type="button" aria-pressed="true">PT</button>
+                  </fieldset>
+                </div>
+              </header>
+            </div>
+          </div>
+        </section>
+
+        <section class="surface" data-band="sunset" aria-labelledby="sunset-title">
+          <h2 id="sunset-title">Sunset</h2>
+          <div class="variant">
+            <h3>Pages</h3>
+            <ul class="states" inert>
+              <li>
+                <a class="top-bar__page" href="../../index.html">Experience</a>
+                <code>default</code>
+              </li>
+              <li>
+                <a class="top-bar__page" href="../../index.html" data-force="hover">Experience</a>
+                <code>hover</code>
+              </li>
+              <li>
+                <a class="top-bar__page" href="../../index.html" data-force="active">Experience</a>
+                <code>active</code>
+              </li>
+              <li>
+                <a class="top-bar__page" href="../../index.html" data-force="focus">Experience</a>
+                <code>focus</code>
+              </li>
+              <li>
+                <a class="top-bar__page" href="../../index.html" aria-current="page">Home</a>
+                <code>current</code>
+              </li>
+            </ul>
+          </div>
+        </section>
+
+        <section class="surface" data-band="lime" aria-labelledby="lime-title">
+          <h2 id="lime-title">Lime</h2>
+          <div class="variant">
+            <h3>Pages</h3>
+            <ul class="states" inert>
+              <li>
+                <a class="top-bar__page" href="../../index.html">Experience</a>
+                <code>default</code>
+              </li>
+              <li>
+                <a class="top-bar__page" href="../../index.html" data-force="hover">Experience</a>
+                <code>hover</code>
+              </li>
+              <li>
+                <a class="top-bar__page" href="../../index.html" data-force="active">Experience</a>
+                <code>active</code>
+              </li>
+              <li>
+                <a class="top-bar__page" href="../../index.html" data-force="focus">Experience</a>
+                <code>focus</code>
+              </li>
+              <li>
+                <a class="top-bar__page" href="../../index.html" aria-current="page">Home</a>
+                <code>current</code>
+              </li>
+            </ul>
+          </div>
+        </section>
+
+        <section class="surface" data-band="charcoal" aria-labelledby="charcoal-title">
+          <h2 id="charcoal-title">Charcoal</h2>
+          <div class="variant">
+            <h3>Pages</h3>
+            <ul class="states" inert>
+              <li>
+                <a class="top-bar__page" href="../../index.html">Experience</a>
+                <code>default</code>
+              </li>
+              <li>
+                <a class="top-bar__page" href="../../index.html" data-force="hover">Experience</a>
+                <code>hover</code>
+              </li>
+              <li>
+                <a class="top-bar__page" href="../../index.html" data-force="active">Experience</a>
+                <code>active</code>
+              </li>
+              <li>
+                <a class="top-bar__page" href="../../index.html" data-force="focus">Experience</a>
+                <code>focus</code>
+              </li>
+              <li>
+                <a class="top-bar__page" href="../../index.html" aria-current="page">Home</a>
+                <code>current</code>
+              </li>
+            </ul>
+          </div>
+        </section>
+      </div>
+    </main>
+
+    <footer class="foot" data-band="purple">
+      <p>Design prototype. A reference for the front end, not production code.</p>
+    </footer>
+  </body>
+</html>

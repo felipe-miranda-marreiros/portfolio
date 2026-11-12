@@ -1,0 +1,71 @@
+/**
+ * Top bar: the Pages on the start side and the Toggles on the end side, the language toggle last, from tokens only. It
+ * holds no name: Home leads back to the start. Where the theme switch is absent, the language toggle keeps its place.
+ * Markup: <header class="top-bar">
+ *   <nav class="top-bar__pages" aria-label="…"><ul><li><a class="top-bar__page" href="…" aria-current="page">…</a></li>…</ul></nav>
+ *   <div class="top-bar__controls">[theme Toggle] [language Toggle]</div></header>.
+ * Its ends follow the page's `--edge`, so they line up with the content column; without one they sit a gutter in.
+ * When the Pages and the Toggles don't fit on one row, the Toggles wrap under the Pages, to the end side.
+ * `data-force` pins a state so the prototype page can show it without interaction.
+ */
+.top-bar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--space-3) var(--space-6);
+  padding: var(--space-4) var(--edge, var(--gutter));
+  border-bottom: var(--line-width) solid var(--color-hairline);
+  background: var(--color-ground);
+  color: var(--color-ink);
+}
+
+.top-bar__pages ul {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-1) var(--space-4);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+/* The block padding lifts each Page link past the 24px target size. */
+.top-bar__page {
+  display: inline-block;
+  padding-block: var(--space-1);
+  font-family: var(--font-sans);
+  font-size: var(--text-link);
+  font-weight: var(--weight-link);
+  line-height: var(--leading-link);
+  letter-spacing: var(--tracking-link);
+  text-transform: var(--case-link);
+  color: var(--color-ink-secondary);
+  text-decoration: none;
+  text-decoration-thickness: var(--line-width);
+  text-decoration-color: var(--color-key);
+  text-underline-offset: var(--underline-offset);
+  -webkit-tap-highlight-color: transparent;
+  transition: color var(--duration-fast) var(--ease-out);
+}
+
+.top-bar__page:where(:hover, :active, [data-force~="hover"], [data-force~="active"]) {
+  color: var(--color-ink);
+  text-decoration-line: var(--link-hover-line);
+}
+
+/* The underline marks the current Page without relying on colour. */
+.top-bar__page[aria-current="page"] {
+  color: var(--color-ink);
+  text-decoration-line: underline;
+}
+
+.top-bar__page:is(:focus-visible, [data-force~="focus"]) {
+  outline: var(--focus-ring-width) solid var(--focus-ring-color);
+  outline-offset: var(--focus-ring-offset);
+}
+
+.top-bar__controls {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-3);
+  margin-inline-start: auto;
+}
