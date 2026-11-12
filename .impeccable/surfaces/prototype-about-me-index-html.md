@@ -53,7 +53,7 @@ Later on 2026-11-01, after the finish review and the design review, the Owner co
 - On 2026-11-11 the Owner kept About me's Toggle with no inset, its options touching the 3px outline, against the
   Portfolio's 3px: About me's second spacing token, beside the chip gap. Its Toggle presses straight to the ink fill,
   looks like hover while held, and has no disabled state, as on the Portfolio.
-- On 2026-11-12 the Owner chose the Top bar without a name or logo: the Pages left, the language toggle on the right
+- On 2026-11-11 the Owner chose the Top bar without a name or logo: the Pages left, the language toggle on the right
   edge, where it keeps its place against the Portfolio's bar; on phones the toggle wraps under the Pages.
 
 ## Unresolved
