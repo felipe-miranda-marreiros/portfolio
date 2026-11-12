@@ -5,5 +5,7 @@
 :root {
   --line-width: 3px;
   --chip-line-width: var(--line-width);
+  /* The Footer's band meets the one above it edge to edge, so it needs no rule. */
+  --footer-line-width: 0px;
   --shadow-color: transparent;
 }
