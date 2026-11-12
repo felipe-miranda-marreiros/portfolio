@@ -36,7 +36,7 @@ On 2026-11-11 the Owner chose, from rendered options, the Toggle's pressed optio
 input border colour, so the state clears 3:1. A Toggle option being pressed (mouse down) looks like hover, and a Toggle
 has no disabled state: it always offers a choice.
 
-On 2026-11-12 the Owner chose, from rendered options, the Top bar: no name or logo in it. The Pages sit on the left,
+On 2026-11-11 the Owner chose, from rendered options, the Top bar: no name or logo in it. The Pages sit on the left,
 the current one marked; the theme switch and then the language toggle sit on the right, the language toggle on the
 edge, so it keeps its place on About me, where the theme switch is absent. On phones it wraps to two rows, the Pages
 first and the toggles on the right of the second, with no menu.
