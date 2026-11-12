@@ -302,10 +302,11 @@ the ink itself, and tints are transparent. On sunset any alpha step below full i
 another colour: the lineup's block rules are in Key; a hovered edge (`--color-hairline-hover`,
 `--color-action-hover-edge`) is the Display colour; and underlines are 3px in Key or Key Alt, on hover and while held
 for the language toggle, whose focus already shows the 3px ring, in Key Alt on hover and press and in Key under the
-current one for the Top bar's Pages, on hover, focus and press for band links, and on hover and focus for lineup items.
+current one for the Top bar's Pages, on hover and while held for the Footer's links, on hover, focus and press for band
+links, and on hover and focus for lineup items.
 
 **The Cream Is Large Rule.** Cream holds only 3.3:1 on sunset, so on the sunset ground it sets large type only: display,
-headlines and the billing keys. On the charcoal action fill it is the action's text, at 15:1.
+headlines, the billing keys and the Footer's title (1.375rem at 800). On the charcoal action fill it is the action's text, at 15:1.
 
 **The No Error Hue Rule.** No single hue reads on all four bands, so error is the band's ink, drawn as a dashed rule
 with its message, never a colour alone.
@@ -359,12 +360,13 @@ that sets the billing heavy and uppercase and reads plainly at body size.
 - **Display** (900, 24cqi from 3.5rem to 20rem, line-height 0.88, uppercase, Display colour): the Page title, balanced
   wrapping.
 - **Headline** (900, fluid 2.25rem to 3.5rem, line-height 0.95, 0.01em, uppercase, Display colour): Section titles.
-- **Title** (Big Shoulders 800, 1.375rem, line-height 1.1, 0.01em, uppercase): billing categories and item titles.
+- **Title** (Big Shoulders 800, 1.375rem, line-height 1.1, 0.01em, uppercase): billing categories, item titles and the
+  Footer's title.
 - **Billing** (Archivo 800, fluid 1.5rem to 2rem, uppercase): the items of a lineup.
 - **Lede** (400, fluid 1.125rem to 1.25rem, line-height 1.45): one line under the Page title, measure 52ch.
 - **Body** (400, 1rem, line-height 1.6): stories and notes in the band's ink, measure 68ch.
 - **Small** (400, 0.875rem): notes; controls and error messages take it at the control weight (700).
-- **Label** (Archivo 800, 0.8125rem, line-height 1.3, 0.06em): labels, the language toggle, the Top bar's Pages and band links, uppercase
+- **Label** (Archivo 800, 0.8125rem, line-height 1.3, 0.06em): labels, the language toggle, the Top bar's Pages, the Footer's links and band links, uppercase
   through `--case-label`; chips and code at the same size are set as-is, with no case change, because token names are
   case-sensitive.
 
@@ -441,7 +443,8 @@ is small, in a softly rounded square with a hairline edge, plain, with no effect
 Square, like a printed poster: chips, controls, the photo radius and panels at 0; only truly round things stay round
 (999px). Every line is a 3px rule in the band's ink, except the lineup's block rules, in Key; a hovered edge, in the
 Display colour; and underlines, in Key or Key Alt, on hover and while held for the language toggle, in Key Alt on
-hover and press for the Top bar's Pages and in Key always under the current one, on hover, focus and press for band links, and on hover and focus for lineup items. The illustration slot is 3:1 on narrow screens and 4:5 from 44rem.
+hover and press for the Top bar's Pages and in Key always under the current one, in Key on hover and while held for the
+Footer's links, on hover, focus and press for band links, and on hover and focus for lineup items. The illustration slot is 3:1 on narrow screens and 4:5 from 44rem.
 
 ## Components
 
@@ -476,6 +479,8 @@ Built in the prototype (`prototype/components/link/`).
   padding 0.5rem by 1rem inside a transparent one-pixel border, so it stands the primary Button's height; on hover the
   fill steps to Action Hover, as the primary Button's.
 - No visited colour: every link reads the same, visited or not.
+- **Forced colours:** the arrow takes the system's link colour, since the mask that draws it would otherwise paint it
+  in the page colour and hide it.
 
 ### Chips
 Built in the prototype (`prototype/components/chip/`).
@@ -540,7 +545,8 @@ Built in the prototype (`prototype/components/footer/`): the Section on every Pa
   a hairline between the repository link and the rest.
 - **Links:** in the link role in Secondary Ink, 1.5rem apart, with 0.25rem of block padding so each clears the 24px
   target. **Hover / Active:** full ink, no underline. **Focus:** the shared 2px ink ring at 2px offset. **Disabled:**
-  none. A long email address breaks anywhere rather than overflow a 320px screen.
+  none. A long email address breaks after its "@" (the front end inserts a `<wbr>` there), and anywhere else only as a
+  last resort, so it never overflows a 320px screen.
 
 ### About me
 
