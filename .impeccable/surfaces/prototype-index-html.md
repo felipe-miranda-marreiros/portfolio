@@ -41,6 +41,10 @@ the current one marked; the theme switch and then the language toggle sit on the
 edge, so it keeps its place on About me, where the theme switch is absent. On phones it wraps to two rows, the Pages
 first and the toggles on the right of the second, with no menu.
 
+On 2026-11-11 the Owner chose, from rendered options, the Footer: a short title (Content) that Home's contact link
+lands on, then the repository link with its arrow, a hairline, and the social links and email as plain links, in the
+Owner's order. The quietest one-line Footer and a headline-size repository link were turned down.
+
 ## Unresolved
 
 The type scale, spacing scale and state tokens are first set by the token build, then refined with `typeset`, `layout`

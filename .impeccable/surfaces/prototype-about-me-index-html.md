@@ -57,6 +57,8 @@ Later on 2026-11-01, after the finish review and the design review, the Owner co
   edge, where it keeps its place against the Portfolio's bar; on phones the toggle wraps under the Pages.
 - On 2026-11-11 the Owner chose, from rendered options, how the Top bar's Pages tell hover from current: a hovered or
   pressed Page underlines 3px in the band's Key Alt, and the current Page keeps its 3px underline in Key.
+- On 2026-11-11 the Owner chose the Footer's layout on both Visual languages: a title, the repository link, a rule, then
+  the social links and email; on About me it keeps the band's 3px ink rule and its title takes the band's Display colour.
 
 ## Unresolved
 
