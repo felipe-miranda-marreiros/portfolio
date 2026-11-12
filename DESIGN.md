@@ -149,6 +149,7 @@ spacing:
   "10": "8rem"
   content-max: "76rem"
   gutter: "clamp(1.25rem, 0.5rem + 3.5vw, 3rem)"
+  edge: "max(clamp(1.25rem, 0.5rem + 3.5vw, 3rem), (100% - 76rem) / 2 + clamp(1.25rem, 0.5rem + 3.5vw, 3rem))"
   chip-padding-block: "2px"
   chip-gap: "0.25rem"
   about-me-chip-gap: "0.5rem"
@@ -379,7 +380,8 @@ share the ink and stand apart by face and size.
 ## Layout
 
 A single content column (76rem max) with a fluid gutter (1.25rem to 3rem) and a shared left edge; the top bar and footer
-span the full width but align their content to the same edge. The top bar keeps one row while its Pages and Toggles
+span the full width but align their content to the same edge (`--edge`: the gutter, or more once the column stops
+growing). The top bar keeps one row while its Pages and Toggles
 fit, and otherwise wraps the Toggles under the Pages, to the end side; on a 320px screen that is two rows in both
 languages. One 4px-based spacing rhythm (0.25rem to 8rem), with more
 space above a heading than below it: the Page opens with 4rem above the title on narrow screens and 6rem from 44rem.
@@ -546,8 +548,8 @@ have no token yet, so the prototype sets them in About me's page CSS; each compo
 - **Chips:** the Chip, through tokens: Archivo at label size and the label weight (800), 0.06em tracking, set as-is
   with no case change, square, outlined in a 3px ink rule (`--chip-line-width`) on a transparent fill, 0.5rem apart.
 - **Navigation:** the Top bar sits on purple over a 3px ink rule, with no name: the Pages left in uppercase Label
-  type, in the band's ink, underlined 3px in the Key colour when current and in Key Alt on hover and while held, so a hovered Page
-  never reads as the current one, and the language toggle right: the Toggle through tokens, a square, 3px-outlined EN and PT control with no inset,
+  type, in the band's ink, underlined 3px in the Key colour when current and in Key Alt on hover and while held, so a hovered
+  Page's underline differs in colour from the current one's (on purple by hue alone: lime and blush are equally light), and the language toggle right: the Toggle through tokens, a square, 3px-outlined EN and PT control with no inset,
   in uppercase Label type, that underlines 3px in the Key colour on hover and while held, and fills with the ink,
   ground as text, when pressed, with no edge. Its 3px focus ring sits 6px out, clearing the outline with a 3px gap.
   There is no theme switch.
