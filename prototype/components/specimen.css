@@ -248,6 +248,17 @@ a {
   min-width: 0;
 }
 
+/* A frame shows a full-width component at a set width; its own --edge stands in for the page's column. */
+.frame {
+  --edge: var(--space-5);
+  max-width: 100%;
+  border: var(--line-width) solid var(--color-hairline);
+}
+
+.frame--phone {
+  width: 20rem;
+}
+
 .foot {
   margin-top: auto;
   padding: var(--space-5) var(--edge);
