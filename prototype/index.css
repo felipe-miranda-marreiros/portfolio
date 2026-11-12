@@ -125,7 +125,8 @@ a {
   .cell--type,
   .cell--state,
   .cell--about-me,
-  .cell--top-bar {
+  .cell--top-bar,
+  .cell--footer {
     grid-column: span 2;
   }
 }
@@ -141,7 +142,8 @@ a {
       "state state state"
       "about-me about-me about-me"
       "button button link"
-      "chip toggle top-bar";
+      "chip toggle toggle"
+      "top-bar top-bar footer";
   }
 
   .cell--color {
@@ -194,6 +196,10 @@ a {
 
   .cell--top-bar {
     grid-area: top-bar;
+  }
+
+  .cell--footer {
+    grid-area: footer;
   }
 }
 
@@ -552,13 +558,6 @@ a {
 .sample-field__message {
   font-size: var(--text-small);
   color: var(--error-color);
-}
-
-.foot {
-  padding: var(--space-5) var(--edge);
-  border-top: var(--line-width) solid var(--color-hairline);
-  font-size: var(--text-small);
-  color: var(--color-ink-muted);
 }
 
 ::view-transition-old(root),
