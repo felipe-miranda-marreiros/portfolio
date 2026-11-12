@@ -53,6 +53,8 @@ Later on 2026-11-01, after the finish review and the design review, the Owner co
 - On 2026-11-11 the Owner kept About me's Toggle with no inset, its options touching the 3px outline, against the
   Portfolio's 3px: About me's second spacing token, beside the chip gap. Its Toggle presses straight to the ink fill,
   looks like hover while held, and has no disabled state, as on the Portfolio.
+- On 2026-11-12 the Owner chose the Top bar without a name or logo: the Pages left, the language toggle on the right
+  edge, where it keeps its place against the Portfolio's bar; on phones the toggle wraps under the Pages.
 
 ## Unresolved
 
@@ -70,7 +72,7 @@ two key colours, item in heavy uppercase Archivo in the band's ink. Hard edges, 
 STORY: The visitor learns who the Owner is outside code in one scroll, finds something to read, hear or watch, and sees
 what they are studying now.
 
-FIRST VIEWPORT: A purple band: the bar on top (name left, language toggle right), then a band-wide condensed title and a
+FIRST VIEWPORT: A purple band: the bar on top (Pages left, language toggle right), then a band-wide condensed title and a
 one-line lede; the illustration slot sits on the band's right when artwork exists. The orange band starts within view.
 
 FORM: Direction pinned by the Owner from references; it beat the roll. seed:f0d5ba375351a4af
