@@ -4,7 +4,7 @@
  * Markup: <header class="top-bar">
  *   <nav class="top-bar__pages" aria-label="…"><ul><li><a class="top-bar__page" href="…" aria-current="page">…</a></li>…</ul></nav>
  *   <div class="top-bar__controls">[theme Toggle] [language Toggle]</div></header>.
- * Its ends follow the page's `--edge`, so they line up with the content column; without one they sit a gutter in.
+ * Its ends follow `--edge`, so they line up with the content column.
  * When the Pages and the Toggles don't fit on one row, the Toggles wrap under the Pages, to the end side.
  * `data-force` pins a state so the prototype page can show it without interaction.
  */
@@ -13,7 +13,7 @@
   flex-wrap: wrap;
   align-items: center;
   gap: var(--space-3) var(--space-6);
-  padding: var(--space-4) var(--edge, var(--gutter));
+  padding: var(--space-4) var(--edge);
   border-bottom: var(--line-width) solid var(--color-hairline);
   background: var(--color-ground);
   color: var(--color-ink);
