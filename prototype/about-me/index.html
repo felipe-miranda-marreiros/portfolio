@@ -9,8 +9,10 @@
     <link rel="stylesheet" href="../tokens.css" />
     <link rel="stylesheet" href="tokens.css" />
     <link rel="stylesheet" href="../components/chip/chip.css" />
+    <link rel="stylesheet" href="../components/link/link.css" />
     <link rel="stylesheet" href="../components/toggle/toggle.css" />
     <link rel="stylesheet" href="../components/top-bar/top-bar.css" />
+    <link rel="stylesheet" href="../components/footer/footer.css" />
     <link rel="stylesheet" href="index.css" />
     <script src="../components/toggle/toggle.js" defer></script>
   </head>
@@ -177,9 +179,13 @@
       </section>
     </main>
 
-    <footer class="foot" data-band="purple">
-      <p>Design prototype. A reference for the front end, not production code.</p>
-      <a class="band-link" href="../index.html">The Portfolio's Visual language</a>
+    <footer class="footer" data-band="purple">
+      <h2 class="footer__title" id="footer-title">Design prototype, not production code</h2>
+      <a class="link footer__repo" href="https://github.com/felipe-miranda-marreiros/portfolio">This prototype's source code</a>
+      <ul class="footer__links">
+        <li><a class="footer__link" href="../index.html">The Portfolio's Visual language</a></li>
+        <li><a class="footer__link" href="../about-me/index.html">About me's Visual language</a></li>
+      </ul>
     </footer>
   </body>
 </html>

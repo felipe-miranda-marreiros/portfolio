@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="components/toggle/toggle.css" />
     <link rel="stylesheet" href="components/top-bar/top-bar.css" />
     <link rel="stylesheet" href="components/chip/chip.css" />
+    <link rel="stylesheet" href="components/footer/footer.css" />
     <link rel="stylesheet" href="index.css" />
     <script src="components/toggle/toggle.js" defer></script>
     <script src="index.js" defer></script>
@@ -300,11 +301,29 @@
           </ul>
           <a class="cell__link link" href="components/top-bar/index.html">Open the Top bar</a>
         </section>
+
+        <section data-link-host class="cell cell--footer" aria-labelledby="footer-cell-title">
+          <h2 class="cell__title" id="footer-cell-title">Footer</h2>
+          <p class="cell__note">A title, the repository link, then the social links and email.</p>
+          <ul class="chips" aria-label="Footer link states">
+            <li class="chip">default</li>
+            <li class="chip">hover</li>
+            <li class="chip">active</li>
+            <li class="chip">focus</li>
+            <li class="chip">long content</li>
+          </ul>
+          <a class="cell__link link" href="components/footer/index.html">Open the Footer</a>
+        </section>
       </div>
     </main>
 
-    <footer class="foot">
-      <p>Design prototype. A reference for the front end, not production code.</p>
+    <footer class="footer">
+      <h2 class="footer__title" id="footer-title">Design prototype, not production code</h2>
+      <a class="link footer__repo" href="https://github.com/felipe-miranda-marreiros/portfolio">This prototype's source code</a>
+      <ul class="footer__links">
+        <li><a class="footer__link" href="index.html">The Portfolio's Visual language</a></li>
+        <li><a class="footer__link" href="about-me/index.html">About me's Visual language</a></li>
+      </ul>
     </footer>
   </body>
 </html>
