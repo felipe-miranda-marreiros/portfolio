@@ -333,7 +333,7 @@ Headings hyphenate and, where the browser has no dictionary, break long words ra
 Portuguese title such as "Responsabilidades" at display size must fit a 320px screen. Paragraphs wrap with a pretty rag.
 
 Display type and headlines take `--font-display` (the sans), `--case-display` (none) and `--color-display`; titles,
-including the bar's name and panel titles, take `--font-display` and `--case-display`; labels take `--case-label`
+including panel titles, take `--font-display` and `--case-display`; labels take `--case-label`
 (uppercase), the lede's measure is `--measure-lede` (52ch), billing items take `--text-billing` (the title size), and
 links take the link role (`--text-link`, `--weight-link`, `--leading-link`, `--tracking-link`, `--case-link`: Small at
 the control weight, as-is; About me sets them to its Label) with `--underline-offset` (0.25em; 0.2em on About me). On
@@ -358,13 +358,12 @@ that sets the billing heavy and uppercase and reads plainly at body size.
 - **Display** (900, 24cqi from 3.5rem to 20rem, line-height 0.88, uppercase, Display colour): the Page title, balanced
   wrapping.
 - **Headline** (900, fluid 2.25rem to 3.5rem, line-height 0.95, 0.01em, uppercase, Display colour): Section titles.
-- **Title** (Big Shoulders 800, 1.375rem, line-height 1.1, 0.01em, uppercase): billing categories and item titles; the
-  bar's name takes this size at 900.
+- **Title** (Big Shoulders 800, 1.375rem, line-height 1.1, 0.01em, uppercase): billing categories and item titles.
 - **Billing** (Archivo 800, fluid 1.5rem to 2rem, uppercase): the items of a lineup.
 - **Lede** (400, fluid 1.125rem to 1.25rem, line-height 1.45): one line under the Page title, measure 52ch.
 - **Body** (400, 1rem, line-height 1.6): stories and notes in the band's ink, measure 68ch.
 - **Small** (400, 0.875rem): the Footer and notes; controls and error messages take it at the control weight (700).
-- **Label** (Archivo 800, 0.8125rem, line-height 1.3, 0.06em): labels, the language toggle and band links, uppercase
+- **Label** (Archivo 800, 0.8125rem, line-height 1.3, 0.06em): labels, the language toggle, the Top bar's Pages and band links, uppercase
   through `--case-label`; chips and code at the same size are set as-is, with no case change, because token names are
   case-sensitive.
 
@@ -380,7 +379,9 @@ share the ink and stand apart by face and size.
 ## Layout
 
 A single content column (76rem max) with a fluid gutter (1.25rem to 3rem) and a shared left edge; the top bar and footer
-span the full width but align their content to the same edge. One 4px-based spacing rhythm (0.25rem to 8rem), with more
+span the full width but align their content to the same edge. The top bar keeps one row while its Pages and Toggles
+fit, and otherwise wraps the Toggles under the Pages, to the end side; on a 320px screen that is two rows in both
+languages. One 4px-based spacing rhythm (0.25rem to 8rem), with more
 space above a heading than below it: the Page opens with 4rem above the title on narrow screens and 6rem from 44rem.
 
 Collections read as hairline panel grids: cells share one-pixel borders drawn by the grid's hairline showing through a
@@ -437,13 +438,13 @@ is small, in a softly rounded square with a hairline edge, plain, with no effect
 
 Square, like a printed poster: chips, controls, the photo radius and panels at 0; only truly round things stay round
 (999px). Every line is a 3px rule in the band's ink, except the lineup's block rules, in Key; a hovered edge, in the
-Display colour; and underlines, in Key or Key Alt, on hover and while held for the language toggle, on hover,
-focus and press for band links, and on hover and focus for lineup items. The illustration slot is 3:1 on narrow screens and 4:5 from 44rem.
+Display colour; and underlines, in Key or Key Alt, on hover and while held for the language toggle, on hover
+and press for the Top bar's Pages and always under the current one, on hover, focus and press for band links, and on hover and focus for lineup items. The illustration slot is 3:1 on narrow screens and 4:5 from 44rem.
 
 ## Components
 
-The Button, the Link, the Chip and the Toggle are built in the prototype (`prototype/components/button/`, `link/`,
-`chip/`, `toggle/`); the rest are the primitives the prototype's token specimens establish, to be confirmed by each
+The Button, the Link, the Chip, the Toggle and the Top bar are built in the prototype
+(`prototype/components/button/`, `link/`, `chip/`, `toggle/`, `top-bar/`); the rest are the primitives the prototype's token specimens establish, to be confirmed by each
 component's own PR. Every component takes every visual value from tokens and holds no visible text.
 
 ### Buttons
@@ -514,7 +515,17 @@ switch and the language toggle are both Toggles.
   state itself.
 
 ### Navigation
-- **Top bar:** on a bottom hairline, the name left (800, title size, -0.03em), controls right.
+Built in the prototype (`prototype/components/top-bar/`): the Top bar.
+- **Top bar:** on a bottom hairline, padding 1rem by the page's edge, with no name or logo: Home leads back to the
+  start. The Pages sit on the start side and the Toggles on the end side, 2rem from them: the theme switch, then the
+  language toggle on the edge, so the language toggle keeps its place where the theme switch is absent.
+- **Pages:** links in the link role (Small at the control weight, as-is) in Secondary Ink, 1rem apart, with 0.25rem
+  of block padding so each clears the 24px target. **Hover / Active:** full ink, no underline
+  (`--link-hover-line: none`). **Current** (`aria-current="page"`): full ink with a one-pixel underline in Key, so it
+  doesn't rely on colour. **Focus:** the shared 2px ink ring at 2px offset. **Disabled:** none; every Page is reachable.
+- **Narrow screens:** nothing hides and there is no menu. When the Pages and the Toggles don't fit on one row, the
+  Toggles wrap under the Pages, 0.75rem below, to the end side; the Pages wrap among themselves only when they alone
+  don't fit.
 - **Theme switch:** a Toggle of Dark and Light, with Dark pressed until the visitor picks Light. Switching crossfades
   every token at once (240ms).
 
@@ -534,8 +545,8 @@ have no token yet, so the prototype sets them in About me's page CSS; each compo
   (`--error-line-style: dashed`) with a Small message at the control weight, in ink.
 - **Chips:** the Chip, through tokens: Archivo at label size and the label weight (800), 0.06em tracking, set as-is
   with no case change, square, outlined in a 3px ink rule (`--chip-line-width`) on a transparent fill, 0.5rem apart.
-- **Navigation:** the bar sits on purple over a 3px ink rule, the name left in Big Shoulders 900 uppercase at title
-  size, the language toggle right: the Toggle through tokens, a square, 3px-outlined EN and PT control with no inset,
+- **Navigation:** the Top bar sits on purple over a 3px ink rule, with no name: the Pages left in uppercase Label
+  type, in the band's ink, underlined 3px in the Key colour when current and on hover, and the language toggle right: the Toggle through tokens, a square, 3px-outlined EN and PT control with no inset,
   in uppercase Label type, that underlines 3px in the Key colour on hover and while held, and fills with the ink,
   ground as text, when pressed, with no edge. Its 3px focus ring sits 6px out, clearing the outline with a 3px gap.
   There is no theme switch.
@@ -565,6 +576,8 @@ Optional, on the intro band's right from 44rem. It carries a marked placeholder 
   through tokens alone.
 - **Do** give every component all its states (default, hover, focus, active, disabled, and loading, error or success
   where they apply) before it counts as done.
+- **Do** keep the Top bar's Pages and Toggles visible at every width: wrap the Toggles under the Pages rather than
+  hide them in a menu.
 - **Do** keep motion to short expo ease-out transitions (150ms for controls, 200ms for panels, 240ms for the theme
   crossfade), no bounce, and 0ms under reduced motion. The one loop is the loading ring, on the linear ease
   (`--ease-linear`), still under reduced motion.
@@ -575,6 +588,7 @@ Optional, on the intro band's right from 44rem. It carries a marked placeholder 
 - **Don't** follow the system colour scheme preference; the Owner chose dark always by default.
 - **Don't** build a template portfolio: no avatar hero, no skill pills, no grid of identical project cards.
 - **Don't** set a monospace eyebrow above a heading, or monospace prose.
+- **Don't** put a name or logo in the Top bar; the Owner chose a bar of Pages and Toggles only.
 - **Don't** make the Owner's photo a centrepiece: no large portrait, no colour effects, no full-bleed photo.
 - **Don't** put a shadow on anything that doesn't float above the page.
 - **Don't** let expression cost the 30-second read: role, seniority, technologies, location, CV and contact stay
