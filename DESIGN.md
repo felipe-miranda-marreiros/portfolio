@@ -233,7 +233,7 @@ at a lower alpha or mixed into the ground, and error is the only hue.
   paired with the float shadow.
 - **Secondary Ink** (84% of the ink): supporting lines, ledes, body copy in panels, resting row links and inactive
   switch options.
-- **Muted Ink** (64% of the ink): metadata, captions, notes and footer text. Still AA on the ground in both themes.
+- **Muted Ink** (64% of the ink): metadata, captions and notes. Still AA on the ground in both themes.
 - **Hairline** (10% of the ink): panel-grid borders and the rules under the top bar and above the footer.
 - **Hairline Hover** (26%): the brightened edge of a hovered or focused panel and of a hovered secondary button.
 - **Hairline Control** (22%): the outline of secondary controls, the theme switch and swatch edges.
@@ -363,7 +363,7 @@ that sets the billing heavy and uppercase and reads plainly at body size.
 - **Billing** (Archivo 800, fluid 1.5rem to 2rem, uppercase): the items of a lineup.
 - **Lede** (400, fluid 1.125rem to 1.25rem, line-height 1.45): one line under the Page title, measure 52ch.
 - **Body** (400, 1rem, line-height 1.6): stories and notes in the band's ink, measure 68ch.
-- **Small** (400, 0.875rem): the Footer and notes; controls and error messages take it at the control weight (700).
+- **Small** (400, 0.875rem): notes; controls and error messages take it at the control weight (700).
 - **Label** (Archivo 800, 0.8125rem, line-height 1.3, 0.06em): labels, the language toggle, the Top bar's Pages and band links, uppercase
   through `--case-label`; chips and code at the same size are set as-is, with no case change, because token names are
   case-sensitive.
@@ -445,8 +445,8 @@ hover and press for the Top bar's Pages and in Key always under the current one,
 
 ## Components
 
-The Button, the Link, the Chip, the Toggle and the Top bar are built in the prototype
-(`prototype/components/button/`, `link/`, `chip/`, `toggle/`, `top-bar/`); the rest are the primitives the prototype's token specimens establish, to be confirmed by each
+The Button, the Link, the Chip, the Toggle, the Top bar and the Footer are built in the prototype
+(`prototype/components/button/`, `link/`, `chip/`, `toggle/`, `top-bar/`, `footer/`); the rest are the primitives the prototype's token specimens establish, to be confirmed by each
 component's own PR. Every component takes every visual value from tokens and holds no visible text.
 
 ### Buttons
@@ -531,13 +531,22 @@ Built in the prototype (`prototype/components/top-bar/`): the Top bar.
 - **Theme switch:** a Toggle of Dark and Light, with Dark pressed until the visitor picks Light. Switching crossfades
   every token at once (240ms).
 
+### Footer
+Built in the prototype (`prototype/components/footer/`): the Section on every Page and the only way to make contact.
+- **Order:** a title in the title role (Content, such as "Contact"), which Home's contact link lands on; the repository
+  link, as the Link with its arrow; a rule; then the social links and email in the Owner's order. Every word is
+  Content.
+- **Style:** padding 2rem by the page's edge, 1rem between its parts, a hairline above it (`--footer-line-width`) and
+  a hairline between the repository link and the rest.
+- **Links:** in the link role in Secondary Ink, 1.5rem apart, with 0.25rem of block padding so each clears the 24px
+  target. **Hover / Active:** full ink, no underline. **Focus:** the shared 2px ink ring at 2px offset. **Disabled:**
+  none. A long email address breaks anywhere rather than overflow a 320px screen.
+
 ### About me
 
-The shared components take About me's square corners, 3px rules and band colours through tokens. These differences
-have no token yet, so the prototype sets them in About me's page CSS; each component's PR adds the token it needs:
-- the error message's weight: the control weight (700) on About me;
-- the Footer: a hairline above it and 1.5rem block padding on the Portfolio, no top rule and 2rem block padding on About
-  me.
+The shared components take About me's square corners, 3px rules and band colours through tokens. One difference
+has no token yet, so the prototype sets it in About me's page CSS; the text field's PR adds the token it needs:
+- the error message's weight: the control weight (700) on About me.
 
 - **Buttons:** the primary fills Action with On Action text at the control weight (700); on hover it keeps its fill and
   a 3px ring in the Display colour appears at 3px offset. The secondary is outlined in a 3px ink rule that moves to the
@@ -557,7 +566,9 @@ have no token yet, so the prototype sets them in About me's page CSS; each compo
   hover, focus and press it underlines 3px in the Key colour (`--link-hover-line: underline`) and the arrow nudges 3px.
   Its action variant fills Action at the control weight (700), does not underline, and on hover keeps its fill with the
   Display ring, as the primary Button's.
-- **Footer:** the next band in the rotation, like any Section; Small text, with a band link.
+- **Footer:** the Footer, through tokens, on the next band in the rotation, like any Section, with no rule above it
+  (`--footer-line-width: 0px`): the title in Big Shoulders uppercase in the Display colour, the repository link as a
+  band link, a 3px ink rule, then the links in uppercase Label type, underlined 3px in Key on hover and while held.
 
 #### Lineup
 The signature component, the billing row of the Billing Rule. On hover and focus an item underlines 3px in its own
@@ -592,6 +603,7 @@ Optional, on the intro band's right from 44rem. It carries a marked placeholder 
 - **Don't** build a template portfolio: no avatar hero, no skill pills, no grid of identical project cards.
 - **Don't** set a monospace eyebrow above a heading, or monospace prose.
 - **Don't** put a name or logo in the Top bar; the Owner chose a bar of Pages and Toggles only.
+- **Don't** let anything come before the repository link in the Footer but its title.
 - **Don't** make the Owner's photo a centrepiece: no large portrait, no colour effects, no full-bleed photo.
 - **Don't** put a shadow on anything that doesn't float above the page.
 - **Don't** let expression cost the 30-second read: role, seniority, technologies, location, CV and contact stay
