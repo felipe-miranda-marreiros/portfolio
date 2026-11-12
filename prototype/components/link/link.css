@@ -94,3 +94,10 @@
   text-decoration-line: none;
   outline: var(--focus-ring-width) solid var(--focus-ring-color);
 }
+
+/* Forced colours repaint the arrow's masked background as Canvas, which hides it; paint it in the link colour instead. */
+@media (forced-colors: active) {
+  .link::after {
+    background: LinkText;
+  }
+}
