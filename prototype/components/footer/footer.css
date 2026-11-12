@@ -1,0 +1,76 @@
+/**
+ * Footer: the Section on every Page and the only way to make contact, from tokens only. A title Home's contact link can
+ * land on, the repository link first (the Link), a rule, then the social links and email in the Owner's order.
+ * Markup: <footer class="footer"><h2 class="footer__title" id="…">…</h2>
+ *   <a class="link footer__repo" href="…">…</a>
+ *   <ul class="footer__links"><li><a class="footer__link" href="…">…</a></li>…</ul></footer>.
+ * Needs link.css for the repository link. Its ends follow `--edge`, so they line up with the content column.
+ * `data-force` pins a state so the prototype page can show it without interaction.
+ */
+.footer {
+  display: grid;
+  justify-items: start;
+  gap: var(--space-4);
+  padding: var(--space-6) var(--edge);
+  border-top: var(--footer-line-width) solid var(--color-hairline);
+  background: var(--color-ground);
+  color: var(--color-ink);
+}
+
+.footer__title {
+  margin: 0;
+  font-family: var(--font-display);
+  font-size: var(--text-title);
+  font-weight: var(--weight-title);
+  line-height: var(--leading-title);
+  letter-spacing: var(--tracking-title);
+  text-transform: var(--case-display);
+  color: var(--color-display);
+  overflow-wrap: break-word;
+}
+
+.footer__links {
+  justify-self: stretch;
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-1) var(--space-5);
+  margin: 0;
+  padding: var(--space-4) 0 0;
+  border-top: var(--line-width) solid var(--color-hairline);
+  list-style: none;
+}
+
+.footer__links > li {
+  min-width: 0;
+}
+
+/* The block padding lifts each link past the 24px target size; an email address may break anywhere to fit. */
+.footer__link {
+  display: inline-block;
+  max-width: 100%;
+  padding-block: var(--space-1);
+  font-family: var(--font-sans);
+  font-size: var(--text-link);
+  font-weight: var(--weight-link);
+  line-height: var(--leading-link);
+  letter-spacing: var(--tracking-link);
+  text-transform: var(--case-link);
+  color: var(--color-ink-secondary);
+  text-decoration: none;
+  text-decoration-thickness: var(--line-width);
+  text-decoration-color: var(--color-key);
+  text-underline-offset: var(--underline-offset);
+  overflow-wrap: anywhere;
+  -webkit-tap-highlight-color: transparent;
+  transition: color var(--duration-fast) var(--ease-out);
+}
+
+.footer__link:where(:hover, :active, [data-force~="hover"], [data-force~="active"]) {
+  color: var(--color-ink);
+  text-decoration-line: var(--link-hover-line);
+}
+
+.footer__link:is(:focus-visible, [data-force~="focus"]) {
+  outline: var(--focus-ring-width) solid var(--focus-ring-color);
+  outline-offset: var(--focus-ring-offset);
+}

@@ -1,0 +1,220 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Footer on About me · Portfolio prototype</title>
+    <link rel="preload" href="../../fonts/big-shoulders-display.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="preload" href="../../fonts/archivo.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="stylesheet" href="../../tokens.css" />
+    <link rel="stylesheet" href="../../about-me/tokens.css" />
+    <link rel="stylesheet" href="../specimen.css" />
+    <link rel="stylesheet" href="../link/link.css" />
+    <link rel="stylesheet" href="footer.css" />
+  </head>
+  <body>
+    <header class="specimen-bar" data-band="purple">
+      <a href="index.html">Footer on the Portfolio</a>
+    </header>
+
+    <main>
+      <div class="specimen-intro" data-band="purple">
+        <h1>Footer</h1>
+        <p>
+          The Footer takes the next band in the rotation, so it is shown on each of About me's bands, with no rule above
+          it; at 320px and in Brazilian Portuguese on purple.
+        </p>
+      </div>
+
+      <div class="surfaces surfaces--bands">
+        <section class="surface" data-band="purple" aria-labelledby="purple-title">
+          <h2 id="purple-title">Purple</h2>
+          <div class="variant">
+            <h3>Links</h3>
+            <ul class="states" inert>
+              <li>
+                <a class="footer__link" href="https://example.com/">LinkedIn</a>
+                <code>default</code>
+              </li>
+              <li>
+                <a class="footer__link" href="https://example.com/" data-force="hover">LinkedIn</a>
+                <code>hover</code>
+              </li>
+              <li>
+                <a class="footer__link" href="https://example.com/" data-force="active">LinkedIn</a>
+                <code>active</code>
+              </li>
+              <li>
+                <a class="footer__link" href="https://example.com/" data-force="focus">LinkedIn</a>
+                <code>focus</code>
+              </li>
+            </ul>
+          </div>
+          <div class="variant">
+            <h3>Footer</h3>
+            <div class="frame">
+              <footer class="footer">
+                <h2 class="footer__title" id="purple-footer">Contact</h2>
+                <a class="link footer__repo" href="https://github.com/felipe-miranda-marreiros/portfolio">This site's source code</a>
+                <ul class="footer__links">
+                  <li><a class="footer__link" href="https://example.com/">GitHub</a></li>
+                  <li><a class="footer__link" href="https://example.com/">LinkedIn</a></li>
+                  <li><a class="footer__link" href="mailto:owner@example.com">owner@example.com</a></li>
+                </ul>
+              </footer>
+            </div>
+          </div>
+          <div class="variant">
+            <h3>Footer on a phone, 320px</h3>
+            <div class="frame frame--phone">
+              <footer class="footer">
+                <h2 class="footer__title" id="purple-footer-phone">Contact</h2>
+                <a class="link footer__repo" href="https://github.com/felipe-miranda-marreiros/portfolio">This site's source code</a>
+                <ul class="footer__links">
+                  <li><a class="footer__link" href="https://example.com/">GitHub</a></li>
+                  <li><a class="footer__link" href="https://example.com/">LinkedIn</a></li>
+                  <li><a class="footer__link" href="mailto:owner@example.com">owner@example.com</a></li>
+                </ul>
+              </footer>
+            </div>
+          </div>
+          <div class="variant">
+            <h3>Footer on a phone, Brazilian Portuguese, long email</h3>
+            <div class="frame frame--phone" lang="pt-BR">
+              <footer class="footer">
+                <h2 class="footer__title" id="purple-footer-pt">Contato</h2>
+                <a class="link footer__repo" href="https://github.com/felipe-miranda-marreiros/portfolio">Código-fonte deste site</a>
+                <ul class="footer__links">
+                  <li><a class="footer__link" href="https://example.com/">GitHub</a></li>
+                  <li><a class="footer__link" href="https://example.com/">LinkedIn</a></li>
+                  <li><a class="footer__link" href="mailto:nome.sobrenome.completo@exemplo.com.br">nome.sobrenome.completo@exemplo.com.br</a></li>
+                </ul>
+              </footer>
+            </div>
+          </div>
+        </section>
+
+        <section class="surface" data-band="sunset" aria-labelledby="sunset-title">
+          <h2 id="sunset-title">Sunset</h2>
+          <div class="variant">
+            <h3>Links</h3>
+            <ul class="states" inert>
+              <li>
+                <a class="footer__link" href="https://example.com/">LinkedIn</a>
+                <code>default</code>
+              </li>
+              <li>
+                <a class="footer__link" href="https://example.com/" data-force="hover">LinkedIn</a>
+                <code>hover</code>
+              </li>
+              <li>
+                <a class="footer__link" href="https://example.com/" data-force="active">LinkedIn</a>
+                <code>active</code>
+              </li>
+              <li>
+                <a class="footer__link" href="https://example.com/" data-force="focus">LinkedIn</a>
+                <code>focus</code>
+              </li>
+            </ul>
+          </div>
+          <div class="variant">
+            <h3>Footer</h3>
+            <div class="frame">
+              <footer class="footer">
+                <h2 class="footer__title" id="sunset-footer">Contact</h2>
+                <a class="link footer__repo" href="https://github.com/felipe-miranda-marreiros/portfolio">This site's source code</a>
+                <ul class="footer__links">
+                  <li><a class="footer__link" href="https://example.com/">GitHub</a></li>
+                  <li><a class="footer__link" href="https://example.com/">LinkedIn</a></li>
+                  <li><a class="footer__link" href="mailto:owner@example.com">owner@example.com</a></li>
+                </ul>
+              </footer>
+            </div>
+          </div>
+        </section>
+
+        <section class="surface" data-band="lime" aria-labelledby="lime-title">
+          <h2 id="lime-title">Lime</h2>
+          <div class="variant">
+            <h3>Links</h3>
+            <ul class="states" inert>
+              <li>
+                <a class="footer__link" href="https://example.com/">LinkedIn</a>
+                <code>default</code>
+              </li>
+              <li>
+                <a class="footer__link" href="https://example.com/" data-force="hover">LinkedIn</a>
+                <code>hover</code>
+              </li>
+              <li>
+                <a class="footer__link" href="https://example.com/" data-force="active">LinkedIn</a>
+                <code>active</code>
+              </li>
+              <li>
+                <a class="footer__link" href="https://example.com/" data-force="focus">LinkedIn</a>
+                <code>focus</code>
+              </li>
+            </ul>
+          </div>
+          <div class="variant">
+            <h3>Footer</h3>
+            <div class="frame">
+              <footer class="footer">
+                <h2 class="footer__title" id="lime-footer">Contact</h2>
+                <a class="link footer__repo" href="https://github.com/felipe-miranda-marreiros/portfolio">This site's source code</a>
+                <ul class="footer__links">
+                  <li><a class="footer__link" href="https://example.com/">GitHub</a></li>
+                  <li><a class="footer__link" href="https://example.com/">LinkedIn</a></li>
+                  <li><a class="footer__link" href="mailto:owner@example.com">owner@example.com</a></li>
+                </ul>
+              </footer>
+            </div>
+          </div>
+        </section>
+
+        <section class="surface" data-band="charcoal" aria-labelledby="charcoal-title">
+          <h2 id="charcoal-title">Charcoal</h2>
+          <div class="variant">
+            <h3>Links</h3>
+            <ul class="states" inert>
+              <li>
+                <a class="footer__link" href="https://example.com/">LinkedIn</a>
+                <code>default</code>
+              </li>
+              <li>
+                <a class="footer__link" href="https://example.com/" data-force="hover">LinkedIn</a>
+                <code>hover</code>
+              </li>
+              <li>
+                <a class="footer__link" href="https://example.com/" data-force="active">LinkedIn</a>
+                <code>active</code>
+              </li>
+              <li>
+                <a class="footer__link" href="https://example.com/" data-force="focus">LinkedIn</a>
+                <code>focus</code>
+              </li>
+            </ul>
+          </div>
+          <div class="variant">
+            <h3>Footer</h3>
+            <div class="frame">
+              <footer class="footer">
+                <h2 class="footer__title" id="charcoal-footer">Contact</h2>
+                <a class="link footer__repo" href="https://github.com/felipe-miranda-marreiros/portfolio">This site's source code</a>
+                <ul class="footer__links">
+                  <li><a class="footer__link" href="https://example.com/">GitHub</a></li>
+                  <li><a class="footer__link" href="https://example.com/">LinkedIn</a></li>
+                  <li><a class="footer__link" href="mailto:owner@example.com">owner@example.com</a></li>
+                </ul>
+              </footer>
+            </div>
+          </div>
+        </section>
+      </div>
+    </main>
+
+    <footer class="foot" data-band="purple">
+      <p>Design prototype. A reference for the front end, not production code.</p>
+    </footer>
+  </body>
+</html>
