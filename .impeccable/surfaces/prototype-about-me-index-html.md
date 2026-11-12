@@ -55,6 +55,8 @@ Later on 2026-11-01, after the finish review and the design review, the Owner co
   looks like hover while held, and has no disabled state, as on the Portfolio.
 - On 2026-11-11 the Owner chose the Top bar without a name or logo: the Pages left, the language toggle on the right
   edge, where it keeps its place against the Portfolio's bar; on phones the toggle wraps under the Pages.
+- On 2026-11-11 the Owner chose, from rendered options, how the Top bar's Pages tell hover from current: a hovered or
+  pressed Page underlines 3px in the band's Key Alt, and the current Page keeps its 3px underline in Key.
 
 ## Unresolved
 
