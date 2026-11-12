@@ -300,8 +300,8 @@ component never sets a palette colour; it reads the tokens of the band it sits i
 the ink itself, and tints are transparent. On sunset any alpha step below full ink drops under 4.5:1. Three lines take
 another colour: the lineup's block rules are in Key; a hovered edge (`--color-hairline-hover`,
 `--color-action-hover-edge`) is the Display colour; and underlines are 3px in Key or Key Alt, on hover and while held
-for the language toggle, whose focus already shows the 3px ring, on hover, focus and press for band links, and on hover
-and focus for lineup items.
+for the language toggle, whose focus already shows the 3px ring, in Key Alt on hover and press and in Key under the
+current one for the Top bar's Pages, on hover, focus and press for band links, and on hover and focus for lineup items.
 
 **The Cream Is Large Rule.** Cream holds only 3.3:1 on sunset, so on the sunset ground it sets large type only: display,
 headlines and the billing keys. On the charcoal action fill it is the action's text, at 15:1.
@@ -438,8 +438,8 @@ is small, in a softly rounded square with a hairline edge, plain, with no effect
 
 Square, like a printed poster: chips, controls, the photo radius and panels at 0; only truly round things stay round
 (999px). Every line is a 3px rule in the band's ink, except the lineup's block rules, in Key; a hovered edge, in the
-Display colour; and underlines, in Key or Key Alt, on hover and while held for the language toggle, on hover
-and press for the Top bar's Pages and always under the current one, on hover, focus and press for band links, and on hover and focus for lineup items. The illustration slot is 3:1 on narrow screens and 4:5 from 44rem.
+Display colour; and underlines, in Key or Key Alt, on hover and while held for the language toggle, in Key Alt on
+hover and press for the Top bar's Pages and in Key always under the current one, on hover, focus and press for band links, and on hover and focus for lineup items. The illustration slot is 3:1 on narrow screens and 4:5 from 44rem.
 
 ## Components
 
@@ -546,7 +546,8 @@ have no token yet, so the prototype sets them in About me's page CSS; each compo
 - **Chips:** the Chip, through tokens: Archivo at label size and the label weight (800), 0.06em tracking, set as-is
   with no case change, square, outlined in a 3px ink rule (`--chip-line-width`) on a transparent fill, 0.5rem apart.
 - **Navigation:** the Top bar sits on purple over a 3px ink rule, with no name: the Pages left in uppercase Label
-  type, in the band's ink, underlined 3px in the Key colour when current and on hover, and the language toggle right: the Toggle through tokens, a square, 3px-outlined EN and PT control with no inset,
+  type, in the band's ink, underlined 3px in the Key colour when current and in Key Alt on hover and while held, so a hovered Page
+  never reads as the current one, and the language toggle right: the Toggle through tokens, a square, 3px-outlined EN and PT control with no inset,
   in uppercase Label type, that underlines 3px in the Key colour on hover and while held, and fills with the ink,
   ground as text, when pressed, with no edge. Its 3px focus ring sits 6px out, clearing the outline with a 3px gap.
   There is no theme switch.
