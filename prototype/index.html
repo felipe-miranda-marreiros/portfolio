@@ -9,18 +9,32 @@
     <link rel="stylesheet" href="tokens.css" />
     <link rel="stylesheet" href="components/link/link.css" />
     <link rel="stylesheet" href="components/toggle/toggle.css" />
+    <link rel="stylesheet" href="components/top-bar/top-bar.css" />
     <link rel="stylesheet" href="components/chip/chip.css" />
     <link rel="stylesheet" href="index.css" />
+    <script src="components/toggle/toggle.js" defer></script>
     <script src="index.js" defer></script>
   </head>
   <body>
-    <header class="bar">
-      <a class="bar__name" href="index.html">Portfolio</a>
-      <fieldset class="toggle">
-        <legend>Theme</legend>
-        <button class="toggle__option" type="button" data-theme-choice="dark" aria-pressed="true">Dark</button>
-        <button class="toggle__option" type="button" data-theme-choice="light" aria-pressed="false">Light</button>
-      </fieldset>
+    <header class="top-bar">
+      <nav class="top-bar__pages" aria-label="Visual languages">
+        <ul>
+          <li><a class="top-bar__page" href="index.html" aria-current="page">Portfolio</a></li>
+          <li><a class="top-bar__page" href="about-me/index.html">About me</a></li>
+        </ul>
+      </nav>
+      <div class="top-bar__controls">
+        <fieldset class="toggle">
+          <legend>Theme</legend>
+          <button class="toggle__option" type="button" data-theme-choice="dark" aria-pressed="true">Dark</button>
+          <button class="toggle__option" type="button" data-theme-choice="light" aria-pressed="false">Light</button>
+        </fieldset>
+        <fieldset class="toggle">
+          <legend>Language</legend>
+          <button class="toggle__option" type="button" data-lang-choice="en" aria-pressed="true">EN</button>
+          <button class="toggle__option" type="button" data-lang-choice="pt" aria-pressed="false">PT</button>
+        </fieldset>
+      </div>
     </header>
 
     <main class="page">
@@ -312,6 +326,19 @@
             <li class="chip">pressed</li>
           </ul>
           <a class="cell__link link" href="components/toggle/index.html">Open the Toggle</a>
+        </section>
+
+        <section data-link-host class="cell cell--top-bar" aria-labelledby="top-bar-title">
+          <h2 class="cell__title" id="top-bar-title">Top bar</h2>
+          <p class="cell__note">The Pages on the start side, the theme switch and the language toggle on the end side.</p>
+          <ul class="chips" aria-label="Top bar Page states">
+            <li class="chip">default</li>
+            <li class="chip">hover</li>
+            <li class="chip">active</li>
+            <li class="chip">focus</li>
+            <li class="chip">current</li>
+          </ul>
+          <a class="cell__link link" href="components/top-bar/index.html">Open the Top bar</a>
         </section>
       </div>
     </main>
