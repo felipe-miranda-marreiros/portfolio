@@ -36,6 +36,11 @@ On 2026-11-11 the Owner chose, from rendered options, the Toggle's pressed optio
 input border colour, so the state clears 3:1. A Toggle option being pressed (mouse down) looks like hover, and a Toggle
 has no disabled state: it always offers a choice.
 
+On 2026-11-12 the Owner chose, from rendered options, the Top bar: no name or logo in it. The Pages sit on the left,
+the current one marked; the theme switch and then the language toggle sit on the right, the language toggle on the
+edge, so it keeps its place on About me, where the theme switch is absent. On phones it wraps to two rows, the Pages
+first and the toggles on the right of the second, with no menu.
+
 ## Unresolved
 
 The type scale, spacing scale and state tokens are first set by the token build, then refined with `typeset`, `layout`
@@ -57,7 +62,8 @@ panel and a small, plain photo.
 STORY: The Owner and agents see the whole system at a glance, trust it is complete (every state present), and open any
 token or component in one click.
 
-FIRST VIEWPORT: A top bar on a hairline: the Visual language's name left, a dark and light switch right. A large bold
+FIRST VIEWPORT: A top bar on a hairline: links to the two Visual languages' pages left, the dark and light switch and
+then the language toggle right. A large bold
 title left-aligned, a short supporting line under it. Below, a hairline panel grid: one cell per token group (with a
 live specimen and mono chips of its token names) and one per component (with mono chips of its states), the facts
 panel among them once it exists. Each cell ends in a row link; the first is the filled-ink primary action.
