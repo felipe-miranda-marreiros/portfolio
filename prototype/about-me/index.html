@@ -10,17 +10,25 @@
     <link rel="stylesheet" href="tokens.css" />
     <link rel="stylesheet" href="../components/chip/chip.css" />
     <link rel="stylesheet" href="../components/toggle/toggle.css" />
+    <link rel="stylesheet" href="../components/top-bar/top-bar.css" />
     <link rel="stylesheet" href="index.css" />
     <script src="../components/toggle/toggle.js" defer></script>
   </head>
   <body>
-    <header class="bar" data-band="purple">
-      <a class="bar__name" href="../index.html">Portfolio</a>
-      <fieldset class="toggle">
-        <legend>Language</legend>
-        <button class="toggle__option" type="button" data-lang-choice="en" aria-pressed="true">EN</button>
-        <button class="toggle__option" type="button" data-lang-choice="pt" aria-pressed="false">PT</button>
-      </fieldset>
+    <header class="top-bar" data-band="purple">
+      <nav class="top-bar__pages" aria-label="Visual languages">
+        <ul>
+          <li><a class="top-bar__page" href="../index.html">Portfolio</a></li>
+          <li><a class="top-bar__page" href="index.html" aria-current="page">About me</a></li>
+        </ul>
+      </nav>
+      <div class="top-bar__controls">
+        <fieldset class="toggle">
+          <legend>Language</legend>
+          <button class="toggle__option" type="button" data-lang-choice="en" aria-pressed="true">EN</button>
+          <button class="toggle__option" type="button" data-lang-choice="pt" aria-pressed="false">PT</button>
+        </fieldset>
+      </div>
     </header>
 
     <main>
