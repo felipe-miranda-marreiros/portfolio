@@ -64,6 +64,7 @@
   line-height: var(--leading-headline);
   letter-spacing: var(--tracking-headline);
   text-transform: var(--case-display);
+  color: var(--color-display);
   text-wrap: balance;
   overflow-wrap: break-word;
   hyphens: auto;
