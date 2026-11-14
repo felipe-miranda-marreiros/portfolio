@@ -13,8 +13,10 @@
     <link rel="stylesheet" href="components/chip/chip.css" />
     <link rel="stylesheet" href="components/footer/footer.css" />
     <link rel="stylesheet" href="components/text-field/text-field.css" />
+    <link rel="stylesheet" href="components/panel-grid/panel-grid.css" />
     <link rel="stylesheet" href="index.css" />
     <script src="components/toggle/toggle.js" defer></script>
+    <script src="components/panel-grid/panel-grid.js" defer></script>
     <script src="index.js" defer></script>
   </head>
   <body>
@@ -47,9 +49,9 @@
         </p>
       </div>
 
-      <div class="grid" data-grid>
-        <section data-link-host class="cell cell--color" aria-labelledby="color-title">
-          <h2 class="cell__title" id="color-title">Color</h2>
+      <div class="panel-grid index-grid">
+        <section data-link-host class="panel-grid__cell area-color" aria-labelledby="color-title">
+          <h2 class="panel-grid__title" id="color-title">Color</h2>
           <div class="schemes">
             <div class="scheme" data-scheme="dark">
               <p class="scheme__name">Dark</p>
@@ -80,11 +82,11 @@
             <li class="chip">--color-on-action</li>
             <li class="chip">--color-error</li>
           </ul>
-          <a class="cell__link link link--action" href="tokens/color.css">Open color.css</a>
+          <a class="panel-grid__link link link--action" href="tokens/color.css">Open color.css</a>
         </section>
 
-        <section data-link-host class="cell cell--spacing" aria-labelledby="spacing-title">
-          <h2 class="cell__title" id="spacing-title">Spacing</h2>
+        <section data-link-host class="panel-grid__cell area-spacing" aria-labelledby="spacing-title">
+          <h2 class="panel-grid__title" id="spacing-title">Spacing</h2>
           <ul class="spacing-specimen">
             <li><code>1</code><span class="bar-sample" style="--size: var(--space-1)"></span><code>4px</code></li>
             <li><code>2</code><span class="bar-sample" style="--size: var(--space-2)"></span><code>8px</code></li>
@@ -104,11 +106,11 @@
             <li class="chip">--chip-padding-block</li>
             <li class="chip">--chip-gap</li>
           </ul>
-          <a class="cell__link link" href="tokens/spacing.css">Open spacing.css</a>
+          <a class="panel-grid__link link" href="tokens/spacing.css">Open spacing.css</a>
         </section>
 
-        <section data-link-host class="cell cell--radii" aria-labelledby="radii-title">
-          <h2 class="cell__title" id="radii-title">Radii</h2>
+        <section data-link-host class="panel-grid__cell area-radii" aria-labelledby="radii-title">
+          <h2 class="panel-grid__title" id="radii-title">Radii</h2>
           <ul class="radii-specimen">
             <li><span class="corner" style="--corner: var(--radius-chip)"></span><code>chip</code></li>
             <li><span class="corner" style="--corner: var(--radius-control)"></span><code>control</code></li>
@@ -122,11 +124,11 @@
             <li class="chip">--radius-panel</li>
             <li class="chip">--radius-round</li>
           </ul>
-          <a class="cell__link link" href="tokens/radii.css">Open radii.css</a>
+          <a class="panel-grid__link link" href="tokens/radii.css">Open radii.css</a>
         </section>
 
-        <section data-link-host class="cell cell--type" aria-labelledby="type-title">
-          <h2 class="cell__title" id="type-title">Typography</h2>
+        <section data-link-host class="panel-grid__cell area-type" aria-labelledby="type-title">
+          <h2 class="panel-grid__title" id="type-title">Typography</h2>
           <div class="type-specimen">
             <p class="type-specimen__display">Bold facts</p>
             <p class="type-specimen__headline">Quiet person</p>
@@ -156,11 +158,11 @@
             <li class="chip">--weight-chip</li>
             <li class="chip">--tracking-chip</li>
           </ul>
-          <a class="cell__link link" href="tokens/typography.css">Open typography.css</a>
+          <a class="panel-grid__link link" href="tokens/typography.css">Open typography.css</a>
         </section>
 
-        <section data-link-host class="cell cell--elevation" aria-labelledby="elevation-title">
-          <h2 class="cell__title" id="elevation-title">Elevation</h2>
+        <section data-link-host class="panel-grid__cell area-elevation" aria-labelledby="elevation-title">
+          <h2 class="panel-grid__title" id="elevation-title">Elevation</h2>
           <ul class="elevation-specimen">
             <li><span class="plane plane--flat"></span><code>flat</code></li>
             <li><span class="plane plane--hover"></span><code>hover</code></li>
@@ -173,11 +175,11 @@
             <li class="chip">--shadow-float</li>
             <li class="chip">--chip-line-width</li>
           </ul>
-          <a class="cell__link link" href="tokens/elevation.css">Open elevation.css</a>
+          <a class="panel-grid__link link" href="tokens/elevation.css">Open elevation.css</a>
         </section>
 
-        <section data-link-host class="cell cell--motion" aria-labelledby="motion-title">
-          <h2 class="cell__title" id="motion-title">Motion</h2>
+        <section data-link-host class="panel-grid__cell area-motion" aria-labelledby="motion-title">
+          <h2 class="panel-grid__title" id="motion-title">Motion</h2>
           <ul class="motion-specimen">
             <li><span class="track"><span class="runner" style="--run: var(--duration-fast)"></span></span><code>150ms</code></li>
             <li><span class="track"><span class="runner" style="--run: var(--duration-base)"></span></span><code>200ms</code></li>
@@ -185,7 +187,7 @@
           </ul>
           <div class="motion-run">
             <button class="sample-control" type="button" data-run aria-pressed="false">Run</button>
-            <p class="cell__note">Or hover this panel. Nothing moves under reduced motion.</p>
+            <p class="panel-grid__note">Or hover this panel. Nothing moves under reduced motion.</p>
           </div>
           <ul class="chips" aria-label="Motion tokens">
             <li class="chip">--duration-fast</li>
@@ -193,11 +195,11 @@
             <li class="chip">--duration-theme</li>
             <li class="chip">--ease-out</li>
           </ul>
-          <a class="cell__link link" href="tokens/motion.css">Open motion.css</a>
+          <a class="panel-grid__link link" href="tokens/motion.css">Open motion.css</a>
         </section>
 
-        <section data-link-host class="cell cell--state" aria-labelledby="state-title">
-          <h2 class="cell__title" id="state-title">State</h2>
+        <section data-link-host class="panel-grid__cell area-state" aria-labelledby="state-title">
+          <h2 class="panel-grid__title" id="state-title">State</h2>
           <div class="state-specimen">
             <div class="state-row">
               <span class="sample-control">Default</span>
@@ -230,21 +232,21 @@
             <li class="chip">--color-action</li>
             <li class="chip">--color-on-action</li>
           </ul>
-          <a class="cell__link link" href="tokens/state.css">Open state.css</a>
+          <a class="panel-grid__link link" href="tokens/state.css">Open state.css</a>
         </section>
 
-        <section data-link-host class="cell cell--about-me" aria-labelledby="about-me-title">
-          <h2 class="cell__title" id="about-me-title">About me</h2>
-          <p class="cell__note">
+        <section data-link-host class="panel-grid__cell area-about-me" aria-labelledby="about-me-title">
+          <h2 class="panel-grid__title" id="about-me-title">About me</h2>
+          <p class="panel-grid__note">
             About me's own Visual language, a second token set over the same components: flat colour bands in purple,
             sunset, lime and charcoal, set like a gig poster.
           </p>
-          <a class="cell__link link" href="about-me/index.html">Open About me's tokens</a>
+          <a class="panel-grid__link link" href="about-me/index.html">Open About me's tokens</a>
         </section>
 
-        <section data-link-host class="cell cell--button" aria-labelledby="button-title">
-          <h2 class="cell__title" id="button-title">Button</h2>
-          <p class="cell__note">
+        <section data-link-host class="panel-grid__cell area-button" aria-labelledby="button-title">
+          <h2 class="panel-grid__title" id="button-title">Button</h2>
+          <p class="panel-grid__note">
             The filled action and the outlined secondary, on both themes and on About me's bands.
           </p>
           <ul class="chips" aria-label="Button states">
@@ -255,24 +257,24 @@
             <li class="chip">disabled</li>
             <li class="chip">loading</li>
           </ul>
-          <a class="cell__link link" href="components/button/index.html">Open the Button</a>
+          <a class="panel-grid__link link" href="components/button/index.html">Open the Button</a>
         </section>
 
-        <section data-link-host class="cell cell--link" aria-labelledby="link-title">
-          <h2 class="cell__title" id="link-title">Link</h2>
-          <p class="cell__note">Text with an arrow that leads somewhere, and its filled action variant.</p>
+        <section data-link-host class="panel-grid__cell area-link" aria-labelledby="link-title">
+          <h2 class="panel-grid__title" id="link-title">Link</h2>
+          <p class="panel-grid__note">Text with an arrow that leads somewhere, and its filled action variant.</p>
           <ul class="chips" aria-label="Link states">
             <li class="chip">default</li>
             <li class="chip">hover</li>
             <li class="chip">focus</li>
             <li class="chip">active</li>
           </ul>
-          <a class="cell__link link" href="components/link/index.html">Open the Link</a>
+          <a class="panel-grid__link link" href="components/link/index.html">Open the Link</a>
         </section>
 
-        <section data-link-host class="cell cell--text-field" aria-labelledby="text-field-title">
-          <h2 class="cell__title" id="text-field-title">Text field</h2>
-          <p class="cell__note">A label above a single-line or multi-line field, with a hint and an error message.</p>
+        <section data-link-host class="panel-grid__cell area-text-field" aria-labelledby="text-field-title">
+          <h2 class="panel-grid__title" id="text-field-title">Text field</h2>
+          <p class="panel-grid__note">A label above a single-line or multi-line field, with a hint and an error message.</p>
           <ul class="chips" aria-label="Text field states">
             <li class="chip">default</li>
             <li class="chip">hover</li>
@@ -280,23 +282,23 @@
             <li class="chip">error</li>
             <li class="chip">disabled</li>
           </ul>
-          <a class="cell__link link" href="components/text-field/index.html">Open the Text field</a>
+          <a class="panel-grid__link link" href="components/text-field/index.html">Open the Text field</a>
         </section>
 
-        <section data-link-host class="cell cell--chip" aria-labelledby="chip-title">
-          <h2 class="cell__title" id="chip-title">Chip</h2>
-          <p class="cell__note">A short tag in the monospace, for technologies, token names and states. Static.</p>
+        <section data-link-host class="panel-grid__cell area-chip" aria-labelledby="chip-title">
+          <h2 class="panel-grid__title" id="chip-title">Chip</h2>
+          <p class="panel-grid__note">A short tag in the monospace, for technologies, token names and states. Static.</p>
           <ul class="chips" aria-label="Chip cases">
             <li class="chip">default</li>
             <li class="chip">numerals</li>
             <li class="chip">long content</li>
           </ul>
-          <a class="cell__link link" href="components/chip/index.html">Open the Chip</a>
+          <a class="panel-grid__link link" href="components/chip/index.html">Open the Chip</a>
         </section>
 
-        <section data-link-host class="cell cell--toggle" aria-labelledby="toggle-title">
-          <h2 class="cell__title" id="toggle-title">Toggle</h2>
-          <p class="cell__note">A segmented control with one option pressed: the theme switch and the language toggle.</p>
+        <section data-link-host class="panel-grid__cell area-toggle" aria-labelledby="toggle-title">
+          <h2 class="panel-grid__title" id="toggle-title">Toggle</h2>
+          <p class="panel-grid__note">A segmented control with one option pressed: the theme switch and the language toggle.</p>
           <ul class="chips" aria-label="Toggle states">
             <li class="chip">default</li>
             <li class="chip">hover</li>
@@ -304,12 +306,24 @@
             <li class="chip">focus</li>
             <li class="chip">pressed</li>
           </ul>
-          <a class="cell__link link" href="components/toggle/index.html">Open the Toggle</a>
+          <a class="panel-grid__link link" href="components/toggle/index.html">Open the Toggle</a>
         </section>
 
-        <section data-link-host class="cell cell--top-bar" aria-labelledby="top-bar-title">
-          <h2 class="cell__title" id="top-bar-title">Top bar</h2>
-          <p class="cell__note">The Pages on the start side, the theme switch and the language toggle on the end side.</p>
+        <section data-link-host class="panel-grid__cell area-panel-grid" aria-labelledby="panel-grid-title">
+          <h2 class="panel-grid__title" id="panel-grid-title">Panel grid</h2>
+          <p class="panel-grid__note">Hairline cells that share their borders: this grid. The Portfolio only.</p>
+          <ul class="chips" aria-label="Panel grid cell states">
+            <li class="chip">default</li>
+            <li class="chip">hover</li>
+            <li class="chip">focus</li>
+            <li class="chip">active</li>
+          </ul>
+          <a class="panel-grid__link link" href="components/panel-grid/index.html">Open the Panel grid</a>
+        </section>
+
+        <section data-link-host class="panel-grid__cell area-top-bar" aria-labelledby="top-bar-title">
+          <h2 class="panel-grid__title" id="top-bar-title">Top bar</h2>
+          <p class="panel-grid__note">The Pages on the start side, the theme switch and the language toggle on the end side.</p>
           <ul class="chips" aria-label="Top bar Page states">
             <li class="chip">default</li>
             <li class="chip">hover</li>
@@ -317,12 +331,12 @@
             <li class="chip">focus</li>
             <li class="chip">current</li>
           </ul>
-          <a class="cell__link link" href="components/top-bar/index.html">Open the Top bar</a>
+          <a class="panel-grid__link link" href="components/top-bar/index.html">Open the Top bar</a>
         </section>
 
-        <section data-link-host class="cell cell--footer" aria-labelledby="footer-cell-title">
-          <h2 class="cell__title" id="footer-cell-title">Footer</h2>
-          <p class="cell__note">A title, the repository link, then the social links and email.</p>
+        <section data-link-host class="panel-grid__cell area-footer" aria-labelledby="footer-cell-title">
+          <h2 class="panel-grid__title" id="footer-cell-title">Footer</h2>
+          <p class="panel-grid__note">A title, the repository link, then the social links and email.</p>
           <ul class="chips" aria-label="Footer link states">
             <li class="chip">default</li>
             <li class="chip">hover</li>
@@ -330,7 +344,7 @@
             <li class="chip">focus</li>
             <li class="chip">long content</li>
           </ul>
-          <a class="cell__link link" href="components/footer/index.html">Open the Footer</a>
+          <a class="panel-grid__link link" href="components/footer/index.html">Open the Footer</a>
         </section>
       </div>
     </main>
