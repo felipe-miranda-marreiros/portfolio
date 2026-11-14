@@ -3,6 +3,8 @@
   --line-width: 1px;
   --chip-line-width: 0px;
   --footer-line-width: var(--line-width);
+  /* About me's Lineup: a linked item's resting underline, thin so it thickens to the line width on hover. */
+  --lineup-rest-line-width: 1px;
   /* No ink is darker than the night ground, so the night shadow is black; it still vanishes there, hence the ring. */
   --shadow-color: light-dark(color-mix(in srgb, var(--palette-ink) 22%, transparent), rgb(0 0 0 / 0.6));
   --shadow-ring: light-dark(
