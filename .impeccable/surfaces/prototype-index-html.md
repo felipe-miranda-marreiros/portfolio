@@ -62,7 +62,7 @@ On 2026-11-13 the Owner kept the Lineup to About me, so the Portfolio never show
 About me page, as it does to every component.
 
 On 2026-11-13 the Owner chose, from rendered options, Home's facts panel: the role and seniority as one large line
-under its label, then location and work model side by side under a hairline, then the core technologies as Chips, in a
+(its label is settled by the next entry), then location and work model side by side under a hairline, then the core technologies as Chips, in a
 hairline panel. Every word, labels included, is Content. A label-beside-value list and a grid of cells were turned
 down. The facts panel is Home's, so it has no About me page.
 
