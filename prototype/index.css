@@ -120,7 +120,8 @@ a {
   .area-text-field,
   .area-panel-grid,
   .area-lineup,
-  .area-facts-panel {
+  .area-facts-panel,
+  .area-role-entry {
     grid-column: span 2;
   }
 }
@@ -138,7 +139,7 @@ a {
       "button link text-field"
       "chip toggle panel-grid"
       "top-bar top-bar lineup"
-      "facts-panel footer footer";
+      "facts-panel role-entry footer";
   }
 
   .area-color {
@@ -211,6 +212,10 @@ a {
 
   .area-facts-panel {
     grid-area: facts-panel;
+  }
+
+  .area-role-entry {
+    grid-area: role-entry;
   }
 }
 
