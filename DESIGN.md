@@ -330,7 +330,8 @@ monospace that labels facts the way a codebase labels things: commands, tags, co
 - **Lede** (400, fluid 1.125rem to 1.25rem, line-height 1.4): the supporting line under a Page title, in secondary
   ink, measure 52ch.
 - **Body** (400, 1rem, line-height 1.6): summaries and supporting lines in secondary ink, measure 68ch; also the value
-  in a Text field, so Safari on iPhone doesn't zoom the page when the field takes focus.
+  in a Text field, so Safari on iPhone doesn't zoom the page when the field takes focus, and, at the control weight
+  (600) in full ink, a Facts panel fact's value.
 - **Small** (400, 0.875rem): captions, notes, metadata, and a field's hint, in muted ink, and a field's error message;
   also the size of row links, controls and field labels, which take the control weight (600), kept apart from the title
   weight so each can change alone.
