@@ -67,6 +67,10 @@ Later on 2026-11-01, after the finish review and the design review, the Owner co
 - On 2026-11-13 the Owner kept the Lineup to About me, the mirror of the Panel grid, so it has no Portfolio page. An item
   links only when the Owner gives it an address; a linked item underlines in its row's key colour on hover and focus,
   and a plain one has no hover.
+- On 2026-11-13 the Owner chose, from rendered options, how a linked lineup item shows it leads somewhere before any
+  hover: a thin resting underline in its row's key colour, thickening to the 3px rule on hover, focus and press (a
+  pressed item looks like a hovered one, as a pressed Link does). An arrow after the item and no resting cue were
+  turned down.
 
 ## Unresolved
 
