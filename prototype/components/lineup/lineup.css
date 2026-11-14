@@ -63,6 +63,11 @@
   hyphens: auto;
 }
 
+a.lineup__item {
+  text-decoration-line: underline;
+  text-decoration-thickness: var(--lineup-rest-line-width);
+}
+
 a.lineup__item:where(
   :hover,
   :focus-visible,
@@ -71,7 +76,7 @@ a.lineup__item:where(
   [data-force~="focus"],
   [data-force~="active"]
 ) {
-  text-decoration-line: underline;
+  text-decoration-thickness: var(--line-width);
 }
 
 a.lineup__item:is(:focus-visible, [data-force~="focus"]) {
