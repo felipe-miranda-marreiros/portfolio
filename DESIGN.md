@@ -411,7 +411,7 @@ content to the shared edge. Content bands pad 4rem above and below on narrow scr
 follows them like every content band. The bar pads 1rem above and below, the Footer 2rem. From 44rem the intro splits
 into the title column and the illustration slot (12rem to 18rem), aligned to their foot; on narrow screens the slot
 stacks under the title. A lineup row stacks category over item, and from 36rem sets them in two columns (a 9rem
-category column, 1rem gap) on a shared baseline. Swatches fill an auto-fit grid with a 13rem minimum.
+category column and the item in the rest, which may shrink, 1rem gap) on a shared baseline. Swatches fill an auto-fit grid with a 13rem minimum.
 
 ## Elevation & Depth
 
@@ -454,9 +454,9 @@ Footer's links, on hover, focus and press for band links, and on hover and focus
 
 ## Components
 
-The Button, the Link, the Chip, the Toggle, the Top bar, the Footer, the Text field and the Panel grid are built in the
-prototype (`prototype/components/button/`, `link/`, `chip/`, `toggle/`, `top-bar/`, `footer/`, `text-field/`,
-`panel-grid/`); the rest are the primitives the prototype's token specimens establish, to be confirmed by each
+The Button, the Link, the Chip, the Toggle, the Top bar, the Footer, the Text field, the Panel grid and About me's Lineup
+are built in the prototype (`prototype/components/button/`, `link/`, `chip/`, `toggle/`, `top-bar/`, `footer/`,
+`text-field/`, `panel-grid/`, `lineup/`); the rest are the primitives the prototype's token specimens establish, to be confirmed by each
 component's own PR. Every component takes every visual value from tokens and holds no visible text.
 
 ### Buttons
@@ -614,8 +614,20 @@ The shared components take About me's square corners, 3px rules and band colours
   band link, a 3px ink rule, then the links in uppercase Label type, underlined 3px in Key on hover and while held.
 
 #### Lineup
-The signature component, the billing row of the Billing Rule. On hover and focus an item underlines 3px in its own
-row's category colour.
+Built in the prototype (`prototype/components/lineup/`): the signature component, the billing rows of the Billing Rule,
+and About me's only; the Portfolio never shows one, so it has no Portfolio page.
+- **Parts:** a list (`.lineup`) of rows (`.lineup__row`), each a category (`.lineup__category`) then an item
+  (`.lineup__item`). Every word is Content.
+- **List:** a 3px rule in Key above and below, padding 1rem inside them, 0.5rem between rows.
+- **Row:** category over item; from 36rem, a 9rem category column and the item in the rest, 1rem apart, on a shared
+  baseline. **Alternation:** odd rows take Key and even rows Key Alt (`--row-key`), automatically down the list.
+- **Category:** Big Shoulders at the Title role (1.375rem, 800), uppercase, in its row's key colour.
+- **Item:** Billing type (Archivo 800, fluid 1.5rem to 2rem, uppercase, Body leading) in the band's ink; a long word
+  breaks or hyphenates rather than overflow.
+- **Linked and plain:** an item is a link only when the Owner gives it an address; otherwise it is plain text, with no
+  hover.
+- **Hover, focus and active** (a linked item): a 3px underline in its row's key colour at the underline offset; active
+  looks like hover. **Focus:** also the shared 3px ink ring at 3px offset. **Disabled:** none.
 
 #### Illustration slot
 Optional, on the intro band's right from 44rem. It carries a marked placeholder until the Owner supplies artwork.
@@ -647,6 +659,7 @@ Optional, on the intro band's right from 44rem. It carries a marked placeholder 
 - **Don't** set a monospace eyebrow above a heading, or monospace prose.
 - **Don't** put a name or logo in the Top bar; the Owner chose a bar of Pages and Toggles only.
 - **Don't** let anything come before the repository link in the Footer but its title.
+- **Don't** set a list as a Lineup; it is About me's only.
 - **Don't** make the Owner's photo a centrepiece: no large portrait, no colour effects, no full-bleed photo.
 - **Don't** put a shadow on anything that doesn't float above the page.
 - **Don't** let expression cost the 30-second read: role, seniority, technologies, location, CV and contact stay
