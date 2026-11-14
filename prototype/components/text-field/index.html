@@ -1,0 +1,282 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Text field · Portfolio prototype</title>
+    <link rel="preload" href="../../fonts/schibsted-grotesk.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="preload" href="../../fonts/martian-mono.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="stylesheet" href="../../tokens.css" />
+    <link rel="stylesheet" href="../specimen.css" />
+    <link rel="stylesheet" href="text-field.css" />
+  </head>
+  <body>
+    <header class="specimen-bar">
+      <a href="../../index.html">Visual language</a>
+    </header>
+
+    <main>
+      <div class="specimen-intro">
+        <h1>Text field</h1>
+        <p>
+          A label above a single-line or multi-line field, a hint and an error message, in every state on both
+          themes. The last rows respond to the pointer and the keyboard, and show a 320px screen.
+        </p>
+      </div>
+
+      <div class="surfaces">
+        <section class="surface" data-scheme="dark" aria-labelledby="dark-title">
+          <h2 id="dark-title">Dark</h2>
+          <div class="variant">
+            <h3>Single-line</h3>
+            <ul class="states states--even" inert>
+              <li>
+                <div class="text-field">
+                  <label class="text-field__label" for="d-email-default">Email</label>
+                  <p class="text-field__hint" id="d-email-default-hint">Shown in the Footer.</p>
+                  <input class="text-field__input" id="d-email-default" type="email" value="owner@example.com" aria-describedby="d-email-default-hint" />
+                </div>
+                <code>default</code>
+              </li>
+              <li>
+                <div class="text-field">
+                  <label class="text-field__label" for="d-email-hover">Email</label>
+                  <p class="text-field__hint" id="d-email-hover-hint">Shown in the Footer.</p>
+                  <input class="text-field__input" id="d-email-hover" type="email" value="owner@example.com" aria-describedby="d-email-hover-hint" data-force="hover" />
+                </div>
+                <code>hover</code>
+              </li>
+              <li>
+                <div class="text-field">
+                  <label class="text-field__label" for="d-email-focus">Email</label>
+                  <p class="text-field__hint" id="d-email-focus-hint">Shown in the Footer.</p>
+                  <input class="text-field__input" id="d-email-focus" type="email" value="owner@example.com" aria-describedby="d-email-focus-hint" data-force="focus" />
+                </div>
+                <code>focus</code>
+              </li>
+              <li>
+                <div class="text-field">
+                  <label class="text-field__label" for="d-email-error">Email</label>
+                  <p class="text-field__hint" id="d-email-error-hint">Shown in the Footer.</p>
+                  <input class="text-field__input" id="d-email-error" type="email" value="owner@example" aria-describedby="d-email-error-hint d-email-error-error" aria-invalid="true" />
+                  <p class="text-field__error" id="d-email-error-error">Enter an email with a domain, like owner@example.com.</p>
+                </div>
+                <code>error</code>
+              </li>
+              <li>
+                <div class="text-field">
+                  <label class="text-field__label" for="d-email-disabled">Email</label>
+                  <p class="text-field__hint" id="d-email-disabled-hint">Shown in the Footer.</p>
+                  <input class="text-field__input" id="d-email-disabled" type="email" value="owner@example.com" aria-describedby="d-email-disabled-hint" disabled />
+                </div>
+                <code>disabled</code>
+              </li>
+            </ul>
+          </div>
+          <div class="variant">
+            <h3>Multi-line</h3>
+            <ul class="states states--even" inert>
+              <li>
+                <div class="text-field">
+                  <label class="text-field__label" for="d-summary-default">Summary</label>
+                  <textarea class="text-field__input" id="d-summary-default" rows="4">Builds web products end to end, from the database to the interface.</textarea>
+                </div>
+                <code>default</code>
+              </li>
+              <li>
+                <div class="text-field">
+                  <label class="text-field__label" for="d-summary-hover">Summary</label>
+                  <textarea class="text-field__input" id="d-summary-hover" rows="4" data-force="hover">Builds web products end to end, from the database to the interface.</textarea>
+                </div>
+                <code>hover</code>
+              </li>
+              <li>
+                <div class="text-field">
+                  <label class="text-field__label" for="d-summary-focus">Summary</label>
+                  <textarea class="text-field__input" id="d-summary-focus" rows="4" data-force="focus">Builds web products end to end, from the database to the interface.</textarea>
+                </div>
+                <code>focus</code>
+              </li>
+              <li>
+                <div class="text-field">
+                  <label class="text-field__label" for="d-summary-error">Summary</label>
+                  <textarea class="text-field__input" id="d-summary-error" rows="4" aria-invalid="true" aria-describedby="d-summary-error-error"></textarea>
+                  <p class="text-field__error" id="d-summary-error-error">Enter a summary in English.</p>
+                </div>
+                <code>error</code>
+              </li>
+              <li>
+                <div class="text-field">
+                  <label class="text-field__label" for="d-summary-disabled">Summary</label>
+                  <textarea class="text-field__input" id="d-summary-disabled" rows="4" disabled>Builds web products end to end, from the database to the interface.</textarea>
+                </div>
+                <code>disabled</code>
+              </li>
+            </ul>
+          </div>
+          <div class="variant">
+            <h3>Try it</h3>
+            <ul class="states states--even">
+              <li>
+                <div class="text-field">
+                  <label class="text-field__label" for="d-try-email">Email</label>
+                  <p class="text-field__hint" id="d-try-email-hint">Shown in the Footer.</p>
+                  <input class="text-field__input" id="d-try-email" type="email" value="owner@example.com" aria-describedby="d-try-email-hint" />
+                </div>
+              </li>
+              <li>
+                <div class="text-field">
+                  <label class="text-field__label" for="d-try-summary">Summary</label>
+                  <textarea class="text-field__input" id="d-try-summary" rows="4">Builds web products end to end, from the database to the interface.</textarea>
+                </div>
+              </li>
+            </ul>
+          </div>
+          <div class="variant">
+            <h3>On a phone, 320px, with a Brazilian Portuguese value</h3>
+            <div class="frame frame--phone frame--padded">
+              <div class="text-field">
+                <label class="text-field__label" for="d-phone-email">Email</label>
+                <p class="text-field__hint" id="d-phone-email-hint">Shown in the Footer.</p>
+                <input class="text-field__input" id="d-phone-email" type="email" value="owner@example" aria-describedby="d-phone-email-hint d-phone-email-error" aria-invalid="true" />
+                <p class="text-field__error" id="d-phone-email-error">Enter an email with a domain, like owner@example.com.</p>
+              </div>
+              <div class="text-field">
+                <label class="text-field__label" for="d-phone-summary">Summary</label>
+                <textarea class="text-field__input" id="d-phone-summary" rows="4" lang="pt-BR">Constrói produtos web de ponta a ponta, do banco de dados à interface, com testes primeiro e entregas pequenas e frequentes.</textarea>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="surface" data-scheme="light" aria-labelledby="light-title">
+          <h2 id="light-title">Light</h2>
+          <div class="variant">
+            <h3>Single-line</h3>
+            <ul class="states states--even" inert>
+              <li>
+                <div class="text-field">
+                  <label class="text-field__label" for="l-email-default">Email</label>
+                  <p class="text-field__hint" id="l-email-default-hint">Shown in the Footer.</p>
+                  <input class="text-field__input" id="l-email-default" type="email" value="owner@example.com" aria-describedby="l-email-default-hint" />
+                </div>
+                <code>default</code>
+              </li>
+              <li>
+                <div class="text-field">
+                  <label class="text-field__label" for="l-email-hover">Email</label>
+                  <p class="text-field__hint" id="l-email-hover-hint">Shown in the Footer.</p>
+                  <input class="text-field__input" id="l-email-hover" type="email" value="owner@example.com" aria-describedby="l-email-hover-hint" data-force="hover" />
+                </div>
+                <code>hover</code>
+              </li>
+              <li>
+                <div class="text-field">
+                  <label class="text-field__label" for="l-email-focus">Email</label>
+                  <p class="text-field__hint" id="l-email-focus-hint">Shown in the Footer.</p>
+                  <input class="text-field__input" id="l-email-focus" type="email" value="owner@example.com" aria-describedby="l-email-focus-hint" data-force="focus" />
+                </div>
+                <code>focus</code>
+              </li>
+              <li>
+                <div class="text-field">
+                  <label class="text-field__label" for="l-email-error">Email</label>
+                  <p class="text-field__hint" id="l-email-error-hint">Shown in the Footer.</p>
+                  <input class="text-field__input" id="l-email-error" type="email" value="owner@example" aria-describedby="l-email-error-hint l-email-error-error" aria-invalid="true" />
+                  <p class="text-field__error" id="l-email-error-error">Enter an email with a domain, like owner@example.com.</p>
+                </div>
+                <code>error</code>
+              </li>
+              <li>
+                <div class="text-field">
+                  <label class="text-field__label" for="l-email-disabled">Email</label>
+                  <p class="text-field__hint" id="l-email-disabled-hint">Shown in the Footer.</p>
+                  <input class="text-field__input" id="l-email-disabled" type="email" value="owner@example.com" aria-describedby="l-email-disabled-hint" disabled />
+                </div>
+                <code>disabled</code>
+              </li>
+            </ul>
+          </div>
+          <div class="variant">
+            <h3>Multi-line</h3>
+            <ul class="states states--even" inert>
+              <li>
+                <div class="text-field">
+                  <label class="text-field__label" for="l-summary-default">Summary</label>
+                  <textarea class="text-field__input" id="l-summary-default" rows="4">Builds web products end to end, from the database to the interface.</textarea>
+                </div>
+                <code>default</code>
+              </li>
+              <li>
+                <div class="text-field">
+                  <label class="text-field__label" for="l-summary-hover">Summary</label>
+                  <textarea class="text-field__input" id="l-summary-hover" rows="4" data-force="hover">Builds web products end to end, from the database to the interface.</textarea>
+                </div>
+                <code>hover</code>
+              </li>
+              <li>
+                <div class="text-field">
+                  <label class="text-field__label" for="l-summary-focus">Summary</label>
+                  <textarea class="text-field__input" id="l-summary-focus" rows="4" data-force="focus">Builds web products end to end, from the database to the interface.</textarea>
+                </div>
+                <code>focus</code>
+              </li>
+              <li>
+                <div class="text-field">
+                  <label class="text-field__label" for="l-summary-error">Summary</label>
+                  <textarea class="text-field__input" id="l-summary-error" rows="4" aria-invalid="true" aria-describedby="l-summary-error-error"></textarea>
+                  <p class="text-field__error" id="l-summary-error-error">Enter a summary in English.</p>
+                </div>
+                <code>error</code>
+              </li>
+              <li>
+                <div class="text-field">
+                  <label class="text-field__label" for="l-summary-disabled">Summary</label>
+                  <textarea class="text-field__input" id="l-summary-disabled" rows="4" disabled>Builds web products end to end, from the database to the interface.</textarea>
+                </div>
+                <code>disabled</code>
+              </li>
+            </ul>
+          </div>
+          <div class="variant">
+            <h3>Try it</h3>
+            <ul class="states states--even">
+              <li>
+                <div class="text-field">
+                  <label class="text-field__label" for="l-try-email">Email</label>
+                  <p class="text-field__hint" id="l-try-email-hint">Shown in the Footer.</p>
+                  <input class="text-field__input" id="l-try-email" type="email" value="owner@example.com" aria-describedby="l-try-email-hint" />
+                </div>
+              </li>
+              <li>
+                <div class="text-field">
+                  <label class="text-field__label" for="l-try-summary">Summary</label>
+                  <textarea class="text-field__input" id="l-try-summary" rows="4">Builds web products end to end, from the database to the interface.</textarea>
+                </div>
+              </li>
+            </ul>
+          </div>
+          <div class="variant">
+            <h3>On a phone, 320px, with a Brazilian Portuguese value</h3>
+            <div class="frame frame--phone frame--padded">
+              <div class="text-field">
+                <label class="text-field__label" for="l-phone-email">Email</label>
+                <p class="text-field__hint" id="l-phone-email-hint">Shown in the Footer.</p>
+                <input class="text-field__input" id="l-phone-email" type="email" value="owner@example" aria-describedby="l-phone-email-hint l-phone-email-error" aria-invalid="true" />
+                <p class="text-field__error" id="l-phone-email-error">Enter an email with a domain, like owner@example.com.</p>
+              </div>
+              <div class="text-field">
+                <label class="text-field__label" for="l-phone-summary">Summary</label>
+                <textarea class="text-field__input" id="l-phone-summary" rows="4" lang="pt-BR">Constrói produtos web de ponta a ponta, do banco de dados à interface, com testes primeiro e entregas pequenas e frequentes.</textarea>
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
+    </main>
+
+    <footer class="foot">
+      <p>Design prototype. A reference for the front end, not production code. <a href="about-me.html">See it on About me's bands</a>.</p>
+    </footer>
+  </body>
+</html>

@@ -1,0 +1,292 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Text field on About me · Portfolio prototype</title>
+    <link rel="preload" href="../../fonts/big-shoulders-display.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="preload" href="../../fonts/archivo.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="stylesheet" href="../../tokens.css" />
+    <link rel="stylesheet" href="../../about-me/tokens.css" />
+    <link rel="stylesheet" href="../specimen.css" />
+    <link rel="stylesheet" href="text-field.css" />
+  </head>
+  <body>
+    <header class="specimen-bar" data-band="purple">
+      <a href="index.html">Text field on the Portfolio</a>
+    </header>
+
+    <main>
+      <div class="specimen-intro" data-band="purple">
+        <h1>Text field</h1>
+        <p>
+          The Text field through About me's tokens on each band: square, a 3px ink rule that takes the band's
+          Display colour on hover, and an error as a dashed rule with its message. On purple, a 320px screen.
+        </p>
+      </div>
+
+      <div class="surfaces surfaces--bands">
+        <section class="surface" data-band="purple" aria-labelledby="purple-title">
+          <h2 id="purple-title">Purple</h2>
+          <div class="variant">
+            <h3>Single-line</h3>
+            <ul class="states states--even" inert>
+              <li>
+                <div class="text-field">
+                  <label class="text-field__label" for="purple-email-default">Email</label>
+                  <p class="text-field__hint" id="purple-email-default-hint">Shown in the Footer.</p>
+                  <input class="text-field__input" id="purple-email-default" type="email" value="owner@example.com" aria-describedby="purple-email-default-hint" />
+                </div>
+                <code>default</code>
+              </li>
+              <li>
+                <div class="text-field">
+                  <label class="text-field__label" for="purple-email-hover">Email</label>
+                  <p class="text-field__hint" id="purple-email-hover-hint">Shown in the Footer.</p>
+                  <input class="text-field__input" id="purple-email-hover" type="email" value="owner@example.com" aria-describedby="purple-email-hover-hint" data-force="hover" />
+                </div>
+                <code>hover</code>
+              </li>
+              <li>
+                <div class="text-field">
+                  <label class="text-field__label" for="purple-email-focus">Email</label>
+                  <p class="text-field__hint" id="purple-email-focus-hint">Shown in the Footer.</p>
+                  <input class="text-field__input" id="purple-email-focus" type="email" value="owner@example.com" aria-describedby="purple-email-focus-hint" data-force="focus" />
+                </div>
+                <code>focus</code>
+              </li>
+              <li>
+                <div class="text-field">
+                  <label class="text-field__label" for="purple-email-error">Email</label>
+                  <p class="text-field__hint" id="purple-email-error-hint">Shown in the Footer.</p>
+                  <input class="text-field__input" id="purple-email-error" type="email" value="owner@example" aria-describedby="purple-email-error-hint purple-email-error-error" aria-invalid="true" />
+                  <p class="text-field__error" id="purple-email-error-error">Enter an email with a domain, like owner@example.com.</p>
+                </div>
+                <code>error</code>
+              </li>
+              <li>
+                <div class="text-field">
+                  <label class="text-field__label" for="purple-email-disabled">Email</label>
+                  <p class="text-field__hint" id="purple-email-disabled-hint">Shown in the Footer.</p>
+                  <input class="text-field__input" id="purple-email-disabled" type="email" value="owner@example.com" aria-describedby="purple-email-disabled-hint" disabled />
+                </div>
+                <code>disabled</code>
+              </li>
+            </ul>
+          </div>
+
+          <div class="variant">
+            <h3>Multi-line</h3>
+            <ul class="states states--even" inert>
+              <li>
+                <div class="text-field">
+                  <label class="text-field__label" for="purple-summary-default">Summary</label>
+                  <textarea class="text-field__input" id="purple-summary-default" rows="4">Builds web products end to end, from the database to the interface.</textarea>
+                </div>
+                <code>default</code>
+              </li>
+              <li>
+                <div class="text-field">
+                  <label class="text-field__label" for="purple-summary-error">Summary</label>
+                  <textarea class="text-field__input" id="purple-summary-error" rows="4" aria-invalid="true" aria-describedby="purple-summary-error-error"></textarea>
+                  <p class="text-field__error" id="purple-summary-error-error">Enter a summary in English.</p>
+                </div>
+                <code>error</code>
+              </li>
+            </ul>
+          </div>
+          <div class="variant">
+            <h3>Try it</h3>
+            <ul class="states states--even">
+              <li>
+                <div class="text-field">
+                  <label class="text-field__label" for="purple-try-email">Email</label>
+                  <p class="text-field__hint" id="purple-try-email-hint">Shown in the Footer.</p>
+                  <input class="text-field__input" id="purple-try-email" type="email" value="owner@example.com" aria-describedby="purple-try-email-hint" />
+                </div>
+              </li>
+              <li>
+                <div class="text-field">
+                  <label class="text-field__label" for="purple-try-summary">Summary</label>
+                  <textarea class="text-field__input" id="purple-try-summary" rows="4">Builds web products end to end, from the database to the interface.</textarea>
+                </div>
+              </li>
+            </ul>
+          </div>
+          <div class="variant">
+            <h3>On a phone, 320px, with a Brazilian Portuguese value</h3>
+            <div class="frame frame--phone frame--padded">
+              <div class="text-field">
+                <label class="text-field__label" for="purple-phone-email">Email</label>
+                <p class="text-field__hint" id="purple-phone-email-hint">Shown in the Footer.</p>
+                <input class="text-field__input" id="purple-phone-email" type="email" value="owner@example" aria-describedby="purple-phone-email-hint purple-phone-email-error" aria-invalid="true" />
+                <p class="text-field__error" id="purple-phone-email-error">Enter an email with a domain, like owner@example.com.</p>
+              </div>
+              <div class="text-field">
+                <label class="text-field__label" for="purple-phone-summary">Summary</label>
+                <textarea class="text-field__input" id="purple-phone-summary" rows="4" lang="pt-BR">Constrói produtos web de ponta a ponta, do banco de dados à interface, com testes primeiro e entregas pequenas e frequentes.</textarea>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="surface" data-band="sunset" aria-labelledby="sunset-title">
+          <h2 id="sunset-title">Sunset</h2>
+          <div class="variant">
+            <h3>Single-line</h3>
+            <ul class="states states--even" inert>
+              <li>
+                <div class="text-field">
+                  <label class="text-field__label" for="sunset-email-default">Email</label>
+                  <p class="text-field__hint" id="sunset-email-default-hint">Shown in the Footer.</p>
+                  <input class="text-field__input" id="sunset-email-default" type="email" value="owner@example.com" aria-describedby="sunset-email-default-hint" />
+                </div>
+                <code>default</code>
+              </li>
+              <li>
+                <div class="text-field">
+                  <label class="text-field__label" for="sunset-email-hover">Email</label>
+                  <p class="text-field__hint" id="sunset-email-hover-hint">Shown in the Footer.</p>
+                  <input class="text-field__input" id="sunset-email-hover" type="email" value="owner@example.com" aria-describedby="sunset-email-hover-hint" data-force="hover" />
+                </div>
+                <code>hover</code>
+              </li>
+              <li>
+                <div class="text-field">
+                  <label class="text-field__label" for="sunset-email-focus">Email</label>
+                  <p class="text-field__hint" id="sunset-email-focus-hint">Shown in the Footer.</p>
+                  <input class="text-field__input" id="sunset-email-focus" type="email" value="owner@example.com" aria-describedby="sunset-email-focus-hint" data-force="focus" />
+                </div>
+                <code>focus</code>
+              </li>
+              <li>
+                <div class="text-field">
+                  <label class="text-field__label" for="sunset-email-error">Email</label>
+                  <p class="text-field__hint" id="sunset-email-error-hint">Shown in the Footer.</p>
+                  <input class="text-field__input" id="sunset-email-error" type="email" value="owner@example" aria-describedby="sunset-email-error-hint sunset-email-error-error" aria-invalid="true" />
+                  <p class="text-field__error" id="sunset-email-error-error">Enter an email with a domain, like owner@example.com.</p>
+                </div>
+                <code>error</code>
+              </li>
+              <li>
+                <div class="text-field">
+                  <label class="text-field__label" for="sunset-email-disabled">Email</label>
+                  <p class="text-field__hint" id="sunset-email-disabled-hint">Shown in the Footer.</p>
+                  <input class="text-field__input" id="sunset-email-disabled" type="email" value="owner@example.com" aria-describedby="sunset-email-disabled-hint" disabled />
+                </div>
+                <code>disabled</code>
+              </li>
+            </ul>
+          </div>
+
+        </section>
+
+        <section class="surface" data-band="lime" aria-labelledby="lime-title">
+          <h2 id="lime-title">Lime</h2>
+          <div class="variant">
+            <h3>Single-line</h3>
+            <ul class="states states--even" inert>
+              <li>
+                <div class="text-field">
+                  <label class="text-field__label" for="lime-email-default">Email</label>
+                  <p class="text-field__hint" id="lime-email-default-hint">Shown in the Footer.</p>
+                  <input class="text-field__input" id="lime-email-default" type="email" value="owner@example.com" aria-describedby="lime-email-default-hint" />
+                </div>
+                <code>default</code>
+              </li>
+              <li>
+                <div class="text-field">
+                  <label class="text-field__label" for="lime-email-hover">Email</label>
+                  <p class="text-field__hint" id="lime-email-hover-hint">Shown in the Footer.</p>
+                  <input class="text-field__input" id="lime-email-hover" type="email" value="owner@example.com" aria-describedby="lime-email-hover-hint" data-force="hover" />
+                </div>
+                <code>hover</code>
+              </li>
+              <li>
+                <div class="text-field">
+                  <label class="text-field__label" for="lime-email-focus">Email</label>
+                  <p class="text-field__hint" id="lime-email-focus-hint">Shown in the Footer.</p>
+                  <input class="text-field__input" id="lime-email-focus" type="email" value="owner@example.com" aria-describedby="lime-email-focus-hint" data-force="focus" />
+                </div>
+                <code>focus</code>
+              </li>
+              <li>
+                <div class="text-field">
+                  <label class="text-field__label" for="lime-email-error">Email</label>
+                  <p class="text-field__hint" id="lime-email-error-hint">Shown in the Footer.</p>
+                  <input class="text-field__input" id="lime-email-error" type="email" value="owner@example" aria-describedby="lime-email-error-hint lime-email-error-error" aria-invalid="true" />
+                  <p class="text-field__error" id="lime-email-error-error">Enter an email with a domain, like owner@example.com.</p>
+                </div>
+                <code>error</code>
+              </li>
+              <li>
+                <div class="text-field">
+                  <label class="text-field__label" for="lime-email-disabled">Email</label>
+                  <p class="text-field__hint" id="lime-email-disabled-hint">Shown in the Footer.</p>
+                  <input class="text-field__input" id="lime-email-disabled" type="email" value="owner@example.com" aria-describedby="lime-email-disabled-hint" disabled />
+                </div>
+                <code>disabled</code>
+              </li>
+            </ul>
+          </div>
+
+        </section>
+
+        <section class="surface" data-band="charcoal" aria-labelledby="charcoal-title">
+          <h2 id="charcoal-title">Charcoal</h2>
+          <div class="variant">
+            <h3>Single-line</h3>
+            <ul class="states states--even" inert>
+              <li>
+                <div class="text-field">
+                  <label class="text-field__label" for="charcoal-email-default">Email</label>
+                  <p class="text-field__hint" id="charcoal-email-default-hint">Shown in the Footer.</p>
+                  <input class="text-field__input" id="charcoal-email-default" type="email" value="owner@example.com" aria-describedby="charcoal-email-default-hint" />
+                </div>
+                <code>default</code>
+              </li>
+              <li>
+                <div class="text-field">
+                  <label class="text-field__label" for="charcoal-email-hover">Email</label>
+                  <p class="text-field__hint" id="charcoal-email-hover-hint">Shown in the Footer.</p>
+                  <input class="text-field__input" id="charcoal-email-hover" type="email" value="owner@example.com" aria-describedby="charcoal-email-hover-hint" data-force="hover" />
+                </div>
+                <code>hover</code>
+              </li>
+              <li>
+                <div class="text-field">
+                  <label class="text-field__label" for="charcoal-email-focus">Email</label>
+                  <p class="text-field__hint" id="charcoal-email-focus-hint">Shown in the Footer.</p>
+                  <input class="text-field__input" id="charcoal-email-focus" type="email" value="owner@example.com" aria-describedby="charcoal-email-focus-hint" data-force="focus" />
+                </div>
+                <code>focus</code>
+              </li>
+              <li>
+                <div class="text-field">
+                  <label class="text-field__label" for="charcoal-email-error">Email</label>
+                  <p class="text-field__hint" id="charcoal-email-error-hint">Shown in the Footer.</p>
+                  <input class="text-field__input" id="charcoal-email-error" type="email" value="owner@example" aria-describedby="charcoal-email-error-hint charcoal-email-error-error" aria-invalid="true" />
+                  <p class="text-field__error" id="charcoal-email-error-error">Enter an email with a domain, like owner@example.com.</p>
+                </div>
+                <code>error</code>
+              </li>
+              <li>
+                <div class="text-field">
+                  <label class="text-field__label" for="charcoal-email-disabled">Email</label>
+                  <p class="text-field__hint" id="charcoal-email-disabled-hint">Shown in the Footer.</p>
+                  <input class="text-field__input" id="charcoal-email-disabled" type="email" value="owner@example.com" aria-describedby="charcoal-email-disabled-hint" disabled />
+                </div>
+                <code>disabled</code>
+              </li>
+            </ul>
+          </div>
+
+        </section>
+      </div>
+    </main>
+
+    <footer class="foot" data-band="purple">
+      <p>Design prototype. A reference for the front end, not production code.</p>
+    </footer>
+  </body>
+</html>
