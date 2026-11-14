@@ -1,6 +1,6 @@
 {
   "schemaVersion": 2,
-  "generatedAt": "2026-11-12T04:00:00Z",
+  "generatedAt": "2026-11-13T23:30:00Z",
   "title": "Design System: Portfolio",
   "extensions": {
     "colorMeta": {
@@ -55,6 +55,7 @@
       { "name": "--color-toggle-pressed", "value": "var(--color-tint)", "purpose": "A pressed Toggle option's fill." },
       { "name": "--color-on-toggle-pressed", "value": "var(--color-ink)", "purpose": "A pressed Toggle option's text." },
       { "name": "--color-toggle-pressed-edge", "value": "var(--color-hairline-input)", "purpose": "A pressed Toggle option's inner edge, which carries the state to 3:1." },
+      { "name": "--color-input-hover", "value": "var(--color-ink)", "purpose": "A hovered input's border: full ink on the Portfolio, the band's Display colour on About me." },
       { "name": "--color-error", "value": "light-dark(#ac312c, #ed756a)", "purpose": "Error borders and messages; the only hue." },
       { "name": "--color-selection", "value": "var(--color-ink)", "purpose": "Inverted text selection, with --color-on-selection = ground." },
       { "name": "--color-ground (about me)", "value": "purple #4a2390, sunset #e8582f, lime #d6e45a, charcoal #1f1d21", "purpose": "Each band's ground; one band per Section, rotating." },
@@ -105,11 +106,12 @@
       { "name": "focus-ring", "value": "outline: 2px solid var(--color-ink); outline-offset: 2px", "purpose": "Every focusable element." },
       { "name": "disabled", "value": "opacity: 0.4", "purpose": "Every disabled control." },
       { "name": "indicator-width", "value": "2px", "purpose": "The stroke of a loading ring; About me sets it to 3px." },
-      { "name": "error", "value": "border: 1px solid var(--color-error)", "purpose": "Fields in error, with a Small message in error." },
+      { "name": "error", "value": "border: 1px solid var(--color-error)", "purpose": "Fields in error (aria-invalid), with a Small message in error under them; hover leaves the line as it is." },
       { "name": "line-width", "value": "1px", "purpose": "Every hairline." },
       { "name": "error-line-style", "value": "solid", "purpose": "The error line's style; About me sets it to dashed." },
+      { "name": "error-weight", "value": "var(--weight-body)", "purpose": "An error message's weight: the body weight on the Portfolio; About me sets the control weight (700)." },
       { "name": "about-me-focus-ring", "value": "outline: 3px solid var(--color-ink); outline-offset: 3px", "purpose": "About me: every focusable element, in the band's ink, except Toggle options at 6px (--toggle-focus-offset)." },
-      { "name": "about-me-error", "value": "border: 3px dashed var(--color-ink)", "purpose": "About me: fields in error, with a Small message at the control weight; never a hue." },
+      { "name": "about-me-error", "value": "border: 3px dashed var(--color-ink)", "purpose": "About me: fields in error, with a Small message at the control weight (--error-weight); never a hue." },
       { "name": "about-me-line-width", "value": "3px", "purpose": "About me: every rule, outline and border." },
       { "name": "about-me-indicator-width", "value": "3px", "purpose": "About me: the loading ring's stroke, matching its rules." },
       { "name": "link-hover-line", "value": "none", "purpose": "A link's hover, focus and press line, and a Top bar Page's or Footer link's hover and press line; the Portfolio changes colour only." },
@@ -168,9 +170,9 @@
       "name": "Text Field",
       "kind": "input",
       "refersTo": "input",
-      "description": "Input with a 3:1 hairline border; error swaps it for a 1px error line.",
-      "html": "<label class=\"ds-field\"><input class=\"ds-input\" placeholder=\"Email\"></label>",
-      "css": ".ds-input { font-family: var(--font-sans); font-size: var(--text-small); padding: var(--space-2) var(--space-3); border: var(--line-width) solid var(--color-hairline-input); border-radius: var(--radius-control); background: none; color: var(--color-ink); } .ds-input::placeholder { color: var(--color-ink-muted); } .ds-input:focus-visible { outline: var(--focus-ring-width) solid var(--focus-ring-color); outline-offset: var(--focus-ring-offset); } .ds-input[aria-invalid=\"true\"] { border: var(--error-line-width) var(--error-line-style) var(--error-color); } .ds-input:disabled { opacity: var(--disabled-opacity); }"
+      "description": "A label above a single-line or multi-line field, an optional hint, and an error message under it. The value is Body size; hover steps the border to --color-input-hover. Built in prototype/components/text-field/.",
+      "html": "<div class=\"ds-field\"><label class=\"ds-field__label\" for=\"email\">Email</label><p class=\"ds-field__hint\" id=\"email-hint\">Shown in the Footer.</p><input class=\"ds-field__input\" id=\"email\" type=\"email\" aria-invalid=\"true\" aria-describedby=\"email-hint email-error\"><p class=\"ds-field__error\" id=\"email-error\">Enter an email with a domain.</p></div>",
+      "css": ".ds-field { display: flex; flex-direction: column; gap: var(--space-2); min-width: 0; color: var(--color-ink); } .ds-field__label { font-family: var(--font-sans); font-size: var(--text-link); font-weight: var(--weight-link); line-height: var(--leading-link); letter-spacing: var(--tracking-link); text-transform: var(--case-link); overflow-wrap: break-word; } .ds-field__hint, .ds-field__error { margin: 0; font-size: var(--text-small); line-height: var(--leading-body); overflow-wrap: break-word; } .ds-field__hint { color: var(--color-ink-muted); } .ds-field__error { font-weight: var(--error-weight); color: var(--error-color); } .ds-field__input { display: block; width: 100%; margin: 0; padding: var(--space-2) var(--space-3); border: var(--line-width) solid var(--color-hairline-input); border-radius: var(--radius-control); background: transparent; color: var(--color-ink); font-family: var(--font-sans); font-size: var(--text-body); font-weight: var(--weight-body); line-height: var(--leading-body); letter-spacing: var(--tracking-body); transition: border-color var(--duration-fast) var(--ease-out); } textarea.ds-field__input { min-height: calc(4lh + 2 * var(--space-2) + 2 * var(--line-width)); resize: vertical; } .ds-field__input::placeholder { color: var(--color-ink-muted); opacity: 1; } .ds-field__input:hover:not(:disabled, [aria-invalid=\"true\"]) { border-color: var(--color-input-hover); } .ds-field__input[aria-invalid=\"true\"] { border: var(--error-line-width) var(--error-line-style) var(--error-color); } .ds-field__input:focus-visible { outline: var(--focus-ring-width) solid var(--focus-ring-color); outline-offset: var(--focus-ring-offset); } .ds-field:has(.ds-field__input:disabled) { opacity: var(--disabled-opacity); } .ds-field__input:disabled { cursor: not-allowed; }"
     },
     {
       "name": "Chip",
