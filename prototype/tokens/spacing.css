@@ -16,6 +16,8 @@
   --chip-gap: var(--space-1);
   /* The gap between a Toggle's outline and its options; their corners nest inside it. */
   --toggle-inset: 3px;
+  /* About me's Lineup: the category column, wide enough for a long category at title size. */
+  --lineup-category-width: 9rem;
 
   --content-max: 76rem;
   --gutter: clamp(1.25rem, 0.5rem + 3.5vw, 3rem);
