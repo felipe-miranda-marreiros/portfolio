@@ -452,8 +452,9 @@ Footer's links, on hover, focus and press for band links, and on hover and focus
 
 ## Components
 
-The Button, the Link, the Chip, the Toggle, the Top bar, the Footer and the Text field are built in the prototype
-(`prototype/components/button/`, `link/`, `chip/`, `toggle/`, `top-bar/`, `footer/`, `text-field/`); the rest are the primitives the prototype's token specimens establish, to be confirmed by each
+The Button, the Link, the Chip, the Toggle, the Top bar, the Footer, the Text field and the Panel grid are built in the
+prototype (`prototype/components/button/`, `link/`, `chip/`, `toggle/`, `top-bar/`, `footer/`, `text-field/`,
+`panel-grid/`); the rest are the primitives the prototype's token specimens establish, to be confirmed by each
 component's own PR. Every component takes every visual value from tokens and holds no visible text.
 
 ### Buttons
@@ -496,12 +497,25 @@ Built in the prototype (`prototype/components/chip/`).
   the system text colour so it keeps its shape.
 
 ### Panel grid cells
-- **Corner Style:** the grid rounds its outer corners (12px); cells are square.
-- **Background:** the ground; on hover or focus within, the Wash and an inset Hairline Hover edge (200ms).
-- **Title:** the Title role (600).
-- **Border:** shared one-pixel hairlines. **Internal Padding:** 1.5rem on narrow screens, 2rem from 44rem.
-- **Row link:** a Link; on panel hover or focus within, it takes its hover look. The first cell's row link is the Link's
-  action variant.
+Built in the prototype (`prototype/components/panel-grid/`): the Panel grid, the Portfolio's only; About me never shows
+one.
+- **Parts:** the grid (`.panel-grid`), its cells (`.panel-grid__cell`, each the host of its links), and in each cell a
+  title (`.panel-grid__title`), an optional note (`.panel-grid__note`) or any other content, and a row link
+  (`.panel-grid__link`). Every word is Content. It needs the Link's styles for the row link.
+- **Grid:** one column by default; a page sets its columns and fills every row, since an empty track would show the
+  hairline as a solid block. Cells share one-pixel hairlines, the grid's hairline showing through a one-pixel gap; the
+  grid rounds its outer corners (12px) and clips its cells, which are square.
+- **Cell:** the ground, 1.5rem between its parts, padding 1.5rem on narrow screens and 2rem from 44rem.
+- **Title:** the Title role (600); a long word hyphenates or breaks rather than overflow. **Note:** Small in Muted Ink,
+  held to the measure.
+- **Row link:** a Link, pushed to the cell's foot. Where a page gives a cell the view's one filled action (the index's
+  colour cell), the row link is the Link's action variant.
+- **Hover and focus within:** the Wash and an inset Hairline Hover edge (200ms); the row link takes its hover look.
+  **Focus:** the row link's shared 2px ink ring. **Active:** the row link pressed, as the Link's. **Disabled:** none.
+- **Forced colours:** the grid's lines are drawn in the system text colour so they don't vanish, and a hovered or
+  focused cell takes a 2px inset outline in the system highlight colour.
+- **Arrow keys:** from a row link, the arrow keys move focus to the nearest cell's row link in that direction, by the
+  cells' rendered positions (`panel-grid.js`).
 
 ### Inputs / Fields
 Built in the prototype (`prototype/components/text-field/`): the Text field, one component with a single-line and a
@@ -590,6 +604,7 @@ The shared components take About me's square corners, 3px rules and band colours
   hover, focus and press it underlines 3px in the Key colour (`--link-hover-line: underline`) and the arrow nudges 3px.
   Its action variant fills Action at the control weight (700), does not underline, and on hover keeps its fill with the
   Display ring, as the primary Button's.
+- **Panel grid:** none; About me shows its collections as bands and lineups, never a Panel grid.
 - **Footer:** the Footer, through tokens, on the next band in the rotation, like any Section, with no rule above it
   (`--footer-line-width: 0px`): the title in Big Shoulders uppercase in the Display colour, the repository link as a
   band link, a 3px ink rule, then the links in uppercase Label type, underlined 3px in Key on hover and while held.
@@ -658,4 +673,5 @@ every component all its states, the motion and the shadow items hold on both.
   recoloured, or anything corporate or cold.
 - **Don't** use Dance Gavin Dance's artwork, lettering or logo; the poster grammar is an own version.
 - **Don't** add a photo or a second theme.
+- **Don't** set a collection in a Panel grid; it is the Portfolio's only.
 - **Don't** round a corner unless the thing is truly round.
