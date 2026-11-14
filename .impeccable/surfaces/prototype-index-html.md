@@ -70,6 +70,11 @@ On 2026-11-13 the Owner chose, from a rendered pair, to keep the role line's lab
 line opens the panel, since a visible mono label above it reads as an eyebrow, and the label stays in the list's markup.
 The other facts keep their visible labels.
 
+On 2026-11-14 the Owner chose, from rendered options, Experience's role entry: the period, location and work model in
+a monospace side column on the left, the role beside it (title, company, summary, achievements, then the technologies
+as Chips), with a hairline between roles. A stacked entry and a hairline panel per role were turned down. The role
+entry is Experience's, so it has no About me page.
+
 ## Unresolved
 
 The type scale, spacing scale and state tokens are first set by the token build, then refined with `typeset`, `layout`
