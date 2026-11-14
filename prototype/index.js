@@ -97,6 +97,13 @@ const components = [
     states: ["default", "fewer facts", "long content"],
   },
   {
+    slug: "role-entry",
+    name: "Role entry",
+    note: "One role on Experience: the period, place and work model beside the role. The Portfolio only.",
+    label: "Role entry cases",
+    states: ["default", "long content"],
+  },
+  {
     slug: "footer",
     name: "Footer",
     note: "A title, the repository link, then the social links and email.",
