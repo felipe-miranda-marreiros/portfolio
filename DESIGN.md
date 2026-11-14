@@ -325,7 +325,7 @@ monospace that labels facts the way a codebase labels things: commands, tags, co
 
 ### Hierarchy
 - **Display** (800, fluid up to 6rem, line-height 0.95, -0.04em): the Owner's name and Page titles, balanced wrapping.
-- **Headline** (700, fluid up to 3rem, line-height 1.05, -0.03em): Section titles.
+- **Headline** (700, fluid up to 3rem, line-height 1.05, -0.03em): Section titles and the Facts panel's role line.
 - **Title** (600, 1.25rem, line-height 1.3, -0.01em): role titles, panel titles, list rows and the Footer's title.
 - **Lede** (400, fluid 1.125rem to 1.25rem, line-height 1.4): the supporting line under a Page title, in secondary
   ink, measure 52ch.
@@ -334,8 +334,8 @@ monospace that labels facts the way a codebase labels things: commands, tags, co
 - **Small** (400, 0.875rem): captions, notes, metadata, and a field's hint, in muted ink, and a field's error message;
   also the size of row links, controls and field labels, which take the control weight (600), kept apart from the title
   weight so each can change alone.
-- **Label** (Martian Mono 500, 0.6875rem, 0.08em, uppercase, tabular numerals): stat labels and dates. Inside chips and
-  code, the same mono size is set as-is, with no tracking or case change.
+- **Label** (Martian Mono 500, 0.6875rem, 0.08em, uppercase, tabular numerals): stat labels, such as the Facts
+  panel's, and dates. Inside chips and code, the same mono size is set as-is, with no tracking or case change.
 
 Headings hyphenate and, where the browser has no dictionary, break long words rather than overflow a narrow column: a
 Portuguese title such as "Responsabilidades" at display size must fit a 320px screen. Paragraphs wrap with a pretty rag.
@@ -458,9 +458,9 @@ row's key colour that thickens to 3px on hover, focus and press. The illustratio
 
 ## Components
 
-The Button, the Link, the Chip, the Toggle, the Top bar, the Footer, the Text field, the Panel grid and About me's Lineup
-are built in the prototype (`prototype/components/button/`, `link/`, `chip/`, `toggle/`, `top-bar/`, `footer/`,
-`text-field/`, `panel-grid/`, `lineup/`); the rest are the primitives the prototype's token specimens establish, to be confirmed by each
+The Button, the Link, the Chip, the Toggle, the Top bar, the Footer, the Text field, the Panel grid, the Facts panel and
+About me's Lineup are built in the prototype (`prototype/components/button/`, `link/`, `chip/`, `toggle/`, `top-bar/`,
+`footer/`, `text-field/`, `panel-grid/`, `facts-panel/`, `lineup/`); the rest are the primitives the prototype's token specimens establish, to be confirmed by each
 component's own PR. Every component takes every visual value from tokens and holds no visible text.
 
 ### Buttons
@@ -524,6 +524,22 @@ one.
   focused cell takes a 2px inset outline in the system highlight colour.
 - **Arrow keys:** from a row link, the arrow keys move focus to the nearest cell's row link in that direction, by the
   cells' rendered positions (`panel-grid.js`).
+
+### Facts panel
+Built in the prototype (`prototype/components/facts-panel/`): Home's 30-second read, and the Portfolio's only; About me
+never shows one. The Owner chose this form over a label-beside-value list and a grid of cells.
+- **Parts:** a definition list (`.facts-panel`) of groups, each a label (`.facts-panel__label`) over its value: the lead
+  (`.facts-panel__lead`) with the role and seniority (`.facts-panel__role`), the facts (`.facts-panel__fact`), such as
+  location and work model, each with a value (`.facts-panel__value`), and the list (`.facts-panel__list`) with the core
+  technologies as Chips. Every word, labels included, is Content. It needs the Chip's styles.
+- **Panel:** a Hairline border, 12px corners (`--radius-panel`), padding 1.5rem, on the ground; it never grows wider
+  than its container, whatever a word's length.
+- **Layout:** the lead runs the full width, on a hairline 1rem below it; the facts sit side by side at their content's
+  width, 3rem apart, and wrap; the list runs the full width. 1.5rem between rows; within a group, 0.5rem between label
+  and value (0.25rem in a fact).
+- **Type:** labels in the Label role in Muted Ink; the role line in the Headline role (700), balanced, and a long word
+  hyphenates or breaks rather than overflow; a fact's value in Body at the control weight (600), in full ink.
+- **States:** none; the panel is static.
 
 ### Inputs / Fields
 Built in the prototype (`prototype/components/text-field/`): the Text field, one component with a single-line and a
@@ -613,6 +629,7 @@ The shared components take About me's square corners, 3px rules and band colours
   Its action variant fills Action at the control weight (700), does not underline, and on hover keeps its fill with the
   Display ring, as the primary Button's.
 - **Panel grid:** none; About me shows its collections as bands and lineups, never a Panel grid.
+- **Facts panel:** none; it is Home's.
 - **Footer:** the Footer, through tokens, on the next band in the rotation, like any Section, with no rule above it
   (`--footer-line-width: 0px`): the title in Big Shoulders uppercase in the Display colour, the repository link as a
   band link, a 3px ink rule, then the links in uppercase Label type, underlined 3px in Key on hover and while held.
