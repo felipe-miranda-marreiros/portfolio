@@ -1,0 +1,92 @@
+/**
+ * Text field: a label above a single-line or multi-line input, an optional hint, and an error message under it, from
+ * tokens only. The label takes the link role; the value is set at Body size so Safari on iPhone doesn't zoom on focus.
+ * Markup: <div class="text-field"><label class="text-field__label" for="…">…</label>
+ *   <p class="text-field__hint" id="…-hint">…</p>
+ *   <input class="text-field__input" id="…" aria-describedby="…-hint …-error" /> (or <textarea class="text-field__input">)
+ *   <p class="text-field__error" id="…-error">…</p></div>.
+ * An error sets aria-invalid="true" on the input; the message, not the border, is what carries it.
+ * `data-force` pins a state so the prototype page can show it without interaction.
+ */
+.text-field {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+  min-width: 0;
+  color: var(--color-ink);
+}
+
+.text-field__label {
+  font-family: var(--font-sans);
+  font-size: var(--text-link);
+  font-weight: var(--weight-link);
+  line-height: var(--leading-link);
+  letter-spacing: var(--tracking-link);
+  text-transform: var(--case-link);
+  overflow-wrap: break-word;
+}
+
+.text-field__hint,
+.text-field__error {
+  margin: 0;
+  font-size: var(--text-small);
+  line-height: var(--leading-body);
+  overflow-wrap: break-word;
+}
+
+.text-field__hint {
+  color: var(--color-ink-muted);
+}
+
+.text-field__error {
+  font-weight: var(--error-weight);
+  color: var(--error-color);
+}
+
+.text-field__input {
+  display: block;
+  width: 100%;
+  margin: 0;
+  padding: var(--space-2) var(--space-3);
+  border: var(--line-width) solid var(--color-hairline-input);
+  border-radius: var(--radius-control);
+  background: transparent;
+  color: var(--color-ink);
+  font-family: var(--font-sans);
+  font-size: var(--text-body);
+  font-weight: var(--weight-body);
+  line-height: var(--leading-body);
+  letter-spacing: var(--tracking-body);
+  transition: border-color var(--duration-fast) var(--ease-out);
+}
+
+textarea.text-field__input {
+  min-height: calc(4lh + 2 * var(--space-2) + 2 * var(--line-width));
+  resize: vertical;
+}
+
+.text-field__input::placeholder {
+  color: var(--color-ink-muted);
+  opacity: 1;
+}
+
+.text-field__input:where(:hover, [data-force~="hover"]):not(:disabled, [aria-invalid="true"]) {
+  border-color: var(--color-input-hover);
+}
+
+.text-field__input[aria-invalid="true"] {
+  border: var(--error-line-width) var(--error-line-style) var(--error-color);
+}
+
+.text-field__input:is(:focus-visible, [data-force~="focus"]) {
+  outline: var(--focus-ring-width) solid var(--focus-ring-color);
+  outline-offset: var(--focus-ring-offset);
+}
+
+.text-field:has(.text-field__input:disabled) {
+  opacity: var(--disabled-opacity);
+}
+
+.text-field__input:disabled {
+  cursor: not-allowed;
+}
