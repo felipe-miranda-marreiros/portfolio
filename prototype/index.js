@@ -27,7 +27,10 @@ for (const list of document.querySelectorAll("[data-swatches]")) {
   }
 }
 
-/** The index's component cells, in grid order: one entry per component, each with its states or cases as chips. */
+/**
+ * The index's component cells, in grid order: one entry per component, each with its states or cases as chips. `page`
+ * names the component page to open when it isn't `index.html`, as for a component only About me shows.
+ */
 const components = [
   {
     slug: "button",
@@ -79,6 +82,14 @@ const components = [
     states: ["default", "hover", "active", "focus", "current"],
   },
   {
+    slug: "lineup",
+    name: "Lineup",
+    note: "About me's lists, set like a poster's billing. About me only.",
+    label: "Lineup item states",
+    states: ["default", "hover", "focus", "active", "no address"],
+    page: "about-me.html",
+  },
+  {
     slug: "footer",
     name: "Footer",
     note: "A title, the repository link, then the social links and email.",
@@ -89,7 +100,7 @@ const components = [
 
 // Built here rather than written in the page, so the page stays under the file size hook as components are added.
 const componentGrid = document.querySelector("[data-components]");
-for (const { slug, name, note, label, states } of components) {
+for (const { slug, name, note, label, states, page = "index.html" } of components) {
   const cell = document.createElement("section");
   cell.className = `panel-grid__cell area-${slug}`;
   cell.dataset.linkHost = "";
@@ -112,7 +123,7 @@ for (const { slug, name, note, label, states } of components) {
   }
   const link = document.createElement("a");
   link.className = "panel-grid__link link";
-  link.href = `components/${slug}/index.html`;
+  link.href = `components/${slug}/${page}`;
   link.textContent = `Open the ${name}`;
   cell.append(title, text, chips, link);
   componentGrid.append(cell);

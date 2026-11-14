@@ -118,7 +118,8 @@ a {
   .area-top-bar,
   .area-footer,
   .area-text-field,
-  .area-panel-grid {
+  .area-panel-grid,
+  .area-lineup {
     grid-column: span 2;
   }
 }
@@ -135,7 +136,8 @@ a {
       "about-me about-me about-me"
       "button link text-field"
       "chip toggle panel-grid"
-      "top-bar top-bar footer";
+      "top-bar top-bar lineup"
+      "footer footer footer";
   }
 
   .area-color {
@@ -200,6 +202,10 @@ a {
 
   .area-panel-grid {
     grid-area: panel-grid;
+  }
+
+  .area-lineup {
+    grid-area: lineup;
   }
 }
 
