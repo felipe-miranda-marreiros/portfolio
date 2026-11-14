@@ -224,7 +224,7 @@ at a lower alpha or mixed into the ground, and error is the only hue.
 - **Display Ink** (`--color-display`): the colour display type, headlines and the Footer's title take. On the
   Portfolio it is the ink itself; the token exists so About me can set them in a band colour through tokens alone.
 - **Key** and **Key Alt** (`--color-key`, `--color-key-alt`): the ink itself on the Portfolio. Both sets name them, so
-  About me can set billing categories and hover underlines in its band's two key colours.
+  About me can set billing categories and underlines, resting and on hover, in its band's two key colours.
 - **Action Hover** (`--color-action-hover`, `--color-action-hover-edge`): the hovered primary action. On the Portfolio
   the fill steps down to the action at 84% (the Secondary Ink step) and there is no edge.
 
@@ -294,7 +294,7 @@ action, on action), so nothing on About me picks a palette colour directly.
 
 The display colour also draws the hovered edge of a control (`--color-hairline-hover`), of an input
 (`--color-input-hover`) and of the primary action (`--color-action-hover-edge`), whose fill stays the Action colour on hover, and the key colours draw billing categories
-and hover underlines.
+and underlines, resting and on hover.
 
 #### Named Rules
 **The One Band Per Section Rule.** Every Section owns one band, and the bands rotate purple, sunset, lime, charcoal. A
