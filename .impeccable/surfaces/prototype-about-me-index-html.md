@@ -59,6 +59,8 @@ Later on 2026-11-01, after the finish review and the design review, the Owner co
   pressed Page underlines 3px in the band's Key Alt, and the current Page keeps its 3px underline in Key.
 - On 2026-11-11 the Owner chose the Footer's layout on both Visual languages: a title, the repository link, a rule, then
   the social links and email; on About me it keeps the band's 3px ink rule and its title takes the band's Display colour.
+- On 2026-11-13 the Owner chose the Text field on both Visual languages: a label above it, its border stepping up on
+  hover, its value at Body size, and a single-line and a multi-line variant in one component.
 
 ## Unresolved
 
