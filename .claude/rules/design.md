@@ -51,6 +51,8 @@ following the prototype.
 ```
 prototype/
 ├── index.html          # links to every token and component page
+├── index.css           # the index's own styles: its grid's columns and areas, and the token specimens
+├── index.js            # builds the colour swatches and the component cells from lists; add a component there
 ├── tokens.css          # @imports every file in tokens/
 ├── tokens/             # one CSS file per token group (color.css, typography.css, spacing.css, ...)
 ├── about-me/           # About me's Visual language: its token page, tokens.css and tokens/, which redefine the
