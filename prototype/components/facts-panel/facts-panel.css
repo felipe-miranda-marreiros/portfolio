@@ -54,6 +54,7 @@
   line-height: var(--leading-label);
   letter-spacing: var(--tracking-label);
   text-transform: var(--case-label);
+  font-variant-numeric: tabular-nums;
   color: var(--color-ink-muted);
 }
 
