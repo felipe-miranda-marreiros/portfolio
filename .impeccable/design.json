@@ -1,6 +1,6 @@
 {
   "schemaVersion": 2,
-  "generatedAt": "2026-11-14T01:30:00Z",
+  "generatedAt": "2026-11-14T02:00:00Z",
   "title": "Design System: Portfolio",
   "extensions": {
     "colorMeta": {
@@ -126,7 +126,7 @@
       { "name": "chip-type", "value": "--weight-chip: 400, --tracking-chip: 0", "purpose": "The chip's weight and tracking; About me sets its label weight (800) and 0.06em." }
     ],
     "breakpoints": [
-      { "name": "grid-2col", "value": "44rem", "purpose": "The hosting Page's grid steps to two columns (the index's .index-grid); the Panel grid itself is one column." },
+      { "name": "grid-2col", "value": "44rem", "purpose": "The hosting Page's grid steps to two columns (the index's .index-grid); the Panel grid itself is one column, and its cells' padding steps from 1.5rem to 2rem here." },
       { "name": "grid-3col", "value": "68rem", "purpose": "The hosting Page's grid steps to three columns (the index's .index-grid)." },
       { "name": "about-me-lineup-2col", "value": "36rem" }
     ],

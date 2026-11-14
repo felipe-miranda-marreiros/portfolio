@@ -397,7 +397,8 @@ one-pixel gap, and each cell (1.5rem internal gap) ends in a row link pushed to 
 share a baseline. Cells pad 1.5rem on narrow screens and 2rem from 44rem. The Panel grid itself is one column; the Page
 that hosts it sets its columns and fills every row. The index's grid takes three steps, always in source order: one
 column on mobile; two columns from 44rem, where wide cells span both and compact ones pair up; three columns from 68rem,
-where wide cells span two beside a column of compact ones and full-width rows run across all three. Mobile and desktop have equal
+where wide cells span two beside a column of compact ones, compact ones also fill rows of three, and full-width rows
+run across all three. Mobile and desktop have equal
 priority: grids collapse to one column and splits stack, heading first, and nothing a desktop row shows is dropped on
 mobile. A specimen that is a single row of samples shrinks its samples to stay on one row rather than orphan the last; a
 component page's state samples, all one width, sit on even tracks instead.
