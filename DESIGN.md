@@ -239,7 +239,8 @@ at a lower alpha or mixed into the ground, and error is the only hue.
 - **Hairline Hover** (26%): the brightened edge of a hovered or focused panel and of a hovered secondary button.
 - **Hairline Control** (22%): the outline of secondary controls, the theme switch and swatch edges.
 - **Hairline Input** (52% ink on paper, 44% bone on night): input borders, which identify the control and so meet 3:1
-  against the ground, and the pressed Toggle option's edge, which carries that state to 3:1.
+  against the ground, and the pressed Toggle option's edge, which carries that state to 3:1. A hovered input's border
+  steps up to full ink (`--color-input-hover`).
 - **Tint** (7%) and **Tint Hover** (4%): chip fills, the pressed Toggle option and the pressed secondary button; the faint fill of a hovered secondary
   button.
 - **Night Wash** and **Paper Wash** (2% of the ink mixed into the ground): the hovered or focused panel cell. Opaque,
@@ -290,8 +291,8 @@ action, on action), so nothing on About me picks a palette colour directly.
 - The band colours serve as inks too: **Charcoal** is the ink on sunset and lime and Key on sunset; **Lime** is display
   type, Key and the action fill on purple, and Key on charcoal; **Purple** is Key Alt on lime.
 
-The display colour also draws the hovered edge of a control (`--color-hairline-hover`) and of the primary action
-(`--color-action-hover-edge`), whose fill stays the Action colour on hover, and the key colours draw billing categories
+The display colour also draws the hovered edge of a control (`--color-hairline-hover`), of an input
+(`--color-input-hover`) and of the primary action (`--color-action-hover-edge`), whose fill stays the Action colour on hover, and the key colours draw billing categories
 and hover underlines.
 
 #### Named Rules
@@ -326,9 +327,11 @@ monospace that labels facts the way a codebase labels things: commands, tags, co
 - **Title** (600, 1.25rem, line-height 1.3, -0.01em): role titles, panel titles, list rows and the Footer's title.
 - **Lede** (400, fluid 1.125rem to 1.25rem, line-height 1.4): the supporting line under a Page title, in secondary
   ink, measure 52ch.
-- **Body** (400, 1rem, line-height 1.6): summaries and supporting lines in secondary ink, measure 68ch.
-- **Small** (400, 0.875rem): captions, notes, metadata in muted ink; also the size of row links and controls, which
-  take the control weight (600), kept apart from the title weight so each can change alone.
+- **Body** (400, 1rem, line-height 1.6): summaries and supporting lines in secondary ink, measure 68ch; also the value
+  in a Text field, so Safari on iPhone doesn't zoom the page when the field takes focus.
+- **Small** (400, 0.875rem): captions, notes, metadata, and a field's hint, in muted ink, and a field's error message;
+  also the size of row links, controls and field labels, which take the control weight (600), kept apart from the title
+  weight so each can change alone.
 - **Label** (Martian Mono 500, 0.6875rem, 0.08em, uppercase, tabular numerals): stat labels and dates. Inside chips and
   code, the same mono size is set as-is, with no tracking or case change.
 
@@ -366,7 +369,7 @@ that sets the billing heavy and uppercase and reads plainly at body size.
 - **Billing** (Archivo 800, fluid 1.5rem to 2rem, uppercase): the items of a lineup.
 - **Lede** (400, fluid 1.125rem to 1.25rem, line-height 1.45): one line under the Page title, measure 52ch.
 - **Body** (400, 1rem, line-height 1.6): stories and notes in the band's ink, measure 68ch.
-- **Small** (400, 0.875rem): notes; controls and error messages take it at the control weight (700).
+- **Small** (400, 0.875rem): notes and a field's hint; controls and error messages take it at the control weight (700).
 - **Label** (Archivo 800, 0.8125rem, line-height 1.3, 0.06em): labels, the language toggle, the Top bar's Pages, the Footer's links and band links, uppercase
   through `--case-label`; chips and code at the same size are set as-is, with no case change, because token names are
   case-sensitive.
@@ -501,10 +504,19 @@ Built in the prototype (`prototype/components/chip/`).
   action variant.
 
 ### Inputs / Fields
-- **Style:** Hairline Input border (1px), 8px corners, padding 0.5rem by 0.75rem, Small text.
-- **Focus:** the shared 2px ink ring at 2px offset.
-- **Error:** the border becomes 1px Error and a Small message in Error sits under the field. **Disabled:** 0.4 opacity.
-- **Error line:** solid (`--error-line-style`); About me sets it to dashed.
+Built in the prototype (`prototype/components/text-field/`): the Text field, one component with a single-line and a
+multi-line variant that share every state.
+- **Order:** a label in the link role (Small at the control weight, full ink, as-is) above the field; an optional hint
+  in Small Muted Ink between them; and an error message under the field. 0.5rem between the parts. Every word is
+  Content.
+- **Field:** Hairline Input border (1px), 8px corners, padding 0.5rem by 0.75rem, no fill, the value in Body (16px,
+  never smaller, so Safari on iPhone doesn't zoom on focus) in full ink; a placeholder, if any, in Muted Ink. The
+  multi-line field shows four lines and resizes only vertically. It fills its container's width.
+- **Hover:** the border steps up to full ink (`--color-input-hover`). **Focus:** the shared 2px ink ring at 2px offset.
+- **Error:** `aria-invalid="true"`; the border becomes the error line (1px solid Error, `--error-line-width`,
+  `--error-line-style`), which hover leaves as it is, and a Small message in Error at the body weight (`--error-weight`)
+  sits under the field, tied to it with `aria-describedby`. The message carries the error, not the colour.
+- **Disabled:** the whole field, label included, at 0.4 opacity.
 
 ### Toggles
 Built in the prototype (`prototype/components/toggle/`): a segmented control with exactly one option pressed. The theme
@@ -551,16 +563,16 @@ Built in the prototype (`prototype/components/footer/`): the Section on every Pa
 
 ### About me
 
-The shared components take About me's square corners, 3px rules and band colours through tokens. One difference
-has no token yet, so the prototype sets it in About me's page CSS; the text field's PR adds the token it needs:
-- the error message's weight: the control weight (700) on About me.
+The shared components take About me's square corners, 3px rules and band colours through tokens.
 
 - **Buttons:** the primary fills Action with On Action text at the control weight (700); on hover it keeps its fill and
   a 3px ring in the Display colour appears at 3px offset. The secondary is outlined in a 3px ink rule that moves to the
   Display colour on hover, with no fill. **Focus:** a 3px ink ring at 3px offset. **Disabled:** 0.4 opacity.
   **Loading:** the ring is drawn at 3px. Both sink 1px when pressed, as on the Portfolio.
-- **Inputs / Fields:** a 3px ink border, square. **Error:** the border becomes a dashed 3px ink rule
-  (`--error-line-style: dashed`) with a Small message at the control weight, in ink.
+- **Inputs / Fields:** the Text field through tokens: a 3px ink border, square, its label in the link role (uppercase
+  Label type). **Hover:** the border takes the band's Display colour (`--color-input-hover`). **Focus:** a 3px ink ring
+  at 3px offset. **Error:** the border becomes a dashed 3px ink rule (`--error-line-style: dashed`) with a Small message
+  at the control weight (`--error-weight: 700`), in ink.
 - **Chips:** the Chip, through tokens: Archivo at label size and the label weight (800), 0.06em tracking, set as-is
   with no case change, square, outlined in a 3px ink rule (`--chip-line-width`) on a transparent fill, 0.5rem apart.
 - **Navigation:** the Top bar sits on purple over a 3px ink rule, with no name: the Pages left in uppercase Label
