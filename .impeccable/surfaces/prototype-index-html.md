@@ -49,7 +49,8 @@ On 2026-11-13 the Owner chose, from rendered options, the Text field: its label 
 weight, full ink) above the field; on hover the input border steps up to full ink; the value is set at Body size (16px),
 not Small, so Safari on iPhone doesn't zoom the page on focus; and one component covers both a single-line field and a
 multi-line one. A mono uppercase label, a quiet regular label, a Tint fill on hover and no hover change were turned
-down.
+down. In forced colours, where the error hue is gone, a field in error takes a dashed 2px border and its message the
+control weight, as on About me; the message alone, a dashed 1px border and a solid 2px one were turned down.
 
 ## Unresolved
 
