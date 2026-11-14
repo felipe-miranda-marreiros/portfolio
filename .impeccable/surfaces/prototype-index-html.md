@@ -52,6 +52,9 @@ multi-line one. A mono uppercase label, a quiet regular label, a Tint fill on ho
 down. In forced colours, where the error hue is gone, a field in error takes a dashed 2px border and its message the
 control weight, as on About me; the message alone, a dashed 1px border and a solid 2px one were turned down.
 
+On 2026-11-13 the Owner kept the Panel grid to the Portfolio: it is how the Portfolio shows collections, and About me,
+whose brief refuses cards, never shows one, so the component has no About me page.
+
 ## Unresolved
 
 The type scale, spacing scale and state tokens are first set by the token build, then refined with `typeset`, `layout`
