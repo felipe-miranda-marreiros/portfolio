@@ -92,7 +92,7 @@ const components = [
   {
     slug: "facts-panel",
     name: "Facts panel",
-    note: "Home's 30-second read: the role leads, then the other facts and the core technologies.",
+    note: "Home's 30-second read: the role line, then the other facts and the core technologies. The Portfolio only.",
     label: "Facts panel cases",
     states: ["default", "fewer facts", "long content"],
   },
