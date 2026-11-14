@@ -1,6 +1,6 @@
 {
   "schemaVersion": 2,
-  "generatedAt": "2026-11-14T03:00:00Z",
+  "generatedAt": "2026-11-14T03:30:00Z",
   "title": "Design System: Portfolio",
   "extensions": {
     "colorMeta": {
@@ -46,8 +46,8 @@
       { "name": "--color-ink", "value": "light-dark(#1a1815, #e8e2d6)", "purpose": "Text, primary action fill, focus ring, selection." },
       { "name": "--color-wash", "value": "color-mix(in srgb, var(--color-ink) 2%, var(--color-ground))", "purpose": "Hovered or focused panel cell; opaque so it covers the grid's hairline." },
       { "name": "--color-display", "value": "var(--color-ink)", "purpose": "Display type and headlines; the ink on the Portfolio, a band colour on About me." },
-      { "name": "--color-key", "value": "var(--color-ink)", "purpose": "Billing categories and hover underlines; the ink on the Portfolio, a band's key colour on About me." },
-      { "name": "--color-key-alt", "value": "var(--color-ink)", "purpose": "Alternate billing categories, and the underline under a hovered or pressed Top bar Page; the ink on the Portfolio, a band's second key colour on About me." },
+      { "name": "--color-key", "value": "var(--color-ink)", "purpose": "Billing categories and underlines, resting and on hover; the ink on the Portfolio, a band's key colour on About me." },
+      { "name": "--color-key-alt", "value": "var(--color-ink)", "purpose": "Alternate billing categories, an even-row linked lineup item's underline, resting and on hover, and the underline under a hovered or pressed Top bar Page; the ink on the Portfolio, a band's second key colour on About me." },
       { "name": "--color-action", "value": "var(--color-ink)", "purpose": "Primary action fill." },
       { "name": "--color-on-action", "value": "var(--color-ground)", "purpose": "Primary action text." },
       { "name": "--color-action-hover", "value": "color-mix(in srgb, var(--color-action) 84%, transparent)", "purpose": "The hovered primary action's fill: the action one alpha step down (the Secondary Ink step)." },
@@ -61,8 +61,8 @@
       { "name": "--color-ground (about me)", "value": "purple #4a2390, sunset #e8582f, lime #d6e45a, charcoal #1f1d21", "purpose": "Each band's ground; one band per Section, rotating." },
       { "name": "--color-ink (about me)", "value": "purple and charcoal: lilac #f7f0ff; sunset and lime: charcoal #1f1d21", "purpose": "The band's one ink: text, rules, input borders, focus ring, selection, error. Secondary, muted, hairline and control colours are the ink itself; tints are transparent." },
       { "name": "--color-display (about me)", "value": "purple: lime, sunset: cream, lime: magenta, charcoal: peach", "purpose": "Display type, Section titles and the Footer's title; also every hovered edge: --color-hairline-hover, --color-input-hover and --color-action-hover-edge. On the sunset ground cream is large type only." },
-      { "name": "--color-key (about me)", "value": "purple: lime, sunset: charcoal, lime: magenta, charcoal: lime", "purpose": "Billing categories, the lineup's block rules and hover underlines." },
-      { "name": "--color-key-alt (about me)", "value": "purple: blush, sunset: cream, lime: purple, charcoal: peach", "purpose": "Alternate billing categories, and the underline under a hovered or pressed Top bar Page." },
+      { "name": "--color-key (about me)", "value": "purple: lime, sunset: charcoal, lime: magenta, charcoal: lime", "purpose": "Billing categories, the lineup's block rules and underlines, resting and on hover." },
+      { "name": "--color-key-alt (about me)", "value": "purple: blush, sunset: cream, lime: purple, charcoal: peach", "purpose": "Alternate billing categories, an even-row linked lineup item's underline, resting and on hover, and the underline under a hovered or pressed Top bar Page." },
       { "name": "--color-action (about me)", "value": "purple: lime, sunset: charcoal, lime: magenta, charcoal: peach", "purpose": "Primary action fill, with --color-on-action: purple, cream (15:1 on charcoal), lime, charcoal." },
       { "name": "--color-action-hover (about me)", "value": "var(--color-action)", "purpose": "The hovered primary action keeps its fill; One Ink, no alpha steps." },
       { "name": "--color-action-hover-edge (about me)", "value": "var(--color-display)", "purpose": "The hovered primary action's edge: a ring in the band's Display colour at the focus offset, as every hovered edge on About me." },
