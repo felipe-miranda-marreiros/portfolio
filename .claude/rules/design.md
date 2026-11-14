@@ -65,6 +65,8 @@ prototype/
 ```
 
 - One folder per component, with its own files and its own prototype pages; never put several components in one file.
+- A prototype page that would pass the file size hook splits by variant, such as `about-me-multi-line.html` beside
+  `about-me.html`, linked from it, so every state still shows on each theme or band.
 - Each page links only the files it needs: `tokens.css` (and `about-me/tokens.css` on an About me page),
   `components/specimen.css` and its components' files.
 - Prototype pages may hold placeholder text to show a component; components themselves still hold none.
