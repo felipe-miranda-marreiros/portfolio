@@ -71,7 +71,7 @@ line opens the panel, since a visible mono label above it reads as an eyebrow, a
 The other facts keep their visible labels.
 
 On 2026-11-14 the Owner chose, from rendered options, Experience's role entry: the period, location and work model in
-a monospace side column on the left, the role beside it (title, company, summary, achievements, then the technologies
+a side column on the left (how it is set is settled by the next entry), the role beside it (title, company, summary, achievements, then the technologies
 as Chips), with a hairline between roles. A stacked entry and a hairline panel per role were turned down. The role
 entry is Experience's, so it has no About me page.
 
