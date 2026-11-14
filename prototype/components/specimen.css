@@ -244,7 +244,7 @@ a {
   grid-template-columns: repeat(auto-fill, minmax(min(100%, 17rem), 1fr));
 }
 
-.states li {
+.states > li {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
