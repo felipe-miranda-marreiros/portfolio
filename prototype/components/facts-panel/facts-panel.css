@@ -38,7 +38,6 @@
 }
 
 .facts-panel__lead {
-  gap: var(--space-2);
   padding-bottom: var(--space-4);
   border-bottom: var(--line-width) solid var(--color-hairline);
 }
