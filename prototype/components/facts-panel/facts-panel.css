@@ -1,0 +1,76 @@
+/**
+ * Facts panel: Home's 30-second read in a hairline panel, from tokens only. The role leads in one large line; the other
+ * facts sit side by side under a hairline; the core technologies close it as Chips.
+ * Markup: <dl class="facts-panel">
+ *   <div class="facts-panel__lead"><dt class="facts-panel__label">…</dt><dd class="facts-panel__role">…</dd></div>
+ *   <div class="facts-panel__fact"><dt class="facts-panel__label">…</dt><dd class="facts-panel__value">…</dd></div>…
+ *   <div class="facts-panel__list"><dt class="facts-panel__label">…</dt><dd><ul class="chips">…</ul></dd></div></dl>.
+ * Needs chip.css for the technologies. Every word, labels included, is Content. Static: it has no states.
+ */
+.facts-panel {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-5) var(--space-7);
+  min-width: 0;
+  margin: 0;
+  padding: var(--space-5);
+  border: var(--line-width) solid var(--color-hairline);
+  border-radius: var(--radius-panel);
+  background: var(--color-ground);
+  color: var(--color-ink);
+}
+
+.facts-panel > div {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+  min-width: 0;
+}
+
+.facts-panel dd {
+  margin: 0;
+}
+
+.facts-panel__lead,
+.facts-panel__list {
+  flex: 1 0 100%;
+}
+
+.facts-panel__lead {
+  gap: var(--space-2);
+  padding-bottom: var(--space-4);
+  border-bottom: var(--line-width) solid var(--color-hairline);
+}
+
+.facts-panel__list {
+  gap: var(--space-2);
+}
+
+.facts-panel__label {
+  font-family: var(--font-mono);
+  font-size: var(--text-label);
+  font-weight: var(--weight-label);
+  line-height: var(--leading-label);
+  letter-spacing: var(--tracking-label);
+  text-transform: var(--case-label);
+  color: var(--color-ink-muted);
+}
+
+.facts-panel__role {
+  font-family: var(--font-display);
+  font-size: var(--text-headline);
+  font-weight: var(--weight-headline);
+  line-height: var(--leading-headline);
+  letter-spacing: var(--tracking-headline);
+  text-transform: var(--case-display);
+  text-wrap: balance;
+  overflow-wrap: break-word;
+  hyphens: auto;
+}
+
+.facts-panel__value {
+  font-size: var(--text-body);
+  font-weight: var(--weight-control);
+  line-height: var(--leading-body);
+  overflow-wrap: break-word;
+}

@@ -1,0 +1,231 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Facts panel · Portfolio prototype</title>
+    <link rel="preload" href="../../fonts/schibsted-grotesk.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="preload" href="../../fonts/martian-mono.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="stylesheet" href="../../tokens.css" />
+    <link rel="stylesheet" href="../specimen.css" />
+    <link rel="stylesheet" href="../chip/chip.css" />
+    <link rel="stylesheet" href="facts-panel.css" />
+  </head>
+  <body>
+    <header class="specimen-bar">
+      <a href="../../index.html">Visual language</a>
+    </header>
+
+    <main>
+      <div class="specimen-intro">
+        <h1>Facts panel</h1>
+        <p>
+          Home's 30-second read on both themes, with placeholder values: the role leads, the other facts follow, the
+          core technologies close it. Static, so it has no states. It is Home's, so it has no About me page.
+        </p>
+      </div>
+
+      <div class="surfaces">
+        <section class="surface" data-scheme="dark" aria-labelledby="dark-title">
+          <h2 id="dark-title">Dark</h2>
+          <div class="variant">
+            <h3>Default</h3>
+            <div class="frame frame--padded">
+              <dl class="facts-panel">
+                <div class="facts-panel__lead">
+                  <dt class="facts-panel__label">Role</dt>
+                  <dd class="facts-panel__role">Senior software engineer</dd>
+                </div>
+                <div class="facts-panel__fact">
+                  <dt class="facts-panel__label">Location</dt>
+                  <dd class="facts-panel__value">São Paulo, Brazil</dd>
+                </div>
+                <div class="facts-panel__fact">
+                  <dt class="facts-panel__label">Work model</dt>
+                  <dd class="facts-panel__value">Remote or hybrid</dd>
+                </div>
+                <div class="facts-panel__list">
+                  <dt class="facts-panel__label">Core technologies</dt>
+                  <dd>
+                    <ul class="chips">
+                      <li class="chip">TypeScript</li>
+                      <li class="chip">React</li>
+                      <li class="chip">Node.js</li>
+                      <li class="chip">PostgreSQL</li>
+                      <li class="chip">AWS</li>
+                    </ul>
+                  </dd>
+                </div>
+              </dl>
+            </div>
+          </div>
+          <div class="variant">
+            <h3>Fewer facts</h3>
+            <div class="frame frame--padded">
+              <dl class="facts-panel">
+                <div class="facts-panel__lead">
+                  <dt class="facts-panel__label">Role</dt>
+                  <dd class="facts-panel__role">Senior software engineer</dd>
+                </div>
+                <div class="facts-panel__fact">
+                  <dt class="facts-panel__label">Location</dt>
+                  <dd class="facts-panel__value">São Paulo, Brazil</dd>
+                </div>
+                <div class="facts-panel__list">
+                  <dt class="facts-panel__label">Core technologies</dt>
+                  <dd>
+                    <ul class="chips">
+                      <li class="chip">TypeScript</li>
+                      <li class="chip">React</li>
+                      <li class="chip">Node.js</li>
+                    </ul>
+                  </dd>
+                </div>
+              </dl>
+            </div>
+          </div>
+          <div class="variant">
+            <h3>Long content, in Brazilian Portuguese</h3>
+            <div class="frame frame--padded">
+              <dl class="facts-panel" lang="pt-BR">
+                <div class="facts-panel__lead">
+                  <dt class="facts-panel__label">Cargo</dt>
+                  <dd class="facts-panel__role">Engenheiro de software sênior em plataformas de pagamento</dd>
+                </div>
+                <div class="facts-panel__fact">
+                  <dt class="facts-panel__label">Localização</dt>
+                  <dd class="facts-panel__value">Florianópolis, Santa Catarina, Brasil</dd>
+                </div>
+                <div class="facts-panel__fact">
+                  <dt class="facts-panel__label">Modelo de trabalho</dt>
+                  <dd class="facts-panel__value">Remoto ou híbrido</dd>
+                </div>
+                <div class="facts-panel__list">
+                  <dt class="facts-panel__label">Tecnologias principais</dt>
+                  <dd>
+                    <ul class="chips">
+                      <li class="chip">TypeScript</li>
+                      <li class="chip">React</li>
+                      <li class="chip">Next.js</li>
+                      <li class="chip">Node.js</li>
+                      <li class="chip">NestJS</li>
+                      <li class="chip">PostgreSQL</li>
+                      <li class="chip">Redis</li>
+                      <li class="chip">Docker</li>
+                      <li class="chip">Kubernetes</li>
+                      <li class="chip">AWS</li>
+                      <li class="chip">Terraform</li>
+                      <li class="chip">GitHub Actions</li>
+                    </ul>
+                  </dd>
+                </div>
+              </dl>
+            </div>
+          </div>
+        </section>
+
+        <section class="surface" data-scheme="light" aria-labelledby="light-title">
+          <h2 id="light-title">Light</h2>
+          <div class="variant">
+            <h3>Default</h3>
+            <div class="frame frame--padded">
+              <dl class="facts-panel">
+                <div class="facts-panel__lead">
+                  <dt class="facts-panel__label">Role</dt>
+                  <dd class="facts-panel__role">Senior software engineer</dd>
+                </div>
+                <div class="facts-panel__fact">
+                  <dt class="facts-panel__label">Location</dt>
+                  <dd class="facts-panel__value">São Paulo, Brazil</dd>
+                </div>
+                <div class="facts-panel__fact">
+                  <dt class="facts-panel__label">Work model</dt>
+                  <dd class="facts-panel__value">Remote or hybrid</dd>
+                </div>
+                <div class="facts-panel__list">
+                  <dt class="facts-panel__label">Core technologies</dt>
+                  <dd>
+                    <ul class="chips">
+                      <li class="chip">TypeScript</li>
+                      <li class="chip">React</li>
+                      <li class="chip">Node.js</li>
+                      <li class="chip">PostgreSQL</li>
+                      <li class="chip">AWS</li>
+                    </ul>
+                  </dd>
+                </div>
+              </dl>
+            </div>
+          </div>
+          <div class="variant">
+            <h3>Fewer facts</h3>
+            <div class="frame frame--padded">
+              <dl class="facts-panel">
+                <div class="facts-panel__lead">
+                  <dt class="facts-panel__label">Role</dt>
+                  <dd class="facts-panel__role">Senior software engineer</dd>
+                </div>
+                <div class="facts-panel__fact">
+                  <dt class="facts-panel__label">Location</dt>
+                  <dd class="facts-panel__value">São Paulo, Brazil</dd>
+                </div>
+                <div class="facts-panel__list">
+                  <dt class="facts-panel__label">Core technologies</dt>
+                  <dd>
+                    <ul class="chips">
+                      <li class="chip">TypeScript</li>
+                      <li class="chip">React</li>
+                      <li class="chip">Node.js</li>
+                    </ul>
+                  </dd>
+                </div>
+              </dl>
+            </div>
+          </div>
+          <div class="variant">
+            <h3>Long content, in Brazilian Portuguese</h3>
+            <div class="frame frame--padded">
+              <dl class="facts-panel" lang="pt-BR">
+                <div class="facts-panel__lead">
+                  <dt class="facts-panel__label">Cargo</dt>
+                  <dd class="facts-panel__role">Engenheiro de software sênior em plataformas de pagamento</dd>
+                </div>
+                <div class="facts-panel__fact">
+                  <dt class="facts-panel__label">Localização</dt>
+                  <dd class="facts-panel__value">Florianópolis, Santa Catarina, Brasil</dd>
+                </div>
+                <div class="facts-panel__fact">
+                  <dt class="facts-panel__label">Modelo de trabalho</dt>
+                  <dd class="facts-panel__value">Remoto ou híbrido</dd>
+                </div>
+                <div class="facts-panel__list">
+                  <dt class="facts-panel__label">Tecnologias principais</dt>
+                  <dd>
+                    <ul class="chips">
+                      <li class="chip">TypeScript</li>
+                      <li class="chip">React</li>
+                      <li class="chip">Next.js</li>
+                      <li class="chip">Node.js</li>
+                      <li class="chip">NestJS</li>
+                      <li class="chip">PostgreSQL</li>
+                      <li class="chip">Redis</li>
+                      <li class="chip">Docker</li>
+                      <li class="chip">Kubernetes</li>
+                      <li class="chip">AWS</li>
+                      <li class="chip">Terraform</li>
+                      <li class="chip">GitHub Actions</li>
+                    </ul>
+                  </dd>
+                </div>
+              </dl>
+            </div>
+          </div>
+        </section>
+      </div>
+    </main>
+
+    <footer class="foot">
+      <p>Design prototype. A reference for the front end, not production code.</p>
+    </footer>
+  </body>
+</html>
