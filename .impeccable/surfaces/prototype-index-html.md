@@ -45,6 +45,12 @@ On 2026-11-11 the Owner chose, from rendered options, the Footer: a short title 
 lands on, then the repository link with its arrow, a hairline, and the social links and email as plain links, in the
 Owner's order. The quietest one-line Footer and a headline-size repository link were turned down.
 
+On 2026-11-13 the Owner chose, from rendered options, the Text field: its label in the link role (Small at the control
+weight, full ink) above the field; on hover the input border steps up to full ink; the value is set at Body size (16px),
+not Small, so Safari on iPhone doesn't zoom the page on focus; and one component covers both a single-line field and a
+multi-line one. A mono uppercase label, a quiet regular label, a Tint fill on hover and no hover change were turned
+down.
+
 ## Unresolved
 
 The type scale, spacing scale and state tokens are first set by the token build, then refined with `typeset`, `layout`
