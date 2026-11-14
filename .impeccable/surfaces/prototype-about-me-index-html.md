@@ -64,6 +64,9 @@ Later on 2026-11-01, after the finish review and the design review, the Owner co
   colour on hover, as the secondary Button's does: a change of hue, not of contrast, which on sunset falls from 4.7:1 to
   cream's 3.3:1 and still clears 3:1.
 - On 2026-11-13 the Owner kept the Panel grid off About me: its collections stay bands and lineups.
+- On 2026-11-13 the Owner kept the Lineup to About me, the mirror of the Panel grid, so it has no Portfolio page. An item
+  links only when the Owner gives it an address; a linked item underlines in its row's key colour on hover and focus,
+  and a plain one has no hover.
 
 ## Unresolved
 
