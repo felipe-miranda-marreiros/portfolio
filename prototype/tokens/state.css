@@ -17,3 +17,12 @@
   --error-line-style: solid;
   --error-weight: var(--weight-body);
 }
+
+/* Forced colours drop the error hue, so the error line and message take a shape and a weight instead. */
+@media (forced-colors: active) {
+  :root {
+    --error-line-width: 2px;
+    --error-line-style: dashed;
+    --error-weight: var(--weight-control);
+  }
+}
