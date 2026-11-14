@@ -239,6 +239,11 @@ a {
   grid-template-columns: repeat(auto-fill, minmax(11rem, 1fr));
 }
 
+/* Even tracks wide enough for a sample with a row of content, such as a panel cell. */
+.states--wide {
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 17rem), 1fr));
+}
+
 .states li {
   display: flex;
   flex-direction: column;
