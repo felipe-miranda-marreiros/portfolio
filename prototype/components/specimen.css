@@ -217,7 +217,7 @@ a {
   gap: var(--space-3);
 }
 
-.variant h3 {
+.variant > h3 {
   font-family: var(--font-mono);
   font-size: var(--text-label);
   font-weight: var(--weight-label);
