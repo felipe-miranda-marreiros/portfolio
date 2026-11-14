@@ -12,6 +12,7 @@
     <link rel="stylesheet" href="components/top-bar/top-bar.css" />
     <link rel="stylesheet" href="components/chip/chip.css" />
     <link rel="stylesheet" href="components/footer/footer.css" />
+    <link rel="stylesheet" href="components/text-field/text-field.css" />
     <link rel="stylesheet" href="index.css" />
     <script src="components/toggle/toggle.js" defer></script>
     <script src="index.js" defer></script>
@@ -73,6 +74,7 @@
             <li class="chip">--color-hairline-hover</li>
             <li class="chip">--color-hairline-control</li>
             <li class="chip">--color-hairline-input</li>
+            <li class="chip">--color-input-hover</li>
             <li class="chip">--color-tint</li>
             <li class="chip">--color-action</li>
             <li class="chip">--color-on-action</li>
@@ -205,12 +207,14 @@
               <span class="sample-control sample-control--action">Action</span>
             </div>
             <div class="state-row">
-              <div class="sample-field">
-                <span class="sample-field__box">Default input</span>
+              <div class="text-field">
+                <label class="text-field__label" for="state-field">Label</label>
+                <input class="text-field__input" id="state-field" value="Default input" />
               </div>
-              <div class="sample-field sample-field--error">
-                <span class="sample-field__box">Invalid input</span>
-                <span class="sample-field__message">Placeholder error message.</span>
+              <div class="text-field">
+                <label class="text-field__label" for="state-field-invalid">Label</label>
+                <input class="text-field__input" id="state-field-invalid" value="Invalid input" aria-invalid="true" aria-describedby="state-field-error" />
+                <p class="text-field__error" id="state-field-error">Placeholder error message.</p>
               </div>
             </div>
           </div>
@@ -220,6 +224,7 @@
             <li class="chip">--focus-ring-color</li>
             <li class="chip">--disabled-opacity</li>
             <li class="chip">--error-color</li>
+            <li class="chip">--error-weight</li>
             <li class="chip">--color-hairline-control</li>
             <li class="chip">--color-hairline-input</li>
             <li class="chip">--color-action</li>
@@ -263,6 +268,19 @@
             <li class="chip">active</li>
           </ul>
           <a class="cell__link link" href="components/link/index.html">Open the Link</a>
+        </section>
+
+        <section data-link-host class="cell cell--text-field" aria-labelledby="text-field-title">
+          <h2 class="cell__title" id="text-field-title">Text field</h2>
+          <p class="cell__note">A label above a single-line or multi-line field, with a hint and an error message.</p>
+          <ul class="chips" aria-label="Text field states">
+            <li class="chip">default</li>
+            <li class="chip">hover</li>
+            <li class="chip">focus</li>
+            <li class="chip">error</li>
+            <li class="chip">disabled</li>
+          </ul>
+          <a class="cell__link link" href="components/text-field/index.html">Open the Text field</a>
         </section>
 
         <section data-link-host class="cell cell--chip" aria-labelledby="chip-title">

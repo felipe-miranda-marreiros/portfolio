@@ -13,6 +13,7 @@
     <link rel="stylesheet" href="../components/toggle/toggle.css" />
     <link rel="stylesheet" href="../components/top-bar/top-bar.css" />
     <link rel="stylesheet" href="../components/footer/footer.css" />
+    <link rel="stylesheet" href="../components/text-field/text-field.css" />
     <link rel="stylesheet" href="index.css" />
     <script src="../components/toggle/toggle.js" defer></script>
   </head>
@@ -147,9 +148,10 @@
             <span class="sample-control sample-control--disabled" aria-disabled="true">Disabled</span>
             <span class="sample-control sample-control--action">Action</span>
           </div>
-          <div class="sample-field">
-            <span class="sample-field__box">Invalid input</span>
-            <span class="sample-field__message">Placeholder error message.</span>
+          <div class="text-field">
+            <label class="text-field__label" for="shape-field">Label</label>
+            <input class="text-field__input" id="shape-field" value="Invalid input" aria-invalid="true" aria-describedby="shape-field-error" />
+            <p class="text-field__error" id="shape-field-error">Placeholder error message.</p>
           </div>
         </div>
         <p class="band__note">
@@ -164,6 +166,7 @@
             <li class="chip">--shadow-float</li>
             <li class="chip">--focus-ring-width</li>
             <li class="chip">--error-line-style</li>
+            <li class="chip">--error-weight</li>
             <li class="chip">--chip-line-width</li>
             <li class="chip">--chip-gap</li>
             <li class="chip">--nudge</li>
