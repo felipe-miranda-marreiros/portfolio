@@ -61,10 +61,17 @@ colour swatches, so the page stays under the file size hook while every componen
 On 2026-11-13 the Owner kept the Lineup to About me, so the Portfolio never shows one; the index still links to its
 About me page, as it does to every component.
 
+On 2026-11-13 the Owner chose, from rendered options, Home's facts panel: the role and seniority as one large line
+under its label, then location and work model side by side under a hairline, then the core technologies as Chips, in a
+hairline panel. Every word, labels included, is Content. A label-beside-value list and a grid of cells were turned
+down. The facts panel is Home's, so it has no About me page.
+
 ## Unresolved
 
 The type scale, spacing scale and state tokens are first set by the token build, then refined with `typeset`, `layout`
-and `colorize` and captured with `/impeccable document` in scan mode. Home's small photo uses a placeholder marked as
+and `colorize` and captured with `/impeccable document` in scan mode. The facts panel's role line repeats Home's
+headline (role and seniority) unless the Home Page lets one stand for the other; that is settled when Home is composed.
+Home's small photo uses a placeholder marked as
 such until the Owner supplies it.
 
 ## Direction contract
