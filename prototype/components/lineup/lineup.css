@@ -28,7 +28,7 @@
 
 @media (min-width: 36rem) {
   .lineup__row {
-    grid-template-columns: 9rem minmax(0, 1fr);
+    grid-template-columns: var(--lineup-category-width) minmax(0, 1fr);
     gap: var(--space-4);
   }
 }
