@@ -79,6 +79,7 @@
   --color-toggle-pressed: var(--color-ink);
   --color-on-toggle-pressed: var(--color-ground);
   --color-toggle-pressed-edge: transparent;
+  --color-input-hover: var(--color-display);
   --color-error: var(--color-ink);
   --color-selection: var(--color-ink);
   --color-on-selection: var(--color-ground);
