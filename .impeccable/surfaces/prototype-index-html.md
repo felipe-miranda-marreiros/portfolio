@@ -58,6 +58,9 @@ whose brief refuses cards, never shows one, so the component has no About me pag
 On 2026-11-13 the Owner chose to have `index.js` build the index's component cells from one list, as it builds the
 colour swatches, so the page stays under the file size hook while every component stays one step away.
 
+On 2026-11-13 the Owner kept the Lineup to About me, so the Portfolio never shows one; the index still links to its
+About me page, as it does to every component.
+
 ## Unresolved
 
 The type scale, spacing scale and state tokens are first set by the token build, then refined with `typeset`, `layout`
