@@ -66,6 +66,10 @@ under its label, then location and work model side by side under a hairline, the
 hairline panel. Every word, labels included, is Content. A label-beside-value list and a grid of cells were turned
 down. The facts panel is Home's, so it has no About me page.
 
+On 2026-11-13 the Owner chose, from a rendered pair, to keep the role line's label for screen readers only: the role
+line opens the panel, since a visible mono label above it reads as an eyebrow, and the label stays in the list's markup.
+The other facts keep their visible labels.
+
 ## Unresolved
 
 The type scale, spacing scale and state tokens are first set by the token build, then refined with `typeset`, `layout`
