@@ -235,8 +235,8 @@ at a lower alpha or mixed into the ground, and error is the only hue.
 - **Secondary Ink** (84% of the ink): supporting lines, ledes, body copy in panels, resting row links and inactive
   switch options.
 - **Muted Ink** (64% of the ink): metadata, captions and notes. Still AA on the ground in both themes.
-- **Hairline** (10% of the ink): panel-grid borders, the rules under the top bar and above the footer, and the
-  Footer's rule between its repository link and the rest.
+- **Hairline** (10% of the ink): panel-grid borders, the Facts panel's border and the rule under its lead, the rules
+  under the top bar and above the footer, and the Footer's rule between its repository link and the rest.
 - **Hairline Hover** (26%): the brightened edge of a hovered or focused panel and of a hovered secondary button.
 - **Hairline Control** (22%): the outline of secondary controls, the theme switch and swatch edges.
 - **Hairline Input** (52% ink on paper, 44% bone on night): input borders, which identify the control and so meet 3:1
@@ -443,9 +443,10 @@ the band's ink with no shadow, and a floating surface takes the band's ground.
 ## Shapes
 
 Softly rounded, product-like corners: chips at 4px, buttons, inputs and controls at 8px, the photo at 10px, panel grids
-at 12px, which round only their outer corners and clip their cells. Fully round (999px) is reserved for things that are
-truly circular. One-pixel hairlines are the structural line; no thick borders, no decorative shapes. The Owner's photo
-is small, in a softly rounded square with a hairline edge, plain, with no effect applied.
+at 12px, which round only their outer corners and clip their cells, and the Facts panel at 12px (`--radius-panel`).
+Fully round (999px) is reserved for things that are truly circular. One-pixel hairlines are the structural line; no
+thick borders, no decorative shapes. The Owner's photo is small, in a softly rounded square with a hairline edge, plain,
+with no effect applied.
 
 ### About me
 
@@ -528,17 +529,21 @@ one.
 ### Facts panel
 Built in the prototype (`prototype/components/facts-panel/`): Home's 30-second read, and the Portfolio's only; About me
 never shows one. The Owner chose this form over a label-beside-value list and a grid of cells.
-- **Parts:** a definition list (`.facts-panel`) of groups, each a label (`.facts-panel__label`) over its value: the lead
+- **Parts:** a definition list (`.facts-panel`) of groups, each a label (`.facts-panel__label`) and its value: the lead
   (`.facts-panel__lead`) with the role and seniority (`.facts-panel__role`), the facts (`.facts-panel__fact`), such as
   location and work model, each with a value (`.facts-panel__value`), and the list (`.facts-panel__list`) with the core
   technologies as Chips. Every word, labels included, is Content. It needs the Chip's styles.
+- **Lead label:** for screen readers only, visually hidden but kept in the list's markup, so the role line opens the
+  panel: a visible label above it would read as an eyebrow, and the role line names itself (the Owner's choice, from a
+  rendered pair with and without it). The other groups keep their labels visible, over their values.
 - **Panel:** a Hairline border, 12px corners (`--radius-panel`), padding 1.5rem, on the ground; it never grows wider
   than its container, whatever a word's length.
 - **Layout:** the lead runs the full width, on a hairline 1rem below it; the facts sit side by side at their content's
-  width, 3rem apart, and wrap; the list runs the full width. 1.5rem between rows; within a group, 0.5rem between label
-  and value (0.25rem in a fact).
-- **Type:** labels in the Label role in Muted Ink; the role line in the Headline role (700), balanced, and a long word
-  hyphenates or breaks rather than overflow; a fact's value in Body at the control weight (600), in full ink.
+  width, 3rem apart, and wrap; the list runs the full width. 1.5rem between rows; 0.25rem between a fact's label and
+  value, 0.5rem between the list's label and its Chips.
+- **Type:** labels in the Label role in Muted Ink, with tabular numerals; the role line in the Headline role (700) in
+  the Display colour, balanced, and a long word hyphenates or breaks rather than overflow; a fact's value in Body at the
+  control weight (600), in full ink.
 - **States:** none; the panel is static.
 
 ### Inputs / Fields
