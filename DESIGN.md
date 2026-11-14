@@ -335,12 +335,12 @@ monospace that labels facts the way a codebase labels things: commands, tags, co
 - **Body** (400, 1rem, line-height 1.6): summaries and supporting lines in secondary ink, measure 68ch; also the value
   in a Text field, so Safari on iPhone doesn't zoom the page when the field takes focus, and, at the control weight
   (600) in full ink, a Facts panel fact's value and a Role entry's company.
-- **Small** (400, 0.875rem): captions, notes, metadata, and a field's hint, in muted ink, and a field's error message;
-  also the size of row links, controls and field labels, which take the control weight (600), kept apart from the title
-  weight so each can change alone.
-- **Label** (Martian Mono 500, 0.6875rem, 0.08em, uppercase, tabular numerals): stat labels, such as the Facts panel's,
-  dates, and a Role entry's meta (period, location and work model). Inside chips and code, the same mono size is set
-  as-is, with no tracking or case change.
+- **Small** (400, 0.875rem): captions, notes, metadata (such as a Role entry's location and work model), and a field's
+  hint, in muted ink, and a field's error message; also the size of row links, controls and field labels, which take the
+  control weight (600), kept apart from the title weight so each can change alone.
+- **Label** (Martian Mono 500, 0.6875rem, 0.08em, uppercase, tabular numerals): stat labels (the Facts panel's) and
+  dates (a Role entry's period). Inside chips and code, the same mono size is set as-is, with no tracking or case
+  change.
 
 Headings hyphenate and, where the browser has no dictionary, break long words rather than overflow a narrow column: a
 Portuguese title such as "Responsabilidades" at display size must fit a 320px screen. Paragraphs wrap with a pretty rag.
@@ -410,8 +410,8 @@ priority: grids collapse to one column and splits stack, heading first, and noth
 mobile. A specimen that is a single row of samples shrinks its samples to stay on one row rather than orphan the last; a
 component page's state samples, all one width, sit on even tracks instead.
 
-Experience lists its roles as Role entries, one after another on a shared hairline. From 44rem each sets its period,
-location and work model in a monospace side column (12rem, `--role-entry-side-width`) beside the role, 2rem apart; on
+Experience lists its roles as Role entries, one after another on a shared hairline. From 44rem each sets its period (in
+monospace), location and work model in a side column (12rem, `--role-entry-side-width`) beside the role, 2rem apart; on
 narrow screens the meta follows the title and company, never above the title.
 
 ### About me
@@ -558,21 +558,24 @@ never shows one. The Owner chose this form over a label-beside-value list and a 
 
 ### Role entry
 Built in the prototype (`prototype/components/role-entry/`): one role on Experience, and the Portfolio's only; About me
-never shows one. The Owner chose a monospace side column with a hairline between roles over a stacked entry and a
-hairline panel per role.
-- **Parts:** an article (`.role-entry`) of the head (`.role-entry__head`, a `<header>`: the title (`.role-entry__title`)
-  and the company (`.role-entry__company`)), the meta (`.role-entry__meta`: the period, with `<time>`, the location and
-  the work model) and the body (`.role-entry__body`: the summary (`.role-entry__summary`), the achievements
-  (`.role-entry__achievements`), then the technologies as Chips). Every word, month names and "present" included, is
-  Content, so dates follow the chosen language. It needs the Chip's styles.
+never shows one. The Owner chose a side column with a hairline between roles over a stacked entry and a hairline panel
+per role, and only the period in monospace over an all-monospace column.
+- **Parts:** an article (`.role-entry`) of the head (`.role-entry__head`, a `<header>`: the title, a heading at the
+  level the page needs (`.role-entry__title`), and the company (`.role-entry__company`)), the meta (`.role-entry__meta`:
+  the period (`.role-entry__period`), with `<time>`, the location and the work model) and the body (`.role-entry__body`:
+  the summary (`.role-entry__summary`), the achievements (`.role-entry__achievements`), then the technologies as Chips).
+  Every word is Content, except the dates' month names and "present", which follow the chosen language. It needs the
+  Chip's styles.
 - **Layout:** on narrow screens head, meta and body stack in that order, 0.75rem apart: the meta follows the title and
   company, so it never sits above the title as a monospace eyebrow. From 44rem, the meta takes a 12rem side column
   (`--role-entry-side-width`) down both rows, and the head and then the body fill the rest, which may shrink; 0.75rem
   between the rows, 2rem between the columns, the meta padded 0.25rem down to sit on the title's line. In the head, the
   company sits 0.25rem under the title; in the body, 0.75rem between its parts. Consecutive entries share a Hairline,
-  with 2rem above and below it.
-- **Meta:** the Label role (Martian Mono, uppercase, 0.08em, tabular numerals) in Muted Ink, one item per line on every
-  width, 0.5rem apart, so a place that wraps still reads as one item.
+  with 2rem above and below it. The rule comes from consecutive `.role-entry` siblings, so a page that wraps entries in
+  list items keeps them as siblings or moves the rule to the item.
+- **Meta:** Small (the sans, Body leading) in Muted Ink, one item per line on every width, 0.5rem apart, so a place
+  that wraps still reads as one item. Only the period takes the Label role (Martian Mono, uppercase, 0.08em, tabular
+  numerals); the location and work model stay in the sans, as the Facts panel sets those values.
 - **Type:** the title in the Title role, and a long word hyphenates or breaks rather than overflow; the company in Body
   at the control weight (600) in full ink; the summary and achievements in Body in Secondary Ink, held to the measure.
   The achievements are a disc list with Muted Ink markers, 0.25rem apart, indented 1.5rem.
