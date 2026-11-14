@@ -411,21 +411,6 @@ code {
   color: var(--color-on-action);
 }
 
-.sample-field {
-  display: flex;
-  flex-direction: column;
-  gap: var(--space-2);
+.shape-specimen .text-field {
   width: min(100%, 22rem);
-}
-
-.sample-field__box {
-  padding: var(--space-2) var(--space-3);
-  border: var(--error-line-width) var(--error-line-style) var(--error-color);
-  border-radius: var(--radius-control);
-  font-size: var(--text-small);
-}
-
-.sample-field__message {
-  font-size: var(--text-small);
-  font-weight: var(--weight-control);
 }

@@ -126,7 +126,8 @@ a {
   .cell--state,
   .cell--about-me,
   .cell--top-bar,
-  .cell--footer {
+  .cell--footer,
+  .cell--text-field {
     grid-column: span 2;
   }
 }
@@ -141,7 +142,7 @@ a {
       "type type motion"
       "state state state"
       "about-me about-me about-me"
-      "button button link"
+      "button link text-field"
       "chip toggle toggle"
       "top-bar top-bar footer";
   }
@@ -200,6 +201,10 @@ a {
 
   .cell--footer {
     grid-area: footer;
+  }
+
+  .cell--text-field {
+    grid-area: text-field;
   }
 }
 
@@ -500,11 +505,8 @@ a {
   opacity: var(--disabled-opacity);
 }
 
-.sample-field {
-  display: flex;
+.state-row > .text-field {
   flex: 1 1 14rem;
-  flex-direction: column;
-  gap: var(--space-1);
 }
 
 .motion-run {
@@ -540,24 +542,6 @@ a {
   border-color: transparent;
   background: var(--color-action);
   color: var(--color-on-action);
-}
-
-.sample-field__box {
-  padding: var(--space-2) var(--space-3);
-  border: var(--line-width) solid var(--color-hairline-input);
-  border-radius: var(--radius-control);
-  font-size: var(--text-small);
-  color: var(--color-ink-secondary);
-}
-
-.sample-field--error .sample-field__box {
-  border: var(--error-line-width) var(--error-line-style) var(--error-color);
-  color: var(--color-ink);
-}
-
-.sample-field__message {
-  font-size: var(--text-small);
-  color: var(--error-color);
 }
 
 ::view-transition-old(root),
