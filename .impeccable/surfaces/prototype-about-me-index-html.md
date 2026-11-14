@@ -63,6 +63,7 @@ Later on 2026-11-01, after the finish review and the design review, the Owner co
   a single-line and a multi-line variant in one component. On About me its 3px ink border takes the band's Display
   colour on hover, as the secondary Button's does: a change of hue, not of contrast, which on sunset falls from 4.7:1 to
   cream's 3.3:1 and still clears 3:1.
+- On 2026-11-13 the Owner kept the Panel grid off About me: its collections stay bands and lineups.
 
 ## Unresolved
 
