@@ -5,10 +5,12 @@
  * Consecutive entries share a hairline.
  * Markup: <article class="role-entry">
  *   <header class="role-entry__head"><h3 class="role-entry__title">…</h3><p class="role-entry__company">…</p></header>
+ *   (the title takes the heading level the page needs).
  *   <div class="role-entry__meta"><p class="role-entry__period"><time datetime="…">…</time> – …</p><p>…</p><p>…</p></div>
  *   <div class="role-entry__body"><p class="role-entry__summary">…</p>
  *     <ul class="role-entry__achievements"><li>…</li></ul><ul class="chips">…</ul></div></article>.
- * Needs chip.css for the technologies. Every word, month names and "present" included, is Content. Static.
+ * Needs chip.css for the technologies. Every word is Content except the dates' month names and "present", which follow
+ * the chosen language. Static.
  */
 .role-entry {
   display: grid;
