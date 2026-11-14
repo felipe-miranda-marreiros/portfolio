@@ -260,6 +260,13 @@ a {
   width: calc(20rem + 2 * var(--line-width));
 }
 
+/* For components that don't pad themselves, such as a form's fields. */
+.frame--padded {
+  display: grid;
+  gap: var(--space-5);
+  padding: var(--edge);
+}
+
 .foot {
   margin-top: auto;
   padding: var(--space-5) var(--edge);
