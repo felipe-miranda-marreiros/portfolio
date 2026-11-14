@@ -1,0 +1,102 @@
+/**
+ * Role entry: one role on Experience, from tokens only. The period, location and work model sit in a monospace side
+ * column; the role beside it: title, company, summary, achievements, then the technologies as Chips. On narrow screens
+ * the side column becomes a line above the title. Consecutive entries share a hairline.
+ * Markup: <article class="role-entry">
+ *   <div class="role-entry__meta"><p><time datetime="…">…</time> – …</p><p>…</p><p>…</p></div>
+ *   <div class="role-entry__main"><h3 class="role-entry__title">…</h3><p class="role-entry__company">…</p>
+ *     <p class="role-entry__summary">…</p><ul class="role-entry__achievements"><li>…</li></ul>
+ *     <ul class="chips">…</ul></div></article>.
+ * Needs chip.css for the technologies. Every word, month names and "present" included, is Content. Static.
+ */
+.role-entry {
+  display: grid;
+  gap: var(--space-3);
+  min-width: 0;
+  color: var(--color-ink);
+}
+
+.role-entry + .role-entry {
+  margin-top: var(--space-6);
+  padding-top: var(--space-6);
+  border-top: var(--line-width) solid var(--color-hairline);
+}
+
+@media (min-width: 44rem) {
+  .role-entry {
+    grid-template-columns: var(--role-entry-side-width) minmax(0, 1fr);
+    gap: var(--space-6);
+  }
+}
+
+/* One item per line on every width, a wider gap than the line spacing, so a place that wraps still reads as one item. */
+.role-entry__meta {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+  min-width: 0;
+  font-family: var(--font-mono);
+  font-size: var(--text-label);
+  font-weight: var(--weight-label);
+  line-height: var(--leading-label);
+  letter-spacing: var(--tracking-label);
+  text-transform: var(--case-label);
+  font-variant-numeric: tabular-nums;
+  color: var(--color-ink-muted);
+}
+
+@media (min-width: 44rem) {
+  .role-entry__meta {
+    padding-top: var(--space-1);
+  }
+}
+
+.role-entry__meta > p,
+.role-entry__main > * {
+  margin: 0;
+}
+
+.role-entry__main {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+  min-width: 0;
+}
+
+.role-entry__title {
+  font-family: var(--font-display);
+  font-size: var(--text-title);
+  font-weight: var(--weight-title);
+  line-height: var(--leading-title);
+  letter-spacing: var(--tracking-title);
+  text-transform: var(--case-display);
+  overflow-wrap: break-word;
+  hyphens: auto;
+}
+
+.role-entry__company {
+  margin-top: calc(-1 * var(--space-2));
+  font-size: var(--text-body);
+  font-weight: var(--weight-control);
+  line-height: var(--leading-body);
+}
+
+.role-entry__summary,
+.role-entry__achievements {
+  max-width: var(--measure);
+  font-size: var(--text-body);
+  line-height: var(--leading-body);
+  color: var(--color-ink-secondary);
+  text-wrap: pretty;
+}
+
+.role-entry__achievements {
+  display: grid;
+  gap: var(--space-1);
+  padding-inline-start: var(--space-5);
+  list-style: disc;
+}
+
+.role-entry__achievements ::marker {
+  color: var(--color-ink-muted);
+}
