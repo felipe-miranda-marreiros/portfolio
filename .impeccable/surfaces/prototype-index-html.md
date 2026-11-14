@@ -75,6 +75,10 @@ a monospace side column on the left, the role beside it (title, company, summary
 as Chips), with a hairline between roles. A stacked entry and a hairline panel per role were turned down. The role
 entry is Experience's, so it has no About me page.
 
+On 2026-11-14 the Owner chose, from a rendered pair, how the side column is set: only the period in monospace, a date
+being numerals; the location and work model in the sans at Small in Muted Ink, as the Facts panel sets those values, so
+the Mono Labels Rule holds as written. An all-monospace column was turned down.
+
 ## Unresolved
 
 The type scale, spacing scale and state tokens are first set by the token build, then refined with `typeset`, `layout`
