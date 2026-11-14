@@ -55,6 +55,9 @@ control weight, as on About me; the message alone, a dashed 1px border and a sol
 On 2026-11-13 the Owner kept the Panel grid to the Portfolio: it is how the Portfolio shows collections, and About me,
 whose brief refuses cards, never shows one, so the component has no About me page.
 
+On 2026-11-13 the Owner chose to have `index.js` build the index's component cells from one list, as it builds the
+colour swatches, so the page stays under the file size hook while every component stays one step away.
+
 ## Unresolved
 
 The type scale, spacing scale and state tokens are first set by the token build, then refined with `typeset`, `layout`
