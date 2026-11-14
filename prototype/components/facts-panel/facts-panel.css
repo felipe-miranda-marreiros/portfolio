@@ -5,7 +5,8 @@
  *   <div class="facts-panel__lead"><dt class="facts-panel__label">…</dt><dd class="facts-panel__role">…</dd></div>
  *   <div class="facts-panel__fact"><dt class="facts-panel__label">…</dt><dd class="facts-panel__value">…</dd></div>…
  *   <div class="facts-panel__list"><dt class="facts-panel__label">…</dt><dd><ul class="chips">…</ul></dd></div></dl>.
- * Needs chip.css for the technologies. Every word, labels included, is Content. Static: it has no states.
+ * Needs chip.css for the technologies. Every word, labels included, is Content; the role's label is for screen readers
+ * only, since the role line names itself. Static: it has no states.
  */
 .facts-panel {
   display: flex;
@@ -73,4 +74,14 @@
   font-weight: var(--weight-control);
   line-height: var(--leading-body);
   overflow-wrap: break-word;
+}
+
+/* A visible label above the role line would read as an eyebrow; screen readers still hear the list's term. */
+.facts-panel__lead .facts-panel__label {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
 }
