@@ -195,8 +195,8 @@ bands, one per Section, a condensed uppercase display that runs the band's width
 It is loud and warm where the Portfolio is quiet, and it never looks like a social profile, a gamer costume, the
 Portfolio recoloured, or anything corporate or cold.
 
-It loads over the Portfolio's tokens and redefines the same names, so the shared components take most of its look
-through tokens; the differences that have no token yet are listed under Components. Spacing and motion stay the
+It loads over the Portfolio's tokens and redefines the same names, so the shared components take its look
+through tokens alone. Spacing and motion stay the
 Portfolio's, except a longer link nudge (3px), a wider chip gap (0.5rem) and a Toggle with no inset, to suit its 3px
 rules. It has one theme and no photo. Each band sets
 every colour token itself, so a component inside a band takes that band's colours. Illustration is optional: the language works without it, and the first band reserves a slot
@@ -301,7 +301,7 @@ component never sets a palette colour; it reads the tokens of the band it sits i
 
 **The One Ink Rule.** Each band has one ink at full strength: secondary, muted, hairline, control and input colours are
 the ink itself, and tints are transparent. On sunset any alpha step below full ink drops under 4.5:1. Three lines take
-another colour: the lineup's block rules are in Key; a hovered edge (`--color-hairline-hover`,
+another colour: the lineup's block rules are in Key; a hovered edge (`--color-hairline-hover`, `--color-input-hover`,
 `--color-action-hover-edge`) is the Display colour; and underlines are 3px in Key or Key Alt, on hover and while held
 for the language toggle, whose focus already shows the 3px ring, in Key Alt on hover and press and in Key under the
 current one for the Top bar's Pages, on hover and while held for the Footer's links, on hover, focus and press for band
@@ -452,8 +452,8 @@ Footer's links, on hover, focus and press for band links, and on hover and focus
 
 ## Components
 
-The Button, the Link, the Chip, the Toggle, the Top bar and the Footer are built in the prototype
-(`prototype/components/button/`, `link/`, `chip/`, `toggle/`, `top-bar/`, `footer/`); the rest are the primitives the prototype's token specimens establish, to be confirmed by each
+The Button, the Link, the Chip, the Toggle, the Top bar, the Footer and the Text field are built in the prototype
+(`prototype/components/button/`, `link/`, `chip/`, `toggle/`, `top-bar/`, `footer/`, `text-field/`); the rest are the primitives the prototype's token specimens establish, to be confirmed by each
 component's own PR. Every component takes every visual value from tokens and holds no visible text.
 
 ### Buttons
@@ -511,12 +511,17 @@ multi-line variant that share every state.
   Content.
 - **Field:** Hairline Input border (1px), 8px corners, padding 0.5rem by 0.75rem, no fill, the value in Body (16px,
   never smaller, so Safari on iPhone doesn't zoom on focus) in full ink; a placeholder, if any, in Muted Ink. The
-  multi-line field shows four lines and resizes only vertically. It fills its container's width.
+  multi-line field shows four lines and resizes only vertically. It fills its container's width, its border and
+  padding inside that width.
 - **Hover:** the border steps up to full ink (`--color-input-hover`). **Focus:** the shared 2px ink ring at 2px offset.
-- **Error:** `aria-invalid="true"`; the border becomes the error line (1px solid Error, `--error-line-width`,
-  `--error-line-style`), which hover leaves as it is, and a Small message in Error at the body weight (`--error-weight`)
-  sits under the field, tied to it with `aria-describedby`. The message carries the error, not the colour.
-- **Disabled:** the whole field, label included, at 0.4 opacity.
+  **Active:** none of its own; pressing a field focuses it.
+- **Error:** `aria-invalid="true"`; the border becomes the error line in Error, at the line width
+  (`--error-line-width: var(--line-width)`, 1px) and solid (`--error-line-style`), which hover leaves as it is, and a
+  Small message in Error at the body weight (`--error-weight`) sits under the field, tied to it with
+  `aria-describedby`. The message carries the error, not the colour.
+- **Forced colours:** the error hue drops, so the error line turns dashed at 2px and the message takes the control
+  weight (600), keeping the error visible by shape and weight.
+- **Disabled:** the whole field, label included, at 0.4 opacity, a not-allowed cursor on the field, no hover.
 
 ### Toggles
 Built in the prototype (`prototype/components/toggle/`): a segmented control with exactly one option pressed. The theme
