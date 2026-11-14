@@ -1,11 +1,11 @@
 /**
- * Role entry: one role on Experience, from tokens only. From 44rem the period, location and work model sit in a
- * monospace side column, the role beside it: title and company, then summary, achievements and the technologies as
+ * Role entry: one role on Experience, from tokens only. From 44rem the period (in monospace), location and work model
+ * sit in a side column, the role beside it: title and company, then summary, achievements and the technologies as
  * Chips. On narrow screens the meta follows the title and company, so it never sits above the title as an eyebrow.
  * Consecutive entries share a hairline.
  * Markup: <article class="role-entry">
  *   <header class="role-entry__head"><h3 class="role-entry__title">…</h3><p class="role-entry__company">…</p></header>
- *   <div class="role-entry__meta"><p><time datetime="…">…</time> – …</p><p>…</p><p>…</p></div>
+ *   <div class="role-entry__meta"><p class="role-entry__period"><time datetime="…">…</time> – …</p><p>…</p><p>…</p></div>
  *   <div class="role-entry__body"><p class="role-entry__summary">…</p>
  *     <ul class="role-entry__achievements"><li>…</li></ul><ul class="chips">…</ul></div></article>.
  * Needs chip.css for the technologies. Every word, month names and "present" included, is Content. Static.
@@ -53,6 +53,12 @@
   flex-direction: column;
   gap: var(--space-2);
   min-width: 0;
+  font-size: var(--text-small);
+  line-height: var(--leading-body);
+  color: var(--color-ink-muted);
+}
+
+.role-entry__period {
   font-family: var(--font-mono);
   font-size: var(--text-label);
   font-weight: var(--weight-label);
@@ -60,7 +66,6 @@
   letter-spacing: var(--tracking-label);
   text-transform: var(--case-label);
   font-variant-numeric: tabular-nums;
-  color: var(--color-ink-muted);
 }
 
 @media (min-width: 44rem) {
