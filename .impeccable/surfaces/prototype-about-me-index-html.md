@@ -65,8 +65,8 @@ Later on 2026-11-01, after the finish review and the design review, the Owner co
   cream's 3.3:1 and still clears 3:1.
 - On 2026-11-13 the Owner kept the Panel grid off About me: its collections stay bands and lineups.
 - On 2026-11-13 the Owner kept the Lineup to About me, the mirror of the Panel grid, so it has no Portfolio page. An item
-  links only when the Owner gives it an address; a linked item underlines in its row's key colour on hover and focus,
-  and a plain one has no hover.
+  links only when the Owner gives it an address, and a plain one has no underline and no hover; the next entry sets
+  how a linked one looks.
 - On 2026-11-13 the Owner chose, from rendered options, how a linked lineup item shows it leads somewhere before any
   hover: a thin resting underline in its row's key colour, thickening to the 3px rule on hover, focus and press (a
   pressed item looks like a hovered one, as a pressed Link does). An arrow after the item and no resting cue were
@@ -96,5 +96,5 @@ FORM: Direction pinned by the Owner from references; it beat the roll. seed:f0d5
 FINISH: unreviewed and undocumented is unfinished; this build ends with the finish review, the verdict, DESIGN.md, and
 every shipping raster carrying its provenance
 
-Signature interaction: a lineup row's item underlines in its category colour on hover and focus. Motion grammar: short
-ease-out (about 150 ms), no bounce, nothing animates under reduced motion.
+Signature interaction: a linked lineup item's thin resting underline, in its row's key colour, thickens on hover, focus
+and press. Motion grammar: short ease-out (about 150 ms), no bounce, nothing animates under reduced motion.
