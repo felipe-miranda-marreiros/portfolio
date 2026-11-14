@@ -394,9 +394,10 @@ space above a heading than below it: the Page opens with 4rem above the title on
 
 Collections read as hairline panel grids: cells share one-pixel borders drawn by the grid's hairline showing through a
 one-pixel gap, and each cell (1.5rem internal gap) ends in a row link pushed to its foot, so neighbouring plain row links
-share a baseline. Cells pad 1.5rem on narrow screens and 2rem from 44rem. The grid takes three steps, always in source order:
-one column on mobile; two columns from 44rem, where wide cells span both and compact ones pair up; three columns from
-68rem, where wide cells span two and full-width rows close the grid across all three. Mobile and desktop have equal
+share a baseline. Cells pad 1.5rem on narrow screens and 2rem from 44rem. The Panel grid itself is one column; the Page
+that hosts it sets its columns and fills every row. The index's grid takes three steps, always in source order: one
+column on mobile; two columns from 44rem, where wide cells span both and compact ones pair up; three columns from 68rem,
+where wide cells span two beside a column of compact ones and full-width rows run across all three. Mobile and desktop have equal
 priority: grids collapse to one column and splits stack, heading first, and nothing a desktop row shows is dropped on
 mobile. A specimen that is a single row of samples shrinks its samples to stay on one row rather than orphan the last; a
 component page's state samples, all one width, sit on even tracks instead.
@@ -511,7 +512,9 @@ one.
 - **Row link:** a Link, pushed to the cell's foot. Where a page gives a cell the view's one filled action (the index's
   colour cell), the row link is the Link's action variant.
 - **Hover and focus within:** the Wash and an inset Hairline Hover edge (200ms); the row link takes its hover look.
-  **Focus:** the row link's shared 2px ink ring. **Active:** the row link pressed, as the Link's. **Disabled:** none.
+  **Focus:** the row link's shared 2px ink ring. **Active:** the row link pressed, which always comes with the cell's
+  hover or focus within; a pressed Link looks like a hovered one, so the active cell looks like the hovered one.
+  **Disabled:** none.
 - **Forced colours:** the grid's lines are drawn in the system text colour so they don't vanish, and a hovered or
   focused cell takes a 2px inset outline in the system highlight colour.
 - **Arrow keys:** from a row link, the arrow keys move focus to the nearest cell's row link in that direction, by the
