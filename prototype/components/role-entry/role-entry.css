@@ -1,16 +1,21 @@
 /**
- * Role entry: one role on Experience, from tokens only. The period, location and work model sit in a monospace side
- * column; the role beside it: title, company, summary, achievements, then the technologies as Chips. On narrow screens
- * the side column becomes a line above the title. Consecutive entries share a hairline.
+ * Role entry: one role on Experience, from tokens only. From 44rem the period, location and work model sit in a
+ * monospace side column, the role beside it: title and company, then summary, achievements and the technologies as
+ * Chips. On narrow screens the meta follows the title and company, so it never sits above the title as an eyebrow.
+ * Consecutive entries share a hairline.
  * Markup: <article class="role-entry">
+ *   <header class="role-entry__head"><h3 class="role-entry__title">…</h3><p class="role-entry__company">…</p></header>
  *   <div class="role-entry__meta"><p><time datetime="…">…</time> – …</p><p>…</p><p>…</p></div>
- *   <div class="role-entry__main"><h3 class="role-entry__title">…</h3><p class="role-entry__company">…</p>
- *     <p class="role-entry__summary">…</p><ul class="role-entry__achievements"><li>…</li></ul>
- *     <ul class="chips">…</ul></div></article>.
+ *   <div class="role-entry__body"><p class="role-entry__summary">…</p>
+ *     <ul class="role-entry__achievements"><li>…</li></ul><ul class="chips">…</ul></div></article>.
  * Needs chip.css for the technologies. Every word, month names and "present" included, is Content. Static.
  */
 .role-entry {
   display: grid;
+  grid-template-areas:
+    "head"
+    "meta"
+    "body";
   gap: var(--space-3);
   min-width: 0;
   color: var(--color-ink);
@@ -25,12 +30,25 @@
 @media (min-width: 44rem) {
   .role-entry {
     grid-template-columns: var(--role-entry-side-width) minmax(0, 1fr);
-    gap: var(--space-6);
+    grid-template-rows: auto 1fr;
+    grid-template-areas:
+      "meta head"
+      "meta body";
+    gap: var(--space-3) var(--space-6);
   }
+}
+
+.role-entry__head {
+  grid-area: head;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+  min-width: 0;
 }
 
 /* One item per line on every width, a wider gap than the line spacing, so a place that wraps still reads as one item. */
 .role-entry__meta {
+  grid-area: meta;
   display: flex;
   flex-direction: column;
   gap: var(--space-2);
@@ -51,16 +69,18 @@
   }
 }
 
-.role-entry__meta > p,
-.role-entry__main > * {
-  margin: 0;
-}
-
-.role-entry__main {
+.role-entry__body {
+  grid-area: body;
   display: flex;
   flex-direction: column;
   gap: var(--space-3);
   min-width: 0;
+}
+
+.role-entry__head > *,
+.role-entry__meta > p,
+.role-entry__body > * {
+  margin: 0;
 }
 
 .role-entry__title {
@@ -75,7 +95,6 @@
 }
 
 .role-entry__company {
-  margin-top: calc(-1 * var(--space-2));
   font-size: var(--text-body);
   font-weight: var(--weight-control);
   line-height: var(--leading-body);
