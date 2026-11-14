@@ -316,41 +316,8 @@ code {
   max-width: var(--measure);
 }
 
-.lineup {
-  display: flex;
-  flex-direction: column;
-  gap: var(--space-2);
+.band > .lineup {
   align-self: stretch;
-  padding-block: var(--space-4);
-  border-block: var(--line-width) solid var(--color-key);
-}
-
-.lineup li {
-  display: grid;
-  align-items: baseline;
-}
-
-@media (min-width: 36rem) {
-  .lineup li {
-    grid-template-columns: 9rem 1fr;
-    gap: var(--space-4);
-  }
-}
-
-.lineup a {
-  font-size: var(--text-billing);
-  font-weight: var(--weight-title);
-  text-transform: var(--case-label);
-  text-decoration: none;
-}
-
-.lineup li:has(.key--alt) {
-  --row-key: var(--color-key-alt);
-}
-
-.lineup a:hover,
-.lineup a:focus-visible {
-  text-decoration: underline var(--line-width) var(--row-key, var(--color-key));
 }
 
 .shape-specimen {
