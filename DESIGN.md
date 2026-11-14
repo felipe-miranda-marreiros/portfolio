@@ -412,7 +412,7 @@ component page's state samples, all one width, sit on even tracks instead.
 
 Experience lists its roles as Role entries, one after another on a shared hairline. From 44rem each sets its period,
 location and work model in a monospace side column (12rem, `--role-entry-side-width`) beside the role, 2rem apart; on
-narrow screens the side column becomes a few lines above the title.
+narrow screens the meta follows the title and company, never above the title.
 
 ### About me
 
@@ -560,15 +560,17 @@ never shows one. The Owner chose this form over a label-beside-value list and a 
 Built in the prototype (`prototype/components/role-entry/`): one role on Experience, and the Portfolio's only; About me
 never shows one. The Owner chose a monospace side column with a hairline between roles over a stacked entry and a
 hairline panel per role.
-- **Parts:** an article (`.role-entry`) of the meta (`.role-entry__meta`: the period, with `<time>`, the location and
-  the work model) and the main column (`.role-entry__main`): the title (`.role-entry__title`), the company
-  (`.role-entry__company`), the summary (`.role-entry__summary`), the achievements (`.role-entry__achievements`), then
-  the technologies as Chips. Every word, month names and "present" included, is Content, so dates follow the chosen
-  language. It needs the Chip's styles.
-- **Layout:** stacked, the meta above the title, 0.75rem apart; from 44rem, the meta in a 12rem side column
-  (`--role-entry-side-width`) and the main column in the rest, which may shrink, 2rem apart, the meta padded 0.25rem
-  down to sit on the title's line. 0.75rem between the main column's parts, the company pulled 0.5rem up under the
-  title. Consecutive entries share a Hairline, with 2rem above and below it.
+- **Parts:** an article (`.role-entry`) of the head (`.role-entry__head`, a `<header>`: the title (`.role-entry__title`)
+  and the company (`.role-entry__company`)), the meta (`.role-entry__meta`: the period, with `<time>`, the location and
+  the work model) and the body (`.role-entry__body`: the summary (`.role-entry__summary`), the achievements
+  (`.role-entry__achievements`), then the technologies as Chips). Every word, month names and "present" included, is
+  Content, so dates follow the chosen language. It needs the Chip's styles.
+- **Layout:** on narrow screens head, meta and body stack in that order, 0.75rem apart: the meta follows the title and
+  company, so it never sits above the title as a monospace eyebrow. From 44rem, the meta takes a 12rem side column
+  (`--role-entry-side-width`) down both rows, and the head and then the body fill the rest, which may shrink; 0.75rem
+  between the rows, 2rem between the columns, the meta padded 0.25rem down to sit on the title's line. In the head, the
+  company sits 0.25rem under the title; in the body, 0.75rem between its parts. Consecutive entries share a Hairline,
+  with 2rem above and below it.
 - **Meta:** the Label role (Martian Mono, uppercase, 0.08em, tabular numerals) in Muted Ink, one item per line on every
   width, 0.5rem apart, so a place that wraps still reads as one item.
 - **Type:** the title in the Title role, and a long word hyphenates or breaks rather than overflow; the company in Body
