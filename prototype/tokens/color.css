@@ -48,6 +48,8 @@
   --color-on-toggle-pressed: var(--color-ink);
   --color-toggle-pressed-edge: var(--color-hairline-input);
 
+  --color-input-hover: var(--color-ink);
+
   --color-error: light-dark(var(--palette-error-on-paper), var(--palette-error-on-night));
 
   --color-selection: var(--color-ink);

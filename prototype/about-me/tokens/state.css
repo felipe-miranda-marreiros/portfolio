@@ -13,4 +13,5 @@
   --toggle-focus-offset: calc(var(--line-width) + var(--focus-ring-offset));
   --error-line-width: 3px;
   --error-line-style: dashed;
+  --error-weight: var(--weight-control);
 }
