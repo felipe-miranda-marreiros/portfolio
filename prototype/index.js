@@ -90,6 +90,13 @@ const components = [
     page: "about-me.html",
   },
   {
+    slug: "facts-panel",
+    name: "Facts panel",
+    note: "Home's 30-second read: the role leads, then the other facts and the core technologies.",
+    label: "Facts panel cases",
+    states: ["default", "fewer facts", "long content"],
+  },
+  {
     slug: "footer",
     name: "Footer",
     note: "A title, the repository link, then the social links and email.",
