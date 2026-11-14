@@ -1,0 +1,78 @@
+/**
+ * Lineup: About me's list set like a poster's billing, from tokens only. Each row is a category in the display face,
+ * alternating Key and Key Alt down the list, then an item in heavy uppercase; two rules in Key close the list.
+ * Markup: <ul class="lineup"><li class="lineup__row"><span class="lineup__category">…</span>
+ *   <a class="lineup__item" href="…">…</a> (or <span class="lineup__item"> when the item has no address)</li>…</ul>.
+ * About me only. `data-force` pins a state so the prototype page can show it without interaction.
+ */
+.lineup {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+  margin: 0;
+  padding: var(--space-4) 0;
+  border-block: var(--line-width) solid var(--color-key);
+  list-style: none;
+}
+
+.lineup__row {
+  --row-key: var(--color-key);
+  display: grid;
+  align-items: baseline;
+  min-width: 0;
+}
+
+.lineup__row:nth-child(even) {
+  --row-key: var(--color-key-alt);
+}
+
+@media (min-width: 36rem) {
+  .lineup__row {
+    grid-template-columns: 9rem 1fr;
+    gap: var(--space-4);
+  }
+}
+
+.lineup__category {
+  font-family: var(--font-display);
+  font-size: var(--text-title);
+  font-weight: var(--weight-title);
+  line-height: var(--leading-title);
+  letter-spacing: var(--tracking-title);
+  text-transform: var(--case-display);
+  color: var(--row-key);
+  overflow-wrap: break-word;
+}
+
+.lineup__item {
+  justify-self: start;
+  max-width: 100%;
+  font-family: var(--font-sans);
+  font-size: var(--text-billing);
+  font-weight: var(--weight-title);
+  line-height: var(--leading-body);
+  text-transform: var(--case-label);
+  color: var(--color-ink);
+  text-decoration: none;
+  text-decoration-thickness: var(--line-width);
+  text-decoration-color: var(--row-key);
+  text-underline-offset: var(--underline-offset);
+  overflow-wrap: break-word;
+  hyphens: auto;
+}
+
+a.lineup__item:where(
+  :hover,
+  :focus-visible,
+  :active,
+  [data-force~="hover"],
+  [data-force~="focus"],
+  [data-force~="active"]
+) {
+  text-decoration-line: underline;
+}
+
+a.lineup__item:is(:focus-visible, [data-force~="focus"]) {
+  outline: var(--focus-ring-width) solid var(--focus-ring-color);
+  outline-offset: var(--focus-ring-offset);
+}
