@@ -13,7 +13,7 @@
   --toggle-focus-offset: var(--focus-ring-offset);
 
   --error-color: var(--color-error);
-  --error-line-width: 1px;
+  --error-line-width: var(--line-width);
   --error-line-style: solid;
   --error-weight: var(--weight-body);
 }
