@@ -154,6 +154,7 @@ spacing:
   chip-gap: "0.25rem"
   about-me-chip-gap: "0.5rem"
   toggle-inset: "3px"
+  lineup-category-width: "9rem"
   about-me-toggle-inset: "0px"
 ---
 
@@ -305,7 +306,8 @@ another colour: the lineup's block rules are in Key; a hovered edge (`--color-ha
 `--color-action-hover-edge`) is the Display colour; and underlines are 3px in Key or Key Alt, on hover and while held
 for the language toggle, whose focus already shows the 3px ring, in Key Alt on hover and press and in Key under the
 current one for the Top bar's Pages, on hover and while held for the Footer's links, on hover, focus and press for band
-links, and on hover and focus for lineup items.
+links; and linked lineup items rest on a thin underline in their row's key colour that thickens to 3px on hover, focus
+and press.
 
 **The Cream Is Large Rule.** Cream holds only 3.3:1 on sunset, so on the sunset ground it sets large type only: display,
 headlines, the billing keys and the Footer's title (1.375rem at 800). On the charcoal action fill it is the action's text, at 15:1.
@@ -411,7 +413,8 @@ content to the shared edge. Content bands pad 4rem above and below on narrow scr
 follows them like every content band. The bar pads 1rem above and below, the Footer 2rem. From 44rem the intro splits
 into the title column and the illustration slot (12rem to 18rem), aligned to their foot; on narrow screens the slot
 stacks under the title. A lineup row stacks category over item, and from 36rem sets them in two columns (a 9rem
-category column and the item in the rest, which may shrink, 1rem gap) on a shared baseline. Swatches fill an auto-fit grid with a 13rem minimum.
+category column, `--lineup-category-width`, and the item in the rest, which may shrink, 1rem gap) on a shared baseline;
+stacked, category and item sit 0.5rem apart. Swatches fill an auto-fit grid with a 13rem minimum.
 
 ## Elevation & Depth
 
@@ -450,7 +453,8 @@ Square, like a printed poster: chips, controls, the photo radius and panels at 0
 (999px). Every line is a 3px rule in the band's ink, except the lineup's block rules, in Key; a hovered edge, in the
 Display colour; and underlines, in Key or Key Alt, on hover and while held for the language toggle, in Key Alt on
 hover and press for the Top bar's Pages and in Key always under the current one, in Key on hover and while held for the
-Footer's links, on hover, focus and press for band links, and on hover and focus for lineup items. The illustration slot is 3:1 on narrow screens and 4:5 from 44rem.
+Footer's links, and on hover, focus and press for band links; linked lineup items rest on a thin underline in their
+row's key colour that thickens to 3px on hover, focus and press. The illustration slot is 3:1 on narrow screens and 4:5 from 44rem.
 
 ## Components
 
@@ -619,15 +623,17 @@ and About me's only; the Portfolio never shows one, so it has no Portfolio page.
 - **Parts:** a list (`.lineup`) of rows (`.lineup__row`), each a category (`.lineup__category`) then an item
   (`.lineup__item`). Every word is Content.
 - **List:** a 3px rule in Key above and below, padding 1rem inside them, 0.5rem between rows.
-- **Row:** category over item; from 36rem, a 9rem category column and the item in the rest, 1rem apart, on a shared
-  baseline. **Alternation:** odd rows take Key and even rows Key Alt (`--row-key`), automatically down the list.
+- **Row:** category over item, 0.5rem apart so a focused item's ring clears the category; from 36rem, a 9rem category
+  column (`--lineup-category-width`) and the item in the rest, 1rem apart, on a shared baseline. **Alternation:** odd
+  rows take Key and even rows Key Alt (`--row-key`), automatically down the list.
 - **Category:** Big Shoulders at the Title role (1.375rem, 800), uppercase, in its row's key colour.
 - **Item:** Billing type (Archivo 800, fluid 1.5rem to 2rem, uppercase, Body leading) in the band's ink; a long word
   breaks or hyphenates rather than overflow.
-- **Linked and plain:** an item is a link only when the Owner gives it an address; otherwise it is plain text, with no
-  hover.
-- **Hover, focus and active** (a linked item): a 3px underline in its row's key colour at the underline offset; active
-  looks like hover. **Focus:** also the shared 3px ink ring at 3px offset. **Disabled:** none.
+- **Linked and plain:** an item is a link only when the Owner gives it an address, and then rests on a thin underline
+  (`--lineup-rest-line-width`, 1px) in its row's key colour at the underline offset; otherwise it is plain text, with no
+  underline and no hover.
+- **Hover, focus and active** (a linked item): the underline thickens to the line width (3px); a pressed item looks
+  like a hovered one. **Focus:** also the shared 3px ink ring at 3px offset. **Disabled:** none.
 
 #### Illustration slot
 Optional, on the intro band's right from 44rem. It carries a marked placeholder until the Owner supplies artwork.
@@ -659,7 +665,7 @@ Optional, on the intro band's right from 44rem. It carries a marked placeholder 
 - **Don't** set a monospace eyebrow above a heading, or monospace prose.
 - **Don't** put a name or logo in the Top bar; the Owner chose a bar of Pages and Toggles only.
 - **Don't** let anything come before the repository link in the Footer but its title.
-- **Don't** set a list as a Lineup; it is About me's only.
+- **Don't** set a Portfolio list as a Lineup; it is About me's only.
 - **Don't** make the Owner's photo a centrepiece: no large portrait, no colour effects, no full-bleed photo.
 - **Don't** put a shadow on anything that doesn't float above the page.
 - **Don't** let expression cost the 30-second read: role, seniority, technologies, location, CV and contact stay
@@ -677,7 +683,8 @@ every component all its states, the motion and the shadow items hold on both.
 - **Do** set text in the band's one ink at full strength, and cream only at large sizes on sunset.
 - **Do** size the Page title from its container so it runs the band's width, in Big Shoulders Display, uppercase.
 - **Do** set lists as billing: the category in large display type in the band's two key colours, the item in heavy
-  uppercase Archivo, underlined in its category colour on hover and focus.
+  uppercase Archivo; a linked item rests on a thin underline in its category colour that thickens on hover, focus and
+  press.
 - **Do** mark an error with a dashed 3px ink rule and its message.
 - **Do** keep the language toggle in its place and leave the theme switch out.
 - **Do** make every band work without an illustration; the slot is optional.
