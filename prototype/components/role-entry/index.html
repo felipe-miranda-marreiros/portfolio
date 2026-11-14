@@ -1,0 +1,207 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Role entry · Portfolio prototype</title>
+    <link rel="preload" href="../../fonts/schibsted-grotesk.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="preload" href="../../fonts/martian-mono.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="stylesheet" href="../../tokens.css" />
+    <link rel="stylesheet" href="../specimen.css" />
+    <link rel="stylesheet" href="../chip/chip.css" />
+    <link rel="stylesheet" href="role-entry.css" />
+  </head>
+  <body>
+    <header class="specimen-bar">
+      <a href="../../index.html">Visual language</a>
+    </header>
+
+    <main>
+      <div class="specimen-intro">
+        <h1>Role entry</h1>
+        <p>
+          One role on Experience, on both themes, with placeholder values: the period, location and work model in a side
+          column, the role beside it. Static, so it has no states. It is Experience's, so it has no About me page.
+        </p>
+      </div>
+
+      <div class="surfaces">
+        <section class="surface" data-scheme="dark" aria-labelledby="dark-title">
+          <h2 id="dark-title">Dark</h2>
+          <div class="variant">
+            <h3>Two roles, the current one first</h3>
+            <div>
+              <article class="role-entry">
+                <div class="role-entry__meta">
+                  <p><time datetime="2023-01">Jan 2023</time> – present</p>
+                  <p>São Paulo, Brazil</p>
+                  <p>Hybrid</p>
+                </div>
+                <div class="role-entry__main">
+                  <h3 class="role-entry__title">Placeholder role title</h3>
+                  <p class="role-entry__company">Placeholder company</p>
+                  <p class="role-entry__summary">Placeholder summary: one or two lines on what the team owned and what the role was for.</p>
+                  <ul class="role-entry__achievements">
+                    <li>Placeholder achievement with a measurable result.</li>
+                    <li>Placeholder achievement about a system the Owner led.</li>
+                    <li>Placeholder achievement about people or process.</li>
+                  </ul>
+                  <ul class="chips">
+                    <li class="chip">TypeScript</li>
+                    <li class="chip">React</li>
+                    <li class="chip">Node.js</li>
+                    <li class="chip">PostgreSQL</li>
+                  </ul>
+                </div>
+              </article>
+              <article class="role-entry">
+                <div class="role-entry__meta">
+                  <p><time datetime="2020-03">Mar 2020</time> – <time datetime="2022-12">Dec 2022</time></p>
+                  <p>Remote</p>
+                  <p>Full time</p>
+                </div>
+                <div class="role-entry__main">
+                  <h3 class="role-entry__title">Placeholder earlier role</h3>
+                  <p class="role-entry__company">Placeholder company two</p>
+                  <p class="role-entry__summary">Placeholder summary for an earlier role.</p>
+                  <ul class="role-entry__achievements">
+                    <li>Placeholder achievement.</li>
+                    <li>Placeholder achievement with a longer sentence that wraps onto a second line to show the reading measure.</li>
+                  </ul>
+                  <ul class="chips">
+                    <li class="chip">Java</li>
+                    <li class="chip">Spring</li>
+                    <li class="chip">AWS</li>
+                  </ul>
+                </div>
+              </article>
+            </div>
+          </div>
+          <div class="variant">
+            <h3>Long content, in Brazilian Portuguese</h3>
+            <div lang="pt-BR">
+              <article class="role-entry">
+                <div class="role-entry__meta">
+                  <p><time datetime="2019-09">set. 2019</time> – <time datetime="2020-02">fev. 2020</time></p>
+                  <p>Florianópolis, Santa Catarina, Brasil</p>
+                  <p>Presencial</p>
+                </div>
+                <div class="role-entry__main">
+                  <h3 class="role-entry__title">Desenvolvedor de software pleno em plataformas de pagamento</h3>
+                  <p class="role-entry__company">Empresa de exemplo com um nome bem mais longo que o normal</p>
+                  <p class="role-entry__summary">Resumo de exemplo: uma ou duas linhas sobre o que a equipe mantinha e para que servia o cargo, em português.</p>
+                  <ul class="role-entry__achievements">
+                    <li>Conquista de exemplo com um resultado mensurável e uma frase longa o bastante para quebrar a linha.</li>
+                    <li>Conquista de exemplo sobre um sistema que a pessoa liderou.</li>
+                  </ul>
+                  <ul class="chips">
+                    <li class="chip">TypeScript</li>
+                    <li class="chip">React</li>
+                    <li class="chip">Next.js</li>
+                    <li class="chip">Node.js</li>
+                    <li class="chip">NestJS</li>
+                    <li class="chip">PostgreSQL</li>
+                    <li class="chip">Redis</li>
+                    <li class="chip">Docker</li>
+                    <li class="chip">Kubernetes</li>
+                    <li class="chip">AWS</li>
+                  </ul>
+                </div>
+              </article>
+            </div>
+          </div>
+        </section>
+
+        <section class="surface" data-scheme="light" aria-labelledby="light-title">
+          <h2 id="light-title">Light</h2>
+          <div class="variant">
+            <h3>Two roles, the current one first</h3>
+            <div>
+              <article class="role-entry">
+                <div class="role-entry__meta">
+                  <p><time datetime="2023-01">Jan 2023</time> – present</p>
+                  <p>São Paulo, Brazil</p>
+                  <p>Hybrid</p>
+                </div>
+                <div class="role-entry__main">
+                  <h3 class="role-entry__title">Placeholder role title</h3>
+                  <p class="role-entry__company">Placeholder company</p>
+                  <p class="role-entry__summary">Placeholder summary: one or two lines on what the team owned and what the role was for.</p>
+                  <ul class="role-entry__achievements">
+                    <li>Placeholder achievement with a measurable result.</li>
+                    <li>Placeholder achievement about a system the Owner led.</li>
+                    <li>Placeholder achievement about people or process.</li>
+                  </ul>
+                  <ul class="chips">
+                    <li class="chip">TypeScript</li>
+                    <li class="chip">React</li>
+                    <li class="chip">Node.js</li>
+                    <li class="chip">PostgreSQL</li>
+                  </ul>
+                </div>
+              </article>
+              <article class="role-entry">
+                <div class="role-entry__meta">
+                  <p><time datetime="2020-03">Mar 2020</time> – <time datetime="2022-12">Dec 2022</time></p>
+                  <p>Remote</p>
+                  <p>Full time</p>
+                </div>
+                <div class="role-entry__main">
+                  <h3 class="role-entry__title">Placeholder earlier role</h3>
+                  <p class="role-entry__company">Placeholder company two</p>
+                  <p class="role-entry__summary">Placeholder summary for an earlier role.</p>
+                  <ul class="role-entry__achievements">
+                    <li>Placeholder achievement.</li>
+                    <li>Placeholder achievement with a longer sentence that wraps onto a second line to show the reading measure.</li>
+                  </ul>
+                  <ul class="chips">
+                    <li class="chip">Java</li>
+                    <li class="chip">Spring</li>
+                    <li class="chip">AWS</li>
+                  </ul>
+                </div>
+              </article>
+            </div>
+          </div>
+          <div class="variant">
+            <h3>Long content, in Brazilian Portuguese</h3>
+            <div lang="pt-BR">
+              <article class="role-entry">
+                <div class="role-entry__meta">
+                  <p><time datetime="2019-09">set. 2019</time> – <time datetime="2020-02">fev. 2020</time></p>
+                  <p>Florianópolis, Santa Catarina, Brasil</p>
+                  <p>Presencial</p>
+                </div>
+                <div class="role-entry__main">
+                  <h3 class="role-entry__title">Desenvolvedor de software pleno em plataformas de pagamento</h3>
+                  <p class="role-entry__company">Empresa de exemplo com um nome bem mais longo que o normal</p>
+                  <p class="role-entry__summary">Resumo de exemplo: uma ou duas linhas sobre o que a equipe mantinha e para que servia o cargo, em português.</p>
+                  <ul class="role-entry__achievements">
+                    <li>Conquista de exemplo com um resultado mensurável e uma frase longa o bastante para quebrar a linha.</li>
+                    <li>Conquista de exemplo sobre um sistema que a pessoa liderou.</li>
+                  </ul>
+                  <ul class="chips">
+                    <li class="chip">TypeScript</li>
+                    <li class="chip">React</li>
+                    <li class="chip">Next.js</li>
+                    <li class="chip">Node.js</li>
+                    <li class="chip">NestJS</li>
+                    <li class="chip">PostgreSQL</li>
+                    <li class="chip">Redis</li>
+                    <li class="chip">Docker</li>
+                    <li class="chip">Kubernetes</li>
+                    <li class="chip">AWS</li>
+                  </ul>
+                </div>
+              </article>
+            </div>
+          </div>
+        </section>
+      </div>
+    </main>
+
+    <footer class="foot">
+      <p>Design prototype. A reference for the front end, not production code.</p>
+    </footer>
+  </body>
+</html>
