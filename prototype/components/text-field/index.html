@@ -56,6 +56,14 @@
               </li>
               <li>
                 <div class="text-field">
+                  <label class="text-field__label" for="d-email-disabled">Email</label>
+                  <p class="text-field__hint" id="d-email-disabled-hint">Shown in the Footer.</p>
+                  <input class="text-field__input" id="d-email-disabled" type="email" value="owner@example.com" aria-describedby="d-email-disabled-hint" disabled />
+                </div>
+                <code>disabled</code>
+              </li>
+              <li class="states__row-start">
+                <div class="text-field">
                   <label class="text-field__label" for="d-email-error">Email</label>
                   <p class="text-field__hint" id="d-email-error-hint">Shown in the Footer.</p>
                   <input class="text-field__input" id="d-email-error" type="email" value="owner@example" aria-describedby="d-email-error-hint d-email-error-error" aria-invalid="true" />
@@ -65,11 +73,12 @@
               </li>
               <li>
                 <div class="text-field">
-                  <label class="text-field__label" for="d-email-disabled">Email</label>
-                  <p class="text-field__hint" id="d-email-disabled-hint">Shown in the Footer.</p>
-                  <input class="text-field__input" id="d-email-disabled" type="email" value="owner@example.com" aria-describedby="d-email-disabled-hint" disabled />
+                  <label class="text-field__label" for="d-email-error-focus">Email</label>
+                  <p class="text-field__hint" id="d-email-error-focus-hint">Shown in the Footer.</p>
+                  <input class="text-field__input" id="d-email-error-focus" type="email" value="owner@example" aria-describedby="d-email-error-focus-hint d-email-error-focus-error" aria-invalid="true" data-force="focus" />
+                  <p class="text-field__error" id="d-email-error-focus-error">Enter an email with a domain, like owner@example.com.</p>
                 </div>
-                <code>disabled</code>
+                <code>error, focus</code>
               </li>
             </ul>
           </div>
@@ -99,6 +108,13 @@
               </li>
               <li>
                 <div class="text-field">
+                  <label class="text-field__label" for="d-summary-disabled">Summary</label>
+                  <textarea class="text-field__input" id="d-summary-disabled" rows="4" disabled>Builds web products end to end, from the database to the interface.</textarea>
+                </div>
+                <code>disabled</code>
+              </li>
+              <li class="states__row-start">
+                <div class="text-field">
                   <label class="text-field__label" for="d-summary-error">Summary</label>
                   <textarea class="text-field__input" id="d-summary-error" rows="4" aria-invalid="true" aria-describedby="d-summary-error-error"></textarea>
                   <p class="text-field__error" id="d-summary-error-error">Enter a summary in English.</p>
@@ -107,10 +123,11 @@
               </li>
               <li>
                 <div class="text-field">
-                  <label class="text-field__label" for="d-summary-disabled">Summary</label>
-                  <textarea class="text-field__input" id="d-summary-disabled" rows="4" disabled>Builds web products end to end, from the database to the interface.</textarea>
+                  <label class="text-field__label" for="d-summary-error-focus">Summary</label>
+                  <textarea class="text-field__input" id="d-summary-error-focus" rows="4" aria-invalid="true" data-force="focus" aria-describedby="d-summary-error-focus-error"></textarea>
+                  <p class="text-field__error" id="d-summary-error-focus-error">Enter a summary in English.</p>
                 </div>
-                <code>disabled</code>
+                <code>error, focus</code>
               </li>
             </ul>
           </div>
@@ -180,6 +197,14 @@
               </li>
               <li>
                 <div class="text-field">
+                  <label class="text-field__label" for="l-email-disabled">Email</label>
+                  <p class="text-field__hint" id="l-email-disabled-hint">Shown in the Footer.</p>
+                  <input class="text-field__input" id="l-email-disabled" type="email" value="owner@example.com" aria-describedby="l-email-disabled-hint" disabled />
+                </div>
+                <code>disabled</code>
+              </li>
+              <li class="states__row-start">
+                <div class="text-field">
                   <label class="text-field__label" for="l-email-error">Email</label>
                   <p class="text-field__hint" id="l-email-error-hint">Shown in the Footer.</p>
                   <input class="text-field__input" id="l-email-error" type="email" value="owner@example" aria-describedby="l-email-error-hint l-email-error-error" aria-invalid="true" />
@@ -189,11 +214,12 @@
               </li>
               <li>
                 <div class="text-field">
-                  <label class="text-field__label" for="l-email-disabled">Email</label>
-                  <p class="text-field__hint" id="l-email-disabled-hint">Shown in the Footer.</p>
-                  <input class="text-field__input" id="l-email-disabled" type="email" value="owner@example.com" aria-describedby="l-email-disabled-hint" disabled />
+                  <label class="text-field__label" for="l-email-error-focus">Email</label>
+                  <p class="text-field__hint" id="l-email-error-focus-hint">Shown in the Footer.</p>
+                  <input class="text-field__input" id="l-email-error-focus" type="email" value="owner@example" aria-describedby="l-email-error-focus-hint l-email-error-focus-error" aria-invalid="true" data-force="focus" />
+                  <p class="text-field__error" id="l-email-error-focus-error">Enter an email with a domain, like owner@example.com.</p>
                 </div>
-                <code>disabled</code>
+                <code>error, focus</code>
               </li>
             </ul>
           </div>
@@ -223,6 +249,13 @@
               </li>
               <li>
                 <div class="text-field">
+                  <label class="text-field__label" for="l-summary-disabled">Summary</label>
+                  <textarea class="text-field__input" id="l-summary-disabled" rows="4" disabled>Builds web products end to end, from the database to the interface.</textarea>
+                </div>
+                <code>disabled</code>
+              </li>
+              <li class="states__row-start">
+                <div class="text-field">
                   <label class="text-field__label" for="l-summary-error">Summary</label>
                   <textarea class="text-field__input" id="l-summary-error" rows="4" aria-invalid="true" aria-describedby="l-summary-error-error"></textarea>
                   <p class="text-field__error" id="l-summary-error-error">Enter a summary in English.</p>
@@ -231,10 +264,11 @@
               </li>
               <li>
                 <div class="text-field">
-                  <label class="text-field__label" for="l-summary-disabled">Summary</label>
-                  <textarea class="text-field__input" id="l-summary-disabled" rows="4" disabled>Builds web products end to end, from the database to the interface.</textarea>
+                  <label class="text-field__label" for="l-summary-error-focus">Summary</label>
+                  <textarea class="text-field__input" id="l-summary-error-focus" rows="4" aria-invalid="true" data-force="focus" aria-describedby="l-summary-error-focus-error"></textarea>
+                  <p class="text-field__error" id="l-summary-error-focus-error">Enter a summary in English.</p>
                 </div>
-                <code>disabled</code>
+                <code>error, focus</code>
               </li>
             </ul>
           </div>
