@@ -274,10 +274,13 @@ code {
   text-decoration: none;
 }
 
+/* Stretched to the band, so the display sample breaks inside it rather than run past a phone's edge. */
 .type-specimen {
+  align-self: stretch;
   display: flex;
   flex-direction: column;
   gap: var(--space-4);
+  overflow-wrap: break-word;
 }
 
 .type-specimen__display {
