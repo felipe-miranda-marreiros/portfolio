@@ -493,13 +493,14 @@ Built in the prototype (`prototype/components/link/`).
 - **Style:** the link role (`--text-link`: Small at the control weight, no case change) in Secondary Ink, unboxed, ending
   in an arrow (0.875em, a 1.5 stroke with round ends, `--icon-arrow`) that follows the last line when the text wraps.
 - **Hover, focus and pressed:** full ink, and the arrow nudges 2px (`--nudge`); no underline (`--link-hover-line:
-  none`). Pressed looks like hover; nothing sinks. A container marked as the link's host (a panel cell) gives its links
-  the same look on its own hover and focus within.
+  none`). Pressed looks like hover; the plain link doesn't sink. A container marked as the link's host (a panel cell)
+  gives its links the same look on its own hover and focus within.
 - **Focus:** the shared 2px ink ring at 2px offset. The nudge's room is reserved at both ends of the link, so the ring
   clears the first letter and the nudged arrow alike.
 - **Action:** the view's one filled action as a link: Action fill, On Action text at the control weight, 8px corners,
   padding 0.5rem by 1rem inside a transparent one-pixel border, so it stands the primary Button's height; on hover the
-  fill steps to Action Hover, as the primary Button's.
+  fill steps to Action Hover, as the primary Button's. Pressed, it sinks 1px (`--press-offset`), as the primary Button
+  does, not under reduced motion.
 - No visited colour: every link reads the same, visited or not.
 - **Forced colours:** the arrow takes the system's link colour, since the mask that draws it would otherwise paint it
   in the page colour and hide it.
@@ -529,8 +530,8 @@ one.
   colour cell), the row link is the Link's action variant.
 - **Hover and focus within:** the Wash and an inset Hairline Hover edge (200ms); the row link takes its hover look.
   **Focus:** the row link's shared 2px ink ring. **Active:** the row link pressed, which always comes with the cell's
-  hover or focus within; a pressed Link looks like a hovered one, so the active cell looks like the hovered one.
-  **Disabled:** none.
+  hover or focus within. A pressed plain Link looks like a hovered one and the action variant also sinks 1px, so the
+  cell itself looks like the hovered one. **Disabled:** none.
 - **Forced colours:** the grid's lines are drawn in the system text colour so they don't vanish, and a hovered or
   focused cell takes a 2px inset outline in the system highlight colour.
 - **Arrow keys:** from a row link, the arrow keys move focus to the nearest cell's row link in that direction, by the
@@ -667,7 +668,7 @@ The shared components take About me's square corners, 3px rules and band colours
 - **Band link:** the Link, through tokens: uppercase Label type, a heavier arrow (1em, a 2 stroke with square ends); on
   hover, focus and press it underlines 3px in the Key colour (`--link-hover-line: underline`) and the arrow nudges 3px.
   Its action variant fills Action at the control weight (700), does not underline, and on hover keeps its fill with the
-  Display ring, as the primary Button's.
+  Display ring, as the primary Button's, and sinks 1px when pressed.
 - **Panel grid:** none; About me shows its collections as bands and lineups, never a Panel grid.
 - **Facts panel:** none; it is Home's.
 - **Role entry:** none; it is Experience's.
