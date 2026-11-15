@@ -51,7 +51,7 @@ const components = [
     name: "Text field",
     note: "A label above a single-line or multi-line field, with a hint and an error message.",
     label: "Text field states",
-    states: ["default", "hover", "focus", "error", "disabled"],
+    states: ["default", "hover", "focus", "disabled", "error"],
   },
   {
     slug: "chip",

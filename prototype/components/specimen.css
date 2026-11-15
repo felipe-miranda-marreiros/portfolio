@@ -239,6 +239,11 @@ a {
   grid-template-columns: repeat(auto-fill, minmax(11rem, 1fr));
 }
 
+/* Starts a new row of samples, such as a field's error states after its interaction states. */
+.states__row-start {
+  grid-column-start: 1;
+}
+
 /* Even tracks wide enough for a sample with a row of content, such as a panel cell. */
 .states--wide {
   grid-template-columns: repeat(auto-fill, minmax(min(100%, 17rem), 1fr));
