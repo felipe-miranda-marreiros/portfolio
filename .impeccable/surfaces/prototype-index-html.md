@@ -88,6 +88,10 @@ On 2026-11-14 the Owner chose, from a rendered pair in the states pass, that the
 pressed, as the primary Button does, since the two look alike; the plain Link still doesn't sink. Keeping the action
 looking like hover when pressed was turned down.
 
+On 2026-11-14 the Owner kept every part of a role entry required, as the approved Vision lists them for every role.
+The layout only tolerates a missing location, work model, achievements or technologies, as the fewer-parts sample
+shows, so a gap never breaks it. Making those parts optional Content was turned down.
+
 ## Unresolved
 
 The type scale, spacing scale and state tokens are first set by the token build, then refined with `typeset`, `layout`
