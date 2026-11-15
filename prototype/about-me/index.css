@@ -87,8 +87,10 @@ code {
   }
 }
 
+/* minmax(0, 1fr): the slot's aspect ratio would otherwise widen the single column past a 320px screen. */
 .intro {
   display: grid;
+  grid-template-columns: minmax(0, 1fr);
   gap: var(--space-6);
 }
 
