@@ -588,9 +588,9 @@ multi-line variant that share every state.
   in Small Muted Ink between them; and an error message under the field. 0.5rem between the parts. Every word is
   Content.
 - **Field:** Hairline Input border (1px), 8px corners, padding 0.5rem by 0.75rem, no fill, the value in Body (16px,
-  never smaller, so Safari on iPhone doesn't zoom on focus) in full ink; a placeholder, if any, in Muted Ink. The
-  multi-line field shows four lines and resizes only vertically. It fills its container's width, its border and
-  padding inside that width.
+  never smaller, so Safari on iPhone doesn't zoom on focus) in full ink. No placeholder: on About me it would take the
+  band's full ink and read as a value, so the hint carries any example. The multi-line field shows four lines and
+  resizes only vertically. It fills its container's width, its border and padding inside that width.
 - **Hover:** the border steps up to full ink (`--color-input-hover`). **Focus:** the shared 2px ink ring at 2px offset.
   **Active:** none of its own; pressing a field focuses it.
 - **Error:** `aria-invalid="true"`; the border becomes the error line in Error, at the line width
@@ -655,7 +655,7 @@ The shared components take About me's square corners, 3px rules and band colours
 - **Inputs / Fields:** the Text field through tokens: a 3px ink border, square, its label in the link role (uppercase
   Label type). **Hover:** the border takes the band's Display colour (`--color-input-hover`). **Focus:** a 3px ink ring
   at 3px offset. **Error:** the border becomes a dashed 3px ink rule (`--error-line-style: dashed`) with a Small message
-  at the control weight (`--error-weight: 700`), in ink.
+  at the control weight (`--error-weight: 700`), in ink. No placeholder, which would read as a value in the band's ink.
 - **Chips:** the Chip, through tokens: Archivo at label size and the label weight (800), 0.06em tracking, set as-is
   with no case change, square, outlined in a 3px ink rule (`--chip-line-width`) on a transparent fill, 0.5rem apart.
 - **Navigation:** the Top bar sits on purple over a 3px ink rule, with no name: the Pages left in uppercase Label
@@ -726,6 +726,7 @@ Optional, on the intro band's right from 44rem. It carries a marked placeholder 
 - **Don't** set a Portfolio list as a Lineup; it is About me's only.
 - **Don't** make the Owner's photo a centrepiece: no large portrait, no colour effects, no full-bleed photo.
 - **Don't** put a shadow on anything that doesn't float above the page.
+- **Don't** give a field a placeholder, on either Visual language; the hint carries any example.
 - **Don't** let expression cost the 30-second read: role, seniority, technologies, location, CV and contact stay
   findable at a glance.
 
