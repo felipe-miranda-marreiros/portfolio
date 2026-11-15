@@ -78,7 +78,13 @@
   outline-offset: var(--focus-ring-offset);
   transition:
     background-color var(--duration-fast) var(--ease-out),
-    outline-color var(--duration-fast) var(--ease-out);
+    outline-color var(--duration-fast) var(--ease-out),
+    translate var(--duration-fast) var(--ease-out);
+}
+
+/* It looks like the primary Button, so it sinks like one when pressed; the plain Link doesn't. */
+.link--action:where(:active, [data-force~="active"]) {
+  translate: 0 var(--press-offset);
 }
 
 .link--action:where(:hover, :active, [data-force~="hover"], [data-force~="active"]),
