@@ -79,6 +79,10 @@ On 2026-11-14 the Owner chose, from a rendered pair, how the side column is set:
 being numerals; the location and work model in the sans at Small in Muted Ink, as the Facts panel sets those values, so
 the Mono Labels Rule holds as written. An all-monospace column was turned down.
 
+On 2026-11-14 the Owner chose, from a rendered comparison in the states pass, no placeholders in the Text field: on
+About me a placeholder takes the band's full ink and reads as a value, so the hint carries any example, on every band
+and theme. Placeholders on the Portfolio only were turned down.
+
 ## Unresolved
 
 The type scale, spacing scale and state tokens are first set by the token build, then refined with `typeset`, `layout`
