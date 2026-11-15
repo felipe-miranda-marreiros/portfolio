@@ -18,6 +18,8 @@
 .lineup__row {
   --row-key: var(--color-key);
   display: grid;
+  /* minmax(0, 1fr): a long word breaks inside the column instead of widening it past a 320px screen. */
+  grid-template-columns: minmax(0, 1fr);
   align-items: baseline;
   /* Stacked, the focused item's ring reaches above it; the gap keeps it off the category. */
   row-gap: var(--space-2);
