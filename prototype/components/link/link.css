@@ -19,6 +19,8 @@
   text-decoration: none;
   text-underline-offset: var(--underline-offset);
   text-wrap: pretty;
+  /* A label may be one long word or an address; it breaks rather than overflow a 320px screen. */
+  overflow-wrap: anywhere;
   -webkit-tap-highlight-color: transparent;
   transition: color var(--duration-fast) var(--ease-out);
 }
