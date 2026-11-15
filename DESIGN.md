@@ -566,7 +566,8 @@ per role, and only the period in monospace over an all-monospace column.
   the period (`.role-entry__period`), with `<time>`, the location and the work model) and the body (`.role-entry__body`:
   the summary (`.role-entry__summary`), the achievements (`.role-entry__achievements`), then the technologies as Chips).
   Every word is Content, except the dates' month names and "present", which follow the chosen language. It needs the
-  Chip's styles.
+  Chip's styles. The location, work model, achievements and technologies may be left out: an entry with only the
+  title, company, period and summary keeps the same layout.
 - **Layout:** on narrow screens head, meta and body stack in that order, 0.75rem apart: the meta follows the title and
   company, so it never sits above the title as a monospace eyebrow. From 44rem, the meta takes a 12rem side column
   (`--role-entry-side-width`) down both rows, and the head and then the body fill the rest, which may shrink; 0.75rem
