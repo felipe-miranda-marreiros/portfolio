@@ -44,7 +44,7 @@ const components = [
     name: "Link",
     note: "Text with an arrow that leads somewhere, and its filled action variant.",
     label: "Link states",
-    states: ["default", "hover", "focus", "active"],
+    states: ["default", "hover", "focus", "active", "long content"],
   },
   {
     slug: "text-field",
