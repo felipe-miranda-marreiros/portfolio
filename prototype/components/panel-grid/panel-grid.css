@@ -78,6 +78,7 @@
   line-height: var(--leading-body);
   color: var(--color-ink-muted);
   text-wrap: pretty;
+  overflow-wrap: break-word;
 }
 
 .panel-grid__link {
