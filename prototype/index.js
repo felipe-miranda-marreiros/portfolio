@@ -72,7 +72,7 @@ const components = [
     name: "Panel grid",
     note: "Hairline cells that share their borders: this grid. The Portfolio only.",
     label: "Panel grid cell states",
-    states: ["default", "hover", "focus", "active"],
+    states: ["default", "hover", "focus", "active", "long content"],
   },
   {
     slug: "top-bar",
