@@ -71,6 +71,9 @@ Later on 2026-11-01, after the finish review and the design review, the Owner co
   hover: a thin resting underline in its row's key colour, thickening to the 3px rule on hover, focus and press (a
   pressed item looks like a hovered one, as a pressed Link does). An arrow after the item and no resting cue were
   turned down.
+- On 2026-11-14 the Owner chose, from a rendered comparison in the states pass, no placeholders in the Text field on
+  either Visual language: on every band a placeholder takes the band's full ink and reads as a value, so the hint
+  carries any example.
 
 ## Unresolved
 
