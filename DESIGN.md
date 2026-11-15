@@ -492,6 +492,8 @@ takes every visual value from tokens and holds no visible text.
 Built in the prototype (`prototype/components/link/`).
 - **Style:** the link role (`--text-link`: Small at the control weight, no case change) in Secondary Ink, unboxed, ending
   in an arrow (0.875em, a 1.5 stroke with round ends, `--icon-arrow`) that follows the last line when the text wraps.
+  A label that is one long word or an address breaks anywhere (`overflow-wrap: anywhere`) rather than overflow a 320px
+  screen; the action variant and About me's band links do the same.
 - **Hover, focus and pressed:** full ink, and the arrow nudges 2px (`--nudge`); no underline (`--link-hover-line:
   none`). Pressed looks like hover; the plain link doesn't sink. A container marked as the link's host (a panel cell)
   gives its links the same look on its own hover and focus within.
@@ -525,7 +527,7 @@ one.
   grid rounds its outer corners (12px) and clips its cells, which are square.
 - **Cell:** the ground, 1.5rem between its parts, padding 1.5rem on narrow screens and 2rem from 44rem.
 - **Title:** the Title role (600); a long word hyphenates or breaks rather than overflow. **Note:** Small in Muted Ink,
-  held to the measure.
+  held to the measure; a long word breaks rather than overflow.
 - **Row link:** a Link, pushed to the cell's foot. Where a page gives a cell the view's one filled action (the index's
   colour cell), the row link is the Link's action variant.
 - **Hover and focus within:** the Wash and an inset Hairline Hover edge (200ms); the row link takes its hover look.
@@ -683,10 +685,12 @@ and About me's only; the Portfolio never shows one, so it has no Portfolio page.
 - **Parts:** a list (`.lineup`) of rows (`.lineup__row`), each a category (`.lineup__category`) then an item
   (`.lineup__item`). Every word is Content.
 - **List:** a 3px rule in Key above and below, padding 1rem inside them, 0.5rem between rows.
-- **Row:** category over item, 0.5rem apart so a focused item's ring clears the category; from 36rem, a 9rem category
-  column (`--lineup-category-width`) and the item in the rest, 1rem apart, on a shared baseline. **Alternation:** odd
-  rows take Key and even rows Key Alt (`--row-key`), automatically down the list.
-- **Category:** Big Shoulders at the Title role (1.375rem, 800), uppercase, in its row's key colour.
+- **Row:** category over item in one column a long word can't widen (`minmax(0, 1fr)`), 0.5rem apart so a focused
+  item's ring clears the category; from 36rem, a 9rem category column (`--lineup-category-width`) and the item in the
+  rest, 1rem apart, on a shared baseline. **Alternation:** odd rows take Key and even rows Key Alt (`--row-key`),
+  automatically down the list.
+- **Category:** Big Shoulders at the Title role (1.375rem, 800), uppercase, in its row's key colour; a long word breaks
+  rather than overflow.
 - **Item:** Billing type (Archivo 800, fluid 1.5rem to 2rem, uppercase, Body leading) in the band's ink; a long word
   breaks or hyphenates rather than overflow.
 - **Linked and plain:** an item is a link only when the Owner gives it an address, and then rests on a thin underline
