@@ -30,7 +30,8 @@ On 2026-11-10 the Owner kept, from the rendered Button page, the states DESIGN.m
 down to 84% of the ink on hover; both buttons sink 1px when pressed, the secondary also taking the Tint fill; and while
 loading, a spinning ring replaces the label, which keeps the width and the accessible name.
 
-On 2026-11-10 the Owner kept, from the rendered Link page, a pressed Link that looks like a hovered one: nothing sinks.
+On 2026-11-10 the Owner kept, from the rendered Link page, a pressed Link that looks like a hovered one: nothing sinks (the action variant's press is
+settled by a later entry).
 
 On 2026-11-11 the Owner chose, from rendered options, the Toggle's pressed option: the Tint fill plus a 1px edge in the
 input border colour, so the state clears 3:1. A Toggle option being pressed (mouse down) looks like hover, and a Toggle
@@ -82,6 +83,10 @@ the Mono Labels Rule holds as written. An all-monospace column was turned down.
 On 2026-11-14 the Owner chose, from a rendered comparison in the states pass, no placeholders in the Text field: on
 About me a placeholder takes the band's full ink and reads as a value, so the hint carries any example, on every band
 and theme. Placeholders on the Portfolio only were turned down.
+
+On 2026-11-14 the Owner chose, from a rendered pair in the states pass, that the Link's action variant sinks 1px when
+pressed, as the primary Button does, since the two look alike; the plain Link still doesn't sink. Keeping the action
+looking like hover when pressed was turned down.
 
 ## Unresolved
 
