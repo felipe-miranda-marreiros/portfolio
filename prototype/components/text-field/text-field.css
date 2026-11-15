@@ -6,6 +6,7 @@
  *   <input class="text-field__input" id="…" aria-describedby="…-hint …-error" /> (or <textarea class="text-field__input">)
  *   <p class="text-field__error" id="…-error">…</p></div>.
  * An error sets aria-invalid="true" on the input; the message, not the border, is what carries it.
+ * No placeholder: on About me it would take the band's full ink and read as a value, so the hint carries any example.
  * `data-force` pins a state so the prototype page can show it without interaction.
  */
 .text-field {
@@ -65,11 +66,6 @@
 textarea.text-field__input {
   min-height: calc(4lh + 2 * var(--space-2) + 2 * var(--line-width));
   resize: vertical;
-}
-
-.text-field__input::placeholder {
-  color: var(--color-ink-muted);
-  opacity: 1;
 }
 
 .text-field__input:where(:hover, [data-force~="hover"]):not(:disabled, [aria-invalid="true"]) {
