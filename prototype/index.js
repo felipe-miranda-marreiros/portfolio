@@ -65,7 +65,7 @@ const components = [
     name: "Toggle",
     note: "A segmented control with one option pressed: the theme switch and the language toggle.",
     label: "Toggle states",
-    states: ["default", "hover", "active", "focus", "pressed"],
+    states: ["default", "hover", "focus", "active", "pressed"],
   },
   {
     slug: "panel-grid",
@@ -79,7 +79,7 @@ const components = [
     name: "Top bar",
     note: "The Pages on the start side, the theme switch and the language toggle on the end side.",
     label: "Top bar Page states",
-    states: ["default", "hover", "active", "focus", "current"],
+    states: ["default", "hover", "focus", "active", "current"],
   },
   {
     slug: "lineup",
@@ -108,7 +108,7 @@ const components = [
     name: "Footer",
     note: "A title, the repository link, then the social links and email.",
     label: "Footer link states",
-    states: ["default", "hover", "active", "focus", "long content"],
+    states: ["default", "hover", "focus", "active", "long content"],
   },
 ];
 
