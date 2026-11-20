@@ -485,7 +485,9 @@ takes every visual value from tokens and holds no visible text.
 - **Focus:** a 2px ink ring at 2px offset. **Disabled:** 0.4 opacity, a not-allowed cursor, no hover.
 - **Loading:** a 1em ring in the text colour, open on one side and drawn at the indicator width (2px), turns once every
   800ms in place of the label, which goes transparent so the width holds and it stays the accessible name. The button is
-  busy and disabled, at full opacity; under reduced motion the ring stands still.
+  busy and disabled, at full opacity. Under reduced motion the ring stops turning and fades down to 35% opacity
+  (`--pulse-opacity`) and back, each way taking 1.6s (`--duration-pulse`, on `--ease-in-out`), so it still reads as
+  working with no movement.
 - Transitions run 150ms on the expo ease-out.
 
 ### Links
@@ -725,7 +727,7 @@ Optional, on the intro band's right from 44rem. It carries a marked placeholder 
   options.
 - **Do** keep motion to short expo ease-out transitions (150ms for controls, 200ms for panels, 240ms for the theme
   crossfade), no bounce, and 0ms under reduced motion. The one loop is the loading ring, on the linear ease
-  (`--ease-linear`), still under reduced motion.
+  (`--ease-linear`); under reduced motion nothing moves, and the ring alone fades instead of turning.
 
 ### Don't:
 - **Don't** introduce a hued accent, a gradient or a multi-colour palette; the Owner turned down every one offered.
