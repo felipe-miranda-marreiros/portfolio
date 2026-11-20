@@ -1,0 +1,91 @@
+/**
+ * Masthead: Home's opening, from tokens only. The small photo sits beside the name; the role and seniority take the
+ * largest type, so the facts lead and the Owner stays in the background; the summary and the actions follow.
+ * Markup: <div class="masthead">
+ *   <img class="masthead__photo" src="…" alt="…" />  (optional: the photo is Content the Owner may leave out)
+ *   <h1 class="masthead__heading"><span class="masthead__name">…</span> <span class="masthead__role">…</span></h1>
+ *   (the Page's main heading, h1 on Home; the prototype page uses a lower level beside its own headings)
+ *   <p class="masthead__summary">…</p>
+ *   <div class="masthead__actions">the CV as a link--action, then Links</div></div>.
+ * The heading holds the name and the role, so a screen reader hears both; the photo only lines up beside the name.
+ * Static: its Links and action keep their own states.
+ */
+.masthead {
+  display: grid;
+  grid-template-columns: var(--photo-size) minmax(0, 1fr);
+  column-gap: var(--space-4);
+  min-width: 0;
+  color: var(--color-ink);
+}
+
+.masthead__photo {
+  grid-area: 1 / 1;
+  align-self: start;
+  width: var(--photo-size);
+  height: var(--photo-size);
+  border: var(--line-width) solid var(--color-hairline);
+  border-radius: var(--radius-photo);
+  background: var(--color-surface);
+  object-fit: cover;
+}
+
+/* The heading spans both columns so the role line runs the full width; the name clears the photo beside it. */
+.masthead__heading {
+  grid-area: 1 / 1 / auto / -1;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+  margin: 0;
+  font-weight: inherit;
+}
+
+.masthead__name {
+  display: flex;
+  align-items: center;
+  min-height: var(--photo-size);
+  padding-inline-start: calc(var(--photo-size) + var(--space-4));
+  font-family: var(--font-sans);
+  font-size: var(--text-title);
+  font-weight: var(--weight-title);
+  line-height: var(--leading-title);
+  letter-spacing: var(--tracking-title);
+  overflow-wrap: break-word;
+}
+
+.masthead:not(:has(.masthead__photo)) .masthead__name {
+  min-height: 0;
+  padding-inline-start: 0;
+}
+
+.masthead__role {
+  font-family: var(--font-display);
+  font-size: var(--text-headline);
+  font-weight: var(--weight-headline);
+  line-height: var(--leading-headline);
+  letter-spacing: var(--tracking-headline);
+  text-transform: var(--case-display);
+  color: var(--color-display);
+  text-wrap: balance;
+  overflow-wrap: break-word;
+  hyphens: auto;
+}
+
+.masthead__summary {
+  grid-column: 1 / -1;
+  max-width: var(--measure-lede);
+  margin: var(--space-5) 0 0;
+  font-size: var(--text-lede);
+  line-height: var(--leading-lede);
+  color: var(--color-ink-secondary);
+  text-wrap: pretty;
+  overflow-wrap: break-word;
+}
+
+.masthead__actions {
+  grid-column: 1 / -1;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--space-4) var(--space-6);
+  margin-top: var(--space-6);
+}

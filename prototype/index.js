@@ -97,6 +97,13 @@ const components = [
     states: ["default", "without the role line", "fewer facts", "long content"],
   },
   {
+    slug: "masthead",
+    name: "Masthead",
+    note: "Home's opening: a small photo beside the name, the role at the largest size, the summary and the actions. The Portfolio only.",
+    label: "Masthead cases",
+    states: ["default", "no photo", "long content"],
+  },
+  {
     slug: "role-entry",
     name: "Role entry",
     note: "One role on Experience: the period, place and work model beside the role. The Portfolio only.",
