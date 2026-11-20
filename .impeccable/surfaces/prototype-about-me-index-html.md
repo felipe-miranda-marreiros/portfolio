@@ -79,7 +79,7 @@ Later on 2026-11-01, after the finish review and the design review, the Owner co
   Button does, since the two look alike; the plain band link still doesn't sink.
 - On 2026-11-20 the Owner chose, from a rendered pair in the states pass, a Toggle whose pressed fill slides to the
   option pressed next, on every band as on the Portfolio; a crossfade between the options was turned down, and
-  without the script the fill snaps.
+  without the script the fill snaps. (Which Toggles slide is settled by a later entry.)
 - On 2026-11-20 the Owner chose, from a rendered pair in the states pass, that under reduced motion a busy Button's ring
   fades in and out instead of standing still, on every band as on the Portfolio; nothing else moves or transitions.
 - On 2026-11-20 the Owner chose that the ring fades only to 70%, as on the Portfolio, so it stays at 3:1 or more on
