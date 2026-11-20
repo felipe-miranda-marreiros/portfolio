@@ -629,7 +629,8 @@ each language, are both Toggles.
 - **Motion:** `toggle.js` draws the pressed fill and edge as one indicator under the options, which slides to the option
   pressed next and takes its width, 150ms on the expo ease-out; under reduced motion it moves at once. Without the
   script each pressed option fills itself and the fill snaps to the new option, never fading. In forced colours the
-  indicator is hidden and the pressed option takes the system's selection colours.
+  indicator is hidden and the chosen option takes the system's selection colours. Only the theme switch slides: a
+  language link loads the Page at its other address, which opens with the fill already on the current language.
 
 ### Navigation
 Built in the prototype (`prototype/components/top-bar/`): the Top bar.
@@ -729,8 +730,8 @@ Optional, on the intro band's right from 44rem. It carries a marked placeholder 
   where they apply) before it counts as done.
 - **Do** keep the Top bar's Pages and Toggles visible at every width: wrap the Toggles under the Pages rather than
   hide them in a menu.
-- **Do** move a Toggle's pressed fill to the option pressed next by sliding one indicator, not by fading between
-  options.
+- **Do** move the theme switch's pressed fill to the option pressed next by sliding one indicator, not by fading
+  between options; the language toggle loads its Page with the fill already in place.
 - **Do** keep motion to short expo ease-out transitions (150ms for controls, 200ms for panels, 240ms for the theme
   crossfade), no bounce, and 0ms under reduced motion. The one loop is the loading ring, on the linear ease
   (`--ease-linear`); under reduced motion nothing moves, and the ring alone fades instead of turning.
