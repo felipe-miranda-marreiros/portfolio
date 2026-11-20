@@ -68,6 +68,7 @@
 a.lineup__item {
   text-decoration-line: underline;
   text-decoration-thickness: var(--lineup-rest-line-width);
+  transition: text-decoration-thickness var(--duration-fast) var(--ease-out);
 }
 
 a.lineup__item:where(
