@@ -187,7 +187,8 @@ through tokens alone; their place and behavior never change.
   unboxed text, focus is an ink ring.
 - Bold display grotesk with tight tracking; monospace only for labels, tags, chips and numerals.
 - Hairline-bordered panel grids whose cells share borders, instead of cards and shadows.
-- Facts over the person: a hairline facts panel leads Home, the photo stays small.
+- Facts over the person: the role and seniority lead Home as its largest type, beside a hairline facts panel; the photo
+  stays small.
 
 ### About me
 
@@ -743,8 +744,8 @@ Optional, on the intro band's right from 44rem. It carries a marked placeholder 
 - **Do** open every Page in dark; show light only after the visitor picks it in the switch.
 - **Do** make the one primary action per view filled ink, and outline every other button in a hairline.
 - **Do** derive every secondary, muted, hairline and tint colour from the ink at its fixed alpha step.
-- **Do** lead Home with the facts in a hairline panel (role, seniority, location, work model, technologies) and keep
-  the Owner's photo small and plain beside the name.
+- **Do** lead Home with the facts: the role and seniority as the Masthead's largest type, and location, work model and
+  technologies in the hairline facts panel beside it; keep the Owner's photo small and plain beside the name.
 - **Do** take every visual value from tokens, so About me can restyle the shared navigation, language toggle and Footer
   through tokens alone.
 - **Do** give every component all its states (default, hover, focus, active, disabled, and loading, error or success
