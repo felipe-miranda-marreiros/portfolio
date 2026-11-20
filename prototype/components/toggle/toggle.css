@@ -5,8 +5,8 @@
  *   <button class="toggle__option" type="button" aria-pressed="true">…</button>…</fieldset>.
  * Language toggle, whose options lead to the Page's address in each language: <nav class="toggle" aria-label="…">
  *   <a class="toggle__option" href="…" hreflang="pt-BR" lang="pt-BR" aria-current="true">…</a>…</nav>.
- * toggle.js keeps one button pressed and slides the chosen fill between options; a page that acts on the choice (the
- * theme) sets aria-pressed itself.
+ * toggle.js keeps one button pressed and slides the pressed fill between a button Toggle's options; a page that acts on
+ * the choice (the theme) sets aria-pressed itself. The language toggle doesn't slide: its current option fills itself.
  * `data-force` pins a state so the prototype page can show it without interaction.
  */
 .toggle {
@@ -70,7 +70,7 @@
   outline-offset: var(--toggle-focus-offset);
 }
 
-/* toggle.js adds the indicator: one chosen fill that slides to the option pressed next, under the options' text. */
+/* toggle.js adds the indicator to a button Toggle: one pressed fill that slides to the option pressed next. */
 .toggle--sliding {
   position: relative;
   isolation: isolate;
@@ -97,7 +97,7 @@
 }
 
 @media (forced-colors: none) {
-  .toggle--sliding .toggle__option:is([aria-pressed="true"], [aria-current="true"]) {
+  .toggle--sliding .toggle__option[aria-pressed="true"] {
     background: transparent;
     box-shadow: none;
   }
