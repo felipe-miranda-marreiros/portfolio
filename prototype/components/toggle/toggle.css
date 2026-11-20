@@ -70,7 +70,7 @@
   outline-offset: var(--toggle-focus-offset);
 }
 
-/* toggle.js adds the indicator: one pressed fill that slides to the option pressed next, under the options' text. */
+/* toggle.js adds the indicator: one chosen fill that slides to the option pressed next, under the options' text. */
 .toggle--sliding {
   position: relative;
   isolation: isolate;
@@ -103,7 +103,7 @@
   }
 }
 
-/* Forced colours drop fills and shadows, so the pressed option takes the system's selection colours instead. */
+/* Forced colours drop fills and shadows, so the chosen option takes the system's selection colours instead. */
 @media (forced-colors: active) {
   .toggle__indicator {
     display: none;

@@ -63,9 +63,9 @@ const components = [
   {
     slug: "toggle",
     name: "Toggle",
-    note: "A segmented control with one option pressed: the theme switch and the language toggle.",
+    note: "A segmented control with one option chosen: the theme switch's pressed buttons and the language toggle's links.",
     label: "Toggle states",
-    states: ["default", "hover", "focus", "active", "pressed"],
+    states: ["default", "hover", "focus", "active", "pressed", "current"],
   },
   {
     slug: "panel-grid",
