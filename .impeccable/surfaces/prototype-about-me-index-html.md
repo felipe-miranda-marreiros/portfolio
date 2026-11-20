@@ -77,6 +77,9 @@ Later on 2026-11-01, after the finish review and the design review, the Owner co
   carries any example.
 - On 2026-11-14 the Owner chose that the Link's action variant sinks 1px when pressed on every band, as the primary
   Button does, since the two look alike; the plain band link still doesn't sink.
+- On 2026-11-20 the Owner chose, from a rendered pair in the states pass, a Toggle whose pressed fill slides to the
+  option pressed next, on every band as on the Portfolio; a crossfade between the options was turned down, and
+  without the script the fill snaps.
 
 ## Unresolved
 
