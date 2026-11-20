@@ -80,6 +80,8 @@ Later on 2026-11-01, after the finish review and the design review, the Owner co
 - On 2026-11-20 the Owner chose, from a rendered pair in the states pass, a Toggle whose pressed fill slides to the
   option pressed next, on every band as on the Portfolio; a crossfade between the options was turned down, and
   without the script the fill snaps.
+- On 2026-11-20 the Owner chose, from a rendered pair in the states pass, that under reduced motion a busy Button's ring
+  fades in and out instead of standing still, on every band as on the Portfolio; nothing else moves or transitions.
 
 ## Unresolved
 
@@ -106,4 +108,5 @@ FINISH: unreviewed and undocumented is unfinished; this build ends with the fini
 every shipping raster carrying its provenance
 
 Signature interaction: a linked lineup item's thin resting underline, in its row's key colour, thickens on hover, focus
-and press. Motion grammar: short ease-out (about 150 ms), no bounce, nothing animates under reduced motion.
+and press. Motion grammar: short ease-out (about 150 ms), no bounce, nothing moves under reduced motion (the loading
+ring's fade is settled by a Decided entry).
