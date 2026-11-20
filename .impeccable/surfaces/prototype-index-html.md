@@ -97,6 +97,10 @@ pressed fill slides to the option pressed next, on both themes and on About me. 
 fading out as the new one's fades in, was turned down. When the script that slides it doesn't run, the fill snaps to
 the new option; it never fades.
 
+On 2026-11-20 the Owner chose, from a rendered pair in the states pass, that under reduced motion a busy Button's loading
+ring fades in and out instead of spinning, so it still reads as working without any movement. Every other transition
+stays instant under reduced motion. A still ring was turned down.
+
 ## Unresolved
 
 The type scale, spacing scale and state tokens are first set by the token build, then refined with `typeset`, `layout`
@@ -133,4 +137,5 @@ every shipping raster carrying its provenance
 
 Signature interaction: a panel's hairline brightens and its row link goes from secondary to full ink on hover and
 focus, arrow keys move between cells, and the theme switch crossfades every token at once. Motion grammar: short
-ease-out transitions (about 150 to 200 ms), no bounce, nothing animates under reduced motion.
+ease-out transitions (about 150 to 200 ms), no bounce, nothing moves under reduced motion (the loading ring's fade is
+settled by a Decided entry).
