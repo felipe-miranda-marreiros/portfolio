@@ -270,6 +270,11 @@ a {
   width: calc(20rem + 2 * var(--line-width));
 }
 
+/* A column narrower than the page, for how long content wraps when a Page sets a component beside another. */
+.frame--column {
+  width: 32rem;
+}
+
 /* For components that don't pad themselves, such as a form's fields. */
 .frame--padded {
   display: grid;
