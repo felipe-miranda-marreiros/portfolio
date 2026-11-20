@@ -327,12 +327,13 @@ with its message, never a colour alone.
 monospace that labels facts the way a codebase labels things: commands, tags, counts, dates.
 
 ### Hierarchy
-- **Display** (800, fluid up to 6rem, line-height 0.95, -0.04em): the Owner's name and Page titles, balanced wrapping.
-- **Headline** (700, fluid up to 3rem, line-height 1.05, -0.03em): Section titles and the Facts panel's role line.
-- **Title** (600, 1.25rem, line-height 1.3, -0.01em): role titles (the Role entry's), panel titles, list rows and the
-  Footer's title.
-- **Lede** (400, fluid 1.125rem to 1.25rem, line-height 1.4): the supporting line under a Page title, in secondary
-  ink, measure 52ch.
+- **Display** (800, fluid up to 6rem, line-height 0.95, -0.04em): Page titles, balanced wrapping.
+- **Headline** (700, fluid up to 3rem, line-height 1.05, -0.03em): Section titles, the Masthead's role line and the
+  Facts panel's role line.
+- **Title** (600, 1.25rem, line-height 1.3, -0.01em): the Masthead's name, role titles (the Role entry's), panel titles,
+  list rows and the Footer's title.
+- **Lede** (400, fluid 1.125rem to 1.25rem, line-height 1.4): the supporting line under a Page title and the
+  Masthead's summary, in secondary ink, measure 52ch.
 - **Body** (400, 1rem, line-height 1.6): summaries and supporting lines in secondary ink, measure 68ch; also the value
   in a Text field, so Safari on iPhone doesn't zoom the page when the field takes focus, and, at the control weight
   (600) in full ink, a Facts panel fact's value and a Role entry's company.
