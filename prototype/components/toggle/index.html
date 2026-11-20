@@ -20,8 +20,10 @@
       <div class="specimen-intro">
         <h1>Toggle</h1>
         <p>
-          A segmented control with exactly one option pressed: the theme switch and the language toggle, in every state
-          on both themes. The last row responds to the pointer and the keyboard.
+          A segmented control with exactly one option chosen, in every state on both themes: the theme switch, whose
+          options are pressed buttons, and the language toggle, whose options are links to the Page in each language,
+          the current one marked. The last row responds to the pointer and the keyboard; its language links reload this
+          page, which has no other language.
         </p>
       </div>
 
@@ -77,44 +79,39 @@
             <h3>Language</h3>
             <ul class="states states--even" inert>
               <li>
-                <fieldset class="toggle">
-                  <legend>Language</legend>
-                  <button class="toggle__option" type="button" aria-pressed="true">EN</button>
-                  <button class="toggle__option" type="button" aria-pressed="false">PT</button>
-                </fieldset>
+                <nav class="toggle" aria-label="Language">
+                  <a class="toggle__option" href="?lang=en" hreflang="en" lang="en" aria-current="true">EN</a>
+                  <a class="toggle__option" href="?lang=pt-BR" hreflang="pt-BR" lang="pt-BR">PT</a>
+                </nav>
                 <code>default</code>
               </li>
               <li>
-                <fieldset class="toggle">
-                  <legend>Language</legend>
-                  <button class="toggle__option" type="button" aria-pressed="true">EN</button>
-                  <button class="toggle__option" type="button" aria-pressed="false" data-force="hover">PT</button>
-                </fieldset>
+                <nav class="toggle" aria-label="Language">
+                  <a class="toggle__option" href="?lang=en" hreflang="en" lang="en" aria-current="true">EN</a>
+                  <a class="toggle__option" href="?lang=pt-BR" hreflang="pt-BR" lang="pt-BR" data-force="hover">PT</a>
+                </nav>
                 <code>hover</code>
               </li>
               <li>
-                <fieldset class="toggle">
-                  <legend>Language</legend>
-                  <button class="toggle__option" type="button" aria-pressed="true">EN</button>
-                  <button class="toggle__option" type="button" aria-pressed="false" data-force="focus">PT</button>
-                </fieldset>
+                <nav class="toggle" aria-label="Language">
+                  <a class="toggle__option" href="?lang=en" hreflang="en" lang="en" aria-current="true">EN</a>
+                  <a class="toggle__option" href="?lang=pt-BR" hreflang="pt-BR" lang="pt-BR" data-force="focus">PT</a>
+                </nav>
                 <code>focus</code>
               </li>
               <li>
-                <fieldset class="toggle">
-                  <legend>Language</legend>
-                  <button class="toggle__option" type="button" aria-pressed="true">EN</button>
-                  <button class="toggle__option" type="button" aria-pressed="false" data-force="active">PT</button>
-                </fieldset>
+                <nav class="toggle" aria-label="Language">
+                  <a class="toggle__option" href="?lang=en" hreflang="en" lang="en" aria-current="true">EN</a>
+                  <a class="toggle__option" href="?lang=pt-BR" hreflang="pt-BR" lang="pt-BR" data-force="active">PT</a>
+                </nav>
                 <code>active</code>
               </li>
               <li>
-                <fieldset class="toggle">
-                  <legend>Language</legend>
-                  <button class="toggle__option" type="button" aria-pressed="true" data-force="focus">EN</button>
-                  <button class="toggle__option" type="button" aria-pressed="false">PT</button>
-                </fieldset>
-                <code>pressed, focus</code>
+                <nav class="toggle" aria-label="Language">
+                  <a class="toggle__option" href="?lang=en" hreflang="en" lang="en" aria-current="true" data-force="focus">EN</a>
+                  <a class="toggle__option" href="?lang=pt-BR" hreflang="pt-BR" lang="pt-BR">PT</a>
+                </nav>
+                <code>current, focus</code>
               </li>
             </ul>
           </div>
@@ -129,11 +126,10 @@
                 </fieldset>
               </li>
               <li>
-                <fieldset class="toggle">
-                  <legend>Language</legend>
-                  <button class="toggle__option" type="button" aria-pressed="true">EN</button>
-                  <button class="toggle__option" type="button" aria-pressed="false">PT</button>
-                </fieldset>
+                <nav class="toggle" aria-label="Language">
+                  <a class="toggle__option" href="?lang=en" hreflang="en" lang="en" aria-current="true">EN</a>
+                  <a class="toggle__option" href="?lang=pt-BR" hreflang="pt-BR" lang="pt-BR">PT</a>
+                </nav>
               </li>
             </ul>
           </div>
@@ -190,44 +186,39 @@
             <h3>Language</h3>
             <ul class="states states--even" inert>
               <li>
-                <fieldset class="toggle">
-                  <legend>Language</legend>
-                  <button class="toggle__option" type="button" aria-pressed="true">EN</button>
-                  <button class="toggle__option" type="button" aria-pressed="false">PT</button>
-                </fieldset>
+                <nav class="toggle" aria-label="Language">
+                  <a class="toggle__option" href="?lang=en" hreflang="en" lang="en" aria-current="true">EN</a>
+                  <a class="toggle__option" href="?lang=pt-BR" hreflang="pt-BR" lang="pt-BR">PT</a>
+                </nav>
                 <code>default</code>
               </li>
               <li>
-                <fieldset class="toggle">
-                  <legend>Language</legend>
-                  <button class="toggle__option" type="button" aria-pressed="true">EN</button>
-                  <button class="toggle__option" type="button" aria-pressed="false" data-force="hover">PT</button>
-                </fieldset>
+                <nav class="toggle" aria-label="Language">
+                  <a class="toggle__option" href="?lang=en" hreflang="en" lang="en" aria-current="true">EN</a>
+                  <a class="toggle__option" href="?lang=pt-BR" hreflang="pt-BR" lang="pt-BR" data-force="hover">PT</a>
+                </nav>
                 <code>hover</code>
               </li>
               <li>
-                <fieldset class="toggle">
-                  <legend>Language</legend>
-                  <button class="toggle__option" type="button" aria-pressed="true">EN</button>
-                  <button class="toggle__option" type="button" aria-pressed="false" data-force="focus">PT</button>
-                </fieldset>
+                <nav class="toggle" aria-label="Language">
+                  <a class="toggle__option" href="?lang=en" hreflang="en" lang="en" aria-current="true">EN</a>
+                  <a class="toggle__option" href="?lang=pt-BR" hreflang="pt-BR" lang="pt-BR" data-force="focus">PT</a>
+                </nav>
                 <code>focus</code>
               </li>
               <li>
-                <fieldset class="toggle">
-                  <legend>Language</legend>
-                  <button class="toggle__option" type="button" aria-pressed="true">EN</button>
-                  <button class="toggle__option" type="button" aria-pressed="false" data-force="active">PT</button>
-                </fieldset>
+                <nav class="toggle" aria-label="Language">
+                  <a class="toggle__option" href="?lang=en" hreflang="en" lang="en" aria-current="true">EN</a>
+                  <a class="toggle__option" href="?lang=pt-BR" hreflang="pt-BR" lang="pt-BR" data-force="active">PT</a>
+                </nav>
                 <code>active</code>
               </li>
               <li>
-                <fieldset class="toggle">
-                  <legend>Language</legend>
-                  <button class="toggle__option" type="button" aria-pressed="true" data-force="focus">EN</button>
-                  <button class="toggle__option" type="button" aria-pressed="false">PT</button>
-                </fieldset>
-                <code>pressed, focus</code>
+                <nav class="toggle" aria-label="Language">
+                  <a class="toggle__option" href="?lang=en" hreflang="en" lang="en" aria-current="true" data-force="focus">EN</a>
+                  <a class="toggle__option" href="?lang=pt-BR" hreflang="pt-BR" lang="pt-BR">PT</a>
+                </nav>
+                <code>current, focus</code>
               </li>
             </ul>
           </div>
@@ -242,11 +233,10 @@
                 </fieldset>
               </li>
               <li>
-                <fieldset class="toggle">
-                  <legend>Language</legend>
-                  <button class="toggle__option" type="button" aria-pressed="true">EN</button>
-                  <button class="toggle__option" type="button" aria-pressed="false">PT</button>
-                </fieldset>
+                <nav class="toggle" aria-label="Language">
+                  <a class="toggle__option" href="?lang=en" hreflang="en" lang="en" aria-current="true">EN</a>
+                  <a class="toggle__option" href="?lang=pt-BR" hreflang="pt-BR" lang="pt-BR">PT</a>
+                </nav>
               </li>
             </ul>
           </div>
