@@ -115,6 +115,10 @@ address in each language, since each language has its own address and choosing o
 look: the current language takes the chosen fill, and each link carries the language it leads to. The theme switch
 keeps its pressed buttons. Keeping the language options as pressed buttons was turned down.
 
+On 2026-11-20 the Owner chose, after the design review, that the language toggle doesn't slide: choosing a language
+loads the Page at its other address, which opens with the fill already on the current language, so only the theme
+switch slides. Sliding when a front end switches language in place was turned down.
+
 ## Unresolved
 
 The type scale, spacing scale and state tokens are first set by the token build, then refined with `typeset`, `layout`

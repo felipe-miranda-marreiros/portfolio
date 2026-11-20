@@ -86,6 +86,9 @@ Later on 2026-11-01, after the finish review and the design review, the Owner co
   every band; the secondary Button on sunset needs 68%. A separate About me floor was turned down.
 - On 2026-11-20 the Owner chose, after the states pass audit, that the language toggle's options are links to each
   language's address, the current one taking the chosen fill, on every band as on the Portfolio.
+- On 2026-11-20 the Owner chose that the language toggle doesn't slide: choosing a language loads the Page at its other
+  address, which opens with the fill already on the current language. About me has no theme switch, so no Toggle
+  slides there.
 
 ## Unresolved
 
