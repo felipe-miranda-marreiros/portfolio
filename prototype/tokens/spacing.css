@@ -20,6 +20,8 @@
   --lineup-category-width: 9rem;
   /* Experience's role entry: the side column, wide enough for a period such as "Mar 2020 – Dec 2022" in the label role. */
   --role-entry-side-width: 12rem;
+  /* Home's photo: small and plain beside the name, never a portrait. */
+  --photo-size: 4rem;
 
   --content-max: 76rem;
   --gutter: clamp(1.25rem, 0.5rem + 3.5vw, 3rem);
