@@ -3,7 +3,8 @@
  * toggle are both Toggles.
  * Markup: <fieldset class="toggle"><legend>…</legend>
  *   <button class="toggle__option" type="button" aria-pressed="true">…</button>…</fieldset>.
- * toggle.js keeps one option pressed; a page that acts on the choice (the theme) sets aria-pressed itself.
+ * toggle.js keeps one option pressed and slides the pressed fill between options; a page that acts on the choice (the
+ * theme) sets aria-pressed itself.
  * `data-force` pins a state so the prototype page can show it without interaction.
  */
 .toggle {
@@ -41,9 +42,8 @@
   text-underline-offset: var(--underline-offset);
   cursor: pointer;
   -webkit-tap-highlight-color: transparent;
-  transition:
-    color var(--duration-fast) var(--ease-out),
-    background-color var(--duration-fast) var(--ease-out);
+  /* Only the ink eases: the pressed fill moves by sliding the indicator, and without toggle.js it snaps, never fades. */
+  transition: color var(--duration-fast) var(--ease-out);
 }
 
 /* A press looks like hover until it lands as pressed; a Toggle always offers a choice, so it has no disabled state. */
@@ -67,8 +67,45 @@
   outline-offset: var(--toggle-focus-offset);
 }
 
+/* toggle.js adds the indicator: one pressed fill that slides to the option pressed next, under the options' text. */
+.toggle--sliding {
+  position: relative;
+  isolation: isolate;
+}
+
+.toggle__indicator {
+  position: absolute;
+  z-index: -1;
+  inset-block: var(--toggle-inset);
+  left: 0;
+  width: var(--toggle-pressed-width, 0);
+  translate: var(--toggle-pressed-x, 0) 0;
+  border-radius: calc(var(--radius-control) - var(--toggle-inset));
+  background: var(--color-toggle-pressed);
+  box-shadow: inset 0 0 0 var(--line-width) var(--color-toggle-pressed-edge);
+  pointer-events: none;
+}
+
+/* Only once placed, so the first paint doesn't slide in from the start of the group. */
+.toggle__indicator[data-ready] {
+  transition:
+    translate var(--duration-fast) var(--ease-out),
+    width var(--duration-fast) var(--ease-out);
+}
+
+@media (forced-colors: none) {
+  .toggle--sliding .toggle__option[aria-pressed="true"] {
+    background: transparent;
+    box-shadow: none;
+  }
+}
+
 /* Forced colours drop fills and shadows, so the pressed option takes the system's selection colours instead. */
 @media (forced-colors: active) {
+  .toggle__indicator {
+    display: none;
+  }
+
   .toggle__option[aria-pressed="true"] {
     forced-color-adjust: none;
     background: Highlight;
