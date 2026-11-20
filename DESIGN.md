@@ -608,20 +608,24 @@ multi-line variant that share every state.
 - **Disabled:** the whole field, label included, at 0.4 opacity, a not-allowed cursor on the field, no hover.
 
 ### Toggles
-Built in the prototype (`prototype/components/toggle/`): a segmented control with exactly one option pressed. The theme
-switch and the language toggle are both Toggles.
+Built in the prototype (`prototype/components/toggle/`): a segmented control with exactly one option chosen. The theme
+switch, whose options are pressed buttons, and the language toggle, whose options are links to the Page's address in
+each language, are both Toggles.
 - **Group:** a Hairline Control outline (8px corners) around its options, 3px inside it (`--toggle-inset`); the
-  options' corners nest at 5px. A legend names the group for assistive technology only.
+  options' corners nest at 5px. A legend names the theme switch for assistive technology only; the language toggle is a
+  navigation landmark named by Content (`aria-label`).
 - **Option:** the toggle role (`--text-toggle`: Small at the control weight, no case change) in Secondary Ink, padding
   0.5rem less the inset by 0.75rem. **Hover:** full ink, no underline (`--toggle-hover-line: none`). **Active** (held
   down): looks like hover until it lands as pressed.
-- **Pressed:** the Tint fill (`--color-toggle-pressed`) with full ink (`--color-on-toggle-pressed`) and a one-pixel
-  inner edge in Hairline Input (`--color-toggle-pressed-edge`), which carries the state to 3:1; hover leaves it as it
-  is. In forced colours the pressed option takes the system's selection colours.
+- **Pressed or current:** the pressed theme option or the current language (`aria-current`) takes the Tint fill
+  (`--color-toggle-pressed`) with full ink (`--color-on-toggle-pressed`) and a one-pixel inner edge in Hairline Input
+  (`--color-toggle-pressed-edge`), which carries the state to 3:1; hover leaves it as it is. In forced colours the
+  chosen option takes the system's selection colours.
 - **Focus:** the shared 2px ink ring at 2px offset (`--toggle-focus-offset`).
 - **Disabled:** none; a Toggle always offers a choice.
-- **Behavior:** pressing an option presses it alone (`toggle.js`); a page that acts on the choice sets the pressed
-  state itself.
+- **Behavior:** pressing a theme option presses it alone (`toggle.js`); a page that acts on the choice sets the pressed
+  state itself. A language option navigates to the Page in its language and carries that language (`hreflang` and
+  `lang`), so the option for the other language is read in its own language.
 - **Motion:** `toggle.js` draws the pressed fill and edge as one indicator under the options, which slides to the option
   pressed next and takes its width, 150ms on the expo ease-out; under reduced motion it moves at once. Without the
   script each pressed option fills itself and the fill snaps to the new option, never fading. In forced colours the
