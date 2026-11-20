@@ -554,9 +554,10 @@ shows one. The Owner chose the role line, not the name, as its largest type, so 
   Link, then the Experience and contact Links. Every word and the photo's alt text are Content.
 - **Photo:** small and plain, 4rem square (`--photo-size`), 10px corners (`--radius-photo`), a Hairline edge, on the
   Surface while it loads; it lines up beside the name, 1rem from it. Without a photo the name starts the column.
-- **Type:** the name in the Title role (600); the role line in the Headline role (700) in the Display colour, balanced,
-  the largest type on Home (the Owner chose it over the Display size, which wraps and hyphenates a long role in a half
-  column); the summary in the Lede role in Secondary Ink, at most 52ch (`--measure-lede`).
+- **Type:** the name in the Title role (600), the one heading that never hyphenates: a person's name only breaks where
+  it would overflow; the role line in the Headline role (700) in the Display colour, balanced, the largest type on Home
+  (the Owner chose it over the Display size, which wraps and hyphenates a long role in a half column); the summary in
+  the Lede role in Secondary Ink, at most 52ch (`--measure-lede`).
 - **Layout:** 1rem between the name row and the role line; the summary 1.5rem below, the actions 2rem below it, 2rem
   apart in a row that wraps, 1rem between rows.
 - **States:** none of its own; the Action Link and the Links keep theirs.
