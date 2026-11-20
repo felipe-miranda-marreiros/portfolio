@@ -72,10 +72,10 @@
       { "name": "--color-error (about me)", "value": "var(--color-ink)", "purpose": "No error hue: a dashed ink rule and its message." }
     ],
     "typographyMeta": {
-      "display": { "displayName": "Display", "purpose": "The Owner's name and Page titles." },
-      "headline": { "displayName": "Headline", "purpose": "Section titles and the Facts panel's role line." },
-      "title": { "displayName": "Title", "purpose": "Role titles (the Role entry's), panel titles, list rows and the Footer's title." },
-      "lede": { "displayName": "Lede", "purpose": "The supporting line under a Page title, in secondary ink, 52ch measure." },
+      "display": { "displayName": "Display", "purpose": "Page titles." },
+      "headline": { "displayName": "Headline", "purpose": "Section titles, the Masthead's role line and the Facts panel's role line." },
+      "title": { "displayName": "Title", "purpose": "The Masthead's name, role titles (the Role entry's), panel titles, list rows and the Footer's title." },
+      "lede": { "displayName": "Lede", "purpose": "The supporting line under a Page title and the Masthead's summary, in secondary ink, 52ch measure." },
       "body": { "displayName": "Body", "purpose": "Summaries and supporting lines in secondary ink, 68ch measure; also the value in a Text field, so Safari on iPhone doesn't zoom on focus; and, at the control weight (600) in full ink, a Facts panel fact's value and a Role entry's company." },
       "small": { "displayName": "Small", "purpose": "Captions, notes, metadata (such as a Role entry's location and work model) and a field's hint in muted ink, and a field's error message; row links, controls and field labels at the control weight (600)." },
       "label": { "displayName": "Label", "purpose": "Martian Mono for stat labels (the Facts panel's) and dates (a Role entry's period), uppercase, 0.08em; chips and code set as-is." },
