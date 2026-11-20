@@ -156,6 +156,7 @@ spacing:
   toggle-inset: "3px"
   lineup-category-width: "9rem"
   role-entry-side-width: "12rem"
+  photo-size: "4rem"
   about-me-toggle-inset: "0px"
 ---
 
@@ -540,6 +541,22 @@ one.
   focused cell takes a 2px inset outline in the system highlight colour.
 - **Arrow keys:** from a row link, the arrow keys move focus to the nearest cell's row link in that direction, by the
   cells' rendered positions (`panel-grid.js`).
+
+### Masthead
+Built in the prototype (`prototype/components/masthead/`): Home's opening, and the Portfolio's only; About me never
+shows one. The Owner chose the role line, not the name, as its largest type, so Home leads with the facts.
+- **Parts:** an optional photo (`.masthead__photo`), the heading (`.masthead__heading`: the Page's main heading, h1 on
+  Home) holding the name (`.masthead__name`) and then the role and seniority (`.masthead__role`), so a screen reader
+  hears both; the summary (`.masthead__summary`); and the actions (`.masthead__actions`): the CV download as the Action
+  Link, then the Experience and contact Links. Every word and the photo's alt text are Content.
+- **Photo:** small and plain, 4rem square (`--photo-size`), 10px corners (`--radius-photo`), a Hairline edge, on the
+  Surface while it loads; it lines up beside the name, 1rem from it. Without a photo the name starts the column.
+- **Type:** the name in the Title role (600); the role line in the Headline role (700) in the Display colour, balanced,
+  the largest type on Home (the Owner chose it over the Display size, which wraps and hyphenates a long role in a half
+  column); the summary in the Lede role in Secondary Ink, at most 52ch (`--measure-lede`).
+- **Layout:** 1rem between the name row and the role line; the summary 1.5rem below, the actions 2rem below it, 2rem
+  apart in a row that wraps, 1rem between rows.
+- **States:** none of its own; the Action Link and the Links keep theirs.
 
 ### Facts panel
 Built in the prototype (`prototype/components/facts-panel/`): Home's 30-second read, and the Portfolio's only; About me
