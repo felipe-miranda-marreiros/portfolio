@@ -640,7 +640,8 @@ Built in the prototype (`prototype/components/top-bar/`): the Top bar.
   Toggles wrap under the Pages, 0.75rem below, to the end side; the Pages wrap among themselves only when they alone
   don't fit.
 - **Theme switch:** a Toggle of Dark and Light, with Dark pressed until the visitor picks Light. Switching crossfades
-  every token at once (240ms).
+  every token at once (240ms), except the switch itself, which sits out of the crossfade so its pressed fill only
+  slides.
 
 ### Footer
 Built in the prototype (`prototype/components/footer/`): the Section on every Page and the only way to make contact.

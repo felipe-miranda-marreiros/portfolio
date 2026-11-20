@@ -95,7 +95,7 @@
     "motion": [
       { "name": "duration-fast", "value": "150ms", "purpose": "Controls, row links, switch options. 0ms under reduced motion." },
       { "name": "duration-base", "value": "200ms", "purpose": "Panel hover edge and wash. 0ms under reduced motion." },
-      { "name": "duration-theme", "value": "240ms", "purpose": "Theme crossfade of every token at once. 0ms under reduced motion." },
+      { "name": "duration-theme", "value": "240ms", "purpose": "Theme crossfade of every token at once, except the theme switch, which only slides its pressed fill. 0ms under reduced motion." },
       { "name": "duration-spin", "value": "800ms", "purpose": "One turn of the loading ring, on ease-linear. 0ms under reduced motion, where the ring fades instead." },
       { "name": "duration-pulse", "value": "1600ms", "purpose": "One fade of the loading ring under reduced motion, which replaces its turn. Kept under reduced motion: the one animation left there, with no movement." },
       { "name": "ease-out", "value": "cubic-bezier(0.16, 1, 0.3, 1)", "purpose": "The only transition easing: exponential ease-out, no bounce." },
