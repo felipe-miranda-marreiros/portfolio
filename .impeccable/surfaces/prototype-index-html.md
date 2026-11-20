@@ -145,6 +145,6 @@ FINISH: unreviewed and undocumented is unfinished; this build ends with the fini
 every shipping raster carrying its provenance
 
 Signature interaction: a panel's hairline brightens and its row link goes from secondary to full ink on hover and
-focus, arrow keys move between cells, and the theme switch crossfades every token at once. Motion grammar: short
-ease-out transitions (about 150 to 200 ms), no bounce, nothing moves under reduced motion (the loading ring's fade is
-settled by a Decided entry).
+focus, arrow keys move between cells, and the theme switch crossfades every token at once (the switch itself sitting
+out is settled by a Decided entry). Motion grammar: short ease-out transitions (about 150 to 200 ms), no bounce,
+nothing moves under reduced motion (the loading ring's fade is settled by a Decided entry).
