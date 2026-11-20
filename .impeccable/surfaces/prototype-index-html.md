@@ -110,6 +110,11 @@ to 70% under reduced motion, on both Visual languages, so it stays at 3:1 or mor
 Button on About me's sunset band needs 68%. A 35% floor, under 3:1, and a deeper 55% on the Portfolio with 70% on
 About me were turned down.
 
+On 2026-11-20 the Owner chose, after the states pass audit, that the language toggle's options are links to the Page's
+address in each language, since each language has its own address and choosing one navigates. It keeps the Toggle's
+look: the current language takes the chosen fill, and each link carries the language it leads to. The theme switch
+keeps its pressed buttons. Keeping the language options as pressed buttons was turned down.
+
 ## Unresolved
 
 The type scale, spacing scale and state tokens are first set by the token build, then refined with `typeset`, `layout`
