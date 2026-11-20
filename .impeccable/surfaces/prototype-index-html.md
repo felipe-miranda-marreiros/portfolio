@@ -92,6 +92,11 @@ On 2026-11-14 the Owner kept every part of a role entry required, as the approve
 The layout only tolerates a missing location, work model, achievements or technologies, as the fewer-parts sample
 shows, so a gap never breaks it. Making those parts optional Content was turned down.
 
+On 2026-11-20 the Owner chose, from a rendered pair in the states pass, how the Toggle moves between options: one
+pressed fill slides to the option pressed next, on both themes and on About me. A crossfade, the old option's fill
+fading out as the new one's fades in, was turned down. When the script that slides it doesn't run, the fill snaps to
+the new option; it never fades.
+
 ## Unresolved
 
 The type scale, spacing scale and state tokens are first set by the token build, then refined with `typeset`, `layout`
