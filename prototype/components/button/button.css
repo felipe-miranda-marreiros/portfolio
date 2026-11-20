@@ -106,3 +106,16 @@
     rotate: 1turn;
   }
 }
+
+/* A still ring reads as a broken glyph, so under reduced motion it fades instead of spinning: no movement. */
+@media (prefers-reduced-motion: reduce) {
+  .button[aria-busy="true"]::after {
+    animation: button-pulse var(--duration-pulse) var(--ease-in-out) infinite alternate;
+  }
+}
+
+@keyframes button-pulse {
+  to {
+    opacity: var(--pulse-opacity);
+  }
+}

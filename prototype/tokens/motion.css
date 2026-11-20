@@ -1,11 +1,18 @@
-/** Motion tokens: short exponential ease-out, no bounce, nothing under reduced motion. */
+/**
+ * Motion tokens: short exponential ease-out, no bounce. Under reduced motion nothing moves or transitions; only the
+ * loading ring fades, on `--duration-pulse`, so a busy control still reads as working.
+ */
 :root {
   --duration-fast: 150ms;
   --duration-base: 200ms;
   --duration-theme: 240ms;
   --duration-spin: 800ms;
+  --duration-pulse: 1600ms;
   --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-in-out: cubic-bezier(0.65, 0, 0.35, 1);
   --ease-linear: linear;
+
+  --pulse-opacity: 0.35;
 
   --press-offset: 1px;
   --nudge: 2px;
