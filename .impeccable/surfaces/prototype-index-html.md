@@ -105,6 +105,11 @@ On 2026-11-20 the Owner chose, after the design review, that the slide wins on t
 crossfade leaves the switch out, so its pressed fill only slides while every other token crossfades. Letting the
 crossfade take over the switch was turned down.
 
+On 2026-11-20 the Owner chose, from a rendered comparison after the design review, that the loading ring fades only
+to 70% under reduced motion, on both Visual languages, so it stays at 3:1 or more on every theme and band; the secondary
+Button on About me's sunset band needs 68%. A 35% floor, under 3:1, and a deeper 55% on the Portfolio with 70% on
+About me were turned down.
+
 ## Unresolved
 
 The type scale, spacing scale and state tokens are first set by the token build, then refined with `typeset`, `layout`

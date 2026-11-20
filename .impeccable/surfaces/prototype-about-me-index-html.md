@@ -82,6 +82,8 @@ Later on 2026-11-01, after the finish review and the design review, the Owner co
   without the script the fill snaps.
 - On 2026-11-20 the Owner chose, from a rendered pair in the states pass, that under reduced motion a busy Button's ring
   fades in and out instead of standing still, on every band as on the Portfolio; nothing else moves or transitions.
+- On 2026-11-20 the Owner chose that the ring fades only to 70%, as on the Portfolio, so it stays at 3:1 or more on
+  every band; the secondary Button on sunset needs 68%. A separate About me floor was turned down.
 
 ## Unresolved
 
