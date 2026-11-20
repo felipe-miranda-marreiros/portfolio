@@ -100,7 +100,7 @@
       { "name": "duration-pulse", "value": "1600ms", "purpose": "One fade of the loading ring under reduced motion, which replaces its turn. Kept under reduced motion: the one animation left there, with no movement." },
       { "name": "ease-out", "value": "cubic-bezier(0.16, 1, 0.3, 1)", "purpose": "The only transition easing: exponential ease-out, no bounce." },
       { "name": "ease-in-out", "value": "cubic-bezier(0.65, 0, 0.35, 1)", "purpose": "The loading ring's fade under reduced motion, which runs both ways." },
-      { "name": "ease-linear", "value": "linear", "purpose": "The loading ring's turn, the one loop." },
+      { "name": "ease-linear", "value": "linear", "purpose": "The loading ring's turn. Under reduced motion its fade loops on ease-in-out instead." },
       { "name": "press-offset", "value": "1px", "purpose": "How far a pressed control sinks: both Buttons and the action Link, never the plain Link. 0px under reduced motion." },
       { "name": "nudge", "value": "2px", "purpose": "How far a link's arrow moves on hover, focus and press. About me sets 3px. 0px under reduced motion." },
       { "name": "pulse-opacity", "value": "0.7", "purpose": "The loading ring's faintest point as it fades under reduced motion: 3:1 or more on every theme and band (the secondary on About me's sunset needs 0.68)." }
