@@ -368,7 +368,6 @@ a {
 .bar-sample {
   width: var(--size);
   height: var(--space-2);
-  border-radius: 1px;
   background: var(--color-ink-secondary);
 }
 
