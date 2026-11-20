@@ -103,7 +103,7 @@
       { "name": "ease-linear", "value": "linear", "purpose": "The loading ring's turn, the one loop." },
       { "name": "press-offset", "value": "1px", "purpose": "How far a pressed control sinks: both Buttons and the action Link, never the plain Link. 0px under reduced motion." },
       { "name": "nudge", "value": "2px", "purpose": "How far a link's arrow moves on hover, focus and press. About me sets 3px. 0px under reduced motion." },
-      { "name": "pulse-opacity", "value": "0.35", "purpose": "The loading ring's faintest point as it fades under reduced motion." }
+      { "name": "pulse-opacity", "value": "0.7", "purpose": "The loading ring's faintest point as it fades under reduced motion: 3:1 or more on every theme and band (the secondary on About me's sunset needs 0.68)." }
     ],
     "states": [
       { "name": "focus-ring", "value": "outline: 2px solid var(--color-ink); outline-offset: 2px", "purpose": "Every focusable element." },
