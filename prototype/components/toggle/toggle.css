@@ -1,9 +1,11 @@
 /**
- * Toggle: a segmented control of options, exactly one pressed, from tokens only. The theme switch and the language
+ * Toggle: a segmented control of options, exactly one chosen, from tokens only. The theme switch and the language
  * toggle are both Toggles.
- * Markup: <fieldset class="toggle"><legend>…</legend>
+ * Theme switch: <fieldset class="toggle"><legend>…</legend>
  *   <button class="toggle__option" type="button" aria-pressed="true">…</button>…</fieldset>.
- * toggle.js keeps one option pressed and slides the pressed fill between options; a page that acts on the choice (the
+ * Language toggle, whose options lead to the Page's address in each language: <nav class="toggle" aria-label="…">
+ *   <a class="toggle__option" href="…" hreflang="pt-BR" lang="pt-BR" aria-current="true">…</a>…</nav>.
+ * toggle.js keeps one button pressed and slides the chosen fill between options; a page that acts on the choice (the
  * theme) sets aria-pressed itself.
  * `data-force` pins a state so the prototype page can show it without interaction.
  */
@@ -39,6 +41,7 @@
   line-height: var(--leading-toggle);
   letter-spacing: var(--tracking-toggle);
   text-transform: var(--case-toggle);
+  text-decoration-line: none;
   text-underline-offset: var(--underline-offset);
   cursor: pointer;
   -webkit-tap-highlight-color: transparent;
@@ -54,8 +57,8 @@
   text-decoration-color: var(--color-key);
 }
 
-/* The edge carries the pressed state to 3:1 where the fill alone is too faint. */
-.toggle__option[aria-pressed="true"] {
+/* The edge carries the chosen state to 3:1 where the fill alone is too faint. */
+.toggle__option:is([aria-pressed="true"], [aria-current="true"]) {
   background: var(--color-toggle-pressed);
   box-shadow: inset 0 0 0 var(--line-width) var(--color-toggle-pressed-edge);
   color: var(--color-on-toggle-pressed);
@@ -94,7 +97,7 @@
 }
 
 @media (forced-colors: none) {
-  .toggle--sliding .toggle__option[aria-pressed="true"] {
+  .toggle--sliding .toggle__option:is([aria-pressed="true"], [aria-current="true"]) {
     background: transparent;
     box-shadow: none;
   }
@@ -106,14 +109,14 @@
     display: none;
   }
 
-  .toggle__option[aria-pressed="true"] {
+  .toggle__option:is([aria-pressed="true"], [aria-current="true"]) {
     forced-color-adjust: none;
     background: Highlight;
     color: HighlightText;
   }
 
   /* Opting out of forced colours also keeps the authored ring colour, so give it the system's text colour. */
-  .toggle__option[aria-pressed="true"]:is(:focus-visible, [data-force~="focus"]) {
+  .toggle__option:is([aria-pressed="true"], [aria-current="true"]):is(:focus-visible, [data-force~="focus"]) {
     outline-color: CanvasText;
   }
 }
