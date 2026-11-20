@@ -45,11 +45,12 @@
   text-underline-offset: var(--underline-offset);
   cursor: pointer;
   -webkit-tap-highlight-color: transparent;
-  /* Only the ink eases: the pressed fill moves by sliding the indicator, and without toggle.js it snaps, never fades. */
+  /* Only the ink eases: a button Toggle's fill slides on the indicator, and without toggle.js it snaps, never fades. */
   transition: color var(--duration-fast) var(--ease-out);
 }
 
-/* A press looks like hover until it lands as pressed; a Toggle always offers a choice, so it has no disabled state. */
+/* A press looks like hover until it lands or loads its Page; a Toggle always offers a choice, so it has no disabled
+   state. */
 .toggle__option:where(:hover, :active, [data-force~="hover"], [data-force~="active"]) {
   color: var(--color-ink);
   text-decoration-line: var(--toggle-hover-line);
