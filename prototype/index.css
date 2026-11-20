@@ -516,3 +516,17 @@ a {
   animation-duration: var(--duration-theme);
   animation-timing-function: var(--ease-out);
 }
+
+/* The theme switch sits out of the crossfade, so its pressed fill only slides and never fades between options. */
+.toggle:has([data-theme-choice]) {
+  view-transition-name: theme-switch;
+}
+
+::view-transition-old(theme-switch) {
+  animation: none;
+  opacity: 0;
+}
+
+::view-transition-new(theme-switch) {
+  animation: none;
+}
