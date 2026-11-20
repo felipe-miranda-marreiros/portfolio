@@ -471,9 +471,10 @@ row's key colour that thickens to 3px on hover, focus and press. The illustratio
 
 ## Components
 
-The Button, the Link, the Chip, the Toggle, the Top bar, the Footer, the Text field, the Panel grid, the Facts panel,
-the Role entry and About me's Lineup are built in the prototype (`prototype/components/button/`, `link/`, `chip/`,
-`toggle/`, `top-bar/`, `footer/`, `text-field/`, `panel-grid/`, `facts-panel/`, `role-entry/`, `lineup/`); the rest are
+The Button, the Link, the Chip, the Toggle, the Top bar, the Footer, the Text field, the Panel grid, the Masthead, the
+Facts panel, the Role entry and About me's Lineup are built in the prototype (`prototype/components/button/`, `link/`,
+`chip/`, `toggle/`, `top-bar/`, `footer/`, `text-field/`, `panel-grid/`, `masthead/`, `facts-panel/`, `role-entry/`,
+`lineup/`); the rest are
 the primitives the prototype's token specimens establish, to be confirmed by each component's own PR. Every component
 takes every visual value from tokens and holds no visible text.
 
