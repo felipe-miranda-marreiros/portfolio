@@ -95,7 +95,7 @@ shows, so a gap never breaks it. Making those parts optional Content was turned 
 On 2026-11-20 the Owner chose, from a rendered pair in the states pass, how the Toggle moves between options: one
 pressed fill slides to the option pressed next, on both themes and on About me. A crossfade, the old option's fill
 fading out as the new one's fades in, was turned down. When the script that slides it doesn't run, the fill snaps to
-the new option; it never fades.
+the new option; it never fades. (Which Toggles slide is settled by a later entry.)
 
 On 2026-11-20 the Owner chose, from a rendered pair in the states pass, that under reduced motion a busy Button's loading
 ring fades in and out instead of spinning, so it still reads as working without any movement. Every other transition
