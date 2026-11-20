@@ -101,6 +101,10 @@ On 2026-11-20 the Owner chose, from a rendered pair in the states pass, that und
 ring fades in and out instead of spinning, so it still reads as working without any movement. Every other transition
 stays instant under reduced motion. A still ring was turned down.
 
+On 2026-11-20 the Owner chose, after the design review, that the slide wins on the theme switch too: the page's theme
+crossfade leaves the switch out, so its pressed fill only slides while every other token crossfades. Letting the
+crossfade take over the switch was turned down.
+
 ## Unresolved
 
 The type scale, spacing scale and state tokens are first set by the token build, then refined with `typeset`, `layout`
