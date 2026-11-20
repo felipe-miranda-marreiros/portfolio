@@ -242,9 +242,9 @@ at a lower alpha or mixed into the ground, and error is the only hue.
 - **Hairline Hover** (26%): the brightened edge of a hovered or focused panel and of a hovered secondary button.
 - **Hairline Control** (22%): the outline of secondary controls, the theme switch and swatch edges.
 - **Hairline Input** (52% ink on paper, 44% bone on night): input borders, which identify the control and so meet 3:1
-  against the ground, and the pressed Toggle option's edge, which carries that state to 3:1. A hovered input's border
+  against the ground, and the chosen Toggle option's edge, which carries that state to 3:1. A hovered input's border
   steps up to full ink (`--color-input-hover`).
-- **Tint** (7%) and **Tint Hover** (4%): chip fills, the pressed Toggle option and the pressed secondary button; the faint fill of a hovered secondary
+- **Tint** (7%) and **Tint Hover** (4%): chip fills, the chosen Toggle option and the pressed secondary button; the faint fill of a hovered secondary
   button.
 - **Night Wash** and **Paper Wash** (2% of the ink mixed into the ground): the hovered or focused panel cell. Opaque,
   because the cell covers the hairline drawn behind the grid.
@@ -616,7 +616,7 @@ each language, are both Toggles.
   navigation landmark named by Content (`aria-label`).
 - **Option:** the toggle role (`--text-toggle`: Small at the control weight, no case change) in Secondary Ink, padding
   0.5rem less the inset by 0.75rem. **Hover:** full ink, no underline (`--toggle-hover-line: none`). **Active** (held
-  down): looks like hover until it lands as pressed.
+  down): looks like hover until it lands as pressed, or until a language link loads its Page.
 - **Pressed or current:** the pressed theme option or the current language (`aria-current`) takes the Tint fill
   (`--color-toggle-pressed`) with full ink (`--color-on-toggle-pressed`) and a one-pixel inner edge in Hairline Input
   (`--color-toggle-pressed-edge`), which carries the state to 3:1; hover leaves it as it is. In forced colours the
@@ -677,8 +677,8 @@ The shared components take About me's square corners, 3px rules and band colours
   type, in the band's ink, underlined 3px in the Key colour when current and in Key Alt on hover and while held, so a hovered
   Page's underline differs in colour from the current one's (on purple by hue alone: lime and blush are equally light), and the language toggle right: the Toggle through tokens, a square, 3px-outlined EN and PT control with no inset,
   in uppercase Label type, that underlines 3px in the Key colour on hover and while held, and fills with the ink,
-  ground as text, when pressed, with no edge. Its 3px focus ring sits 6px out, clearing the outline with a 3px gap.
-  There is no theme switch.
+  ground as text, on the current language (`aria-current`), with no edge. Its 3px focus ring sits 6px out, clearing
+  the outline with a 3px gap. There is no theme switch.
 - **Band link:** the Link, through tokens: uppercase Label type, a heavier arrow (1em, a 2 stroke with square ends); on
   hover, focus and press it underlines 3px in the Key colour (`--link-hover-line: underline`) and the arrow nudges 3px.
   Its action variant fills Action at the control weight (700), does not underline, and on hover keeps its fill with the
