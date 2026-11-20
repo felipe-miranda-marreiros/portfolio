@@ -702,8 +702,9 @@ and About me's only; the Portfolio never shows one, so it has no Portfolio page.
 - **Linked and plain:** an item is a link only when the Owner gives it an address, and then rests on a thin underline
   (`--lineup-rest-line-width`, 1px) in its row's key colour at the underline offset; otherwise it is plain text, with no
   underline and no hover.
-- **Hover, focus and active** (a linked item): the underline thickens to the line width (3px); a pressed item looks
-  like a hovered one. **Focus:** also the shared 3px ink ring at 3px offset. **Disabled:** none.
+- **Hover, focus and active** (a linked item): the underline thickens to the line width (3px) over 150ms on the expo
+  ease-out; a pressed item looks like a hovered one. **Focus:** also the shared 3px ink ring at 3px offset.
+  **Disabled:** none.
 
 #### Illustration slot
 Optional, on the intro band's right from 44rem. It carries a marked placeholder until the Owner supplies artwork.
