@@ -104,6 +104,13 @@ const components = [
     states: ["default", "no intro", "long content"],
   },
   {
+    slug: "section-heading",
+    name: "Section heading",
+    note: "A Section's title at headline size on a hairline, on both themes and on About me's bands.",
+    label: "Section heading cases",
+    states: ["default", "long content"],
+  },
+  {
     slug: "masthead",
     name: "Masthead",
     note: "Home's opening: a small photo beside the name, the role at the largest size, the summary and the actions. The Portfolio only.",
