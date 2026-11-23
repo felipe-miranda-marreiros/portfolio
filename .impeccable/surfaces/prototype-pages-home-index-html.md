@@ -35,10 +35,15 @@ On 2026-11-20 the Owner chose, from the rendered masthead, the Headline size for
 the facts panel gave the role. The Display size (up to 6rem) was turned down: in Home's half column a long role wraps
 to three or four lines and, in Portuguese, breaks words with hyphens.
 
+On 2026-11-23 the Owner chose, from three rendered splits, the facts panel at a set width (22rem,
+`--home-panel-width`) with the masthead taking the rest of the column from 44rem: the role line wraps least, one line in
+English and two in the long Portuguese case, while the panel stacks its facts and runs taller. Equal halves and a 3:2
+split favouring the masthead were turned down.
+
 ## Unresolved
 
-The masthead is a new component and the facts panel needs a variant without its role line; each lands in its own PR
-before this Page. Home's photo is a placeholder marked as such until the Owner supplies it.
+Home's photo is a placeholder marked as such until the Owner supplies it. The Experience and About me Pages and the CV
+file don't exist yet, so their links point at the paths they will take.
 
 ## Direction contract
 
