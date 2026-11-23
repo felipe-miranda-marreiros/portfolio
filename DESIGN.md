@@ -480,9 +480,9 @@ row's key colour that thickens to 3px on hover, focus and press. The illustratio
 ## Components
 
 The Button, the Link, the Chip, the Toggle, the Top bar, the Footer, the Text field, the Panel grid, the Page header,
-the Masthead, the Facts panel, the Role entry and About me's Lineup are built in the prototype
+the Section heading, the Masthead, the Facts panel, the Role entry and About me's Lineup are built in the prototype
 (`prototype/components/button/`, `link/`, `chip/`, `toggle/`, `top-bar/`, `footer/`, `text-field/`, `panel-grid/`,
-`page-header/`, `masthead/`, `facts-panel/`, `role-entry/`, `lineup/`); the rest are
+`page-header/`, `section-heading/`, `masthead/`, `facts-panel/`, `role-entry/`, `lineup/`); the rest are
 the primitives the prototype's token specimens establish, to be confirmed by each component's own PR. Every component
 takes every visual value from tokens and holds no visible text.
 
@@ -565,6 +565,17 @@ header and a split with the intro beside the title.
 - **Layout:** one column a long word can't widen, the intro 1.5rem under the title; the Page sets the space around the
   header, 4rem before its first content.
 - **States:** none; the header is static.
+
+### Section heading
+Built in the prototype (`prototype/components/section-heading/`): a Section's title, such as Experience's Education and
+certifications, and About me's Section titles. The Owner chose the title on a hairline over space alone and a title
+with an optional note.
+- **Parts:** one heading (`.section-heading`), at the level the Page needs. Its words are Content.
+- **Rule:** a full-width Hairline above it (`--section-line-width`), 2rem above the title, the same mark that separates
+  roles on Experience; the Page sets the space above the rule.
+- **Type:** the Headline role (700) in the Display colour, balanced; a long word hyphenates or breaks rather than
+  overflow.
+- **States:** none; the heading is static.
 
 ### Masthead
 Built in the prototype (`prototype/components/masthead/`): Home's opening, and the Portfolio's only; About me never
@@ -732,6 +743,8 @@ The shared components take About me's square corners, 3px rules and band colours
 - **Page header:** the Page header, through tokens: the title in Big Shoulders Display, uppercase, sized to the
   header's width (the Band-Wide Title Rule): the band's when the header spans it, the title column beside the
   illustration slot from 44rem; in the Display colour; the intro in the Lede role in the band's ink.
+- **Section heading:** the Section heading, through tokens: no rule (`--section-line-width: 0px`), since each Section
+  starts its own band; the title in About me's Headline role, Big Shoulders uppercase, in the Display colour.
 - **Panel grid:** none; About me shows its collections as bands and lineups, never a Panel grid.
 - **Facts panel:** none; it is Home's.
 - **Role entry:** none; it is Experience's.
