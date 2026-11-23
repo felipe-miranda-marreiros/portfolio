@@ -6,13 +6,13 @@
   display: grid;
   align-content: start;
   gap: var(--space-7);
-  padding: var(--space-7) var(--edge) var(--space-9);
+  padding: var(--space-8) var(--edge);
 }
 
 @media (min-width: 44rem) {
   .home {
     grid-template-columns: minmax(0, 1fr) minmax(0, var(--home-panel-width));
     align-items: start;
-    padding-top: var(--space-8);
+    padding-top: var(--space-9);
   }
 }
