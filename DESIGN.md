@@ -99,6 +99,12 @@ typography:
     fontWeight: 800
     lineHeight: 1.1
     letterSpacing: "0.01em"
+  about-me-category:
+    fontFamily: "Big Shoulders Display, Arial Narrow, sans-serif-condensed, sans-serif"
+    fontSize: "clamp(2rem, 1.5rem + 1.5vw, 2.75rem)"
+    fontWeight: 800
+    lineHeight: 1.1
+    letterSpacing: "0.01em"
   about-me-billing:
     fontFamily: "Archivo, ui-sans-serif, system-ui, sans-serif"
     fontSize: "clamp(1.5rem, 1.25rem + 1vw, 2rem)"
@@ -154,7 +160,7 @@ spacing:
   chip-gap: "0.25rem"
   about-me-chip-gap: "0.5rem"
   toggle-inset: "3px"
-  lineup-category-width: "9rem"
+  lineup-category-width: "14rem"
   lineup-separator-size: "0.25em"
   role-entry-side-width: "12rem"
   photo-size: "4rem"
@@ -362,7 +368,7 @@ Portuguese title such as "Responsabilidades" at display size must fit a 320px sc
 
 Display type and headlines take `--font-display` (the sans), `--case-display` (none) and `--color-display`; titles,
 including panel titles, take `--font-display` and `--case-display`, and the Footer's title also takes `--color-display`; labels take `--case-label`
-(uppercase), the lede's measure is `--measure-lede` (52ch), billing items take `--text-billing` (the title size), and
+(uppercase), the lede's measure is `--measure-lede` (52ch), billing items take `--text-billing` and lineup categories `--text-category` (both the title size), and
 links take the link role (`--text-link`, `--weight-link`, `--leading-link`, `--tracking-link`, `--case-link`: Small at
 the control weight, as-is; About me sets them to its Label) with `--underline-offset` (0.25em; 0.2em on About me). On
 the Portfolio they restate the hierarchy above; both sets name them, so About me can restyle a shared component through
@@ -386,8 +392,9 @@ that sets the billing heavy and uppercase and reads plainly at body size.
 - **Display** (900, 24cqi from 3.5rem to 20rem, line-height 0.88, uppercase, Display colour): the Page title, balanced
   wrapping.
 - **Headline** (900, fluid 2.25rem to 3.5rem, line-height 0.95, 0.01em, uppercase, Display colour): Section titles.
-- **Title** (Big Shoulders 800, 1.375rem, line-height 1.1, 0.01em, uppercase): billing categories, item titles and the
-  Footer's title.
+- **Title** (Big Shoulders 800, 1.375rem, line-height 1.1, 0.01em, uppercase): item titles and the Footer's title.
+- **Category** (Big Shoulders 800, fluid 2rem to 2.75rem, line-height 1.1, 0.01em, uppercase): the categories of a
+  lineup, a tier above the billing they head.
 - **Billing** (Archivo 800, fluid 1.5rem to 2rem, uppercase): the items of a lineup.
 - **Lede** (400, fluid 1.125rem to 1.25rem, line-height 1.45): one line under the Page title, measure 52ch.
 - **Body** (400, 1rem, line-height 1.6): stories and notes in the band's ink, measure 68ch.
@@ -400,7 +407,7 @@ that sets the billing heavy and uppercase and reads plainly at body size.
 **The Band-Wide Title Rule.** The Page title is sized from its container's width (24cqi, from 3.5rem to 20rem), so it
 runs the band's width like a poster's lettering.
 
-**The Billing Rule.** A list is a lineup: the category in the display face at title size, large type, in the band's two
+**The Billing Rule.** A list is a lineup: the category in the display face at category size, above its billing, in the band's two
 key colours, alternating Key and Key Alt down the list; the item in heavy uppercase Archivo at billing size in the
 band's ink, a category's items in a row with a small square in the row's key colour between two of them; two 3px
 rules in Key above and below. On sunset the keys are charcoal and cream, so half the categories
@@ -447,7 +454,7 @@ content to the shared edge. Content bands pad 4rem above and below on narrow scr
 follows them like every content band. The bar pads 1rem above and below, the Footer 2rem. From 44rem the intro splits
 into the title column and, when there is one, the illustration slot (12rem to 18rem), aligned to their foot; on narrow
 screens the slot stacks under the title. A lineup row stacks category over items, and from 36rem sets them in two
-columns (a 9rem category column, `--lineup-category-width`, and the items in the rest, which may shrink, 1rem gap) on
+columns (a 14rem category column, `--lineup-category-width`, and the items in the rest, which may shrink, 1rem gap) on
 a shared baseline; stacked, category and items sit 0.5rem apart. A category's items run in a row that wraps, 0.5rem down,
 with 0.75rem, the square, and 0.75rem between two items on a line. Swatches fill an auto-fit grid with a 13rem minimum.
 
@@ -806,7 +813,7 @@ and About me's only; the Portfolio never shows one, so it has no Portfolio page.
   list (`.lineup__items`) of one or more items (`.lineup__item`). Every word is Content.
 - **List:** a 3px rule in Key above and below, padding 1rem inside them, 0.5rem between rows.
 - **Row:** category over items in one column a long word can't widen (`minmax(0, 1fr)`), 0.5rem apart so a focused
-  item's ring clears the category; from 36rem, a 9rem category column (`--lineup-category-width`) and the items in the
+  item's ring clears the category; from 36rem, a 14rem category column (`--lineup-category-width`) and the items in the
   rest, 1rem apart, on a shared baseline. **Alternation:** odd rows take Key and even rows Key Alt (`--row-key`),
   automatically down the list.
 - **Items:** in a row that wraps, 0.5rem down, so two items on two lines sit clearly further apart than one item's own
@@ -815,8 +822,8 @@ and About me's only; the Portfolio never shows one, so it has no Portfolio page.
   before it and 0.75rem from its own; the list starts that far before its column and clips the square off whichever
   item starts a line, so a square only ever sits between two items. An item that wraps continues under its first
   letter. The square is drawn, not typed, so a screen reader reads only the items.
-- **Category:** Big Shoulders at the Title role (1.375rem, 800), uppercase, in its row's key colour; a long word breaks
-  rather than overflow.
+- **Category:** Big Shoulders at the Category role (fluid 2rem to 2.75rem, 800), uppercase, in its row's key colour,
+  above the billing it heads; a long word breaks rather than overflow.
 - **Item:** Billing type (Archivo 800, fluid 1.5rem to 2rem, uppercase, Body leading) in the band's ink; a long word
   breaks or hyphenates rather than overflow.
 - **Linked and plain:** an item is a link only when the Owner gives it an address, and then rests on a thin underline
