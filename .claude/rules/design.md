@@ -77,8 +77,9 @@ prototype/
   the Panel grid, has none, and its brief records why.
 - A prototype page that would exceed the file size hook's limit splits by variant, such as
   `about-me-multi-line.html` beside `about-me.html`, linked from it, so every state still shows on each theme or band.
-- Each page links only the files it needs: `tokens.css` (and `about-me/tokens.css` on an About me page),
-  `components/specimen.css` and its components' files.
+- Each page links only the files it needs. A component page links `tokens.css` (and `about-me/tokens.css` on an About
+  me page), `components/specimen.css` and its components' files. A Page links `tokens.css`, `pages/page.css`, its
+  components' files, its own CSS, and `theme.css` and `theme.js` when it has the theme switch.
 - Prototype pages may hold placeholder text to show a component; components themselves still hold none.
 
 ## Impeccable artifacts
