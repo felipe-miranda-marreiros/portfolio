@@ -54,35 +54,44 @@
   display: flex;
   flex-wrap: wrap;
   align-items: baseline;
-  /* No gap down: the items' Body leading already clears a focused item's ring, and wrapped lines sit closer than rows. */
-  column-gap: var(--space-3);
+  /* A small gap down, so two items on two lines sit further apart than one item's own wrapped lines, yet closer than
+     rows; the items' Body leading already clears a focused item's ring. */
+  gap: var(--space-1) var(--space-3);
   min-width: 0;
   margin: 0;
+  /* Every item leads with its square; the list starts that far before its column and clips the square off whichever
+     item starts a line, so no square hangs at a line's edge. The clip leaves the gap after it, room for a focus ring. */
+  margin-inline-start: calc(-1 * (var(--lineup-separator-size) + var(--space-3)));
+  clip-path: inset(-1em -1em -1em calc(var(--lineup-separator-size) + var(--space-1)));
   padding: 0;
   list-style: none;
-}
-
-.lineup__items > li {
-  min-width: 0;
-  max-width: 100%;
-  /* The item's face and size, so the separator's em and cap measure the item beside it. */
   font-family: var(--font-sans);
   font-size: var(--text-billing);
 }
 
+/* A row of its own, so an item that wraps continues under its first letter, not under the square. */
+.lineup__items > li {
+  display: flex;
+  align-items: baseline;
+  min-width: 0;
+  max-width: 100%;
+}
+
 /* Drawn, not typed, so the separator holds no text and a screen reader reads only the items. */
-.lineup__items > li:not(:last-child)::after {
+.lineup__items > li::before {
   content: "";
-  display: inline-block;
+  flex: none;
   width: var(--lineup-separator-size);
   height: var(--lineup-separator-size);
-  margin-inline-start: var(--space-3);
-  /* Centred on the capitals, since every item is uppercase. */
-  vertical-align: calc((1cap - var(--lineup-separator-size)) / 2);
+  margin-inline-end: var(--space-3);
+  /* Its foot sits on the baseline; raised to centre it on the capitals, since every item is uppercase. */
+  position: relative;
+  bottom: calc((1cap - var(--lineup-separator-size)) / 2);
   background: var(--row-key);
 }
 
 .lineup__item {
+  min-width: 0;
   max-width: 100%;
   font-family: var(--font-sans);
   font-size: var(--text-billing);
