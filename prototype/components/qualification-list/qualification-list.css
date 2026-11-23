@@ -132,21 +132,17 @@
   margin-top: var(--space-1);
 }
 
-.qualification__date,
-.qualification__id {
+.qualification__date {
   font-family: var(--font-mono);
   font-size: var(--text-label);
   font-weight: var(--weight-label);
   line-height: var(--leading-label);
+  letter-spacing: var(--tracking-label);
+  text-transform: var(--case-label);
   font-variant-numeric: tabular-nums;
 }
 
-.qualification__date {
-  letter-spacing: var(--tracking-label);
-  text-transform: var(--case-label);
-}
-
-/* An ID is set as-is, like a chip: its case and spacing are the issuer's. */
+/* An ID is one long token with no spaces, so it breaks anywhere rather than overflow the side column. */
 .qualification__id {
   overflow-wrap: anywhere;
 }
