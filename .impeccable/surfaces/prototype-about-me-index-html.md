@@ -95,7 +95,8 @@ Later on 2026-11-01, after the finish review and the design review, the Owner co
 
 ## Unresolved
 
-The illustration slot has no artwork; it carries a marked placeholder until the Owner supplies one.
+The illustration slot has no artwork. Until the Owner supplies one, the token page shows the slot as a marked
+placeholder and the About me Page leaves it out (the Page brief, 2026-11-23).
 
 ## Direction contract
 
