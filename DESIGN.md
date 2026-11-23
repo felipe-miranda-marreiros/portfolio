@@ -155,6 +155,7 @@ spacing:
   about-me-chip-gap: "0.5rem"
   toggle-inset: "3px"
   lineup-category-width: "9rem"
+  lineup-separator-size: "0.15em"
   role-entry-side-width: "12rem"
   photo-size: "4rem"
   section-rule-gap: "2rem"
@@ -439,9 +440,10 @@ inset and no gap above a Section heading. Every band runs full-bleed and aligns 
 content to the shared edge. Content bands pad 4rem above and below on narrow screens and 6rem from 44rem; the intro
 follows them like every content band. The bar pads 1rem above and below, the Footer 2rem. From 44rem the intro splits
 into the title column and the illustration slot (12rem to 18rem), aligned to their foot; on narrow screens the slot
-stacks under the title. A lineup row stacks category over item, and from 36rem sets them in two columns (a 9rem
-category column, `--lineup-category-width`, and the item in the rest, which may shrink, 1rem gap) on a shared baseline;
-stacked, category and item sit 0.5rem apart. Swatches fill an auto-fit grid with a 13rem minimum.
+stacks under the title. A lineup row stacks category over items, and from 36rem sets them in two columns (a 9rem
+category column, `--lineup-category-width`, and the items in the rest, which may shrink, 1rem gap) on a shared
+baseline; stacked, category and items sit 0.5rem apart. A category's items run in a row that wraps, 0.75rem apart
+across and 0.5rem down. Swatches fill an auto-fit grid with a 13rem minimum.
 
 ## Elevation & Depth
 
@@ -794,13 +796,16 @@ The shared components take About me's square corners, 3px rules and band colours
 #### Lineup
 Built in the prototype (`prototype/components/lineup/`): the signature component, the billing rows of the Billing Rule,
 and About me's only; the Portfolio never shows one, so it has no Portfolio page.
-- **Parts:** a list (`.lineup`) of rows (`.lineup__row`), each a category (`.lineup__category`) then an item
-  (`.lineup__item`). Every word is Content.
+- **Parts:** a list (`.lineup`) of rows (`.lineup__row`), each a category (`.lineup__category`) then its items, a
+  list (`.lineup__items`) of one or more items (`.lineup__item`). Every word is Content.
 - **List:** a 3px rule in Key above and below, padding 1rem inside them, 0.5rem between rows.
-- **Row:** category over item in one column a long word can't widen (`minmax(0, 1fr)`), 0.5rem apart so a focused
-  item's ring clears the category; from 36rem, a 9rem category column (`--lineup-category-width`) and the item in the
+- **Row:** category over items in one column a long word can't widen (`minmax(0, 1fr)`), 0.5rem apart so a focused
+  item's ring clears the category; from 36rem, a 9rem category column (`--lineup-category-width`) and the items in the
   rest, 1rem apart, on a shared baseline. **Alternation:** odd rows take Key and even rows Key Alt (`--row-key`),
   automatically down the list.
+- **Items:** in a row that wraps, 0.75rem apart across and 0.5rem down, so a focused item's ring clears the line above;
+  between two items, after the first, a square in its row's key colour (`--lineup-separator-size`, 0.15em of the
+  billing size), centred on the capitals. The square is drawn, not typed, so a screen reader reads only the items.
 - **Category:** Big Shoulders at the Title role (1.375rem, 800), uppercase, in its row's key colour; a long word breaks
   rather than overflow.
 - **Item:** Billing type (Archivo 800, fluid 1.5rem to 2rem, uppercase, Body leading) in the band's ink; a long word
