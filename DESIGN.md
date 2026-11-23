@@ -729,8 +729,9 @@ The shared components take About me's square corners, 3px rules and band colours
   hover, focus and press it underlines 3px in the Key colour (`--link-hover-line: underline`) and the arrow nudges 3px.
   Its action variant fills Action at the control weight (700), does not underline, and on hover keeps its fill with the
   Display ring, as the primary Button's, and sinks 1px when pressed.
-- **Page header:** the Page header, through tokens: the title in Big Shoulders Display, uppercase, sized to the band's
-  width (the Band-Wide Title Rule), in the Display colour; the intro in the Lede role in the band's ink.
+- **Page header:** the Page header, through tokens: the title in Big Shoulders Display, uppercase, sized to the
+  header's width (the Band-Wide Title Rule): the band's when the header spans it, the title column beside the
+  illustration slot from 44rem; in the Display colour; the intro in the Lede role in the band's ink.
 - **Panel grid:** none; About me shows its collections as bands and lineups, never a Panel grid.
 - **Facts panel:** none; it is Home's.
 - **Role entry:** none; it is Experience's.
