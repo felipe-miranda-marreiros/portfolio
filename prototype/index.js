@@ -86,7 +86,7 @@ const components = [
     name: "Lineup",
     note: "About me's lists, set like a poster's billing. About me only.",
     label: "Lineup item states",
-    states: ["default", "hover", "focus", "active", "no address", "long content"],
+    states: ["default", "hover", "focus", "active", "no address", "several items", "long content"],
     page: "about-me.html",
   },
   {
