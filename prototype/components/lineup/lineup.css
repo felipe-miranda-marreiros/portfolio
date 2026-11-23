@@ -41,7 +41,7 @@
 
 .lineup__category {
   font-family: var(--font-display);
-  font-size: var(--text-title);
+  font-size: var(--text-category);
   font-weight: var(--weight-title);
   line-height: var(--leading-title);
   letter-spacing: var(--tracking-title);
