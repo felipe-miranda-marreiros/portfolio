@@ -1,4 +1,4 @@
-/** The prototype index's colour swatches, component cells, theme switch and motion specimen. */
+/** The prototype index's colour swatches, component cells and motion specimen. */
 const swatchNames = [
   "ground",
   "surface",
