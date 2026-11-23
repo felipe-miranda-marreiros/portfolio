@@ -458,6 +458,11 @@ columns (a 14rem category column, `--lineup-category-width`, and the items in th
 a shared baseline; stacked, category and items sit 0.5rem apart. A category's items run in a row that wraps, 0.5rem down,
 with 0.75rem, the square, and 0.75rem between two items on a line. Swatches fill an auto-fit grid with a 13rem minimum.
 
+The About me Page is the bar and its Page header on purple, then one content band per Section in the rotation:
+Interests on sunset, Recommendations on lime, Engineering on charcoal, each a Section heading over a Lineup, 2rem apart;
+then the Footer on purple, next in the rotation. Every band runs edge to edge and pads like a content band. Until the
+Owner supplies artwork, the first band holds the Page header alone, without the illustration slot.
+
 ## Elevation & Depth
 
 Flat by default. Depth comes from hairlines and alpha tints, not shadows: a hovered or focused panel brightens its edge
