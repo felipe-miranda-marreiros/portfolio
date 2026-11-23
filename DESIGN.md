@@ -425,7 +425,8 @@ set-width panel would leave the Masthead narrower than half the column (the Owne
 
 Experience lists its roles as Role entries, one after another on a shared hairline. From 44rem each sets its period (in
 monospace), location and work model in a side column (12rem, `--role-entry-side-width`) beside the role, 2rem apart; on
-narrow screens the meta follows the title and company, never above the title.
+narrow screens the meta follows the title and company, never above the title. Its Education and Certifications lists
+set each item's date in the same side column, so the two line up down the Page.
 
 ### About me
 
@@ -649,24 +650,29 @@ per role, and only the period in monospace over an all-monospace column.
 ### Qualification list
 Built in the prototype (`prototype/components/qualification-list/`): Experience's Education and Certifications lists,
 and the Portfolio's only; About me never shows one. The Owner chose items set like a Role entry over compact rows with
-the dates at the end and two hairline cards per row.
+the dates at the end and two hairline cards per row, a small heading over a title the size of the item names, and the
+credential ID in the sans over Martian Mono.
 - **Parts:** a list (`.qualification-list`) with its title (`.qualification-list__title`, a heading at the level the
   page needs) over its items (`.qualification-list__items`, ordered, most recent first). Each item (`.qualification`)
-  has its main part (`.qualification__main`: the name, `.qualification__name`; the source, `.qualification__source`,
-  an institution or issuer; then an optional note, `.qualification__note`, or an optional credential Link) and its
-  meta (`.qualification__meta`: the date, `.qualification__date`; then a place, or an optional credential ID,
-  `.qualification__id`). Every word is Content except the dates' month names and "present", which follow the chosen
-  language. It needs the Link's styles for a credential.
+  has a head (`.qualification__head`: the name, `.qualification__name`, then the source, `.qualification__source`, an
+  institution or issuer), a meta (`.qualification__meta`: the date, `.qualification__date`, then a place or an
+  optional credential ID, `.qualification__id`) and an optional body (`.qualification__body`: a note,
+  `.qualification__note`, or a credential Link). Every word is Content except the dates' month names and "present",
+  which follow the chosen language. It needs the Link's styles for a credential.
 - **Fields (the Owner's):** an Education item shows its name, institution, period, location and an optional note; a
   Certification shows its name, issuer, issue date, an optional credential ID and an optional credential link.
-- **Layout:** like a Role entry. On narrow screens the main part comes first and the meta follows it, 0.5rem apart, so
-  a date never sits above the name as an eyebrow; from 44rem the meta takes the Role entry's side column
-  (`--role-entry-side-width`, 12rem) beside the main part, 2rem apart. Consecutive items share a Hairline with 1.5rem
-  above and below it; the title sits 1rem above the first item.
-- **Type:** the list's title and each name in the Title role (600); the source in Body at the control weight (600), in
-  full ink; the note in Body in Secondary Ink at the measure; the meta Small in Muted Ink, with the date in the Label
-  role and the credential ID in Martian Mono at label size set as-is, its case and spacing the issuer's, breaking
-  anywhere rather than overflow.
+- **Layout:** like a Role entry. On narrow screens the head, the meta and the body stack in that order, 0.5rem apart,
+  so a date never sits above the name as an eyebrow; from 44rem the meta takes the side column the Role entry uses
+  (`--role-entry-side-width`, 12rem, padded 0.25rem from the top so the date lines up with the name) beside the head
+  and then the body, 0.5rem by 2rem apart. The name and source sit 0.25rem apart, the meta's items 0.5rem apart, and
+  a credential Link 0.25rem below the body's top. Consecutive items share a Hairline with 1.5rem above and below it,
+  tighter than a Role entry's 2rem since each item is a few lines (the Owner chose it rendered at this rhythm); the
+  title sits 1.5rem above the first item.
+- **Type:** the list's title a small heading: Small at the control weight (600) in Secondary Ink, below the item names
+  so on a phone it never reads as the first one; each name in the Title role (600); the source in Body at the control
+  weight, in full ink; the note in Body in Secondary Ink at the measure; the meta Small in Muted Ink, with only the
+  date in the Label role, so the credential ID is set in the sans like the place and breaks anywhere rather than
+  overflow.
 - **States:** none; the credential Link keeps its own.
 
 ### Inputs / Fields
