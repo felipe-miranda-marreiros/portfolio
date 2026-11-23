@@ -453,8 +453,9 @@ with 0.75rem, the square, and 0.75rem between two items on a line. Swatches fill
 
 The About me Page is the bar and its Page header on purple, then one content band per Section in the rotation:
 Interests on sunset, Recommendations on lime, Engineering on charcoal, each a Section heading over a Lineup, 2rem apart;
-then the Footer on purple, next in the rotation. Every band runs edge to edge and pads like a content band. Until the
-Owner supplies artwork, the first band holds the Page header alone, without the illustration slot.
+then the Footer on purple, next in the rotation. Every band runs edge to edge; the intro and each Section's band pad
+like a content band, the bar and the Footer as above. Until the Owner supplies artwork, the intro holds the Page header
+alone, without the illustration slot.
 
 ## Elevation & Depth
 
@@ -584,7 +585,7 @@ header and a split with the intro beside the title.
   word hyphenates or breaks rather than overflow. The intro in the Lede role in Secondary Ink, at most 52ch
   (`--measure-lede`).
 - **Layout:** one column a long word can't widen, the intro 1.5rem under the title; the Page sets the space around the
-  header, 4rem before its first content.
+  header: 4rem before its first content on Experience, and on About me the padding of the band it sits in.
 - **States:** none; the header is static.
 
 ### Section heading
