@@ -126,6 +126,7 @@
       { "name": "toggle-type", "value": "--text-toggle and family: Small at the control weight, as-is", "purpose": "The Toggle role; About me sets its uppercase Label." },
       { "name": "chip-line-width", "value": "0px", "purpose": "The chip's outline; none on the Portfolio, the 3px rule on About me." },
       { "name": "footer-line-width", "value": "1px", "purpose": "The rule above the Footer: a hairline on the Portfolio, none on About me (0px), whose band meets the one above it." },
+      { "name": "section-line-width", "value": "1px", "purpose": "The rule above a Section heading: a hairline on the Portfolio, none on About me (0px), where each Section starts its own band." },
       { "name": "lineup-rest-line-width", "value": "1px", "purpose": "A linked lineup item's resting underline, in its row's key colour; it thickens to the line width on hover, focus and press. Shared by both Visual languages; About me doesn't override it." },
       { "name": "lineup-category-width", "value": "9rem", "purpose": "The lineup's category column from 36rem. Shared by both Visual languages; About me doesn't override it." },
       { "name": "role-entry-side-width", "value": "12rem", "purpose": "The Role entry's side column (period, location, work model) from 44rem." },
@@ -207,6 +208,14 @@
       "description": "A Page's title and its one-line intro, on Experience and on About me: the title in the Display role and the Display colour, balanced and sized to the header's width (cqi), a long word hyphenating or breaking rather than overflow; the optional intro 1.5rem under it in the Lede role in Secondary Ink, at most 52ch. One column a long word can't widen; the Page sets the space around it, 4rem before its first content. The Owner chose the title stacked over the intro, with no rule, over a hairline below the header and a split with the intro beside the title. On About me the title takes Big Shoulders Display, uppercase, sized to the header's width: the band's when the header spans it, the title column beside the illustration slot from 44rem. Every word is Content. Static: no states. Built in prototype/components/page-header/.",
       "html": "<header class=\"ds-page-header\"><h1 class=\"ds-page-header__title\">Placeholder page title</h1><p class=\"ds-page-header__lede\">Placeholder intro: one line on what the Page holds.</p></header>",
       "css": ".ds-page-header { container-type: inline-size; display: grid; grid-template-columns: minmax(0, 1fr); gap: var(--space-5); min-width: 0; color: var(--color-ink); } .ds-page-header__title { margin: 0; font-family: var(--font-display); font-size: var(--text-display); font-weight: var(--weight-display); line-height: var(--leading-display); letter-spacing: var(--tracking-display); text-transform: var(--case-display); color: var(--color-display); text-wrap: balance; overflow-wrap: break-word; hyphens: auto; } .ds-page-header__lede { max-width: var(--measure-lede); margin: 0; font-size: var(--text-lede); line-height: var(--leading-lede); color: var(--color-ink-secondary); text-wrap: pretty; overflow-wrap: break-word; }"
+    },
+    {
+      "name": "Section Heading",
+      "kind": "custom",
+      "refersTo": "section-heading",
+      "description": "A Section's title, such as Experience's Education and certifications and About me's Section titles: the Headline role in the Display colour, balanced, a long word hyphenating or breaking rather than overflow, on a full-width Hairline 2rem above it (--section-line-width), the same mark that separates roles on Experience. The Owner chose the title on a hairline over space alone and a title with an optional note. On About me the rule is absent (0px), since each Section starts its own band, and the title takes Big Shoulders uppercase. One heading at the level the Page needs; its words are Content. Static: no states. Built in prototype/components/section-heading/.",
+      "html": "<h2 class=\"ds-section-heading\">Placeholder section title</h2>",
+      "css": ".ds-section-heading { margin: 0; padding-top: var(--space-6); border-top: var(--section-line-width) solid var(--color-hairline); font-family: var(--font-display); font-size: var(--text-headline); font-weight: var(--weight-headline); line-height: var(--leading-headline); letter-spacing: var(--tracking-headline); text-transform: var(--case-display); color: var(--color-display); text-wrap: balance; overflow-wrap: break-word; hyphens: auto; }"
     },
     {
       "name": "Masthead",
