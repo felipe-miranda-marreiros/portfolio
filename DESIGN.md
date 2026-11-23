@@ -207,8 +207,8 @@ It loads over the Portfolio's tokens and redefines the same names, so the shared
 through tokens alone. Spacing and motion stay the
 Portfolio's, except a longer link nudge (3px), a wider chip gap (0.5rem), a Toggle with no inset, to suit its 3px
 rules, and no gap above a Section heading, which has no rule. It has one theme and no photo. Each band sets
-every colour token itself, so a component inside a band takes that band's colours. Illustration is optional: the language works without it, and the first band reserves a slot
-for one.
+every colour token itself, so a component inside a band takes that band's colours. Illustration is optional: the language works without it, and the first band holds a slot for
+one once the Owner supplies artwork.
 
 **Key Characteristics:**
 - Four flat bands, purple, sunset orange, lime and charcoal, rotating one per Section.
@@ -297,8 +297,9 @@ action, on action), so nothing on About me picks a palette colour directly.
 - **Peach**: on charcoal, display type and titles, Key Alt and the action fill.
 - **Blush**: on purple, Key Alt.
 - **Magenta**: on lime, display type and titles, Key and the action fill.
-- **Cream**: on sunset, display type and titles and Key Alt, all large type or the lineup's separator square; and the
-  action's text on the charcoal fill.
+- **Cream**: on sunset, display type and titles and Key Alt, all large type, and marks that need only 3:1 (as Key Alt,
+  underlines and the lineup's separator square; as Display, a hovered edge); and the action's text on the charcoal
+  fill.
 - The band colours serve as inks too: **Charcoal** is the ink on sunset and lime and Key on sunset; **Lime** is display
   type, Key and the action fill on purple, and Key on charcoal; **Purple** is Key Alt on lime.
 
@@ -320,8 +321,9 @@ links; and linked lineup items rest on a thin underline in their row's key colou
 and press. The square between a category's items is in its row's key colour too.
 
 **The Cream Is Large Rule.** Cream holds only 3.3:1 on sunset, so on the sunset ground it sets large type only: display,
-headlines, the billing keys and the Footer's title (1.375rem at 800). As Key Alt it also draws the lineup's separator
-square, a mark that needs only 3:1. On the charcoal action fill it is the action's text, at 15:1.
+headlines, the billing keys and the Footer's title (1.375rem at 800). It also draws marks that need only 3:1: as Key
+Alt, underlines and the lineup's separator square, and as Display, a hovered edge. On the charcoal action fill it is
+the action's text, at 15:1.
 
 **The No Error Hue Rule.** No single hue reads on all four bands, so error is the band's ink, drawn as a dashed rule
 with its message, never a colour alone.
@@ -443,10 +445,10 @@ The Portfolio's column (76rem max), gutter and spacing rhythm, unchanged, except
 inset and no gap above a Section heading. Every band runs full-bleed and aligns its
 content to the shared edge. Content bands pad 4rem above and below on narrow screens and 6rem from 44rem; the intro
 follows them like every content band. The bar pads 1rem above and below, the Footer 2rem. From 44rem the intro splits
-into the title column and the illustration slot (12rem to 18rem), aligned to their foot; on narrow screens the slot
-stacks under the title. A lineup row stacks category over items, and from 36rem sets them in two columns (a 9rem
-category column, `--lineup-category-width`, and the items in the rest, which may shrink, 1rem gap) on a shared
-baseline; stacked, category and items sit 0.5rem apart. A category's items run in a row that wraps, 0.5rem down,
+into the title column and, when there is one, the illustration slot (12rem to 18rem), aligned to their foot; on narrow
+screens the slot stacks under the title. A lineup row stacks category over items, and from 36rem sets them in two
+columns (a 9rem category column, `--lineup-category-width`, and the items in the rest, which may shrink, 1rem gap) on
+a shared baseline; stacked, category and items sit 0.5rem apart. A category's items run in a row that wraps, 0.5rem down,
 with 0.75rem, the square, and 0.75rem between two items on a line. Swatches fill an auto-fit grid with a 13rem minimum.
 
 ## Elevation & Depth
@@ -825,7 +827,8 @@ and About me's only; the Portfolio never shows one, so it has no Portfolio page.
   **Disabled:** none.
 
 #### Illustration slot
-Optional, on the intro band's right from 44rem. It carries a marked placeholder until the Owner supplies artwork.
+Optional, on the intro band's right from 44rem. Until the Owner supplies artwork, the token page shows it as a marked
+placeholder and the About me Page leaves it out.
 
 ## Do's and Don'ts
 
