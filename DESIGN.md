@@ -238,9 +238,9 @@ at a lower alpha or mixed into the ground, and error is the only hue.
 - **Night** and **Paper**: the ground of the dark and light themes; also the text colour on a filled-ink action.
 - **Night Raised** and **Paper Raised**: the surface for anything that floats above the page (menus, popovers), always
   paired with the float shadow.
-- **Secondary Ink** (84% of the ink): supporting lines, ledes, body copy in panels, resting row links and inactive
-  switch options.
-- **Muted Ink** (64% of the ink): metadata, captions and notes. Still AA on the ground in both themes.
+- **Secondary Ink** (84% of the ink): supporting lines, ledes, body copy in panels, resting row links, inactive
+  switch options, and the Qualification list's small heading and note.
+- **Muted Ink** (64% of the ink): metadata, captions and a panel's note. Still AA on the ground in both themes.
 - **Hairline** (10% of the ink): panel-grid borders, the Facts panel's border and the rule under its lead, the rule
   between role entries and between Qualification list items, the rule above a Section heading, the rules under the top
   bar and above the footer, and the Footer's rule between its repository link and the rest.
@@ -342,13 +342,14 @@ monospace that labels facts the way a codebase labels things: commands, tags, co
   Masthead's summary, in secondary ink, measure 52ch.
 - **Body** (400, 1rem, line-height 1.6): summaries and supporting lines in secondary ink, measure 68ch; also the value
   in a Text field, so Safari on iPhone doesn't zoom the page when the field takes focus, and, at the control weight
-  (600) in full ink, a Facts panel fact's value and a Role entry's company.
-- **Small** (400, 0.875rem): captions, notes, metadata (such as a Role entry's location and work model), and a field's
-  hint, in muted ink, and a field's error message; also the size of row links, controls and field labels, which take the
+  (600) in full ink, a Facts panel fact's value, a Role entry's company and a Qualification list item's source.
+- **Small** (400, 0.875rem): captions, a panel's note, metadata (such as a Role entry's location and work model, and a
+  Qualification list item's place or credential ID), and a field's hint, in muted ink, and a field's error message;
+  also the size of row links, controls, field labels and the Qualification list's small heading, which take the
   control weight (600), kept apart from the title weight so each can change alone.
 - **Label** (Martian Mono 500, 0.6875rem, 0.08em, uppercase, tabular numerals): stat labels (the Facts panel's) and
-  dates (a Role entry's period). Inside chips and code, the same mono size is set as-is, with no tracking or case
-  change.
+  dates (a Role entry's period, a Qualification list item's date). Inside chips and code, the same mono size is set
+  as-is, with no tracking or case change.
 
 Headings hyphenate and, where the browser has no dictionary, break long words rather than overflow a narrow column: a
 Portuguese title such as "Responsabilidades" at display size must fit a 320px screen. Paragraphs wrap with a pretty rag.
@@ -673,6 +674,8 @@ credential ID in the sans over Martian Mono.
   weight, in full ink; the note in Body in Secondary Ink at the measure; the meta Small in Muted Ink, with only the
   date in the Label role, so the credential ID is set in the sans like the place and breaks anywhere rather than
   overflow.
+- **Required parts:** the Owner's fields are required except the note, the credential ID and the credential link; the
+  layout still holds when a required one is missing, so a gap never breaks it.
 - **States:** none; the credential Link keeps its own.
 
 ### Inputs / Fields
