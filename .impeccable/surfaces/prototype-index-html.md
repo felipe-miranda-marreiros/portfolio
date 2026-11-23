@@ -141,6 +141,9 @@ On 2026-11-23 the Owner chose, after the finish review, the Qualification list's
 the control weight in Secondary Ink below the item names, so on a phone it never reads as the first item's name; a
 title the size of the names, as built, and a title on its own hairline were turned down.
 
+On 2026-11-23 the Owner chose a credential ID in the sans, like the place, so only the date is monospace in the side
+column, as on the Role entry; Martian Mono was turned down.
+
 ## Unresolved
 
 The type scale, spacing scale and state tokens are first set by the token build, then refined with `typeset`, `layout`
