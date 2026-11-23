@@ -97,6 +97,13 @@ const components = [
     states: ["default", "without the role line", "fewer facts", "long content"],
   },
   {
+    slug: "page-header",
+    name: "Page header",
+    note: "A Page's title at display size and its one-line intro, on both themes and on About me's bands.",
+    label: "Page header cases",
+    states: ["default", "no intro", "long content"],
+  },
+  {
     slug: "masthead",
     name: "Masthead",
     note: "Home's opening: a small photo beside the name, the role at the largest size, the summary and the actions. The Portfolio only.",
