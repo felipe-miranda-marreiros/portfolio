@@ -127,6 +127,10 @@ On 2026-11-23 the Owner chose, from three rendered options, the Page header: the
 intro, with no rule under them. A hairline below the header and a split with the intro beside the title were turned
 down.
 
+On 2026-11-23 the Owner chose, from three rendered options, the Section heading: the title on a full-width hairline
+2rem above it, the same mark that separates roles on Experience. Space alone, and a title with an optional note, were
+turned down. On About me, where each Section starts its own band, the rule is absent, as the Footer's is.
+
 ## Unresolved
 
 The type scale, spacing scale and state tokens are first set by the token build, then refined with `typeset`, `layout`
