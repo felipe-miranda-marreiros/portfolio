@@ -823,7 +823,8 @@ and About me's only; the Portfolio never shows one, so it has no Portfolio page.
   item starts a line, so a square only ever sits between two items. An item that wraps continues under its first
   letter. The square is drawn, not typed, so a screen reader reads only the items.
 - **Category:** Big Shoulders at the Category role (fluid 2rem to 2.75rem, 800), uppercase, in its row's key colour,
-  above the billing it heads; a long word breaks rather than overflow.
+  above the billing it heads; a category longer than its column, such as "Recomendações", breaks at a hyphen, or
+  mid-word where the browser has no hyphenation dictionary, rather than overflow.
 - **Item:** Billing type (Archivo 800, fluid 1.5rem to 2rem, uppercase, Body leading) in the band's ink; a long word
   breaks or hyphenates rather than overflow.
 - **Linked and plain:** an item is a link only when the Owner gives it an address, and then rests on a thin underline
