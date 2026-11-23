@@ -119,12 +119,14 @@ On 2026-11-20 the Owner chose, after the design review, that the language toggle
 loads the Page at its other address, which opens with the fill already on the current language, so only the theme
 switch slides. Sliding when a front end switches language in place was turned down.
 
+On 2026-11-20 the Owner chose, while shaping Home, that the Masthead's role line stands for the facts panel's: Home's
+facts panel leaves its role line out, so the role is never repeated. The Home brief
+(`.impeccable/surfaces/prototype-pages-home-index-html.md`) records the decision.
+
 ## Unresolved
 
 The type scale, spacing scale and state tokens are first set by the token build, then refined with `typeset`, `layout`
-and `colorize` and captured with `/impeccable document` in scan mode. The facts panel's role line repeats Home's
-headline (role and seniority) unless the Home Page lets one stand for the other; that is settled when Home is composed.
-Home's small photo uses a placeholder marked as
+and `colorize` and captured with `/impeccable document` in scan mode. Home's small photo uses a placeholder marked as
 such until the Owner supplies it.
 
 ## Direction contract
