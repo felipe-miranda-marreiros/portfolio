@@ -48,6 +48,9 @@
   text-transform: var(--case-display);
   color: var(--row-key);
   overflow-wrap: break-word;
+  /* A category longer than its column, such as "Recomendações", breaks at a hyphen, or mid-word where the browser has no
+     hyphenation dictionary, rather than overflow. */
+  hyphens: auto;
 }
 
 .lineup__items {
