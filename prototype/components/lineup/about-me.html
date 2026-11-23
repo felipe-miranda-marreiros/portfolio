@@ -20,8 +20,8 @@
       <div class="specimen-intro" data-band="purple">
         <h1>Lineup</h1>
         <p>
-          About me's lists, set like a poster's billing, on each band. A linked item rests on a thin underline that
-          thickens on hover; a plain one has none. The Portfolio never shows a Lineup, so it has no Portfolio page.
+          About me's lists, set like a poster's billing, on each band. A category's items run in a row, a square in the
+          row's key between them. A linked item rests on a thin underline that thickens on hover; a plain one has none. The Portfolio never shows a Lineup, so it has no Portfolio page.
         </p>
       </div>
 
@@ -31,29 +31,29 @@
           <div class="variant">
             <h3>States: each row pinned to one</h3>
             <ul class="lineup" aria-label="Lineup states" inert>
-              <li class="lineup__row"><span class="lineup__category">Default</span><a class="lineup__item" href="https://example.com/">Placeholder title</a></li>
-              <li class="lineup__row"><span class="lineup__category">Hover</span><a class="lineup__item" href="https://example.com/" data-force="hover">Placeholder title</a></li>
-              <li class="lineup__row"><span class="lineup__category">Focus</span><a class="lineup__item" href="https://example.com/" data-force="focus">Placeholder title</a></li>
-              <li class="lineup__row"><span class="lineup__category">Active</span><a class="lineup__item" href="https://example.com/" data-force="active">Placeholder title</a></li>
-              <li class="lineup__row"><span class="lineup__category">No address</span><span class="lineup__item">Placeholder title</span></li>
+              <li class="lineup__row"><span class="lineup__category">Default</span><ul class="lineup__items"><li><a class="lineup__item" href="https://example.com/">Placeholder title</a></li></ul></li>
+              <li class="lineup__row"><span class="lineup__category">Hover</span><ul class="lineup__items"><li><a class="lineup__item" href="https://example.com/" data-force="hover">Placeholder title</a></li></ul></li>
+              <li class="lineup__row"><span class="lineup__category">Focus</span><ul class="lineup__items"><li><a class="lineup__item" href="https://example.com/" data-force="focus">Placeholder title</a></li></ul></li>
+              <li class="lineup__row"><span class="lineup__category">Active</span><ul class="lineup__items"><li><a class="lineup__item" href="https://example.com/" data-force="active">Placeholder title</a></li></ul></li>
+              <li class="lineup__row"><span class="lineup__category">No address</span><ul class="lineup__items"><li><span class="lineup__item">Placeholder title</span></li></ul></li>
             </ul>
           </div>
           <div class="variant">
-            <h3>Lineup: keys alternate, linked and plain items</h3>
+            <h3>Lineup: keys alternate, several items to a category</h3>
             <ul class="lineup" aria-label="Placeholder recommendations">
-              <li class="lineup__row"><span class="lineup__category">Books</span><a class="lineup__item" href="https://example.com/">Placeholder title</a></li>
-              <li class="lineup__row"><span class="lineup__category">Authors</span><span class="lineup__item">Placeholder author</span></li>
-              <li class="lineup__row"><span class="lineup__category">Music</span><a class="lineup__item" href="https://example.com/">Placeholder track</a></li>
-              <li class="lineup__row"><span class="lineup__category">Films</span><span class="lineup__item">Placeholder film</span></li>
-              <li class="lineup__row"><span class="lineup__category">Articles</span><a class="lineup__item" href="https://example.com/">Placeholder article</a></li>
+              <li class="lineup__row"><span class="lineup__category">Books</span><ul class="lineup__items"><li><a class="lineup__item" href="https://example.com/">Placeholder title</a></li></ul></li>
+              <li class="lineup__row"><span class="lineup__category">Authors</span><ul class="lineup__items"><li><span class="lineup__item">Placeholder author</span></li></ul></li>
+              <li class="lineup__row"><span class="lineup__category">Music</span><ul class="lineup__items"><li><a class="lineup__item" href="https://example.com/">Placeholder track</a></li><li><span class="lineup__item">Second placeholder track</span></li><li><a class="lineup__item" href="https://example.com/">Third placeholder track</a></li></ul></li>
+              <li class="lineup__row"><span class="lineup__category">Films</span><ul class="lineup__items"><li><span class="lineup__item">Placeholder film</span></li><li><span class="lineup__item">Second placeholder film</span></li></ul></li>
+              <li class="lineup__row"><span class="lineup__category">Articles</span><ul class="lineup__items"><li><a class="lineup__item" href="https://example.com/">Placeholder article</a></li></ul></li>
             </ul>
           </div>
           <div class="variant">
             <h3>Long content, in Brazilian Portuguese</h3>
             <ul class="lineup" aria-label="Recomendações de exemplo" lang="pt-BR">
-              <li class="lineup__row"><span class="lineup__category">Recomendações</span><a class="lineup__item" href="https://example.com/">Um título de exemplo bem mais longo que o normal, para quebrar a linha</a></li>
-              <li class="lineup__row"><span class="lineup__category">Artigos</span><span class="lineup__item">Desenvolvimento orientado a testes</span></li>
-              <li class="lineup__row"><span class="lineup__category">Palavras</span><span class="lineup__item">Inconstitucionalissimamente</span></li>
+              <li class="lineup__row"><span class="lineup__category">Recomendações</span><ul class="lineup__items"><li><a class="lineup__item" href="https://example.com/">Um título de exemplo bem mais longo que o normal, para quebrar a linha</a></li></ul></li>
+              <li class="lineup__row"><span class="lineup__category">Artigos</span><ul class="lineup__items"><li><span class="lineup__item">Desenvolvimento orientado a testes</span></li><li><a class="lineup__item" href="https://example.com/">Arquitetura de sistemas distribuídos</a></li></ul></li>
+              <li class="lineup__row"><span class="lineup__category">Palavras</span><ul class="lineup__items"><li><span class="lineup__item">Inconstitucionalissimamente</span></li></ul></li>
             </ul>
           </div>
         </section>
@@ -63,29 +63,29 @@
           <div class="variant">
             <h3>States: each row pinned to one</h3>
             <ul class="lineup" aria-label="Lineup states" inert>
-              <li class="lineup__row"><span class="lineup__category">Default</span><a class="lineup__item" href="https://example.com/">Placeholder title</a></li>
-              <li class="lineup__row"><span class="lineup__category">Hover</span><a class="lineup__item" href="https://example.com/" data-force="hover">Placeholder title</a></li>
-              <li class="lineup__row"><span class="lineup__category">Focus</span><a class="lineup__item" href="https://example.com/" data-force="focus">Placeholder title</a></li>
-              <li class="lineup__row"><span class="lineup__category">Active</span><a class="lineup__item" href="https://example.com/" data-force="active">Placeholder title</a></li>
-              <li class="lineup__row"><span class="lineup__category">No address</span><span class="lineup__item">Placeholder title</span></li>
+              <li class="lineup__row"><span class="lineup__category">Default</span><ul class="lineup__items"><li><a class="lineup__item" href="https://example.com/">Placeholder title</a></li></ul></li>
+              <li class="lineup__row"><span class="lineup__category">Hover</span><ul class="lineup__items"><li><a class="lineup__item" href="https://example.com/" data-force="hover">Placeholder title</a></li></ul></li>
+              <li class="lineup__row"><span class="lineup__category">Focus</span><ul class="lineup__items"><li><a class="lineup__item" href="https://example.com/" data-force="focus">Placeholder title</a></li></ul></li>
+              <li class="lineup__row"><span class="lineup__category">Active</span><ul class="lineup__items"><li><a class="lineup__item" href="https://example.com/" data-force="active">Placeholder title</a></li></ul></li>
+              <li class="lineup__row"><span class="lineup__category">No address</span><ul class="lineup__items"><li><span class="lineup__item">Placeholder title</span></li></ul></li>
             </ul>
           </div>
           <div class="variant">
-            <h3>Lineup: keys alternate, linked and plain items</h3>
+            <h3>Lineup: keys alternate, several items to a category</h3>
             <ul class="lineup" aria-label="Placeholder recommendations">
-              <li class="lineup__row"><span class="lineup__category">Books</span><a class="lineup__item" href="https://example.com/">Placeholder title</a></li>
-              <li class="lineup__row"><span class="lineup__category">Authors</span><span class="lineup__item">Placeholder author</span></li>
-              <li class="lineup__row"><span class="lineup__category">Music</span><a class="lineup__item" href="https://example.com/">Placeholder track</a></li>
-              <li class="lineup__row"><span class="lineup__category">Films</span><span class="lineup__item">Placeholder film</span></li>
-              <li class="lineup__row"><span class="lineup__category">Articles</span><a class="lineup__item" href="https://example.com/">Placeholder article</a></li>
+              <li class="lineup__row"><span class="lineup__category">Books</span><ul class="lineup__items"><li><a class="lineup__item" href="https://example.com/">Placeholder title</a></li></ul></li>
+              <li class="lineup__row"><span class="lineup__category">Authors</span><ul class="lineup__items"><li><span class="lineup__item">Placeholder author</span></li></ul></li>
+              <li class="lineup__row"><span class="lineup__category">Music</span><ul class="lineup__items"><li><a class="lineup__item" href="https://example.com/">Placeholder track</a></li><li><span class="lineup__item">Second placeholder track</span></li><li><a class="lineup__item" href="https://example.com/">Third placeholder track</a></li></ul></li>
+              <li class="lineup__row"><span class="lineup__category">Films</span><ul class="lineup__items"><li><span class="lineup__item">Placeholder film</span></li><li><span class="lineup__item">Second placeholder film</span></li></ul></li>
+              <li class="lineup__row"><span class="lineup__category">Articles</span><ul class="lineup__items"><li><a class="lineup__item" href="https://example.com/">Placeholder article</a></li></ul></li>
             </ul>
           </div>
           <div class="variant">
             <h3>Long content, in Brazilian Portuguese</h3>
             <ul class="lineup" aria-label="Recomendações de exemplo" lang="pt-BR">
-              <li class="lineup__row"><span class="lineup__category">Recomendações</span><a class="lineup__item" href="https://example.com/">Um título de exemplo bem mais longo que o normal, para quebrar a linha</a></li>
-              <li class="lineup__row"><span class="lineup__category">Artigos</span><span class="lineup__item">Desenvolvimento orientado a testes</span></li>
-              <li class="lineup__row"><span class="lineup__category">Palavras</span><span class="lineup__item">Inconstitucionalissimamente</span></li>
+              <li class="lineup__row"><span class="lineup__category">Recomendações</span><ul class="lineup__items"><li><a class="lineup__item" href="https://example.com/">Um título de exemplo bem mais longo que o normal, para quebrar a linha</a></li></ul></li>
+              <li class="lineup__row"><span class="lineup__category">Artigos</span><ul class="lineup__items"><li><span class="lineup__item">Desenvolvimento orientado a testes</span></li><li><a class="lineup__item" href="https://example.com/">Arquitetura de sistemas distribuídos</a></li></ul></li>
+              <li class="lineup__row"><span class="lineup__category">Palavras</span><ul class="lineup__items"><li><span class="lineup__item">Inconstitucionalissimamente</span></li></ul></li>
             </ul>
           </div>
         </section>
@@ -95,29 +95,29 @@
           <div class="variant">
             <h3>States: each row pinned to one</h3>
             <ul class="lineup" aria-label="Lineup states" inert>
-              <li class="lineup__row"><span class="lineup__category">Default</span><a class="lineup__item" href="https://example.com/">Placeholder title</a></li>
-              <li class="lineup__row"><span class="lineup__category">Hover</span><a class="lineup__item" href="https://example.com/" data-force="hover">Placeholder title</a></li>
-              <li class="lineup__row"><span class="lineup__category">Focus</span><a class="lineup__item" href="https://example.com/" data-force="focus">Placeholder title</a></li>
-              <li class="lineup__row"><span class="lineup__category">Active</span><a class="lineup__item" href="https://example.com/" data-force="active">Placeholder title</a></li>
-              <li class="lineup__row"><span class="lineup__category">No address</span><span class="lineup__item">Placeholder title</span></li>
+              <li class="lineup__row"><span class="lineup__category">Default</span><ul class="lineup__items"><li><a class="lineup__item" href="https://example.com/">Placeholder title</a></li></ul></li>
+              <li class="lineup__row"><span class="lineup__category">Hover</span><ul class="lineup__items"><li><a class="lineup__item" href="https://example.com/" data-force="hover">Placeholder title</a></li></ul></li>
+              <li class="lineup__row"><span class="lineup__category">Focus</span><ul class="lineup__items"><li><a class="lineup__item" href="https://example.com/" data-force="focus">Placeholder title</a></li></ul></li>
+              <li class="lineup__row"><span class="lineup__category">Active</span><ul class="lineup__items"><li><a class="lineup__item" href="https://example.com/" data-force="active">Placeholder title</a></li></ul></li>
+              <li class="lineup__row"><span class="lineup__category">No address</span><ul class="lineup__items"><li><span class="lineup__item">Placeholder title</span></li></ul></li>
             </ul>
           </div>
           <div class="variant">
-            <h3>Lineup: keys alternate, linked and plain items</h3>
+            <h3>Lineup: keys alternate, several items to a category</h3>
             <ul class="lineup" aria-label="Placeholder recommendations">
-              <li class="lineup__row"><span class="lineup__category">Books</span><a class="lineup__item" href="https://example.com/">Placeholder title</a></li>
-              <li class="lineup__row"><span class="lineup__category">Authors</span><span class="lineup__item">Placeholder author</span></li>
-              <li class="lineup__row"><span class="lineup__category">Music</span><a class="lineup__item" href="https://example.com/">Placeholder track</a></li>
-              <li class="lineup__row"><span class="lineup__category">Films</span><span class="lineup__item">Placeholder film</span></li>
-              <li class="lineup__row"><span class="lineup__category">Articles</span><a class="lineup__item" href="https://example.com/">Placeholder article</a></li>
+              <li class="lineup__row"><span class="lineup__category">Books</span><ul class="lineup__items"><li><a class="lineup__item" href="https://example.com/">Placeholder title</a></li></ul></li>
+              <li class="lineup__row"><span class="lineup__category">Authors</span><ul class="lineup__items"><li><span class="lineup__item">Placeholder author</span></li></ul></li>
+              <li class="lineup__row"><span class="lineup__category">Music</span><ul class="lineup__items"><li><a class="lineup__item" href="https://example.com/">Placeholder track</a></li><li><span class="lineup__item">Second placeholder track</span></li><li><a class="lineup__item" href="https://example.com/">Third placeholder track</a></li></ul></li>
+              <li class="lineup__row"><span class="lineup__category">Films</span><ul class="lineup__items"><li><span class="lineup__item">Placeholder film</span></li><li><span class="lineup__item">Second placeholder film</span></li></ul></li>
+              <li class="lineup__row"><span class="lineup__category">Articles</span><ul class="lineup__items"><li><a class="lineup__item" href="https://example.com/">Placeholder article</a></li></ul></li>
             </ul>
           </div>
           <div class="variant">
             <h3>Long content, in Brazilian Portuguese</h3>
             <ul class="lineup" aria-label="Recomendações de exemplo" lang="pt-BR">
-              <li class="lineup__row"><span class="lineup__category">Recomendações</span><a class="lineup__item" href="https://example.com/">Um título de exemplo bem mais longo que o normal, para quebrar a linha</a></li>
-              <li class="lineup__row"><span class="lineup__category">Artigos</span><span class="lineup__item">Desenvolvimento orientado a testes</span></li>
-              <li class="lineup__row"><span class="lineup__category">Palavras</span><span class="lineup__item">Inconstitucionalissimamente</span></li>
+              <li class="lineup__row"><span class="lineup__category">Recomendações</span><ul class="lineup__items"><li><a class="lineup__item" href="https://example.com/">Um título de exemplo bem mais longo que o normal, para quebrar a linha</a></li></ul></li>
+              <li class="lineup__row"><span class="lineup__category">Artigos</span><ul class="lineup__items"><li><span class="lineup__item">Desenvolvimento orientado a testes</span></li><li><a class="lineup__item" href="https://example.com/">Arquitetura de sistemas distribuídos</a></li></ul></li>
+              <li class="lineup__row"><span class="lineup__category">Palavras</span><ul class="lineup__items"><li><span class="lineup__item">Inconstitucionalissimamente</span></li></ul></li>
             </ul>
           </div>
         </section>
@@ -127,29 +127,29 @@
           <div class="variant">
             <h3>States: each row pinned to one</h3>
             <ul class="lineup" aria-label="Lineup states" inert>
-              <li class="lineup__row"><span class="lineup__category">Default</span><a class="lineup__item" href="https://example.com/">Placeholder title</a></li>
-              <li class="lineup__row"><span class="lineup__category">Hover</span><a class="lineup__item" href="https://example.com/" data-force="hover">Placeholder title</a></li>
-              <li class="lineup__row"><span class="lineup__category">Focus</span><a class="lineup__item" href="https://example.com/" data-force="focus">Placeholder title</a></li>
-              <li class="lineup__row"><span class="lineup__category">Active</span><a class="lineup__item" href="https://example.com/" data-force="active">Placeholder title</a></li>
-              <li class="lineup__row"><span class="lineup__category">No address</span><span class="lineup__item">Placeholder title</span></li>
+              <li class="lineup__row"><span class="lineup__category">Default</span><ul class="lineup__items"><li><a class="lineup__item" href="https://example.com/">Placeholder title</a></li></ul></li>
+              <li class="lineup__row"><span class="lineup__category">Hover</span><ul class="lineup__items"><li><a class="lineup__item" href="https://example.com/" data-force="hover">Placeholder title</a></li></ul></li>
+              <li class="lineup__row"><span class="lineup__category">Focus</span><ul class="lineup__items"><li><a class="lineup__item" href="https://example.com/" data-force="focus">Placeholder title</a></li></ul></li>
+              <li class="lineup__row"><span class="lineup__category">Active</span><ul class="lineup__items"><li><a class="lineup__item" href="https://example.com/" data-force="active">Placeholder title</a></li></ul></li>
+              <li class="lineup__row"><span class="lineup__category">No address</span><ul class="lineup__items"><li><span class="lineup__item">Placeholder title</span></li></ul></li>
             </ul>
           </div>
           <div class="variant">
-            <h3>Lineup: keys alternate, linked and plain items</h3>
+            <h3>Lineup: keys alternate, several items to a category</h3>
             <ul class="lineup" aria-label="Placeholder recommendations">
-              <li class="lineup__row"><span class="lineup__category">Books</span><a class="lineup__item" href="https://example.com/">Placeholder title</a></li>
-              <li class="lineup__row"><span class="lineup__category">Authors</span><span class="lineup__item">Placeholder author</span></li>
-              <li class="lineup__row"><span class="lineup__category">Music</span><a class="lineup__item" href="https://example.com/">Placeholder track</a></li>
-              <li class="lineup__row"><span class="lineup__category">Films</span><span class="lineup__item">Placeholder film</span></li>
-              <li class="lineup__row"><span class="lineup__category">Articles</span><a class="lineup__item" href="https://example.com/">Placeholder article</a></li>
+              <li class="lineup__row"><span class="lineup__category">Books</span><ul class="lineup__items"><li><a class="lineup__item" href="https://example.com/">Placeholder title</a></li></ul></li>
+              <li class="lineup__row"><span class="lineup__category">Authors</span><ul class="lineup__items"><li><span class="lineup__item">Placeholder author</span></li></ul></li>
+              <li class="lineup__row"><span class="lineup__category">Music</span><ul class="lineup__items"><li><a class="lineup__item" href="https://example.com/">Placeholder track</a></li><li><span class="lineup__item">Second placeholder track</span></li><li><a class="lineup__item" href="https://example.com/">Third placeholder track</a></li></ul></li>
+              <li class="lineup__row"><span class="lineup__category">Films</span><ul class="lineup__items"><li><span class="lineup__item">Placeholder film</span></li><li><span class="lineup__item">Second placeholder film</span></li></ul></li>
+              <li class="lineup__row"><span class="lineup__category">Articles</span><ul class="lineup__items"><li><a class="lineup__item" href="https://example.com/">Placeholder article</a></li></ul></li>
             </ul>
           </div>
           <div class="variant">
             <h3>Long content, in Brazilian Portuguese</h3>
             <ul class="lineup" aria-label="Recomendações de exemplo" lang="pt-BR">
-              <li class="lineup__row"><span class="lineup__category">Recomendações</span><a class="lineup__item" href="https://example.com/">Um título de exemplo bem mais longo que o normal, para quebrar a linha</a></li>
-              <li class="lineup__row"><span class="lineup__category">Artigos</span><span class="lineup__item">Desenvolvimento orientado a testes</span></li>
-              <li class="lineup__row"><span class="lineup__category">Palavras</span><span class="lineup__item">Inconstitucionalissimamente</span></li>
+              <li class="lineup__row"><span class="lineup__category">Recomendações</span><ul class="lineup__items"><li><a class="lineup__item" href="https://example.com/">Um título de exemplo bem mais longo que o normal, para quebrar a linha</a></li></ul></li>
+              <li class="lineup__row"><span class="lineup__category">Artigos</span><ul class="lineup__items"><li><span class="lineup__item">Desenvolvimento orientado a testes</span></li><li><a class="lineup__item" href="https://example.com/">Arquitetura de sistemas distribuídos</a></li></ul></li>
+              <li class="lineup__row"><span class="lineup__category">Palavras</span><ul class="lineup__items"><li><span class="lineup__item">Inconstitucionalissimamente</span></li></ul></li>
             </ul>
           </div>
         </section>
