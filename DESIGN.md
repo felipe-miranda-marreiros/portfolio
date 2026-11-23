@@ -40,7 +40,7 @@ colors:
 typography:
   display:
     fontFamily: "Schibsted Grotesk, ui-sans-serif, system-ui, sans-serif"
-    fontSize: "clamp(3rem, 1.6rem + 5.6vw, 6rem)"
+    fontSize: "clamp(3rem, 1.6rem + 5.6cqi, 6rem)"
     fontWeight: 800
     lineHeight: 0.95
     letterSpacing: "-0.04em"
@@ -329,7 +329,9 @@ with its message, never a colour alone.
 monospace that labels facts the way a codebase labels things: commands, tags, counts, dates.
 
 ### Hierarchy
-- **Display** (800, fluid up to 6rem, line-height 0.95, -0.04em): Page titles, balanced wrapping.
+- **Display** (800, fluid up to 6rem from its container's width, line-height 0.95, -0.04em): Page titles, balanced
+  wrapping. It is sized in `cqi`, so the Page header's title follows the header, and a title with no container follows
+  the viewport.
 - **Headline** (700, fluid up to 3rem, line-height 1.05, -0.03em): Section titles, the Masthead's role line and the
   Facts panel's role line.
 - **Title** (600, 1.25rem, line-height 1.3, -0.01em): the Masthead's name, role titles (the Role entry's), panel titles,
@@ -477,10 +479,10 @@ row's key colour that thickens to 3px on hover, focus and press. The illustratio
 
 ## Components
 
-The Button, the Link, the Chip, the Toggle, the Top bar, the Footer, the Text field, the Panel grid, the Masthead, the
-Facts panel, the Role entry and About me's Lineup are built in the prototype (`prototype/components/button/`, `link/`,
-`chip/`, `toggle/`, `top-bar/`, `footer/`, `text-field/`, `panel-grid/`, `masthead/`, `facts-panel/`, `role-entry/`,
-`lineup/`); the rest are
+The Button, the Link, the Chip, the Toggle, the Top bar, the Footer, the Text field, the Panel grid, the Page header,
+the Masthead, the Facts panel, the Role entry and About me's Lineup are built in the prototype
+(`prototype/components/button/`, `link/`, `chip/`, `toggle/`, `top-bar/`, `footer/`, `text-field/`, `panel-grid/`,
+`page-header/`, `masthead/`, `facts-panel/`, `role-entry/`, `lineup/`); the rest are
 the primitives the prototype's token specimens establish, to be confirmed by each component's own PR. Every component
 takes every visual value from tokens and holds no visible text.
 
@@ -550,6 +552,19 @@ one.
   focused cell takes a 2px inset outline in the system highlight colour.
 - **Arrow keys:** from a row link, the arrow keys move focus to the nearest cell's row link in that direction, by the
   cells' rendered positions (`panel-grid.js`).
+
+### Page header
+Built in the prototype (`prototype/components/page-header/`): a Page's title and its one-line intro, on Experience and
+on About me. The Owner chose the title stacked over the intro, with no rule under them, over a hairline below the
+header and a split with the intro beside the title.
+- **Parts:** a header (`.page-header`) holding the title (`.page-header__title`, the Page's h1) and an optional intro
+  (`.page-header__lede`). Every word is Content.
+- **Type:** the title in the Display role (800) in the Display colour, balanced, sized to the header's width; a long
+  word hyphenates or breaks rather than overflow. The intro in the Lede role in Secondary Ink, at most 52ch
+  (`--measure-lede`).
+- **Layout:** one column a long word can't widen, the intro 1.5rem under the title; the Page sets the space around the
+  header, 4rem before its first content.
+- **States:** none; the header is static.
 
 ### Masthead
 Built in the prototype (`prototype/components/masthead/`): Home's opening, and the Portfolio's only; About me never
@@ -714,6 +729,8 @@ The shared components take About me's square corners, 3px rules and band colours
   hover, focus and press it underlines 3px in the Key colour (`--link-hover-line: underline`) and the arrow nudges 3px.
   Its action variant fills Action at the control weight (700), does not underline, and on hover keeps its fill with the
   Display ring, as the primary Button's, and sinks 1px when pressed.
+- **Page header:** the Page header, through tokens: the title in Big Shoulders Display, uppercase, sized to the band's
+  width (the Band-Wide Title Rule), in the Display colour; the intro in the Lede role in the band's ink.
 - **Panel grid:** none; About me shows its collections as bands and lineups, never a Panel grid.
 - **Facts panel:** none; it is Home's.
 - **Role entry:** none; it is Experience's.
