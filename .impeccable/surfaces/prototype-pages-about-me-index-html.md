@@ -55,5 +55,6 @@ interests or recommendations: placeholders stand in, marked as such.
 
 ## Unresolved
 
-The Lineup doesn't yet hold several items in a row, so the Page waits for that PR. Every category and item is a
-placeholder marked as such until the Owner supplies them.
+The Page is composed from existing components: the Top bar, the Page header, the Section heading, the Lineup (which now
+holds several items to a category) and the Footer. Every category and item is a placeholder marked as such until the
+Owner supplies them.
