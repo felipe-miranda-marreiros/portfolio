@@ -92,6 +92,9 @@ Later on 2026-11-01, after the finish review and the design review, the Owner co
 - On 2026-11-23 the Owner chose, from three rendered options while shaping About me's Page, that a lineup category's
   items run in a row that wraps, a small square in the row's key colour between them. Stacking one item per line, and a
   slash between them, were turned down.
+- On 2026-11-23 the Owner chose, from two rendered options, that a lineup category longer than its column breaks at a
+  hyphen, keeping the column at 14rem. Widening the column to fit the longest category on one line was turned down,
+  because it narrows the items and wraps short rows.
 
 ## Unresolved
 
