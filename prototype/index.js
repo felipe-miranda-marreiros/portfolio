@@ -94,7 +94,7 @@ const components = [
     name: "Facts panel",
     note: "Home's 30-second read: the role line, then the other facts and the core technologies. The Portfolio only.",
     label: "Facts panel cases",
-    states: ["default", "fewer facts", "long content"],
+    states: ["default", "without the role line", "fewer facts", "long content"],
   },
   {
     slug: "role-entry",

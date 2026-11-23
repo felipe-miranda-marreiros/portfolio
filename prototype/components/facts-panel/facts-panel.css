@@ -5,6 +5,7 @@
  *   <div class="facts-panel__lead"><dt class="facts-panel__label">…</dt><dd class="facts-panel__role">…</dd></div>
  *   <div class="facts-panel__fact"><dt class="facts-panel__label">…</dt><dd class="facts-panel__value">…</dd></div>…
  *   <div class="facts-panel__list"><dt class="facts-panel__label">…</dt><dd><ul class="chips">…</ul></dd></div></dl>.
+ * The lead is optional: Home leaves it out, since its Masthead sets the role, and the facts open the panel.
  * Needs chip.css for the technologies. Every word, labels included, is Content; the role's label is for screen readers
  * only, since the role line names itself. Static: it has no states.
  */
