@@ -52,6 +52,6 @@ facts panel; no invented roles, employers or achievements: placeholders stand in
 
 ## Unresolved
 
-The Page needs three components that don't exist yet, each in its own PR before this Page, with rendered options for
-the Owner: a Page header (title and intro), a Section heading (a Section's Headline-sized title), and an Education and
-certification entry, whose fields and credential link are decided there. The Role entry, Top bar and Footer exist.
+The Page needs two components that don't exist yet, each in its own PR before this Page, with rendered options for the
+Owner: a Section heading (a Section's Headline-sized title), and an Education and certification entry, whose fields and
+credential link are decided there. The Page header, Role entry, Top bar and Footer exist.
