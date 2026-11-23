@@ -49,8 +49,8 @@ down.
 
 Home's photo is a placeholder marked as such until the Owner supplies it. The role and seniority, location, work model
 and core technologies are stand-in Content of realistic length, unmarked on the page so the role line's wrapping stays
-true, until the Owner supplies the real values. The Experience and About me Pages and the CV
-file don't exist yet, so their links point at the paths they will take.
+true, until the Owner supplies the real values. The CV file doesn't exist yet, so
+its link points at the path it will take.
 
 ## Direction contract
 
