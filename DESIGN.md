@@ -155,7 +155,7 @@ spacing:
   about-me-chip-gap: "0.5rem"
   toggle-inset: "3px"
   lineup-category-width: "9rem"
-  lineup-separator-size: "0.15em"
+  lineup-separator-size: "0.25em"
   role-entry-side-width: "12rem"
   photo-size: "4rem"
   section-rule-gap: "2rem"
@@ -443,7 +443,7 @@ into the title column and the illustration slot (12rem to 18rem), aligned to the
 stacks under the title. A lineup row stacks category over items, and from 36rem sets them in two columns (a 9rem
 category column, `--lineup-category-width`, and the items in the rest, which may shrink, 1rem gap) on a shared
 baseline; stacked, category and items sit 0.5rem apart. A category's items run in a row that wraps, 0.75rem apart
-across, their wrapped lines with no gap so they sit closer than rows. Swatches fill an auto-fit grid with a 13rem minimum.
+across and 0.25rem down. Swatches fill an auto-fit grid with a 13rem minimum.
 
 ## Elevation & Depth
 
@@ -803,10 +803,12 @@ and About me's only; the Portfolio never shows one, so it has no Portfolio page.
   item's ring clears the category; from 36rem, a 9rem category column (`--lineup-category-width`) and the items in the
   rest, 1rem apart, on a shared baseline. **Alternation:** odd rows take Key and even rows Key Alt (`--row-key`),
   automatically down the list.
-- **Items:** in a row that wraps, 0.75rem apart across; wrapped lines take no gap, so they sit closer than rows and the
-  Body leading still clears a focused item's ring. Between two items, after the first, a square in its row's key
-  colour (`--lineup-separator-size`, 0.15em of the billing size), centred on the capitals. The square is drawn, not
-  typed, so a screen reader reads only the items.
+- **Items:** in a row that wraps, 0.75rem apart across and 0.25rem down, so two items on two lines sit further apart
+  than one item's own wrapped lines and closer than rows; the Body leading clears a focused item's ring. Each item
+  leads with a square in its row's key colour (`--lineup-separator-size`, 0.25em of the billing size), centred on the
+  capitals; the list starts that far before its column and clips the square off whichever item starts a line, so a
+  square only ever sits between two items. An item that wraps continues under its first letter. The square is drawn,
+  not typed, so a screen reader reads only the items.
 - **Category:** Big Shoulders at the Title role (1.375rem, 800), uppercase, in its row's key colour; a long word breaks
   rather than overflow.
 - **Item:** Billing type (Archivo 800, fluid 1.5rem to 2rem, uppercase, Body leading) in the band's ink; a long word
