@@ -1,0 +1,37 @@
+/**
+ * Page header: a Page's title and its one-line intro, from tokens only. The title takes the Display role, the intro the
+ * Lede role under it; About me's tokens restyle both, its title filling the band's width.
+ * Markup: <header class="page-header"><h1 class="page-header__title">…</h1><p class="page-header__lede">…</p></header>.
+ * The intro is optional. The Page sets the space around the header. Static: it has no states.
+ */
+.page-header {
+  container-type: inline-size;
+  display: grid;
+  gap: var(--space-5);
+  min-width: 0;
+  color: var(--color-ink);
+}
+
+.page-header__title {
+  margin: 0;
+  font-family: var(--font-display);
+  font-size: var(--text-display);
+  font-weight: var(--weight-display);
+  line-height: var(--leading-display);
+  letter-spacing: var(--tracking-display);
+  text-transform: var(--case-display);
+  color: var(--color-display);
+  text-wrap: balance;
+  overflow-wrap: break-word;
+  hyphens: auto;
+}
+
+.page-header__lede {
+  max-width: var(--measure-lede);
+  margin: 0;
+  font-size: var(--text-lede);
+  line-height: var(--leading-lede);
+  color: var(--color-ink-secondary);
+  text-wrap: pretty;
+  overflow-wrap: break-word;
+}

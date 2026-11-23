@@ -1,0 +1,111 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Page header · Portfolio prototype</title>
+    <link rel="preload" href="../../fonts/schibsted-grotesk.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="stylesheet" href="../../tokens.css" />
+    <link rel="stylesheet" href="../specimen.css" />
+    <link rel="stylesheet" href="page-header.css" />
+  </head>
+  <body>
+    <header class="specimen-bar">
+      <a href="../../index.html">Visual language</a>
+    </header>
+
+    <main>
+      <div class="specimen-intro">
+        <h1>Page header</h1>
+        <p>
+          A Page's title and its one-line intro on both themes, with placeholder values: the title at display size, the
+          intro under it. Static, so it has no states. <a href="about-me.html">On About me's bands</a>.
+        </p>
+      </div>
+
+      <div class="surfaces">
+        <section class="surface" data-scheme="dark" aria-labelledby="dark-title">
+          <h2 id="dark-title">Dark</h2>
+          <div class="variant">
+            <h3>Default</h3>
+            <div class="frame frame--padded">
+              <header class="page-header">
+                <h4 class="page-header__title">Experience</h4>
+                <p class="page-header__lede">The roles I've held, most recent first, with what I built and the technologies I used in each.</p>
+              </header>
+            </div>
+          </div>
+          <div class="variant">
+            <h3>Without an intro</h3>
+            <div class="frame frame--padded">
+              <header class="page-header">
+                <h4 class="page-header__title">Experience</h4>
+              </header>
+            </div>
+          </div>
+          <div class="variant">
+            <h3>Long content, in Brazilian Portuguese</h3>
+            <div class="frame frame--padded">
+              <header class="page-header" lang="pt-BR">
+                <h4 class="page-header__title">Experiência profissional</h4>
+                <p class="page-header__lede">Os cargos que ocupei, do mais recente ao primeiro, com o que construí e as tecnologias que usei em cada um.</p>
+              </header>
+            </div>
+          </div>
+          <div class="variant">
+            <h3>On a phone, 320px, in Brazilian Portuguese</h3>
+            <div class="frame frame--phone frame--padded">
+              <header class="page-header" lang="pt-BR">
+                <h4 class="page-header__title">Experiência profissional</h4>
+                <p class="page-header__lede">Os cargos que ocupei, do mais recente ao primeiro, com o que construí e as tecnologias que usei em cada um.</p>
+              </header>
+            </div>
+          </div>
+        </section>
+
+        <section class="surface" data-scheme="light" aria-labelledby="light-title">
+          <h2 id="light-title">Light</h2>
+          <div class="variant">
+            <h3>Default</h3>
+            <div class="frame frame--padded">
+              <header class="page-header">
+                <h4 class="page-header__title">Experience</h4>
+                <p class="page-header__lede">The roles I've held, most recent first, with what I built and the technologies I used in each.</p>
+              </header>
+            </div>
+          </div>
+          <div class="variant">
+            <h3>Without an intro</h3>
+            <div class="frame frame--padded">
+              <header class="page-header">
+                <h4 class="page-header__title">Experience</h4>
+              </header>
+            </div>
+          </div>
+          <div class="variant">
+            <h3>Long content, in Brazilian Portuguese</h3>
+            <div class="frame frame--padded">
+              <header class="page-header" lang="pt-BR">
+                <h4 class="page-header__title">Experiência profissional</h4>
+                <p class="page-header__lede">Os cargos que ocupei, do mais recente ao primeiro, com o que construí e as tecnologias que usei em cada um.</p>
+              </header>
+            </div>
+          </div>
+          <div class="variant">
+            <h3>On a phone, 320px, in Brazilian Portuguese</h3>
+            <div class="frame frame--phone frame--padded">
+              <header class="page-header" lang="pt-BR">
+                <h4 class="page-header__title">Experiência profissional</h4>
+                <p class="page-header__lede">Os cargos que ocupei, do mais recente ao primeiro, com o que construí e as tecnologias que usei em cada um.</p>
+              </header>
+            </div>
+          </div>
+        </section>
+      </div>
+    </main>
+
+    <footer class="foot">
+      <p>Design prototype. A reference for the front end, not production code.</p>
+    </footer>
+  </body>
+</html>
