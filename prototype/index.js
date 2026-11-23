@@ -150,36 +150,6 @@ for (const { slug, name, note, label, states, page = "index.html" } of component
   componentGrid.append(cell);
 }
 
-const root = document.documentElement;
-const storageKey = "prototype-theme";
-const buttons = [...document.querySelectorAll("[data-theme-choice]")];
-const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
-
-function applyTheme(choice) {
-  if (choice === "light") {
-    root.dataset.theme = "light";
-  } else {
-    delete root.dataset.theme;
-  }
-  for (const button of buttons) {
-    button.setAttribute("aria-pressed", String(button.dataset.themeChoice === choice));
-  }
-}
-
-function chooseTheme(choice) {
-  localStorage.setItem(storageKey, choice);
-  if (!document.startViewTransition || reducedMotion.matches) {
-    applyTheme(choice);
-    return;
-  }
-  document.startViewTransition(() => applyTheme(choice));
-}
-
-applyTheme(localStorage.getItem(storageKey) === "light" ? "light" : "dark");
-for (const button of buttons) {
-  button.addEventListener("click", () => chooseTheme(button.dataset.themeChoice));
-}
-
 const runButton = document.querySelector("[data-run]");
 runButton.addEventListener("click", () => {
   const cell = runButton.closest(".panel-grid__cell");
