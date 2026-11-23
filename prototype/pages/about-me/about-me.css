@@ -1,0 +1,17 @@
+/**
+ * About me: the Page header on the first band, then one band per Section, each a Section heading over a Lineup, from
+ * tokens only. The Page paints each band and sets the space in and between its parts; the components set the rest.
+ */
+.about-me__band {
+  display: grid;
+  gap: var(--space-6);
+  padding: var(--space-8) var(--edge);
+  background: var(--color-ground);
+  color: var(--color-ink);
+}
+
+@media (min-width: 44rem) {
+  .about-me__band {
+    padding-block: var(--space-9);
+  }
+}
