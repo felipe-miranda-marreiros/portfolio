@@ -54,8 +54,8 @@
   display: flex;
   flex-wrap: wrap;
   align-items: baseline;
-  /* The row gap keeps a focused item's ring off the line above it, as the row's gap does for the category. */
-  gap: var(--space-2) var(--space-3);
+  /* No gap down: the items' Body leading already clears a focused item's ring, and wrapped lines sit closer than rows. */
+  column-gap: var(--space-3);
   min-width: 0;
   margin: 0;
   padding: 0;
