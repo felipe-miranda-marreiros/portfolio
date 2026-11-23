@@ -1,0 +1,140 @@
+/**
+ * Qualification list: Experience's Education or Certifications list under its own small title, from tokens only. Each
+ * item mirrors a Role entry: from 44rem its dates and place, or its credential ID, sit in the Role entry's side column
+ * beside its name, source and an optional note or credential Link; on narrow screens they follow the name, so they
+ * never sit above it as an eyebrow. Consecutive items share a hairline.
+ * Markup: <div class="qualification-list"><h3 class="qualification-list__title">…</h3>
+ *   <ol class="qualification-list__items"><li class="qualification">
+ *     <div class="qualification__main"><p class="qualification__name">…</p><p class="qualification__source">…</p>
+ *       [<p class="qualification__note">…</p>] [<a class="link" href="…">…</a>]</div>
+ *     <div class="qualification__meta"><p class="qualification__date"><time datetime="…">…</time>…</p>
+ *       [<p>…</p> a place] [<p class="qualification__id">…</p>]</div></li>…</ol></div>.
+ * The title takes the heading level the page needs. Needs link.css for a credential Link. Every word is Content except
+ * the dates' month names and "present", which follow the chosen language. Static: the Link keeps its own states.
+ */
+.qualification-list {
+  min-width: 0;
+  color: var(--color-ink);
+}
+
+.qualification-list__title {
+  margin: 0 0 var(--space-4);
+  font-family: var(--font-display);
+  font-size: var(--text-title);
+  font-weight: var(--weight-title);
+  line-height: var(--leading-title);
+  letter-spacing: var(--tracking-title);
+  text-transform: var(--case-display);
+  overflow-wrap: break-word;
+  hyphens: auto;
+}
+
+.qualification-list__items {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.qualification {
+  display: grid;
+  grid-template-areas:
+    "main"
+    "meta";
+  gap: var(--space-2);
+  min-width: 0;
+}
+
+.qualification + .qualification {
+  margin-top: var(--space-5);
+  padding-top: var(--space-5);
+  border-top: var(--line-width) solid var(--color-hairline);
+}
+
+@media (min-width: 44rem) {
+  .qualification {
+    grid-template-columns: var(--role-entry-side-width) minmax(0, 1fr);
+    grid-template-areas: "meta main";
+    gap: var(--space-2) var(--space-6);
+  }
+}
+
+.qualification__main,
+.qualification__meta {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+
+.qualification__main {
+  grid-area: main;
+  align-items: flex-start;
+  gap: var(--space-1);
+}
+
+.qualification__meta {
+  grid-area: meta;
+  gap: var(--space-2);
+  font-size: var(--text-small);
+  line-height: var(--leading-body);
+  color: var(--color-ink-muted);
+}
+
+@media (min-width: 44rem) {
+  .qualification__meta {
+    padding-top: var(--space-1);
+  }
+}
+
+.qualification__main > *,
+.qualification__meta > p {
+  margin: 0;
+}
+
+.qualification__name {
+  font-family: var(--font-display);
+  font-size: var(--text-title);
+  font-weight: var(--weight-title);
+  line-height: var(--leading-title);
+  letter-spacing: var(--tracking-title);
+  text-transform: var(--case-display);
+  overflow-wrap: break-word;
+  hyphens: auto;
+}
+
+.qualification__source {
+  font-size: var(--text-body);
+  font-weight: var(--weight-control);
+  line-height: var(--leading-body);
+  overflow-wrap: break-word;
+}
+
+.qualification__note {
+  max-width: var(--measure);
+  font-size: var(--text-body);
+  line-height: var(--leading-body);
+  color: var(--color-ink-secondary);
+  text-wrap: pretty;
+}
+
+.qualification__main > .link {
+  margin-top: var(--space-2);
+}
+
+.qualification__date,
+.qualification__id {
+  font-family: var(--font-mono);
+  font-size: var(--text-label);
+  font-weight: var(--weight-label);
+  line-height: var(--leading-label);
+  font-variant-numeric: tabular-nums;
+}
+
+.qualification__date {
+  letter-spacing: var(--tracking-label);
+  text-transform: var(--case-label);
+}
+
+/* An ID is set as-is, like a chip: its case and spacing are the issuer's. */
+.qualification__id {
+  overflow-wrap: anywhere;
+}

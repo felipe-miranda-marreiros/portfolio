@@ -1,0 +1,352 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Qualification list · Portfolio prototype</title>
+    <link rel="preload" href="../../fonts/schibsted-grotesk.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="preload" href="../../fonts/martian-mono.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="stylesheet" href="../../tokens.css" />
+    <link rel="stylesheet" href="../specimen.css" />
+    <link rel="stylesheet" href="../link/link.css" />
+    <link rel="stylesheet" href="qualification-list.css" />
+  </head>
+  <body>
+    <header class="specimen-bar">
+      <a href="../../index.html">Visual language</a>
+    </header>
+
+    <main>
+      <div class="specimen-intro">
+        <h1>Qualification list</h1>
+        <p>
+          Experience's Education and Certifications lists on both themes, with placeholder values: each item mirrors a
+          Role entry, its dates and place or credential ID in the side column. Static; the credential Link keeps its
+          own states. It is Experience's, so it has no About me page.
+        </p>
+      </div>
+
+      <div class="surfaces">
+        <section class="surface" data-scheme="dark" aria-labelledby="dark-title">
+          <h2 id="dark-title">Dark</h2>
+          <div class="variant">
+            <h3>Education</h3>
+            <div class="frame frame--padded">
+              <div class="qualification-list">
+                <h4 class="qualification-list__title">Education</h4>
+                <ol class="qualification-list__items">
+                  <li class="qualification">
+                    <div class="qualification__main">
+                      <p class="qualification__name">Placeholder bachelor's degree</p>
+                      <p class="qualification__source">Placeholder university</p>
+                      <p class="qualification__note">Placeholder note: a thesis topic or focus area.</p>
+                    </div>
+                    <div class="qualification__meta">
+                      <p class="qualification__date"><time datetime="2014">2014</time> – <time datetime="2018">2018</time></p>
+                      <p>São Paulo, Brazil</p>
+                    </div>
+                  </li>
+                  <li class="qualification">
+                    <div class="qualification__main">
+                      <p class="qualification__name">Placeholder postgraduate course</p>
+                      <p class="qualification__source">Placeholder institution</p>
+                    </div>
+                    <div class="qualification__meta">
+                      <p class="qualification__date"><time datetime="2019">2019</time> – <time datetime="2020">2020</time></p>
+                      <p>Remote</p>
+                    </div>
+                  </li>
+                </ol>
+              </div>
+            </div>
+          </div>
+          <div class="variant">
+            <h3>Certifications</h3>
+            <div class="frame frame--padded">
+              <div class="qualification-list">
+                <h4 class="qualification-list__title">Certifications</h4>
+                <ol class="qualification-list__items">
+                  <li class="qualification">
+                    <div class="qualification__main">
+                      <p class="qualification__name">Placeholder cloud certification</p>
+                      <p class="qualification__source">Placeholder issuer</p>
+                      <a class="link" href="https://example.com/">See credential</a>
+                    </div>
+                    <div class="qualification__meta">
+                      <p class="qualification__date"><time datetime="2024-03">Mar 2024</time></p>
+                      <p class="qualification__id">ID ABC-123-XYZ</p>
+                    </div>
+                  </li>
+                  <li class="qualification">
+                    <div class="qualification__main">
+                      <p class="qualification__name">Placeholder earlier certification</p>
+                      <p class="qualification__source">Placeholder issuer two</p>
+                    </div>
+                    <div class="qualification__meta">
+                      <p class="qualification__date"><time datetime="2022-11">Nov 2022</time></p>
+                    </div>
+                  </li>
+                </ol>
+              </div>
+            </div>
+          </div>
+          <div class="variant">
+            <h3>Fewer parts</h3>
+            <div class="frame frame--padded">
+              <div class="qualification-list">
+                <h4 class="qualification-list__title">Education</h4>
+                <ol class="qualification-list__items">
+                  <li class="qualification">
+                    <div class="qualification__main">
+                      <p class="qualification__name">Placeholder course</p>
+                      <p class="qualification__source">Placeholder school</p>
+                    </div>
+                    <div class="qualification__meta">
+                      <p class="qualification__date"><time datetime="2021">2021</time></p>
+                    </div>
+                  </li>
+                </ol>
+              </div>
+            </div>
+          </div>
+          <div class="variant">
+            <h3>Long content, in Brazilian Portuguese</h3>
+            <div class="frame frame--padded">
+              <div class="qualification-list" lang="pt-BR">
+                <h4 class="qualification-list__title">Formação</h4>
+                <ol class="qualification-list__items">
+                  <li class="qualification">
+                    <div class="qualification__main">
+                      <p class="qualification__name">Placeholder bacharelado em ciência da computação com ênfase em sistemas distribuídos</p>
+                      <p class="qualification__source">Placeholder universidade federal com um nome longo</p>
+                      <p class="qualification__note">Placeholder nota: o tema do trabalho de conclusão, em uma ou duas linhas de texto.</p>
+                    </div>
+                    <div class="qualification__meta">
+                      <p class="qualification__date"><time datetime="2014-03">mar 2014</time> – <time datetime="2018-12">dez 2018</time></p>
+                      <p>Florianópolis, Santa Catarina, Brasil</p>
+                    </div>
+                  </li>
+                </ol>
+              </div>
+              <div class="qualification-list" lang="pt-BR">
+                <h4 class="qualification-list__title">Certificações</h4>
+                <ol class="qualification-list__items">
+                  <li class="qualification">
+                    <div class="qualification__main">
+                      <p class="qualification__name">Placeholder certificação profissional de arquitetura de soluções em nuvem</p>
+                      <p class="qualification__source">Placeholder emissor</p>
+                      <a class="link" href="https://example.com/">Ver credencial</a>
+                    </div>
+                    <div class="qualification__meta">
+                      <p class="qualification__date"><time datetime="2024-03">mar 2024</time></p>
+                      <p class="qualification__id">ID 0F3A9C27-4B1E-4D2A-9E61-7C3B8F2D5A10</p>
+                    </div>
+                  </li>
+                </ol>
+              </div>
+            </div>
+          </div>
+          <div class="variant">
+            <h3>On a phone, 320px, in Brazilian Portuguese</h3>
+            <div class="frame frame--phone frame--padded">
+              <div class="qualification-list" lang="pt-BR">
+                <h4 class="qualification-list__title">Formação</h4>
+                <ol class="qualification-list__items">
+                  <li class="qualification">
+                    <div class="qualification__main">
+                      <p class="qualification__name">Placeholder bacharelado em ciência da computação com ênfase em sistemas distribuídos</p>
+                      <p class="qualification__source">Placeholder universidade federal com um nome longo</p>
+                      <p class="qualification__note">Placeholder nota: o tema do trabalho de conclusão, em uma ou duas linhas de texto.</p>
+                    </div>
+                    <div class="qualification__meta">
+                      <p class="qualification__date"><time datetime="2014-03">mar 2014</time> – <time datetime="2018-12">dez 2018</time></p>
+                      <p>Florianópolis, Santa Catarina, Brasil</p>
+                    </div>
+                  </li>
+                </ol>
+              </div>
+              <div class="qualification-list" lang="pt-BR">
+                <h4 class="qualification-list__title">Certificações</h4>
+                <ol class="qualification-list__items">
+                  <li class="qualification">
+                    <div class="qualification__main">
+                      <p class="qualification__name">Placeholder certificação profissional de arquitetura de soluções em nuvem</p>
+                      <p class="qualification__source">Placeholder emissor</p>
+                      <a class="link" href="https://example.com/">Ver credencial</a>
+                    </div>
+                    <div class="qualification__meta">
+                      <p class="qualification__date"><time datetime="2024-03">mar 2024</time></p>
+                      <p class="qualification__id">ID 0F3A9C27-4B1E-4D2A-9E61-7C3B8F2D5A10</p>
+                    </div>
+                  </li>
+                </ol>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="surface" data-scheme="light" aria-labelledby="light-title">
+          <h2 id="light-title">Light</h2>
+          <div class="variant">
+            <h3>Education</h3>
+            <div class="frame frame--padded">
+              <div class="qualification-list">
+                <h4 class="qualification-list__title">Education</h4>
+                <ol class="qualification-list__items">
+                  <li class="qualification">
+                    <div class="qualification__main">
+                      <p class="qualification__name">Placeholder bachelor's degree</p>
+                      <p class="qualification__source">Placeholder university</p>
+                      <p class="qualification__note">Placeholder note: a thesis topic or focus area.</p>
+                    </div>
+                    <div class="qualification__meta">
+                      <p class="qualification__date"><time datetime="2014">2014</time> – <time datetime="2018">2018</time></p>
+                      <p>São Paulo, Brazil</p>
+                    </div>
+                  </li>
+                  <li class="qualification">
+                    <div class="qualification__main">
+                      <p class="qualification__name">Placeholder postgraduate course</p>
+                      <p class="qualification__source">Placeholder institution</p>
+                    </div>
+                    <div class="qualification__meta">
+                      <p class="qualification__date"><time datetime="2019">2019</time> – <time datetime="2020">2020</time></p>
+                      <p>Remote</p>
+                    </div>
+                  </li>
+                </ol>
+              </div>
+            </div>
+          </div>
+          <div class="variant">
+            <h3>Certifications</h3>
+            <div class="frame frame--padded">
+              <div class="qualification-list">
+                <h4 class="qualification-list__title">Certifications</h4>
+                <ol class="qualification-list__items">
+                  <li class="qualification">
+                    <div class="qualification__main">
+                      <p class="qualification__name">Placeholder cloud certification</p>
+                      <p class="qualification__source">Placeholder issuer</p>
+                      <a class="link" href="https://example.com/">See credential</a>
+                    </div>
+                    <div class="qualification__meta">
+                      <p class="qualification__date"><time datetime="2024-03">Mar 2024</time></p>
+                      <p class="qualification__id">ID ABC-123-XYZ</p>
+                    </div>
+                  </li>
+                  <li class="qualification">
+                    <div class="qualification__main">
+                      <p class="qualification__name">Placeholder earlier certification</p>
+                      <p class="qualification__source">Placeholder issuer two</p>
+                    </div>
+                    <div class="qualification__meta">
+                      <p class="qualification__date"><time datetime="2022-11">Nov 2022</time></p>
+                    </div>
+                  </li>
+                </ol>
+              </div>
+            </div>
+          </div>
+          <div class="variant">
+            <h3>Fewer parts</h3>
+            <div class="frame frame--padded">
+              <div class="qualification-list">
+                <h4 class="qualification-list__title">Education</h4>
+                <ol class="qualification-list__items">
+                  <li class="qualification">
+                    <div class="qualification__main">
+                      <p class="qualification__name">Placeholder course</p>
+                      <p class="qualification__source">Placeholder school</p>
+                    </div>
+                    <div class="qualification__meta">
+                      <p class="qualification__date"><time datetime="2021">2021</time></p>
+                    </div>
+                  </li>
+                </ol>
+              </div>
+            </div>
+          </div>
+          <div class="variant">
+            <h3>Long content, in Brazilian Portuguese</h3>
+            <div class="frame frame--padded">
+              <div class="qualification-list" lang="pt-BR">
+                <h4 class="qualification-list__title">Formação</h4>
+                <ol class="qualification-list__items">
+                  <li class="qualification">
+                    <div class="qualification__main">
+                      <p class="qualification__name">Placeholder bacharelado em ciência da computação com ênfase em sistemas distribuídos</p>
+                      <p class="qualification__source">Placeholder universidade federal com um nome longo</p>
+                      <p class="qualification__note">Placeholder nota: o tema do trabalho de conclusão, em uma ou duas linhas de texto.</p>
+                    </div>
+                    <div class="qualification__meta">
+                      <p class="qualification__date"><time datetime="2014-03">mar 2014</time> – <time datetime="2018-12">dez 2018</time></p>
+                      <p>Florianópolis, Santa Catarina, Brasil</p>
+                    </div>
+                  </li>
+                </ol>
+              </div>
+              <div class="qualification-list" lang="pt-BR">
+                <h4 class="qualification-list__title">Certificações</h4>
+                <ol class="qualification-list__items">
+                  <li class="qualification">
+                    <div class="qualification__main">
+                      <p class="qualification__name">Placeholder certificação profissional de arquitetura de soluções em nuvem</p>
+                      <p class="qualification__source">Placeholder emissor</p>
+                      <a class="link" href="https://example.com/">Ver credencial</a>
+                    </div>
+                    <div class="qualification__meta">
+                      <p class="qualification__date"><time datetime="2024-03">mar 2024</time></p>
+                      <p class="qualification__id">ID 0F3A9C27-4B1E-4D2A-9E61-7C3B8F2D5A10</p>
+                    </div>
+                  </li>
+                </ol>
+              </div>
+            </div>
+          </div>
+          <div class="variant">
+            <h3>On a phone, 320px, in Brazilian Portuguese</h3>
+            <div class="frame frame--phone frame--padded">
+              <div class="qualification-list" lang="pt-BR">
+                <h4 class="qualification-list__title">Formação</h4>
+                <ol class="qualification-list__items">
+                  <li class="qualification">
+                    <div class="qualification__main">
+                      <p class="qualification__name">Placeholder bacharelado em ciência da computação com ênfase em sistemas distribuídos</p>
+                      <p class="qualification__source">Placeholder universidade federal com um nome longo</p>
+                      <p class="qualification__note">Placeholder nota: o tema do trabalho de conclusão, em uma ou duas linhas de texto.</p>
+                    </div>
+                    <div class="qualification__meta">
+                      <p class="qualification__date"><time datetime="2014-03">mar 2014</time> – <time datetime="2018-12">dez 2018</time></p>
+                      <p>Florianópolis, Santa Catarina, Brasil</p>
+                    </div>
+                  </li>
+                </ol>
+              </div>
+              <div class="qualification-list" lang="pt-BR">
+                <h4 class="qualification-list__title">Certificações</h4>
+                <ol class="qualification-list__items">
+                  <li class="qualification">
+                    <div class="qualification__main">
+                      <p class="qualification__name">Placeholder certificação profissional de arquitetura de soluções em nuvem</p>
+                      <p class="qualification__source">Placeholder emissor</p>
+                      <a class="link" href="https://example.com/">Ver credencial</a>
+                    </div>
+                    <div class="qualification__meta">
+                      <p class="qualification__date"><time datetime="2024-03">mar 2024</time></p>
+                      <p class="qualification__id">ID 0F3A9C27-4B1E-4D2A-9E61-7C3B8F2D5A10</p>
+                    </div>
+                  </li>
+                </ol>
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
+    </main>
+
+    <footer class="foot">
+      <p>Design prototype. A reference for the front end, not production code.</p>
+    </footer>
+  </body>
+</html>
