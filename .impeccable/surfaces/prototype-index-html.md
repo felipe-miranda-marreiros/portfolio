@@ -137,6 +137,10 @@ optional credential link. A Certification's expiry date was turned down. From th
 items set like a Role entry, their dates and place or credential ID in the same side column; compact rows with the
 dates at the end and two hairline cards per row were turned down. It is Experience's, so About me has no page for it.
 
+On 2026-11-23 the Owner chose, after the finish review, the Qualification list's title as a small heading, Small at
+the control weight in Secondary Ink below the item names, so on a phone it never reads as the first item's name; a
+title the size of the names, as built, and a title on its own hairline were turned down.
+
 ## Unresolved
 
 The type scale, spacing scale and state tokens are first set by the token build, then refined with `typeset`, `layout`
