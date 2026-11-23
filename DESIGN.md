@@ -482,9 +482,10 @@ row's key colour that thickens to 3px on hover, focus and press. The illustratio
 ## Components
 
 The Button, the Link, the Chip, the Toggle, the Top bar, the Footer, the Text field, the Panel grid, the Page header,
-the Section heading, the Masthead, the Facts panel, the Role entry and About me's Lineup are built in the prototype
-(`prototype/components/button/`, `link/`, `chip/`, `toggle/`, `top-bar/`, `footer/`, `text-field/`, `panel-grid/`,
-`page-header/`, `section-heading/`, `masthead/`, `facts-panel/`, `role-entry/`, `lineup/`); the rest are
+the Section heading, the Masthead, the Facts panel, the Role entry, the Qualification list and About me's Lineup are
+built in the prototype (`prototype/components/button/`, `link/`, `chip/`, `toggle/`, `top-bar/`, `footer/`,
+`text-field/`, `panel-grid/`, `page-header/`, `section-heading/`, `masthead/`, `facts-panel/`, `role-entry/`,
+`qualification-list/`, `lineup/`); the rest are
 the primitives the prototype's token specimens establish, to be confirmed by each component's own PR. Every component
 takes every visual value from tokens and holds no visible text.
 
@@ -645,6 +646,29 @@ per role, and only the period in monospace over an all-monospace column.
   The achievements are a disc list with Muted Ink markers, 0.25rem apart, indented 1.5rem.
 - **States:** none; the entry is static.
 
+### Qualification list
+Built in the prototype (`prototype/components/qualification-list/`): Experience's Education and Certifications lists,
+and the Portfolio's only; About me never shows one. The Owner chose items set like a Role entry over compact rows with
+the dates at the end and two hairline cards per row.
+- **Parts:** a list (`.qualification-list`) with its title (`.qualification-list__title`, a heading at the level the
+  page needs) over its items (`.qualification-list__items`, ordered, most recent first). Each item (`.qualification`)
+  has its main part (`.qualification__main`: the name, `.qualification__name`; the source, `.qualification__source`,
+  an institution or issuer; then an optional note, `.qualification__note`, or an optional credential Link) and its
+  meta (`.qualification__meta`: the date, `.qualification__date`; then a place, or an optional credential ID,
+  `.qualification__id`). Every word is Content except the dates' month names and "present", which follow the chosen
+  language. It needs the Link's styles for a credential.
+- **Fields (the Owner's):** an Education item shows its name, institution, period, location and an optional note; a
+  Certification shows its name, issuer, issue date, an optional credential ID and an optional credential link.
+- **Layout:** like a Role entry. On narrow screens the main part comes first and the meta follows it, 0.5rem apart, so
+  a date never sits above the name as an eyebrow; from 44rem the meta takes the Role entry's side column
+  (`--role-entry-side-width`, 12rem) beside the main part, 2rem apart. Consecutive items share a Hairline with 1.5rem
+  above and below it; the title sits 1rem above the first item.
+- **Type:** the list's title and each name in the Title role (600); the source in Body at the control weight (600), in
+  full ink; the note in Body in Secondary Ink at the measure; the meta Small in Muted Ink, with the date in the Label
+  role and the credential ID in Martian Mono at label size set as-is, its case and spacing the issuer's, breaking
+  anywhere rather than overflow.
+- **States:** none; the credential Link keeps its own.
+
 ### Inputs / Fields
 Built in the prototype (`prototype/components/text-field/`): the Text field, one component with a single-line and a
 multi-line variant that share every state.
@@ -750,6 +774,7 @@ The shared components take About me's square corners, 3px rules and band colours
 - **Panel grid:** none; About me shows its collections as bands and lineups, never a Panel grid.
 - **Facts panel:** none; it is Home's.
 - **Role entry:** none; it is Experience's.
+- **Qualification list:** none; it is Experience's.
 - **Footer:** the Footer, through tokens, on the next band in the rotation, like any Section, with no rule above it
   (`--footer-line-width: 0px`): the title in Big Shoulders uppercase in the Display colour, the repository link as a
   band link, a 3px ink rule, then the links in uppercase Label type, underlined 3px in Key on hover and while held.
