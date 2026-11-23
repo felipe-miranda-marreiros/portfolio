@@ -57,6 +57,6 @@ interests or recommendations: placeholders stand in, marked as such.
 
 The Page is built (`prototype/pages/about-me/`) from existing components: the Top bar, the Page header, the Section
 heading, the Lineup and the Footer. Which categories each Section holds is settled with the CMS's content model, so the
-front end never hardcodes them; the prototype's Engineering categories beside "Studying now" are guesses. Every
-category and item is a placeholder marked as such until the Owner supplies them, and the Footer's links point at
-placeholders, as on the other Pages.
+front end never hardcodes them. Interests' and Recommendations' categories follow `PRODUCT.md`; the Engineering ones
+beside "Studying now" are guesses. Every item is a placeholder marked as such until the Owner supplies them, and the
+Footer's links point at placeholders, as on the other Pages.
