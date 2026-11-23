@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Page not found · Portfolio prototype</title>
+    <link rel="preload" href="../../fonts/schibsted-grotesk.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="preload" href="../../fonts/martian-mono.woff2" as="font" type="font/woff2" crossorigin />
+    <script>
+      if (localStorage.getItem("prototype-theme") === "light") document.documentElement.dataset.theme = "light";
+    </script>
+    <link rel="stylesheet" href="../../tokens.css" />
+    <link rel="stylesheet" href="../page.css" />
+    <link rel="stylesheet" href="../../components/link/link.css" />
+    <link rel="stylesheet" href="../../components/toggle/toggle.css" />
+    <link rel="stylesheet" href="../../components/top-bar/top-bar.css" />
+    <link rel="stylesheet" href="../../components/page-header/page-header.css" />
+    <link rel="stylesheet" href="../../components/footer/footer.css" />
+    <link rel="stylesheet" href="../../theme.css" />
+    <link rel="stylesheet" href="not-found.css" />
+    <script src="../../components/toggle/toggle.js" defer></script>
+    <script src="../../theme.js" defer></script>
+  </head>
+  <body>
+    <header class="top-bar">
+      <nav class="top-bar__pages" aria-label="Pages">
+        <ul>
+          <li><a class="top-bar__page" href="../home/index.html">Home</a></li>
+          <li><a class="top-bar__page" href="../experience/index.html">Experience</a></li>
+          <li><a class="top-bar__page" href="../about-me/index.html">About me</a></li>
+        </ul>
+      </nav>
+      <div class="top-bar__controls">
+        <fieldset class="toggle">
+          <legend>Theme</legend>
+          <button class="toggle__option" type="button" data-theme-choice="dark" aria-pressed="true">Dark</button>
+          <button class="toggle__option" type="button" data-theme-choice="light" aria-pressed="false">Light</button>
+        </fieldset>
+        <nav class="toggle" aria-label="Language">
+          <a class="toggle__option" href="?lang=en" hreflang="en" lang="en" aria-current="true">EN</a>
+          <a class="toggle__option" href="?lang=pt-BR" hreflang="pt-BR" lang="pt-BR">PT</a>
+        </nav>
+      </div>
+    </header>
+
+    <main class="not-found">
+      <header class="page-header">
+        <h1 class="page-header__title">Page not found</h1>
+        <p class="page-header__lede">Placeholder intro: the address may be mistyped, or the page has moved.</p>
+      </header>
+      <a class="link not-found__home" href="../home/index.html">Back to Home</a>
+    </main>
+
+    <footer class="footer">
+      <h2 class="footer__title" id="contact">Contact</h2>
+      <a class="link footer__repo" href="https://github.com/felipe-miranda-marreiros/portfolio">This site's source code</a>
+      <ul class="footer__links">
+        <li><a class="footer__link" href="https://example.com/">GitHub</a></li>
+        <li><a class="footer__link" href="https://example.com/">LinkedIn</a></li>
+        <li><a class="footer__link" href="mailto:owner@example.com">owner@example.com</a></li>
+      </ul>
+    </footer>
+  </body>
+</html>
