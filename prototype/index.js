@@ -106,7 +106,7 @@ const components = [
   {
     slug: "section-heading",
     name: "Section heading",
-    note: "A Section's title at headline size on a hairline, on both themes and on About me's bands.",
+    note: "A Section's title at headline size on a hairline on both themes; on About me's bands, with no rule.",
     label: "Section heading cases",
     states: ["default", "long content"],
   },
