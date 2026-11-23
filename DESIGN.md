@@ -414,9 +414,10 @@ priority: grids collapse to one column and splits stack, heading first, and noth
 mobile. A specimen that is a single row of samples shrinks its samples to stay on one row rather than orphan the last; a
 component page's state samples, all one width, sit on even tracks instead.
 
-Home sets the Masthead and the Facts panel side by side from 44rem, top-aligned and 3rem apart: the panel keeps a set
+Home sets the Masthead and the Facts panel side by side from 68rem, top-aligned and 3rem apart: the panel keeps a set
 width (22rem, `--home-panel-width`) and the Masthead takes the rest of the column, so its role line wraps least (the
-Owner's choice over equal halves and a 3:2 split). On narrow screens the panel follows the Masthead, 3rem below it.
+Owner's choice over equal halves and a 3:2 split). Below 68rem the panel follows the Masthead, 3rem below it, since a
+set-width panel would leave the Masthead narrower than half the column (the Owner's choice over splitting from 44rem).
 
 Experience lists its roles as Role entries, one after another on a shared hairline. From 44rem each sets its period (in
 monospace), location and work model in a side column (12rem, `--role-entry-side-width`) beside the role, 2rem apart; on
