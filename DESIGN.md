@@ -40,7 +40,7 @@ colors:
 typography:
   display:
     fontFamily: "Schibsted Grotesk, ui-sans-serif, system-ui, sans-serif"
-    fontSize: "clamp(3rem, 1.6rem + 5.6cqi, 6rem)"
+    fontSize: "clamp(3rem, 1.6rem + 6.3cqi, 6rem)"
     fontWeight: 800
     lineHeight: 0.95
     letterSpacing: "-0.04em"
