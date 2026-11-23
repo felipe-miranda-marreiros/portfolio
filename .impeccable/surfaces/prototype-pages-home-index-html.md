@@ -40,6 +40,11 @@ On 2026-11-23 the Owner chose, from three rendered splits, the facts panel at a 
 English and two in the long Portuguese case, while the panel stacks its facts and runs taller. Equal halves and a 3:2
 split favouring the masthead were turned down.
 
+On 2026-11-23 the Owner chose, after the design review, to set the two columns side by side only from 68rem, the
+index's wide breakpoint: below it the panel follows the masthead at full width. From 44rem the set-width panel left the
+masthead about 15rem, so the long Portuguese role line broke into five lines. Keeping the split from 44rem was turned
+down.
+
 ## Unresolved
 
 Home's photo is a placeholder marked as such until the Owner supplies it. The Experience and About me Pages and the CV
@@ -57,10 +62,10 @@ photo in a softly rounded square.
 STORY: The visitor reads the role and seniority first, the name and summary next, checks location, work model and
 technologies in the panel, then downloads the CV, opens Experience or jumps to the Footer's contact links.
 
-FIRST VIEWPORT: The Top bar. Below it, two columns from 44rem: on the start side the small photo beside the name at
+FIRST VIEWPORT: The Top bar. Below it, two columns from 68rem: on the start side the small photo beside the name at
 Title size, then the role line at Headline size, the summary at lede size, then the CV download as the filled primary
 action with the Experience and contact Links beside it; on the end side, top-aligned, the facts panel with location,
-work model and the core technologies as Chips. On a phone the masthead comes first and the panel follows it, both
+work model and the core technologies as Chips. Below 68rem the masthead comes first and the panel follows it, both
 within the first screen as far as the content allows.
 
 FORM: Split masthead, third of the dealt structures (index 2 of the grounded list). seed:4866980e8f1cd143
