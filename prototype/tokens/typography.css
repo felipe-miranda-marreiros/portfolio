@@ -19,7 +19,7 @@
   --font-display: var(--font-sans);
 
   /* cqi, not vw: a Page title sizes to its Page header, as About me's does; with no container it follows the viewport. */
-  --text-display: clamp(3rem, 1.6rem + 5.6cqi, 6rem);
+  --text-display: clamp(3rem, 1.6rem + 6.3cqi, 6rem);
   --text-headline: clamp(2rem, 1.5rem + 2vw, 3rem);
   --text-title: 1.25rem;
   --text-billing: var(--text-title);
