@@ -157,6 +157,7 @@ spacing:
   lineup-category-width: "9rem"
   role-entry-side-width: "12rem"
   photo-size: "4rem"
+  home-panel-width: "22rem"
   about-me-toggle-inset: "0px"
 ---
 
@@ -412,6 +413,10 @@ run across all three. Mobile and desktop have equal
 priority: grids collapse to one column and splits stack, heading first, and nothing a desktop row shows is dropped on
 mobile. A specimen that is a single row of samples shrinks its samples to stay on one row rather than orphan the last; a
 component page's state samples, all one width, sit on even tracks instead.
+
+Home sets the Masthead and the Facts panel side by side from 44rem, top-aligned and 3rem apart: the panel keeps a set
+width (22rem, `--home-panel-width`) and the Masthead takes the rest of the column, so its role line wraps least (the
+Owner's choice over equal halves and a 3:2 split). On narrow screens the panel follows the Masthead, 3rem below it.
 
 Experience lists its roles as Role entries, one after another on a shared hairline. From 44rem each sets its period (in
 monospace), location and work model in a side column (12rem, `--role-entry-side-width`) beside the role, 2rem apart; on

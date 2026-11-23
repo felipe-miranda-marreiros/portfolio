@@ -130,6 +130,7 @@
       { "name": "lineup-category-width", "value": "9rem", "purpose": "The lineup's category column from 36rem. Shared by both Visual languages; About me doesn't override it." },
       { "name": "role-entry-side-width", "value": "12rem", "purpose": "The Role entry's side column (period, location, work model) from 44rem." },
       { "name": "photo-size", "value": "4rem", "purpose": "Home's photo in the Masthead: small and plain beside the name, never a portrait." },
+      { "name": "home-panel-width", "value": "22rem", "purpose": "Home's Facts panel column from 44rem; the Masthead takes the rest, so its role line wraps least." },
       { "name": "chip-type", "value": "--weight-chip: 400, --tracking-chip: 0", "purpose": "The chip's weight and tracking; About me sets its label weight (800) and 0.06em." }
     ],
     "breakpoints": [
