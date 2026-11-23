@@ -1,0 +1,18 @@
+/**
+ * Home: the Masthead on the start side and the facts panel on the end side, read together, from tokens only. The panel
+ * keeps a set width so the Masthead's role line wraps least; on a phone the panel follows the Masthead.
+ */
+.home {
+  display: grid;
+  align-content: start;
+  gap: var(--space-7);
+  padding: var(--space-7) var(--edge) var(--space-9);
+}
+
+@media (min-width: 44rem) {
+  .home {
+    grid-template-columns: minmax(0, 1fr) minmax(0, var(--home-panel-width));
+    align-items: start;
+    padding-top: var(--space-8);
+  }
+}
