@@ -5,7 +5,7 @@
  */
 .section-heading {
   margin: 0;
-  padding-top: var(--space-6);
+  padding-top: var(--section-rule-gap);
   border-top: var(--section-line-width) solid var(--color-hairline);
   font-family: var(--font-display);
   font-size: var(--text-headline);
