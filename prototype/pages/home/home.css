@@ -1,6 +1,6 @@
 /**
- * Home: the Masthead on the start side and the facts panel on the end side, read together, from tokens only. The panel
- * keeps a set width so the Masthead's role line wraps least; on a phone the panel follows the Masthead.
+ * Home: the Masthead on the start side and the facts panel on the end side, read together, from tokens only. From 68rem
+ * the panel keeps a set width so the Masthead's role line wraps least; below it the panel follows the Masthead.
  */
 .home {
   display: grid;
@@ -11,8 +11,14 @@
 
 @media (min-width: 44rem) {
   .home {
+    padding-top: var(--space-9);
+  }
+}
+
+/* Not from 44rem: a set-width panel there leaves the Masthead narrower than half the column. */
+@media (min-width: 68rem) {
+  .home {
     grid-template-columns: minmax(0, 1fr) minmax(0, var(--home-panel-width));
     align-items: start;
-    padding-top: var(--space-9);
   }
 }
