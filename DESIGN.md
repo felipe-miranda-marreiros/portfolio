@@ -427,7 +427,10 @@ set-width panel would leave the Masthead narrower than half the column (the Owne
 Experience lists its roles as Role entries, one after another on a shared hairline. From 44rem each sets its period (in
 monospace), location and work model in a side column (12rem, `--role-entry-side-width`) beside the role, 2rem apart; on
 narrow screens the meta follows the title and company, never above the title. Its Education and Certifications lists
-set each item's date in the same side column, so the two line up down the Page.
+set each item's date in the same side column, so the two line up down the Page. The Page opens with its Page header,
+4rem above the first role; the roles sit in an ordered list, each item drawing the Role entry's shared hairline. The
+Education and certifications Section starts 6rem below the last role, at its Section heading's rule; its two lists sit
+2rem under the heading and 3rem apart.
 
 ### About me
 
