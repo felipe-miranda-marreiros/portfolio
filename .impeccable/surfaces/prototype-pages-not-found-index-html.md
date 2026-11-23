@@ -38,5 +38,6 @@ No illustration, joke or search box; no status-code numeral as the title; no Abo
 
 ## Unresolved
 
-Which language the Page answers in when the address names none is settled with the Vision's open decision on each
-language's address. The intro is a placeholder marked as such until the Owner supplies it.
+The Page is built (`prototype/pages/not-found/`) from existing components: the Top bar, the Page header, the Link and
+the Footer. Which language the Page answers in when the address names none is settled with the Vision's open
+decision on each language's address. The intro is a placeholder marked as such until the Owner supplies it.
