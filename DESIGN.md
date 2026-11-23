@@ -446,6 +446,9 @@ set each item's date in the same side column, so the two line up down the Page. 
 Education and certifications Section starts 6rem below the last role, at its Section heading's rule; its two lists sit
 2rem under the heading and 3rem apart.
 
+The not-found Page opens with its Page header, then a Link back to Home 3rem below it, the Link only as wide as its
+text; when they are short, the Footer still sits at the foot of the viewport.
+
 ### About me
 
 The Portfolio's column (76rem max), gutter and spacing rhythm, unchanged, except chips 0.5rem apart, a Toggle with no
@@ -583,16 +586,17 @@ one.
   cells' rendered positions (`panel-grid.js`).
 
 ### Page header
-Built in the prototype (`prototype/components/page-header/`): a Page's title and its one-line intro, on Experience and
-on About me. The Owner chose the title stacked over the intro, with no rule under them, over a hairline below the
+Built in the prototype (`prototype/components/page-header/`): a Page's title and its one-line intro, on Experience,
+on About me and on the not-found Page. The Owner chose the title stacked over the intro, with no rule under them, over a hairline below the
 header and a split with the intro beside the title.
 - **Parts:** a header (`.page-header`) holding the title (`.page-header__title`, the Page's h1) and an optional intro
   (`.page-header__lede`). Every word is Content.
 - **Type:** the title in the Display role (800) in the Display colour, balanced, sized to the header's width; a long
   word hyphenates or breaks rather than overflow. The intro in the Lede role in Secondary Ink, at most 52ch
   (`--measure-lede`).
-- **Layout:** one column a long word can't widen, the intro 1.5rem under the title; the Page sets the space around the
-  header: 4rem before its first content on Experience, and on About me the padding of the band it sits in.
+- **Layout:** one column a long word can't widen, the intro 1.5rem under the title; the header spans its column, since
+  it sizes the title to its own width. The Page sets the space around the header: 4rem before its first content on
+  Experience, on About me the padding of the band it sits in, and 3rem before the Link on the not-found Page.
 - **States:** none; the header is static.
 
 ### Section heading
