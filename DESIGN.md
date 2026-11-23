@@ -446,7 +446,7 @@ follows them like every content band. The bar pads 1rem above and below, the Foo
 into the title column and the illustration slot (12rem to 18rem), aligned to their foot; on narrow screens the slot
 stacks under the title. A lineup row stacks category over items, and from 36rem sets them in two columns (a 9rem
 category column, `--lineup-category-width`, and the items in the rest, which may shrink, 1rem gap) on a shared
-baseline; stacked, category and items sit 0.5rem apart. A category's items run in a row that wraps, 0.25rem down,
+baseline; stacked, category and items sit 0.5rem apart. A category's items run in a row that wraps, 0.5rem down,
 with 0.75rem, the square, and 0.75rem between two items on a line. Swatches fill an auto-fit grid with a 13rem minimum.
 
 ## Elevation & Depth
@@ -807,8 +807,8 @@ and About me's only; the Portfolio never shows one, so it has no Portfolio page.
   item's ring clears the category; from 36rem, a 9rem category column (`--lineup-category-width`) and the items in the
   rest, 1rem apart, on a shared baseline. **Alternation:** odd rows take Key and even rows Key Alt (`--row-key`),
   automatically down the list.
-- **Items:** in a row that wraps, 0.25rem down, so two items on two lines sit further apart than one item's own wrapped
-  lines and closer than rows; the Body leading clears a focused item's ring. Each item leads with a square in its row's
+- **Items:** in a row that wraps, 0.5rem down, so two items on two lines sit clearly further apart than one item's own
+  wrapped lines; the Body leading clears a focused item's ring. Each item leads with a square in its row's
   key colour (`--lineup-separator-size`, 0.25em of the billing size), centred on the capitals, 0.75rem from the item
   before it and 0.75rem from its own; the list starts that far before its column and clips the square off whichever
   item starts a line, so a square only ever sits between two items. An item that wraps continues under its first
