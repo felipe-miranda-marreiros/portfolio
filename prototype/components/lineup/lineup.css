@@ -1,8 +1,10 @@
 /**
  * Lineup: About me's list set like a poster's billing, from tokens only. Each row is a category in the display face,
- * alternating Key and Key Alt down the list, then an item in heavy uppercase; two rules in Key close the list.
+ * alternating Key and Key Alt down the list, then its items in heavy uppercase, in a row that wraps, a square in the
+ * row's key between them; two rules in Key close the list.
  * Markup: <ul class="lineup"><li class="lineup__row"><span class="lineup__category">…</span>
- *   <a class="lineup__item" href="…">…</a> (or <span class="lineup__item"> when the item has no address)</li>…</ul>.
+ *   <ul class="lineup__items"><li><a class="lineup__item" href="…">…</a></li>…</ul></li>…</ul>, with
+ *   <span class="lineup__item"> for an item that has no address.
  * About me only. `data-force` pins a state so the prototype page can show it without interaction.
  */
 .lineup {
@@ -48,8 +50,39 @@
   overflow-wrap: break-word;
 }
 
+.lineup__items {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  /* The row gap keeps a focused item's ring off the line above it, as the row's gap does for the category. */
+  gap: var(--space-2) var(--space-3);
+  min-width: 0;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.lineup__items > li {
+  min-width: 0;
+  max-width: 100%;
+  /* The item's face and size, so the separator's em and cap measure the item beside it. */
+  font-family: var(--font-sans);
+  font-size: var(--text-billing);
+}
+
+/* Drawn, not typed, so the separator holds no text and a screen reader reads only the items. */
+.lineup__items > li:not(:last-child)::after {
+  content: "";
+  display: inline-block;
+  width: var(--lineup-separator-size);
+  height: var(--lineup-separator-size);
+  margin-inline-start: var(--space-3);
+  /* Centred on the capitals, since every item is uppercase. */
+  vertical-align: calc((1cap - var(--lineup-separator-size)) / 2);
+  background: var(--row-key);
+}
+
 .lineup__item {
-  justify-self: start;
   max-width: 100%;
   font-family: var(--font-sans);
   font-size: var(--text-billing);
