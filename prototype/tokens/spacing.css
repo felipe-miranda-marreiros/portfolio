@@ -22,6 +22,8 @@
   --role-entry-side-width: 12rem;
   /* Home's photo: small and plain beside the name, never a portrait. */
   --photo-size: 4rem;
+  /* The gap between a Section heading's rule and its title; none where there is no rule. */
+  --section-rule-gap: var(--space-6);
   /* Home's facts panel column, from 68rem; the Masthead takes the rest, so its role line wraps least. */
   --home-panel-width: 22rem;
 
