@@ -125,6 +125,13 @@ const components = [
     states: ["default", "long content", "fewer parts"],
   },
   {
+    slug: "qualification-list",
+    name: "Qualification list",
+    note: "Experience's Education and Certifications: each item set like a Role entry, its dates in the side column. The Portfolio only.",
+    label: "Qualification list cases",
+    states: ["education", "certifications", "fewer parts", "long content"],
+  },
+  {
     slug: "footer",
     name: "Footer",
     note: "A title, the repository link, then the social links and email.",
