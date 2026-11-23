@@ -548,6 +548,9 @@ never shows one. The Owner chose this form over a label-beside-value list and a 
   (`.facts-panel__lead`) with the role and seniority (`.facts-panel__role`), the facts (`.facts-panel__fact`), such as
   location and work model, each with a value (`.facts-panel__value`), and the list (`.facts-panel__list`) with the core
   technologies as Chips. Every word, labels included, is Content. It needs the Chip's styles.
+- **Without the lead:** the lead is optional. Home leaves it out, since its Masthead sets the role and seniority beside
+  the panel, so the role is never repeated (the Owner's choice); the facts then open the panel, with nothing else
+  changed.
 - **Lead label:** for screen readers only, visually hidden but kept in the list's markup, so the role line opens the
   panel: a visible label above it would read as an eyebrow, and the role line names itself (the Owner's choice, from a
   rendered pair with and without it). The other groups keep their labels visible, over their values.
