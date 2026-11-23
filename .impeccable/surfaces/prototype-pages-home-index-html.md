@@ -47,7 +47,9 @@ down.
 
 ## Unresolved
 
-Home's photo is a placeholder marked as such until the Owner supplies it. The Experience and About me Pages and the CV
+Home's photo is a placeholder marked as such until the Owner supplies it. The role and seniority, location, work model
+and core technologies are stand-in Content of realistic length, unmarked on the page so the role line's wrapping stays
+true, until the Owner supplies the real values. The Experience and About me Pages and the CV
 file don't exist yet, so their links point at the paths they will take.
 
 ## Direction contract
