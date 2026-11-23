@@ -16,8 +16,8 @@
   --chip-gap: var(--space-1);
   /* The gap between a Toggle's outline and its options; their corners nest inside it. */
   --toggle-inset: 3px;
-  /* About me's Lineup: the category column, wide enough for a long category at title size. */
-  --lineup-category-width: 9rem;
+  /* About me's Lineup: the category column, wide enough for a long category at its display size. */
+  --lineup-category-width: 14rem;
   /* The square between a category's items: in em, so it scales with the billing size. */
   --lineup-separator-size: 0.25em;
   /* Experience's side column, shared by the Role entry and the Qualification list so their columns line up: wide enough

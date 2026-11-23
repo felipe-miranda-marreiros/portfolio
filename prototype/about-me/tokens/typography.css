@@ -23,6 +23,8 @@
   --text-headline: clamp(2.25rem, 1.5rem + 3vw, 3.5rem);
   --text-title: 1.375rem;
   --text-billing: clamp(1.5rem, 1.25rem + 1vw, 2rem);
+  /* A lineup's category: its own tier, between the Headline and the billing it heads. */
+  --text-category: clamp(2rem, 1.5rem + 1.5vw, 2.75rem);
   --text-lede: clamp(1.125rem, 1rem + 0.5vw, 1.25rem);
   --text-body: 1rem;
   --text-small: 0.875rem;
