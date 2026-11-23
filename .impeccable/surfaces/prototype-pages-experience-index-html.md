@@ -53,4 +53,5 @@ facts panel; no invented roles, employers or achievements: placeholders stand in
 ## Unresolved
 
 Every component the Page needs exists: the Page header, Section heading, Role entry, Qualification list (the Education
-and Certifications lists), Top bar and Footer.
+and Certifications lists), Top bar and Footer. Whether a credential ID's "ID" prefix is its own Content label or part of the
+value is settled with the Page and the CMS's content model, so the front end never hardcodes it.
