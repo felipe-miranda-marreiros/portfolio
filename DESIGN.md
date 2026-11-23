@@ -811,7 +811,8 @@ Built in the prototype (`prototype/components/lineup/`): the signature component
 and About me's only; the Portfolio never shows one, so it has no Portfolio page.
 - **Parts:** a list (`.lineup`) of rows (`.lineup__row`), each a category (`.lineup__category`) then its items, a
   list (`.lineup__items`) of one or more items (`.lineup__item`). Every word is Content.
-- **List:** a 3px rule in Key above and below, padding 1rem inside them, 0.5rem between rows.
+- **List:** a 3px rule in Key above and below, padding 1rem inside them, 1.5rem between rows: wider than a category's
+  wrapped items (0.5rem), so each category reads as one group.
 - **Row:** category over items in one column a long word can't widen (`minmax(0, 1fr)`), 0.5rem apart so a focused
   item's ring clears the category; from 36rem, a 14rem category column (`--lineup-category-width`) and the items in the
   rest, 1rem apart, on a shared baseline. **Alternation:** odd rows take Key and even rows Key Alt (`--row-key`),
