@@ -6,6 +6,9 @@
     <title>Visual language · Portfolio prototype</title>
     <link rel="preload" href="fonts/schibsted-grotesk.woff2" as="font" type="font/woff2" crossorigin />
     <link rel="preload" href="fonts/martian-mono.woff2" as="font" type="font/woff2" crossorigin />
+    <script>
+      if (localStorage.getItem("prototype-theme") === "light") document.documentElement.dataset.theme = "light";
+    </script>
     <link rel="stylesheet" href="tokens.css" />
     <link rel="stylesheet" href="components/link/link.css" />
     <link rel="stylesheet" href="components/toggle/toggle.css" />
