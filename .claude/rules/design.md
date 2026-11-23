@@ -50,13 +50,19 @@ following the prototype.
 
 ```
 prototype/
-├── index.html          # links to every token and component page
+├── index.html          # links to every token and component page, and to the Pages
 ├── index.css           # the index's own styles: its grid's columns and areas, and the token specimens
 ├── index.js            # builds the colour swatches and the component cells from lists; add a component there
 ├── tokens.css          # @imports every file in tokens/
+├── theme.js, theme.css # the theme switch and its crossfade, on every page that has the switch
 ├── tokens/             # one CSS file per token group (color.css, typography.css, spacing.css, ...)
 ├── about-me/           # About me's Visual language: its token page, tokens.css and tokens/, which redefine the
 │                       # same token names over the Portfolio's tokens.css
+├── pages/
+│   ├── page.css        # the base every Page shares; not a component
+│   └── home/
+│       ├── home.css    # the Page's own layout only, from tokens; everything else comes from its components
+│       └── index.html  # the Page, composed only from existing components
 └── components/
     ├── specimen.css    # the chrome every component page shares; not a component
     └── button/
