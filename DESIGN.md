@@ -157,6 +157,7 @@ spacing:
   lineup-category-width: "9rem"
   role-entry-side-width: "12rem"
   photo-size: "4rem"
+  section-rule-gap: "2rem"
   home-panel-width: "22rem"
   about-me-toggle-inset: "0px"
 ---
@@ -571,8 +572,8 @@ Built in the prototype (`prototype/components/section-heading/`): a Section's ti
 certifications, and About me's Section titles. The Owner chose the title on a hairline over space alone and a title
 with an optional note.
 - **Parts:** one heading (`.section-heading`), at the level the Page needs. Its words are Content.
-- **Rule:** a full-width Hairline above it (`--section-line-width`), 2rem above the title, the same mark that separates
-  roles on Experience; the Page sets the space above the rule.
+- **Rule:** a full-width Hairline above it (`--section-line-width`), 2rem above the title (`--section-rule-gap`), the
+  same mark that separates roles on Experience; the Page sets the space above the rule.
 - **Type:** the Headline role (700) in the Display colour, balanced; a long word hyphenates or breaks rather than
   overflow.
 - **States:** none; the heading is static.
@@ -743,8 +744,8 @@ The shared components take About me's square corners, 3px rules and band colours
 - **Page header:** the Page header, through tokens: the title in Big Shoulders Display, uppercase, sized to the
   header's width (the Band-Wide Title Rule): the band's when the header spans it, the title column beside the
   illustration slot from 44rem; in the Display colour; the intro in the Lede role in the band's ink.
-- **Section heading:** the Section heading, through tokens: no rule (`--section-line-width: 0px`), since each Section
-  starts its own band; the title in About me's Headline role, Big Shoulders uppercase, in the Display colour.
+- **Section heading:** the Section heading, through tokens: no rule and no gap above the title
+  (`--section-line-width: 0px`, `--section-rule-gap: 0px`), since each Section starts its own band; the title in About me's Headline role, Big Shoulders uppercase, in the Display colour.
 - **Panel grid:** none; About me shows its collections as bands and lineups, never a Panel grid.
 - **Facts panel:** none; it is Home's.
 - **Role entry:** none; it is Experience's.
