@@ -242,8 +242,8 @@ at a lower alpha or mixed into the ground, and error is the only hue.
   switch options.
 - **Muted Ink** (64% of the ink): metadata, captions and notes. Still AA on the ground in both themes.
 - **Hairline** (10% of the ink): panel-grid borders, the Facts panel's border and the rule under its lead, the rule
-  between role entries, the rule above a Section heading, the rules under the top bar and above the footer, and the
-  Footer's rule between its repository link and the rest.
+  between role entries and between Qualification list items, the rule above a Section heading, the rules under the top
+  bar and above the footer, and the Footer's rule between its repository link and the rest.
 - **Hairline Hover** (26%): the brightened edge of a hovered or focused panel and of a hovered secondary button.
 - **Hairline Control** (22%): the outline of secondary controls, the theme switch and swatch edges.
 - **Hairline Input** (52% ink on paper, 44% bone on night): input borders, which identify the control and so meet 3:1
