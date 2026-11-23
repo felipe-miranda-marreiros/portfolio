@@ -18,7 +18,8 @@
   --toggle-inset: 3px;
   /* About me's Lineup: the category column, wide enough for a long category at title size. */
   --lineup-category-width: 9rem;
-  /* Experience's role entry: the side column, wide enough for a period such as "Mar 2020 – Dec 2022" in the label role. */
+  /* Experience's side column, shared by the Role entry and the Qualification list so their columns line up: wide enough
+     for a period such as "Mar 2020 – Dec 2022" in the label role. */
   --role-entry-side-width: 12rem;
   /* Home's photo: small and plain beside the name, never a portrait. */
   --photo-size: 4rem;
