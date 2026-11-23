@@ -1,0 +1,20 @@
+/**
+ * Section heading: a Section's title on a rule that marks where the Section starts, from tokens only. The title takes
+ * the Headline role; on About me the rule is absent, since each Section starts its own band.
+ * Markup: <h2 class="section-heading">…</h2>, at the level the Page needs. Static: it has no states.
+ */
+.section-heading {
+  margin: 0;
+  padding-top: var(--space-6);
+  border-top: var(--section-line-width) solid var(--color-hairline);
+  font-family: var(--font-display);
+  font-size: var(--text-headline);
+  font-weight: var(--weight-headline);
+  line-height: var(--leading-headline);
+  letter-spacing: var(--tracking-headline);
+  text-transform: var(--case-display);
+  color: var(--color-display);
+  text-wrap: balance;
+  overflow-wrap: break-word;
+  hyphens: auto;
+}
