@@ -1,6 +1,7 @@
 /**
  * Page header: a Page's title and its one-line intro, from tokens only. The title takes the Display role, the intro the
- * Lede role under it; About me's tokens restyle both, its title filling the band's width.
+ * Lede role under it; About me's tokens restyle both, its title filling the header's width: the band's when the
+ * header spans it, the title column beside the illustration slot from 44rem.
  * Markup: <header class="page-header"><h1 class="page-header__title">…</h1><p class="page-header__lede">…</p></header>.
  * The intro is optional. The Page sets the space around the header. Static: it has no states.
  */
