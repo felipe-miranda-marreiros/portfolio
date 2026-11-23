@@ -231,7 +231,8 @@ at a lower alpha or mixed into the ground, and error is the only hue.
 - **Display Ink** (`--color-display`): the colour display type, headlines and the Footer's title take. On the
   Portfolio it is the ink itself; the token exists so About me can set them in a band colour through tokens alone.
 - **Key** and **Key Alt** (`--color-key`, `--color-key-alt`): the ink itself on the Portfolio. Both sets name them, so
-  About me can set billing categories and underlines, resting and on hover, in its band's two key colours.
+  About me can set billing categories, underlines, resting and on hover, and the lineup's separator squares in its
+  band's two key colours.
 - **Action Hover** (`--color-action-hover`, `--color-action-hover-edge`): the hovered primary action. On the Portfolio
   the fill steps down to the action at 84% (the Secondary Ink step) and there is no edge.
 
@@ -296,13 +297,14 @@ action, on action), so nothing on About me picks a palette colour directly.
 - **Peach**: on charcoal, display type and titles, Key Alt and the action fill.
 - **Blush**: on purple, Key Alt.
 - **Magenta**: on lime, display type and titles, Key and the action fill.
-- **Cream**: on sunset, display type and titles and Key Alt, all large type; and the action's text on the charcoal fill.
+- **Cream**: on sunset, display type and titles and Key Alt, all large type or the lineup's separator square; and the
+  action's text on the charcoal fill.
 - The band colours serve as inks too: **Charcoal** is the ink on sunset and lime and Key on sunset; **Lime** is display
   type, Key and the action fill on purple, and Key on charcoal; **Purple** is Key Alt on lime.
 
 The display colour also draws the hovered edge of a control (`--color-hairline-hover`), of an input
-(`--color-input-hover`) and of the primary action (`--color-action-hover-edge`), whose fill stays the Action colour on hover, and the key colours draw billing categories
-and underlines, resting and on hover.
+(`--color-input-hover`) and of the primary action (`--color-action-hover-edge`), whose fill stays the Action colour on hover, and the key colours draw billing categories,
+underlines, resting and on hover, and the lineup's separator squares.
 
 #### Named Rules
 **The One Band Per Section Rule.** Every Section owns one band, and the bands rotate purple, sunset, lime, charcoal. A
@@ -315,10 +317,11 @@ another colour: the lineup's block rules are in Key; a hovered edge (`--color-ha
 for the language toggle, whose focus already shows the 3px ring, in Key Alt on hover and press and in Key under the
 current one for the Top bar's Pages, on hover and while held for the Footer's links, on hover, focus and press for band
 links; and linked lineup items rest on a thin underline in their row's key colour that thickens to 3px on hover, focus
-and press.
+and press. The square between a category's items is in its row's key colour too.
 
 **The Cream Is Large Rule.** Cream holds only 3.3:1 on sunset, so on the sunset ground it sets large type only: display,
-headlines, the billing keys and the Footer's title (1.375rem at 800). On the charcoal action fill it is the action's text, at 15:1.
+headlines, the billing keys and the Footer's title (1.375rem at 800). As Key Alt it also draws the lineup's separator
+square, a mark that needs only 3:1. On the charcoal action fill it is the action's text, at 15:1.
 
 **The No Error Hue Rule.** No single hue reads on all four bands, so error is the band's ink, drawn as a dashed rule
 with its message, never a colour alone.
@@ -397,7 +400,8 @@ runs the band's width like a poster's lettering.
 
 **The Billing Rule.** A list is a lineup: the category in the display face at title size, large type, in the band's two
 key colours, alternating Key and Key Alt down the list; the item in heavy uppercase Archivo at billing size in the
-band's ink; two 3px rules in Key above and below. On sunset the keys are charcoal and cream, so half the categories
+band's ink, a category's items in a row with a small square in the row's key colour between two of them; two 3px
+rules in Key above and below. On sunset the keys are charcoal and cream, so half the categories
 share the ink and stand apart by face and size.
 
 ## Layout
@@ -442,8 +446,8 @@ follows them like every content band. The bar pads 1rem above and below, the Foo
 into the title column and the illustration slot (12rem to 18rem), aligned to their foot; on narrow screens the slot
 stacks under the title. A lineup row stacks category over items, and from 36rem sets them in two columns (a 9rem
 category column, `--lineup-category-width`, and the items in the rest, which may shrink, 1rem gap) on a shared
-baseline; stacked, category and items sit 0.5rem apart. A category's items run in a row that wraps, 0.75rem apart
-across and 0.25rem down. Swatches fill an auto-fit grid with a 13rem minimum.
+baseline; stacked, category and items sit 0.5rem apart. A category's items run in a row that wraps, 0.25rem down,
+with 0.75rem, the square, and 0.75rem between two items on a line. Swatches fill an auto-fit grid with a 13rem minimum.
 
 ## Elevation & Depth
 
@@ -803,12 +807,12 @@ and About me's only; the Portfolio never shows one, so it has no Portfolio page.
   item's ring clears the category; from 36rem, a 9rem category column (`--lineup-category-width`) and the items in the
   rest, 1rem apart, on a shared baseline. **Alternation:** odd rows take Key and even rows Key Alt (`--row-key`),
   automatically down the list.
-- **Items:** in a row that wraps, 0.75rem apart across and 0.25rem down, so two items on two lines sit further apart
-  than one item's own wrapped lines and closer than rows; the Body leading clears a focused item's ring. Each item
-  leads with a square in its row's key colour (`--lineup-separator-size`, 0.25em of the billing size), centred on the
-  capitals; the list starts that far before its column and clips the square off whichever item starts a line, so a
-  square only ever sits between two items. An item that wraps continues under its first letter. The square is drawn,
-  not typed, so a screen reader reads only the items.
+- **Items:** in a row that wraps, 0.25rem down, so two items on two lines sit further apart than one item's own wrapped
+  lines and closer than rows; the Body leading clears a focused item's ring. Each item leads with a square in its row's
+  key colour (`--lineup-separator-size`, 0.25em of the billing size), centred on the capitals, 0.75rem from the item
+  before it and 0.75rem from its own; the list starts that far before its column and clips the square off whichever
+  item starts a line, so a square only ever sits between two items. An item that wraps continues under its first
+  letter. The square is drawn, not typed, so a screen reader reads only the items.
 - **Category:** Big Shoulders at the Title role (1.375rem, 800), uppercase, in its row's key colour; a long word breaks
   rather than overflow.
 - **Item:** Billing type (Archivo 800, fluid 1.5rem to 2rem, uppercase, Body leading) in the band's ink; a long word
