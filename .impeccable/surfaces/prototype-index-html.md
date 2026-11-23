@@ -131,6 +131,12 @@ On 2026-11-23 the Owner chose, from three rendered options, the Section heading:
 2rem above it, the same mark that separates roles on Experience. Space alone, and a title with an optional note, were
 turned down. On About me, where each Section starts its own band, the rule is absent, as the Footer's is.
 
+On 2026-11-23 the Owner chose the Qualification list's fields: an Education item shows its name, institution, period,
+location and an optional note; a Certification shows its name, issuer, issue date, an optional credential ID and an
+optional credential link. A Certification's expiry date was turned down. From three rendered layouts the Owner chose
+items set like a Role entry, their dates and place or credential ID in the same side column; compact rows with the
+dates at the end and two hairline cards per row were turned down. It is Experience's, so About me has no page for it.
+
 ## Unresolved
 
 The type scale, spacing scale and state tokens are first set by the token build, then refined with `typeset`, `layout`
