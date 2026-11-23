@@ -160,6 +160,7 @@ spacing:
   section-rule-gap: "2rem"
   home-panel-width: "22rem"
   about-me-toggle-inset: "0px"
+  about-me-section-rule-gap: "0px"
 ---
 
 # Design System: Portfolio
@@ -203,8 +204,8 @@ Portfolio recoloured, or anything corporate or cold.
 
 It loads over the Portfolio's tokens and redefines the same names, so the shared components take its look
 through tokens alone. Spacing and motion stay the
-Portfolio's, except a longer link nudge (3px), a wider chip gap (0.5rem) and a Toggle with no inset, to suit its 3px
-rules. It has one theme and no photo. Each band sets
+Portfolio's, except a longer link nudge (3px), a wider chip gap (0.5rem), a Toggle with no inset, to suit its 3px
+rules, and no gap above a Section heading, which has no rule. It has one theme and no photo. Each band sets
 every colour token itself, so a component inside a band takes that band's colours. Illustration is optional: the language works without it, and the first band reserves a slot
 for one.
 
@@ -241,8 +242,8 @@ at a lower alpha or mixed into the ground, and error is the only hue.
   switch options.
 - **Muted Ink** (64% of the ink): metadata, captions and notes. Still AA on the ground in both themes.
 - **Hairline** (10% of the ink): panel-grid borders, the Facts panel's border and the rule under its lead, the rule
-  between role entries, the rules under the top bar and above the footer, and the Footer's rule between its repository
-  link and the rest.
+  between role entries, the rule above a Section heading, the rules under the top bar and above the footer, and the
+  Footer's rule between its repository link and the rest.
 - **Hairline Hover** (26%): the brightened edge of a hovered or focused panel and of a hovered secondary button.
 - **Hairline Control** (22%): the outline of secondary controls, the theme switch and swatch edges.
 - **Hairline Input** (52% ink on paper, 44% bone on night): input borders, which identify the control and so meet 3:1
@@ -428,8 +429,8 @@ narrow screens the meta follows the title and company, never above the title.
 
 ### About me
 
-The Portfolio's column (76rem max), gutter and spacing rhythm, unchanged, except chips 0.5rem apart and a Toggle with
-no inset. Every band runs full-bleed and aligns its
+The Portfolio's column (76rem max), gutter and spacing rhythm, unchanged, except chips 0.5rem apart, a Toggle with no
+inset and no gap above a Section heading. Every band runs full-bleed and aligns its
 content to the shared edge. Content bands pad 4rem above and below on narrow screens and 6rem from 44rem; the intro
 follows them like every content band. The bar pads 1rem above and below, the Footer 2rem. From 44rem the intro splits
 into the title column and the illustration slot (12rem to 18rem), aligned to their foot; on narrow screens the slot
