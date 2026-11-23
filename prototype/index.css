@@ -121,7 +121,8 @@ a {
   .area-panel-grid,
   .area-lineup,
   .area-facts-panel,
-  .area-role-entry {
+  .area-role-entry,
+  .area-masthead {
     grid-column: span 2;
   }
 }
@@ -216,6 +217,10 @@ a {
 
   .area-role-entry {
     grid-area: role-entry;
+  }
+  /* Back to one track: it fills the row of three with the Page header and the Section heading. */
+  .area-masthead {
+    grid-column: auto;
   }
 }
 
