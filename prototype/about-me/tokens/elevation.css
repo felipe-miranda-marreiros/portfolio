@@ -7,5 +7,7 @@
   --chip-line-width: var(--line-width);
   /* The Footer's band meets the one above it edge to edge, so it needs no rule. */
   --footer-line-width: 0px;
+  /* Each Section takes its own band, so the band's edge marks where it starts. */
+  --section-line-width: 0px;
   --shadow-color: transparent;
 }
