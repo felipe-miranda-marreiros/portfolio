@@ -17,4 +17,6 @@
   text-wrap: balance;
   overflow-wrap: break-word;
   hyphens: auto;
+  /* Only long words hyphenate; balancing would otherwise split a word that fits whole on a line. */
+  hyphenate-limit-chars: 10 4 4;
 }
