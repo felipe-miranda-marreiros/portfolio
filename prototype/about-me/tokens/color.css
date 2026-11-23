@@ -31,7 +31,8 @@
   --color-ground: var(--palette-sunset);
   --color-ink: var(--palette-charcoal);
   /* Cream holds only 3.3:1 on sunset, so it sets large type only: display, headlines, the billing keys and the Footer's
-     title; and, as Key Alt, the lineup's separator square, a mark that needs only 3:1. */
+     title; as Key Alt, underlines and the lineup's separator square, and as Display, a hovered edge: marks that need
+     only 3:1. */
   --color-display: var(--palette-cream);
   --color-key: var(--palette-charcoal);
   --color-key-alt: var(--palette-cream);
