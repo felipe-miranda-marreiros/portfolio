@@ -22,7 +22,7 @@
   --role-entry-side-width: 12rem;
   /* Home's photo: small and plain beside the name, never a portrait. */
   --photo-size: 4rem;
-  /* Home's facts panel column, from 44rem; the Masthead takes the rest, so its role line wraps least. */
+  /* Home's facts panel column, from 68rem; the Masthead takes the rest, so its role line wraps least. */
   --home-panel-width: 22rem;
 
   --content-max: 76rem;
