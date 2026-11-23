@@ -89,6 +89,9 @@ Later on 2026-11-01, after the finish review and the design review, the Owner co
 - On 2026-11-20 the Owner chose that the language toggle doesn't slide: choosing a language loads the Page at its other
   address, which opens with the fill already on the current language. About me has no theme switch, so no Toggle
   slides there.
+- On 2026-11-23 the Owner chose, from three rendered options while shaping About me's Page, that a lineup category's
+  items run in a row that wraps, a small square in the row's key colour between them. Stacking one item per line, and a
+  slash between them, were turned down.
 
 ## Unresolved
 
