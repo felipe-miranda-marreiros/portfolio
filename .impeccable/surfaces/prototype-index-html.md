@@ -123,6 +123,10 @@ On 2026-11-20 the Owner chose, while shaping Home, that the Masthead's role line
 facts panel leaves its role line out, so the role is never repeated. The Home brief
 (`.impeccable/surfaces/prototype-pages-home-index-html.md`) records the decision.
 
+On 2026-11-23 the Owner chose, from three rendered options, the Page header: the title stacked over the one-line
+intro, with no rule under them. A hairline below the header and a split with the intro beside the title were turned
+down.
+
 ## Unresolved
 
 The type scale, spacing scale and state tokens are first set by the token build, then refined with `typeset`, `layout`
