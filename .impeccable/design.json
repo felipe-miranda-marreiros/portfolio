@@ -131,6 +131,7 @@
       { "name": "lineup-category-width", "value": "9rem", "purpose": "The lineup's category column from 36rem. Shared by both Visual languages; About me doesn't override it." },
       { "name": "role-entry-side-width", "value": "12rem", "purpose": "The Role entry's side column (period, location, work model) from 44rem." },
       { "name": "photo-size", "value": "4rem", "purpose": "Home's photo in the Masthead: small and plain beside the name, never a portrait." },
+      { "name": "section-rule-gap", "value": "2rem", "purpose": "The gap between a Section heading's rule and its title; 0px on About me, which has no rule." },
       { "name": "home-panel-width", "value": "22rem", "purpose": "Home's Facts panel column from 68rem; the Masthead takes the rest, so its role line wraps least." },
       { "name": "chip-type", "value": "--weight-chip: 400, --tracking-chip: 0", "purpose": "The chip's weight and tracking; About me sets its label weight (800) and 0.06em." }
     ],
@@ -213,9 +214,9 @@
       "name": "Section Heading",
       "kind": "custom",
       "refersTo": "section-heading",
-      "description": "A Section's title, such as Experience's Education and certifications and About me's Section titles: the Headline role in the Display colour, balanced, a long word hyphenating or breaking rather than overflow, on a full-width Hairline 2rem above it (--section-line-width), the same mark that separates roles on Experience. The Owner chose the title on a hairline over space alone and a title with an optional note. On About me the rule is absent (0px), since each Section starts its own band, and the title takes Big Shoulders uppercase. One heading at the level the Page needs; its words are Content. Static: no states. Built in prototype/components/section-heading/.",
+      "description": "A Section's title, such as Experience's Education and certifications and About me's Section titles: the Headline role in the Display colour, balanced, a long word hyphenating or breaking rather than overflow, on a full-width Hairline 2rem above it (--section-line-width), the same mark that separates roles on Experience. The Owner chose the title on a hairline over space alone and a title with an optional note. On About me the rule and the gap above the title are absent (0px), since each Section starts its own band, and the title takes Big Shoulders uppercase. One heading at the level the Page needs; its words are Content. Static: no states. Built in prototype/components/section-heading/.",
       "html": "<h2 class=\"ds-section-heading\">Placeholder section title</h2>",
-      "css": ".ds-section-heading { margin: 0; padding-top: var(--space-6); border-top: var(--section-line-width) solid var(--color-hairline); font-family: var(--font-display); font-size: var(--text-headline); font-weight: var(--weight-headline); line-height: var(--leading-headline); letter-spacing: var(--tracking-headline); text-transform: var(--case-display); color: var(--color-display); text-wrap: balance; overflow-wrap: break-word; hyphens: auto; }"
+      "css": ".ds-section-heading { margin: 0; padding-top: var(--section-rule-gap); border-top: var(--section-line-width) solid var(--color-hairline); font-family: var(--font-display); font-size: var(--text-headline); font-weight: var(--weight-headline); line-height: var(--leading-headline); letter-spacing: var(--tracking-headline); text-transform: var(--case-display); color: var(--color-display); text-wrap: balance; overflow-wrap: break-word; hyphens: auto; }"
     },
     {
       "name": "Masthead",
