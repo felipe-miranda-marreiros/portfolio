@@ -1,0 +1,165 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>About me · Portfolio prototype</title>
+    <link rel="preload" href="../../fonts/big-shoulders-display.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="preload" href="../../fonts/archivo.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="stylesheet" href="../../tokens.css" />
+    <link rel="stylesheet" href="../../about-me/tokens.css" />
+    <link rel="stylesheet" href="../page.css" />
+    <link rel="stylesheet" href="../../components/link/link.css" />
+    <link rel="stylesheet" href="../../components/toggle/toggle.css" />
+    <link rel="stylesheet" href="../../components/top-bar/top-bar.css" />
+    <link rel="stylesheet" href="../../components/page-header/page-header.css" />
+    <link rel="stylesheet" href="../../components/section-heading/section-heading.css" />
+    <link rel="stylesheet" href="../../components/lineup/lineup.css" />
+    <link rel="stylesheet" href="../../components/footer/footer.css" />
+    <link rel="stylesheet" href="about-me.css" />
+  </head>
+  <body>
+    <header class="top-bar" data-band="purple">
+      <nav class="top-bar__pages" aria-label="Pages">
+        <ul>
+          <li><a class="top-bar__page" href="../home/index.html">Home</a></li>
+          <li><a class="top-bar__page" href="../experience/index.html">Experience</a></li>
+          <li><a class="top-bar__page" href="index.html" aria-current="page">About me</a></li>
+        </ul>
+      </nav>
+      <div class="top-bar__controls">
+        <nav class="toggle" aria-label="Language">
+          <a class="toggle__option" href="?lang=en" hreflang="en" lang="en" aria-current="true">EN</a>
+          <a class="toggle__option" href="?lang=pt-BR" hreflang="pt-BR" lang="pt-BR">PT</a>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <div class="about-me__band" data-band="purple">
+        <header class="page-header">
+          <h1 class="page-header__title">About me</h1>
+          <p class="page-header__lede">Placeholder intro: one line on who the Owner is outside code.</p>
+        </header>
+      </div>
+
+      <section class="about-me__band" data-band="sunset" aria-labelledby="interests-title">
+        <h2 class="section-heading" id="interests-title">Interests</h2>
+        <ul class="lineup">
+          <li class="lineup__row">
+            <span class="lineup__category">Music</span>
+            <ul class="lineup__items">
+              <li><a class="lineup__item" href="https://example.com/">Placeholder band</a></li>
+              <li><span class="lineup__item">Second placeholder band</span></li>
+              <li><a class="lineup__item" href="https://example.com/">Third placeholder band</a></li>
+            </ul>
+          </li>
+          <li class="lineup__row">
+            <span class="lineup__category">Games</span>
+            <ul class="lineup__items">
+              <li><span class="lineup__item">Placeholder game</span></li>
+              <li><span class="lineup__item">Second placeholder game</span></li>
+            </ul>
+          </li>
+          <li class="lineup__row">
+            <span class="lineup__category">Running</span>
+            <ul class="lineup__items">
+              <li><span class="lineup__item">Placeholder race</span></li>
+            </ul>
+          </li>
+          <li class="lineup__row">
+            <span class="lineup__category">Films</span>
+            <ul class="lineup__items">
+              <li><span class="lineup__item">Placeholder film</span></li>
+              <li><span class="lineup__item">Second placeholder film</span></li>
+            </ul>
+          </li>
+          <li class="lineup__row">
+            <span class="lineup__category">Series</span>
+            <ul class="lineup__items">
+              <li><span class="lineup__item">Placeholder series</span></li>
+            </ul>
+          </li>
+        </ul>
+      </section>
+
+      <section class="about-me__band" data-band="lime" aria-labelledby="recommendations-title">
+        <h2 class="section-heading" id="recommendations-title">Recommendations</h2>
+        <ul class="lineup">
+          <li class="lineup__row">
+            <span class="lineup__category">Books</span>
+            <ul class="lineup__items">
+              <li><a class="lineup__item" href="https://example.com/">Placeholder book</a></li>
+              <li><span class="lineup__item">Second placeholder book</span></li>
+            </ul>
+          </li>
+          <li class="lineup__row">
+            <span class="lineup__category">Authors</span>
+            <ul class="lineup__items">
+              <li><span class="lineup__item">Author A</span></li>
+              <li><span class="lineup__item">Author B</span></li>
+              <li><span class="lineup__item">Author C</span></li>
+            </ul>
+          </li>
+          <li class="lineup__row">
+            <span class="lineup__category">Music</span>
+            <ul class="lineup__items">
+              <li><a class="lineup__item" href="https://example.com/">Placeholder album</a></li>
+            </ul>
+          </li>
+          <li class="lineup__row">
+            <span class="lineup__category">Films</span>
+            <ul class="lineup__items">
+              <li><span class="lineup__item">Placeholder film</span></li>
+            </ul>
+          </li>
+          <li class="lineup__row">
+            <span class="lineup__category">Articles</span>
+            <ul class="lineup__items">
+              <li><a class="lineup__item" href="https://example.com/">Placeholder article</a></li>
+              <li><a class="lineup__item" href="https://example.com/">Second placeholder article</a></li>
+            </ul>
+          </li>
+        </ul>
+      </section>
+
+      <section class="about-me__band" data-band="charcoal" aria-labelledby="engineering-title">
+        <h2 class="section-heading" id="engineering-title">Engineering</h2>
+        <ul class="lineup">
+          <li class="lineup__row">
+            <span class="lineup__category">Studying now</span>
+            <ul class="lineup__items">
+              <li><span class="lineup__item">Placeholder topic</span></li>
+              <li><a class="lineup__item" href="https://example.com/">Placeholder course</a></li>
+            </ul>
+          </li>
+          <li class="lineup__row">
+            <span class="lineup__category">Practices</span>
+            <ul class="lineup__items">
+              <li><span class="lineup__item">Placeholder practice</span></li>
+              <li><span class="lineup__item">Second placeholder practice</span></li>
+            </ul>
+          </li>
+          <li class="lineup__row">
+            <span class="lineup__category">Tools</span>
+            <ul class="lineup__items">
+              <li><span class="lineup__item">Tool A</span></li>
+              <li><span class="lineup__item">Tool B</span></li>
+              <li><span class="lineup__item">Tool C</span></li>
+            </ul>
+          </li>
+        </ul>
+      </section>
+    </main>
+
+    <footer class="footer" data-band="purple">
+      <h2 class="footer__title" id="contact">Contact</h2>
+      <a class="link footer__repo" href="https://github.com/felipe-miranda-marreiros/portfolio">This site's source code</a>
+      <ul class="footer__links">
+        <li><a class="footer__link" href="https://example.com/">GitHub</a></li>
+        <li><a class="footer__link" href="https://example.com/">LinkedIn</a></li>
+        <li><a class="footer__link" href="mailto:owner@example.com">owner@example.com</a></li>
+      </ul>
+    </footer>
+  </body>
+</html>
