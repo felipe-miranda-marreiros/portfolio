@@ -1,0 +1,21 @@
+/**
+ * Not found: the Page header, then a Link back to Home, from tokens only. The Page sets the space around them; the
+ * components set the rest.
+ */
+.not-found {
+  display: grid;
+  align-content: start;
+  gap: var(--space-7);
+  padding: var(--space-8) var(--edge);
+}
+
+@media (min-width: 44rem) {
+  .not-found {
+    padding-top: var(--space-9);
+  }
+}
+
+/* Only the Link hugs its text: the Page header sizes its title to its own width, so it must span the column. */
+.not-found__home {
+  justify-self: start;
+}
