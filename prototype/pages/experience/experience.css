@@ -1,0 +1,40 @@
+/**
+ * Experience: the Page header, the roles most recent first, then the Education and certifications Section, from tokens
+ * only. Its components set everything else; this sets only the space between them.
+ */
+.experience {
+  padding: var(--space-8) var(--edge);
+}
+
+@media (min-width: 44rem) {
+  .experience {
+    padding-top: var(--space-9);
+  }
+}
+
+.experience__header {
+  margin-bottom: var(--space-8);
+}
+
+.experience__roles {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+/* The roles share hairlines as siblings, so each list item draws the Role entry's rule for the article it holds. */
+.experience__roles > li + li {
+  margin-top: var(--space-6);
+  padding-top: var(--space-6);
+  border-top: var(--line-width) solid var(--color-hairline);
+}
+
+.experience__section {
+  margin-top: var(--space-9);
+}
+
+.experience__lists {
+  display: grid;
+  gap: var(--space-7);
+  margin-top: var(--space-6);
+}
