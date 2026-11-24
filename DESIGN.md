@@ -166,6 +166,7 @@ spacing:
   photo-size: "4rem"
   section-rule-gap: "2rem"
   home-panel-width: "22rem"
+  side-navigation-width: "15rem"
   about-me-toggle-inset: "0px"
   about-me-section-rule-gap: "0px"
 ---
@@ -247,18 +248,21 @@ at a lower alpha or mixed into the ground, and error is the only hue.
 - **Night Raised** and **Paper Raised**: the surface for anything that floats above the page (menus, popovers), always
   paired with the float shadow.
 - **Secondary Ink** (84% of the ink): supporting lines, ledes, body copy in panels, resting row links, inactive
-  switch options, and the Qualification list's small heading and note.
-- **Muted Ink** (64% of the ink): metadata, captions and a panel's note. Still AA on the ground in both themes.
+  switch options, the Qualification list's small heading and note, the Side navigation's resting entries and
+  sign-out, and the Draft count on its current entry.
+- **Muted Ink** (64% of the ink): metadata, captions, a panel's note and the Side navigation's Draft counts. Still AA
+  on the ground in both themes.
 - **Hairline** (10% of the ink): panel-grid borders, the Facts panel's border and the rule under its lead, the rule
   between role entries and between Qualification list items, the rule above a Section heading, the rules under the top
-  bar and above the footer, and the Footer's rule between its repository link and the rest.
+  bar and above the footer, the Footer's rule between its repository link and the rest, and the Side navigation's
+  edge and the rules between its groups and above its foot.
 - **Hairline Hover** (26%): the brightened edge of a hovered or focused panel and of a hovered secondary button.
 - **Hairline Control** (22%): the outline of secondary controls, the theme switch and swatch edges.
 - **Hairline Input** (52% ink on paper, 44% bone on night): input borders, which identify the control and so meet 3:1
-  against the ground, and the chosen Toggle option's edge, which carries that state to 3:1. A hovered input's border
-  steps up to full ink (`--color-input-hover`).
-- **Tint** (7%) and **Tint Hover** (4%): chip fills, the chosen Toggle option and the pressed secondary button; the faint fill of a hovered secondary
-  button.
+  against the ground, and the inner edge of the chosen Toggle option and of the current Side navigation entry, which
+  carries that state to 3:1. A hovered input's border steps up to full ink (`--color-input-hover`).
+- **Tint** (7%) and **Tint Hover** (4%): chip fills, the chosen Toggle option, the pressed secondary button and the
+  current Side navigation entry; the faint fill of a hovered secondary button and of a hovered Side navigation entry.
 - **Night Wash** and **Paper Wash** (2% of the ink mixed into the ground): the hovered or focused panel cell. Opaque,
   because the cell covers the hairline drawn behind the grid.
 
@@ -360,8 +364,8 @@ monospace that labels facts the way a codebase labels things: commands, tags, co
   also the size of row links, controls, field labels and the Qualification list's small heading, which take the
   control weight (600), kept apart from the title weight so each can change alone.
 - **Label** (Martian Mono 500, 0.6875rem, 0.08em, uppercase, tabular numerals): stat labels (the Facts panel's) and
-  dates (a Role entry's period, a Qualification list item's date). Inside chips and code, the same mono size is set
-  as-is, with no tracking or case change.
+  dates (a Role entry's period, a Qualification list item's date). Inside chips and code, and in the Side navigation's
+  Draft counts (numerals only), the same mono size is set as-is, with no tracking or case change.
 
 Headings hyphenate and, where the browser has no dictionary, break long words rather than overflow a narrow column: a
 Portuguese title such as "Responsabilidades" at display size must fit a 320px screen. Paragraphs wrap with a pretty rag.
@@ -449,6 +453,11 @@ Education and certifications Section starts 6rem below the last role, at its Sec
 The not-found Page opens with its Page header, then a Link back to Home 3rem below it, the Link only as wide as its
 text; when they are short, the Footer still sits at the foot of the viewport.
 
+The CMS's Side navigation runs as a column 15rem wide (`--side-navigation-width`), wide enough for its longest entry
+beside a two-digit Draft count; the Screen that hosts it sets that width, and the column fills its height with the foot
+at the bottom. Wider than 18rem, as across a phone, it becomes a band above the Screen whose entries wrap in rows by the
+page's edge, with nothing hidden.
+
 ### About me
 
 The Portfolio's column (76rem max), gutter and spacing rhythm, unchanged, except chips 0.5rem apart, a Toggle with no
@@ -510,11 +519,11 @@ row's key colour that thickens to 3px on hover, focus and press. The illustratio
 
 ## Components
 
-The Button, the Link, the Chip, the Toggle, the Top bar, the Footer, the Text field, the Panel grid, the Page header,
-the Section heading, the Masthead, the Facts panel, the Role entry, the Qualification list and About me's Lineup are
-built in the prototype (`prototype/components/button/`, `link/`, `chip/`, `toggle/`, `top-bar/`, `footer/`,
-`text-field/`, `panel-grid/`, `page-header/`, `section-heading/`, `masthead/`, `facts-panel/`, `role-entry/`,
-`qualification-list/`, `lineup/`); the rest are
+The Button, the Link, the Chip, the Toggle, the Top bar, the Side navigation, the Footer, the Text field, the Panel
+grid, the Page header, the Section heading, the Masthead, the Facts panel, the Role entry, the Qualification list and
+About me's Lineup are built in the prototype (`prototype/components/button/`, `link/`, `chip/`, `toggle/`, `top-bar/`,
+`side-navigation/`, `footer/`, `text-field/`, `panel-grid/`, `page-header/`, `section-heading/`, `masthead/`,
+`facts-panel/`, `role-entry/`, `qualification-list/`, `lineup/`); the rest are
 the primitives the prototype's token specimens establish, to be confirmed by each component's own PR. Every component
 takes every visual value from tokens and holds no visible text.
 
@@ -752,7 +761,8 @@ each language, are both Toggles.
   language link loads the Page at its other address, which opens with the fill already on the current language.
 
 ### Navigation
-Built in the prototype (`prototype/components/top-bar/`): the Top bar.
+Built in the prototype (`prototype/components/top-bar/`, `side-navigation/`): the Top bar, between the Portfolio's
+Pages, and the Side navigation, between the CMS's Screens.
 - **Top bar:** on a bottom hairline, padding 1rem by the page's edge, with no name or logo: Home leads back to the
   start. The Pages sit on the start side and the Toggles on the end side, 2rem from them: the theme switch, then the
   language toggle on the edge, so the language toggle keeps its place where the theme switch is absent.
@@ -766,6 +776,27 @@ Built in the prototype (`prototype/components/top-bar/`): the Top bar.
 - **Theme switch:** a Toggle of Dark and Light, with Dark pressed until the visitor picks Light. Switching crossfades
   every token at once (240ms), except the switch itself, which sits out of the crossfade so its pressed fill only
   slides.
+- **Side navigation:** the CMS's only, in the Portfolio's Visual language, with no About me version. A column on the
+  ground with a hairline on its end side, padding 1.5rem by 1rem, 1.5rem between its parts: the Pages, then the
+  Footer, then Site, each group its own list, split from the one before by a hairline 1rem above it; then a foot that
+  sinks to the bottom, on a hairline 1rem above it, holding the theme switch and sign-out. Every word is Content.
+- **Entries:** rows in the link role in Secondary Ink, padding 0.5rem by 0.75rem with 8px corners, 2px apart, set
+  0.75rem outward so their text keeps the column's edge; the padding clears the 24px target, and a long name breaks
+  rather than overflow. **Hover / Active:** full ink on the Tint Hover fill. **Current** (`aria-current="page"`): the
+  Toggle's pressed look, the Tint fill with full ink and a one-pixel inner edge in Hairline Input, which carries it to
+  3:1 without colour; hover leaves it as it is. **Focus:** the shared 2px ink ring at 2px offset. **Disabled:** none;
+  every Screen is reachable.
+- **Draft count:** an entry whose Content items hold Drafts ends in how many, 0.75rem after its name and on its
+  baseline: the numeral in monospace at the Label size and weight, tabular and as-is, in Muted Ink, and in Secondary
+  Ink on the current entry. A word before it (Content) is for assistive technology only. An entry with no Drafts has
+  no count.
+- **Sign-out:** a button in the link role in Secondary Ink, with 0.25rem of block padding, across the foot from the
+  theme switch. **Hover / Active:** full ink, no underline. **Focus:** the shared 2px ink ring at 2px offset.
+- **Narrow screens:** nothing hides and there is no menu. Wider than 18rem, as across a phone, it becomes a band above
+  the Screen on a bottom hairline, padding 1rem by the page's edge: each group's entries wrap in rows (padding 0.25rem
+  by 0.5rem, 0.25rem by 0.5rem apart), the groups 0.75rem apart with no rules between them, and the foot follows on
+  its hairline, 0.75rem above it.
+- **Forced colours:** the current entry, count included, takes Highlight with HighlightText.
 
 ### Footer
 Built in the prototype (`prototype/components/footer/`): the Section on every Page and the only way to make contact.
