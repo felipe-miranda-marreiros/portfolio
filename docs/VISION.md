@@ -65,7 +65,7 @@ workflow) serve as evidence of how the Owner works as an engineer.
 - The CMS uses the Portfolio's Visual language, not About me's.
 - On About me, the navigation, the language toggle and the Footer stay in the same place and work the same way; only
   their styling follows About me's Visual language.
-- Mobile and desktop have equal priority.
+- On the Portfolio, mobile and desktop have equal priority; the CMS is desktop first.
 - Every Page, About me included, meets WCAG 2.2 AA.
 - The Owner builds it alone, with AI agents, with no budget and no fixed deadline.
 
