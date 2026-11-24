@@ -1,0 +1,265 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Side navigation · Portfolio prototype</title>
+    <link rel="preload" href="../../fonts/schibsted-grotesk.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="preload" href="../../fonts/martian-mono.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="stylesheet" href="../../tokens.css" />
+    <link rel="stylesheet" href="../specimen.css" />
+    <link rel="stylesheet" href="../toggle/toggle.css" />
+    <link rel="stylesheet" href="side-navigation.css" />
+    <script src="../toggle/toggle.js" defer></script>
+  </head>
+  <body>
+    <header class="specimen-bar">
+      <a href="../../index.html">Visual language</a>
+    </header>
+
+    <main>
+      <div class="specimen-intro">
+        <h1>Side navigation</h1>
+        <p>
+          The CMS's way between Screens: the Pages, then the Footer, then Site, each entry with how many Drafts it holds,
+          and the theme switch and sign-out at the foot. In its column and as a band across a 320px phone, on both
+          themes. The CMS only, so there is no About me version. The column and the band respond to the pointer and the
+          keyboard.
+        </p>
+      </div>
+
+      <div class="surfaces">
+        <section class="surface" data-scheme="dark" aria-labelledby="dark-title">
+          <h2 id="dark-title">Dark</h2>
+          <div class="variant">
+            <h3>Entries</h3>
+            <ul class="states states--even" inert>
+              <li>
+                <a class="side-navigation__entry states__fill" href="index.html"><span class="side-navigation__name">Experience</span></a>
+                <code>default</code>
+              </li>
+              <li>
+                <a class="side-navigation__entry states__fill" href="index.html" data-force="hover"><span class="side-navigation__name">Experience</span></a>
+                <code>hover</code>
+              </li>
+              <li>
+                <a class="side-navigation__entry states__fill" href="index.html" data-force="focus"><span class="side-navigation__name">Experience</span></a>
+                <code>focus</code>
+              </li>
+              <li>
+                <a class="side-navigation__entry states__fill" href="index.html" data-force="active"><span class="side-navigation__name">Experience</span></a>
+                <code>active</code>
+              </li>
+              <li>
+                <a class="side-navigation__entry states__fill" href="index.html" aria-current="page"><span class="side-navigation__name">Experience</span></a>
+                <code>current</code>
+              </li>
+              <li>
+                <a class="side-navigation__entry states__fill" href="index.html"><span class="side-navigation__name">Experience</span><span class="side-navigation__count"><span class="side-navigation__count-label">Drafts</span> 2</span></a>
+                <code>with Drafts</code>
+              </li>
+              <li>
+                <a class="side-navigation__entry states__fill" href="index.html" aria-current="page"><span class="side-navigation__name">Experience</span><span class="side-navigation__count"><span class="side-navigation__count-label">Drafts</span> 15</span></a>
+                <code>current, with Drafts</code>
+              </li>
+              <li>
+                <a class="side-navigation__entry states__fill" href="index.html"><span class="side-navigation__name">An entry name long enough to wrap onto a second line</span><span class="side-navigation__count"><span class="side-navigation__count-label">Drafts</span> 12</span></a>
+                <code>long content</code>
+              </li>
+            </ul>
+          </div>
+          <div class="variant">
+            <h3>Sign-out</h3>
+            <ul class="states" inert>
+              <li>
+                <button class="side-navigation__action" type="button">Sign out</button>
+                <code>default</code>
+              </li>
+              <li>
+                <button class="side-navigation__action" type="button" data-force="hover">Sign out</button>
+                <code>hover</code>
+              </li>
+              <li>
+                <button class="side-navigation__action" type="button" data-force="focus">Sign out</button>
+                <code>focus</code>
+              </li>
+              <li>
+                <button class="side-navigation__action" type="button" data-force="active">Sign out</button>
+                <code>active</code>
+              </li>
+            </ul>
+          </div>
+          <div class="variant">
+            <h3>Column</h3>
+            <div class="frame frame--side">
+              <nav class="side-navigation" aria-label="Content">
+                <div class="side-navigation__body">
+                  <ul class="side-navigation__group">
+                    <li><a class="side-navigation__entry" href="index.html"><span class="side-navigation__name">Home</span><span class="side-navigation__count"><span class="side-navigation__count-label">Drafts</span> 1</span></a></li>
+                    <li><a class="side-navigation__entry" href="index.html" aria-current="page"><span class="side-navigation__name">Experience</span><span class="side-navigation__count"><span class="side-navigation__count-label">Drafts</span> 2</span></a></li>
+                    <li><a class="side-navigation__entry" href="index.html"><span class="side-navigation__name">About me</span></a></li>
+                    <li><a class="side-navigation__entry" href="index.html"><span class="side-navigation__name">Not found</span></a></li>
+                  </ul>
+                  <ul class="side-navigation__group">
+                    <li><a class="side-navigation__entry" href="index.html"><span class="side-navigation__name">Footer</span></a></li>
+                    <li><a class="side-navigation__entry" href="index.html"><span class="side-navigation__name">Site</span><span class="side-navigation__count"><span class="side-navigation__count-label">Drafts</span> 1</span></a></li>
+                  </ul>
+                  <div class="side-navigation__foot">
+                    <fieldset class="toggle">
+                      <legend>Theme</legend>
+                      <button class="toggle__option" type="button" aria-pressed="true">Dark</button>
+                      <button class="toggle__option" type="button" aria-pressed="false">Light</button>
+                    </fieldset>
+                    <button class="side-navigation__action" type="button">Sign out</button>
+                  </div>
+                </div>
+              </nav>
+            </div>
+          </div>
+          <div class="variant">
+            <h3>Band on a phone, 320px</h3>
+            <div class="frame frame--phone">
+              <nav class="side-navigation" aria-label="Content">
+                <div class="side-navigation__body">
+                  <ul class="side-navigation__group">
+                    <li><a class="side-navigation__entry" href="index.html"><span class="side-navigation__name">Home</span><span class="side-navigation__count"><span class="side-navigation__count-label">Drafts</span> 1</span></a></li>
+                    <li><a class="side-navigation__entry" href="index.html" aria-current="page"><span class="side-navigation__name">Experience</span><span class="side-navigation__count"><span class="side-navigation__count-label">Drafts</span> 2</span></a></li>
+                    <li><a class="side-navigation__entry" href="index.html"><span class="side-navigation__name">About me</span></a></li>
+                    <li><a class="side-navigation__entry" href="index.html"><span class="side-navigation__name">Not found</span></a></li>
+                  </ul>
+                  <ul class="side-navigation__group">
+                    <li><a class="side-navigation__entry" href="index.html"><span class="side-navigation__name">Footer</span></a></li>
+                    <li><a class="side-navigation__entry" href="index.html"><span class="side-navigation__name">Site</span><span class="side-navigation__count"><span class="side-navigation__count-label">Drafts</span> 1</span></a></li>
+                  </ul>
+                  <div class="side-navigation__foot">
+                    <fieldset class="toggle">
+                      <legend>Theme</legend>
+                      <button class="toggle__option" type="button" aria-pressed="true">Dark</button>
+                      <button class="toggle__option" type="button" aria-pressed="false">Light</button>
+                    </fieldset>
+                    <button class="side-navigation__action" type="button">Sign out</button>
+                  </div>
+                </div>
+              </nav>
+            </div>
+          </div>
+        </section>
+        <section class="surface" data-scheme="light" aria-labelledby="light-title">
+          <h2 id="light-title">Light</h2>
+          <div class="variant">
+            <h3>Entries</h3>
+            <ul class="states states--even" inert>
+              <li>
+                <a class="side-navigation__entry states__fill" href="index.html"><span class="side-navigation__name">Experience</span></a>
+                <code>default</code>
+              </li>
+              <li>
+                <a class="side-navigation__entry states__fill" href="index.html" data-force="hover"><span class="side-navigation__name">Experience</span></a>
+                <code>hover</code>
+              </li>
+              <li>
+                <a class="side-navigation__entry states__fill" href="index.html" data-force="focus"><span class="side-navigation__name">Experience</span></a>
+                <code>focus</code>
+              </li>
+              <li>
+                <a class="side-navigation__entry states__fill" href="index.html" data-force="active"><span class="side-navigation__name">Experience</span></a>
+                <code>active</code>
+              </li>
+              <li>
+                <a class="side-navigation__entry states__fill" href="index.html" aria-current="page"><span class="side-navigation__name">Experience</span></a>
+                <code>current</code>
+              </li>
+              <li>
+                <a class="side-navigation__entry states__fill" href="index.html"><span class="side-navigation__name">Experience</span><span class="side-navigation__count"><span class="side-navigation__count-label">Drafts</span> 2</span></a>
+                <code>with Drafts</code>
+              </li>
+              <li>
+                <a class="side-navigation__entry states__fill" href="index.html" aria-current="page"><span class="side-navigation__name">Experience</span><span class="side-navigation__count"><span class="side-navigation__count-label">Drafts</span> 15</span></a>
+                <code>current, with Drafts</code>
+              </li>
+              <li>
+                <a class="side-navigation__entry states__fill" href="index.html"><span class="side-navigation__name">An entry name long enough to wrap onto a second line</span><span class="side-navigation__count"><span class="side-navigation__count-label">Drafts</span> 12</span></a>
+                <code>long content</code>
+              </li>
+            </ul>
+          </div>
+          <div class="variant">
+            <h3>Sign-out</h3>
+            <ul class="states" inert>
+              <li>
+                <button class="side-navigation__action" type="button">Sign out</button>
+                <code>default</code>
+              </li>
+              <li>
+                <button class="side-navigation__action" type="button" data-force="hover">Sign out</button>
+                <code>hover</code>
+              </li>
+              <li>
+                <button class="side-navigation__action" type="button" data-force="focus">Sign out</button>
+                <code>focus</code>
+              </li>
+              <li>
+                <button class="side-navigation__action" type="button" data-force="active">Sign out</button>
+                <code>active</code>
+              </li>
+            </ul>
+          </div>
+          <div class="variant">
+            <h3>Column</h3>
+            <div class="frame frame--side">
+              <nav class="side-navigation" aria-label="Content">
+                <div class="side-navigation__body">
+                  <ul class="side-navigation__group">
+                    <li><a class="side-navigation__entry" href="index.html"><span class="side-navigation__name">Home</span><span class="side-navigation__count"><span class="side-navigation__count-label">Drafts</span> 1</span></a></li>
+                    <li><a class="side-navigation__entry" href="index.html" aria-current="page"><span class="side-navigation__name">Experience</span><span class="side-navigation__count"><span class="side-navigation__count-label">Drafts</span> 2</span></a></li>
+                    <li><a class="side-navigation__entry" href="index.html"><span class="side-navigation__name">About me</span></a></li>
+                    <li><a class="side-navigation__entry" href="index.html"><span class="side-navigation__name">Not found</span></a></li>
+                  </ul>
+                  <ul class="side-navigation__group">
+                    <li><a class="side-navigation__entry" href="index.html"><span class="side-navigation__name">Footer</span></a></li>
+                    <li><a class="side-navigation__entry" href="index.html"><span class="side-navigation__name">Site</span><span class="side-navigation__count"><span class="side-navigation__count-label">Drafts</span> 1</span></a></li>
+                  </ul>
+                  <div class="side-navigation__foot">
+                    <fieldset class="toggle">
+                      <legend>Theme</legend>
+                      <button class="toggle__option" type="button" aria-pressed="false">Dark</button>
+                      <button class="toggle__option" type="button" aria-pressed="true">Light</button>
+                    </fieldset>
+                    <button class="side-navigation__action" type="button">Sign out</button>
+                  </div>
+                </div>
+              </nav>
+            </div>
+          </div>
+          <div class="variant">
+            <h3>Band on a phone, 320px</h3>
+            <div class="frame frame--phone">
+              <nav class="side-navigation" aria-label="Content">
+                <div class="side-navigation__body">
+                  <ul class="side-navigation__group">
+                    <li><a class="side-navigation__entry" href="index.html"><span class="side-navigation__name">Home</span><span class="side-navigation__count"><span class="side-navigation__count-label">Drafts</span> 1</span></a></li>
+                    <li><a class="side-navigation__entry" href="index.html" aria-current="page"><span class="side-navigation__name">Experience</span><span class="side-navigation__count"><span class="side-navigation__count-label">Drafts</span> 2</span></a></li>
+                    <li><a class="side-navigation__entry" href="index.html"><span class="side-navigation__name">About me</span></a></li>
+                    <li><a class="side-navigation__entry" href="index.html"><span class="side-navigation__name">Not found</span></a></li>
+                  </ul>
+                  <ul class="side-navigation__group">
+                    <li><a class="side-navigation__entry" href="index.html"><span class="side-navigation__name">Footer</span></a></li>
+                    <li><a class="side-navigation__entry" href="index.html"><span class="side-navigation__name">Site</span><span class="side-navigation__count"><span class="side-navigation__count-label">Drafts</span> 1</span></a></li>
+                  </ul>
+                  <div class="side-navigation__foot">
+                    <fieldset class="toggle">
+                      <legend>Theme</legend>
+                      <button class="toggle__option" type="button" aria-pressed="false">Dark</button>
+                      <button class="toggle__option" type="button" aria-pressed="true">Light</button>
+                    </fieldset>
+                    <button class="side-navigation__action" type="button">Sign out</button>
+                  </div>
+                </div>
+              </nav>
+            </div>
+          </div>
+        </section>
+      </div>
+    </main>
+  </body>
+</html>
