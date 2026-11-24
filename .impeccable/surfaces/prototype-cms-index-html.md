@@ -64,7 +64,8 @@ missing fields at once; a publish that fails; a session that expires mid-edit.
 
 ## Components
 
-Reused: Button, Link, Chip, Toggle (the language and width switches), Text field, Section heading, Page header.
+Reused: Button, Link, Chip, Toggle (the theme switch, the Edit | Preview switch,
+and the preview's language and width switches), Text field, Section heading, Page header.
 
 New, one PR each, before any Screen: side navigation, Content item row, state indicator, bilingual field, period
 field, image field with alt text, file field, reorderable list, technology input, action bar, confirmation dialog,
