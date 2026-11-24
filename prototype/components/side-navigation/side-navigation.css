@@ -3,11 +3,12 @@
  * its own list; each entry may end in how many Drafts it holds; the theme switch and sign-out sit at the foot.
  * Markup: <nav class="side-navigation" aria-label="…"><div class="side-navigation__body">
  *   <ul class="side-navigation__group"><li><a class="side-navigation__entry" href="…" aria-current="page">
- *     <span class="side-navigation__name">…</span>
- *     <span class="side-navigation__count"><span class="side-navigation__count-label">…</span> 2</span></a></li>…</ul>…
+ *     <span class="side-navigation__name">…</span> <span class="side-navigation__count">
+ *     <span class="side-navigation__count-label">…</span> 2</span></a></li>…</ul>…
  *   <div class="side-navigation__foot">[theme Toggle] <button class="side-navigation__action" type="button">…</button>
  *   </div></div></nav>.
- * An entry with no Drafts has no count. In a column as narrow as `--side-navigation-width` the entries stack and the
+ * An entry with no Drafts has no count. The space between the name and the count keeps them apart in the
+ * link's accessible name. In a column as narrow as `--side-navigation-width` the entries stack and the
  * foot sinks to the bottom; wider, as a band across a phone, the entries wrap in rows and nothing hides.
  * `data-force` pins a state so the prototype page can show it without interaction.
  */
