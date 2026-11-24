@@ -800,7 +800,7 @@ Pages, and the Side navigation, between the CMS's Screens.
   by 0.5rem, 0.25rem by 0.5rem apart), the groups 0.75rem apart with no rules between them, and the foot follows on
   its hairline, 0.75rem above it.
 - **Forced colours:** the current entry, count included, takes Highlight with HighlightText, and its focus ring takes
-  CanvasText, as the Toggle's pressed option does, so it doesn't vanish against Highlight.
+  CanvasText, as the Toggle's pressed option does, so it doesn't vanish against the system background around it.
 
 ### Footer
 Built in the prototype (`prototype/components/footer/`): the Section on every Page and the only way to make contact.
