@@ -83,5 +83,6 @@ on top of the rendered Page.
 
 ## Unresolved
 
-Nothing is built yet. Which mechanism signs the Owner in, saves Drafts and carries a publish to the Portfolio is
+The side navigation is built (`prototype/components/side-navigation/`); the other new components and every Screen
+are not. Which mechanism signs the Owner in, saves Drafts and carries a publish to the Portfolio is
 settled in the ADRs after these Screens; the Screens show only states, never a mechanism.
