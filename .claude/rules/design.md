@@ -85,7 +85,7 @@ prototype/
   me page), `components/specimen.css` and its components' files. A Page links `tokens.css` (and `about-me/tokens.css`
   on About me's Page), `pages/page.css`, its components' files, its own CSS, and `theme.css` and `theme.js` when it has
   the theme switch. A Screen links `tokens.css`, its components' files, its own CSS, and
-  `theme.css` and `theme.js`.
+  `theme.css` and `theme.js` when it has the theme switch.
 - Prototype pages may hold placeholder text to show a component; components themselves still hold none.
 
 ## Impeccable artifacts
