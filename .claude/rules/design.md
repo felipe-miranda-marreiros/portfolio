@@ -65,7 +65,7 @@ prototype/
 │   └── home/
 │       ├── home.css    # the Page's own layout only, from tokens; everything else comes from its components
 │       └── index.html  # the Page, composed only from existing components
-├── cms/                # the CMS's Screens, one folder per Screen, like a Page's
+├── cms/                # the CMS's Screens: the Content list is cms/index.html, every other Screen has its own folder
 └── components/
     ├── specimen.css    # the chrome every component page shares; not a component
     └── button/
