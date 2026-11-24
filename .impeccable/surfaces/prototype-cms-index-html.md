@@ -17,7 +17,7 @@ the components it needs exist.
 
 Only the Owner arrives, to edit Content, preview it and publish it. The CMS is English only and desktop first: on a
 phone every Screen still works in one column, but the phone is not the main scene. It keeps the Portfolio's theme
-switch (dark by default) and has no language toggle.
+switch (dark by default), at the foot of the side navigation beside sign-out, and has no language toggle.
 
 Success: the Owner finds any Content item where it appears on the Portfolio, edits both languages side by side, sees
 exactly what Visitors will see, and publishes. At every moment the Owner knows whether the item is a Draft, Published,
@@ -31,6 +31,7 @@ On 2026-11-24 the Owner chose, from structured options:
 - Navigation by Page, over by type of Content item and one filtered list: the Pages (Home, Experience, About me, Not
   found), then the Footer, then Site for the CV and the shared labels (navigation, language toggle and theme switch
   labels). Each Page lists its own SEO metadata, over grouping it under Site.
+- The theme switch at the foot of the side navigation, beside sign-out, over a top CMS bar.
 - English and Brazilian Portuguese side by side in each field, over language tabs.
 - A full preview Screen behind an Edit | Preview switch, over a live split and both languages at a reduced scale.
 - A fixed action bar with the item's state and publish feedback, over publishing a whole Page at once.
