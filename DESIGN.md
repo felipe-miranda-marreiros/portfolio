@@ -195,7 +195,7 @@ through tokens alone; their place and behavior never change.
 - Dark by default, always; light a complete equal the visitor switches to; both WCAG 2.2 AA.
 - Monochrome: bone ink on near-black, ink on bone paper, secondary ink and hairlines by alpha steps of the ink.
 - No hued accent: the primary action is filled ink, every other button is outlined in a hairline, row links are
-  unboxed text, focus is an ink ring.
+  unboxed text (the Side navigation's entries are Toggle-like rows, which this doesn't cover), focus is an ink ring.
 - Bold display grotesk with tight tracking; monospace only for labels, tags, chips and numerals.
 - Hairline-bordered panel grids whose cells share borders, instead of cards and shadows.
 - Facts over the person: the role and seniority lead Home as its largest type, beside a hairline facts panel; the photo
@@ -271,8 +271,9 @@ at a lower alpha or mixed into the ground, and error is the only hue.
 
 ### Named Rules
 **The Ink Is The Action Rule.** There is no accent colour. The primary action is the ink filled, with the ground as its
-text: one per view. Secondary buttons are outlined in Hairline Control; row links stay unboxed. Focus is an ink ring.
-If a view needs colour to show what to do next, the hierarchy is wrong, not the palette.
+text: one per view. Secondary buttons are outlined in Hairline Control; row links stay unboxed (the Side navigation's
+entries are Toggle-like rows, which this rule doesn't cover). Focus is an ink ring. If a view needs colour to show
+what to do next, the hierarchy is wrong, not the palette.
 
 **The Alpha Steps Rule.** Secondary, muted, hairline and tint colours are always the ink mixed toward transparent at
 their fixed steps (84, 64, 26, 22, 10, 7, 4), and the Wash is the ink at 2% mixed into the ground; never new greys. The
@@ -778,25 +779,28 @@ Pages, and the Side navigation, between the CMS's Screens.
   slides.
 - **Side navigation:** the CMS's only, in the Portfolio's Visual language, with no About me version. A column on the
   ground with a hairline on its end side, padding 1.5rem by 1rem, 1.5rem between its parts: the Pages, then the
-  Footer, then Site, each group its own list, split from the one before by a hairline 1rem above it; then a foot that
-  sinks to the bottom, on a hairline 1rem above it, holding the theme switch and sign-out. Every word is Content.
-- **Entries:** rows in the link role in Secondary Ink, padding 0.5rem by 0.75rem with 8px corners, 2px apart, set
+  Footer, then Site, each group its own list, split from the one before by a hairline 1rem above it, drawn on the
+  content edge so it matches the foot's; then a foot that sinks to the bottom, on a hairline 1rem above it, holding
+  the theme switch and sign-out. Every word is Content.
+- **Entries:** rows in the link role in Secondary Ink, padding 0.5rem by 0.75rem with 8px corners, 0.25rem apart, set
   0.75rem outward so their text keeps the column's edge; the padding clears the 24px target, and a long name breaks
   rather than overflow. **Hover / Active:** full ink on the Tint Hover fill. **Current** (`aria-current="page"`): the
-  Toggle's pressed look, the Tint fill with full ink and a one-pixel inner edge in Hairline Input, which carries it to
-  3:1 without colour; hover leaves it as it is. **Focus:** the shared 2px ink ring at 2px offset. **Disabled:** none;
-  every Screen is reachable.
+  Toggle's pressed look, the Tint fill (`--color-toggle-pressed`) with full ink (`--color-on-toggle-pressed`) and a
+  one-pixel inner edge in Hairline Input (`--color-toggle-pressed-edge`), which carries it to 3:1 without colour;
+  hover leaves it as it is. **Focus:** the shared 2px ink ring at 2px offset. **Disabled:** none; every Screen is
+  reachable.
 - **Draft count:** an entry whose Content items hold Drafts ends in how many, 0.75rem after its name and on its
   baseline: the numeral in monospace at the Label size and weight, tabular and as-is, in Muted Ink, and in Secondary
-  Ink on the current entry. A word before it (Content) is for assistive technology only. An entry with no Drafts has
-  no count.
+  Ink on the current entry. A word before it (Content) is for assistive technology only, and a space in the markup
+  between the name and the count keeps them apart in the link's accessible name. An entry with no Drafts has no count.
 - **Sign-out:** a button in the link role in Secondary Ink, with 0.25rem of block padding, across the foot from the
   theme switch. **Hover / Active:** full ink, no underline. **Focus:** the shared 2px ink ring at 2px offset.
 - **Narrow screens:** nothing hides and there is no menu. Wider than 18rem, as across a phone, it becomes a band above
   the Screen on a bottom hairline, padding 1rem by the page's edge: each group's entries wrap in rows (padding 0.25rem
   by 0.5rem, 0.25rem by 0.5rem apart), the groups 0.75rem apart with no rules between them, and the foot follows on
   its hairline, 0.75rem above it.
-- **Forced colours:** the current entry, count included, takes Highlight with HighlightText.
+- **Forced colours:** the current entry, count included, takes Highlight with HighlightText, and its focus ring takes
+  CanvasText, as the Toggle's pressed option does, so it doesn't vanish against Highlight.
 
 ### Footer
 Built in the prototype (`prototype/components/footer/`): the Section on every Page and the only way to make contact.
