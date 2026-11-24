@@ -47,7 +47,7 @@ workflow) serve as evidence of how the Owner works as an engineer.
   language toggle labels, image alt text, the not-found Page, and SEO and sharing metadata. Nothing a Visitor reads is
   hardcoded in the Portfolio. Dates are the exception: month names and "present" follow the chosen language.
 - A Content item is each thing the Owner edits and publishes on its own: Home's main Section, each role, each education
-  or certification entry, each About me Section, each Footer link, each CV, and each Page's SEO metadata.
+  or certification entry, each About me Section, each Footer link, the CV (both languages' PDFs), and each Page's SEO metadata.
 - Each Content item is a Draft or Published, and Visitors see only Published items. Editing a Published item creates a
   Draft over it, and the Published version stays Published until the Owner publishes again.
 - The Owner can unpublish a Content item (it leaves the Portfolio and remains as a Draft), delete it, and discard a
