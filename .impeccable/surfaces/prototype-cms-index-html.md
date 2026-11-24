@@ -46,7 +46,7 @@ On 2026-11-24 the Owner chose, from structured options:
   password (error, expired link).
 - **Content list:** a side navigation: the Pages, then the Footer, then Site. Each Page lists its Content items
   grouped by Section, then its SEO metadata, each with its state. A Section that holds several items has a New action. Roles and education entries follow date order; core
-  technologies and Footer links are reordered by hand. The public repository link has no delete.
+  technologies and Footer links are reordered by hand. The public repository link has no delete and no unpublish.
 - **Editor:** a header with the item's name, its state and the Edit | Preview switch. Text fields show English and
   Brazilian Portuguese side by side and flag a missing translation on the field itself; language-neutral fields
   (dates, URLs, technologies, photo) appear once; every image carries its alt text in both languages. A fixed action
