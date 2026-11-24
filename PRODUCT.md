@@ -13,7 +13,7 @@ web
 - **Engineers**, secondary. They want depth: what the Owner did in each role, its impact, and a short path to the code.
 - **The Owner**, the only person who edits, and only in the CMS. The CMS interface is English only.
 
-Vocabulary (Owner, Visitor, Page, Section, Content, Content item, Draft, Published, Visual language) is defined in
+Vocabulary (Owner, Visitor, Page, Section, Content, Content item, Draft, Published, Screen, Visual language) is defined in
 `GLOSSARY.md`.
 
 ## Product Purpose
