@@ -30,6 +30,10 @@ _Avoid_: screen, route, view
 A distinct part of a Page, such as Education and certifications on Experience. The Footer is the Section shown on every Page.
 _Avoid_: block, area, module
 
+**Screen**:
+A destination of the CMS, such as the sign-in or a Content item's editor. A Page is never called a Screen, and a Screen never a Page.
+_Avoid_: page, view
+
 **Visual language**:
 The look shared by a set of Pages. The Portfolio has one, About me has its own, and the CMS uses the Portfolio's.
 _Avoid_: theme, skin, style
