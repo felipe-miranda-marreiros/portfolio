@@ -294,3 +294,14 @@ a {
   padding-block: var(--space-6);
   border-top: 0;
 }
+
+/* A sample that fills its track, such as a row whose ends carry meaning. */
+.states__fill {
+  align-self: stretch;
+}
+
+/* The CMS's side column, at its set width and a short Screen's height, so the foot shows at the bottom. */
+.frame--side {
+  width: calc(var(--side-navigation-width) + 2 * var(--line-width));
+  height: 34rem;
+}

@@ -1,0 +1,190 @@
+/**
+ * Side navigation: the CMS's way between Screens, from tokens only. The Pages, then the Footer, then Site, each group on
+ * its own list; each entry may end in how many Drafts it holds; the theme switch and sign-out sit at the foot.
+ * Markup: <nav class="side-navigation" aria-label="…"><div class="side-navigation__body">
+ *   <ul class="side-navigation__group"><li><a class="side-navigation__entry" href="…" aria-current="page">
+ *     <span class="side-navigation__name">…</span>
+ *     <span class="side-navigation__count"><span class="side-navigation__count-label">…</span> 2</span></a></li>…</ul>…
+ *   <div class="side-navigation__foot">[theme Toggle] <button class="side-navigation__action" type="button">…</button>
+ *   </div></div></nav>.
+ * An entry with no Drafts has no count. In a column as narrow as `--side-navigation-width` the entries stack and the
+ * foot sinks to the bottom; wider, as a band across a phone, the entries wrap in rows and nothing hides.
+ * `data-force` pins a state so the prototype page can show it without interaction.
+ */
+.side-navigation {
+  container: side-navigation / inline-size;
+  block-size: 100%;
+}
+
+.side-navigation__body {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-5);
+  min-block-size: 100%;
+  padding: var(--space-5) var(--space-4);
+  border-inline-end: var(--line-width) solid var(--color-hairline);
+  background: var(--color-ground);
+  color: var(--color-ink);
+}
+
+.side-navigation__group {
+  display: grid;
+  gap: 2px;
+  margin: 0 calc(-1 * var(--space-3));
+  padding: 0;
+  list-style: none;
+}
+
+.side-navigation__group + .side-navigation__group {
+  padding-block-start: var(--space-4);
+  border-block-start: var(--line-width) solid var(--color-hairline);
+}
+
+/* The block padding lifts each entry past the 24px target size. */
+.side-navigation__entry {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: var(--space-3);
+  padding: var(--space-2) var(--space-3);
+  border-radius: var(--radius-control);
+  font-family: var(--font-sans);
+  font-size: var(--text-link);
+  font-weight: var(--weight-link);
+  line-height: var(--leading-link);
+  letter-spacing: var(--tracking-link);
+  text-transform: var(--case-link);
+  color: var(--color-ink-secondary);
+  text-decoration: none;
+  -webkit-tap-highlight-color: transparent;
+  transition:
+    color var(--duration-fast) var(--ease-out),
+    background-color var(--duration-fast) var(--ease-out);
+}
+
+.side-navigation__name {
+  min-inline-size: 0;
+  overflow-wrap: break-word;
+}
+
+.side-navigation__entry:where(:hover, :active, [data-force~="hover"], [data-force~="active"]) {
+  color: var(--color-ink);
+  background: var(--color-tint-hover);
+}
+
+/* The current entry takes the Toggle's pressed look; its one-pixel edge carries it to 3:1 without colour. */
+.side-navigation__entry[aria-current="page"] {
+  color: var(--color-ink);
+  background: var(--color-tint);
+  box-shadow: inset 0 0 0 var(--line-width) var(--color-hairline-input);
+}
+
+.side-navigation__entry:is(:focus-visible, [data-force~="focus"]) {
+  outline: var(--focus-ring-width) solid var(--focus-ring-color);
+  outline-offset: var(--focus-ring-offset);
+}
+
+/* A numeral, so the monospace earns its place; tabular, so counts line up down the column. */
+.side-navigation__count {
+  flex-shrink: 0;
+  font-family: var(--font-mono);
+  font-size: var(--text-label);
+  font-weight: var(--weight-label);
+  line-height: var(--leading-label);
+  font-variant-numeric: tabular-nums;
+  color: var(--color-ink-muted);
+}
+
+.side-navigation__entry[aria-current="page"] .side-navigation__count {
+  color: var(--color-ink-secondary);
+}
+
+/* The count's word is for assistive technology only; the numeral alone reads at a glance. */
+.side-navigation__count-label {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+
+.side-navigation__foot {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-3);
+  margin-block-start: auto;
+  padding-block-start: var(--space-4);
+  border-block-start: var(--line-width) solid var(--color-hairline);
+}
+
+.side-navigation__action {
+  margin: 0;
+  padding: var(--space-1) 0;
+  border: 0;
+  background: none;
+  font-family: var(--font-sans);
+  font-size: var(--text-link);
+  font-weight: var(--weight-link);
+  line-height: var(--leading-link);
+  letter-spacing: var(--tracking-link);
+  text-transform: var(--case-link);
+  color: var(--color-ink-secondary);
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+  transition: color var(--duration-fast) var(--ease-out);
+}
+
+.side-navigation__action:where(:hover, :active, [data-force~="hover"], [data-force~="active"]) {
+  color: var(--color-ink);
+}
+
+.side-navigation__action:is(:focus-visible, [data-force~="focus"]) {
+  outline: var(--focus-ring-width) solid var(--focus-ring-color);
+  outline-offset: var(--focus-ring-offset);
+}
+
+/* Wider than a column, as a band across a phone: entries wrap in rows under one another's groups. */
+@container side-navigation (min-width: 18rem) {
+  .side-navigation__body {
+    gap: var(--space-3);
+    padding: var(--space-4) var(--edge);
+    border-inline-end: 0;
+    border-block-end: var(--line-width) solid var(--color-hairline);
+  }
+
+  .side-navigation__group {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-1) var(--space-2);
+    margin-inline: calc(-1 * var(--space-2));
+  }
+
+  .side-navigation__group + .side-navigation__group {
+    padding-block-start: 0;
+    border-block-start: 0;
+  }
+
+  .side-navigation__entry {
+    padding: var(--space-1) var(--space-2);
+  }
+
+  .side-navigation__foot {
+    margin-block-start: 0;
+    padding-block-start: var(--space-3);
+  }
+}
+
+@media (forced-colors: active) {
+  .side-navigation__entry[aria-current="page"] {
+    forced-color-adjust: none;
+    background: Highlight;
+    color: HighlightText;
+  }
+
+  .side-navigation__entry[aria-current="page"] .side-navigation__count {
+    color: HighlightText;
+  }
+}
