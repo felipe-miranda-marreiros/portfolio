@@ -201,7 +201,7 @@
     color: HighlightText;
   }
 
-  /* Opting out keeps the authored ring colour, which can vanish against the system's Highlight. */
+  /* Opting out also keeps the authored ring colour, which can vanish against the system background around it. */
   .side-navigation__entry[aria-current="page"]:is(:focus-visible, [data-force~="focus"]) {
     outline-color: CanvasText;
   }
