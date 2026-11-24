@@ -2,11 +2,12 @@
 
 Frontend design work uses the `impeccable` skill (`.claude/skills/impeccable/`), with product context in `PRODUCT.md`.
 
-## Components before Pages
+## Components before Pages and Screens
 
-- Build the design system and its components first; compose Pages only from components that already exist.
-- Never build a Page, or a Section of one, before the components it needs exist. A Page that needs a missing component
-  waits for that component's PR.
+- Build the design system and its components first; compose Pages and the CMS's Screens only from
+  components that already exist.
+- Never build a Page or a Screen, or a Section of one, before the components it needs exist. A Page or Screen that
+  needs a missing component waits for that component's PR.
 - A component takes every visual value from design tokens, never from hardcoded values, so About me's Visual language
   can restyle the shared navigation, language toggle and Footer through tokens alone.
 - A component renders Content it is given and holds no visible text of its own (see `PRODUCT.md`).
@@ -27,7 +28,8 @@ Work happens on the prototype (see Prototype), which every Impeccable command ta
 3. **States pass.** Across the whole prototype: `polish` for missing or inconsistent states, `harden` for long content,
    missing content and both languages, `animate` for state transitions, `colorize` for state contrast, and `audit` for
    WCAG 2.2 AA.
-4. **Pages.** Compose prototype Pages from the prototype's components. `extract` applies only from here on.
+4. **Pages and Screens.** Compose prototype Pages and CMS Screens from the prototype's components. `extract` applies
+   only from here on.
 
 ## Design review
 
@@ -50,7 +52,7 @@ following the prototype.
 
 ```
 prototype/
-├── index.html          # links to every token and component page, and to the Pages
+├── index.html          # links to every token and component page, to the Pages and to the Screens
 ├── index.css           # the index's own styles: its grid's columns and areas, and the token specimens
 ├── index.js            # builds the colour swatches and the component cells from lists; add a component there
 ├── tokens.css          # @imports every file in tokens/
@@ -63,6 +65,7 @@ prototype/
 │   └── home/
 │       ├── home.css    # the Page's own layout only, from tokens; everything else comes from its components
 │       └── index.html  # the Page, composed only from existing components
+├── cms/                # the CMS's Screens, one folder per Screen, like a Page's
 └── components/
     ├── specimen.css    # the chrome every component page shares; not a component
     └── button/
@@ -74,13 +77,15 @@ prototype/
 
 - One folder per component, with its own files and its own prototype pages; never put several components in one file.
 - `about-me.html` exists only for a component About me shows. A component the Owner keeps to the Portfolio, such as
-  the Panel grid, has none, and its brief records why.
+  the Panel grid, has none, and its brief records why. A component only the CMS shows has none
+  either: the CMS uses the Portfolio's Visual language.
 - A prototype page that would exceed the file size hook's limit splits by variant, such as
   `about-me-multi-line.html` beside `about-me.html`, linked from it, so every state still shows on each theme or band.
 - Each page links only the files it needs. A component page links `tokens.css` (and `about-me/tokens.css` on an About
   me page), `components/specimen.css` and its components' files. A Page links `tokens.css` (and `about-me/tokens.css`
   on About me's Page), `pages/page.css`, its components' files, its own CSS, and `theme.css` and `theme.js` when it has
-  the theme switch.
+  the theme switch. A Screen links `tokens.css`, its components' files, its own CSS, and
+  `theme.css` and `theme.js`.
 - Prototype pages may hold placeholder text to show a component; components themselves still hold none.
 
 ## Impeccable artifacts
