@@ -29,6 +29,8 @@
   --section-rule-gap: var(--space-6);
   /* Home's facts panel column, from 68rem; the Masthead takes the rest, so its role line wraps least. */
   --home-panel-width: 22rem;
+  /* The CMS's side navigation column: wide enough for its longest entry beside a two-digit Draft count. */
+  --side-navigation-width: 15rem;
 
   --content-max: 76rem;
   --gutter: clamp(1.25rem, 0.5rem + 3.5vw, 3rem);
