@@ -28,8 +28,9 @@ or Published with a Draft over it; what is still missing to publish; and whether
 On 2026-11-24 the Owner chose, from structured options:
 
 - Desktop first, over equal priority with the phone and desktop only.
-- Navigation by Page (Home, Experience, About me, Footer, Site for CVs and SEO metadata), over by type of Content item
-  and one filtered list.
+- Navigation by Page, over by type of Content item and one filtered list: the Pages (Home, Experience, About me, Not
+  found), then the Footer, then Site for the CV and the shared labels (navigation, language toggle and theme switch
+  labels). Each Page lists its own SEO metadata, over grouping it under Site.
 - English and Brazilian Portuguese side by side in each field, over language tabs.
 - A full preview Screen behind an Edit | Preview switch, over a live split and both languages at a reduced scale.
 - A fixed action bar with the item's state and publish feedback, over publishing a whole Page at once.
@@ -43,8 +44,8 @@ On 2026-11-24 the Owner chose, from structured options:
 - **Sign-in:** email and password. States: wrong credentials, too many attempts, and an expired session that returns
   the Owner here with a notice. Links to password reset: request a link by email (sent confirmation), then set a new
   password (error, expired link).
-- **Content list:** a side navigation by Page. Each Page lists its Content items grouped by Section, each with its
-  state. A Section that holds several items has a New action. Roles and education entries follow date order; core
+- **Content list:** a side navigation: the Pages, then the Footer, then Site. Each Page lists its Content items
+  grouped by Section, then its SEO metadata, each with its state. A Section that holds several items has a New action. Roles and education entries follow date order; core
   technologies and Footer links are reordered by hand. The public repository link has no delete.
 - **Editor:** a header with the item's name, its state and the Edit | Preview switch. Text fields show English and
   Brazilian Portuguese side by side and flag a missing translation on the field itself; language-neutral fields
