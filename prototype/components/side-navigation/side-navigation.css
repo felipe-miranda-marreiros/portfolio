@@ -199,4 +199,9 @@
   .side-navigation__entry[aria-current="page"] .side-navigation__count {
     color: HighlightText;
   }
+
+  /* Opting out keeps the authored ring colour, which can vanish against the system's Highlight. */
+  .side-navigation__entry[aria-current="page"]:is(:focus-visible, [data-force~="focus"]) {
+    outline-color: CanvasText;
+  }
 }
