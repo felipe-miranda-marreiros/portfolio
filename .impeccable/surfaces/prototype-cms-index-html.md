@@ -32,6 +32,9 @@ On 2026-11-24 the Owner chose, from structured options:
   found), then the Footer, then Site for the CV and the shared labels (navigation, language toggle and theme switch
   labels). Each Page lists its own SEO metadata, over grouping it under Site.
 - The theme switch at the foot of the side navigation, beside sign-out, over a top CMS bar.
+- Side navigation entries as rows, the current one in the Toggle's pressed look, each ending in how many of its
+  Content items hold a Draft (a new item or a Draft over a Published one), over a quiet underlined list and rows with
+  no counts. An entry with no Drafts shows no count.
 - English and Brazilian Portuguese side by side in each field, over language tabs.
 - A full preview Screen behind an Edit | Preview switch, over a live split and both languages at a reduced scale.
 - A fixed action bar with the item's state and publish feedback, over publishing a whole Page at once.
