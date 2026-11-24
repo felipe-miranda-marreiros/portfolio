@@ -138,6 +138,13 @@ const components = [
     label: "Footer link states",
     states: ["default", "hover", "focus", "active", "long content"],
   },
+  {
+    slug: "side-navigation",
+    name: "Side navigation",
+    note: "The CMS's way between Screens: each entry with its Drafts, the theme switch and sign-out at the foot. The CMS only.",
+    label: "Side navigation entry states",
+    states: ["default", "hover", "focus", "active", "current", "with Drafts", "long content"],
+  },
 ];
 
 // Built here rather than written in the page, so the page stays under the file size hook as components are added.

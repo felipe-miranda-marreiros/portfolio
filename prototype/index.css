@@ -126,8 +126,9 @@ a {
     grid-column: span 2;
   }
 
-  /* Full width on two columns and on three, so it never sits beside an empty track. */
-  .area-qualification-list {
+  /* Full width on two columns and on three, so they never sit beside an empty track. */
+  .area-qualification-list,
+  .area-side-navigation {
     grid-column: 1 / -1;
   }
 }
