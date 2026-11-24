@@ -35,7 +35,7 @@ A destination of the CMS, such as the sign-in or a Content item's editor. A Page
 _Avoid_: page, view
 
 **Visual language**:
-The look shared by a set of Pages. The Portfolio has one, About me has its own, and the CMS uses the Portfolio's.
+The look shared by a set of Pages or Screens. The Portfolio has one, About me has its own, and the CMS uses the Portfolio's.
 _Avoid_: theme, skin, style
 
 **Content**:
