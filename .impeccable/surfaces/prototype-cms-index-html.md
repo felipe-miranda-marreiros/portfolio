@@ -35,6 +35,8 @@ On 2026-11-24 the Owner chose, from structured options:
 - Side navigation entries as rows, the current one in the Toggle's pressed look, each ending in how many of its
   Content items hold a Draft (a new item or a Draft over a Published one), over a quiet underlined list and rows with
   no counts. An entry with no Drafts shows no count.
+- On a phone the side navigation becomes a band above the Screen, its entries wrapping and nothing hidden, over a
+  collapsed menu, as the Top bar does.
 - English and Brazilian Portuguese side by side in each field, over language tabs.
 - A full preview Screen behind an Edit | Preview switch, over a live split and both languages at a reduced scale.
 - A fixed action bar with the item's state and publish feedback, over publishing a whole Page at once.
