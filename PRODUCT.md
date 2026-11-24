@@ -58,7 +58,7 @@ values of them.
   the navigation, language toggle and Footer stay in the same place and behave the same; only their styling changes.
 - The theme switch belongs to the Portfolio's Visual language. About me has one theme, so the switch is absent there and
   the language toggle keeps its place.
-- Mobile and desktop have equal priority.
+- On the Portfolio, mobile and desktop have equal priority; the CMS is desktop first.
 - Built by the Owner alone with AI agents, no budget, no fixed deadline.
 
 ## Brand Commitments
