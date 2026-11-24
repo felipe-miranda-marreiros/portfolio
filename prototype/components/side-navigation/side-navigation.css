@@ -35,8 +35,17 @@
   list-style: none;
 }
 
+/* The rule sits on the content edge, inside the group's outward margin, so it matches the foot's. */
 .side-navigation__group + .side-navigation__group {
+  position: relative;
   padding-block-start: var(--space-4);
+}
+
+.side-navigation__group + .side-navigation__group::before {
+  content: "";
+  position: absolute;
+  inset-block-start: 0;
+  inset-inline: var(--space-3);
   border-block-start: var(--line-width) solid var(--color-hairline);
 }
 
@@ -164,7 +173,10 @@
 
   .side-navigation__group + .side-navigation__group {
     padding-block-start: 0;
-    border-block-start: 0;
+  }
+
+  .side-navigation__group + .side-navigation__group::before {
+    content: none;
   }
 
   .side-navigation__entry {
