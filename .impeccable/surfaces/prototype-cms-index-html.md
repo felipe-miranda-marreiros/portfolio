@@ -37,6 +37,8 @@ On 2026-11-24 the Owner chose, from structured options:
   no counts. An entry with no Drafts shows no count.
 - On a phone the side navigation becomes a band above the Screen, its entries wrapping and nothing hidden, over a
   collapsed menu, as the Top bar does.
+- On 2026-11-25, the state indicator as a tag in the Chip's look: Published tinted, and a Draft, new or over a
+  Published version, outlined in full ink, over a drawn mark before a label and words alone.
 - English and Brazilian Portuguese side by side in each field, over language tabs.
 - A full preview Screen behind an Edit | Preview switch, over a live split and both languages at a reduced scale.
 - A fixed action bar with the item's state and publish feedback, over publishing a whole Page at once.
@@ -83,6 +85,7 @@ on top of the rendered Page.
 
 ## Unresolved
 
-The side navigation is built (`prototype/components/side-navigation/`); the other new components and every Screen
-are not. Which mechanism signs the Owner in, saves Drafts and carries a publish to the Portfolio is
-settled in the ADRs after these Screens; the Screens show only states, never a mechanism.
+The side navigation and the state indicator are built (`prototype/components/side-navigation/`,
+`state-indicator/`); the other new components and every Screen are not. Which mechanism signs the Owner in, saves
+Drafts and carries a publish to the Portfolio is settled in the ADRs after these Screens; the Screens show only
+states, never a mechanism.
