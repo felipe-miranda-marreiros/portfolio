@@ -1,4 +1,4 @@
-/** State tokens shared by every component: focus ring, disabled, loading, error and the hover lines. */
+/** State tokens shared by every component: focus ring, disabled, loading, error, missing and the hover lines. */
 :root {
   --focus-ring-width: 2px;
   --focus-ring-offset: 2px;
@@ -16,13 +16,17 @@
   --error-line-width: var(--line-width);
   --error-line-style: solid;
   --error-weight: var(--weight-body);
+
+  --missing-line-style: dashed;
 }
 
-/* Forced colours drop the error hue, so the error line and message take a shape and a weight instead. */
+/* Forced colours drop the error hue, so the error line and message take a shape and a weight instead, and a missing
+   translation's edge turns dotted so it can't pass for an error's dashed one. */
 @media (forced-colors: active) {
   :root {
     --error-line-width: 2px;
     --error-line-style: dashed;
     --error-weight: var(--weight-control);
+    --missing-line-style: dotted;
   }
 }
