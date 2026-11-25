@@ -43,8 +43,8 @@ On 2026-11-24 the Owner chose, from structured options:
 - On 2026-11-25, Content item rows as two-line ruled rows: the name over a muted monospace detail that tells similar
   items apart (a role's period, a link's address), the state at the end and the Link's arrow on hover, over one-line
   ruled rows and the Side navigation's rounded entries. An item with nothing to tell it apart, such as a Page's SEO
-  metadata, has no detail and stays one line; the detail is set as-is rather than uppercase, so an address keeps its
-  case.
+  metadata, has no detail and stays one line; the detail is a label, set as-is rather than uppercase, so an address
+  keeps its case, and monospace stays for labels only.
 - English and Brazilian Portuguese side by side in each field, over language tabs.
 - A full preview Screen behind an Edit | Preview switch, over a live split and both languages at a reduced scale.
 - A fixed action bar with the item's state and publish feedback, over publishing a whole Page at once.
