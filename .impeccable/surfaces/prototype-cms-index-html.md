@@ -46,7 +46,7 @@ On 2026-11-24 the Owner chose, from structured options:
   metadata, has no detail and stays one line; the detail is a label, set as-is rather than uppercase, so an address
   keeps its case, and monospace stays for labels only.
 - English and Brazilian Portuguese side by side in each field, over language tabs. The legend names the field in the
-  Text field's label; each column's language, named in English as the CMS is English only, is a muted monospace
+  Text field's label; each column's language, named in English as the CMS is English only, is a Secondary Ink monospace
   uppercase label under it, a sub-label rather than the field's label.
 - On 2026-11-25, a missing translation flagged by a Missing tag in the Draft tag's look beside the language's name
   and a dashed input edge, over a quiet note under the input and one control split in two. In forced colours, where
