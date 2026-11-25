@@ -167,6 +167,7 @@ spacing:
   section-rule-gap: "2rem"
   home-panel-width: "22rem"
   side-navigation-width: "15rem"
+  content-item-row-text-min: "12rem"
   about-me-toggle-inset: "0px"
   about-me-section-rule-gap: "0px"
 ---
@@ -256,7 +257,8 @@ at a lower alpha or mixed into the ground, and error is the only hue.
 - **Hairline** (10% of the ink): panel-grid borders, the Facts panel's border and the rule under its lead, the rule
   between role entries and between Qualification list items, the rule above a Section heading, the rules under the top
   bar and above the footer, the Footer's rule between its repository link and the rest, the Side navigation's
-  edge and the rules between its groups and above its foot, and the rules above and between Content item rows.
+  edge and the rules between its groups and above its foot, and the rules above, between and below Content item
+  rows.
 - **Hairline Hover** (26%): the brightened edge of a hovered or focused panel and of a hovered secondary button.
 - **Hairline Control** (22%): the outline of secondary controls, the theme switch and swatch edges.
 - **Hairline Input** (52% ink on paper, 44% bone on night): input borders, which identify the control and so meet 3:1
@@ -357,7 +359,7 @@ monospace that labels facts the way a codebase labels things: commands, tags, co
 - **Headline** (700, fluid up to 3rem, line-height 1.05, -0.03em): Section titles, the Masthead's role line and the
   Facts panel's role line.
 - **Title** (600, 1.25rem, line-height 1.3, -0.01em): the Masthead's name, role titles (the Role entry's), panel titles,
-  list rows and the Footer's title.
+  a Qualification list item's title and the Footer's title.
 - **Lede** (400, fluid 1.125rem to 1.25rem, line-height 1.4): the supporting line under a Page title and the
   Masthead's summary, in secondary ink, measure 52ch.
 - **Body** (400, 1rem, line-height 1.6): summaries and supporting lines in secondary ink, measure 68ch; also the value
@@ -384,8 +386,8 @@ the Portfolio they restate the hierarchy above; both sets name them, so About me
 them.
 
 ### Named Rules
-**The Mono Labels Rule.** Monospace sets labels, tags, chips and numerals, never sentences or headings, and never as an
-eyebrow above a heading: the heading carries its own weight.
+**The Mono Labels Rule.** Monospace sets labels, tags, chips, numerals and addresses, never sentences or headings,
+and never as an eyebrow above a heading: the heading carries its own weight.
 
 ### About me
 
@@ -594,13 +596,15 @@ Built in the prototype (`prototype/components/content-item-row/`): one Content i
 whole row a link into its editor. The CMS's only, with no About me version.
 - **Rows:** a list on a Hairline rule, each row ending in another, padding 0.75rem. The name in the link role
   (Secondary Ink), over a detail 0.25rem below that tells similar items apart, such as a role's period or a link's
-  address: Martian Mono at label size in Muted Ink, set as-is because an address's case matters. An item with nothing
-  to tell it apart has no detail. The State indicator sits at the end, on the name's baseline, and never shrinks.
+  address: Martian Mono at label size and body weight (`--weight-chip`) in Muted Ink, set as-is because an address's
+  case matters. An item with nothing to tell it apart, such as a Page's SEO metadata, has no detail and stays one
+  line. The State indicator sits at the end, on the name's baseline, and never shrinks.
 - **Hover, focus and active:** full ink on the Wash, and the Link's arrow appears 0.75rem after the state and nudges
   2px; its room is kept at rest, so the state doesn't move. Active looks like hover; the row doesn't sink.
   **Focus:** the shared 2px ink ring at 2px offset. **Disabled:** none; every item can be opened.
-- **Narrow rows:** when the name and the state don't fit side by side (the text keeps at least 12rem), the state wraps
-  under the text, 0.5rem below; a long name or address wraps rather than overflow a 320px screen.
+- **Narrow rows:** when the name and the state don't fit side by side (the text keeps at least 12rem,
+  `--content-item-row-text-min`), the state wraps under the text, 0.5rem below; a long name or address wraps rather
+  than overflow a 320px screen.
 - **Forced colours:** the arrow takes the system's link colour, as the Link's does, since its mask would otherwise be
   painted in the page colour.
 
