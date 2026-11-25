@@ -51,6 +51,9 @@ On 2026-11-24 the Owner chose, from structured options:
 - On 2026-11-25, a missing translation flagged by a Missing tag in the Draft tag's look beside the language's name
   and a dashed input edge, over a quiet note under the input and one control split in two. In forced colours, where
   an error takes a dashed 2px edge, the Missing edge turns dotted so it can't pass for an error.
+- On 2026-11-25, a period as a month and a year select for each end on one line with a dash between, over the same
+  selects with an Ended | Present toggle and typed dates. "Present" is the end year's first choice and hides the end
+  month; "No month" gives a year-only date; a single date, such as a certification's issue date, is one end.
 - A full preview Screen behind an Edit | Preview switch, over a live split and both languages at a reduced scale.
 - A fixed action bar with the item's state and publish feedback, over publishing a whole Page at once.
 - Email and password sign-in, with password reset, over a single external-account button.
@@ -96,7 +99,7 @@ on top of the rendered Page.
 
 ## Unresolved
 
-The side navigation, the state indicator, the Content item row and the bilingual field are built
-(`prototype/components/side-navigation/`, `state-indicator/`, `content-item-row/`, `bilingual-field/`); the other new
-components and every Screen are not. Which mechanism signs the Owner in, saves Drafts and carries a publish to the Portfolio is settled in
+The side navigation, the state indicator, the Content item row, the bilingual field and the period field are built
+(`prototype/components/side-navigation/`, `state-indicator/`, `content-item-row/`, `bilingual-field/`,
+`period-field/`); the other new components and every Screen are not. Which mechanism signs the Owner in, saves Drafts and carries a publish to the Portfolio is settled in
 the ADRs after these Screens; the Screens show only states, never a mechanism.
