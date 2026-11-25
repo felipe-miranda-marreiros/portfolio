@@ -130,7 +130,8 @@ a {
   .area-qualification-list,
   .area-side-navigation,
   .area-state-indicator,
-  .area-content-item-row {
+  .area-content-item-row,
+  .area-bilingual-field {
     grid-column: 1 / -1;
   }
 }
