@@ -56,7 +56,7 @@ const components = [
   {
     slug: "chip",
     name: "Chip",
-    note: "A short tag in the monospace, for technologies, token names and states. Static.",
+    note: "A short tag in the monospace, for technologies, token names and component states. Static.",
     label: "Chip cases",
     states: ["default", "numerals", "long content"],
   },
