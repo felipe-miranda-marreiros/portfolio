@@ -199,6 +199,14 @@
       "css": ".ds-chips { display: flex; flex-wrap: wrap; gap: var(--chip-gap); margin: 0; padding: 0; list-style: none; } .ds-chip { min-width: 0; padding: var(--chip-padding-block) var(--space-2); border: var(--chip-line-width) solid var(--color-hairline-control); border-radius: var(--radius-chip); background: var(--color-tint); color: var(--color-ink-secondary); font-family: var(--font-mono); font-size: var(--text-label); font-weight: var(--weight-chip); line-height: var(--leading-label); letter-spacing: var(--tracking-chip); font-variant-numeric: tabular-nums; overflow-wrap: anywhere; } @media (forced-colors: active) { .ds-chip { border-width: max(var(--chip-line-width), var(--line-width)); border-color: CanvasText; } }"
     },
     {
+      "name": "State indicator",
+      "kind": "chip",
+      "refersTo": "state-indicator",
+      "description": "A Content item's state in the CMS, in the Chip's look: Published is the Tint fill in Secondary Ink; a Draft, new or over a Published version, has no fill, full ink and a Hairline Input border. Static; the words are Content and carry the state. The CMS only. Built in prototype/components/state-indicator/.",
+      "html": "<span class=\"ds-state-indicator\" data-state=\"published\">Published</span> <span class=\"ds-state-indicator\" data-state=\"draft\">Draft</span> <span class=\"ds-state-indicator\" data-state=\"draft-over-published\">Published · Draft</span>",
+      "css": ".ds-state-indicator { display: inline-block; min-inline-size: 0; max-inline-size: 100%; padding: calc(var(--chip-padding-block) - var(--line-width)) calc(var(--space-2) - var(--line-width)); border: var(--line-width) solid transparent; border-radius: var(--radius-chip); background: var(--color-tint); color: var(--color-ink-secondary); font-family: var(--font-mono); font-size: var(--text-label); font-weight: var(--weight-chip); line-height: var(--leading-label); letter-spacing: var(--tracking-chip); font-variant-numeric: tabular-nums; overflow-wrap: anywhere; } .ds-state-indicator:is([data-state=\"draft\"], [data-state=\"draft-over-published\"]) { border-color: var(--color-hairline-input); background: transparent; color: var(--color-ink); } @media (forced-colors: active) { .ds-state-indicator { border-color: CanvasText; } }"
+    },
+    {
       "name": "Panel Grid Cell",
       "kind": "card",
       "refersTo": "panel-cell",
