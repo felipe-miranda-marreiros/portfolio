@@ -7,7 +7,7 @@
  *     <fieldset class="period-field__end"><legend class="period-field__name">…</legend>
  *       <div class="period-field__controls">
  *         <span class="period-field__select period-field__month"><select class="text-field__input" aria-label="…">
- *           <option value="">…</option><option value="01">…</option>…</select></span>
+ *           <option value="">…</option><option>…</option>…</select></span>
  *         <span class="period-field__select"><select class="text-field__input" aria-label="…">…</select></span>
  *     </div></fieldset>
  *     <span class="period-field__dash" aria-hidden="true">–</span>
