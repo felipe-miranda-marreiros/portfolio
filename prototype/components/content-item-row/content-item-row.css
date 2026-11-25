@@ -1,0 +1,122 @@
+/**
+ * Content item row: one Content item in the CMS's Content list, from tokens only. Its name over an optional detail
+ * that tells similar items apart (a role's period, a link's address), then its State indicator; the whole row leads
+ * into the editor, and the Link's arrow shows on hover and focus.
+ * Markup: <ul class="content-item-rows"><li><a class="content-item-row" href="…">
+ *   <span class="content-item-row__text"><span class="content-item-row__name">…</span>
+ *   <span class="content-item-row__detail">…</span></span>
+ *   <span class="content-item-row__end"><span class="state-indicator" data-state="…">…</span></span></a></li>…</ul>.
+ * An item with nothing to tell it apart has no detail. When the row is too narrow for the name beside the state, the
+ * state wraps under the text.
+ * `data-force` pins a state so the prototype page can show it without interaction.
+ */
+.content-item-rows {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  border-block-start: var(--line-width) solid var(--color-hairline);
+}
+
+.content-item-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: var(--space-2) var(--space-4);
+  padding: var(--space-3);
+  border-block-end: var(--line-width) solid var(--color-hairline);
+  color: var(--color-ink-secondary);
+  text-decoration: none;
+  -webkit-tap-highlight-color: transparent;
+  transition:
+    color var(--duration-fast) var(--ease-out),
+    background-color var(--duration-fast) var(--ease-out);
+}
+
+.content-item-row:where(
+  :hover,
+  :focus-visible,
+  :active,
+  [data-force~="hover"],
+  [data-force~="focus"],
+  [data-force~="active"]
+) {
+  background: var(--color-wash);
+  color: var(--color-ink);
+}
+
+.content-item-row:is(:focus-visible, [data-force~="focus"]) {
+  outline: var(--focus-ring-width) solid var(--focus-ring-color);
+  outline-offset: var(--focus-ring-offset);
+}
+
+.content-item-row__text {
+  display: grid;
+  flex: 1 1 12rem;
+  gap: var(--space-1);
+  min-inline-size: 0;
+}
+
+.content-item-row__name {
+  font-family: var(--font-sans);
+  font-size: var(--text-link);
+  font-weight: var(--weight-link);
+  line-height: var(--leading-link);
+  letter-spacing: var(--tracking-link);
+  text-transform: var(--case-link);
+  overflow-wrap: break-word;
+}
+
+/* Set as-is, like a chip, because a detail may be an address, whose case matters. */
+.content-item-row__detail {
+  font-family: var(--font-mono);
+  font-size: var(--text-label);
+  font-weight: var(--weight-chip);
+  line-height: var(--leading-label);
+  letter-spacing: var(--tracking-chip);
+  font-variant-numeric: tabular-nums;
+  color: var(--color-ink-muted);
+  overflow-wrap: anywhere;
+}
+
+.content-item-row__end {
+  display: flex;
+  flex: none;
+  align-items: center;
+  gap: var(--space-3);
+  max-inline-size: 100%;
+}
+
+.content-item-row__end::after {
+  content: "";
+  flex: none;
+  inline-size: var(--icon-size);
+  block-size: var(--icon-size);
+  margin-inline-end: var(--nudge);
+  background: currentColor;
+  mask: var(--icon-arrow) center / contain no-repeat;
+  opacity: 0;
+  transition:
+    opacity var(--duration-fast) var(--ease-out),
+    translate var(--duration-fast) var(--ease-out);
+}
+
+.content-item-row:where(
+    :hover,
+    :focus-visible,
+    :active,
+    [data-force~="hover"],
+    [data-force~="focus"],
+    [data-force~="active"]
+  )
+  .content-item-row__end::after {
+  opacity: 1;
+  translate: var(--nudge) 0;
+}
+
+/* Forced colours drop the Wash and repaint the arrow's masked background as Canvas; paint it in the link colour. */
+@media (forced-colors: active) {
+  .content-item-row__end::after {
+    background: LinkText;
+  }
+}
