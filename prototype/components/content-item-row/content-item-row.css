@@ -52,7 +52,7 @@
 
 .content-item-row__text {
   display: grid;
-  flex: 1 1 12rem;
+  flex: 1 1 var(--content-item-row-text-min);
   gap: var(--space-1);
   min-inline-size: 0;
 }
