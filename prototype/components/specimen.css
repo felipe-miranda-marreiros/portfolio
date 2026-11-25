@@ -295,6 +295,12 @@ a {
   border-top: 0;
 }
 
+/* One sample per row, at a Section's width, for a row whose ends carry meaning. */
+.states--rows {
+  display: grid;
+  grid-template-columns: minmax(0, 32rem);
+}
+
 /* A sample that fills its track, such as a row whose ends carry meaning. */
 .states__fill {
   align-self: stretch;
