@@ -196,7 +196,8 @@ through tokens alone; their place and behavior never change.
 - Dark by default, always; light a complete equal the visitor switches to; both WCAG 2.2 AA.
 - Monochrome: bone ink on near-black, ink on bone paper, secondary ink and hairlines by alpha steps of the ink.
 - No hued accent: the primary action is filled ink, every other button is outlined in a hairline, row links are
-  unboxed text (the Side navigation's entries are Toggle-like rows, which this doesn't cover), focus is an ink ring.
+  unboxed text (the Side navigation's Toggle-like entries and the Content item row, a whole row that leads into its
+  editor, are rows this doesn't cover), focus is an ink ring.
 - Bold display grotesk with tight tracking; monospace only for labels, tags, chips and numerals.
 - Hairline-bordered panel grids whose cells share borders, instead of cards and shadows.
 - Facts over the person: the role and seniority lead Home as its largest type, beside a hairline facts panel; the photo
@@ -277,8 +278,8 @@ at a lower alpha or mixed into the ground, and error is the only hue.
 ### Named Rules
 **The Ink Is The Action Rule.** There is no accent colour. The primary action is the ink filled, with the ground as its
 text: one per view. Secondary buttons are outlined in Hairline Control; row links stay unboxed (the Side navigation's
-entries are Toggle-like rows, which this rule doesn't cover). Focus is an ink ring. If a view needs colour to show
-what to do next, the hierarchy is wrong, not the palette.
+Toggle-like entries and the Content item row, a whole row that leads into its editor, are rows this rule doesn't cover).
+Focus is an ink ring. If a view needs colour to show what to do next, the hierarchy is wrong, not the palette.
 
 **The Alpha Steps Rule.** Secondary, muted, hairline and tint colours are always the ink mixed toward transparent at
 their fixed steps (84, 64, 26, 22, 10, 7, 4), and the Wash is the ink at 2% mixed into the ground; never new greys. The
