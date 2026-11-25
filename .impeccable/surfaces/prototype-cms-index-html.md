@@ -45,9 +45,12 @@ On 2026-11-24 the Owner chose, from structured options:
   ruled rows and the Side navigation's rounded entries. An item with nothing to tell it apart, such as a Page's SEO
   metadata, has no detail and stays one line; the detail is a label, set as-is rather than uppercase, so an address
   keeps its case, and monospace stays for labels only.
-- English and Brazilian Portuguese side by side in each field, over language tabs.
+- English and Brazilian Portuguese side by side in each field, over language tabs. The legend names the field in the
+  Text field's label; each column's language, named in English as the CMS is English only, is a muted monospace
+  uppercase label under it, a sub-label rather than the field's label.
 - On 2026-11-25, a missing translation flagged by a Missing tag in the Draft tag's look beside the language's name
-  and a dashed input edge, over a quiet note under the input and one control split in two.
+  and a dashed input edge, over a quiet note under the input and one control split in two. In forced colours, where
+  an error takes a dashed 2px edge, the Missing edge turns dotted so it can't pass for an error.
 - A full preview Screen behind an Edit | Preview switch, over a live split and both languages at a reduced scale.
 - A fixed action bar with the item's state and publish feedback, over publishing a whole Page at once.
 - Email and password sign-in, with password reset, over a single external-account button.
