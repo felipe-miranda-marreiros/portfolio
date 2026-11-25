@@ -249,13 +249,14 @@ at a lower alpha or mixed into the ground, and error is the only hue.
   paired with the float shadow.
 - **Secondary Ink** (84% of the ink): supporting lines, ledes, body copy in panels, resting row links, inactive
   switch options, the Qualification list's small heading and note, the Side navigation's resting entries and
-  sign-out, the Draft count on its current entry, and a Published State indicator's text.
-- **Muted Ink** (64% of the ink): metadata, captions, a panel's note and the Side navigation's Draft counts. Still AA
-  on the ground in both themes.
+  sign-out, the Draft count on its current entry, a Published State indicator's text, and a resting Content item
+  row's name.
+- **Muted Ink** (64% of the ink): metadata, captions, a panel's note, the Side navigation's Draft counts and a Content
+  item row's detail. Still AA on the ground in both themes, and on the Wash of a hovered row.
 - **Hairline** (10% of the ink): panel-grid borders, the Facts panel's border and the rule under its lead, the rule
   between role entries and between Qualification list items, the rule above a Section heading, the rules under the top
-  bar and above the footer, the Footer's rule between its repository link and the rest, and the Side navigation's
-  edge and the rules between its groups and above its foot.
+  bar and above the footer, the Footer's rule between its repository link and the rest, the Side navigation's
+  edge and the rules between its groups and above its foot, and the rules above and between Content item rows.
 - **Hairline Hover** (26%): the brightened edge of a hovered or focused panel and of a hovered secondary button.
 - **Hairline Control** (22%): the outline of secondary controls, the theme switch and swatch edges.
 - **Hairline Input** (52% ink on paper, 44% bone on night): input borders, which identify the control and so meet 3:1
@@ -265,8 +266,8 @@ at a lower alpha or mixed into the ground, and error is the only hue.
 - **Tint** (7%) and **Tint Hover** (4%): chip fills and a Published State indicator's, the chosen Toggle option, the
   pressed secondary button and the current Side navigation entry; the faint fill of a hovered secondary button and of
   a hovered Side navigation entry.
-- **Night Wash** and **Paper Wash** (2% of the ink mixed into the ground): the hovered or focused panel cell. Opaque,
-  because the cell covers the hairline drawn behind the grid.
+- **Night Wash** and **Paper Wash** (2% of the ink mixed into the ground): the hovered or focused panel cell and
+  Content item row. Opaque, because the cell covers the hairline drawn behind the grid.
 
 ### Error
 - **Error on Paper** and **Error on Night**: error borders and messages only, never decoration.
@@ -367,8 +368,9 @@ monospace that labels facts the way a codebase labels things: commands, tags, co
   also the size of row links, controls, field labels and the Qualification list's small heading, which take the
   control weight (600), kept apart from the title weight so each can change alone.
 - **Label** (Martian Mono 500, 0.6875rem, 0.08em, uppercase, tabular numerals): stat labels (the Facts panel's) and
-  dates (a Role entry's period, a Qualification list item's date). Inside chips, the State indicator and code, and in
-  the Side navigation's Draft counts (numerals only), the same mono size is set as-is, with no tracking or case change.
+  dates (a Role entry's period, a Qualification list item's date). Inside chips, the State indicator, a Content item
+  row's detail and code, and in the Side navigation's Draft counts (numerals only), the same mono size is set as-is,
+  with no tracking or case change.
 
 Headings hyphenate and, where the browser has no dictionary, break long words rather than overflow a narrow column: a
 Portuguese title such as "Responsabilidades" at display size must fit a 320px screen. Paragraphs wrap with a pretty rag.
@@ -522,13 +524,14 @@ row's key colour that thickens to 3px on hover, focus and press. The illustratio
 
 ## Components
 
-The Button, the Link, the Chip, the State indicator, the Toggle, the Top bar, the Side navigation, the Footer, the
-Text field, the Panel grid, the Page header, the Section heading, the Masthead, the Facts panel, the Role entry, the
-Qualification list and About me's Lineup are built in the prototype (`prototype/components/button/`, `link/`, `chip/`,
-`state-indicator/`, `toggle/`, `top-bar/`, `side-navigation/`, `footer/`, `text-field/`, `panel-grid/`,
-`page-header/`, `section-heading/`, `masthead/`, `facts-panel/`, `role-entry/`, `qualification-list/`, `lineup/`); the
-rest are the primitives the prototype's token specimens establish, to be confirmed by each component's own PR. Every
-component takes every visual value from tokens and holds no visible text.
+The Button, the Link, the Chip, the State indicator, the Content item row, the Toggle, the Top bar, the Side
+navigation, the Footer, the Text field, the Panel grid, the Page header, the Section heading, the Masthead, the Facts
+panel, the Role entry, the Qualification list and About me's Lineup are built in the prototype
+(`prototype/components/button/`, `link/`, `chip/`, `state-indicator/`, `content-item-row/`, `toggle/`, `top-bar/`,
+`side-navigation/`, `footer/`, `text-field/`, `panel-grid/`, `page-header/`, `section-heading/`, `masthead/`,
+`facts-panel/`, `role-entry/`, `qualification-list/`, `lineup/`); the rest are the primitives the prototype's token
+specimens establish, to be confirmed by each component's own PR. Every component takes every visual value from tokens
+and holds no visible text.
 
 ### Buttons
 - **Shape:** gently rounded (8px), Small text at the control weight (600), padding 0.5rem by 1rem, inside a one-pixel
@@ -585,6 +588,21 @@ editor's header and its action bar. The CMS's only, with no About me version.
   own; the look only ranks it.
 - **States:** none; it is a static tag, and a long label wraps inside it. In forced colours, where the Tint fill
   drops, every state takes a border in the system text colour, and the words tell them apart.
+
+### Content item row
+Built in the prototype (`prototype/components/content-item-row/`): one Content item in the CMS's Content list, the
+whole row a link into its editor. The CMS's only, with no About me version.
+- **Rows:** a list on a Hairline rule, each row ending in another, padding 0.75rem. The name in the link role
+  (Secondary Ink), over a detail 0.25rem below that tells similar items apart, such as a role's period or a link's
+  address: Martian Mono at label size in Muted Ink, set as-is because an address's case matters. An item with nothing
+  to tell it apart has no detail. The State indicator sits at the end, on the name's baseline, and never shrinks.
+- **Hover, focus and active:** full ink on the Wash, and the Link's arrow appears 0.75rem after the state and nudges
+  2px; its room is kept at rest, so the state doesn't move. Active looks like hover; the row doesn't sink.
+  **Focus:** the shared 2px ink ring at 2px offset. **Disabled:** none; every item can be opened.
+- **Narrow rows:** when the name and the state don't fit side by side (the text keeps at least 12rem), the state wraps
+  under the text, 0.5rem below; a long name or address wraps rather than overflow a 320px screen.
+- **Forced colours:** the arrow takes the system's link colour, as the Link's does, since its mask would otherwise be
+  painted in the page colour.
 
 ### Panel grid cells
 Built in the prototype (`prototype/components/panel-grid/`): the Panel grid, the Portfolio's only; About me never shows
