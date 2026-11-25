@@ -1,8 +1,9 @@
 /**
  * State indicator: a Content item's state in the CMS, as a tag in the Chip's look, from tokens only. Published is the
  * tinted tag in Secondary Ink; a Draft, new or over a Published version, is outlined in Hairline Input in full ink, so
- * what isn't published yet stands out. Static: it has no interactive states.
- * Markup: <span class="state-indicator" data-state="published|draft|draft-over-published">…</span>. The words are
+ * what isn't published yet stands out. A translation a field is missing takes the Draft's look. Static: it has no
+ * interactive states.
+ * Markup: <span class="state-indicator" data-state="published|draft|draft-over-published|missing">…</span>. The words are
  * Content and carry the state on their own; the look only ranks it.
  */
 .state-indicator {
@@ -23,7 +24,7 @@
   overflow-wrap: anywhere;
 }
 
-.state-indicator:is([data-state="draft"], [data-state="draft-over-published"]) {
+.state-indicator:is([data-state="draft"], [data-state="draft-over-published"], [data-state="missing"]) {
   border-color: var(--color-hairline-input);
   background: transparent;
   color: var(--color-ink);
