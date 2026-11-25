@@ -249,23 +249,26 @@ at a lower alpha or mixed into the ground, and error is the only hue.
 ### Neutral
 - **Night** and **Paper**: the ground of the dark and light themes; also the text colour on a filled-ink action.
 - **Night Raised** and **Paper Raised**: the surface for anything that floats above the page (menus, popovers), always
-  paired with the float shadow, except a native select's list, which the browser draws and which can't take it.
+  paired with the float shadow, except a native select's list, which the browser draws and which can't take it, and a
+  photo's ground while it loads (the Masthead's, the Image field's thumbnail), which doesn't float.
 - **Secondary Ink** (84% of the ink): supporting lines, ledes, body copy in panels, resting row links, inactive
   switch options, the Qualification list's small heading and note, the Side navigation's resting entries and
   sign-out, the Draft count on its current entry, a Published State indicator's text, a resting Content item
   row's name, a Bilingual field's language names and a Period field's end names.
 - **Muted Ink** (64% of the ink): metadata, captions, a panel's note, the Side navigation's Draft counts, a Content item
-  row's detail, a Period field's dash and an Image field's detail. Still AA on the ground in both themes, and on the Wash of a hovered row.
+  row's detail, a Period field's dash and an Image field's detail. Still AA on the ground in both themes, and on the
+  Wash of a hovered row.
 - **Hairline** (10% of the ink): panel-grid borders, the Facts panel's border and the rule under its lead, the rule
   between role entries and between Qualification list items, the rule above a Section heading, the rules under the top
   bar and above the footer, the Footer's rule between its repository link and the rest, the Side navigation's
-  edge and the rules between its groups and above its foot, and the rules above, between and below Content item
-  rows.
+  edge and the rules between its groups and above its foot, the rules above, between and below Content item rows, and
+  the edge of the Masthead's photo and of the Image field's thumbnail.
 - **Hairline Hover** (26%): the brightened edge of a hovered or focused panel and of a hovered secondary button.
 - **Hairline Control** (22%): the outline of secondary controls, the theme switch and swatch edges.
 - **Hairline Input** (52% ink on paper, 44% bone on night): input borders, which identify the control and so meet 3:1
   against the ground; the inner edge of the chosen Toggle option and of the current Side navigation entry, which carries
-  that state to 3:1; and the edge of a Draft or Missing State indicator. A hovered input's border steps up to full ink
+  that state to 3:1; the edge of a Draft or Missing State indicator; and the Image field's file row and its empty
+  thumbnail's dashed edge. A hovered input's border steps up to full ink
   (`--color-input-hover`).
 - **Tint** (7%) and **Tint Hover** (4%): chip fills and a Published State indicator's, the chosen Toggle option, the
   pressed secondary button and the current Side navigation entry; the faint fill of a hovered secondary button and of
@@ -374,7 +377,8 @@ monospace that labels facts the way a codebase labels things: commands, tags, co
 - **Label** (Martian Mono 500, 0.6875rem, 0.08em, uppercase, tabular numerals): stat labels (the Facts panel's), dates
   (a Role entry's period, a Qualification list item's date), a Bilingual field's language names and a Period field's end
   names. Inside chips, the State indicator, a Content item row's detail, an Image field's detail and code, and in the
-  Side navigation's Draft counts (numerals only), the same mono size is set as-is, with no tracking or case change.
+  Side navigation's Draft counts (numerals only), the same mono size is set as-is, at the body weight
+  (`--weight-chip`), with no tracking or case change.
 
 Headings hyphenate and, where the browser has no dictionary, break long words rather than overflow a narrow column: a
 Portuguese title such as "Responsabilidades" at display size must fit a 320px screen. Paragraphs wrap with a pretty rag.
@@ -490,7 +494,8 @@ alone, without the illustration slot.
 Flat by default. Depth comes from hairlines and alpha tints, not shadows: a hovered or focused panel brightens its edge
 to Hairline Hover over the Wash, a hovered secondary button gains Tint Hover. Only a surface that floats above the page
 (menu, popover) takes the raised surface colour and the float shadow; a native select's list takes the colour alone,
-since the browser draws it and it can't take the shadow. Nothing glows.
+since the browser draws it and it can't take the shadow, and so does a photo's ground while it loads, which doesn't
+float. Nothing glows.
 
 ### Shadow Vocabulary
 - **Float** (`box-shadow: 0 0 0 1px <ring>, 0 12px 32px -12px <shadow>`): floating surfaces only. On night the ring is
@@ -825,20 +830,25 @@ alt text in English and Brazilian Portuguese, the CMS's only, with no About me v
 field's label and error, the Button and the Bilingual field. The Owner chose a file row over its alt text over a larger
 preview beside the alt text and a large preview stage.
 - **Order:** a fieldset whose legend, in the Text field's label style, names the image, then the file row, then the
-  error, 0.5rem apart, then the alt text, a Bilingual field 1.25rem under the row. Every word is Content.
-- **File row:** a Hairline Input border (1px), 8px corners, 0.75rem padding. In it, 1rem apart: the image at its size
+  error, 0.5rem apart, then the alt text, a Bilingual field 1.25rem under the row, or under the error when there is
+  one. Every word is Content.
+- **File row:** a Hairline Input border (1px), 8px corners, 0.75rem padding. In it, 1rem apart, and 0.75rem when the
+  buttons wrap under the file: the image at its size
   on Home, 4rem square (`--photo-size`) with 10px corners (`--radius-photo`) and a Hairline edge, on the Surface while
   it loads, its alt empty as the name beside it says what it is; the file's name in Body; under it, 0.25rem away, a
-  detail (type, pixels, size) in the Label role's mono, set as-is in Muted Ink; then Replace and Remove, secondary
+  detail (type, pixels, size) in Martian Mono at label size and body weight (`--weight-chip`), set as-is in Muted
+  Ink; then Replace and Remove, secondary
   Buttons 0.5rem apart. The buttons wrap under the file when the row is narrow; a long name wraps.
-- **Empty:** the row and the thumbnail's place turn dashed in Hairline Input, the name says there is no image, the
+- **Empty:** the row and the thumbnail's place take the missing line style (`--missing-line-style`), dashed, in
+  Hairline Input, the name says there is no image, the
   detail says what the field takes, one button chooses an image, and the alt text is disabled. An image is optional.
 - **Uploading:** the button that chose the file is busy, as the Button's loading state, Remove is disabled, and the
   detail shows the progress.
 - **Error:** a file that is turned down leaves the image as it was; a Small message in Error under the row names the
   file and says how to recover, tied to the button with `aria-describedby`.
 - **Alt text missing:** the Bilingual field's Missing tag and dashed edge, for each language without it.
-- **Forced colours:** where an error's line turns dashed at 2px, the empty row's edge turns dotted.
+- **Forced colours:** where an error's line turns dashed at 2px, the missing line style turns the empty row's edge
+  dotted.
 - **Disabled:** the whole fieldset at 0.4 opacity, once: its buttons and alt text don't dim again.
 
 ### Toggles
