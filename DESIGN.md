@@ -253,9 +253,9 @@ at a lower alpha or mixed into the ground, and error is the only hue.
 - **Secondary Ink** (84% of the ink): supporting lines, ledes, body copy in panels, resting row links, inactive
   switch options, the Qualification list's small heading and note, the Side navigation's resting entries and
   sign-out, the Draft count on its current entry, a Published State indicator's text, a resting Content item
-  row's name, and a Bilingual field's language names.
-- **Muted Ink** (64% of the ink): metadata, captions, a panel's note, the Side navigation's Draft counts and a Content
-  item row's detail. Still AA on the ground in both themes, and on the Wash of a hovered row.
+  row's name, a Bilingual field's language names and a Period field's end names.
+- **Muted Ink** (64% of the ink): metadata, captions, a panel's note, the Side navigation's Draft counts, a Content item
+  row's detail and a Period field's dash. Still AA on the ground in both themes, and on the Wash of a hovered row.
 - **Hairline** (10% of the ink): panel-grid borders, the Facts panel's border and the rule under its lead, the rule
   between role entries and between Qualification list items, the rule above a Section heading, the rules under the top
   bar and above the footer, the Footer's rule between its repository link and the rest, the Side navigation's
@@ -372,9 +372,9 @@ monospace that labels facts the way a codebase labels things: commands, tags, co
   also the size of row links, controls, field labels and the Qualification list's small heading, which take the
   control weight (600), kept apart from the title weight so each can change alone.
 - **Label** (Martian Mono 500, 0.6875rem, 0.08em, uppercase, tabular numerals): stat labels (the Facts panel's), dates
-  (a Role entry's period, a Qualification list item's date) and a Bilingual field's language names. Inside chips, the
-  State indicator, a Content item row's detail and code, and in the Side navigation's Draft counts (numerals only), the
-  same mono size is set as-is, with no tracking or case change.
+  (a Role entry's period, a Qualification list item's date), a Bilingual field's language names and a Period field's end
+  names. Inside chips, the State indicator, a Content item row's detail and code, and in the Side navigation's Draft
+  counts (numerals only), the same mono size is set as-is, with no tracking or case change.
 
 Headings hyphenate and, where the browser has no dictionary, break long words rather than overflow a narrow column: a
 Portuguese title such as "Responsabilidades" at display size must fit a 320px screen. Paragraphs wrap with a pretty rag.
@@ -529,13 +529,13 @@ row's key colour that thickens to 3px on hover, focus and press. The illustratio
 ## Components
 
 The Button, the Link, the Chip, the State indicator, the Content item row, the Toggle, the Top bar, the Side navigation,
-the Footer, the Text field, the Bilingual field, the Panel grid, the Page header, the Section heading, the Masthead, the
-Facts panel, the Role entry, the Qualification list and About me's Lineup are built in the prototype
+the Footer, the Text field, the Bilingual field, the Period field, the Panel grid, the Page header, the Section heading,
+the Masthead, the Facts panel, the Role entry, the Qualification list and About me's Lineup are built in the prototype
 (`prototype/components/button/`, `link/`, `chip/`, `state-indicator/`, `content-item-row/`, `toggle/`, `top-bar/`,
-`side-navigation/`, `footer/`, `text-field/`, `bilingual-field/`, `panel-grid/`, `page-header/`, `section-heading/`,
-`masthead/`, `facts-panel/`, `role-entry/`, `qualification-list/`, `lineup/`); the rest are the primitives the
-prototype's token specimens establish, to be confirmed by each component's own PR. Every component takes every visual
-value from tokens and holds no visible text.
+`side-navigation/`, `footer/`, `text-field/`, `bilingual-field/`, `period-field/`, `panel-grid/`, `page-header/`,
+`section-heading/`, `masthead/`, `facts-panel/`, `role-entry/`, `qualification-list/`, `lineup/`); the rest are the
+primitives the prototype's token specimens establish, to be confirmed by each component's own PR. Every component takes
+every visual value from tokens and holds no visible text.
 
 ### Buttons
 - **Shape:** gently rounded (8px), Small text at the control weight (600), padding 0.5rem by 1rem, inside a one-pixel
@@ -794,6 +794,28 @@ note under the field and one control split in two.
 - **Heads:** each is at least as tall as the Missing tag, so both fields start level whether or not a language is
   missing.
 - **Disabled:** the whole fieldset at 0.4 opacity.
+
+### Period field
+Built in the prototype (`prototype/components/period-field/`): when something started and when it ended, or that it's
+ongoing, the CMS's only, with no About me version. It is built from the Text field's label, hint, field and error. The
+Owner chose a month and a year select for each end on one line over the same selects with an Ended | Present Toggle
+and typed dates.
+- **Order:** a fieldset whose legend, in the Text field's label style, names the field, then an optional hint, then the
+  ends, then the error. Each end is a fieldset whose legend, in the Label role in Secondary Ink, names it (Start, End or
+  Issued), over a month and a year select 0.5rem apart. The two ends sit 1rem apart with a dash in Muted Ink between,
+  level with the selects' text, and the end wraps under the start when they don't fit. Dates are language-neutral, so
+  the field appears once. Every word is Content.
+- **Selects:** each is a Text field box sized to its longest choice, with tabular numerals and a chevron (0.875em, a 1.5
+  stroke with round ends, `--icon-chevron`) at its end, in the field's ink. They share the Text field's hover, focus,
+  error and disabled.
+- **Present:** the end year's first choice. It hides the end month, with no script.
+- **Year only:** "No month", the month's first choice, gives a year-only date.
+- **Single date:** one end and no dash, such as a certification's issue date.
+- **Error:** the end's selects take the error line, and a Small message in Error under the field says how to recover,
+  tied to them with `aria-describedby`.
+- **Forced colours:** the chevron takes the system text colour, since the mask that draws it would otherwise paint it
+  as the ground.
+- **Disabled:** the whole fieldset at 0.4 opacity, a not-allowed cursor on each select, no hover.
 
 ### Toggles
 Built in the prototype (`prototype/components/toggle/`): a segmented control with exactly one option chosen. The theme
