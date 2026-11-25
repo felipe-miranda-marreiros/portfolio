@@ -301,6 +301,12 @@ a {
   grid-template-columns: minmax(0, 32rem);
 }
 
+/* One sample per row, wide enough for a pair of columns side by side, such as a bilingual field. */
+.states--rows-wide {
+  display: grid;
+  grid-template-columns: minmax(0, 48rem);
+}
+
 /* A sample that fills its track, such as a row whose ends carry meaning. */
 .states__fill {
   align-self: stretch;
