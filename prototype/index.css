@@ -128,7 +128,8 @@ a {
 
   /* Full width on two columns and on three, so they never sit beside an empty track. */
   .area-qualification-list,
-  .area-side-navigation {
+  .area-side-navigation,
+  .area-state-indicator {
     grid-column: 1 / -1;
   }
 }
