@@ -148,7 +148,7 @@ const components = [
   {
     slug: "state-indicator",
     name: "State indicator",
-    note: "A Content item's state as a tag: Published tinted, a Draft outlined in full ink. Static. The CMS only.",
+    note: "A Content item's state as a tag: Published tinted, a Draft outlined with full-ink words. Static. The CMS only.",
     label: "State indicator cases",
     states: ["published", "draft", "draft over published", "long content"],
   },
