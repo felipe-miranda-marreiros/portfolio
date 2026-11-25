@@ -46,6 +46,8 @@ On 2026-11-24 the Owner chose, from structured options:
   metadata, has no detail and stays one line; the detail is a label, set as-is rather than uppercase, so an address
   keeps its case, and monospace stays for labels only.
 - English and Brazilian Portuguese side by side in each field, over language tabs.
+- On 2026-11-25, a missing translation flagged by a Missing tag in the Draft tag's look beside the language's name
+  and a dashed input edge, over a quiet note under the input and one control split in two.
 - A full preview Screen behind an Edit | Preview switch, over a live split and both languages at a reduced scale.
 - A fixed action bar with the item's state and publish feedback, over publishing a whole Page at once.
 - Email and password sign-in, with password reset, over a single external-account button.
@@ -91,7 +93,7 @@ on top of the rendered Page.
 
 ## Unresolved
 
-The side navigation, the state indicator and the Content item row are built
-(`prototype/components/side-navigation/`, `state-indicator/`, `content-item-row/`); the other new components and every
-Screen are not. Which mechanism signs the Owner in, saves Drafts and carries a publish to the Portfolio is settled in
+The side navigation, the state indicator, the Content item row and the bilingual field are built
+(`prototype/components/side-navigation/`, `state-indicator/`, `content-item-row/`, `bilingual-field/`); the other new
+components and every Screen are not. Which mechanism signs the Owner in, saves Drafts and carries a publish to the Portfolio is settled in
 the ADRs after these Screens; the Screens show only states, never a mechanism.
