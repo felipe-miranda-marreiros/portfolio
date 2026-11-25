@@ -1,5 +1,5 @@
 /**
- * Chip: a short tag (a technology, a token name, a state), from tokens only. Static: it has no interactive states.
+ * Chip: a short tag (a technology, a token name, a component state), from tokens only. Static: it has no interactive states.
  * Markup: <ul class="chips"><li class="chip">…</li></ul>. Text is set as-is, never cased, because names are exact.
  */
 .chips {
