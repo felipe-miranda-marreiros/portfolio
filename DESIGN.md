@@ -169,6 +169,7 @@ spacing:
   side-navigation-width: "15rem"
   content-item-row-text-min: "12rem"
   bilingual-field-column-min: "16rem"
+  image-field-meta-min: "10rem"
   about-me-toggle-inset: "0px"
   about-me-section-rule-gap: "0px"
 ---
@@ -377,8 +378,9 @@ monospace that labels facts the way a codebase labels things: commands, tags, co
 - **Label** (Martian Mono 500, 0.6875rem, 0.08em, uppercase, tabular numerals): stat labels (the Facts panel's), dates
   (a Role entry's period, a Qualification list item's date), a Bilingual field's language names and a Period field's end
   names. Inside chips, the State indicator, a Content item row's detail, an Image field's detail and code, and in the
-  Side navigation's Draft counts (numerals only), the same mono size is set as-is, at the body weight
-  (`--weight-chip`), with no tracking or case change.
+  Side navigation's Draft counts (numerals only), the same mono size is set as-is, with no tracking or case change: at
+  the body weight (`--weight-chip`) in chips, the State indicator and both details, at the Label weight in the Draft
+  counts.
 
 Headings hyphenate and, where the browser has no dictionary, break long words rather than overflow a narrow column: a
 Portuguese title such as "Responsabilidades" at display size must fit a 320px screen. Paragraphs wrap with a pretty rag.
@@ -833,15 +835,15 @@ preview beside the alt text and a large preview stage.
   error, 0.5rem apart, then the alt text, a Bilingual field 1.25rem under the row, or under the error when there is
   one. Every word is Content.
 - **File row:** a Hairline Input border (1px), 8px corners, 0.75rem padding. In it, 1rem apart, and 0.75rem when the
-  buttons wrap under the file: the image at its size
-  on Home, 4rem square (`--photo-size`) with 10px corners (`--radius-photo`) and a Hairline edge, on the Surface while
-  it loads, its alt empty as the name beside it says what it is; the file's name in Body; under it, 0.25rem away, a
-  detail (type, pixels, size) in Martian Mono at label size and body weight (`--weight-chip`), set as-is in Muted
-  Ink; then Replace and Remove, secondary
-  Buttons 0.5rem apart. The buttons wrap under the file when the row is narrow; a long name wraps.
-- **Empty:** the row and the thumbnail's place take the missing line style (`--missing-line-style`), dashed, in
-  Hairline Input, the name says there is no image, the
-  detail says what the field takes, one button chooses an image, and the alt text is disabled. An image is optional.
+  buttons wrap under the file: the image at its size on Home, 4rem square (`--photo-size`) with 10px corners
+  (`--radius-photo`) and a Hairline edge, on the Surface while it loads, its alt empty as the name beside it says what
+  it is; the file's name in Body; under it, 0.25rem away, a detail (type, pixels, size) in Martian Mono at label size
+  and body weight (`--weight-chip`), set as-is in Muted Ink; then Replace and Remove, secondary Buttons 0.5rem apart.
+  The buttons wrap under the file when the name and detail would be narrower than 10rem (`--image-field-meta-min`); a
+  long name wraps.
+- **Empty:** the row and the thumbnail's place take the missing line style (`--missing-line-style`), dashed, in Hairline
+  Input, the name says there is no image, the detail lists what the field takes as label terms, not a sentence (JPG ·
+  PNG · WebP · square · up to 5 MB), one button chooses an image, and the alt text is disabled. An image is optional.
 - **Uploading:** the button that chose the file is busy, as the Button's loading state, Remove is disabled, and the
   detail shows the progress.
 - **Error:** a file that is turned down leaves the image as it was; a Small message in Error under the row names the
