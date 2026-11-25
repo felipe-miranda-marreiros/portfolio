@@ -1,0 +1,212 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Bilingual field: long content · Portfolio prototype</title>
+    <link rel="preload" href="../../fonts/schibsted-grotesk.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="preload" href="../../fonts/martian-mono.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="stylesheet" href="../../tokens.css" />
+    <link rel="stylesheet" href="../specimen.css" />
+    <link rel="stylesheet" href="../text-field/text-field.css" />
+    <link rel="stylesheet" href="../state-indicator/state-indicator.css" />
+    <link rel="stylesheet" href="bilingual-field.css" />
+  </head>
+  <body>
+    <header class="specimen-bar">
+      <a href="../../index.html">Visual language</a>
+    </header>
+
+    <main>
+      <div class="specimen-intro">
+        <h1>Bilingual field: long content</h1>
+        <p>
+          The bilingual field with a summary several paragraphs long, and the fields stacked across a 320px phone, on
+          both themes, with placeholder words.
+        </p>
+      </div>
+
+      <div class="surfaces">
+        <section class="surface" data-scheme="dark" aria-labelledby="dark-title">
+          <h2 id="dark-title">Dark</h2>
+          <div class="variant">
+            <h3>Long content</h3>
+            <ul class="states states--rows-wide">
+              <li>
+                <fieldset class="bilingual-field states__fill">
+                  <legend class="text-field__label">Summary</legend>
+                  <p class="text-field__hint" id="d-long-content-hint">A few sentences on what the role was about.</p>
+                  <div class="bilingual-field__pair">
+                    <div class="bilingual-field__language">
+                      <div class="bilingual-field__head">
+                        <label class="bilingual-field__name" for="d-long-content-en">English</label>
+                      </div>
+                      <textarea class="text-field__input" id="d-long-content-en" aria-describedby="d-long-content-hint">A placeholder summary several paragraphs long, to show how a long value grows the field.
+
+A second paragraph, because summaries in the CMS can run to several of them.
+
+A third, shorter one.</textarea>
+                    </div>
+                    <div class="bilingual-field__language">
+                      <div class="bilingual-field__head">
+                        <label class="bilingual-field__name" for="d-long-content-pt">Português</label>
+                      </div>
+                      <textarea class="text-field__input" id="d-long-content-pt" lang="pt-BR" aria-describedby="d-long-content-hint">Um resumo placeholder com vários parágrafos, para mostrar como um valor longo faz o campo crescer, já que o português costuma ocupar mais espaço que o inglês.
+
+Um segundo parágrafo, porque os resumos no CMS podem ter vários deles.
+
+Um terceiro, mais curto.</textarea>
+                    </div>
+                  </div>
+                </fieldset>
+                <code>long content</code>
+              </li>
+            </ul>
+          </div>
+          <div class="variant">
+            <h3>320px phone</h3>
+            <div class="frame frame--phone frame--padded">
+              <fieldset class="bilingual-field">
+                <legend class="text-field__label">Summary</legend>
+                <p class="text-field__hint" id="d-phone-long-content-hint">A few sentences on what the role was about.</p>
+                <div class="bilingual-field__pair">
+                  <div class="bilingual-field__language">
+                    <div class="bilingual-field__head">
+                      <label class="bilingual-field__name" for="d-phone-long-content-en">English</label>
+                    </div>
+                    <textarea class="text-field__input" id="d-phone-long-content-en" aria-describedby="d-phone-long-content-hint">A placeholder summary several paragraphs long, to show how a long value grows the field.
+
+A second paragraph, because summaries in the CMS can run to several of them.
+
+A third, shorter one.</textarea>
+                  </div>
+                  <div class="bilingual-field__language">
+                    <div class="bilingual-field__head">
+                      <label class="bilingual-field__name" for="d-phone-long-content-pt">Português</label>
+                    </div>
+                    <textarea class="text-field__input" id="d-phone-long-content-pt" lang="pt-BR" aria-describedby="d-phone-long-content-hint">Um resumo placeholder com vários parágrafos, para mostrar como um valor longo faz o campo crescer, já que o português costuma ocupar mais espaço que o inglês.
+
+Um segundo parágrafo, porque os resumos no CMS podem ter vários deles.
+
+Um terceiro, mais curto.</textarea>
+                  </div>
+                </div>
+              </fieldset>
+              <fieldset class="bilingual-field">
+                <legend class="text-field__label">Summary</legend>
+                <p class="text-field__hint" id="d-phone-missing-hint">A few sentences on what the role was about.</p>
+                <div class="bilingual-field__pair">
+                  <div class="bilingual-field__language">
+                    <div class="bilingual-field__head">
+                      <label class="bilingual-field__name" for="d-phone-missing-en">English</label>
+                    </div>
+                    <textarea class="text-field__input" id="d-phone-missing-en" aria-describedby="d-phone-missing-hint">Placeholder summary of the role, a couple of sentences long, to show a filled multi-line value.</textarea>
+                  </div>
+                  <div class="bilingual-field__language" data-missing>
+                    <div class="bilingual-field__head">
+                      <label class="bilingual-field__name" for="d-phone-missing-pt">Português</label>
+                      <span class="state-indicator" data-state="missing" id="d-phone-missing-pt-missing">Missing</span>
+                    </div>
+                    <textarea class="text-field__input" id="d-phone-missing-pt" lang="pt-BR" aria-describedby="d-phone-missing-hint d-phone-missing-pt-missing"></textarea>
+                  </div>
+                </div>
+              </fieldset>
+            </div>
+          </div>
+        </section>
+
+        <section class="surface" data-scheme="light" aria-labelledby="light-title">
+          <h2 id="light-title">Light</h2>
+          <div class="variant">
+            <h3>Long content</h3>
+            <ul class="states states--rows-wide">
+              <li>
+                <fieldset class="bilingual-field states__fill">
+                  <legend class="text-field__label">Summary</legend>
+                  <p class="text-field__hint" id="l-long-content-hint">A few sentences on what the role was about.</p>
+                  <div class="bilingual-field__pair">
+                    <div class="bilingual-field__language">
+                      <div class="bilingual-field__head">
+                        <label class="bilingual-field__name" for="l-long-content-en">English</label>
+                      </div>
+                      <textarea class="text-field__input" id="l-long-content-en" aria-describedby="l-long-content-hint">A placeholder summary several paragraphs long, to show how a long value grows the field.
+
+A second paragraph, because summaries in the CMS can run to several of them.
+
+A third, shorter one.</textarea>
+                    </div>
+                    <div class="bilingual-field__language">
+                      <div class="bilingual-field__head">
+                        <label class="bilingual-field__name" for="l-long-content-pt">Português</label>
+                      </div>
+                      <textarea class="text-field__input" id="l-long-content-pt" lang="pt-BR" aria-describedby="l-long-content-hint">Um resumo placeholder com vários parágrafos, para mostrar como um valor longo faz o campo crescer, já que o português costuma ocupar mais espaço que o inglês.
+
+Um segundo parágrafo, porque os resumos no CMS podem ter vários deles.
+
+Um terceiro, mais curto.</textarea>
+                    </div>
+                  </div>
+                </fieldset>
+                <code>long content</code>
+              </li>
+            </ul>
+          </div>
+          <div class="variant">
+            <h3>320px phone</h3>
+            <div class="frame frame--phone frame--padded">
+              <fieldset class="bilingual-field">
+                <legend class="text-field__label">Summary</legend>
+                <p class="text-field__hint" id="l-phone-long-content-hint">A few sentences on what the role was about.</p>
+                <div class="bilingual-field__pair">
+                  <div class="bilingual-field__language">
+                    <div class="bilingual-field__head">
+                      <label class="bilingual-field__name" for="l-phone-long-content-en">English</label>
+                    </div>
+                    <textarea class="text-field__input" id="l-phone-long-content-en" aria-describedby="l-phone-long-content-hint">A placeholder summary several paragraphs long, to show how a long value grows the field.
+
+A second paragraph, because summaries in the CMS can run to several of them.
+
+A third, shorter one.</textarea>
+                  </div>
+                  <div class="bilingual-field__language">
+                    <div class="bilingual-field__head">
+                      <label class="bilingual-field__name" for="l-phone-long-content-pt">Português</label>
+                    </div>
+                    <textarea class="text-field__input" id="l-phone-long-content-pt" lang="pt-BR" aria-describedby="l-phone-long-content-hint">Um resumo placeholder com vários parágrafos, para mostrar como um valor longo faz o campo crescer, já que o português costuma ocupar mais espaço que o inglês.
+
+Um segundo parágrafo, porque os resumos no CMS podem ter vários deles.
+
+Um terceiro, mais curto.</textarea>
+                  </div>
+                </div>
+              </fieldset>
+              <fieldset class="bilingual-field">
+                <legend class="text-field__label">Summary</legend>
+                <p class="text-field__hint" id="l-phone-missing-hint">A few sentences on what the role was about.</p>
+                <div class="bilingual-field__pair">
+                  <div class="bilingual-field__language">
+                    <div class="bilingual-field__head">
+                      <label class="bilingual-field__name" for="l-phone-missing-en">English</label>
+                    </div>
+                    <textarea class="text-field__input" id="l-phone-missing-en" aria-describedby="l-phone-missing-hint">Placeholder summary of the role, a couple of sentences long, to show a filled multi-line value.</textarea>
+                  </div>
+                  <div class="bilingual-field__language" data-missing>
+                    <div class="bilingual-field__head">
+                      <label class="bilingual-field__name" for="l-phone-missing-pt">Português</label>
+                      <span class="state-indicator" data-state="missing" id="l-phone-missing-pt-missing">Missing</span>
+                    </div>
+                    <textarea class="text-field__input" id="l-phone-missing-pt" lang="pt-BR" aria-describedby="l-phone-missing-hint l-phone-missing-pt-missing"></textarea>
+                  </div>
+                </div>
+              </fieldset>
+            </div>
+          </div>
+        </section>
+      </div>
+    </main>
+
+    <footer class="foot">
+      <p>Design prototype. A reference for the front end, not production code. <a href="index.html">Back to every state</a>.</p>
+    </footer>
+  </body>
+</html>

@@ -1,0 +1,71 @@
+/**
+ * Bilingual field: one Content field in English and Brazilian Portuguese side by side, from tokens only. It composes
+ * the Text field's label, hint, input and error, and the State indicator for a missing translation. Each language is a
+ * column headed by its name; a missing one carries a Missing tag beside its name and a dashed input edge. Missing is
+ * not an error: the Draft still saves, and Publish waits for it.
+ * Markup: <fieldset class="bilingual-field"><legend class="text-field__label">…</legend>
+ *   <p class="text-field__hint" id="…-hint">…</p>
+ *   <div class="bilingual-field__pair"><div class="bilingual-field__language" data-missing>
+ *     <div class="bilingual-field__head"><label class="bilingual-field__name" for="…">…</label>
+ *     <span class="state-indicator" data-state="missing" id="…-missing">…</span></div>
+ *     <textarea class="text-field__input" id="…" lang="…" aria-describedby="…-hint …-missing"></textarea>
+ *     <p class="text-field__error" id="…-error">…</p></div>…</div></fieldset>.
+ * The legend names the pair, so each input's label is only its language. The columns stack when either would be
+ * narrower than `--bilingual-field-column-min`; side by side, their inputs start level.
+ */
+.bilingual-field {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+  min-inline-size: 0;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  color: var(--color-ink);
+}
+
+/* A floated legend leaves the fieldset's border and becomes a flex item, so it takes the column's gap like a label. */
+.bilingual-field > legend {
+  float: inline-start;
+  padding: 0;
+}
+
+.bilingual-field__pair {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, var(--bilingual-field-column-min)), 1fr));
+  gap: var(--space-4);
+}
+
+.bilingual-field__language {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+  min-inline-size: 0;
+}
+
+/* As tall as the Missing tag, so both inputs start level whether or not a language is missing. */
+.bilingual-field__head {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--space-1) var(--space-2);
+  min-block-size: calc(var(--text-label) * var(--leading-label) + 2 * var(--chip-padding-block));
+}
+
+.bilingual-field__name {
+  font-family: var(--font-mono);
+  font-size: var(--text-label);
+  font-weight: var(--weight-label);
+  line-height: var(--leading-label);
+  letter-spacing: var(--tracking-label);
+  text-transform: var(--case-label);
+  color: var(--color-ink-secondary);
+}
+
+.bilingual-field__language[data-missing] .text-field__input:not([aria-invalid="true"]) {
+  border-style: dashed;
+}
+
+.bilingual-field:disabled {
+  opacity: var(--disabled-opacity);
+}

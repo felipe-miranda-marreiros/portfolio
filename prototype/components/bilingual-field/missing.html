@@ -1,0 +1,230 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Bilingual field: missing · Portfolio prototype</title>
+    <link rel="preload" href="../../fonts/schibsted-grotesk.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="preload" href="../../fonts/martian-mono.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="stylesheet" href="../../tokens.css" />
+    <link rel="stylesheet" href="../specimen.css" />
+    <link rel="stylesheet" href="../text-field/text-field.css" />
+    <link rel="stylesheet" href="../state-indicator/state-indicator.css" />
+    <link rel="stylesheet" href="bilingual-field.css" />
+  </head>
+  <body>
+    <header class="specimen-bar">
+      <a href="../../index.html">Visual language</a>
+    </header>
+
+    <main>
+      <div class="specimen-intro">
+        <h1>Bilingual field: missing</h1>
+        <p>
+          The bilingual field with one translation missing, both missing (a new item), and a field with no hint, on both
+          themes, with placeholder words. Missing isn't an error: the Draft still saves, and Publish waits for it.
+        </p>
+      </div>
+
+      <div class="surfaces">
+        <section class="surface" data-scheme="dark" aria-labelledby="dark-title">
+          <h2 id="dark-title">Dark</h2>
+          <div class="variant">
+            <h3>Missing translations</h3>
+            <ul class="states states--rows-wide">
+              <li>
+                <fieldset class="bilingual-field states__fill">
+                  <legend class="text-field__label">Summary</legend>
+                  <p class="text-field__hint" id="d-missing-hint">A few sentences on what the role was about.</p>
+                  <div class="bilingual-field__pair">
+                    <div class="bilingual-field__language">
+                      <div class="bilingual-field__head">
+                        <label class="bilingual-field__name" for="d-missing-en">English</label>
+                      </div>
+                      <textarea class="text-field__input" id="d-missing-en" aria-describedby="d-missing-hint">Placeholder summary of the role, a couple of sentences long, to show a filled multi-line value.</textarea>
+                    </div>
+                    <div class="bilingual-field__language" data-missing>
+                      <div class="bilingual-field__head">
+                        <label class="bilingual-field__name" for="d-missing-pt">Português</label>
+                        <span class="state-indicator" data-state="missing" id="d-missing-pt-missing">Missing</span>
+                      </div>
+                      <textarea class="text-field__input" id="d-missing-pt" lang="pt-BR" aria-describedby="d-missing-hint d-missing-pt-missing"></textarea>
+                    </div>
+                  </div>
+                </fieldset>
+                <code>missing</code>
+              </li>
+              <li>
+                <fieldset class="bilingual-field states__fill">
+                  <legend class="text-field__label">Summary</legend>
+                  <p class="text-field__hint" id="d-missing-both-hint">A few sentences on what the role was about.</p>
+                  <div class="bilingual-field__pair">
+                    <div class="bilingual-field__language" data-missing>
+                      <div class="bilingual-field__head">
+                        <label class="bilingual-field__name" for="d-missing-both-en">English</label>
+                        <span class="state-indicator" data-state="missing" id="d-missing-both-en-missing">Missing</span>
+                      </div>
+                      <textarea class="text-field__input" id="d-missing-both-en" aria-describedby="d-missing-both-hint d-missing-both-en-missing"></textarea>
+                    </div>
+                    <div class="bilingual-field__language" data-missing>
+                      <div class="bilingual-field__head">
+                        <label class="bilingual-field__name" for="d-missing-both-pt">Português</label>
+                        <span class="state-indicator" data-state="missing" id="d-missing-both-pt-missing">Missing</span>
+                      </div>
+                      <textarea class="text-field__input" id="d-missing-both-pt" lang="pt-BR" aria-describedby="d-missing-both-hint d-missing-both-pt-missing"></textarea>
+                    </div>
+                  </div>
+                </fieldset>
+                <code>missing both</code>
+              </li>
+              <li>
+                <fieldset class="bilingual-field states__fill">
+                  <legend class="text-field__label">Summary</legend>
+                  <p class="text-field__hint" id="d-missing-focus-hint">A few sentences on what the role was about.</p>
+                  <div class="bilingual-field__pair">
+                    <div class="bilingual-field__language">
+                      <div class="bilingual-field__head">
+                        <label class="bilingual-field__name" for="d-missing-focus-en">English</label>
+                      </div>
+                      <textarea class="text-field__input" id="d-missing-focus-en" aria-describedby="d-missing-focus-hint">Placeholder summary of the role, a couple of sentences long, to show a filled multi-line value.</textarea>
+                    </div>
+                    <div class="bilingual-field__language" data-missing>
+                      <div class="bilingual-field__head">
+                        <label class="bilingual-field__name" for="d-missing-focus-pt">Português</label>
+                        <span class="state-indicator" data-state="missing" id="d-missing-focus-pt-missing">Missing</span>
+                      </div>
+                      <textarea class="text-field__input" id="d-missing-focus-pt" lang="pt-BR" aria-describedby="d-missing-focus-hint d-missing-focus-pt-missing" data-force="focus"></textarea>
+                    </div>
+                  </div>
+                </fieldset>
+                <code>missing, focus</code>
+              </li>
+              <li>
+                <fieldset class="bilingual-field states__fill">
+                  <legend class="text-field__label">Alt text</legend>
+                  <div class="bilingual-field__pair">
+                    <div class="bilingual-field__language">
+                      <div class="bilingual-field__head">
+                        <label class="bilingual-field__name" for="d-no-hint-en">English</label>
+                      </div>
+                      <input class="text-field__input" id="d-no-hint-en" value="Placeholder photo of the Owner" />
+                    </div>
+                    <div class="bilingual-field__language" data-missing>
+                      <div class="bilingual-field__head">
+                        <label class="bilingual-field__name" for="d-no-hint-pt">Português</label>
+                        <span class="state-indicator" data-state="missing" id="d-no-hint-pt-missing">Missing</span>
+                      </div>
+                      <input class="text-field__input" id="d-no-hint-pt" lang="pt-BR" aria-describedby="d-no-hint-pt-missing" value="" />
+                    </div>
+                  </div>
+                </fieldset>
+                <code>no hint</code>
+              </li>
+            </ul>
+          </div>
+        </section>
+
+        <section class="surface" data-scheme="light" aria-labelledby="light-title">
+          <h2 id="light-title">Light</h2>
+          <div class="variant">
+            <h3>Missing translations</h3>
+            <ul class="states states--rows-wide">
+              <li>
+                <fieldset class="bilingual-field states__fill">
+                  <legend class="text-field__label">Summary</legend>
+                  <p class="text-field__hint" id="l-missing-hint">A few sentences on what the role was about.</p>
+                  <div class="bilingual-field__pair">
+                    <div class="bilingual-field__language">
+                      <div class="bilingual-field__head">
+                        <label class="bilingual-field__name" for="l-missing-en">English</label>
+                      </div>
+                      <textarea class="text-field__input" id="l-missing-en" aria-describedby="l-missing-hint">Placeholder summary of the role, a couple of sentences long, to show a filled multi-line value.</textarea>
+                    </div>
+                    <div class="bilingual-field__language" data-missing>
+                      <div class="bilingual-field__head">
+                        <label class="bilingual-field__name" for="l-missing-pt">Português</label>
+                        <span class="state-indicator" data-state="missing" id="l-missing-pt-missing">Missing</span>
+                      </div>
+                      <textarea class="text-field__input" id="l-missing-pt" lang="pt-BR" aria-describedby="l-missing-hint l-missing-pt-missing"></textarea>
+                    </div>
+                  </div>
+                </fieldset>
+                <code>missing</code>
+              </li>
+              <li>
+                <fieldset class="bilingual-field states__fill">
+                  <legend class="text-field__label">Summary</legend>
+                  <p class="text-field__hint" id="l-missing-both-hint">A few sentences on what the role was about.</p>
+                  <div class="bilingual-field__pair">
+                    <div class="bilingual-field__language" data-missing>
+                      <div class="bilingual-field__head">
+                        <label class="bilingual-field__name" for="l-missing-both-en">English</label>
+                        <span class="state-indicator" data-state="missing" id="l-missing-both-en-missing">Missing</span>
+                      </div>
+                      <textarea class="text-field__input" id="l-missing-both-en" aria-describedby="l-missing-both-hint l-missing-both-en-missing"></textarea>
+                    </div>
+                    <div class="bilingual-field__language" data-missing>
+                      <div class="bilingual-field__head">
+                        <label class="bilingual-field__name" for="l-missing-both-pt">Português</label>
+                        <span class="state-indicator" data-state="missing" id="l-missing-both-pt-missing">Missing</span>
+                      </div>
+                      <textarea class="text-field__input" id="l-missing-both-pt" lang="pt-BR" aria-describedby="l-missing-both-hint l-missing-both-pt-missing"></textarea>
+                    </div>
+                  </div>
+                </fieldset>
+                <code>missing both</code>
+              </li>
+              <li>
+                <fieldset class="bilingual-field states__fill">
+                  <legend class="text-field__label">Summary</legend>
+                  <p class="text-field__hint" id="l-missing-focus-hint">A few sentences on what the role was about.</p>
+                  <div class="bilingual-field__pair">
+                    <div class="bilingual-field__language">
+                      <div class="bilingual-field__head">
+                        <label class="bilingual-field__name" for="l-missing-focus-en">English</label>
+                      </div>
+                      <textarea class="text-field__input" id="l-missing-focus-en" aria-describedby="l-missing-focus-hint">Placeholder summary of the role, a couple of sentences long, to show a filled multi-line value.</textarea>
+                    </div>
+                    <div class="bilingual-field__language" data-missing>
+                      <div class="bilingual-field__head">
+                        <label class="bilingual-field__name" for="l-missing-focus-pt">Português</label>
+                        <span class="state-indicator" data-state="missing" id="l-missing-focus-pt-missing">Missing</span>
+                      </div>
+                      <textarea class="text-field__input" id="l-missing-focus-pt" lang="pt-BR" aria-describedby="l-missing-focus-hint l-missing-focus-pt-missing" data-force="focus"></textarea>
+                    </div>
+                  </div>
+                </fieldset>
+                <code>missing, focus</code>
+              </li>
+              <li>
+                <fieldset class="bilingual-field states__fill">
+                  <legend class="text-field__label">Alt text</legend>
+                  <div class="bilingual-field__pair">
+                    <div class="bilingual-field__language">
+                      <div class="bilingual-field__head">
+                        <label class="bilingual-field__name" for="l-no-hint-en">English</label>
+                      </div>
+                      <input class="text-field__input" id="l-no-hint-en" value="Placeholder photo of the Owner" />
+                    </div>
+                    <div class="bilingual-field__language" data-missing>
+                      <div class="bilingual-field__head">
+                        <label class="bilingual-field__name" for="l-no-hint-pt">Português</label>
+                        <span class="state-indicator" data-state="missing" id="l-no-hint-pt-missing">Missing</span>
+                      </div>
+                      <input class="text-field__input" id="l-no-hint-pt" lang="pt-BR" aria-describedby="l-no-hint-pt-missing" value="" />
+                    </div>
+                  </div>
+                </fieldset>
+                <code>no hint</code>
+              </li>
+            </ul>
+          </div>
+        </section>
+      </div>
+    </main>
+
+    <footer class="foot">
+      <p>Design prototype. A reference for the front end, not production code. <a href="index.html">Back to every state</a>.</p>
+    </footer>
+  </body>
+</html>

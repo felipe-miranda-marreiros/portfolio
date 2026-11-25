@@ -1,0 +1,268 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Bilingual field · Portfolio prototype</title>
+    <link rel="preload" href="../../fonts/schibsted-grotesk.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="preload" href="../../fonts/martian-mono.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="stylesheet" href="../../tokens.css" />
+    <link rel="stylesheet" href="../specimen.css" />
+    <link rel="stylesheet" href="../text-field/text-field.css" />
+    <link rel="stylesheet" href="../state-indicator/state-indicator.css" />
+    <link rel="stylesheet" href="bilingual-field.css" />
+  </head>
+  <body>
+    <header class="specimen-bar">
+      <a href="../../index.html">Visual language</a>
+    </header>
+
+    <main>
+      <div class="specimen-intro">
+        <h1>Bilingual field</h1>
+        <p>
+          One Content field in English and Brazilian Portuguese side by side, built from the Text field. A missing
+          translation carries a Missing tag and a dashed edge; it isn't an error, so the Draft still saves and Publish
+          waits for it. Every state on both themes, with placeholder words. The CMS only, so there is no About me
+          version. The fields respond to the pointer and the keyboard.
+        </p>
+      </div>
+
+      <div class="surfaces">
+        <section class="surface" data-scheme="dark" aria-labelledby="dark-title">
+          <h2 id="dark-title">Dark</h2>
+          <div class="variant">
+            <h3>States</h3>
+            <ul class="states states--rows-wide">
+              <li>
+                <fieldset class="bilingual-field states__fill">
+                  <legend class="text-field__label">Title</legend>
+                  <p class="text-field__hint" id="d-default-hint">As it appears on Experience.</p>
+                  <div class="bilingual-field__pair">
+                    <div class="bilingual-field__language">
+                      <div class="bilingual-field__head">
+                        <label class="bilingual-field__name" for="d-default-en">English</label>
+                      </div>
+                      <input class="text-field__input" id="d-default-en" aria-describedby="d-default-hint" value="Senior placeholder engineer" />
+                    </div>
+                    <div class="bilingual-field__language">
+                      <div class="bilingual-field__head">
+                        <label class="bilingual-field__name" for="d-default-pt">Português</label>
+                      </div>
+                      <input class="text-field__input" id="d-default-pt" lang="pt-BR" aria-describedby="d-default-hint" value="Engenheiro placeholder sênior" />
+                    </div>
+                  </div>
+                </fieldset>
+                <code>default</code>
+              </li>
+              <li>
+                <fieldset class="bilingual-field states__fill">
+                  <legend class="text-field__label">Title</legend>
+                  <p class="text-field__hint" id="d-hover-hint">As it appears on Experience.</p>
+                  <div class="bilingual-field__pair">
+                    <div class="bilingual-field__language">
+                      <div class="bilingual-field__head">
+                        <label class="bilingual-field__name" for="d-hover-en">English</label>
+                      </div>
+                      <input class="text-field__input" id="d-hover-en" aria-describedby="d-hover-hint" data-force="hover" value="Senior placeholder engineer" />
+                    </div>
+                    <div class="bilingual-field__language">
+                      <div class="bilingual-field__head">
+                        <label class="bilingual-field__name" for="d-hover-pt">Português</label>
+                      </div>
+                      <input class="text-field__input" id="d-hover-pt" lang="pt-BR" aria-describedby="d-hover-hint" value="Engenheiro placeholder sênior" />
+                    </div>
+                  </div>
+                </fieldset>
+                <code>hover</code>
+              </li>
+              <li>
+                <fieldset class="bilingual-field states__fill">
+                  <legend class="text-field__label">Title</legend>
+                  <p class="text-field__hint" id="d-focus-hint">As it appears on Experience.</p>
+                  <div class="bilingual-field__pair">
+                    <div class="bilingual-field__language">
+                      <div class="bilingual-field__head">
+                        <label class="bilingual-field__name" for="d-focus-en">English</label>
+                      </div>
+                      <input class="text-field__input" id="d-focus-en" aria-describedby="d-focus-hint" value="Senior placeholder engineer" />
+                    </div>
+                    <div class="bilingual-field__language">
+                      <div class="bilingual-field__head">
+                        <label class="bilingual-field__name" for="d-focus-pt">Português</label>
+                      </div>
+                      <input class="text-field__input" id="d-focus-pt" lang="pt-BR" aria-describedby="d-focus-hint" data-force="focus" value="Engenheiro placeholder sênior" />
+                    </div>
+                  </div>
+                </fieldset>
+                <code>focus</code>
+              </li>
+              <li>
+                <fieldset class="bilingual-field states__fill">
+                  <legend class="text-field__label">Title</legend>
+                  <p class="text-field__hint" id="d-error-hint">As it appears on Experience.</p>
+                  <div class="bilingual-field__pair">
+                    <div class="bilingual-field__language">
+                      <div class="bilingual-field__head">
+                        <label class="bilingual-field__name" for="d-error-en">English</label>
+                      </div>
+                      <input class="text-field__input" id="d-error-en" aria-describedby="d-error-hint d-error-en-error" aria-invalid="true" value="Senior placeholder engineer, leading a placeholder team" />
+                      <p class="text-field__error" id="d-error-en-error">Keep the title under 80 characters.</p>
+                    </div>
+                    <div class="bilingual-field__language">
+                      <div class="bilingual-field__head">
+                        <label class="bilingual-field__name" for="d-error-pt">Português</label>
+                      </div>
+                      <input class="text-field__input" id="d-error-pt" lang="pt-BR" aria-describedby="d-error-hint" value="Engenheiro placeholder sênior" />
+                    </div>
+                  </div>
+                </fieldset>
+                <code>error</code>
+              </li>
+              <li>
+                <fieldset class="bilingual-field states__fill" disabled>
+                  <legend class="text-field__label">Title</legend>
+                  <p class="text-field__hint" id="d-disabled-hint">As it appears on Experience.</p>
+                  <div class="bilingual-field__pair">
+                    <div class="bilingual-field__language">
+                      <div class="bilingual-field__head">
+                        <label class="bilingual-field__name" for="d-disabled-en">English</label>
+                      </div>
+                      <input class="text-field__input" id="d-disabled-en" aria-describedby="d-disabled-hint" value="Senior placeholder engineer" />
+                    </div>
+                    <div class="bilingual-field__language">
+                      <div class="bilingual-field__head">
+                        <label class="bilingual-field__name" for="d-disabled-pt">Português</label>
+                      </div>
+                      <input class="text-field__input" id="d-disabled-pt" lang="pt-BR" aria-describedby="d-disabled-hint" value="Engenheiro placeholder sênior" />
+                    </div>
+                  </div>
+                </fieldset>
+                <code>disabled</code>
+              </li>
+            </ul>
+          </div>
+        </section>
+
+        <section class="surface" data-scheme="light" aria-labelledby="light-title">
+          <h2 id="light-title">Light</h2>
+          <div class="variant">
+            <h3>States</h3>
+            <ul class="states states--rows-wide">
+              <li>
+                <fieldset class="bilingual-field states__fill">
+                  <legend class="text-field__label">Title</legend>
+                  <p class="text-field__hint" id="l-default-hint">As it appears on Experience.</p>
+                  <div class="bilingual-field__pair">
+                    <div class="bilingual-field__language">
+                      <div class="bilingual-field__head">
+                        <label class="bilingual-field__name" for="l-default-en">English</label>
+                      </div>
+                      <input class="text-field__input" id="l-default-en" aria-describedby="l-default-hint" value="Senior placeholder engineer" />
+                    </div>
+                    <div class="bilingual-field__language">
+                      <div class="bilingual-field__head">
+                        <label class="bilingual-field__name" for="l-default-pt">Português</label>
+                      </div>
+                      <input class="text-field__input" id="l-default-pt" lang="pt-BR" aria-describedby="l-default-hint" value="Engenheiro placeholder sênior" />
+                    </div>
+                  </div>
+                </fieldset>
+                <code>default</code>
+              </li>
+              <li>
+                <fieldset class="bilingual-field states__fill">
+                  <legend class="text-field__label">Title</legend>
+                  <p class="text-field__hint" id="l-hover-hint">As it appears on Experience.</p>
+                  <div class="bilingual-field__pair">
+                    <div class="bilingual-field__language">
+                      <div class="bilingual-field__head">
+                        <label class="bilingual-field__name" for="l-hover-en">English</label>
+                      </div>
+                      <input class="text-field__input" id="l-hover-en" aria-describedby="l-hover-hint" data-force="hover" value="Senior placeholder engineer" />
+                    </div>
+                    <div class="bilingual-field__language">
+                      <div class="bilingual-field__head">
+                        <label class="bilingual-field__name" for="l-hover-pt">Português</label>
+                      </div>
+                      <input class="text-field__input" id="l-hover-pt" lang="pt-BR" aria-describedby="l-hover-hint" value="Engenheiro placeholder sênior" />
+                    </div>
+                  </div>
+                </fieldset>
+                <code>hover</code>
+              </li>
+              <li>
+                <fieldset class="bilingual-field states__fill">
+                  <legend class="text-field__label">Title</legend>
+                  <p class="text-field__hint" id="l-focus-hint">As it appears on Experience.</p>
+                  <div class="bilingual-field__pair">
+                    <div class="bilingual-field__language">
+                      <div class="bilingual-field__head">
+                        <label class="bilingual-field__name" for="l-focus-en">English</label>
+                      </div>
+                      <input class="text-field__input" id="l-focus-en" aria-describedby="l-focus-hint" value="Senior placeholder engineer" />
+                    </div>
+                    <div class="bilingual-field__language">
+                      <div class="bilingual-field__head">
+                        <label class="bilingual-field__name" for="l-focus-pt">Português</label>
+                      </div>
+                      <input class="text-field__input" id="l-focus-pt" lang="pt-BR" aria-describedby="l-focus-hint" data-force="focus" value="Engenheiro placeholder sênior" />
+                    </div>
+                  </div>
+                </fieldset>
+                <code>focus</code>
+              </li>
+              <li>
+                <fieldset class="bilingual-field states__fill">
+                  <legend class="text-field__label">Title</legend>
+                  <p class="text-field__hint" id="l-error-hint">As it appears on Experience.</p>
+                  <div class="bilingual-field__pair">
+                    <div class="bilingual-field__language">
+                      <div class="bilingual-field__head">
+                        <label class="bilingual-field__name" for="l-error-en">English</label>
+                      </div>
+                      <input class="text-field__input" id="l-error-en" aria-describedby="l-error-hint l-error-en-error" aria-invalid="true" value="Senior placeholder engineer, leading a placeholder team" />
+                      <p class="text-field__error" id="l-error-en-error">Keep the title under 80 characters.</p>
+                    </div>
+                    <div class="bilingual-field__language">
+                      <div class="bilingual-field__head">
+                        <label class="bilingual-field__name" for="l-error-pt">Português</label>
+                      </div>
+                      <input class="text-field__input" id="l-error-pt" lang="pt-BR" aria-describedby="l-error-hint" value="Engenheiro placeholder sênior" />
+                    </div>
+                  </div>
+                </fieldset>
+                <code>error</code>
+              </li>
+              <li>
+                <fieldset class="bilingual-field states__fill" disabled>
+                  <legend class="text-field__label">Title</legend>
+                  <p class="text-field__hint" id="l-disabled-hint">As it appears on Experience.</p>
+                  <div class="bilingual-field__pair">
+                    <div class="bilingual-field__language">
+                      <div class="bilingual-field__head">
+                        <label class="bilingual-field__name" for="l-disabled-en">English</label>
+                      </div>
+                      <input class="text-field__input" id="l-disabled-en" aria-describedby="l-disabled-hint" value="Senior placeholder engineer" />
+                    </div>
+                    <div class="bilingual-field__language">
+                      <div class="bilingual-field__head">
+                        <label class="bilingual-field__name" for="l-disabled-pt">Português</label>
+                      </div>
+                      <input class="text-field__input" id="l-disabled-pt" lang="pt-BR" aria-describedby="l-disabled-hint" value="Engenheiro placeholder sênior" />
+                    </div>
+                  </div>
+                </fieldset>
+                <code>disabled</code>
+              </li>
+            </ul>
+          </div>
+        </section>
+      </div>
+    </main>
+
+    <footer class="foot">
+      <p>Design prototype. A reference for the front end, not production code. See <a href="missing.html">missing translations</a> and <a href="long-content.html">long content and a phone</a>.</p>
+    </footer>
+  </body>
+</html>
