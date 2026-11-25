@@ -1,0 +1,155 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Image field: cases · Portfolio prototype</title>
+    <link rel="preload" href="../../fonts/schibsted-grotesk.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="preload" href="../../fonts/martian-mono.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="stylesheet" href="../../tokens.css" />
+    <link rel="stylesheet" href="../specimen.css" />
+    <link rel="stylesheet" href="../text-field/text-field.css" />
+    <link rel="stylesheet" href="../button/button.css" />
+    <link rel="stylesheet" href="../state-indicator/state-indicator.css" />
+    <link rel="stylesheet" href="../bilingual-field/bilingual-field.css" />
+    <link rel="stylesheet" href="image-field.css" />
+  </head>
+  <body>
+    <header class="specimen-bar">
+      <a href="../../index.html">Visual language</a>
+    </header>
+
+    <main>
+      <div class="specimen-intro">
+        <h1>Image field: cases</h1>
+        <p>
+          The image field's cases on both themes: the alt text missing in one language, and in both, as after a new
+          photo; and a long file name, which wraps. Last, a 320px screen, where the buttons wrap under the file.
+        </p>
+      </div>
+
+      <div class="surfaces">
+        <section class="surface" data-scheme="dark" aria-labelledby="d-title">
+          <h2 id="d-title">Dark</h2>
+          <div class="variant">
+            <h3>Cases</h3>
+            <ul class="states states--rows-wide">
+              <li>
+                <fieldset class="image-field states__fill">
+                  <legend class="text-field__label">Photo</legend>
+                  <div class="image-field__file"><img class="image-field__thumb" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' fill='%2378736a'/%3E%3Cpath d='M0 64L64 0M-16 48L48-16M16 80L80 16' stroke='%23a39d92' stroke-width='6'/%3E%3C/svg%3E" alt="" /><div class="image-field__meta"><span class="image-field__name">photo.jpg</span><span class="image-field__detail" id="d-missing-one-detail">JPG · 480 × 480 · 212 KB</span></div><div class="image-field__actions"><button class="button button--secondary" type="button" aria-describedby="d-missing-one-detail"><span class="button__label">Replace</span></button><button class="button button--secondary" type="button"><span class="button__label">Remove</span></button></div></div>
+                  <fieldset class="bilingual-field">
+                    <legend class="text-field__label">Alt text</legend>
+                    <p class="text-field__hint" id="d-missing-one-alt-hint">What the photo shows, for anyone who can't see it.</p>
+                    <div class="bilingual-field__pair"><div class="bilingual-field__language"><div class="bilingual-field__head"><label class="bilingual-field__name" for="d-missing-one-en">English</label></div><input class="text-field__input" id="d-missing-one-en" value="Placeholder: the Owner, head and shoulders" aria-describedby="d-missing-one-alt-hint" /></div><div class="bilingual-field__language" data-missing><div class="bilingual-field__head"><label class="bilingual-field__name" for="d-missing-one-pt">Brazilian Portuguese</label><span class="state-indicator" data-state="missing" id="d-missing-one-pt-missing">Missing</span></div><input class="text-field__input" id="d-missing-one-pt" lang="pt-BR" aria-describedby="d-missing-one-alt-hint d-missing-one-pt-missing" /></div></div>
+                  </fieldset>
+                </fieldset>
+                <code>alt text missing, one language</code>
+              </li>
+              <li>
+                <fieldset class="image-field states__fill">
+                  <legend class="text-field__label">Photo</legend>
+                  <div class="image-field__file"><img class="image-field__thumb" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' fill='%2378736a'/%3E%3Cpath d='M0 64L64 0M-16 48L48-16M16 80L80 16' stroke='%23a39d92' stroke-width='6'/%3E%3C/svg%3E" alt="" /><div class="image-field__meta"><span class="image-field__name">portrait.jpg</span><span class="image-field__detail" id="d-missing-both-detail">JPG · 480 × 480 · 212 KB</span></div><div class="image-field__actions"><button class="button button--secondary" type="button" aria-describedby="d-missing-both-detail"><span class="button__label">Replace</span></button><button class="button button--secondary" type="button"><span class="button__label">Remove</span></button></div></div>
+                  <fieldset class="bilingual-field">
+                    <legend class="text-field__label">Alt text</legend>
+                    <p class="text-field__hint" id="d-missing-both-alt-hint">What the photo shows, for anyone who can't see it.</p>
+                    <div class="bilingual-field__pair"><div class="bilingual-field__language" data-missing><div class="bilingual-field__head"><label class="bilingual-field__name" for="d-missing-both-en">English</label><span class="state-indicator" data-state="missing" id="d-missing-both-en-missing">Missing</span></div><input class="text-field__input" id="d-missing-both-en" aria-describedby="d-missing-both-alt-hint d-missing-both-en-missing" /></div><div class="bilingual-field__language" data-missing><div class="bilingual-field__head"><label class="bilingual-field__name" for="d-missing-both-pt">Brazilian Portuguese</label><span class="state-indicator" data-state="missing" id="d-missing-both-pt-missing">Missing</span></div><input class="text-field__input" id="d-missing-both-pt" lang="pt-BR" aria-describedby="d-missing-both-alt-hint d-missing-both-pt-missing" /></div></div>
+                  </fieldset>
+                </fieldset>
+                <code>alt text missing, both</code>
+              </li>
+              <li>
+                <fieldset class="image-field states__fill">
+                  <legend class="text-field__label">Photo</legend>
+                  <div class="image-field__file"><img class="image-field__thumb" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' fill='%2378736a'/%3E%3Cpath d='M0 64L64 0M-16 48L48-16M16 80L80 16' stroke='%23a39d92' stroke-width='6'/%3E%3C/svg%3E" alt="" /><div class="image-field__meta"><span class="image-field__name">owner-portrait-for-the-portfolio-home-page-final-version-2026-cropped-square.jpg</span><span class="image-field__detail" id="d-long-detail">JPG · 1200 × 1200 · 1.8 MB</span></div><div class="image-field__actions"><button class="button button--secondary" type="button" aria-describedby="d-long-detail"><span class="button__label">Replace</span></button><button class="button button--secondary" type="button"><span class="button__label">Remove</span></button></div></div>
+                  <fieldset class="bilingual-field">
+                    <legend class="text-field__label">Alt text</legend>
+                    <p class="text-field__hint" id="d-long-alt-hint">What the photo shows, for anyone who can't see it.</p>
+                    <div class="bilingual-field__pair"><div class="bilingual-field__language"><div class="bilingual-field__head"><label class="bilingual-field__name" for="d-long-en">English</label></div><input class="text-field__input" id="d-long-en" value="Placeholder: the Owner, head and shoulders" aria-describedby="d-long-alt-hint" /></div><div class="bilingual-field__language"><div class="bilingual-field__head"><label class="bilingual-field__name" for="d-long-pt">Brazilian Portuguese</label></div><input class="text-field__input" id="d-long-pt" lang="pt-BR" value="Placeholder: o Owner, rosto e ombros" aria-describedby="d-long-alt-hint" /></div></div>
+                  </fieldset>
+                </fieldset>
+                <code>long file name</code>
+              </li>
+            </ul>
+          </div>
+          <div class="variant">
+            <h3>320px phone</h3>
+            <div class="frame frame--phone frame--padded">
+              <fieldset class="image-field states__fill">
+                <legend class="text-field__label">Photo</legend>
+                <div class="image-field__file"><img class="image-field__thumb" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' fill='%2378736a'/%3E%3Cpath d='M0 64L64 0M-16 48L48-16M16 80L80 16' stroke='%23a39d92' stroke-width='6'/%3E%3C/svg%3E" alt="" /><div class="image-field__meta"><span class="image-field__name">photo.jpg</span><span class="image-field__detail" id="d-phone-detail">JPG · 480 × 480 · 212 KB</span></div><div class="image-field__actions"><button class="button button--secondary" type="button" aria-describedby="d-phone-detail"><span class="button__label">Replace</span></button><button class="button button--secondary" type="button"><span class="button__label">Remove</span></button></div></div>
+                <fieldset class="bilingual-field">
+                  <legend class="text-field__label">Alt text</legend>
+                  <p class="text-field__hint" id="d-phone-alt-hint">What the photo shows, for anyone who can't see it.</p>
+                  <div class="bilingual-field__pair"><div class="bilingual-field__language"><div class="bilingual-field__head"><label class="bilingual-field__name" for="d-phone-en">English</label></div><input class="text-field__input" id="d-phone-en" value="Placeholder: the Owner, head and shoulders" aria-describedby="d-phone-alt-hint" /></div><div class="bilingual-field__language" data-missing><div class="bilingual-field__head"><label class="bilingual-field__name" for="d-phone-pt">Brazilian Portuguese</label><span class="state-indicator" data-state="missing" id="d-phone-pt-missing">Missing</span></div><input class="text-field__input" id="d-phone-pt" lang="pt-BR" aria-describedby="d-phone-alt-hint d-phone-pt-missing" /></div></div>
+                </fieldset>
+              </fieldset>
+            </div>
+          </div>
+        </section>
+        <section class="surface" data-scheme="light" aria-labelledby="l-title">
+          <h2 id="l-title">Light</h2>
+          <div class="variant">
+            <h3>Cases</h3>
+            <ul class="states states--rows-wide">
+              <li>
+                <fieldset class="image-field states__fill">
+                  <legend class="text-field__label">Photo</legend>
+                  <div class="image-field__file"><img class="image-field__thumb" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' fill='%2378736a'/%3E%3Cpath d='M0 64L64 0M-16 48L48-16M16 80L80 16' stroke='%23a39d92' stroke-width='6'/%3E%3C/svg%3E" alt="" /><div class="image-field__meta"><span class="image-field__name">photo.jpg</span><span class="image-field__detail" id="l-missing-one-detail">JPG · 480 × 480 · 212 KB</span></div><div class="image-field__actions"><button class="button button--secondary" type="button" aria-describedby="l-missing-one-detail"><span class="button__label">Replace</span></button><button class="button button--secondary" type="button"><span class="button__label">Remove</span></button></div></div>
+                  <fieldset class="bilingual-field">
+                    <legend class="text-field__label">Alt text</legend>
+                    <p class="text-field__hint" id="l-missing-one-alt-hint">What the photo shows, for anyone who can't see it.</p>
+                    <div class="bilingual-field__pair"><div class="bilingual-field__language"><div class="bilingual-field__head"><label class="bilingual-field__name" for="l-missing-one-en">English</label></div><input class="text-field__input" id="l-missing-one-en" value="Placeholder: the Owner, head and shoulders" aria-describedby="l-missing-one-alt-hint" /></div><div class="bilingual-field__language" data-missing><div class="bilingual-field__head"><label class="bilingual-field__name" for="l-missing-one-pt">Brazilian Portuguese</label><span class="state-indicator" data-state="missing" id="l-missing-one-pt-missing">Missing</span></div><input class="text-field__input" id="l-missing-one-pt" lang="pt-BR" aria-describedby="l-missing-one-alt-hint l-missing-one-pt-missing" /></div></div>
+                  </fieldset>
+                </fieldset>
+                <code>alt text missing, one language</code>
+              </li>
+              <li>
+                <fieldset class="image-field states__fill">
+                  <legend class="text-field__label">Photo</legend>
+                  <div class="image-field__file"><img class="image-field__thumb" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' fill='%2378736a'/%3E%3Cpath d='M0 64L64 0M-16 48L48-16M16 80L80 16' stroke='%23a39d92' stroke-width='6'/%3E%3C/svg%3E" alt="" /><div class="image-field__meta"><span class="image-field__name">portrait.jpg</span><span class="image-field__detail" id="l-missing-both-detail">JPG · 480 × 480 · 212 KB</span></div><div class="image-field__actions"><button class="button button--secondary" type="button" aria-describedby="l-missing-both-detail"><span class="button__label">Replace</span></button><button class="button button--secondary" type="button"><span class="button__label">Remove</span></button></div></div>
+                  <fieldset class="bilingual-field">
+                    <legend class="text-field__label">Alt text</legend>
+                    <p class="text-field__hint" id="l-missing-both-alt-hint">What the photo shows, for anyone who can't see it.</p>
+                    <div class="bilingual-field__pair"><div class="bilingual-field__language" data-missing><div class="bilingual-field__head"><label class="bilingual-field__name" for="l-missing-both-en">English</label><span class="state-indicator" data-state="missing" id="l-missing-both-en-missing">Missing</span></div><input class="text-field__input" id="l-missing-both-en" aria-describedby="l-missing-both-alt-hint l-missing-both-en-missing" /></div><div class="bilingual-field__language" data-missing><div class="bilingual-field__head"><label class="bilingual-field__name" for="l-missing-both-pt">Brazilian Portuguese</label><span class="state-indicator" data-state="missing" id="l-missing-both-pt-missing">Missing</span></div><input class="text-field__input" id="l-missing-both-pt" lang="pt-BR" aria-describedby="l-missing-both-alt-hint l-missing-both-pt-missing" /></div></div>
+                  </fieldset>
+                </fieldset>
+                <code>alt text missing, both</code>
+              </li>
+              <li>
+                <fieldset class="image-field states__fill">
+                  <legend class="text-field__label">Photo</legend>
+                  <div class="image-field__file"><img class="image-field__thumb" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' fill='%2378736a'/%3E%3Cpath d='M0 64L64 0M-16 48L48-16M16 80L80 16' stroke='%23a39d92' stroke-width='6'/%3E%3C/svg%3E" alt="" /><div class="image-field__meta"><span class="image-field__name">owner-portrait-for-the-portfolio-home-page-final-version-2026-cropped-square.jpg</span><span class="image-field__detail" id="l-long-detail">JPG · 1200 × 1200 · 1.8 MB</span></div><div class="image-field__actions"><button class="button button--secondary" type="button" aria-describedby="l-long-detail"><span class="button__label">Replace</span></button><button class="button button--secondary" type="button"><span class="button__label">Remove</span></button></div></div>
+                  <fieldset class="bilingual-field">
+                    <legend class="text-field__label">Alt text</legend>
+                    <p class="text-field__hint" id="l-long-alt-hint">What the photo shows, for anyone who can't see it.</p>
+                    <div class="bilingual-field__pair"><div class="bilingual-field__language"><div class="bilingual-field__head"><label class="bilingual-field__name" for="l-long-en">English</label></div><input class="text-field__input" id="l-long-en" value="Placeholder: the Owner, head and shoulders" aria-describedby="l-long-alt-hint" /></div><div class="bilingual-field__language"><div class="bilingual-field__head"><label class="bilingual-field__name" for="l-long-pt">Brazilian Portuguese</label></div><input class="text-field__input" id="l-long-pt" lang="pt-BR" value="Placeholder: o Owner, rosto e ombros" aria-describedby="l-long-alt-hint" /></div></div>
+                  </fieldset>
+                </fieldset>
+                <code>long file name</code>
+              </li>
+            </ul>
+          </div>
+          <div class="variant">
+            <h3>320px phone</h3>
+            <div class="frame frame--phone frame--padded">
+              <fieldset class="image-field states__fill">
+                <legend class="text-field__label">Photo</legend>
+                <div class="image-field__file"><img class="image-field__thumb" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' fill='%2378736a'/%3E%3Cpath d='M0 64L64 0M-16 48L48-16M16 80L80 16' stroke='%23a39d92' stroke-width='6'/%3E%3C/svg%3E" alt="" /><div class="image-field__meta"><span class="image-field__name">photo.jpg</span><span class="image-field__detail" id="l-phone-detail">JPG · 480 × 480 · 212 KB</span></div><div class="image-field__actions"><button class="button button--secondary" type="button" aria-describedby="l-phone-detail"><span class="button__label">Replace</span></button><button class="button button--secondary" type="button"><span class="button__label">Remove</span></button></div></div>
+                <fieldset class="bilingual-field">
+                  <legend class="text-field__label">Alt text</legend>
+                  <p class="text-field__hint" id="l-phone-alt-hint">What the photo shows, for anyone who can't see it.</p>
+                  <div class="bilingual-field__pair"><div class="bilingual-field__language"><div class="bilingual-field__head"><label class="bilingual-field__name" for="l-phone-en">English</label></div><input class="text-field__input" id="l-phone-en" value="Placeholder: the Owner, head and shoulders" aria-describedby="l-phone-alt-hint" /></div><div class="bilingual-field__language" data-missing><div class="bilingual-field__head"><label class="bilingual-field__name" for="l-phone-pt">Brazilian Portuguese</label><span class="state-indicator" data-state="missing" id="l-phone-pt-missing">Missing</span></div><input class="text-field__input" id="l-phone-pt" lang="pt-BR" aria-describedby="l-phone-alt-hint l-phone-pt-missing" /></div></div>
+                </fieldset>
+              </fieldset>
+            </div>
+          </div>
+        </section>
+      </div>
+    </main>
+
+    <footer class="foot">
+      <p>Design prototype. A reference for the front end, not production code. See the <a href="index.html">states</a>, <a href="empty-upload-error.html">empty, uploading, error and disabled</a>, and <a href="cases.html">cases and a phone</a>.</p>
+    </footer>
+  </body>
+</html>

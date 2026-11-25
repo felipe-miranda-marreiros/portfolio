@@ -1,0 +1,129 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Image field · Portfolio prototype</title>
+    <link rel="preload" href="../../fonts/schibsted-grotesk.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="preload" href="../../fonts/martian-mono.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="stylesheet" href="../../tokens.css" />
+    <link rel="stylesheet" href="../specimen.css" />
+    <link rel="stylesheet" href="../text-field/text-field.css" />
+    <link rel="stylesheet" href="../button/button.css" />
+    <link rel="stylesheet" href="../state-indicator/state-indicator.css" />
+    <link rel="stylesheet" href="../bilingual-field/bilingual-field.css" />
+    <link rel="stylesheet" href="image-field.css" />
+  </head>
+  <body>
+    <header class="specimen-bar">
+      <a href="../../index.html">Visual language</a>
+    </header>
+
+    <main>
+      <div class="specimen-intro">
+        <h1>Image field</h1>
+        <p>
+          One image, which doesn't change with language, as a file row over its alt text in English and Brazilian
+          Portuguese: the photo at its size on Home, its file name and detail, then Replace and Remove. Default, and
+          Replace on hover and focus, on both themes. The striped square stands in for the photo, and the words are
+          placeholders. The CMS only, so there is no About me version.
+        </p>
+      </div>
+
+      <div class="surfaces">
+        <section class="surface" data-scheme="dark" aria-labelledby="d-title">
+          <h2 id="d-title">Dark</h2>
+          <div class="variant">
+            <h3>States</h3>
+            <ul class="states states--rows-wide">
+              <li>
+                <fieldset class="image-field states__fill">
+                  <legend class="text-field__label">Photo</legend>
+                  <div class="image-field__file"><img class="image-field__thumb" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' fill='%2378736a'/%3E%3Cpath d='M0 64L64 0M-16 48L48-16M16 80L80 16' stroke='%23a39d92' stroke-width='6'/%3E%3C/svg%3E" alt="" /><div class="image-field__meta"><span class="image-field__name">photo.jpg</span><span class="image-field__detail" id="d-default-detail">JPG · 480 × 480 · 212 KB</span></div><div class="image-field__actions"><button class="button button--secondary" type="button" aria-describedby="d-default-detail"><span class="button__label">Replace</span></button><button class="button button--secondary" type="button"><span class="button__label">Remove</span></button></div></div>
+                  <fieldset class="bilingual-field">
+                    <legend class="text-field__label">Alt text</legend>
+                    <p class="text-field__hint" id="d-default-alt-hint">What the photo shows, for anyone who can't see it.</p>
+                    <div class="bilingual-field__pair"><div class="bilingual-field__language"><div class="bilingual-field__head"><label class="bilingual-field__name" for="d-default-en">English</label></div><input class="text-field__input" id="d-default-en" value="Placeholder: the Owner, head and shoulders" aria-describedby="d-default-alt-hint" /></div><div class="bilingual-field__language"><div class="bilingual-field__head"><label class="bilingual-field__name" for="d-default-pt">Brazilian Portuguese</label></div><input class="text-field__input" id="d-default-pt" lang="pt-BR" value="Placeholder: o Owner, rosto e ombros" aria-describedby="d-default-alt-hint" /></div></div>
+                  </fieldset>
+                </fieldset>
+                <code>default</code>
+              </li>
+              <li>
+                <fieldset class="image-field states__fill">
+                  <legend class="text-field__label">Photo</legend>
+                  <div class="image-field__file"><img class="image-field__thumb" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' fill='%2378736a'/%3E%3Cpath d='M0 64L64 0M-16 48L48-16M16 80L80 16' stroke='%23a39d92' stroke-width='6'/%3E%3C/svg%3E" alt="" /><div class="image-field__meta"><span class="image-field__name">photo.jpg</span><span class="image-field__detail" id="d-hover-detail">JPG · 480 × 480 · 212 KB</span></div><div class="image-field__actions"><button class="button button--secondary" type="button" aria-describedby="d-hover-detail" data-force="hover"><span class="button__label">Replace</span></button><button class="button button--secondary" type="button"><span class="button__label">Remove</span></button></div></div>
+                  <fieldset class="bilingual-field">
+                    <legend class="text-field__label">Alt text</legend>
+                    <p class="text-field__hint" id="d-hover-alt-hint">What the photo shows, for anyone who can't see it.</p>
+                    <div class="bilingual-field__pair"><div class="bilingual-field__language"><div class="bilingual-field__head"><label class="bilingual-field__name" for="d-hover-en">English</label></div><input class="text-field__input" id="d-hover-en" value="Placeholder: the Owner, head and shoulders" aria-describedby="d-hover-alt-hint" /></div><div class="bilingual-field__language"><div class="bilingual-field__head"><label class="bilingual-field__name" for="d-hover-pt">Brazilian Portuguese</label></div><input class="text-field__input" id="d-hover-pt" lang="pt-BR" value="Placeholder: o Owner, rosto e ombros" aria-describedby="d-hover-alt-hint" /></div></div>
+                  </fieldset>
+                </fieldset>
+                <code>hover</code>
+              </li>
+              <li>
+                <fieldset class="image-field states__fill">
+                  <legend class="text-field__label">Photo</legend>
+                  <div class="image-field__file"><img class="image-field__thumb" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' fill='%2378736a'/%3E%3Cpath d='M0 64L64 0M-16 48L48-16M16 80L80 16' stroke='%23a39d92' stroke-width='6'/%3E%3C/svg%3E" alt="" /><div class="image-field__meta"><span class="image-field__name">photo.jpg</span><span class="image-field__detail" id="d-focus-detail">JPG · 480 × 480 · 212 KB</span></div><div class="image-field__actions"><button class="button button--secondary" type="button" aria-describedby="d-focus-detail" data-force="focus"><span class="button__label">Replace</span></button><button class="button button--secondary" type="button"><span class="button__label">Remove</span></button></div></div>
+                  <fieldset class="bilingual-field">
+                    <legend class="text-field__label">Alt text</legend>
+                    <p class="text-field__hint" id="d-focus-alt-hint">What the photo shows, for anyone who can't see it.</p>
+                    <div class="bilingual-field__pair"><div class="bilingual-field__language"><div class="bilingual-field__head"><label class="bilingual-field__name" for="d-focus-en">English</label></div><input class="text-field__input" id="d-focus-en" value="Placeholder: the Owner, head and shoulders" aria-describedby="d-focus-alt-hint" /></div><div class="bilingual-field__language"><div class="bilingual-field__head"><label class="bilingual-field__name" for="d-focus-pt">Brazilian Portuguese</label></div><input class="text-field__input" id="d-focus-pt" lang="pt-BR" value="Placeholder: o Owner, rosto e ombros" aria-describedby="d-focus-alt-hint" /></div></div>
+                  </fieldset>
+                </fieldset>
+                <code>focus</code>
+              </li>
+            </ul>
+          </div>
+        </section>
+        <section class="surface" data-scheme="light" aria-labelledby="l-title">
+          <h2 id="l-title">Light</h2>
+          <div class="variant">
+            <h3>States</h3>
+            <ul class="states states--rows-wide">
+              <li>
+                <fieldset class="image-field states__fill">
+                  <legend class="text-field__label">Photo</legend>
+                  <div class="image-field__file"><img class="image-field__thumb" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' fill='%2378736a'/%3E%3Cpath d='M0 64L64 0M-16 48L48-16M16 80L80 16' stroke='%23a39d92' stroke-width='6'/%3E%3C/svg%3E" alt="" /><div class="image-field__meta"><span class="image-field__name">photo.jpg</span><span class="image-field__detail" id="l-default-detail">JPG · 480 × 480 · 212 KB</span></div><div class="image-field__actions"><button class="button button--secondary" type="button" aria-describedby="l-default-detail"><span class="button__label">Replace</span></button><button class="button button--secondary" type="button"><span class="button__label">Remove</span></button></div></div>
+                  <fieldset class="bilingual-field">
+                    <legend class="text-field__label">Alt text</legend>
+                    <p class="text-field__hint" id="l-default-alt-hint">What the photo shows, for anyone who can't see it.</p>
+                    <div class="bilingual-field__pair"><div class="bilingual-field__language"><div class="bilingual-field__head"><label class="bilingual-field__name" for="l-default-en">English</label></div><input class="text-field__input" id="l-default-en" value="Placeholder: the Owner, head and shoulders" aria-describedby="l-default-alt-hint" /></div><div class="bilingual-field__language"><div class="bilingual-field__head"><label class="bilingual-field__name" for="l-default-pt">Brazilian Portuguese</label></div><input class="text-field__input" id="l-default-pt" lang="pt-BR" value="Placeholder: o Owner, rosto e ombros" aria-describedby="l-default-alt-hint" /></div></div>
+                  </fieldset>
+                </fieldset>
+                <code>default</code>
+              </li>
+              <li>
+                <fieldset class="image-field states__fill">
+                  <legend class="text-field__label">Photo</legend>
+                  <div class="image-field__file"><img class="image-field__thumb" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' fill='%2378736a'/%3E%3Cpath d='M0 64L64 0M-16 48L48-16M16 80L80 16' stroke='%23a39d92' stroke-width='6'/%3E%3C/svg%3E" alt="" /><div class="image-field__meta"><span class="image-field__name">photo.jpg</span><span class="image-field__detail" id="l-hover-detail">JPG · 480 × 480 · 212 KB</span></div><div class="image-field__actions"><button class="button button--secondary" type="button" aria-describedby="l-hover-detail" data-force="hover"><span class="button__label">Replace</span></button><button class="button button--secondary" type="button"><span class="button__label">Remove</span></button></div></div>
+                  <fieldset class="bilingual-field">
+                    <legend class="text-field__label">Alt text</legend>
+                    <p class="text-field__hint" id="l-hover-alt-hint">What the photo shows, for anyone who can't see it.</p>
+                    <div class="bilingual-field__pair"><div class="bilingual-field__language"><div class="bilingual-field__head"><label class="bilingual-field__name" for="l-hover-en">English</label></div><input class="text-field__input" id="l-hover-en" value="Placeholder: the Owner, head and shoulders" aria-describedby="l-hover-alt-hint" /></div><div class="bilingual-field__language"><div class="bilingual-field__head"><label class="bilingual-field__name" for="l-hover-pt">Brazilian Portuguese</label></div><input class="text-field__input" id="l-hover-pt" lang="pt-BR" value="Placeholder: o Owner, rosto e ombros" aria-describedby="l-hover-alt-hint" /></div></div>
+                  </fieldset>
+                </fieldset>
+                <code>hover</code>
+              </li>
+              <li>
+                <fieldset class="image-field states__fill">
+                  <legend class="text-field__label">Photo</legend>
+                  <div class="image-field__file"><img class="image-field__thumb" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' fill='%2378736a'/%3E%3Cpath d='M0 64L64 0M-16 48L48-16M16 80L80 16' stroke='%23a39d92' stroke-width='6'/%3E%3C/svg%3E" alt="" /><div class="image-field__meta"><span class="image-field__name">photo.jpg</span><span class="image-field__detail" id="l-focus-detail">JPG · 480 × 480 · 212 KB</span></div><div class="image-field__actions"><button class="button button--secondary" type="button" aria-describedby="l-focus-detail" data-force="focus"><span class="button__label">Replace</span></button><button class="button button--secondary" type="button"><span class="button__label">Remove</span></button></div></div>
+                  <fieldset class="bilingual-field">
+                    <legend class="text-field__label">Alt text</legend>
+                    <p class="text-field__hint" id="l-focus-alt-hint">What the photo shows, for anyone who can't see it.</p>
+                    <div class="bilingual-field__pair"><div class="bilingual-field__language"><div class="bilingual-field__head"><label class="bilingual-field__name" for="l-focus-en">English</label></div><input class="text-field__input" id="l-focus-en" value="Placeholder: the Owner, head and shoulders" aria-describedby="l-focus-alt-hint" /></div><div class="bilingual-field__language"><div class="bilingual-field__head"><label class="bilingual-field__name" for="l-focus-pt">Brazilian Portuguese</label></div><input class="text-field__input" id="l-focus-pt" lang="pt-BR" value="Placeholder: o Owner, rosto e ombros" aria-describedby="l-focus-alt-hint" /></div></div>
+                  </fieldset>
+                </fieldset>
+                <code>focus</code>
+              </li>
+            </ul>
+          </div>
+        </section>
+      </div>
+    </main>
+
+    <footer class="foot">
+      <p>Design prototype. A reference for the front end, not production code. See the <a href="index.html">states</a>, <a href="empty-upload-error.html">empty, uploading, error and disabled</a>, and <a href="cases.html">cases and a phone</a>.</p>
+    </footer>
+  </body>
+</html>

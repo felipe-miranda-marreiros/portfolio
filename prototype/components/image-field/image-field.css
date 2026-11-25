@@ -1,0 +1,110 @@
+/**
+ * Image field: one image, which doesn't change with language, as a file row over its alt text in both languages, from
+ * tokens only. It composes the Text field's label and error, the Button and the Bilingual field.
+ * Markup: <fieldset class="image-field"><legend class="text-field__label">…</legend>
+ *   <div class="image-field__file">
+ *     <img class="image-field__thumb" src="…" alt="" />
+ *     <div class="image-field__meta"><span class="image-field__name">…</span>
+ *       <span class="image-field__detail" id="…-detail">…</span></div>
+ *     <div class="image-field__actions"><button class="button button--secondary" type="button"
+ *       aria-describedby="…-detail …-error">…</button>…</div></div>
+ *   <p class="text-field__error" id="…-error">…</p>
+ *   <fieldset class="bilingual-field">… the alt text …</fieldset></fieldset>.
+ * The thumbnail is the image at its size on Home (`--photo-size`, `--radius-photo`); its alt is empty, as the name
+ * beside it says what it is. Empty, the row takes `data-empty`, a `<span class="image-field__thumb" aria-hidden="true">`
+ * holds the thumbnail's place, the detail says what the field takes, and the alt text is disabled. A button opens the
+ * file picker; uploading sets it busy as the Button's loading state does, and the detail shows the progress. A file
+ * that is turned down leaves the image as it was, and the error names it.
+ */
+.image-field {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+  min-inline-size: 0;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  color: var(--color-ink);
+}
+
+/* A floated legend leaves the fieldset's border and becomes a flex item, so it takes the column's gap like a label. */
+.image-field > legend {
+  float: inline-start;
+  padding: 0;
+}
+
+/* The alt text starts a step below the file and its error, as one field follows another. */
+.image-field > .bilingual-field {
+  margin-block-start: var(--space-3);
+}
+
+.image-field__file {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--space-3) var(--space-4);
+  padding: var(--space-3);
+  border: var(--line-width) solid var(--color-hairline-input);
+  border-radius: var(--radius-control);
+}
+
+.image-field__thumb {
+  display: block;
+  flex: none;
+  box-sizing: border-box;
+  inline-size: var(--photo-size);
+  block-size: var(--photo-size);
+  border: var(--line-width) solid var(--color-hairline);
+  border-radius: var(--radius-photo);
+  background: var(--color-surface);
+  object-fit: cover;
+}
+
+.image-field__file[data-empty],
+.image-field__file[data-empty] .image-field__thumb {
+  border-style: dashed;
+}
+
+.image-field__file[data-empty] .image-field__thumb {
+  border-color: var(--color-hairline-input);
+  background: transparent;
+}
+
+.image-field__meta {
+  display: grid;
+  flex: 1 1 10rem;
+  gap: var(--space-1);
+  min-inline-size: 0;
+}
+
+.image-field__name {
+  font-size: var(--text-body);
+  line-height: var(--leading-body);
+  overflow-wrap: anywhere;
+}
+
+.image-field__detail {
+  font-family: var(--font-mono);
+  font-size: var(--text-label);
+  font-weight: var(--weight-chip);
+  line-height: var(--leading-label);
+  letter-spacing: var(--tracking-chip);
+  font-variant-numeric: tabular-nums;
+  color: var(--color-ink-muted);
+  overflow-wrap: anywhere;
+}
+
+.image-field__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+}
+
+.image-field:disabled {
+  opacity: var(--disabled-opacity);
+}
+
+/* The field dims as a whole, so the buttons and the alt text inside it don't dim a second time. */
+.image-field:disabled :is(.button, .bilingual-field) {
+  opacity: 1;
+}
