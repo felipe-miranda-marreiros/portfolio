@@ -1,0 +1,385 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Content item row · Portfolio prototype</title>
+    <link rel="preload" href="../../fonts/schibsted-grotesk.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="preload" href="../../fonts/martian-mono.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="stylesheet" href="../../tokens.css" />
+    <link rel="stylesheet" href="../specimen.css" />
+    <link rel="stylesheet" href="../state-indicator/state-indicator.css" />
+    <link rel="stylesheet" href="content-item-row.css" />
+  </head>
+  <body>
+    <header class="specimen-bar">
+      <a href="../../index.html">Visual language</a>
+    </header>
+
+    <main>
+      <div class="specimen-intro">
+        <h1>Content item row</h1>
+        <p>
+          One Content item in the CMS's Content list: its name over a detail that tells similar items apart, then its
+          State indicator, the whole row leading into the editor. In every state, in a Section and across a 320px phone,
+          on both themes, with placeholder words. The CMS only, so there is no About me version. The Section and the phone
+          respond to the pointer and the keyboard.
+        </p>
+      </div>
+
+      <div class="surfaces">
+        <section class="surface" data-scheme="dark" aria-labelledby="dark-title">
+          <h2 id="dark-title">Dark</h2>
+          <div class="variant">
+            <h3>States</h3>
+            <ul class="states states--rows" inert>
+              <li>
+                <ul class="content-item-rows states__fill">
+                  <li>
+                    <a class="content-item-row" href="index.html">
+                      <span class="content-item-row__text">
+                        <span class="content-item-row__name">Role 2</span>
+                        <span class="content-item-row__detail">Jan 2021 – Feb 2023</span>
+                      </span>
+                      <span class="content-item-row__end"><span class="state-indicator" data-state="published">Published</span></span>
+                    </a>
+                  </li>
+                </ul>
+                <code>default</code>
+              </li>
+              <li>
+                <ul class="content-item-rows states__fill">
+                  <li>
+                    <a class="content-item-row" href="index.html" data-force="hover">
+                      <span class="content-item-row__text">
+                        <span class="content-item-row__name">Role 2</span>
+                        <span class="content-item-row__detail">Jan 2021 – Feb 2023</span>
+                      </span>
+                      <span class="content-item-row__end"><span class="state-indicator" data-state="published">Published</span></span>
+                    </a>
+                  </li>
+                </ul>
+                <code>hover</code>
+              </li>
+              <li>
+                <ul class="content-item-rows states__fill">
+                  <li>
+                    <a class="content-item-row" href="index.html" data-force="focus">
+                      <span class="content-item-row__text">
+                        <span class="content-item-row__name">Role 2</span>
+                        <span class="content-item-row__detail">Jan 2021 – Feb 2023</span>
+                      </span>
+                      <span class="content-item-row__end"><span class="state-indicator" data-state="published">Published</span></span>
+                    </a>
+                  </li>
+                </ul>
+                <code>focus</code>
+              </li>
+              <li>
+                <ul class="content-item-rows states__fill">
+                  <li>
+                    <a class="content-item-row" href="index.html" data-force="active">
+                      <span class="content-item-row__text">
+                        <span class="content-item-row__name">Role 2</span>
+                        <span class="content-item-row__detail">Jan 2021 – Feb 2023</span>
+                      </span>
+                      <span class="content-item-row__end"><span class="state-indicator" data-state="published">Published</span></span>
+                    </a>
+                  </li>
+                </ul>
+                <code>active</code>
+              </li>
+              <li>
+                <ul class="content-item-rows states__fill">
+                  <li>
+                    <a class="content-item-row" href="index.html">
+                      <span class="content-item-row__text">
+                        <span class="content-item-row__name">Role 3</span>
+                        <span class="content-item-row__detail">Jun 2019 – Dec 2020</span>
+                      </span>
+                      <span class="content-item-row__end"><span class="state-indicator" data-state="draft">Draft</span></span>
+                    </a>
+                  </li>
+                </ul>
+                <code>draft</code>
+              </li>
+              <li>
+                <ul class="content-item-rows states__fill">
+                  <li>
+                    <a class="content-item-row" href="index.html">
+                      <span class="content-item-row__text">
+                        <span class="content-item-row__name">Role 1</span>
+                        <span class="content-item-row__detail">Mar 2023 – present</span>
+                      </span>
+                      <span class="content-item-row__end"><span class="state-indicator" data-state="draft-over-published">Published · Draft</span></span>
+                    </a>
+                  </li>
+                </ul>
+                <code>draft over published</code>
+              </li>
+              <li>
+                <ul class="content-item-rows states__fill">
+                  <li>
+                    <a class="content-item-row" href="index.html">
+                      <span class="content-item-row__text">
+                        <span class="content-item-row__name">SEO metadata</span>
+                      </span>
+                      <span class="content-item-row__end"><span class="state-indicator" data-state="published">Published</span></span>
+                    </a>
+                  </li>
+                </ul>
+                <code>no detail</code>
+              </li>
+            </ul>
+          </div>
+          <div class="variant">
+            <h3>In a Section</h3>
+            <div class="frame frame--column">
+              <ul class="content-item-rows">
+                <li>
+                  <a class="content-item-row" href="index.html">
+                    <span class="content-item-row__text">
+                      <span class="content-item-row__name">Role 1</span>
+                      <span class="content-item-row__detail">Mar 2023 – present</span>
+                    </span>
+                    <span class="content-item-row__end"><span class="state-indicator" data-state="draft-over-published">Published · Draft</span></span>
+                  </a>
+                </li>
+                <li>
+                  <a class="content-item-row" href="index.html">
+                    <span class="content-item-row__text">
+                      <span class="content-item-row__name">Role 2</span>
+                      <span class="content-item-row__detail">Jan 2021 – Feb 2023</span>
+                    </span>
+                    <span class="content-item-row__end"><span class="state-indicator" data-state="published">Published</span></span>
+                  </a>
+                </li>
+                <li>
+                  <a class="content-item-row" href="index.html">
+                    <span class="content-item-row__text">
+                      <span class="content-item-row__name">Role 3</span>
+                      <span class="content-item-row__detail">Jun 2019 – Dec 2020</span>
+                    </span>
+                    <span class="content-item-row__end"><span class="state-indicator" data-state="draft">Draft</span></span>
+                  </a>
+                </li>
+                <li>
+                  <a class="content-item-row" href="index.html">
+                    <span class="content-item-row__text">
+                      <span class="content-item-row__name">Role with a much longer placeholder name that wraps onto a second line</span>
+                      <span class="content-item-row__detail">Feb 2017 – May 2019</span>
+                    </span>
+                    <span class="content-item-row__end"><span class="state-indicator" data-state="published">Published</span></span>
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="variant">
+            <h3>320px phone</h3>
+            <div class="frame frame--phone">
+              <ul class="content-item-rows">
+                <li>
+                  <a class="content-item-row" href="index.html">
+                    <span class="content-item-row__text">
+                      <span class="content-item-row__name">Role with a much longer placeholder name that wraps</span>
+                      <span class="content-item-row__detail">Feb 2017 – May 2019</span>
+                    </span>
+                    <span class="content-item-row__end"><span class="state-indicator" data-state="draft-over-published">Published · Draft</span></span>
+                  </a>
+                </li>
+                <li>
+                  <a class="content-item-row" href="index.html">
+                    <span class="content-item-row__text">
+                      <span class="content-item-row__name">Repository link</span>
+                      <span class="content-item-row__detail">github.com/placeholder-owner/placeholder-repository-name</span>
+                    </span>
+                    <span class="content-item-row__end"><span class="state-indicator" data-state="published">Published</span></span>
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </section>
+
+        <section class="surface" data-scheme="light" aria-labelledby="light-title">
+          <h2 id="light-title">Light</h2>
+          <div class="variant">
+            <h3>States</h3>
+            <ul class="states states--rows" inert>
+              <li>
+                <ul class="content-item-rows states__fill">
+                  <li>
+                    <a class="content-item-row" href="index.html">
+                      <span class="content-item-row__text">
+                        <span class="content-item-row__name">Role 2</span>
+                        <span class="content-item-row__detail">Jan 2021 – Feb 2023</span>
+                      </span>
+                      <span class="content-item-row__end"><span class="state-indicator" data-state="published">Published</span></span>
+                    </a>
+                  </li>
+                </ul>
+                <code>default</code>
+              </li>
+              <li>
+                <ul class="content-item-rows states__fill">
+                  <li>
+                    <a class="content-item-row" href="index.html" data-force="hover">
+                      <span class="content-item-row__text">
+                        <span class="content-item-row__name">Role 2</span>
+                        <span class="content-item-row__detail">Jan 2021 – Feb 2023</span>
+                      </span>
+                      <span class="content-item-row__end"><span class="state-indicator" data-state="published">Published</span></span>
+                    </a>
+                  </li>
+                </ul>
+                <code>hover</code>
+              </li>
+              <li>
+                <ul class="content-item-rows states__fill">
+                  <li>
+                    <a class="content-item-row" href="index.html" data-force="focus">
+                      <span class="content-item-row__text">
+                        <span class="content-item-row__name">Role 2</span>
+                        <span class="content-item-row__detail">Jan 2021 – Feb 2023</span>
+                      </span>
+                      <span class="content-item-row__end"><span class="state-indicator" data-state="published">Published</span></span>
+                    </a>
+                  </li>
+                </ul>
+                <code>focus</code>
+              </li>
+              <li>
+                <ul class="content-item-rows states__fill">
+                  <li>
+                    <a class="content-item-row" href="index.html" data-force="active">
+                      <span class="content-item-row__text">
+                        <span class="content-item-row__name">Role 2</span>
+                        <span class="content-item-row__detail">Jan 2021 – Feb 2023</span>
+                      </span>
+                      <span class="content-item-row__end"><span class="state-indicator" data-state="published">Published</span></span>
+                    </a>
+                  </li>
+                </ul>
+                <code>active</code>
+              </li>
+              <li>
+                <ul class="content-item-rows states__fill">
+                  <li>
+                    <a class="content-item-row" href="index.html">
+                      <span class="content-item-row__text">
+                        <span class="content-item-row__name">Role 3</span>
+                        <span class="content-item-row__detail">Jun 2019 – Dec 2020</span>
+                      </span>
+                      <span class="content-item-row__end"><span class="state-indicator" data-state="draft">Draft</span></span>
+                    </a>
+                  </li>
+                </ul>
+                <code>draft</code>
+              </li>
+              <li>
+                <ul class="content-item-rows states__fill">
+                  <li>
+                    <a class="content-item-row" href="index.html">
+                      <span class="content-item-row__text">
+                        <span class="content-item-row__name">Role 1</span>
+                        <span class="content-item-row__detail">Mar 2023 – present</span>
+                      </span>
+                      <span class="content-item-row__end"><span class="state-indicator" data-state="draft-over-published">Published · Draft</span></span>
+                    </a>
+                  </li>
+                </ul>
+                <code>draft over published</code>
+              </li>
+              <li>
+                <ul class="content-item-rows states__fill">
+                  <li>
+                    <a class="content-item-row" href="index.html">
+                      <span class="content-item-row__text">
+                        <span class="content-item-row__name">SEO metadata</span>
+                      </span>
+                      <span class="content-item-row__end"><span class="state-indicator" data-state="published">Published</span></span>
+                    </a>
+                  </li>
+                </ul>
+                <code>no detail</code>
+              </li>
+            </ul>
+          </div>
+          <div class="variant">
+            <h3>In a Section</h3>
+            <div class="frame frame--column">
+              <ul class="content-item-rows">
+                <li>
+                  <a class="content-item-row" href="index.html">
+                    <span class="content-item-row__text">
+                      <span class="content-item-row__name">Role 1</span>
+                      <span class="content-item-row__detail">Mar 2023 – present</span>
+                    </span>
+                    <span class="content-item-row__end"><span class="state-indicator" data-state="draft-over-published">Published · Draft</span></span>
+                  </a>
+                </li>
+                <li>
+                  <a class="content-item-row" href="index.html">
+                    <span class="content-item-row__text">
+                      <span class="content-item-row__name">Role 2</span>
+                      <span class="content-item-row__detail">Jan 2021 – Feb 2023</span>
+                    </span>
+                    <span class="content-item-row__end"><span class="state-indicator" data-state="published">Published</span></span>
+                  </a>
+                </li>
+                <li>
+                  <a class="content-item-row" href="index.html">
+                    <span class="content-item-row__text">
+                      <span class="content-item-row__name">Role 3</span>
+                      <span class="content-item-row__detail">Jun 2019 – Dec 2020</span>
+                    </span>
+                    <span class="content-item-row__end"><span class="state-indicator" data-state="draft">Draft</span></span>
+                  </a>
+                </li>
+                <li>
+                  <a class="content-item-row" href="index.html">
+                    <span class="content-item-row__text">
+                      <span class="content-item-row__name">Role with a much longer placeholder name that wraps onto a second line</span>
+                      <span class="content-item-row__detail">Feb 2017 – May 2019</span>
+                    </span>
+                    <span class="content-item-row__end"><span class="state-indicator" data-state="published">Published</span></span>
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="variant">
+            <h3>320px phone</h3>
+            <div class="frame frame--phone">
+              <ul class="content-item-rows">
+                <li>
+                  <a class="content-item-row" href="index.html">
+                    <span class="content-item-row__text">
+                      <span class="content-item-row__name">Role with a much longer placeholder name that wraps</span>
+                      <span class="content-item-row__detail">Feb 2017 – May 2019</span>
+                    </span>
+                    <span class="content-item-row__end"><span class="state-indicator" data-state="draft-over-published">Published · Draft</span></span>
+                  </a>
+                </li>
+                <li>
+                  <a class="content-item-row" href="index.html">
+                    <span class="content-item-row__text">
+                      <span class="content-item-row__name">Repository link</span>
+                      <span class="content-item-row__detail">github.com/placeholder-owner/placeholder-repository-name</span>
+                    </span>
+                    <span class="content-item-row__end"><span class="state-indicator" data-state="published">Published</span></span>
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </section>
+      </div>
+    </main>
+
+    <footer class="foot">
+      <p>Design prototype. A reference for the front end, not production code.</p>
+    </footer>
+  </body>
+</html>
