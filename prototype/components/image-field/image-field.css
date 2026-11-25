@@ -60,9 +60,10 @@
   object-fit: cover;
 }
 
+/* Empty takes a missing translation's edge, so forced colours turn it dotted and it can't pass for an error. */
 .image-field__file[data-empty],
 .image-field__file[data-empty] .image-field__thumb {
-  border-style: dashed;
+  border-style: var(--missing-line-style);
 }
 
 .image-field__file[data-empty] .image-field__thumb {
@@ -107,12 +108,4 @@
 /* The field dims as a whole, so the buttons and the alt text inside it don't dim a second time. */
 .image-field:disabled :is(.button, .bilingual-field) {
   opacity: 1;
-}
-
-/* Forced colours turn an error's line dashed, so an empty row's edge turns dotted, as a missing translation's does. */
-@media (forced-colors: active) {
-  .image-field__file[data-empty],
-  .image-field__file[data-empty] .image-field__thumb {
-    border-style: dotted;
-  }
 }
