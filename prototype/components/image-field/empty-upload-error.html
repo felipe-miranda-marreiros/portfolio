@@ -1,0 +1,153 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Image field: empty, uploading, error and disabled · Portfolio prototype</title>
+    <link rel="preload" href="../../fonts/schibsted-grotesk.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="preload" href="../../fonts/martian-mono.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="stylesheet" href="../../tokens.css" />
+    <link rel="stylesheet" href="../specimen.css" />
+    <link rel="stylesheet" href="../text-field/text-field.css" />
+    <link rel="stylesheet" href="../button/button.css" />
+    <link rel="stylesheet" href="../state-indicator/state-indicator.css" />
+    <link rel="stylesheet" href="../bilingual-field/bilingual-field.css" />
+    <link rel="stylesheet" href="image-field.css" />
+  </head>
+  <body>
+    <header class="specimen-bar">
+      <a href="../../index.html">Visual language</a>
+    </header>
+
+    <main>
+      <div class="specimen-intro">
+        <h1>Image field: empty, uploading, error and disabled</h1>
+        <p>
+          The image field with no photo, which disables the alt text; uploading a replacement, with the progress in
+          the detail; a file turned down, which leaves the photo as it was; and disabled, on both themes.
+        </p>
+      </div>
+
+      <div class="surfaces">
+        <section class="surface" data-scheme="dark" aria-labelledby="d-title">
+          <h2 id="d-title">Dark</h2>
+          <div class="variant">
+            <h3>Empty, uploading, error and disabled</h3>
+            <ul class="states states--rows-wide">
+              <li>
+                <fieldset class="image-field states__fill">
+                  <legend class="text-field__label">Photo</legend>
+                  <div class="image-field__file" data-empty><span class="image-field__thumb" aria-hidden="true"></span><div class="image-field__meta"><span class="image-field__name">No photo</span><span class="image-field__detail" id="d-empty-detail">JPG, PNG or WebP, square, up to 5 MB.</span></div><div class="image-field__actions"><button class="button button--secondary" type="button" aria-describedby="d-empty-detail"><span class="button__label">Choose image</span></button></div></div>
+                  <fieldset class="bilingual-field" disabled>
+                    <legend class="text-field__label">Alt text</legend>
+                    <p class="text-field__hint" id="d-empty-alt-hint">What the photo shows, for anyone who can't see it.</p>
+                    <div class="bilingual-field__pair"><div class="bilingual-field__language"><div class="bilingual-field__head"><label class="bilingual-field__name" for="d-empty-en">English</label></div><input class="text-field__input" id="d-empty-en" aria-describedby="d-empty-alt-hint" /></div><div class="bilingual-field__language"><div class="bilingual-field__head"><label class="bilingual-field__name" for="d-empty-pt">Brazilian Portuguese</label></div><input class="text-field__input" id="d-empty-pt" lang="pt-BR" aria-describedby="d-empty-alt-hint" /></div></div>
+                  </fieldset>
+                </fieldset>
+                <code>empty</code>
+              </li>
+              <li>
+                <fieldset class="image-field states__fill">
+                  <legend class="text-field__label">Photo</legend>
+                  <div class="image-field__file"><img class="image-field__thumb" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' fill='%2378736a'/%3E%3Cpath d='M0 64L64 0M-16 48L48-16M16 80L80 16' stroke='%23a39d92' stroke-width='6'/%3E%3C/svg%3E" alt="" /><div class="image-field__meta"><span class="image-field__name">portrait.jpg</span><span class="image-field__detail" id="d-uploading-detail">Uploading · 60%</span></div><div class="image-field__actions"><button class="button button--secondary" type="button" aria-describedby="d-uploading-detail" aria-busy="true" aria-disabled="true"><span class="button__label">Replace</span></button><button class="button button--secondary" type="button" disabled><span class="button__label">Remove</span></button></div></div>
+                  <fieldset class="bilingual-field">
+                    <legend class="text-field__label">Alt text</legend>
+                    <p class="text-field__hint" id="d-uploading-alt-hint">What the photo shows, for anyone who can't see it.</p>
+                    <div class="bilingual-field__pair"><div class="bilingual-field__language"><div class="bilingual-field__head"><label class="bilingual-field__name" for="d-uploading-en">English</label></div><input class="text-field__input" id="d-uploading-en" value="Placeholder: the Owner, head and shoulders" aria-describedby="d-uploading-alt-hint" /></div><div class="bilingual-field__language"><div class="bilingual-field__head"><label class="bilingual-field__name" for="d-uploading-pt">Brazilian Portuguese</label></div><input class="text-field__input" id="d-uploading-pt" lang="pt-BR" value="Placeholder: o Owner, rosto e ombros" aria-describedby="d-uploading-alt-hint" /></div></div>
+                  </fieldset>
+                </fieldset>
+                <code>uploading</code>
+              </li>
+              <li>
+                <fieldset class="image-field states__fill">
+                  <legend class="text-field__label">Photo</legend>
+                  <div class="image-field__file"><img class="image-field__thumb" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' fill='%2378736a'/%3E%3Cpath d='M0 64L64 0M-16 48L48-16M16 80L80 16' stroke='%23a39d92' stroke-width='6'/%3E%3C/svg%3E" alt="" /><div class="image-field__meta"><span class="image-field__name">photo.jpg</span><span class="image-field__detail" id="d-error-detail">JPG · 480 × 480 · 212 KB</span></div><div class="image-field__actions"><button class="button button--secondary" type="button" aria-describedby="d-error-detail d-error-error"><span class="button__label">Replace</span></button><button class="button button--secondary" type="button"><span class="button__label">Remove</span></button></div></div>
+                  <p class="text-field__error" id="d-error-error">portrait-full.png is 8.4 MB, so the photo wasn't replaced. Choose an image up to 5 MB.</p>
+                  <fieldset class="bilingual-field">
+                    <legend class="text-field__label">Alt text</legend>
+                    <p class="text-field__hint" id="d-error-alt-hint">What the photo shows, for anyone who can't see it.</p>
+                    <div class="bilingual-field__pair"><div class="bilingual-field__language"><div class="bilingual-field__head"><label class="bilingual-field__name" for="d-error-en">English</label></div><input class="text-field__input" id="d-error-en" value="Placeholder: the Owner, head and shoulders" aria-describedby="d-error-alt-hint" /></div><div class="bilingual-field__language"><div class="bilingual-field__head"><label class="bilingual-field__name" for="d-error-pt">Brazilian Portuguese</label></div><input class="text-field__input" id="d-error-pt" lang="pt-BR" value="Placeholder: o Owner, rosto e ombros" aria-describedby="d-error-alt-hint" /></div></div>
+                  </fieldset>
+                </fieldset>
+                <code>error</code>
+              </li>
+              <li>
+                <fieldset class="image-field states__fill" disabled>
+                  <legend class="text-field__label">Photo</legend>
+                  <div class="image-field__file"><img class="image-field__thumb" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' fill='%2378736a'/%3E%3Cpath d='M0 64L64 0M-16 48L48-16M16 80L80 16' stroke='%23a39d92' stroke-width='6'/%3E%3C/svg%3E" alt="" /><div class="image-field__meta"><span class="image-field__name">photo.jpg</span><span class="image-field__detail" id="d-disabled-detail">JPG · 480 × 480 · 212 KB</span></div><div class="image-field__actions"><button class="button button--secondary" type="button" aria-describedby="d-disabled-detail"><span class="button__label">Replace</span></button><button class="button button--secondary" type="button"><span class="button__label">Remove</span></button></div></div>
+                  <fieldset class="bilingual-field">
+                    <legend class="text-field__label">Alt text</legend>
+                    <p class="text-field__hint" id="d-disabled-alt-hint">What the photo shows, for anyone who can't see it.</p>
+                    <div class="bilingual-field__pair"><div class="bilingual-field__language"><div class="bilingual-field__head"><label class="bilingual-field__name" for="d-disabled-en">English</label></div><input class="text-field__input" id="d-disabled-en" value="Placeholder: the Owner, head and shoulders" aria-describedby="d-disabled-alt-hint" /></div><div class="bilingual-field__language"><div class="bilingual-field__head"><label class="bilingual-field__name" for="d-disabled-pt">Brazilian Portuguese</label></div><input class="text-field__input" id="d-disabled-pt" lang="pt-BR" value="Placeholder: o Owner, rosto e ombros" aria-describedby="d-disabled-alt-hint" /></div></div>
+                  </fieldset>
+                </fieldset>
+                <code>disabled</code>
+              </li>
+            </ul>
+          </div>
+        </section>
+        <section class="surface" data-scheme="light" aria-labelledby="l-title">
+          <h2 id="l-title">Light</h2>
+          <div class="variant">
+            <h3>Empty, uploading, error and disabled</h3>
+            <ul class="states states--rows-wide">
+              <li>
+                <fieldset class="image-field states__fill">
+                  <legend class="text-field__label">Photo</legend>
+                  <div class="image-field__file" data-empty><span class="image-field__thumb" aria-hidden="true"></span><div class="image-field__meta"><span class="image-field__name">No photo</span><span class="image-field__detail" id="l-empty-detail">JPG, PNG or WebP, square, up to 5 MB.</span></div><div class="image-field__actions"><button class="button button--secondary" type="button" aria-describedby="l-empty-detail"><span class="button__label">Choose image</span></button></div></div>
+                  <fieldset class="bilingual-field" disabled>
+                    <legend class="text-field__label">Alt text</legend>
+                    <p class="text-field__hint" id="l-empty-alt-hint">What the photo shows, for anyone who can't see it.</p>
+                    <div class="bilingual-field__pair"><div class="bilingual-field__language"><div class="bilingual-field__head"><label class="bilingual-field__name" for="l-empty-en">English</label></div><input class="text-field__input" id="l-empty-en" aria-describedby="l-empty-alt-hint" /></div><div class="bilingual-field__language"><div class="bilingual-field__head"><label class="bilingual-field__name" for="l-empty-pt">Brazilian Portuguese</label></div><input class="text-field__input" id="l-empty-pt" lang="pt-BR" aria-describedby="l-empty-alt-hint" /></div></div>
+                  </fieldset>
+                </fieldset>
+                <code>empty</code>
+              </li>
+              <li>
+                <fieldset class="image-field states__fill">
+                  <legend class="text-field__label">Photo</legend>
+                  <div class="image-field__file"><img class="image-field__thumb" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' fill='%2378736a'/%3E%3Cpath d='M0 64L64 0M-16 48L48-16M16 80L80 16' stroke='%23a39d92' stroke-width='6'/%3E%3C/svg%3E" alt="" /><div class="image-field__meta"><span class="image-field__name">portrait.jpg</span><span class="image-field__detail" id="l-uploading-detail">Uploading · 60%</span></div><div class="image-field__actions"><button class="button button--secondary" type="button" aria-describedby="l-uploading-detail" aria-busy="true" aria-disabled="true"><span class="button__label">Replace</span></button><button class="button button--secondary" type="button" disabled><span class="button__label">Remove</span></button></div></div>
+                  <fieldset class="bilingual-field">
+                    <legend class="text-field__label">Alt text</legend>
+                    <p class="text-field__hint" id="l-uploading-alt-hint">What the photo shows, for anyone who can't see it.</p>
+                    <div class="bilingual-field__pair"><div class="bilingual-field__language"><div class="bilingual-field__head"><label class="bilingual-field__name" for="l-uploading-en">English</label></div><input class="text-field__input" id="l-uploading-en" value="Placeholder: the Owner, head and shoulders" aria-describedby="l-uploading-alt-hint" /></div><div class="bilingual-field__language"><div class="bilingual-field__head"><label class="bilingual-field__name" for="l-uploading-pt">Brazilian Portuguese</label></div><input class="text-field__input" id="l-uploading-pt" lang="pt-BR" value="Placeholder: o Owner, rosto e ombros" aria-describedby="l-uploading-alt-hint" /></div></div>
+                  </fieldset>
+                </fieldset>
+                <code>uploading</code>
+              </li>
+              <li>
+                <fieldset class="image-field states__fill">
+                  <legend class="text-field__label">Photo</legend>
+                  <div class="image-field__file"><img class="image-field__thumb" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' fill='%2378736a'/%3E%3Cpath d='M0 64L64 0M-16 48L48-16M16 80L80 16' stroke='%23a39d92' stroke-width='6'/%3E%3C/svg%3E" alt="" /><div class="image-field__meta"><span class="image-field__name">photo.jpg</span><span class="image-field__detail" id="l-error-detail">JPG · 480 × 480 · 212 KB</span></div><div class="image-field__actions"><button class="button button--secondary" type="button" aria-describedby="l-error-detail l-error-error"><span class="button__label">Replace</span></button><button class="button button--secondary" type="button"><span class="button__label">Remove</span></button></div></div>
+                  <p class="text-field__error" id="l-error-error">portrait-full.png is 8.4 MB, so the photo wasn't replaced. Choose an image up to 5 MB.</p>
+                  <fieldset class="bilingual-field">
+                    <legend class="text-field__label">Alt text</legend>
+                    <p class="text-field__hint" id="l-error-alt-hint">What the photo shows, for anyone who can't see it.</p>
+                    <div class="bilingual-field__pair"><div class="bilingual-field__language"><div class="bilingual-field__head"><label class="bilingual-field__name" for="l-error-en">English</label></div><input class="text-field__input" id="l-error-en" value="Placeholder: the Owner, head and shoulders" aria-describedby="l-error-alt-hint" /></div><div class="bilingual-field__language"><div class="bilingual-field__head"><label class="bilingual-field__name" for="l-error-pt">Brazilian Portuguese</label></div><input class="text-field__input" id="l-error-pt" lang="pt-BR" value="Placeholder: o Owner, rosto e ombros" aria-describedby="l-error-alt-hint" /></div></div>
+                  </fieldset>
+                </fieldset>
+                <code>error</code>
+              </li>
+              <li>
+                <fieldset class="image-field states__fill" disabled>
+                  <legend class="text-field__label">Photo</legend>
+                  <div class="image-field__file"><img class="image-field__thumb" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' fill='%2378736a'/%3E%3Cpath d='M0 64L64 0M-16 48L48-16M16 80L80 16' stroke='%23a39d92' stroke-width='6'/%3E%3C/svg%3E" alt="" /><div class="image-field__meta"><span class="image-field__name">photo.jpg</span><span class="image-field__detail" id="l-disabled-detail">JPG · 480 × 480 · 212 KB</span></div><div class="image-field__actions"><button class="button button--secondary" type="button" aria-describedby="l-disabled-detail"><span class="button__label">Replace</span></button><button class="button button--secondary" type="button"><span class="button__label">Remove</span></button></div></div>
+                  <fieldset class="bilingual-field">
+                    <legend class="text-field__label">Alt text</legend>
+                    <p class="text-field__hint" id="l-disabled-alt-hint">What the photo shows, for anyone who can't see it.</p>
+                    <div class="bilingual-field__pair"><div class="bilingual-field__language"><div class="bilingual-field__head"><label class="bilingual-field__name" for="l-disabled-en">English</label></div><input class="text-field__input" id="l-disabled-en" value="Placeholder: the Owner, head and shoulders" aria-describedby="l-disabled-alt-hint" /></div><div class="bilingual-field__language"><div class="bilingual-field__head"><label class="bilingual-field__name" for="l-disabled-pt">Brazilian Portuguese</label></div><input class="text-field__input" id="l-disabled-pt" lang="pt-BR" value="Placeholder: o Owner, rosto e ombros" aria-describedby="l-disabled-alt-hint" /></div></div>
+                  </fieldset>
+                </fieldset>
+                <code>disabled</code>
+              </li>
+            </ul>
+          </div>
+        </section>
+      </div>
+    </main>
+
+    <footer class="foot">
+      <p>Design prototype. A reference for the front end, not production code. See the <a href="index.html">states</a>, <a href="empty-upload-error.html">empty, uploading, error and disabled</a>, and <a href="cases.html">cases and a phone</a>.</p>
+    </footer>
+  </body>
+</html>
