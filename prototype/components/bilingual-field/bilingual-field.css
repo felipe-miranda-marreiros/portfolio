@@ -63,7 +63,7 @@
 }
 
 .bilingual-field__language[data-missing] .text-field__input:not([aria-invalid="true"]) {
-  border-style: dashed;
+  border-style: var(--missing-line-style);
 }
 
 .bilingual-field:disabled {
