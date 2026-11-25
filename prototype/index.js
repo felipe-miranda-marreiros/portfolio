@@ -173,6 +173,13 @@ const components = [
     label: "Period field states",
     states: ["default", "hover", "focus", "error", "disabled", "present", "year only", "single date"],
   },
+  {
+    slug: "image-field",
+    name: "Image field",
+    note: "One image as a file row, with its alt text in English and Brazilian Portuguese under it. The CMS only.",
+    label: "Image field states",
+    states: ["default", "hover", "focus", "empty", "uploading", "error", "disabled", "alt text missing"],
+  },
 ];
 
 // Built here rather than written in the page, so the page stays under the file size hook as components are added.

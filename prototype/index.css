@@ -132,7 +132,8 @@ a {
   .area-state-indicator,
   .area-content-item-row,
   .area-bilingual-field,
-  .area-period-field {
+  .area-period-field,
+  .area-image-field {
     grid-column: 1 / -1;
   }
 }
