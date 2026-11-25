@@ -108,3 +108,11 @@
 .image-field:disabled :is(.button, .bilingual-field) {
   opacity: 1;
 }
+
+/* Forced colours turn an error's line dashed, so an empty row's edge turns dotted, as a missing translation's does. */
+@media (forced-colors: active) {
+  .image-field__file[data-empty],
+  .image-field__file[data-empty] .image-field__thumb {
+    border-style: dotted;
+  }
+}
