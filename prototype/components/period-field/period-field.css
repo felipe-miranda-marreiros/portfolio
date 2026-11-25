@@ -1,0 +1,125 @@
+/**
+ * Period field: when something started and when it ended, or that it's ongoing, as a month and a year select for each
+ * end on one line with a dash between, from tokens only. It composes the Text field's label, hint, input and error.
+ * Markup: <fieldset class="period-field"><legend class="text-field__label">…</legend>
+ *   <p class="text-field__hint" id="…-hint">…</p>
+ *   <div class="period-field__ends">
+ *     <fieldset class="period-field__end"><legend class="period-field__name">…</legend>
+ *       <div class="period-field__controls">
+ *         <span class="period-field__select period-field__month"><select class="text-field__input" aria-label="…">
+ *           <option value="">…</option><option value="01">…</option>…</select></span>
+ *         <span class="period-field__select"><select class="text-field__input" aria-label="…">…</select></span>
+ *     </div></fieldset>
+ *     <span class="period-field__dash" aria-hidden="true">–</span>
+ *     <fieldset class="period-field__end">… the end year's first option is <option value="present">…</option></fieldset>
+ *   </div>
+ *   <p class="text-field__error" id="…-error">…</p></fieldset>.
+ * A month's empty value gives a year-only date. Choosing "present" as the end year hides the end month, with no script.
+ * A single date, such as a certification's issue date, is one end with no dash. Dates are language-neutral, so the
+ * field appears once; the Portfolio writes month names and "present" in each language.
+ */
+.period-field {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+  min-inline-size: 0;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  color: var(--color-ink);
+}
+
+/* A floated legend leaves the fieldset's border and becomes a flex item, so it takes the column's gap like a label. */
+.period-field > legend,
+.period-field__end > legend {
+  float: inline-start;
+  padding: 0;
+}
+
+.period-field__ends {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: end;
+  gap: var(--space-2) var(--space-4);
+}
+
+.period-field__end {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+  min-inline-size: 0;
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+.period-field__name {
+  font-family: var(--font-mono);
+  font-size: var(--text-label);
+  font-weight: var(--weight-label);
+  line-height: var(--leading-label);
+  letter-spacing: var(--tracking-label);
+  text-transform: var(--case-label);
+  font-variant-numeric: tabular-nums;
+  color: var(--color-ink-secondary);
+}
+
+.period-field__controls {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+}
+
+/* Level with the controls' text: their padding and border sit under it. */
+.period-field__dash {
+  padding-block-end: calc(var(--space-2) + var(--line-width));
+  font-size: var(--text-body);
+  line-height: var(--leading-body);
+  color: var(--color-ink-muted);
+}
+
+.period-field__select {
+  position: relative;
+  display: inline-flex;
+}
+
+.period-field__select > select {
+  inline-size: auto;
+  padding-inline-end: calc(var(--space-3) + var(--icon-size) + var(--space-2));
+  appearance: none;
+  font-variant-numeric: tabular-nums;
+  cursor: pointer;
+}
+
+.period-field__select > select option {
+  background: var(--color-ground);
+  color: var(--color-ink);
+}
+
+.period-field__select::after {
+  content: "";
+  position: absolute;
+  inset-block: 0;
+  inset-inline-end: var(--space-3);
+  inline-size: var(--icon-size);
+  margin-block: auto;
+  block-size: var(--icon-size);
+  background: currentColor;
+  mask: var(--icon-chevron) center / contain no-repeat;
+  pointer-events: none;
+}
+
+.period-field__end:has(option[value="present"]:checked) .period-field__month {
+  display: none;
+}
+
+.period-field:disabled {
+  opacity: var(--disabled-opacity);
+}
+
+/* Forced colours repaint the chevron's masked background as Canvas, which hides it; paint it in the text colour. */
+@media (forced-colors: active) {
+  .period-field__select::after {
+    background: CanvasText;
+  }
+}

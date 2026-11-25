@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Period field · Portfolio prototype</title>
+    <link rel="preload" href="../../fonts/schibsted-grotesk.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="preload" href="../../fonts/martian-mono.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="stylesheet" href="../../tokens.css" />
+    <link rel="stylesheet" href="../specimen.css" />
+    <link rel="stylesheet" href="../text-field/text-field.css" />
+    <link rel="stylesheet" href="period-field.css" />
+  </head>
+  <body>
+    <header class="specimen-bar">
+      <a href="../../index.html">Visual language</a>
+    </header>
+
+    <main>
+      <div class="specimen-intro">
+        <h1>Period field</h1>
+        <p>
+          When something started and when it ended, or that it's ongoing: a month and a year for each end, on one line
+          with a dash between, built from the Text field. Default, hover and focus on both themes, with placeholder
+          values. The CMS only, so there is no About me version. The selects respond to the pointer and the keyboard.
+        </p>
+      </div>
+
+      <div class="surfaces">
+        <section class="surface" data-scheme="dark" aria-labelledby="d-title">
+          <h2 id="d-title">Dark</h2>
+          <div class="variant">
+            <h3>States</h3>
+            <ul class="states states--rows">
+              <li>
+                <fieldset class="period-field">
+                  <legend class="text-field__label">Period</legend>
+                  <p class="text-field__hint" id="d-default-hint">When the role started and ended.</p>
+                  <div class="period-field__ends"><fieldset class="period-field__end"><legend class="period-field__name">Start</legend><div class="period-field__controls"><span class="period-field__select period-field__month"><select class="text-field__input" id="d-default-start-month" aria-label="Month" aria-describedby="d-default-hint"><option value="">No month</option><option>Jan</option><option>Feb</option><option selected>Mar</option><option>Apr</option><option>May</option><option>Jun</option><option>Jul</option><option>Aug</option><option>Sep</option><option>Oct</option><option>Nov</option><option>Dec</option></select></span><span class="period-field__select"><select class="text-field__input" id="d-default-start-year" aria-label="Year" aria-describedby="d-default-hint"><option>2022</option><option>2021</option><option selected>2020</option><option>2019</option><option>2018</option></select></span></div></fieldset><span class="period-field__dash" aria-hidden="true">–</span><fieldset class="period-field__end"><legend class="period-field__name">End</legend><div class="period-field__controls"><span class="period-field__select period-field__month"><select class="text-field__input" id="d-default-end-month" aria-label="Month" aria-describedby="d-default-hint"><option value="">No month</option><option>Jan</option><option>Feb</option><option>Mar</option><option>Apr</option><option>May</option><option>Jun</option><option>Jul</option><option>Aug</option><option>Sep</option><option>Oct</option><option>Nov</option><option selected>Dec</option></select></span><span class="period-field__select"><select class="text-field__input" id="d-default-end-year" aria-label="Year" aria-describedby="d-default-hint"><option value="present">Present</option><option>2024</option><option>2023</option><option selected>2022</option><option>2021</option><option>2020</option></select></span></div></fieldset></div>
+                </fieldset>
+                <code>default</code>
+              </li>
+              <li>
+                <fieldset class="period-field">
+                  <legend class="text-field__label">Period</legend>
+                  <p class="text-field__hint" id="d-hover-hint">When the role started and ended.</p>
+                  <div class="period-field__ends"><fieldset class="period-field__end"><legend class="period-field__name">Start</legend><div class="period-field__controls"><span class="period-field__select period-field__month"><select class="text-field__input" id="d-hover-start-month" aria-label="Month" aria-describedby="d-hover-hint"><option value="">No month</option><option>Jan</option><option>Feb</option><option selected>Mar</option><option>Apr</option><option>May</option><option>Jun</option><option>Jul</option><option>Aug</option><option>Sep</option><option>Oct</option><option>Nov</option><option>Dec</option></select></span><span class="period-field__select"><select class="text-field__input" id="d-hover-start-year" aria-label="Year" aria-describedby="d-hover-hint" data-force="hover"><option>2022</option><option>2021</option><option selected>2020</option><option>2019</option><option>2018</option></select></span></div></fieldset><span class="period-field__dash" aria-hidden="true">–</span><fieldset class="period-field__end"><legend class="period-field__name">End</legend><div class="period-field__controls"><span class="period-field__select period-field__month"><select class="text-field__input" id="d-hover-end-month" aria-label="Month" aria-describedby="d-hover-hint"><option value="">No month</option><option>Jan</option><option>Feb</option><option>Mar</option><option>Apr</option><option>May</option><option>Jun</option><option>Jul</option><option>Aug</option><option>Sep</option><option>Oct</option><option>Nov</option><option selected>Dec</option></select></span><span class="period-field__select"><select class="text-field__input" id="d-hover-end-year" aria-label="Year" aria-describedby="d-hover-hint"><option value="present">Present</option><option>2024</option><option>2023</option><option selected>2022</option><option>2021</option><option>2020</option></select></span></div></fieldset></div>
+                </fieldset>
+                <code>hover</code>
+              </li>
+              <li>
+                <fieldset class="period-field">
+                  <legend class="text-field__label">Period</legend>
+                  <p class="text-field__hint" id="d-focus-hint">When the role started and ended.</p>
+                  <div class="period-field__ends"><fieldset class="period-field__end"><legend class="period-field__name">Start</legend><div class="period-field__controls"><span class="period-field__select period-field__month"><select class="text-field__input" id="d-focus-start-month" aria-label="Month" aria-describedby="d-focus-hint"><option value="">No month</option><option>Jan</option><option>Feb</option><option selected>Mar</option><option>Apr</option><option>May</option><option>Jun</option><option>Jul</option><option>Aug</option><option>Sep</option><option>Oct</option><option>Nov</option><option>Dec</option></select></span><span class="period-field__select"><select class="text-field__input" id="d-focus-start-year" aria-label="Year" aria-describedby="d-focus-hint" data-force="focus"><option>2022</option><option>2021</option><option selected>2020</option><option>2019</option><option>2018</option></select></span></div></fieldset><span class="period-field__dash" aria-hidden="true">–</span><fieldset class="period-field__end"><legend class="period-field__name">End</legend><div class="period-field__controls"><span class="period-field__select period-field__month"><select class="text-field__input" id="d-focus-end-month" aria-label="Month" aria-describedby="d-focus-hint"><option value="">No month</option><option>Jan</option><option>Feb</option><option>Mar</option><option>Apr</option><option>May</option><option>Jun</option><option>Jul</option><option>Aug</option><option>Sep</option><option>Oct</option><option>Nov</option><option selected>Dec</option></select></span><span class="period-field__select"><select class="text-field__input" id="d-focus-end-year" aria-label="Year" aria-describedby="d-focus-hint"><option value="present">Present</option><option>2024</option><option>2023</option><option selected>2022</option><option>2021</option><option>2020</option></select></span></div></fieldset></div>
+                </fieldset>
+                <code>focus</code>
+              </li>
+            </ul>
+          </div>
+        </section>
+        <section class="surface" data-scheme="light" aria-labelledby="l-title">
+          <h2 id="l-title">Light</h2>
+          <div class="variant">
+            <h3>States</h3>
+            <ul class="states states--rows">
+              <li>
+                <fieldset class="period-field">
+                  <legend class="text-field__label">Period</legend>
+                  <p class="text-field__hint" id="l-default-hint">When the role started and ended.</p>
+                  <div class="period-field__ends"><fieldset class="period-field__end"><legend class="period-field__name">Start</legend><div class="period-field__controls"><span class="period-field__select period-field__month"><select class="text-field__input" id="l-default-start-month" aria-label="Month" aria-describedby="l-default-hint"><option value="">No month</option><option>Jan</option><option>Feb</option><option selected>Mar</option><option>Apr</option><option>May</option><option>Jun</option><option>Jul</option><option>Aug</option><option>Sep</option><option>Oct</option><option>Nov</option><option>Dec</option></select></span><span class="period-field__select"><select class="text-field__input" id="l-default-start-year" aria-label="Year" aria-describedby="l-default-hint"><option>2022</option><option>2021</option><option selected>2020</option><option>2019</option><option>2018</option></select></span></div></fieldset><span class="period-field__dash" aria-hidden="true">–</span><fieldset class="period-field__end"><legend class="period-field__name">End</legend><div class="period-field__controls"><span class="period-field__select period-field__month"><select class="text-field__input" id="l-default-end-month" aria-label="Month" aria-describedby="l-default-hint"><option value="">No month</option><option>Jan</option><option>Feb</option><option>Mar</option><option>Apr</option><option>May</option><option>Jun</option><option>Jul</option><option>Aug</option><option>Sep</option><option>Oct</option><option>Nov</option><option selected>Dec</option></select></span><span class="period-field__select"><select class="text-field__input" id="l-default-end-year" aria-label="Year" aria-describedby="l-default-hint"><option value="present">Present</option><option>2024</option><option>2023</option><option selected>2022</option><option>2021</option><option>2020</option></select></span></div></fieldset></div>
+                </fieldset>
+                <code>default</code>
+              </li>
+              <li>
+                <fieldset class="period-field">
+                  <legend class="text-field__label">Period</legend>
+                  <p class="text-field__hint" id="l-hover-hint">When the role started and ended.</p>
+                  <div class="period-field__ends"><fieldset class="period-field__end"><legend class="period-field__name">Start</legend><div class="period-field__controls"><span class="period-field__select period-field__month"><select class="text-field__input" id="l-hover-start-month" aria-label="Month" aria-describedby="l-hover-hint"><option value="">No month</option><option>Jan</option><option>Feb</option><option selected>Mar</option><option>Apr</option><option>May</option><option>Jun</option><option>Jul</option><option>Aug</option><option>Sep</option><option>Oct</option><option>Nov</option><option>Dec</option></select></span><span class="period-field__select"><select class="text-field__input" id="l-hover-start-year" aria-label="Year" aria-describedby="l-hover-hint" data-force="hover"><option>2022</option><option>2021</option><option selected>2020</option><option>2019</option><option>2018</option></select></span></div></fieldset><span class="period-field__dash" aria-hidden="true">–</span><fieldset class="period-field__end"><legend class="period-field__name">End</legend><div class="period-field__controls"><span class="period-field__select period-field__month"><select class="text-field__input" id="l-hover-end-month" aria-label="Month" aria-describedby="l-hover-hint"><option value="">No month</option><option>Jan</option><option>Feb</option><option>Mar</option><option>Apr</option><option>May</option><option>Jun</option><option>Jul</option><option>Aug</option><option>Sep</option><option>Oct</option><option>Nov</option><option selected>Dec</option></select></span><span class="period-field__select"><select class="text-field__input" id="l-hover-end-year" aria-label="Year" aria-describedby="l-hover-hint"><option value="present">Present</option><option>2024</option><option>2023</option><option selected>2022</option><option>2021</option><option>2020</option></select></span></div></fieldset></div>
+                </fieldset>
+                <code>hover</code>
+              </li>
+              <li>
+                <fieldset class="period-field">
+                  <legend class="text-field__label">Period</legend>
+                  <p class="text-field__hint" id="l-focus-hint">When the role started and ended.</p>
+                  <div class="period-field__ends"><fieldset class="period-field__end"><legend class="period-field__name">Start</legend><div class="period-field__controls"><span class="period-field__select period-field__month"><select class="text-field__input" id="l-focus-start-month" aria-label="Month" aria-describedby="l-focus-hint"><option value="">No month</option><option>Jan</option><option>Feb</option><option selected>Mar</option><option>Apr</option><option>May</option><option>Jun</option><option>Jul</option><option>Aug</option><option>Sep</option><option>Oct</option><option>Nov</option><option>Dec</option></select></span><span class="period-field__select"><select class="text-field__input" id="l-focus-start-year" aria-label="Year" aria-describedby="l-focus-hint" data-force="focus"><option>2022</option><option>2021</option><option selected>2020</option><option>2019</option><option>2018</option></select></span></div></fieldset><span class="period-field__dash" aria-hidden="true">–</span><fieldset class="period-field__end"><legend class="period-field__name">End</legend><div class="period-field__controls"><span class="period-field__select period-field__month"><select class="text-field__input" id="l-focus-end-month" aria-label="Month" aria-describedby="l-focus-hint"><option value="">No month</option><option>Jan</option><option>Feb</option><option>Mar</option><option>Apr</option><option>May</option><option>Jun</option><option>Jul</option><option>Aug</option><option>Sep</option><option>Oct</option><option>Nov</option><option selected>Dec</option></select></span><span class="period-field__select"><select class="text-field__input" id="l-focus-end-year" aria-label="Year" aria-describedby="l-focus-hint"><option value="present">Present</option><option>2024</option><option>2023</option><option selected>2022</option><option>2021</option><option>2020</option></select></span></div></fieldset></div>
+                </fieldset>
+                <code>focus</code>
+              </li>
+            </ul>
+          </div>
+        </section>
+      </div>
+    </main>
+
+    <footer class="foot">
+      <p>Design prototype. A reference for the front end, not production code. See the <a href="index.html">states</a>, <a href="error-disabled.html">error and disabled</a>, and <a href="cases.html">cases and a phone</a>.</p>
+    </footer>
+  </body>
+</html>

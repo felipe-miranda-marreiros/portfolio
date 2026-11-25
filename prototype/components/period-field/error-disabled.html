@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Period field: error and disabled · Portfolio prototype</title>
+    <link rel="preload" href="../../fonts/schibsted-grotesk.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="preload" href="../../fonts/martian-mono.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="stylesheet" href="../../tokens.css" />
+    <link rel="stylesheet" href="../specimen.css" />
+    <link rel="stylesheet" href="../text-field/text-field.css" />
+    <link rel="stylesheet" href="period-field.css" />
+  </head>
+  <body>
+    <header class="specimen-bar">
+      <a href="../../index.html">Visual language</a>
+    </header>
+
+    <main>
+      <div class="specimen-intro">
+        <h1>Period field: error and disabled</h1>
+        <p>
+          The period field in error, when the end comes before the start, and disabled, on both themes. The error
+          marks the end's selects and says how to recover; disabled dims the whole field.
+        </p>
+      </div>
+
+      <div class="surfaces">
+        <section class="surface" data-scheme="dark" aria-labelledby="d-title">
+          <h2 id="d-title">Dark</h2>
+          <div class="variant">
+            <h3>Error and disabled</h3>
+            <ul class="states states--rows">
+              <li>
+                <fieldset class="period-field">
+                  <legend class="text-field__label">Period</legend>
+                  <p class="text-field__hint" id="d-error-hint">When the role started and ended.</p>
+                  <div class="period-field__ends"><fieldset class="period-field__end"><legend class="period-field__name">Start</legend><div class="period-field__controls"><span class="period-field__select period-field__month"><select class="text-field__input" id="d-error-start-month" aria-label="Month" aria-describedby="d-error-hint"><option value="">No month</option><option>Jan</option><option>Feb</option><option selected>Mar</option><option>Apr</option><option>May</option><option>Jun</option><option>Jul</option><option>Aug</option><option>Sep</option><option>Oct</option><option>Nov</option><option>Dec</option></select></span><span class="period-field__select"><select class="text-field__input" id="d-error-start-year" aria-label="Year" aria-describedby="d-error-hint"><option>2022</option><option>2021</option><option selected>2020</option><option>2019</option><option>2018</option></select></span></div></fieldset><span class="period-field__dash" aria-hidden="true">–</span><fieldset class="period-field__end"><legend class="period-field__name">End</legend><div class="period-field__controls"><span class="period-field__select period-field__month"><select class="text-field__input" id="d-error-end-month" aria-label="Month" aria-describedby="d-error-hint d-error-error" aria-invalid="true"><option value="">No month</option><option>Jan</option><option>Feb</option><option>Mar</option><option>Apr</option><option>May</option><option>Jun</option><option>Jul</option><option>Aug</option><option>Sep</option><option>Oct</option><option>Nov</option><option selected>Dec</option></select></span><span class="period-field__select"><select class="text-field__input" id="d-error-end-year" aria-label="Year" aria-describedby="d-error-hint d-error-error" aria-invalid="true"><option value="present">Present</option><option>2021</option><option>2020</option><option selected>2019</option><option>2018</option><option>2017</option></select></span></div></fieldset></div>
+                  <p class="text-field__error" id="d-error-error">The end comes before the start. Choose an end after Mar 2020.</p>
+                </fieldset>
+                <code>error</code>
+              </li>
+              <li>
+                <fieldset class="period-field" disabled>
+                  <legend class="text-field__label">Period</legend>
+                  <p class="text-field__hint" id="d-disabled-hint">When the role started and ended.</p>
+                  <div class="period-field__ends"><fieldset class="period-field__end"><legend class="period-field__name">Start</legend><div class="period-field__controls"><span class="period-field__select period-field__month"><select class="text-field__input" id="d-disabled-start-month" aria-label="Month" aria-describedby="d-disabled-hint"><option value="">No month</option><option>Jan</option><option>Feb</option><option selected>Mar</option><option>Apr</option><option>May</option><option>Jun</option><option>Jul</option><option>Aug</option><option>Sep</option><option>Oct</option><option>Nov</option><option>Dec</option></select></span><span class="period-field__select"><select class="text-field__input" id="d-disabled-start-year" aria-label="Year" aria-describedby="d-disabled-hint"><option>2022</option><option>2021</option><option selected>2020</option><option>2019</option><option>2018</option></select></span></div></fieldset><span class="period-field__dash" aria-hidden="true">–</span><fieldset class="period-field__end"><legend class="period-field__name">End</legend><div class="period-field__controls"><span class="period-field__select period-field__month"><select class="text-field__input" id="d-disabled-end-month" aria-label="Month" aria-describedby="d-disabled-hint"><option value="">No month</option><option>Jan</option><option>Feb</option><option>Mar</option><option>Apr</option><option>May</option><option>Jun</option><option>Jul</option><option>Aug</option><option>Sep</option><option>Oct</option><option>Nov</option><option selected>Dec</option></select></span><span class="period-field__select"><select class="text-field__input" id="d-disabled-end-year" aria-label="Year" aria-describedby="d-disabled-hint"><option value="present">Present</option><option>2024</option><option>2023</option><option selected>2022</option><option>2021</option><option>2020</option></select></span></div></fieldset></div>
+                </fieldset>
+                <code>disabled</code>
+              </li>
+            </ul>
+          </div>
+        </section>
+        <section class="surface" data-scheme="light" aria-labelledby="l-title">
+          <h2 id="l-title">Light</h2>
+          <div class="variant">
+            <h3>Error and disabled</h3>
+            <ul class="states states--rows">
+              <li>
+                <fieldset class="period-field">
+                  <legend class="text-field__label">Period</legend>
+                  <p class="text-field__hint" id="l-error-hint">When the role started and ended.</p>
+                  <div class="period-field__ends"><fieldset class="period-field__end"><legend class="period-field__name">Start</legend><div class="period-field__controls"><span class="period-field__select period-field__month"><select class="text-field__input" id="l-error-start-month" aria-label="Month" aria-describedby="l-error-hint"><option value="">No month</option><option>Jan</option><option>Feb</option><option selected>Mar</option><option>Apr</option><option>May</option><option>Jun</option><option>Jul</option><option>Aug</option><option>Sep</option><option>Oct</option><option>Nov</option><option>Dec</option></select></span><span class="period-field__select"><select class="text-field__input" id="l-error-start-year" aria-label="Year" aria-describedby="l-error-hint"><option>2022</option><option>2021</option><option selected>2020</option><option>2019</option><option>2018</option></select></span></div></fieldset><span class="period-field__dash" aria-hidden="true">–</span><fieldset class="period-field__end"><legend class="period-field__name">End</legend><div class="period-field__controls"><span class="period-field__select period-field__month"><select class="text-field__input" id="l-error-end-month" aria-label="Month" aria-describedby="l-error-hint l-error-error" aria-invalid="true"><option value="">No month</option><option>Jan</option><option>Feb</option><option>Mar</option><option>Apr</option><option>May</option><option>Jun</option><option>Jul</option><option>Aug</option><option>Sep</option><option>Oct</option><option>Nov</option><option selected>Dec</option></select></span><span class="period-field__select"><select class="text-field__input" id="l-error-end-year" aria-label="Year" aria-describedby="l-error-hint l-error-error" aria-invalid="true"><option value="present">Present</option><option>2021</option><option>2020</option><option selected>2019</option><option>2018</option><option>2017</option></select></span></div></fieldset></div>
+                  <p class="text-field__error" id="l-error-error">The end comes before the start. Choose an end after Mar 2020.</p>
+                </fieldset>
+                <code>error</code>
+              </li>
+              <li>
+                <fieldset class="period-field" disabled>
+                  <legend class="text-field__label">Period</legend>
+                  <p class="text-field__hint" id="l-disabled-hint">When the role started and ended.</p>
+                  <div class="period-field__ends"><fieldset class="period-field__end"><legend class="period-field__name">Start</legend><div class="period-field__controls"><span class="period-field__select period-field__month"><select class="text-field__input" id="l-disabled-start-month" aria-label="Month" aria-describedby="l-disabled-hint"><option value="">No month</option><option>Jan</option><option>Feb</option><option selected>Mar</option><option>Apr</option><option>May</option><option>Jun</option><option>Jul</option><option>Aug</option><option>Sep</option><option>Oct</option><option>Nov</option><option>Dec</option></select></span><span class="period-field__select"><select class="text-field__input" id="l-disabled-start-year" aria-label="Year" aria-describedby="l-disabled-hint"><option>2022</option><option>2021</option><option selected>2020</option><option>2019</option><option>2018</option></select></span></div></fieldset><span class="period-field__dash" aria-hidden="true">–</span><fieldset class="period-field__end"><legend class="period-field__name">End</legend><div class="period-field__controls"><span class="period-field__select period-field__month"><select class="text-field__input" id="l-disabled-end-month" aria-label="Month" aria-describedby="l-disabled-hint"><option value="">No month</option><option>Jan</option><option>Feb</option><option>Mar</option><option>Apr</option><option>May</option><option>Jun</option><option>Jul</option><option>Aug</option><option>Sep</option><option>Oct</option><option>Nov</option><option selected>Dec</option></select></span><span class="period-field__select"><select class="text-field__input" id="l-disabled-end-year" aria-label="Year" aria-describedby="l-disabled-hint"><option value="present">Present</option><option>2024</option><option>2023</option><option selected>2022</option><option>2021</option><option>2020</option></select></span></div></fieldset></div>
+                </fieldset>
+                <code>disabled</code>
+              </li>
+            </ul>
+          </div>
+        </section>
+      </div>
+    </main>
+
+    <footer class="foot">
+      <p>Design prototype. A reference for the front end, not production code. See the <a href="index.html">states</a>, <a href="error-disabled.html">error and disabled</a>, and <a href="cases.html">cases and a phone</a>.</p>
+    </footer>
+  </body>
+</html>
