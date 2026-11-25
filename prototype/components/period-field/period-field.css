@@ -92,7 +92,7 @@
 }
 
 .period-field__select > select option {
-  background: var(--color-ground);
+  background: var(--color-surface);
   color: var(--color-ink);
 }
 
