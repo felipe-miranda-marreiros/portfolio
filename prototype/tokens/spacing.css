@@ -31,6 +31,8 @@
   --home-panel-width: 22rem;
   /* The CMS's side navigation column: wide enough for its longest entry beside a two-digit Draft count. */
   --side-navigation-width: 15rem;
+  /* A Content item row's text column: below this beside its state, the state wraps under the text. */
+  --content-item-row-text-min: 12rem;
 
   --content-max: 76rem;
   --gutter: clamp(1.25rem, 0.5rem + 3.5vw, 3rem);
