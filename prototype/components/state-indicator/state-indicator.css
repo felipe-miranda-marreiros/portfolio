@@ -31,7 +31,8 @@
 
 /* Forced colours drop the Tint fill, the Published tag's only edge, so every tag takes an edge in the system's text colour. */
 @media (forced-colors: active) {
-  .state-indicator {
+  .state-indicator,
+  .state-indicator[data-state] {
     border-color: CanvasText;
   }
 }
