@@ -249,7 +249,7 @@ at a lower alpha or mixed into the ground, and error is the only hue.
 ### Neutral
 - **Night** and **Paper**: the ground of the dark and light themes; also the text colour on a filled-ink action.
 - **Night Raised** and **Paper Raised**: the surface for anything that floats above the page (menus, popovers), always
-  paired with the float shadow.
+  paired with the float shadow, except a native select's list, which the browser draws and which can't take it.
 - **Secondary Ink** (84% of the ink): supporting lines, ledes, body copy in panels, resting row links, inactive
   switch options, the Qualification list's small heading and note, the Side navigation's resting entries and
   sign-out, the Draft count on its current entry, a Published State indicator's text, a resting Content item
@@ -489,7 +489,8 @@ alone, without the illustration slot.
 
 Flat by default. Depth comes from hairlines and alpha tints, not shadows: a hovered or focused panel brightens its edge
 to Hairline Hover over the Wash, a hovered secondary button gains Tint Hover. Only a surface that floats above the page
-(menu, popover) takes the raised surface colour and the float shadow. Nothing glows.
+(menu, popover) takes the raised surface colour and the float shadow; a native select's list takes the colour alone,
+since the browser draws it and it can't take the shadow. Nothing glows.
 
 ### Shadow Vocabulary
 - **Float** (`box-shadow: 0 0 0 1px <ring>, 0 12px 32px -12px <shadow>`): floating surfaces only. On night the ring is
@@ -802,9 +803,9 @@ Owner chose a month and a year select for each end on one line over the same sel
 and typed dates.
 - **Order:** a fieldset whose legend, in the Text field's label style, names the field, then an optional hint, then the
   ends, then the error. Each end is a fieldset whose legend, in the Label role in Secondary Ink, names it (Start, End or
-  Issued), over a month and a year select 0.5rem apart. The two ends sit 1rem apart with a dash in Muted Ink between,
-  level with the selects' text, and the end wraps under the start when they don't fit. Dates are language-neutral, so
-  the field appears once. Every word is Content.
+  Issued), over a month and a year select 0.5rem apart. A dash in Muted Ink sits between the ends, 1rem from each and
+  level with the selects' text, and the end wraps 0.5rem under the start when they don't fit. Dates are
+  language-neutral, so the field appears once. Every word is Content.
 - **Selects:** each is a Text field box at Body size, sized to its longest choice, with tabular numerals and a chevron
   (0.875em, a 1.5 stroke with round ends, `--icon-chevron`) at its end, in the field's ink. Its open list of choices
   sits on the raised surface, as menus do, without the float shadow, which the browser's own list can't take. They
