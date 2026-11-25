@@ -131,7 +131,8 @@ a {
   .area-side-navigation,
   .area-state-indicator,
   .area-content-item-row,
-  .area-bilingual-field {
+  .area-bilingual-field,
+  .area-period-field {
     grid-column: 1 / -1;
   }
 }

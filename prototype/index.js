@@ -166,6 +166,13 @@ const components = [
     label: "Bilingual field states",
     states: ["default", "hover", "focus", "error", "disabled", "missing", "missing both", "long content"],
   },
+  {
+    slug: "period-field",
+    name: "Period field",
+    note: "When something started and ended, or that it's ongoing: a month and a year for each end. The CMS only.",
+    label: "Period field states",
+    states: ["default", "hover", "focus", "error", "disabled", "present", "year only", "single date"],
+  },
 ];
 
 // Built here rather than written in the page, so the page stays under the file size hook as components are added.
