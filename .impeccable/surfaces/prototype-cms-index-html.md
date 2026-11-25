@@ -54,6 +54,10 @@ On 2026-11-24 the Owner chose, from structured options:
 - On 2026-11-25, a period as a month and a year select for each end on one line with a dash between, over the same
   selects with an Ended | Present toggle and typed dates. "Present" is the end year's first choice and hides the end
   month; "No month" gives a year-only date; a single date, such as a certification's issue date, is one end.
+- On 2026-11-25, an image as a file row over its alt text: the photo at its size on Home, its file name over a muted
+  detail (type, pixels, size), then Replace and Remove, with the alt text pair from the bilingual field under it, over
+  a larger preview beside the alt text and a large preview stage. Empty, the row is dashed, says what it takes and
+  disables the alt text; a file that is turned down leaves the image as it was.
 - A full preview Screen behind an Edit | Preview switch, over a live split and both languages at a reduced scale.
 - A fixed action bar with the item's state and publish feedback, over publishing a whole Page at once.
 - Email and password sign-in, with password reset, over a single external-account button.
@@ -99,7 +103,7 @@ on top of the rendered Page.
 
 ## Unresolved
 
-The side navigation, the state indicator, the Content item row, the bilingual field and the period field are built
-(`prototype/components/side-navigation/`, `state-indicator/`, `content-item-row/`, `bilingual-field/`,
-`period-field/`); the other new components and every Screen are not. Which mechanism signs the Owner in, saves Drafts and carries a publish to the Portfolio is settled in
+The side navigation, the state indicator, the Content item row, the bilingual field, the period field and the image
+field are built (`prototype/components/side-navigation/`, `state-indicator/`, `content-item-row/`, `bilingual-field/`,
+`period-field/`, `image-field/`); the other new components and every Screen are not. Which mechanism signs the Owner in, saves Drafts and carries a publish to the Portfolio is settled in
 the ADRs after these Screens; the Screens show only states, never a mechanism.
