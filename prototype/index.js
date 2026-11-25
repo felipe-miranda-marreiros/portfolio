@@ -145,6 +145,13 @@ const components = [
     label: "Side navigation entry states",
     states: ["default", "hover", "focus", "active", "current", "with Drafts", "long content"],
   },
+  {
+    slug: "state-indicator",
+    name: "State indicator",
+    note: "A Content item's state as a tag: Published tinted, a Draft outlined in full ink. Static. The CMS only.",
+    label: "State indicator cases",
+    states: ["published", "draft", "draft over published", "long content"],
+  },
 ];
 
 // Built here rather than written in the page, so the page stays under the file size hook as components are added.
