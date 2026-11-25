@@ -1,6 +1,6 @@
 {
   "schemaVersion": 2,
-  "generatedAt": "2026-11-25T22:00:00Z",
+  "generatedAt": "2026-11-25T23:00:00Z",
   "title": "Design System: Portfolio",
   "extensions": {
     "colorMeta": {
@@ -42,7 +42,7 @@
     },
     "semanticColors": [
       { "name": "--color-ground", "value": "light-dark(#efe9dd, #141311)", "purpose": "Page ground; text on a filled-ink action." },
-      { "name": "--color-surface", "value": "light-dark(#f6f2e9, #23211e)", "purpose": "Floating surfaces only, with --shadow-float." },
+      { "name": "--color-surface", "value": "light-dark(#f6f2e9, #23211e)", "purpose": "Floating surfaces only, with --shadow-float, except a native select's list, which the browser draws and which can't take the shadow." },
       { "name": "--color-ink", "value": "light-dark(#1a1815, #e8e2d6)", "purpose": "Text, primary action fill, focus ring, selection." },
       { "name": "--color-wash", "value": "color-mix(in srgb, var(--color-ink) 2%, var(--color-ground))", "purpose": "Hovered or focused panel cell; opaque so it covers the grid's hairline." },
       { "name": "--color-display", "value": "var(--color-ink)", "purpose": "Display type and headlines; the ink on the Portfolio, a band colour on About me." },
@@ -78,7 +78,7 @@
       "lede": { "displayName": "Lede", "purpose": "The supporting line under a Page title and the Masthead's summary, in secondary ink, 52ch measure." },
       "body": { "displayName": "Body", "purpose": "Summaries and supporting lines in secondary ink, 68ch measure; also the value in a Text field, so Safari on iPhone doesn't zoom on focus; and, at the control weight (600) in full ink, a Facts panel fact's value, a Role entry's company and a Qualification list item's source." },
       "small": { "displayName": "Small", "purpose": "Captions, a panel's note, metadata (such as a Role entry's location and work model, and a Qualification list item's place or credential ID) and a field's hint in muted ink, and a field's error message; row links, controls, field labels and the Qualification list's small heading at the control weight (600)." },
-      "label": { "displayName": "Label", "purpose": "Martian Mono for stat labels (the Facts panel's), dates (a Role entry's period, a Qualification list item's date) a Bilingual field's language names and a Period field's end names, uppercase, 0.08em; chips, the State indicator, a Content item row's detail, code and the Side navigation's Draft counts (numerals) set as-is." },
+      "label": { "displayName": "Label", "purpose": "Martian Mono for stat labels (the Facts panel's), dates (a Role entry's period, a Qualification list item's date), a Bilingual field's language names and a Period field's end names, uppercase, 0.08em; chips, the State indicator, a Content item row's detail, code and the Side navigation's Draft counts (numerals) set as-is." },
       "about-me-display": { "displayName": "About me Display", "purpose": "Big Shoulders Display 900, uppercase, sized 24cqi so the Page title runs the band's width; Display colour." },
       "about-me-headline": { "displayName": "About me Headline", "purpose": "Big Shoulders Display 900, uppercase: Section titles in the Display colour." },
       "about-me-title": { "displayName": "About me Title", "purpose": "Big Shoulders Display 800, uppercase: item titles and the Footer's title." },
