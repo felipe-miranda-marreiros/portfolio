@@ -21,7 +21,7 @@
 }
 
 /* Forced colours drop the error hue, so the error line and message take a shape and a weight instead, and a missing
-   translation's edge turns dotted so it can't pass for an error's dashed one. */
+   translation's edge, and an empty image field's, turns dotted so it can't pass for an error's dashed one. */
 @media (forced-colors: active) {
   :root {
     --error-line-width: 2px;
