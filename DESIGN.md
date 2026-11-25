@@ -255,7 +255,7 @@ at a lower alpha or mixed into the ground, and error is the only hue.
   sign-out, the Draft count on its current entry, a Published State indicator's text, a resting Content item
   row's name, a Bilingual field's language names and a Period field's end names.
 - **Muted Ink** (64% of the ink): metadata, captions, a panel's note, the Side navigation's Draft counts, a Content item
-  row's detail and a Period field's dash. Still AA on the ground in both themes, and on the Wash of a hovered row.
+  row's detail, a Period field's dash and an Image field's detail. Still AA on the ground in both themes, and on the Wash of a hovered row.
 - **Hairline** (10% of the ink): panel-grid borders, the Facts panel's border and the rule under its lead, the rule
   between role entries and between Qualification list items, the rule above a Section heading, the rules under the top
   bar and above the footer, the Footer's rule between its repository link and the rest, the Side navigation's
@@ -373,8 +373,8 @@ monospace that labels facts the way a codebase labels things: commands, tags, co
   control weight (600), kept apart from the title weight so each can change alone.
 - **Label** (Martian Mono 500, 0.6875rem, 0.08em, uppercase, tabular numerals): stat labels (the Facts panel's), dates
   (a Role entry's period, a Qualification list item's date), a Bilingual field's language names and a Period field's end
-  names. Inside chips, the State indicator, a Content item row's detail and code, and in the Side navigation's Draft
-  counts (numerals only), the same mono size is set as-is, with no tracking or case change.
+  names. Inside chips, the State indicator, a Content item row's detail, an Image field's detail and code, and in the
+  Side navigation's Draft counts (numerals only), the same mono size is set as-is, with no tracking or case change.
 
 Headings hyphenate and, where the browser has no dictionary, break long words rather than overflow a narrow column: a
 Portuguese title such as "Responsabilidades" at display size must fit a 320px screen. Paragraphs wrap with a pretty rag.
@@ -530,13 +530,13 @@ row's key colour that thickens to 3px on hover, focus and press. The illustratio
 ## Components
 
 The Button, the Link, the Chip, the State indicator, the Content item row, the Toggle, the Top bar, the Side navigation,
-the Footer, the Text field, the Bilingual field, the Period field, the Panel grid, the Page header, the Section heading,
-the Masthead, the Facts panel, the Role entry, the Qualification list and About me's Lineup are built in the prototype
-(`prototype/components/button/`, `link/`, `chip/`, `state-indicator/`, `content-item-row/`, `toggle/`, `top-bar/`,
-`side-navigation/`, `footer/`, `text-field/`, `bilingual-field/`, `period-field/`, `panel-grid/`, `page-header/`,
-`section-heading/`, `masthead/`, `facts-panel/`, `role-entry/`, `qualification-list/`, `lineup/`); the rest are the
-primitives the prototype's token specimens establish, to be confirmed by each component's own PR. Every component takes
-every visual value from tokens and holds no visible text.
+the Footer, the Text field, the Bilingual field, the Period field, the Image field, the Panel grid, the Page header, the
+Section heading, the Masthead, the Facts panel, the Role entry, the Qualification list and About me's Lineup are built in
+the prototype (`prototype/components/button/`, `link/`, `chip/`, `state-indicator/`, `content-item-row/`, `toggle/`,
+`top-bar/`, `side-navigation/`, `footer/`, `text-field/`, `bilingual-field/`, `period-field/`, `image-field/`,
+`panel-grid/`, `page-header/`, `section-heading/`, `masthead/`, `facts-panel/`, `role-entry/`, `qualification-list/`,
+`lineup/`); the rest are the primitives the prototype's token specimens establish, to be confirmed by each component's
+own PR. Every component takes every visual value from tokens and holds no visible text.
 
 ### Buttons
 - **Shape:** gently rounded (8px), Small text at the control weight (600), padding 0.5rem by 1rem, inside a one-pixel
@@ -818,6 +818,28 @@ and typed dates.
 - **Forced colours:** the chevron takes the system text colour, since the mask that draws it would otherwise paint it
   as the ground.
 - **Disabled:** the whole fieldset at 0.4 opacity, a not-allowed cursor on each select, no hover.
+
+### Image field
+Built in the prototype (`prototype/components/image-field/`): one image, which doesn't change with language, with its
+alt text in English and Brazilian Portuguese, the CMS's only, with no About me version. It is built from the Text
+field's label and error, the Button and the Bilingual field. The Owner chose a file row over its alt text over a larger
+preview beside the alt text and a large preview stage.
+- **Order:** a fieldset whose legend, in the Text field's label style, names the image, then the file row, then the
+  error, 0.5rem apart, then the alt text, a Bilingual field 1.25rem under the row. Every word is Content.
+- **File row:** a Hairline Input border (1px), 8px corners, 0.75rem padding. In it, 1rem apart: the image at its size
+  on Home, 4rem square (`--photo-size`) with 10px corners (`--radius-photo`) and a Hairline edge, on the Surface while
+  it loads, its alt empty as the name beside it says what it is; the file's name in Body; under it, 0.25rem away, a
+  detail (type, pixels, size) in the Label role's mono, set as-is in Muted Ink; then Replace and Remove, secondary
+  Buttons 0.5rem apart. The buttons wrap under the file when the row is narrow; a long name wraps.
+- **Empty:** the row and the thumbnail's place turn dashed in Hairline Input, the name says there is no image, the
+  detail says what the field takes, one button chooses an image, and the alt text is disabled. An image is optional.
+- **Uploading:** the button that chose the file is busy, as the Button's loading state, Remove is disabled, and the
+  detail shows the progress.
+- **Error:** a file that is turned down leaves the image as it was; a Small message in Error under the row names the
+  file and says how to recover, tied to the button with `aria-describedby`.
+- **Alt text missing:** the Bilingual field's Missing tag and dashed edge, for each language without it.
+- **Forced colours:** where an error's line turns dashed at 2px, the empty row's edge turns dotted.
+- **Disabled:** the whole fieldset at 0.4 opacity, once: its buttons and alt text don't dim again.
 
 ### Toggles
 Built in the prototype (`prototype/components/toggle/`): a segmented control with exactly one option chosen. The theme
