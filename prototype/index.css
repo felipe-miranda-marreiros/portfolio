@@ -129,7 +129,8 @@ a {
   /* Full width on two columns and on three, so they never sit beside an empty track. */
   .area-qualification-list,
   .area-side-navigation,
-  .area-state-indicator {
+  .area-state-indicator,
+  .area-content-item-row {
     grid-column: 1 / -1;
   }
 }

@@ -152,6 +152,13 @@ const components = [
     label: "State indicator cases",
     states: ["published", "draft", "draft over published", "long content"],
   },
+  {
+    slug: "content-item-row",
+    name: "Content item row",
+    note: "One Content item in the Content list: its name over a detail, its state, and the way into the editor. The CMS only.",
+    label: "Content item row states",
+    states: ["default", "hover", "focus", "active", "no detail", "long content"],
+  },
 ];
 
 // Built here rather than written in the page, so the page stays under the file size hook as components are added.
