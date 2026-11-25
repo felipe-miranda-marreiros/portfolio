@@ -35,6 +35,8 @@
   --content-item-row-text-min: 12rem;
   /* A bilingual field's language column: narrower than this, the two languages stack rather than sit side by side. */
   --bilingual-field-column-min: 16rem;
+  /* An image field's name and detail: below this beside the thumbnail, the buttons wrap under the file. */
+  --image-field-meta-min: 10rem;
 
   --content-max: 76rem;
   --gutter: clamp(1.25rem, 0.5rem + 3.5vw, 3rem);

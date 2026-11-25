@@ -73,7 +73,7 @@
 
 .image-field__meta {
   display: grid;
-  flex: 1 1 10rem;
+  flex: 1 1 var(--image-field-meta-min);
   gap: var(--space-1);
   min-inline-size: 0;
 }
