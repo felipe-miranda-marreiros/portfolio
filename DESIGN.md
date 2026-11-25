@@ -386,8 +386,8 @@ the Portfolio they restate the hierarchy above; both sets name them, so About me
 them.
 
 ### Named Rules
-**The Mono Labels Rule.** Monospace sets labels, tags, chips, numerals and addresses, never sentences or headings,
-and never as an eyebrow above a heading: the heading carries its own weight.
+**The Mono Labels Rule.** Monospace sets labels, tags, chips and numerals, never sentences or headings, and never as an
+eyebrow above a heading: the heading carries its own weight.
 
 ### About me
 
@@ -594,11 +594,11 @@ editor's header and its action bar. The CMS's only, with no About me version.
 ### Content item row
 Built in the prototype (`prototype/components/content-item-row/`): one Content item in the CMS's Content list, the
 whole row a link into its editor. The CMS's only, with no About me version.
-- **Rows:** a list on a Hairline rule, each row ending in another, padding 0.75rem. The name in the link role
-  (Secondary Ink), over a detail 0.25rem below that tells similar items apart, such as a role's period or a link's
-  address: Martian Mono at label size and body weight (`--weight-chip`) in Muted Ink, set as-is because an address's
-  case matters. An item with nothing to tell it apart, such as a Page's SEO metadata, has no detail and stays one
-  line. The State indicator sits at the end, on the name's baseline, and never shrinks.
+- **Rows:** a list on a Hairline rule, each row ending in another, padding 0.75rem. The name in the link role (Secondary
+  Ink), over a detail 0.25rem below that tells similar items apart, such as a role's period or a link's address: a
+  label, in Martian Mono at label size and body weight (`--weight-chip`) in Muted Ink, set as-is because an address's
+  case matters. An item with nothing to tell it apart, such as a Page's SEO metadata, has no detail and stays one line.
+  The State indicator sits at the end, on the name's baseline, and never shrinks.
 - **Hover, focus and active:** full ink on the Wash, and the Link's arrow appears 0.75rem after the state and nudges
   2px; its room is kept at rest, so the state doesn't move. Active looks like hover; the row doesn't sink.
   **Focus:** the shared 2px ink ring at 2px offset. **Disabled:** none; every item can be opened.
