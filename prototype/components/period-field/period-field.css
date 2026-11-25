@@ -78,9 +78,11 @@
   color: var(--color-ink-muted);
 }
 
+/* At Body size, so the chevron's em and the room the select keeps for it resolve alike in any container. */
 .period-field__select {
   position: relative;
   display: inline-flex;
+  font-size: var(--text-body);
 }
 
 .period-field__select > select {
