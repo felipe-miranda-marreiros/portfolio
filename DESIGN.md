@@ -807,7 +807,8 @@ and typed dates.
   the field appears once. Every word is Content.
 - **Selects:** each is a Text field box at Body size, sized to its longest choice, with tabular numerals and a chevron
   (0.875em, a 1.5 stroke with round ends, `--icon-chevron`) at its end, in the field's ink. Its open list of choices
-  sits on the raised surface, as menus do. They share the Text field's hover, focus, error and disabled.
+  sits on the raised surface, as menus do, without the float shadow, which the browser's own list can't take. They
+  share the Text field's hover, focus, error and disabled.
 - **Present:** the end year's first choice. It hides the end month, with no script.
 - **Year only:** "No month", the month's first choice, gives a year-only date.
 - **Single date:** one end and no dash, such as a certification's issue date.
