@@ -159,6 +159,13 @@ const components = [
     label: "Content item row states",
     states: ["default", "hover", "focus", "active", "no detail", "long content"],
   },
+  {
+    slug: "bilingual-field",
+    name: "Bilingual field",
+    note: "One Content field in English and Brazilian Portuguese side by side, a missing one flagged. The CMS only.",
+    label: "Bilingual field states",
+    states: ["default", "hover", "focus", "error", "disabled", "missing", "missing both", "long content"],
+  },
 ];
 
 // Built here rather than written in the page, so the page stays under the file size hook as components are added.
