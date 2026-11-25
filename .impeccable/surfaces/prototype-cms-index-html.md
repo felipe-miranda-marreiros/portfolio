@@ -40,6 +40,9 @@ On 2026-11-24 the Owner chose, from structured options:
 - On 2026-11-25, the state indicator as a tag in the Chip's look: Published tinted, and a Draft, new or over a
   Published version, outlined in Hairline Input with its words in full ink, over a drawn mark before a label and
   words alone.
+- On 2026-11-25, Content item rows as two-line ruled rows: the name over a muted monospace detail that tells similar
+  items apart (a role's period, a link's address), the state at the end and the Link's arrow on hover, over one-line
+  ruled rows and the Side navigation's rounded entries.
 - English and Brazilian Portuguese side by side in each field, over language tabs.
 - A full preview Screen behind an Edit | Preview switch, over a live split and both languages at a reduced scale.
 - A fixed action bar with the item's state and publish feedback, over publishing a whole Page at once.
@@ -86,7 +89,7 @@ on top of the rendered Page.
 
 ## Unresolved
 
-The side navigation and the state indicator are built (`prototype/components/side-navigation/`,
-`state-indicator/`); the other new components and every Screen are not. Which mechanism signs the Owner in, saves
-Drafts and carries a publish to the Portfolio is settled in the ADRs after these Screens; the Screens show only
-states, never a mechanism.
+The side navigation, the state indicator and the Content item row are built
+(`prototype/components/side-navigation/`, `state-indicator/`, `content-item-row/`); the other new components and every
+Screen are not. Which mechanism signs the Owner in, saves Drafts and carries a publish to the Portfolio is settled in
+the ADRs after these Screens; the Screens show only states, never a mechanism.
