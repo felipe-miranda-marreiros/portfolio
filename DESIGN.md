@@ -781,12 +781,16 @@ side by side, the CMS's only, with no About me version. It is built from the Tex
 which keep every state they have, and the State indicator. The Owner chose a Missing tag and a dashed edge over a quiet
 note under the field and one control split in two.
 - **Order:** a fieldset whose legend, in the Text field's label style, names the pair, then an optional hint, then the
-  two languages, English first, 0.5rem apart. Each language is a column: its name in the Label role in Secondary Ink,
-  then its field (the Portuguese one carries `lang="pt-BR"`), then its error. Side by side they are 1rem apart; when
-  either would be narrower than 16rem (`--bilingual-field-column-min`) they stack, 1rem apart. Every word is Content.
+  two languages, English first, 0.5rem apart. Each language is a column: its name, in English, in the Label role in
+  Secondary Ink, a sub-label under the legend rather than the field's label, then its field (the Portuguese one
+  carries `lang="pt-BR"`), then its error. Side by side they are 1rem apart; when either would be narrower than 16rem
+  (`--bilingual-field-column-min`) they stack, 1rem apart. Every word is Content.
 - **Missing:** a language with no value is missing. Its name is followed by a Missing State indicator, tied to the field
-  with `aria-describedby`, and its field's edge turns dashed, so the gap shows by shape and by word. Missing isn't an
-  error: the Draft still saves, and Publish waits for it. An error on that field takes over its edge.
+  with `aria-describedby`, and its field's edge turns dashed (`--missing-line-style`), so the gap shows by shape and by
+  word. Missing isn't an error: the Draft still saves, and Publish waits for it. An error on that field takes over its
+  edge.
+- **Forced colours:** where an error's line turns dashed at 2px, the missing edge turns dotted, so a missing language
+  can't pass for an error.
 - **Heads:** each is at least as tall as the Missing tag, so both fields start level whether or not a language is
   missing.
 - **Disabled:** the whole fieldset at 0.4 opacity.
