@@ -133,7 +133,8 @@ on top of the rendered Page.
 ## Unresolved
 
 The side navigation, the state indicator, the Content item row, the bilingual field, the period field, the image
-field, the file field, the reorderable list and the technology input are built (`prototype/components/side-navigation/`,
-`state-indicator/`, `content-item-row/`, `bilingual-field/`, `period-field/`, `image-field/`, `file-field/`,
-`reorderable-list/`, `technology-input/`); the other new components and every Screen are not. Which mechanism signs the Owner in, saves Drafts and carries a publish to the Portfolio is settled in
+field, the file field, the reorderable list, the technology input and the action bar are built
+(`prototype/components/side-navigation/`, `state-indicator/`, `content-item-row/`, `bilingual-field/`, `period-field/`,
+`image-field/`, `file-field/`, `reorderable-list/`, `technology-input/`, `action-bar/`); the other new components and
+every Screen are not. Which mechanism signs the Owner in, saves Drafts and carries a publish to the Portfolio is settled in
 the ADRs after these Screens; the Screens show only states, never a mechanism.
