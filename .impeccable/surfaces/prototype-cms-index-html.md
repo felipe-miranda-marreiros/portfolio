@@ -67,6 +67,9 @@ On 2026-11-24 the Owner chose, from structured options:
   row between a drag handle and up and down move buttons, always visible, over a reorder mode with move buttons and no
   links and a handle alone moved from the keyboard with Space and the arrow keys. The handle is for a pointer; the move
   buttons are for the keyboard and one-place moves.
+- On 2026-11-26, the public repository link, which always comes first and can't be removed, as a plain Content item row
+  above the Footer links' reorderable list, with no handle and no move buttons, over pinning it first in the list with
+  its moves disabled.
 - On 2026-11-26, core technologies, a field of Home's main Section rather than Content items, are ordered inside the
   technology input, with the same handle and move buttons, over the reorderable list ordering them in the editor too.
 - On 2026-11-26, a new order reaches the Portfolio at once, as order isn't a Content item and has no Draft, and the list
