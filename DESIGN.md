@@ -905,12 +905,13 @@ open it.
 Built in the prototype (`prototype/components/reorderable-list/`): Content items the Owner puts in order by hand, such
 as the Footer's links, the CMS's only, with no About me version. It is built from the Content item row and the Button.
 The Owner chose each row between a drag handle and up and down move buttons, always visible, over a reorder mode with
-move buttons and no links, and over a handle alone moved from the keyboard with Space and the arrow keys. Order isn't a
-Content item and has no Draft, so a new order reaches the Portfolio at once, over holding it as a Draft until the next
-publish. Core technologies, a field of Home's main Section rather than Content items, are ordered inside the technology
-input with the same handle and move buttons, not in this list. The public repository link, which always comes first and
-can't be removed, is a plain Content item row above the Footer links' list, over pinning it first in the list with its
-moves disabled.
+move buttons and no links, and over a handle alone moved from the keyboard with Space and the arrow keys. The order of
+Content items isn't a Content item and has no Draft, so a new order reaches the Portfolio at once, over holding it as a
+Draft until the next publish. Core technologies, a field of Home's main Section rather than Content items, are ordered
+inside the technology input with the same handle and move buttons, not in this list; a field's order, such as the
+technology input's, joins its item's Draft instead. The public repository link, which always comes first and can't be
+removed, is a plain Content item row above the Footer links' list, over pinning it first in the list with its moves
+disabled.
 - **Order:** the Content item rows' list, each item the drag handle, then its Content item row, then its move buttons,
   centred on one line, then the feedback under the list. Each item draws the Hairline rule under it, so the handle and
   the move buttons sit on it too, and the row inside draws none. Every word is Content.
