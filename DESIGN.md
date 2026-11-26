@@ -170,6 +170,7 @@ spacing:
   content-item-row-text-min: "12rem"
   bilingual-field-column-min: "16rem"
   image-field-meta-min: "10rem"
+  file-field-meta-min: "10rem"
   about-me-toggle-inset: "0px"
   about-me-section-rule-gap: "0px"
 ---
@@ -257,8 +258,8 @@ at a lower alpha or mixed into the ground, and error is the only hue.
   sign-out, the Draft count on its current entry, a Published State indicator's text, a resting Content item
   row's name, a Bilingual field's language names and a Period field's end names.
 - **Muted Ink** (64% of the ink): metadata, captions, a panel's note, the Side navigation's Draft counts, a Content item
-  row's detail, a Period field's dash and an Image field's detail. Still AA on the ground in both themes, and on the
-  Wash of a hovered row.
+  row's detail, a Period field's dash, and an Image field's and a File field's detail. Still AA on the ground in both
+  themes, and on the Wash of a hovered row.
 - **Hairline** (10% of the ink): panel-grid borders, the Facts panel's border and the rule under its lead, the rule
   between role entries and between Qualification list items, the rule above a Section heading, the rules under the top
   bar and above the footer, the Footer's rule between its repository link and the rest, the Side navigation's
@@ -268,9 +269,9 @@ at a lower alpha or mixed into the ground, and error is the only hue.
 - **Hairline Control** (22%): the outline of secondary controls, the theme switch and swatch edges.
 - **Hairline Input** (52% ink on paper, 44% bone on night): input borders, which identify the control and so meet 3:1
   against the ground; the inner edge of the chosen Toggle option and of the current Side navigation entry, which carries
-  that state to 3:1; the edge of a Draft or Missing State indicator; and the Image field's file row and its empty
-  thumbnail's dashed edge. A hovered input's border steps up to full ink
-  (`--color-input-hover`).
+  that state to 3:1; the edge of a Draft or Missing State indicator; the Image field's file row and its empty
+  thumbnail's dashed edge; and the File field's file rows, dashed for a missing file. A hovered input's border steps up
+  to full ink (`--color-input-hover`).
 - **Tint** (7%) and **Tint Hover** (4%): chip fills and a Published State indicator's, the chosen Toggle option, the
   pressed secondary button and the current Side navigation entry; the faint fill of a hovered secondary button and of
   a hovered Side navigation entry.
@@ -377,10 +378,10 @@ monospace that labels facts the way a codebase labels things: commands, tags, co
   control weight (600), kept apart from the title weight so each can change alone.
 - **Label** (Martian Mono 500, 0.6875rem, 0.08em, uppercase, tabular numerals): stat labels (the Facts panel's), dates
   (a Role entry's period, a Qualification list item's date), a Bilingual field's language names and a Period field's end
-  names. Inside chips, the State indicator, a Content item row's detail, an Image field's detail and code, and in the
-  Side navigation's Draft counts (numerals only), the same mono size is set as-is, with no tracking or case change: at
-  the body weight (`--weight-chip`) in chips, the State indicator and both details, at the Label weight in the Draft
-  counts.
+  names. Inside chips, the State indicator, a Content item row's detail, an Image field's and a File field's detail and
+  code, and in the Side navigation's Draft counts (numerals only), the same mono size is set as-is, with no tracking or
+  case change: at the body weight (`--weight-chip`) in chips, the State indicator and the three details, at the Label
+  weight in the Draft counts.
 
 Headings hyphenate and, where the browser has no dictionary, break long words rather than overflow a narrow column: a
 Portuguese title such as "Responsabilidades" at display size must fit a 320px screen. Paragraphs wrap with a pretty rag.
@@ -537,12 +538,12 @@ row's key colour that thickens to 3px on hover, focus and press. The illustratio
 ## Components
 
 The Button, the Link, the Chip, the State indicator, the Content item row, the Toggle, the Top bar, the Side navigation,
-the Footer, the Text field, the Bilingual field, the Period field, the Image field, the Panel grid, the Page header, the
-Section heading, the Masthead, the Facts panel, the Role entry, the Qualification list and About me's Lineup are built in
-the prototype (`prototype/components/button/`, `link/`, `chip/`, `state-indicator/`, `content-item-row/`, `toggle/`,
-`top-bar/`, `side-navigation/`, `footer/`, `text-field/`, `bilingual-field/`, `period-field/`, `image-field/`,
-`panel-grid/`, `page-header/`, `section-heading/`, `masthead/`, `facts-panel/`, `role-entry/`, `qualification-list/`,
-`lineup/`); the rest are the primitives the prototype's token specimens establish, to be confirmed by each component's
+the Footer, the Text field, the Bilingual field, the Period field, the Image field, the File field, the Panel grid, the
+Page header, the Section heading, the Masthead, the Facts panel, the Role entry, the Qualification list and About me's
+Lineup are built in the prototype (`prototype/components/button/`, `link/`, `chip/`, `state-indicator/`,
+`content-item-row/`, `toggle/`, `top-bar/`, `side-navigation/`, `footer/`, `text-field/`, `bilingual-field/`,
+`period-field/`, `image-field/`, `file-field/`, `panel-grid/`, `page-header/`, `section-heading/`, `masthead/`,
+`facts-panel/`, `role-entry/`, `qualification-list/`, `lineup/`); the rest are the primitives the prototype's token specimens establish, to be confirmed by each component's
 own PR. Every component takes every visual value from tokens and holds no visible text.
 
 ### Buttons
@@ -852,6 +853,41 @@ preview beside the alt text and a large preview stage.
 - **Forced colours:** where an error's line turns dashed at 2px, the missing line style turns the empty row's edge
   dotted.
 - **Disabled:** the whole fieldset at 0.4 opacity, once: its buttons and alt text don't dim again.
+
+### File field
+Built in the prototype (`prototype/components/file-field/`): one file in each language, English and Brazilian
+Portuguese side by side, such as the CV's two PDFs, the CMS's only, with no About me version. It is a Bilingual field
+whose columns each hold a file row instead of an input, built from the Text field's label, hint and error, the State
+indicator's Missing tag, the Link and the Button. Unlike the Image field, it has no outer field: `bilingual-field
+file-field` sit on one fieldset. The Owner chose a pair of file rows over one bordered list with a line per language and
+a portrait page standing in for the file, and the name as a Link that opens the file over an Open button and no way to
+open it.
+- **Order:** the Bilingual field's: a legend in the Text field's label style, an optional hint, then the two languages,
+  English first. Each column is its language's name, then its file row, then its error, 0.5rem apart. Every word is
+  Content.
+- **File row:** a Hairline Input border (1px), 8px corners, 0.75rem padding, with no thumbnail. In it, 1rem apart, and
+  0.75rem when the buttons wrap under the file: the file's name; under it, 0.25rem away, a detail (type, pages, size)
+  in Martian Mono at label size and body weight (`--weight-chip`), set as-is in Muted Ink; then Replace and Remove,
+  secondary Buttons 0.5rem apart. The buttons wrap under the file when the name and detail would be narrower than
+  10rem (`--file-field-meta-min`); a long name wraps anywhere. The name and detail start at their own width
+  (`justify-items: start`), so the Link's arrow follows the name rather than the column's end.
+- **Name:** a Link that opens the file in a new tab, as the preview shows Pages, not files, so this is how the Owner
+  checks one. When it is plain text (a missing file, an upload in progress), it is still set in the Link's type (the
+  link role's size, weight, leading and tracking), so it holds its size when an upload ends and it becomes a Link.
+- **Buttons:** both columns hold the same buttons, so each names its language with `aria-describedby`: the language's
+  name, then the detail (Replace and the choose button), then the Missing tag or the error when there is one.
+- **Missing:** a file is required: both languages must be in to publish. A language with no file takes the Bilingual
+  field's Missing tag after its name, and its row takes the missing line style (`--missing-line-style`), dashed, in
+  Hairline Input. Its name is plain text saying there is no file, the detail lists what the field takes as label terms
+  (PDF · up to 5 MB), and its one button chooses a file.
+- **Uploading:** the button that chose the file is busy, as the Button's loading state, Remove is disabled, the name is
+  plain text until the file is in, and the detail shows the progress.
+- **Error:** a file that is turned down leaves that language's file as it was; a Small message in Error under its row
+  names the file and says how to recover, tied to the button with `aria-describedby`.
+- **Forced colours:** where an error's line turns dashed at 2px, the missing line style turns a missing file's row
+  dotted, so it can't pass for an error.
+- **Disabled:** the whole fieldset at 0.4 opacity, once: its buttons don't dim again. The names stay Links, as opening
+  a file changes nothing.
 
 ### Toggles
 Built in the prototype (`prototype/components/toggle/`): a segmented control with exactly one option chosen. The theme
