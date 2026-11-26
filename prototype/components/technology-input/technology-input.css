@@ -1,0 +1,172 @@
+/**
+ * Technology input: a field's technologies, such as Home's core technologies or a role's, in the order the Owner puts
+ * them, from tokens only. Each technology is a ruled row with its name between the reorderable list's handle and move
+ * buttons, then a remove button in the move buttons' look; a field under the list adds one, suggesting as the Owner
+ * types the names already used across the Portfolio, so a technology keeps one spelling. It composes the reorderable
+ * list, the Text field's label, input and error, and the Button.
+ * Markup: <fieldset class="technology-input"><legend class="text-field__label">…</legend>
+ *   <ul class="technology-input__list"><li class="reorderable-list__item">
+ *     <span class="reorderable-list__handle" aria-hidden="true"></span>
+ *     <span class="technology-input__name" id="…-name">…</span>
+ *     <span class="reorderable-list__moves">
+ *       <button class="reorderable-list__move" type="button" data-direction="up" aria-label="…"
+ *         aria-describedby="…-name"></button> (and data-direction="down")
+ *       <button class="reorderable-list__move technology-input__remove" type="button" aria-label="…"
+ *         aria-describedby="…-name"></button></span></li>…</ul>
+ *   <div class="technology-input__add"><label class="text-field__label" for="…">…</label>
+ *     <div class="technology-input__entry"><div class="technology-input__combo">
+ *       <input class="text-field__input" id="…" role="combobox" aria-autocomplete="list" aria-expanded="…"
+ *         aria-controls="…-suggestions" aria-activedescendant="…" aria-describedby="…-error" />
+ *       <div class="technology-input__suggestions" id="…-suggestions" role="listbox" aria-label="…" hidden>
+ *         <div class="technology-input__suggestion" id="…" role="option" tabindex="-1" aria-selected="…">…
+ *           <span class="technology-input__uses">…</span></div>…</div></div>
+ *       <button class="button button--secondary" type="button"><span class="button__label">…</span></button></div>
+ *     <p class="text-field__error" id="…-error">…</p></div></fieldset>.
+ * Technologies are a field, not Content items, so a new order, an addition or a removal joins the item's Draft. The
+ * suggestions list the names already used that start with what is typed, those already in this list left out, and last
+ * the typed name as a new one. Focus stays in the field, which points at the chosen one with `aria-activedescendant`.
+ * Adding clears the field and keeps focus there; a name already in the list is an error. Removing moves focus to the
+ * next row's remove button, or to the field when the list empties.
+ * `data-force` pins a state so the prototype page can show it without interaction.
+ */
+.technology-input {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+  min-inline-size: 0;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  color: var(--color-ink);
+}
+
+/* A floated legend leaves the fieldset's border and becomes a flex item, so it takes the column's gap like a label. */
+.technology-input > legend {
+  float: inline-start;
+  padding: 0;
+}
+
+.technology-input__list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  border-block-start: var(--line-width) solid var(--color-hairline);
+}
+
+.technology-input__list:not(:has(li)) {
+  display: none;
+}
+
+.technology-input__name {
+  flex: 1 1 auto;
+  min-inline-size: 0;
+  padding: var(--space-3);
+  font-size: var(--text-body);
+  line-height: var(--leading-body);
+  color: var(--color-ink);
+  overflow-wrap: anywhere;
+}
+
+.technology-input__remove::before {
+  mask-image: var(--icon-close);
+}
+
+.technology-input__add {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+  margin-block-start: var(--space-2);
+}
+
+.technology-input__entry {
+  display: flex;
+  gap: var(--space-2);
+}
+
+.technology-input__combo {
+  position: relative;
+  flex: 1 1 auto;
+  min-inline-size: 0;
+}
+
+/* Floats over what follows the field, on the Surface like a dragged item. */
+.technology-input__suggestions {
+  position: absolute;
+  inset-inline: 0;
+  inset-block-start: calc(100% + var(--space-1));
+  z-index: 2;
+  padding: var(--space-1);
+  border-radius: var(--radius-control);
+  background: var(--color-surface);
+  box-shadow: var(--shadow-float);
+}
+
+.technology-input__suggestion {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: var(--space-3);
+  padding: var(--space-2) var(--space-3);
+  border-radius: calc(var(--radius-control) - var(--space-1));
+  font-size: var(--text-body);
+  line-height: var(--leading-body);
+  color: var(--color-ink-secondary);
+  overflow-wrap: anywhere;
+  cursor: pointer;
+  transition:
+    background-color var(--duration-fast) var(--ease-out),
+    color var(--duration-fast) var(--ease-out);
+}
+
+/* The Wash is mixed into the Ground, so on the Surface it would darken; the Tint is translucent and lifts on either. */
+.technology-input__suggestion:where(:hover, [data-force~="hover"]) {
+  background: var(--color-tint-hover);
+  color: var(--color-ink);
+}
+
+.technology-input__suggestion[aria-selected="true"] {
+  background: var(--color-tint);
+  color: var(--color-ink);
+}
+
+.technology-input__uses {
+  flex: none;
+  font-family: var(--font-mono);
+  font-size: var(--text-label);
+  font-weight: var(--weight-chip);
+  line-height: var(--leading-label);
+  letter-spacing: var(--tracking-chip);
+  font-variant-numeric: tabular-nums;
+  color: var(--color-ink-muted);
+}
+
+/* The fieldset dims once, so its Buttons and move buttons don't dim again, and nothing answers a pointer. */
+.technology-input:disabled {
+  opacity: var(--disabled-opacity);
+}
+
+.technology-input:disabled :is(.button, .reorderable-list__move) {
+  opacity: 1;
+}
+
+.technology-input:disabled :is(.reorderable-list__handle, .reorderable-list__move) {
+  background: transparent;
+  color: var(--color-ink-muted);
+  cursor: not-allowed;
+}
+
+.technology-input:disabled .reorderable-list__move {
+  color: var(--color-ink-secondary);
+}
+
+/* Forced colours drop the float shadow and the Wash, so the list takes an edge and the chosen name the highlight. */
+@media (forced-colors: active) {
+  .technology-input__suggestions {
+    border: var(--line-width) solid CanvasText;
+  }
+
+  .technology-input__suggestion[aria-selected="true"] {
+    outline: var(--focus-ring-width) solid Highlight;
+    outline-offset: calc(-1 * var(--focus-ring-width));
+  }
+}
