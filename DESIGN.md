@@ -279,8 +279,8 @@ at a lower alpha or mixed into the ground, and error is the only hue.
   pressed secondary button and the current Side navigation entry; the faint fill of a hovered secondary button and of
   a hovered Side navigation entry.
 - **Night Wash** and **Paper Wash** (2% of the ink mixed into the ground): the hovered or focused panel cell and Content
-  item row, the whole Reorderable list item around a hovered, focused or pressed row, and a hovered move button. Opaque,
-  because the cell covers the hairline drawn behind the grid.
+  item row, the whole Reorderable list item or fixed item around a hovered, focused or pressed row, and a hovered move
+  button. Opaque, because the cell covers the hairline drawn behind the grid.
 
 ### Error
 - **Error on Paper** and **Error on Night**: error borders and messages only, such as a Reorderable list's failed
@@ -931,7 +931,12 @@ moves disabled.
   0.5rem when it wraps. The list keeps the new order while it fails.
 - **One item:** both move buttons take `aria-disabled`.
 - **Fixed item:** an item that can't move, such as the public repository link, sits before the list as a plain Content
-  item row, with no handle and no move buttons.
+  item row in a wrapper, with no handle and no move buttons. The wrapper keeps their room as inline padding: the
+  handle's width at the start, and the two move buttons' width, their gap and the end padding at the end. It computes
+  them from the icon box, one line of Small (`--reorderable-list-icon-box`, a local custom property), rather than
+  setting its own font size, which the row's em-sized arrow would inherit. So its name and state line up with the rows
+  below. A Hairline rule sits above it, the list's own top rule divides it from the list, and its row draws no rule of
+  its own. The Wash spans the whole wrapper when its row is hovered, focused or pressed.
 - **Narrow rows:** a long name or address wraps, and the state wraps under the text, as in the Content item row, while
   the handle and the move buttons keep their places.
 - **Forced colours:** the arrows take the button text colour and the handle the system text colour, since their masks
