@@ -135,7 +135,8 @@ a {
   .area-period-field,
   .area-image-field,
   .area-file-field,
-  .area-reorderable-list {
+  .area-reorderable-list,
+  .area-technology-input {
     grid-column: 1 / -1;
   }
 }

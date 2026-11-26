@@ -208,6 +208,29 @@ const components = [
       "fixed item",
     ],
   },
+  {
+    slug: "technology-input",
+    name: "Technology input",
+    note: "A field's technologies in order, by handle or move buttons, added with suggestions of names already used. The CMS only.",
+    label: "Technology input states",
+    states: [
+      "default",
+      "handle hover",
+      "dragging",
+      "remove hover",
+      "remove focus",
+      "remove active",
+      "empty",
+      "field hover",
+      "field focus",
+      "error",
+      "suggesting",
+      "suggestion hover",
+      "no match",
+      "disabled",
+      "long content",
+    ],
+  },
 ];
 
 // Built here rather than written in the page, so the page stays under the file size hook as components are added.
