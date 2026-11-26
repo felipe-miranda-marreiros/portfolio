@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Reorderable list: cases · Portfolio prototype</title>
+    <link rel="preload" href="../../fonts/schibsted-grotesk.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="preload" href="../../fonts/martian-mono.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="stylesheet" href="../../tokens.css" />
+    <link rel="stylesheet" href="../specimen.css" />
+    <link rel="stylesheet" href="../button/button.css" />
+    <link rel="stylesheet" href="../state-indicator/state-indicator.css" />
+    <link rel="stylesheet" href="../content-item-row/content-item-row.css" />
+    <link rel="stylesheet" href="reorderable-list.css" />
+  </head>
+  <body>
+    <header class="specimen-bar">
+      <a href="../../index.html">Visual language</a>
+    </header>
+
+    <main>
+      <div class="specimen-intro">
+        <h1>Reorderable list: cases</h1>
+        <p>
+          The reorderable list's cases on both themes: one item, which can't move either way; and a long name and address,
+          which wrap while the handle and the move buttons keep their places. Last, a 320px screen, where the state wraps
+          under the name.
+        </p>
+      </div>
+
+      <div class="surfaces">
+        <section class="surface" data-scheme="dark" aria-labelledby="d-title">
+          <h2 id="d-title">Dark</h2>
+          <div class="variant">
+            <h3>Cases</h3>
+            <ul class="states states--rows-wide">
+              <li>
+                <div class="states__fill"><ul class="content-item-rows reorderable-list"><li class="reorderable-list__item"><span class="reorderable-list__handle" aria-hidden="true"></span><a class="content-item-row" href="index.html"><span class="content-item-row__text"><span class="content-item-row__name" id="d-one-0-name">GitHub</span><span class="content-item-row__detail">github.com/placeholder</span></span><span class="content-item-row__end"><span class="state-indicator" data-state="published">Published</span></span></a><span class="reorderable-list__moves"><button class="reorderable-list__move" type="button" data-direction="up" aria-label="Move up" aria-describedby="d-one-0-name" aria-disabled="true"></button><button class="reorderable-list__move" type="button" data-direction="down" aria-label="Move down" aria-describedby="d-one-0-name" aria-disabled="true"></button></span></li></ul><div class="reorderable-list__feedback"><p class="reorderable-list__status" role="status"></p></div></div>
+                <code>one item</code>
+              </li>
+              <li>
+                <div class="states__fill"><ul class="content-item-rows reorderable-list"><li class="reorderable-list__item"><span class="reorderable-list__handle" aria-hidden="true"></span><a class="content-item-row" href="index.html"><span class="content-item-row__text"><span class="content-item-row__name" id="d-long-0-name">GitHub</span><span class="content-item-row__detail">github.com/placeholder</span></span><span class="content-item-row__end"><span class="state-indicator" data-state="published">Published</span></span></a><span class="reorderable-list__moves"><button class="reorderable-list__move" type="button" data-direction="up" aria-label="Move up" aria-describedby="d-long-0-name" aria-disabled="true"></button><button class="reorderable-list__move" type="button" data-direction="down" aria-label="Move down" aria-describedby="d-long-0-name"></button></span></li><li class="reorderable-list__item"><span class="reorderable-list__handle" aria-hidden="true"></span><a class="content-item-row" href="index.html"><span class="content-item-row__text"><span class="content-item-row__name" id="d-long-1-name">A Footer link whose name runs long enough to wrap onto a second line beside its state and the move buttons</span><span class="content-item-row__detail">https://www.example.com/a/very/long/address/that/keeps/going</span></span><span class="content-item-row__end"><span class="state-indicator" data-state="draft">Draft</span></span></a><span class="reorderable-list__moves"><button class="reorderable-list__move" type="button" data-direction="up" aria-label="Move up" aria-describedby="d-long-1-name"></button><button class="reorderable-list__move" type="button" data-direction="down" aria-label="Move down" aria-describedby="d-long-1-name"></button></span></li><li class="reorderable-list__item"><span class="reorderable-list__handle" aria-hidden="true"></span><a class="content-item-row" href="index.html"><span class="content-item-row__text"><span class="content-item-row__name" id="d-long-2-name">Source code</span><span class="content-item-row__detail">github.com/placeholder/portfolio</span></span><span class="content-item-row__end"><span class="state-indicator" data-state="published">Published</span></span></a><span class="reorderable-list__moves"><button class="reorderable-list__move" type="button" data-direction="up" aria-label="Move up" aria-describedby="d-long-2-name"></button><button class="reorderable-list__move" type="button" data-direction="down" aria-label="Move down" aria-describedby="d-long-2-name" aria-disabled="true"></button></span></li></ul><div class="reorderable-list__feedback"><p class="reorderable-list__status" role="status"></p></div></div>
+                <code>long name</code>
+              </li>
+            </ul>
+          </div>
+          <div class="variant">
+            <h3>320px phone</h3>
+            <div class="frame frame--phone">
+              <div class="states__fill"><ul class="content-item-rows reorderable-list"><li class="reorderable-list__item"><span class="reorderable-list__handle" aria-hidden="true"></span><a class="content-item-row" href="index.html"><span class="content-item-row__text"><span class="content-item-row__name" id="d-phone-0-name">GitHub</span><span class="content-item-row__detail">github.com/placeholder</span></span><span class="content-item-row__end"><span class="state-indicator" data-state="published">Published</span></span></a><span class="reorderable-list__moves"><button class="reorderable-list__move" type="button" data-direction="up" aria-label="Move up" aria-describedby="d-phone-0-name" aria-disabled="true"></button><button class="reorderable-list__move" type="button" data-direction="down" aria-label="Move down" aria-describedby="d-phone-0-name"></button></span></li><li class="reorderable-list__item"><span class="reorderable-list__handle" aria-hidden="true"></span><a class="content-item-row" href="index.html"><span class="content-item-row__text"><span class="content-item-row__name" id="d-phone-1-name">LinkedIn</span><span class="content-item-row__detail">linkedin.com/in/placeholder</span></span><span class="content-item-row__end"><span class="state-indicator" data-state="draft">Draft</span></span></a><span class="reorderable-list__moves"><button class="reorderable-list__move" type="button" data-direction="up" aria-label="Move up" aria-describedby="d-phone-1-name"></button><button class="reorderable-list__move" type="button" data-direction="down" aria-label="Move down" aria-describedby="d-phone-1-name"></button></span></li><li class="reorderable-list__item"><span class="reorderable-list__handle" aria-hidden="true"></span><a class="content-item-row" href="index.html"><span class="content-item-row__text"><span class="content-item-row__name" id="d-phone-2-name">Source code</span><span class="content-item-row__detail">github.com/placeholder/portfolio</span></span><span class="content-item-row__end"><span class="state-indicator" data-state="published">Published</span></span></a><span class="reorderable-list__moves"><button class="reorderable-list__move" type="button" data-direction="up" aria-label="Move up" aria-describedby="d-phone-2-name"></button><button class="reorderable-list__move" type="button" data-direction="down" aria-label="Move down" aria-describedby="d-phone-2-name" aria-disabled="true"></button></span></li></ul><div class="reorderable-list__feedback"><p class="reorderable-list__status" role="status"></p></div></div>
+            </div>
+          </div>
+        </section>
+        <section class="surface" data-scheme="light" aria-labelledby="l-title">
+          <h2 id="l-title">Light</h2>
+          <div class="variant">
+            <h3>Cases</h3>
+            <ul class="states states--rows-wide">
+              <li>
+                <div class="states__fill"><ul class="content-item-rows reorderable-list"><li class="reorderable-list__item"><span class="reorderable-list__handle" aria-hidden="true"></span><a class="content-item-row" href="index.html"><span class="content-item-row__text"><span class="content-item-row__name" id="l-one-0-name">GitHub</span><span class="content-item-row__detail">github.com/placeholder</span></span><span class="content-item-row__end"><span class="state-indicator" data-state="published">Published</span></span></a><span class="reorderable-list__moves"><button class="reorderable-list__move" type="button" data-direction="up" aria-label="Move up" aria-describedby="l-one-0-name" aria-disabled="true"></button><button class="reorderable-list__move" type="button" data-direction="down" aria-label="Move down" aria-describedby="l-one-0-name" aria-disabled="true"></button></span></li></ul><div class="reorderable-list__feedback"><p class="reorderable-list__status" role="status"></p></div></div>
+                <code>one item</code>
+              </li>
+              <li>
+                <div class="states__fill"><ul class="content-item-rows reorderable-list"><li class="reorderable-list__item"><span class="reorderable-list__handle" aria-hidden="true"></span><a class="content-item-row" href="index.html"><span class="content-item-row__text"><span class="content-item-row__name" id="l-long-0-name">GitHub</span><span class="content-item-row__detail">github.com/placeholder</span></span><span class="content-item-row__end"><span class="state-indicator" data-state="published">Published</span></span></a><span class="reorderable-list__moves"><button class="reorderable-list__move" type="button" data-direction="up" aria-label="Move up" aria-describedby="l-long-0-name" aria-disabled="true"></button><button class="reorderable-list__move" type="button" data-direction="down" aria-label="Move down" aria-describedby="l-long-0-name"></button></span></li><li class="reorderable-list__item"><span class="reorderable-list__handle" aria-hidden="true"></span><a class="content-item-row" href="index.html"><span class="content-item-row__text"><span class="content-item-row__name" id="l-long-1-name">A Footer link whose name runs long enough to wrap onto a second line beside its state and the move buttons</span><span class="content-item-row__detail">https://www.example.com/a/very/long/address/that/keeps/going</span></span><span class="content-item-row__end"><span class="state-indicator" data-state="draft">Draft</span></span></a><span class="reorderable-list__moves"><button class="reorderable-list__move" type="button" data-direction="up" aria-label="Move up" aria-describedby="l-long-1-name"></button><button class="reorderable-list__move" type="button" data-direction="down" aria-label="Move down" aria-describedby="l-long-1-name"></button></span></li><li class="reorderable-list__item"><span class="reorderable-list__handle" aria-hidden="true"></span><a class="content-item-row" href="index.html"><span class="content-item-row__text"><span class="content-item-row__name" id="l-long-2-name">Source code</span><span class="content-item-row__detail">github.com/placeholder/portfolio</span></span><span class="content-item-row__end"><span class="state-indicator" data-state="published">Published</span></span></a><span class="reorderable-list__moves"><button class="reorderable-list__move" type="button" data-direction="up" aria-label="Move up" aria-describedby="l-long-2-name"></button><button class="reorderable-list__move" type="button" data-direction="down" aria-label="Move down" aria-describedby="l-long-2-name" aria-disabled="true"></button></span></li></ul><div class="reorderable-list__feedback"><p class="reorderable-list__status" role="status"></p></div></div>
+                <code>long name</code>
+              </li>
+            </ul>
+          </div>
+          <div class="variant">
+            <h3>320px phone</h3>
+            <div class="frame frame--phone">
+              <div class="states__fill"><ul class="content-item-rows reorderable-list"><li class="reorderable-list__item"><span class="reorderable-list__handle" aria-hidden="true"></span><a class="content-item-row" href="index.html"><span class="content-item-row__text"><span class="content-item-row__name" id="l-phone-0-name">GitHub</span><span class="content-item-row__detail">github.com/placeholder</span></span><span class="content-item-row__end"><span class="state-indicator" data-state="published">Published</span></span></a><span class="reorderable-list__moves"><button class="reorderable-list__move" type="button" data-direction="up" aria-label="Move up" aria-describedby="l-phone-0-name" aria-disabled="true"></button><button class="reorderable-list__move" type="button" data-direction="down" aria-label="Move down" aria-describedby="l-phone-0-name"></button></span></li><li class="reorderable-list__item"><span class="reorderable-list__handle" aria-hidden="true"></span><a class="content-item-row" href="index.html"><span class="content-item-row__text"><span class="content-item-row__name" id="l-phone-1-name">LinkedIn</span><span class="content-item-row__detail">linkedin.com/in/placeholder</span></span><span class="content-item-row__end"><span class="state-indicator" data-state="draft">Draft</span></span></a><span class="reorderable-list__moves"><button class="reorderable-list__move" type="button" data-direction="up" aria-label="Move up" aria-describedby="l-phone-1-name"></button><button class="reorderable-list__move" type="button" data-direction="down" aria-label="Move down" aria-describedby="l-phone-1-name"></button></span></li><li class="reorderable-list__item"><span class="reorderable-list__handle" aria-hidden="true"></span><a class="content-item-row" href="index.html"><span class="content-item-row__text"><span class="content-item-row__name" id="l-phone-2-name">Source code</span><span class="content-item-row__detail">github.com/placeholder/portfolio</span></span><span class="content-item-row__end"><span class="state-indicator" data-state="published">Published</span></span></a><span class="reorderable-list__moves"><button class="reorderable-list__move" type="button" data-direction="up" aria-label="Move up" aria-describedby="l-phone-2-name"></button><button class="reorderable-list__move" type="button" data-direction="down" aria-label="Move down" aria-describedby="l-phone-2-name" aria-disabled="true"></button></span></li></ul><div class="reorderable-list__feedback"><p class="reorderable-list__status" role="status"></p></div></div>
+            </div>
+          </div>
+        </section>
+      </div>
+    </main>
+
+    <footer class="foot">
+      <p>Design prototype. A reference for the front end, not production code. See the <a href="index.html">states</a>, <a href="moves.html">moving</a>, <a href="feedback.html">the order reaching the Portfolio</a>, and <a href="cases.html">cases and a phone</a>.</p>
+    </footer>
+  </body>
+</html>
