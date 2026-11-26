@@ -205,6 +205,7 @@ const components = [
       "reaching",
       "live",
       "failed",
+      "fixed item",
     ],
   },
 ];
