@@ -1098,7 +1098,9 @@ placeholder and the About me Page leaves it out.
 ### Do:
 - **Do** design the dark theme first and keep the light theme a complete equal, both at WCAG 2.2 AA.
 - **Do** open every Page in dark; show light only after the visitor picks it in the switch.
-- **Do** make the one primary action per view filled ink, and outline every other button in a hairline.
+- **Do** make the one primary action per view filled ink, and outline every other button in a hairline (a Reorderable
+  list's move buttons, icon buttons whose border and fill are transparent until the Wash on hover, are buttons this rule
+  doesn't cover).
 - **Do** derive every secondary, muted, hairline and tint colour from the ink at its fixed alpha step.
 - **Do** lead Home with the facts: the role and seniority as the Masthead's largest type, and location, work model and
   technologies in the hairline facts panel beside it; keep the Owner's photo small and plain beside the name.
