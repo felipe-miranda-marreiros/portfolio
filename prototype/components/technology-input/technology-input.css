@@ -118,7 +118,8 @@
     color var(--duration-fast) var(--ease-out);
 }
 
-/* The Wash is mixed into the Ground, so on the Surface it would darken; the Tint is translucent and lifts on either. */
+/* The Wash is mixed into the Ground, so on the Surface it would darken; the Tint is translucent, so the Surface shows
+   through it. */
 .technology-input__suggestion:where(:hover, [data-force~="hover"]) {
   background: var(--color-tint-hover);
   color: var(--color-ink);
@@ -159,7 +160,7 @@
   color: var(--color-ink-secondary);
 }
 
-/* Forced colours drop the float shadow and the Wash, so the list takes an edge and the chosen name the highlight. */
+/* Forced colours drop the float shadow and the Tints, so the list takes an edge and the chosen name the highlight. */
 @media (forced-colors: active) {
   .technology-input__suggestions {
     border: var(--line-width) solid CanvasText;
