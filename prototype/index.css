@@ -136,7 +136,8 @@ a {
   .area-image-field,
   .area-file-field,
   .area-reorderable-list,
-  .area-technology-input {
+  .area-technology-input,
+  .area-action-bar {
     grid-column: 1 / -1;
   }
 }

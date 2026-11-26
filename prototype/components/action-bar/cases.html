@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Action bar: cases · Portfolio prototype</title>
+    <link rel="preload" href="../../fonts/schibsted-grotesk.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="preload" href="../../fonts/martian-mono.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="stylesheet" href="../../tokens.css" />
+    <link rel="stylesheet" href="../specimen.css" />
+    <link rel="stylesheet" href="../button/button.css" />
+    <link rel="stylesheet" href="../link/link.css" />
+    <link rel="stylesheet" href="../state-indicator/state-indicator.css" />
+    <link rel="stylesheet" href="../text-field/text-field.css" />
+    <link rel="stylesheet" href="action-bar.css" />
+  </head>
+  <body>
+    <header class="specimen-bar">
+      <a href="../../index.html">Visual language</a>
+    </header>
+
+    <main>
+      <div class="specimen-intro">
+        <h1>Action bar: cases</h1>
+        <p>
+          The action bar's cases on both themes: an item that can't be unpublished or removed, such as the public
+          repository link; long words, which wrap; and the bar fixed at the foot of an editor that scrolls. Last, a 320px
+          screen, where the actions wrap under the state.
+        </p>
+      </div>
+
+      <div class="surfaces">
+        <section class="surface" data-scheme="dark" aria-labelledby="d-title">
+          <h2 id="d-title">Dark</h2>
+          <div class="variant">
+            <h3>Cases</h3>
+            <ul class="states states--rows-wide">
+              <li>
+                <div class="states__fill"><section class="action-bar" aria-label="Actions"><div class="action-bar__status"><span class="state-indicator" id="d-fixed-state" data-state="draft-over-published">Draft over Published</span><p class="action-bar__saved" role="status" data-state="saved">Saved</p><div class="action-bar__feedback"><p class="action-bar__publish" role="status"></p></div></div><div class="action-bar__actions"><button class="button button--secondary" type="button"><span class="button__label">Discard draft</span></button><button class="button button--primary" type="button"><span class="button__label">Publish</span></button></div></section></div>
+                <code>can't be removed</code>
+              </li>
+              <li>
+                <div class="states__fill"><section class="action-bar" aria-label="Actions"><div class="action-bar__status"><span class="state-indicator" id="d-long-state" data-state="draft-over-published">Draft over Published</span><p class="action-bar__saved" role="status" data-state="failed">Not saved: the connection dropped. Your changes stay here, and saving tries again.</p><div class="action-bar__missing"><span class="action-bar__label" id="d-long-missing">Missing</span><ul class="action-bar__fields" aria-labelledby="d-long-missing"><li><a class="link" href="#d-long-field-0">Summary of the role's achievements and the technologies it used · Portuguese</a></li></ul></div><div class="action-bar__feedback"><p class="action-bar__publish" role="status"></p></div></div><div class="action-bar__actions"><button class="button button--secondary" type="button"><span class="button__label">Discard draft</span></button><button class="button button--secondary" type="button"><span class="button__label">Unpublish</span></button><button class="button button--secondary" type="button"><span class="button__label">Delete</span></button><button class="button button--primary" type="button" aria-disabled="true" aria-describedby="d-long-missing"><span class="button__label">Publish</span></button></div></section></div>
+                <code>long content</code>
+              </li>
+            </ul>
+          </div>
+          <div class="variant">
+            <h3>Fixed at the foot</h3>
+            <div class="frame frame--scroll">
+              <div class="frame--padded"><div class="text-field"><label class="text-field__label" for="d-f0">Name</label><input class="text-field__input" id="d-f0" /></div><div class="text-field"><label class="text-field__label" for="d-f1">Role</label><input class="text-field__input" id="d-f1" /></div><div class="text-field"><label class="text-field__label" for="d-f2">Summary</label><input class="text-field__input" id="d-f2" /></div><div class="text-field"><label class="text-field__label" for="d-f3">Photo alt text</label><input class="text-field__input" id="d-f3" /></div></div>
+              <section class="action-bar" aria-label="Actions"><div class="action-bar__status"><span class="state-indicator" id="d-scroll-state" data-state="draft-over-published">Draft over Published</span><p class="action-bar__saved" role="status" data-state="saved">Saved</p><div class="action-bar__missing"><span class="action-bar__label" id="d-scroll-missing">Missing</span><ul class="action-bar__fields" aria-labelledby="d-scroll-missing"><li><a class="link" href="#d-f2">Summary · Portuguese</a></li><li><a class="link" href="#d-f3">Photo alt text · English</a></li></ul></div><div class="action-bar__feedback"><p class="action-bar__publish" role="status"></p></div></div><div class="action-bar__actions"><button class="button button--secondary" type="button"><span class="button__label">Discard draft</span></button><button class="button button--secondary" type="button"><span class="button__label">Unpublish</span></button><button class="button button--secondary" type="button"><span class="button__label">Delete</span></button><button class="button button--primary" type="button" aria-disabled="true" aria-describedby="d-scroll-missing"><span class="button__label">Publish</span></button></div></section>
+            </div>
+          </div>
+          <div class="variant">
+            <h3>320px phone</h3>
+            <div class="frame frame--phone">
+              <section class="action-bar" aria-label="Actions"><div class="action-bar__status"><span class="state-indicator" id="d-phone-state" data-state="draft-over-published">Draft over Published</span><p class="action-bar__saved" role="status" data-state="saved">Saved</p><div class="action-bar__missing"><span class="action-bar__label" id="d-phone-missing">Missing</span><ul class="action-bar__fields" aria-labelledby="d-phone-missing"><li><a class="link" href="#d-phone-field-0">Summary · Portuguese</a></li><li><a class="link" href="#d-phone-field-1">Photo alt text · English</a></li></ul></div><div class="action-bar__feedback"><p class="action-bar__publish" role="status"></p></div></div><div class="action-bar__actions"><button class="button button--secondary" type="button"><span class="button__label">Discard draft</span></button><button class="button button--secondary" type="button"><span class="button__label">Unpublish</span></button><button class="button button--secondary" type="button"><span class="button__label">Delete</span></button><button class="button button--primary" type="button" aria-disabled="true" aria-describedby="d-phone-missing"><span class="button__label">Publish</span></button></div></section>
+            </div>
+          </div>
+        </section>
+        <section class="surface" data-scheme="light" aria-labelledby="l-title">
+          <h2 id="l-title">Light</h2>
+          <div class="variant">
+            <h3>Cases</h3>
+            <ul class="states states--rows-wide">
+              <li>
+                <div class="states__fill"><section class="action-bar" aria-label="Actions"><div class="action-bar__status"><span class="state-indicator" id="l-fixed-state" data-state="draft-over-published">Draft over Published</span><p class="action-bar__saved" role="status" data-state="saved">Saved</p><div class="action-bar__feedback"><p class="action-bar__publish" role="status"></p></div></div><div class="action-bar__actions"><button class="button button--secondary" type="button"><span class="button__label">Discard draft</span></button><button class="button button--primary" type="button"><span class="button__label">Publish</span></button></div></section></div>
+                <code>can't be removed</code>
+              </li>
+              <li>
+                <div class="states__fill"><section class="action-bar" aria-label="Actions"><div class="action-bar__status"><span class="state-indicator" id="l-long-state" data-state="draft-over-published">Draft over Published</span><p class="action-bar__saved" role="status" data-state="failed">Not saved: the connection dropped. Your changes stay here, and saving tries again.</p><div class="action-bar__missing"><span class="action-bar__label" id="l-long-missing">Missing</span><ul class="action-bar__fields" aria-labelledby="l-long-missing"><li><a class="link" href="#l-long-field-0">Summary of the role's achievements and the technologies it used · Portuguese</a></li></ul></div><div class="action-bar__feedback"><p class="action-bar__publish" role="status"></p></div></div><div class="action-bar__actions"><button class="button button--secondary" type="button"><span class="button__label">Discard draft</span></button><button class="button button--secondary" type="button"><span class="button__label">Unpublish</span></button><button class="button button--secondary" type="button"><span class="button__label">Delete</span></button><button class="button button--primary" type="button" aria-disabled="true" aria-describedby="l-long-missing"><span class="button__label">Publish</span></button></div></section></div>
+                <code>long content</code>
+              </li>
+            </ul>
+          </div>
+          <div class="variant">
+            <h3>Fixed at the foot</h3>
+            <div class="frame frame--scroll">
+              <div class="frame--padded"><div class="text-field"><label class="text-field__label" for="l-f0">Name</label><input class="text-field__input" id="l-f0" /></div><div class="text-field"><label class="text-field__label" for="l-f1">Role</label><input class="text-field__input" id="l-f1" /></div><div class="text-field"><label class="text-field__label" for="l-f2">Summary</label><input class="text-field__input" id="l-f2" /></div><div class="text-field"><label class="text-field__label" for="l-f3">Photo alt text</label><input class="text-field__input" id="l-f3" /></div></div>
+              <section class="action-bar" aria-label="Actions"><div class="action-bar__status"><span class="state-indicator" id="l-scroll-state" data-state="draft-over-published">Draft over Published</span><p class="action-bar__saved" role="status" data-state="saved">Saved</p><div class="action-bar__missing"><span class="action-bar__label" id="l-scroll-missing">Missing</span><ul class="action-bar__fields" aria-labelledby="l-scroll-missing"><li><a class="link" href="#l-f2">Summary · Portuguese</a></li><li><a class="link" href="#l-f3">Photo alt text · English</a></li></ul></div><div class="action-bar__feedback"><p class="action-bar__publish" role="status"></p></div></div><div class="action-bar__actions"><button class="button button--secondary" type="button"><span class="button__label">Discard draft</span></button><button class="button button--secondary" type="button"><span class="button__label">Unpublish</span></button><button class="button button--secondary" type="button"><span class="button__label">Delete</span></button><button class="button button--primary" type="button" aria-disabled="true" aria-describedby="l-scroll-missing"><span class="button__label">Publish</span></button></div></section>
+            </div>
+          </div>
+          <div class="variant">
+            <h3>320px phone</h3>
+            <div class="frame frame--phone">
+              <section class="action-bar" aria-label="Actions"><div class="action-bar__status"><span class="state-indicator" id="l-phone-state" data-state="draft-over-published">Draft over Published</span><p class="action-bar__saved" role="status" data-state="saved">Saved</p><div class="action-bar__missing"><span class="action-bar__label" id="l-phone-missing">Missing</span><ul class="action-bar__fields" aria-labelledby="l-phone-missing"><li><a class="link" href="#l-phone-field-0">Summary · Portuguese</a></li><li><a class="link" href="#l-phone-field-1">Photo alt text · English</a></li></ul></div><div class="action-bar__feedback"><p class="action-bar__publish" role="status"></p></div></div><div class="action-bar__actions"><button class="button button--secondary" type="button"><span class="button__label">Discard draft</span></button><button class="button button--secondary" type="button"><span class="button__label">Unpublish</span></button><button class="button button--secondary" type="button"><span class="button__label">Delete</span></button><button class="button button--primary" type="button" aria-disabled="true" aria-describedby="l-phone-missing"><span class="button__label">Publish</span></button></div></section>
+            </div>
+          </div>
+        </section>
+      </div>
+    </main>
+
+    <footer class="foot">
+      <p>Design prototype. A reference for the front end, not production code. See the <a href="index.html">states</a>, <a href="missing.html">what's missing</a>, <a href="saving.html">saving</a>, <a href="publish.html">publishing</a>, and <a href="cases.html">cases and a phone</a>.</p>
+    </footer>
+  </body>
+</html>

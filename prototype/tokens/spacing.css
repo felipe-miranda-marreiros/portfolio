@@ -39,6 +39,8 @@
   --image-field-meta-min: 10rem;
   /* A file field's name and detail: below this beside the buttons, the buttons wrap under the file. */
   --file-field-meta-min: 10rem;
+  /* The action bar's state and statuses: below this beside the actions, the actions wrap under them. */
+  --action-bar-status-min: 20rem;
 
   --content-max: 76rem;
   --gutter: clamp(1.25rem, 0.5rem + 3.5vw, 3rem);

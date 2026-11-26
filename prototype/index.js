@@ -232,6 +232,29 @@ const components = [
       "long name",
     ],
   },
+  {
+    slug: "action-bar",
+    name: "Action bar",
+    note: "The editor's bar at its foot: the item's state, saving, what's missing as links, and its actions. The CMS only.",
+    label: "Action bar states",
+    states: [
+      "new draft",
+      "draft over published",
+      "published",
+      "one missing",
+      "several missing",
+      "missing link hover",
+      "missing link focus",
+      "saving",
+      "saved",
+      "save failed",
+      "reaching",
+      "live",
+      "failed",
+      "can't be removed",
+      "long content",
+    ],
+  },
 ];
 
 // Built here rather than written in the page, so the page stays under the file size hook as components are added.

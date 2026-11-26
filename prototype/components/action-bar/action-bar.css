@@ -1,0 +1,119 @@
+/**
+ * Action bar: the editor's fixed bar at its foot, from tokens only. On the start side, the item's state, whether its
+ * Draft is saved, what is still missing to publish, and how a publish went; on the end side, the item's actions with
+ * Publish last. It composes the State indicator, the Link and the Button.
+ * Markup: <section class="action-bar" aria-label="…">
+ *   <div class="action-bar__status"><span class="state-indicator" id="…-state" data-state="…">…</span>
+ *     <p class="action-bar__saved" role="status" data-state="saving|saved|failed">…</p>
+ *     <div class="action-bar__missing"><span class="action-bar__label" id="…-missing">…</span>
+ *       <ul class="action-bar__fields" aria-labelledby="…-missing"><li><a class="link" href="#…">…</a></li>…</ul></div>
+ *     <div class="action-bar__feedback"><p class="action-bar__publish" role="status" data-state="reaching|live|failed">
+ *       …</p><button class="button button--secondary" type="button">…</button></div></div>
+ *   <div class="action-bar__actions"><button class="button button--secondary" type="button">…</button>…
+ *     <button class="button button--primary" type="button" aria-disabled="…" aria-describedby="…">…</button>
+ *   </div></section>.
+ * Each missing field is named with its language and links to the field, which takes focus. Publish stays in place,
+ * `aria-disabled` while anything is missing or nothing is new, so it keeps focus; it is described by the Missing label
+ * while anything is missing, and by the State indicator when nothing is new, so it says why. The item's state
+ * decides the other actions: a new Draft has Delete; a Draft over a Published version, Discard draft, Unpublish and
+ * Delete; a Published item, Unpublish and Delete. An item that can't be unpublished or removed, such as the public
+ * repository link, has no Unpublish and no Delete. Each of them confirms in a dialog. While a publish is reaching the
+ * Portfolio, Publish is loading; then the status says it's live, or that it failed, with a button to try again. Both
+ * statuses stay in the page, empty until they have news, so screen readers hear them change.
+ */
+.action-bar {
+  position: sticky;
+  inset-block-end: 0;
+  z-index: 1;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-3) var(--space-5);
+  padding: var(--space-3) var(--space-5);
+  border-block-start: var(--line-width) solid var(--color-hairline);
+  background: var(--color-surface);
+  color: var(--color-ink);
+}
+
+.action-bar__status {
+  display: flex;
+  flex: 1 1 var(--action-bar-status-min);
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--space-2) var(--space-4);
+  min-inline-size: 0;
+}
+
+.action-bar__saved,
+.action-bar__label,
+.action-bar__publish {
+  margin: 0;
+  font-size: var(--text-small);
+  line-height: var(--leading-body);
+  overflow-wrap: break-word;
+}
+
+.action-bar__saved,
+.action-bar__publish {
+  color: var(--color-ink-muted);
+}
+
+/* An empty status stays in the page for screen readers, so it takes back the gap beside it rather than double it. */
+.action-bar__saved:empty {
+  margin-inline-end: calc(-1 * var(--space-4));
+}
+
+.action-bar__feedback:not(:has(.action-bar__publish:not(:empty))) {
+  margin-inline-start: calc(-1 * var(--space-4));
+}
+
+:is(.action-bar__saved, .action-bar__publish)[data-state="failed"] {
+  font-weight: var(--error-weight);
+  color: var(--error-color);
+}
+
+/* The label keeps its place beside the first field, and the fields wrap under one another beside it. */
+.action-bar__missing {
+  display: flex;
+  flex: 1 1 auto;
+  align-items: baseline;
+  gap: var(--space-3);
+  min-inline-size: 0;
+}
+
+.action-bar__label {
+  flex: none;
+  color: var(--color-ink-secondary);
+}
+
+.action-bar__fields {
+  display: flex;
+  flex: 1 1 0;
+  flex-wrap: wrap;
+  gap: var(--space-1) var(--space-3);
+  min-inline-size: 0;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.action-bar__feedback {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--space-2) var(--space-3);
+}
+
+.action-bar__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+}
+
+/* Forced colours drop the Surface, so the bar keeps its edge in the system's text colour. */
+@media (forced-colors: active) {
+  .action-bar {
+    border-block-start-color: CanvasText;
+  }
+}

@@ -275,6 +275,14 @@ a {
   width: 32rem;
 }
 
+/* A short editor that scrolls, for a component fixed to its foot such as the action bar. */
+.frame--scroll {
+  display: flex;
+  flex-direction: column;
+  block-size: 20rem;
+  overflow: auto;
+}
+
 /* For components that don't pad themselves, such as a form's fields. */
 .frame--padded {
   display: grid;

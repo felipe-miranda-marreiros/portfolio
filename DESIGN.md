@@ -171,6 +171,7 @@ spacing:
   bilingual-field-column-min: "16rem"
   image-field-meta-min: "10rem"
   file-field-meta-min: "10rem"
+  action-bar-status-min: "20rem"
   about-me-toggle-inset: "0px"
   about-me-section-rule-gap: "0px"
 ---
@@ -253,22 +254,23 @@ at a lower alpha or mixed into the ground, and error is the only hue.
 - **Night** and **Paper**: the ground of the dark and light themes; also the text colour on a filled-ink action.
 - **Night Raised** and **Paper Raised**: the surface for anything that floats above the page (menus, popovers, the item
   a Reorderable list is dragging, a Technology input's suggestions), always paired with the float shadow, except a
-  native select's list, which the browser draws and which can't take it, and a photo's ground while it loads (the
-  Masthead's, the Image field's thumbnail), which doesn't float.
+  native select's list, which the browser draws and which can't take it, a photo's ground while it loads (the
+  Masthead's, the Image field's thumbnail), which doesn't float, and the Action bar, fixed at the editor's foot over the
+  scrolling fields, which takes a top Hairline instead of the shadow.
 - **Secondary Ink** (84% of the ink): supporting lines, ledes, body copy in panels, resting row links, inactive switch
   options, the Qualification list's small heading and note, the Side navigation's resting entries and sign-out, the
   Draft count on its current entry, a Published State indicator's text, a resting Content item row's name, a Bilingual
-  field's language names, a Period field's end names, a Reorderable list's resting move buttons, and a Technology
-  input's resting move and remove buttons and suggestions.
+  field's language names, a Period field's end names, a Reorderable list's resting move buttons, a Technology input's
+  resting move and remove buttons and suggestions, and the Action bar's Missing label.
 - **Muted Ink** (64% of the ink): metadata, captions, a panel's note, the Side navigation's Draft counts, a Content item
   row's detail, a Period field's dash, an Image field's and a File field's detail, a Reorderable list's handle and
-  status, and a Technology input's use counts and disabled handles. Still AA on the ground in both themes, and on the
-  Wash of a hovered row.
+  status, a Technology input's use counts and disabled handles, and the Action bar's saved and publish statuses. Still
+  AA on the ground in both themes, and on the Wash of a hovered row.
 - **Hairline** (10% of the ink): panel-grid borders, the Facts panel's border and the rule under its lead, the rule
   between role entries and between Qualification list items, the rule above a Section heading, the rules under the top
   bar and above the footer, the Footer's rule between its repository link and the rest, the Side navigation's edge and
   the rules between its groups and above its foot, the rules above, between and below Content item rows and a Technology
-  input's rows, and the edge of the Masthead's photo and of the Image field's thumbnail.
+  input's rows, the edge of the Masthead's photo and of the Image field's thumbnail, and the Action bar's top edge.
 - **Hairline Hover** (26%): the brightened edge of a hovered or focused panel and of a hovered secondary button.
 - **Hairline Control** (22%): the outline of secondary controls, the theme switch and swatch edges.
 - **Hairline Input** (52% ink on paper, 44% bone on night): input borders, which identify the control and so meet 3:1
@@ -285,8 +287,8 @@ at a lower alpha or mixed into the ground, and error is the only hue.
   or remove button. Opaque, because the cell covers the hairline drawn behind the grid.
 
 ### Error
-- **Error on Paper** and **Error on Night**: error borders and messages only, such as a Reorderable list's failed
-  status, never decoration.
+- **Error on Paper** and **Error on Night**: error borders and messages only, such as a Reorderable list's failed status
+  and the Action bar's failed saved and publish statuses, never decoration.
 
 ### Named Rules
 **The Ink Is The Action Rule.** There is no accent colour. The primary action is the ink filled, with the ground as its
@@ -383,9 +385,9 @@ monospace that labels facts the way a codebase labels things: commands, tags, co
   (600) in full ink, a Facts panel fact's value, a Role entry's company and a Qualification list item's source; and a
   Technology input's names, in full ink, and its suggestions.
 - **Small** (400, 0.875rem): captions, a panel's note, metadata (such as a Role entry's location and work model, and a
-  Qualification list item's place or credential ID), a field's hint and a Reorderable list's status, in muted ink, and
-  a field's error message;
-  also the size of row links, controls, field labels and the Qualification list's small heading, which take the
+  Qualification list item's place or credential ID), a field's hint, a Reorderable list's status and the Action bar's
+  saved and publish statuses, in muted ink, the Action bar's Missing label, in secondary ink, and a field's error
+  message; also the size of row links, controls, field labels and the Qualification list's small heading, which take the
   control weight (600), kept apart from the title weight so each can change alone.
 - **Label** (Martian Mono 500, 0.6875rem, 0.08em, uppercase, tabular numerals): stat labels (the Facts panel's), dates
   (a Role entry's period, a Qualification list item's date), a Bilingual field's language names and a Period field's end
@@ -509,7 +511,8 @@ Flat by default. Depth comes from hairlines and alpha tints, not shadows: a hove
 to Hairline Hover over the Wash, a hovered secondary button gains Tint Hover. Only a surface that floats above the page
 (menu, popover, a Reorderable list's dragged item, a Technology input's suggestions) takes the raised surface colour and
 the float shadow; a native select's list takes the colour alone, since the browser draws it and it can't take the
-shadow, and so does a photo's ground while it loads, which doesn't float. Nothing glows.
+shadow, and so does a photo's ground while it loads, which doesn't float, and the Action bar, fixed at the editor's
+foot, which takes a top Hairline instead. Nothing glows.
 
 ### Shadow Vocabulary
 - **Float** (`box-shadow: 0 0 0 1px <ring>, 0 12px 32px -12px <shadow>`): floating surfaces only. On night the ring is
@@ -550,13 +553,14 @@ row's key colour that thickens to 3px on hover, focus and press. The illustratio
 
 The Button, the Link, the Chip, the State indicator, the Content item row, the Toggle, the Top bar, the Side navigation,
 the Footer, the Text field, the Bilingual field, the Period field, the Image field, the File field, the Reorderable
-list, the Technology input, the Panel grid, the Page header, the Section heading, the Masthead, the Facts panel, the
-Role entry, the Qualification list and About me's Lineup are built in the prototype (`prototype/components/button/`,
-`link/`, `chip/`, `state-indicator/`, `content-item-row/`, `toggle/`, `top-bar/`, `side-navigation/`, `footer/`,
-`text-field/`, `bilingual-field/`, `period-field/`, `image-field/`, `file-field/`, `reorderable-list/`,
-`technology-input/`, `panel-grid/`, `page-header/`, `section-heading/`, `masthead/`, `facts-panel/`, `role-entry/`,
-`qualification-list/`, `lineup/`); the rest are the primitives the prototype's token specimens establish, to be
-confirmed by each component's own PR. Every component takes every visual value from tokens and holds no visible text.
+list, the Technology input, the Action bar, the Panel grid, the Page header, the Section heading, the Masthead, the
+Facts panel, the Role entry, the Qualification list and About me's Lineup are built in the prototype
+(`prototype/components/button/`, `link/`, `chip/`, `state-indicator/`, `content-item-row/`, `toggle/`, `top-bar/`,
+`side-navigation/`, `footer/`, `text-field/`, `bilingual-field/`, `period-field/`, `image-field/`, `file-field/`,
+`reorderable-list/`, `technology-input/`, `action-bar/`, `panel-grid/`, `page-header/`, `section-heading/`, `masthead/`,
+`facts-panel/`, `role-entry/`, `qualification-list/`, `lineup/`); the rest are the primitives the prototype's token
+specimens establish, to be confirmed by each component's own PR. Every component takes every visual value from tokens
+and holds no visible text.
 
 ### Buttons
 - **Shape:** gently rounded (8px), Small text at the control weight (600), padding 0.5rem by 1rem, inside a one-pixel
@@ -986,6 +990,37 @@ Technologies are a field, not Content items, so a new order, an addition or a re
 - **Disabled:** the whole fieldset at 0.4 opacity, once: its Buttons and move buttons don't dim again. The handle and
   the move and remove buttons drop any fill and take a not-allowed cursor, the handle in Muted Ink and the buttons in
   Secondary Ink, so nothing answers a pointer.
+
+### Action bar
+Built in the prototype (`prototype/components/action-bar/`): the editor's bar at its foot, the CMS's only, with no About
+me version. It is built from the State indicator, the Link and the Button. The Owner chose the bar fixed at the
+editor's foot on the Surface while the fields scroll, over fixed under the editor's header, and each missing field named
+with its language as a Link to that field, over a count of what is missing.
+- **Bar:** a section (`aria-label`) sticky at the editor's foot (`inset-block-end: 0`), on the Surface with a Hairline
+  rule along its top and no shadow, in full ink, padding 0.75rem by 1.5rem. The status side comes first and the actions
+  last, 1.5rem apart, and the actions wrap under the status when it would be narrower than 20rem
+  (`--action-bar-status-min`), 0.75rem below. Every word is Content.
+- **Status side:** 1rem apart, wrapping 0.5rem under one another: the item's State indicator; the saved status; what is
+  missing; and the publish feedback. Both statuses (`role="status"`) stay in the page, empty until they have news, so
+  screen readers hear them change; an empty one takes back the 1rem gap beside it, so the gap doesn't double. A long
+  word in their Small text breaks rather than overflow.
+- **Saved:** Small text in Muted Ink: saving, then saved. Failed: in Error at the error weight (`--error-weight`).
+- **Missing:** a Missing label in Small and Secondary Ink, which keeps its place beside the first field, then the
+  missing fields 0.75rem away, a list labelled by it, each a Link (the Link component, its arrow included) naming the
+  field with its language and leading to the field, which takes focus. The Links wrap under one another beside the
+  label, 0.75rem apart in a row and 0.25rem between rows.
+- **Publish feedback:** a status in Small and Muted Ink: reaching, then live. Failed: in Error at the error weight,
+  followed by a Try again secondary Button, 0.75rem apart, 0.5rem when it wraps.
+- **Actions:** secondary Buttons, 0.5rem apart and wrapping, then the primary Publish, last. The item's state decides
+  the others: a new Draft has Delete; a Draft over a Published version, Discard draft, Unpublish and Delete; a Published
+  item, Unpublish and Delete. An item that can't be unpublished or removed, such as the public repository link, has no
+  Unpublish and no Delete. Each of them confirms in a dialog.
+- **Publish:** stays in place, `aria-disabled` while anything is missing or nothing is new, so it keeps focus. It is
+  described with `aria-describedby` by the Missing label while anything is missing, and by the State indicator when
+  nothing is new, so it says why. The Owner chose Publish disabled in its place when nothing is new, such as a Published
+  item with no Draft over it, over hiding it until the first edit. While a publish is reaching the Portfolio, it takes
+  the Button's loading state (`aria-busy`).
+- **Forced colours:** the Surface drops, so the bar's top edge takes the system text colour.
 
 ### Toggles
 Built in the prototype (`prototype/components/toggle/`): a segmented control with exactly one option chosen. The theme

@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Action bar: publishing · Portfolio prototype</title>
+    <link rel="preload" href="../../fonts/schibsted-grotesk.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="preload" href="../../fonts/martian-mono.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="stylesheet" href="../../tokens.css" />
+    <link rel="stylesheet" href="../specimen.css" />
+    <link rel="stylesheet" href="../button/button.css" />
+    <link rel="stylesheet" href="../link/link.css" />
+    <link rel="stylesheet" href="../state-indicator/state-indicator.css" />
+    <link rel="stylesheet" href="action-bar.css" />
+  </head>
+  <body>
+    <header class="specimen-bar">
+      <a href="../../index.html">Visual language</a>
+    </header>
+
+    <main>
+      <div class="specimen-intro">
+        <h1>Action bar: publishing</h1>
+        <p>
+          The action bar on both themes after Publish: reaching the Portfolio, with Publish loading; live, where the item is
+          Published with nothing new; and failed, where the Draft stays and a button tries again.
+        </p>
+      </div>
+
+      <div class="surfaces">
+        <section class="surface" data-scheme="dark" aria-labelledby="d-title">
+          <h2 id="d-title">Dark</h2>
+          <div class="variant">
+            <h3>States</h3>
+            <ul class="states states--rows-wide">
+              <li>
+                <div class="states__fill"><section class="action-bar" aria-label="Actions"><div class="action-bar__status"><span class="state-indicator" id="d-reaching-state" data-state="draft-over-published">Draft over Published</span><p class="action-bar__saved" role="status" data-state="saved">Saved</p><div class="action-bar__feedback"><p class="action-bar__publish" role="status" data-state="reaching">Reaching the Portfolio…</p></div></div><div class="action-bar__actions"><button class="button button--secondary" type="button"><span class="button__label">Discard draft</span></button><button class="button button--secondary" type="button"><span class="button__label">Unpublish</span></button><button class="button button--secondary" type="button"><span class="button__label">Delete</span></button><button class="button button--primary" type="button" aria-busy="true" aria-disabled="true"><span class="button__label">Publish</span></button></div></section></div>
+                <code>reaching</code>
+              </li>
+              <li>
+                <div class="states__fill"><section class="action-bar" aria-label="Actions"><div class="action-bar__status"><span class="state-indicator" id="d-live-state" data-state="published">Published</span><p class="action-bar__saved" role="status"></p><div class="action-bar__feedback"><p class="action-bar__publish" role="status" data-state="live">Live on the Portfolio.</p></div></div><div class="action-bar__actions"><button class="button button--secondary" type="button"><span class="button__label">Unpublish</span></button><button class="button button--secondary" type="button"><span class="button__label">Delete</span></button><button class="button button--primary" type="button" aria-disabled="true" aria-describedby="d-live-state"><span class="button__label">Publish</span></button></div></section></div>
+                <code>live</code>
+              </li>
+              <li>
+                <div class="states__fill"><section class="action-bar" aria-label="Actions"><div class="action-bar__status"><span class="state-indicator" id="d-failed-state" data-state="draft-over-published">Draft over Published</span><p class="action-bar__saved" role="status" data-state="saved">Saved</p><div class="action-bar__feedback"><p class="action-bar__publish" role="status" data-state="failed">It didn't reach the Portfolio, which still shows the Published version.</p><button class="button button--secondary" type="button"><span class="button__label">Try again</span></button></div></div><div class="action-bar__actions"><button class="button button--secondary" type="button"><span class="button__label">Discard draft</span></button><button class="button button--secondary" type="button"><span class="button__label">Unpublish</span></button><button class="button button--secondary" type="button"><span class="button__label">Delete</span></button><button class="button button--primary" type="button"><span class="button__label">Publish</span></button></div></section></div>
+                <code>failed</code>
+              </li>
+            </ul>
+          </div>
+        </section>
+        <section class="surface" data-scheme="light" aria-labelledby="l-title">
+          <h2 id="l-title">Light</h2>
+          <div class="variant">
+            <h3>States</h3>
+            <ul class="states states--rows-wide">
+              <li>
+                <div class="states__fill"><section class="action-bar" aria-label="Actions"><div class="action-bar__status"><span class="state-indicator" id="l-reaching-state" data-state="draft-over-published">Draft over Published</span><p class="action-bar__saved" role="status" data-state="saved">Saved</p><div class="action-bar__feedback"><p class="action-bar__publish" role="status" data-state="reaching">Reaching the Portfolio…</p></div></div><div class="action-bar__actions"><button class="button button--secondary" type="button"><span class="button__label">Discard draft</span></button><button class="button button--secondary" type="button"><span class="button__label">Unpublish</span></button><button class="button button--secondary" type="button"><span class="button__label">Delete</span></button><button class="button button--primary" type="button" aria-busy="true" aria-disabled="true"><span class="button__label">Publish</span></button></div></section></div>
+                <code>reaching</code>
+              </li>
+              <li>
+                <div class="states__fill"><section class="action-bar" aria-label="Actions"><div class="action-bar__status"><span class="state-indicator" id="l-live-state" data-state="published">Published</span><p class="action-bar__saved" role="status"></p><div class="action-bar__feedback"><p class="action-bar__publish" role="status" data-state="live">Live on the Portfolio.</p></div></div><div class="action-bar__actions"><button class="button button--secondary" type="button"><span class="button__label">Unpublish</span></button><button class="button button--secondary" type="button"><span class="button__label">Delete</span></button><button class="button button--primary" type="button" aria-disabled="true" aria-describedby="l-live-state"><span class="button__label">Publish</span></button></div></section></div>
+                <code>live</code>
+              </li>
+              <li>
+                <div class="states__fill"><section class="action-bar" aria-label="Actions"><div class="action-bar__status"><span class="state-indicator" id="l-failed-state" data-state="draft-over-published">Draft over Published</span><p class="action-bar__saved" role="status" data-state="saved">Saved</p><div class="action-bar__feedback"><p class="action-bar__publish" role="status" data-state="failed">It didn't reach the Portfolio, which still shows the Published version.</p><button class="button button--secondary" type="button"><span class="button__label">Try again</span></button></div></div><div class="action-bar__actions"><button class="button button--secondary" type="button"><span class="button__label">Discard draft</span></button><button class="button button--secondary" type="button"><span class="button__label">Unpublish</span></button><button class="button button--secondary" type="button"><span class="button__label">Delete</span></button><button class="button button--primary" type="button"><span class="button__label">Publish</span></button></div></section></div>
+                <code>failed</code>
+              </li>
+            </ul>
+          </div>
+        </section>
+      </div>
+    </main>
+
+    <footer class="foot">
+      <p>Design prototype. A reference for the front end, not production code. See the <a href="index.html">states</a>, <a href="missing.html">what's missing</a>, <a href="saving.html">saving</a>, <a href="publish.html">publishing</a>, and <a href="cases.html">cases and a phone</a>.</p>
+    </footer>
+  </body>
+</html>
