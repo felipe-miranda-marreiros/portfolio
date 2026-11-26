@@ -16,6 +16,7 @@
  * one that can't move further takes `aria-disabled` rather than `disabled`, so focus stays on it.
  * Order isn't a Content item and has no Draft: a new order reaches the Portfolio at once. The status under the list
  * says so: `reaching`, then `live`, or `failed` with a button to try again, the list keeping the new order.
+ * An item that can't move, such as the public repository link, sits before the list as a plain Content item row.
  * `data-force` pins a state so the prototype page can show it without interaction.
  */
 .reorderable-list__item {
