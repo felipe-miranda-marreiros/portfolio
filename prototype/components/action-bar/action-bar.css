@@ -3,17 +3,18 @@
  * Draft is saved, what is still missing to publish, and how a publish went; on the end side, the item's actions with
  * Publish last. It composes the State indicator, the Link and the Button.
  * Markup: <section class="action-bar" aria-label="…">
- *   <div class="action-bar__status"><span class="state-indicator" data-state="…">…</span>
+ *   <div class="action-bar__status"><span class="state-indicator" id="…-state" data-state="…">…</span>
  *     <p class="action-bar__saved" role="status" data-state="saving|saved|failed">…</p>
  *     <div class="action-bar__missing"><span class="action-bar__label" id="…-missing">…</span>
  *       <ul class="action-bar__fields" aria-labelledby="…-missing"><li><a class="link" href="#…">…</a></li>…</ul></div>
  *     <div class="action-bar__feedback"><p class="action-bar__publish" role="status" data-state="reaching|live|failed">
  *       …</p><button class="button button--secondary" type="button">…</button></div></div>
  *   <div class="action-bar__actions"><button class="button button--secondary" type="button">…</button>…
- *     <button class="button button--primary" type="button" aria-disabled="…" aria-describedby="…-missing">…</button>
+ *     <button class="button button--primary" type="button" aria-disabled="…" aria-describedby="…">…</button>
  *   </div></section>.
  * Each missing field is named with its language and links to the field, which takes focus. Publish stays in place,
- * `aria-disabled` while anything is missing or nothing is new, so it keeps focus and says why. The item's state
+ * `aria-disabled` while anything is missing or nothing is new, so it keeps focus; it is described by the Missing label
+ * while anything is missing, and by the State indicator when nothing is new, so it says why. The item's state
  * decides the other actions: a new Draft has Delete; a Draft over a Published version, Discard draft, Unpublish and
  * Delete; a Published item, Unpublish and Delete. An item that can't be unpublished or removed, such as the public
  * repository link, has no Unpublish and no Delete. Each of them confirms in a dialog. While a publish is reaching the
