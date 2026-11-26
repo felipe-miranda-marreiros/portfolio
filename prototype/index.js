@@ -195,9 +195,12 @@ const components = [
     states: [
       "default",
       "row hover",
+      "row focus",
+      "row active",
       "handle hover",
       "move hover",
       "move focus",
+      "move active",
       "dragging",
       "reaching",
       "live",
