@@ -1002,7 +1002,8 @@ with its language as a Link to that field, over a count of what is missing.
   (`--action-bar-status-min`), 0.75rem below. Every word is Content.
 - **Status side:** 1rem apart, wrapping 0.5rem under one another: the item's State indicator; the saved status; what is
   missing; and the publish feedback. Both statuses (`role="status"`) stay in the page, empty until they have news, so
-  screen readers hear them change. A long word in their Small text breaks rather than overflow.
+  screen readers hear them change; an empty one takes back the 1rem gap beside it, so the gap doesn't double. A long
+  word in their Small text breaks rather than overflow.
 - **Saved:** Small text in Muted Ink: saving, then saved. Failed: in Error at the error weight (`--error-weight`).
 - **Missing:** a Missing label in Small and Secondary Ink, which keeps its place beside the first field, then the
   missing fields 0.75rem away, a list labelled by it, each a Link (the Link component, its arrow included) naming the
