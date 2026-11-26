@@ -14,8 +14,9 @@
  * The handle is for a pointer: it drags the item, which floats while it moves. The move buttons are for the keyboard
  * and for one-place moves, so the handle stays out of the tab order. A move button keeps focus as its item moves, and
  * one that can't move further takes `aria-disabled` rather than `disabled`, so focus stays on it.
- * Order isn't a Content item and has no Draft: a new order reaches the Portfolio at once. The status under the list
- * says so: `reaching`, then `live`, or `failed` with a button to try again, the list keeping the new order.
+ * The order of Content items isn't a Content item and has no Draft: a new order reaches the Portfolio at once. The
+ * status under the list says so: `reaching`, then `live`, or `failed` with a button to try again, the list keeping the
+ * new order. A field's order, such as the technology input's, joins its item's Draft instead.
  * An item that can't move, such as the public repository link, sits before the list as a plain Content item row:
  *   <div class="reorderable-list__fixed"><a class="content-item-row" href="…">…</a></div>. It keeps the handle's and
  *   the move buttons' room, so its name and state line up with the rows below, and the list's top rule divides them.
