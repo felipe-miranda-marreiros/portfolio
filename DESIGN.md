@@ -1014,9 +1014,11 @@ with its language as a Link to that field, over a count of what is missing.
   the others: a new Draft has Delete; a Draft over a Published version, Discard draft, Unpublish and Delete; a Published
   item, Unpublish and Delete. An item that can't be unpublished or removed, such as the public repository link, has no
   Unpublish and no Delete. Each of them confirms in a dialog.
-- **Publish:** stays in place, `aria-disabled` while anything is missing or nothing is new, so it keeps focus, and
-  described by the Missing label with `aria-describedby`, so it says why. While a publish is reaching the Portfolio, it
-  takes the Button's loading state (`aria-busy`).
+- **Publish:** stays in place, `aria-disabled` while anything is missing or nothing is new, so it keeps focus. It is
+  described with `aria-describedby` by the Missing label while anything is missing, and by the State indicator when
+  nothing is new, so it says why. The Owner chose Publish disabled in its place when nothing is new, such as a Published
+  item with no Draft over it, over hiding it until the first edit. While a publish is reaching the Portfolio, it takes
+  the Button's loading state (`aria-busy`).
 - **Forced colours:** the Surface drops, so the bar's top edge takes the system text colour.
 
 ### Toggles
