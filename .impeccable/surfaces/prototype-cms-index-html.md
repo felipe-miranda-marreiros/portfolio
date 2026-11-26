@@ -74,6 +74,11 @@ On 2026-11-24 the Owner chose, from structured options:
   technology input, with the same handle and move buttons, over the reorderable list ordering them in the editor too.
 - On 2026-11-26, a new order reaches the Portfolio at once, as order isn't a Content item and has no Draft, and the list
   shows it reaching, then live or failed with a way to try again, over holding it as a Draft until the next publish.
+- On 2026-11-26, technologies, such as Home's core technologies or a role's, as a technology input: each a ruled row
+  with its name in Body text between the reorderable list's handle and move buttons, then a remove button, over rows
+  holding the Chip each becomes on Home. A field under the list adds one: as the Owner types it suggests the names
+  already used across the Portfolio, so a technology keeps one spelling, and still adds a new name, over typing any name
+  with no suggestions.
 - A full preview Screen behind an Edit | Preview switch, over a live split and both languages at a reduced scale.
 - A fixed action bar with the item's state and publish feedback, over publishing a whole Page at once.
 - Email and password sign-in, with password reset, over a single external-account button.
