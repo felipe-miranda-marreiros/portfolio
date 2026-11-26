@@ -16,7 +16,9 @@
  * one that can't move further takes `aria-disabled` rather than `disabled`, so focus stays on it.
  * Order isn't a Content item and has no Draft: a new order reaches the Portfolio at once. The status under the list
  * says so: `reaching`, then `live`, or `failed` with a button to try again, the list keeping the new order.
- * An item that can't move, such as the public repository link, sits before the list as a plain Content item row.
+ * An item that can't move, such as the public repository link, sits before the list as a plain Content item row:
+ *   <div class="reorderable-list__fixed"><a class="content-item-row" href="…">…</a></div>. It keeps the handle's and
+ *   the move buttons' room, so its name and state line up with the rows below, and the list's top rule divides them.
  * `data-force` pins a state so the prototype page can show it without interaction.
  */
 .reorderable-list__item {
@@ -29,8 +31,27 @@
     box-shadow var(--duration-fast) var(--ease-out);
 }
 
-/* The row's wash spans the item, so the handle and the move buttons don't sit outside it. */
-.reorderable-list__item:has(
+/* The handle's and the move buttons' widths, from their icon box (a line of Small) and padding, without setting this
+   item's font size, which the row's em-sized arrow would inherit. */
+.reorderable-list__fixed {
+  --reorderable-list-icon-box: calc(var(--text-small) * var(--leading-body));
+  padding-inline: calc(var(--space-2) + var(--reorderable-list-icon-box))
+    calc(
+      2 *
+      (2 * var(--space-2) + 2 * var(--line-width) + var(--reorderable-list-icon-box)) +
+      var(--space-1) +
+      var(--space-2)
+    );
+  border-block-start: var(--line-width) solid var(--color-hairline);
+  transition: background-color var(--duration-fast) var(--ease-out);
+}
+
+.reorderable-list__fixed > .content-item-row {
+  border-block-end: 0;
+}
+
+/* The row's wash spans the item, so the handle and the move buttons, or their room, don't sit outside it. */
+:is(.reorderable-list__item, .reorderable-list__fixed):has(
   > .content-item-row:where(
       :hover,
       :focus-visible,
