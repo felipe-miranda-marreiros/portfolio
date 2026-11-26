@@ -88,6 +88,8 @@ On 2026-11-24 the Owner chose, from structured options:
 - On 2026-11-26, the action bar fixed at the editor's foot on the Surface while the fields scroll, over fixed under the
   editor's header. It names each missing field with its language as a Link to that field, over a count of what is
   missing.
+- On 2026-11-26, Publish disabled in its place when nothing is new, such as a Published item with no Draft over it, over
+  hiding it until the first edit.
 - Email and password sign-in, with password reset, over a single external-account button.
 - A Draft saves itself as the Owner types, with a saved indicator and no Save button.
 - One CV Content item holds both PDFs, English and Brazilian Portuguese, so it follows the rule that an item publishes
@@ -105,9 +107,9 @@ On 2026-11-24 the Owner chose, from structured options:
 - **Editor:** a header with the item's name, its state and the Edit | Preview switch. Text fields show English and
   Brazilian Portuguese side by side and flag a missing translation on the field itself; language-neutral fields
   (dates, URLs, technologies, photo) appear once; every image carries its alt text in both languages. A fixed action
-  bar shows the state and what is missing; Publish stays visible but disabled until nothing is missing. Discard
-  draft, Unpublish and Delete each confirm in a dialog. After a publish the bar shows it reaching the Portfolio, then
-  live, or failed with a way to try again.
+  bar shows the state and what is missing; Publish stays visible but disabled while anything is missing or nothing is
+  new. Discard draft, Unpublish and Delete each confirm in a dialog. After a publish the bar shows it reaching the
+  Portfolio, then live, or failed with a way to try again.
 - **Preview:** the real Page at real size, scrolled to the item and marked, with English | Brazilian Portuguese and
   Desktop | Phone switches. On About me it takes About me's Visual language; everywhere else in the CMS it never does.
 
