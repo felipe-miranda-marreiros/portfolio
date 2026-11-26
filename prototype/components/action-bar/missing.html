@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Action bar: what's missing · Portfolio prototype</title>
+    <link rel="preload" href="../../fonts/schibsted-grotesk.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="preload" href="../../fonts/martian-mono.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="stylesheet" href="../../tokens.css" />
+    <link rel="stylesheet" href="../specimen.css" />
+    <link rel="stylesheet" href="../button/button.css" />
+    <link rel="stylesheet" href="../link/link.css" />
+    <link rel="stylesheet" href="../state-indicator/state-indicator.css" />
+    <link rel="stylesheet" href="action-bar.css" />
+  </head>
+  <body>
+    <header class="specimen-bar">
+      <a href="../../index.html">Visual language</a>
+    </header>
+
+    <main>
+      <div class="specimen-intro">
+        <h1>Action bar: what's missing</h1>
+        <p>
+          The action bar on both themes while fields are missing, so Publish is disabled and says why: one field, then
+          several, which wrap. Each names the field and its language and links to it; a link on hover and on focus.
+        </p>
+      </div>
+
+      <div class="surfaces">
+        <section class="surface" data-scheme="dark" aria-labelledby="d-title">
+          <h2 id="d-title">Dark</h2>
+          <div class="variant">
+            <h3>States</h3>
+            <ul class="states states--rows-wide">
+              <li>
+                <div class="states__fill"><section class="action-bar" aria-label="Actions"><div class="action-bar__status"><span class="state-indicator" data-state="draft-over-published">Draft over Published</span><p class="action-bar__saved" role="status" data-state="saved">Saved</p><div class="action-bar__missing"><span class="action-bar__label" id="d-one-missing">Missing</span><ul class="action-bar__fields" aria-labelledby="d-one-missing"><li><a class="link" href="#d-one-field-0">Summary · Portuguese</a></li></ul></div><div class="action-bar__feedback"><p class="action-bar__publish" role="status"></p></div></div><div class="action-bar__actions"><button class="button button--secondary" type="button"><span class="button__label">Discard draft</span></button><button class="button button--secondary" type="button"><span class="button__label">Unpublish</span></button><button class="button button--secondary" type="button"><span class="button__label">Delete</span></button><button class="button button--primary" type="button" aria-disabled="true" aria-describedby="d-one-missing"><span class="button__label">Publish</span></button></div></section></div>
+                <code>one missing</code>
+              </li>
+              <li>
+                <div class="states__fill"><section class="action-bar" aria-label="Actions"><div class="action-bar__status"><span class="state-indicator" data-state="draft-over-published">Draft over Published</span><p class="action-bar__saved" role="status" data-state="saved">Saved</p><div class="action-bar__missing"><span class="action-bar__label" id="d-several-missing">Missing</span><ul class="action-bar__fields" aria-labelledby="d-several-missing"><li><a class="link" href="#d-several-field-0">Summary · Portuguese</a></li><li><a class="link" href="#d-several-field-1">Photo alt text · English</a></li><li><a class="link" href="#d-several-field-2">Photo alt text · Portuguese</a></li><li><a class="link" href="#d-several-field-3">Role · Portuguese</a></li></ul></div><div class="action-bar__feedback"><p class="action-bar__publish" role="status"></p></div></div><div class="action-bar__actions"><button class="button button--secondary" type="button"><span class="button__label">Discard draft</span></button><button class="button button--secondary" type="button"><span class="button__label">Unpublish</span></button><button class="button button--secondary" type="button"><span class="button__label">Delete</span></button><button class="button button--primary" type="button" aria-disabled="true" aria-describedby="d-several-missing"><span class="button__label">Publish</span></button></div></section></div>
+                <code>several missing</code>
+              </li>
+              <li>
+                <div class="states__fill"><section class="action-bar" aria-label="Actions"><div class="action-bar__status"><span class="state-indicator" data-state="draft-over-published">Draft over Published</span><p class="action-bar__saved" role="status" data-state="saved">Saved</p><div class="action-bar__missing"><span class="action-bar__label" id="d-hover-missing">Missing</span><ul class="action-bar__fields" aria-labelledby="d-hover-missing"><li><a class="link" href="#d-hover-field-0" data-force="hover">Summary · Portuguese</a></li><li><a class="link" href="#d-hover-field-1">Photo alt text · English</a></li></ul></div><div class="action-bar__feedback"><p class="action-bar__publish" role="status"></p></div></div><div class="action-bar__actions"><button class="button button--secondary" type="button"><span class="button__label">Discard draft</span></button><button class="button button--secondary" type="button"><span class="button__label">Unpublish</span></button><button class="button button--secondary" type="button"><span class="button__label">Delete</span></button><button class="button button--primary" type="button" aria-disabled="true" aria-describedby="d-hover-missing"><span class="button__label">Publish</span></button></div></section></div>
+                <code>missing link hover</code>
+              </li>
+              <li>
+                <div class="states__fill"><section class="action-bar" aria-label="Actions"><div class="action-bar__status"><span class="state-indicator" data-state="draft-over-published">Draft over Published</span><p class="action-bar__saved" role="status" data-state="saved">Saved</p><div class="action-bar__missing"><span class="action-bar__label" id="d-focus-missing">Missing</span><ul class="action-bar__fields" aria-labelledby="d-focus-missing"><li><a class="link" href="#d-focus-field-0" data-force="focus">Summary · Portuguese</a></li><li><a class="link" href="#d-focus-field-1">Photo alt text · English</a></li></ul></div><div class="action-bar__feedback"><p class="action-bar__publish" role="status"></p></div></div><div class="action-bar__actions"><button class="button button--secondary" type="button"><span class="button__label">Discard draft</span></button><button class="button button--secondary" type="button"><span class="button__label">Unpublish</span></button><button class="button button--secondary" type="button"><span class="button__label">Delete</span></button><button class="button button--primary" type="button" aria-disabled="true" aria-describedby="d-focus-missing"><span class="button__label">Publish</span></button></div></section></div>
+                <code>missing link focus</code>
+              </li>
+            </ul>
+          </div>
+        </section>
+        <section class="surface" data-scheme="light" aria-labelledby="l-title">
+          <h2 id="l-title">Light</h2>
+          <div class="variant">
+            <h3>States</h3>
+            <ul class="states states--rows-wide">
+              <li>
+                <div class="states__fill"><section class="action-bar" aria-label="Actions"><div class="action-bar__status"><span class="state-indicator" data-state="draft-over-published">Draft over Published</span><p class="action-bar__saved" role="status" data-state="saved">Saved</p><div class="action-bar__missing"><span class="action-bar__label" id="l-one-missing">Missing</span><ul class="action-bar__fields" aria-labelledby="l-one-missing"><li><a class="link" href="#l-one-field-0">Summary · Portuguese</a></li></ul></div><div class="action-bar__feedback"><p class="action-bar__publish" role="status"></p></div></div><div class="action-bar__actions"><button class="button button--secondary" type="button"><span class="button__label">Discard draft</span></button><button class="button button--secondary" type="button"><span class="button__label">Unpublish</span></button><button class="button button--secondary" type="button"><span class="button__label">Delete</span></button><button class="button button--primary" type="button" aria-disabled="true" aria-describedby="l-one-missing"><span class="button__label">Publish</span></button></div></section></div>
+                <code>one missing</code>
+              </li>
+              <li>
+                <div class="states__fill"><section class="action-bar" aria-label="Actions"><div class="action-bar__status"><span class="state-indicator" data-state="draft-over-published">Draft over Published</span><p class="action-bar__saved" role="status" data-state="saved">Saved</p><div class="action-bar__missing"><span class="action-bar__label" id="l-several-missing">Missing</span><ul class="action-bar__fields" aria-labelledby="l-several-missing"><li><a class="link" href="#l-several-field-0">Summary · Portuguese</a></li><li><a class="link" href="#l-several-field-1">Photo alt text · English</a></li><li><a class="link" href="#l-several-field-2">Photo alt text · Portuguese</a></li><li><a class="link" href="#l-several-field-3">Role · Portuguese</a></li></ul></div><div class="action-bar__feedback"><p class="action-bar__publish" role="status"></p></div></div><div class="action-bar__actions"><button class="button button--secondary" type="button"><span class="button__label">Discard draft</span></button><button class="button button--secondary" type="button"><span class="button__label">Unpublish</span></button><button class="button button--secondary" type="button"><span class="button__label">Delete</span></button><button class="button button--primary" type="button" aria-disabled="true" aria-describedby="l-several-missing"><span class="button__label">Publish</span></button></div></section></div>
+                <code>several missing</code>
+              </li>
+              <li>
+                <div class="states__fill"><section class="action-bar" aria-label="Actions"><div class="action-bar__status"><span class="state-indicator" data-state="draft-over-published">Draft over Published</span><p class="action-bar__saved" role="status" data-state="saved">Saved</p><div class="action-bar__missing"><span class="action-bar__label" id="l-hover-missing">Missing</span><ul class="action-bar__fields" aria-labelledby="l-hover-missing"><li><a class="link" href="#l-hover-field-0" data-force="hover">Summary · Portuguese</a></li><li><a class="link" href="#l-hover-field-1">Photo alt text · English</a></li></ul></div><div class="action-bar__feedback"><p class="action-bar__publish" role="status"></p></div></div><div class="action-bar__actions"><button class="button button--secondary" type="button"><span class="button__label">Discard draft</span></button><button class="button button--secondary" type="button"><span class="button__label">Unpublish</span></button><button class="button button--secondary" type="button"><span class="button__label">Delete</span></button><button class="button button--primary" type="button" aria-disabled="true" aria-describedby="l-hover-missing"><span class="button__label">Publish</span></button></div></section></div>
+                <code>missing link hover</code>
+              </li>
+              <li>
+                <div class="states__fill"><section class="action-bar" aria-label="Actions"><div class="action-bar__status"><span class="state-indicator" data-state="draft-over-published">Draft over Published</span><p class="action-bar__saved" role="status" data-state="saved">Saved</p><div class="action-bar__missing"><span class="action-bar__label" id="l-focus-missing">Missing</span><ul class="action-bar__fields" aria-labelledby="l-focus-missing"><li><a class="link" href="#l-focus-field-0" data-force="focus">Summary · Portuguese</a></li><li><a class="link" href="#l-focus-field-1">Photo alt text · English</a></li></ul></div><div class="action-bar__feedback"><p class="action-bar__publish" role="status"></p></div></div><div class="action-bar__actions"><button class="button button--secondary" type="button"><span class="button__label">Discard draft</span></button><button class="button button--secondary" type="button"><span class="button__label">Unpublish</span></button><button class="button button--secondary" type="button"><span class="button__label">Delete</span></button><button class="button button--primary" type="button" aria-disabled="true" aria-describedby="l-focus-missing"><span class="button__label">Publish</span></button></div></section></div>
+                <code>missing link focus</code>
+              </li>
+            </ul>
+          </div>
+        </section>
+      </div>
+    </main>
+
+    <footer class="foot">
+      <p>Design prototype. A reference for the front end, not production code. See the <a href="index.html">states</a>, <a href="missing.html">what's missing</a>, <a href="saving.html">saving</a>, <a href="publish.html">publishing</a>, and <a href="cases.html">cases and a phone</a>.</p>
+    </footer>
+  </body>
+</html>
