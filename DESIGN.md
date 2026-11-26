@@ -199,9 +199,9 @@ through tokens alone; their place and behavior never change.
 - Dark by default, always; light a complete equal the visitor switches to; both WCAG 2.2 AA.
 - Monochrome: bone ink on near-black, ink on bone paper, secondary ink and hairlines by alpha steps of the ink.
 - No hued accent: the primary action is filled ink, every other button is outlined in a hairline (a Reorderable list's
-  move buttons, whose border and fill are transparent, are buttons this doesn't cover), row links are unboxed text (the
-  Side navigation's Toggle-like entries and the Content item row, a whole row that leads into its editor, are rows this
-  doesn't cover), focus is an ink ring.
+  and a Technology input's move and remove buttons, whose border and fill are transparent, are buttons this doesn't
+  cover), row links are unboxed text (the Side navigation's Toggle-like entries and the Content item row, a whole row
+  that leads into its editor, are rows this doesn't cover), focus is an ink ring.
 - Bold display grotesk with tight tracking; monospace only for labels, tags, chips and numerals.
 - Hairline-bordered panel grids whose cells share borders, instead of cards and shadows.
 - Facts over the person: the role and seniority lead Home as its largest type, beside a hairline facts panel; the photo
@@ -252,22 +252,23 @@ at a lower alpha or mixed into the ground, and error is the only hue.
 ### Neutral
 - **Night** and **Paper**: the ground of the dark and light themes; also the text colour on a filled-ink action.
 - **Night Raised** and **Paper Raised**: the surface for anything that floats above the page (menus, popovers, the item
-  a Reorderable list is dragging), always
-  paired with the float shadow, except a native select's list, which the browser draws and which can't take it, and a
-  photo's ground while it loads (the Masthead's, the Image field's thumbnail), which doesn't float.
-- **Secondary Ink** (84% of the ink): supporting lines, ledes, body copy in panels, resting row links, inactive
-  switch options, the Qualification list's small heading and note, the Side navigation's resting entries and
-  sign-out, the Draft count on its current entry, a Published State indicator's text, a resting Content item
-  row's name, a Bilingual field's language names, a Period field's end names and a Reorderable list's resting move
-  buttons.
+  a Reorderable list is dragging, a Technology input's suggestions), always paired with the float shadow, except a
+  native select's list, which the browser draws and which can't take it, and a photo's ground while it loads (the
+  Masthead's, the Image field's thumbnail), which doesn't float.
+- **Secondary Ink** (84% of the ink): supporting lines, ledes, body copy in panels, resting row links, inactive switch
+  options, the Qualification list's small heading and note, the Side navigation's resting entries and sign-out, the
+  Draft count on its current entry, a Published State indicator's text, a resting Content item row's name, a Bilingual
+  field's language names, a Period field's end names, a Reorderable list's resting move buttons, and a Technology
+  input's resting move and remove buttons and suggestions.
 - **Muted Ink** (64% of the ink): metadata, captions, a panel's note, the Side navigation's Draft counts, a Content item
-  row's detail, a Period field's dash, an Image field's and a File field's detail, and a Reorderable list's handle and
-  status. Still AA on the ground in both themes, and on the Wash of a hovered row.
+  row's detail, a Period field's dash, an Image field's and a File field's detail, a Reorderable list's handle and
+  status, and a Technology input's use counts and disabled handles. Still AA on the ground in both themes, and on the
+  Wash of a hovered row.
 - **Hairline** (10% of the ink): panel-grid borders, the Facts panel's border and the rule under its lead, the rule
   between role entries and between Qualification list items, the rule above a Section heading, the rules under the top
-  bar and above the footer, the Footer's rule between its repository link and the rest, the Side navigation's
-  edge and the rules between its groups and above its foot, the rules above, between and below Content item rows, and
-  the edge of the Masthead's photo and of the Image field's thumbnail.
+  bar and above the footer, the Footer's rule between its repository link and the rest, the Side navigation's edge and
+  the rules between its groups and above its foot, the rules above, between and below Content item rows and a Technology
+  input's rows, and the edge of the Masthead's photo and of the Image field's thumbnail.
 - **Hairline Hover** (26%): the brightened edge of a hovered or focused panel and of a hovered secondary button.
 - **Hairline Control** (22%): the outline of secondary controls, the theme switch and swatch edges.
 - **Hairline Input** (52% ink on paper, 44% bone on night): input borders, which identify the control and so meet 3:1
@@ -276,8 +277,9 @@ at a lower alpha or mixed into the ground, and error is the only hue.
   thumbnail's dashed edge; and the File field's file rows, dashed for a missing file. A hovered input's border steps up
   to full ink (`--color-input-hover`).
 - **Tint** (7%) and **Tint Hover** (4%): chip fills and a Published State indicator's, the chosen Toggle option, the
-  pressed secondary button and the current Side navigation entry; the faint fill of a hovered secondary button and of
-  a hovered Side navigation entry.
+  pressed secondary button, the current Side navigation entry and a Technology input's chosen suggestion; the faint fill
+  of a hovered secondary button, of a hovered Side navigation entry and of a hovered suggestion, which takes Tint Hover
+  rather than the Wash because the Wash is mixed into the ground and would darken the raised surface.
 - **Night Wash** and **Paper Wash** (2% of the ink mixed into the ground): the hovered or focused panel cell and Content
   item row, the whole Reorderable list item or fixed item around a hovered, focused or pressed row, and a hovered move
   button. Opaque, because the cell covers the hairline drawn behind the grid.
@@ -288,11 +290,11 @@ at a lower alpha or mixed into the ground, and error is the only hue.
 
 ### Named Rules
 **The Ink Is The Action Rule.** There is no accent colour. The primary action is the ink filled, with the ground as its
-text: one per view. Secondary buttons are outlined in Hairline Control (a Reorderable list's move buttons, icon buttons
-whose border and fill are transparent until the Wash on hover, are buttons this rule doesn't cover); row links stay
-unboxed (the Side navigation's Toggle-like entries and the Content item row, a whole row that leads into its editor, are
-rows this rule doesn't cover). Focus is an ink ring. If a view needs colour to show what to do next, the hierarchy is
-wrong, not the palette.
+text: one per view. Secondary buttons are outlined in Hairline Control (a Reorderable list's and a Technology input's
+move and remove buttons, icon buttons whose border and fill are transparent until the Wash on hover, are buttons this
+rule doesn't cover); row links stay unboxed (the Side navigation's Toggle-like entries and the Content item row, a whole
+row that leads into its editor, are rows this rule doesn't cover). Focus is an ink ring. If a view needs colour to show
+what to do next, the hierarchy is wrong, not the palette.
 
 **The Alpha Steps Rule.** Secondary, muted, hairline and tint colours are always the ink mixed toward transparent at
 their fixed steps (84, 64, 26, 22, 10, 7, 4), and the Wash is the ink at 2% mixed into the ground; never new greys. The
@@ -378,7 +380,8 @@ monospace that labels facts the way a codebase labels things: commands, tags, co
   Masthead's summary, in secondary ink, measure 52ch.
 - **Body** (400, 1rem, line-height 1.6): summaries and supporting lines in secondary ink, measure 68ch; also the value
   in a Text field, so Safari on iPhone doesn't zoom the page when the field takes focus, and, at the control weight
-  (600) in full ink, a Facts panel fact's value, a Role entry's company and a Qualification list item's source.
+  (600) in full ink, a Facts panel fact's value, a Role entry's company and a Qualification list item's source; and a
+  Technology input's names, in full ink, and its suggestions.
 - **Small** (400, 0.875rem): captions, a panel's note, metadata (such as a Role entry's location and work model, and a
   Qualification list item's place or credential ID), a field's hint and a Reorderable list's status, in muted ink, and
   a field's error message;
@@ -386,10 +389,10 @@ monospace that labels facts the way a codebase labels things: commands, tags, co
   control weight (600), kept apart from the title weight so each can change alone.
 - **Label** (Martian Mono 500, 0.6875rem, 0.08em, uppercase, tabular numerals): stat labels (the Facts panel's), dates
   (a Role entry's period, a Qualification list item's date), a Bilingual field's language names and a Period field's end
-  names. Inside chips, the State indicator, a Content item row's detail, an Image field's and a File field's detail and
-  code, and in the Side navigation's Draft counts (numerals only), the same mono size is set as-is, with no tracking or
-  case change: at the body weight (`--weight-chip`) in chips, the State indicator and the three details, at the Label
-  weight in the Draft counts.
+  names. Inside chips, the State indicator, a Content item row's detail, an Image field's and a File field's detail, a
+  Technology input's use counts and code, and in the Side navigation's Draft counts (numerals only), the same mono size
+  is set as-is, with no tracking or case change: at the body weight (`--weight-chip`) in chips, the State indicator, the
+  three details and the use counts, at the Label weight in the Draft counts.
 
 Headings hyphenate and, where the browser has no dictionary, break long words rather than overflow a narrow column: a
 Portuguese title such as "Responsabilidades" at display size must fit a 320px screen. Paragraphs wrap with a pretty rag.
@@ -504,9 +507,9 @@ alone, without the illustration slot.
 
 Flat by default. Depth comes from hairlines and alpha tints, not shadows: a hovered or focused panel brightens its edge
 to Hairline Hover over the Wash, a hovered secondary button gains Tint Hover. Only a surface that floats above the page
-(menu, popover, a Reorderable list's dragged item) takes the raised surface colour and the float shadow; a native
-select's list takes the colour alone, since the browser draws it and it can't take the shadow, and so does a photo's
-ground while it loads, which doesn't float. Nothing glows.
+(menu, popover, a Reorderable list's dragged item, a Technology input's suggestions) takes the raised surface colour and
+the float shadow; a native select's list takes the colour alone, since the browser draws it and it can't take the
+shadow, and so does a photo's ground while it loads, which doesn't float. Nothing glows.
 
 ### Shadow Vocabulary
 - **Float** (`box-shadow: 0 0 0 1px <ring>, 0 12px 32px -12px <shadow>`): floating surfaces only. On night the ring is
@@ -547,13 +550,13 @@ row's key colour that thickens to 3px on hover, focus and press. The illustratio
 
 The Button, the Link, the Chip, the State indicator, the Content item row, the Toggle, the Top bar, the Side navigation,
 the Footer, the Text field, the Bilingual field, the Period field, the Image field, the File field, the Reorderable
-list, the Panel grid, the Page header, the Section heading, the Masthead, the Facts panel, the Role entry, the
-Qualification list and About me's Lineup are built in the prototype (`prototype/components/button/`, `link/`, `chip/`,
-`state-indicator/`, `content-item-row/`, `toggle/`, `top-bar/`, `side-navigation/`, `footer/`, `text-field/`,
-`bilingual-field/`, `period-field/`, `image-field/`, `file-field/`, `reorderable-list/`, `panel-grid/`, `page-header/`,
-`section-heading/`, `masthead/`, `facts-panel/`, `role-entry/`, `qualification-list/`, `lineup/`); the rest are the
-primitives the prototype's token specimens establish, to be confirmed by each component's own PR. Every component takes
-every visual value from tokens and holds no visible text.
+list, the Technology input, the Panel grid, the Page header, the Section heading, the Masthead, the Facts panel, the
+Role entry, the Qualification list and About me's Lineup are built in the prototype (`prototype/components/button/`,
+`link/`, `chip/`, `state-indicator/`, `content-item-row/`, `toggle/`, `top-bar/`, `side-navigation/`, `footer/`,
+`text-field/`, `bilingual-field/`, `period-field/`, `image-field/`, `file-field/`, `reorderable-list/`,
+`technology-input/`, `panel-grid/`, `page-header/`, `section-heading/`, `masthead/`, `facts-panel/`, `role-entry/`,
+`qualification-list/`, `lineup/`); the rest are the primitives the prototype's token specimens establish, to be
+confirmed by each component's own PR. Every component takes every visual value from tokens and holds no visible text.
 
 ### Buttons
 - **Shape:** gently rounded (8px), Small text at the control weight (600), padding 0.5rem by 1rem, inside a one-pixel
@@ -945,6 +948,44 @@ moves disabled.
 - **Reduced motion:** the colour, Wash and shadow transitions run on `--duration-fast`, which is 0ms under reduced
   motion, so a state changes at once.
 
+### Technology input
+Built in the prototype (`prototype/components/technology-input/`): a field's technologies, such as Home's core
+technologies or a role's, in the order the Owner puts them, the CMS's only, with no About me version. It is built from
+the Reorderable list's handle and move buttons, the Text field's label, input and error, and the Button. The Owner
+chose ruled rows with each name in Body between the handle and the move buttons, then a remove button, over rows
+holding the Chip each becomes on Home; and a field under the list that suggests the names already used across the
+Portfolio, so a technology keeps one spelling, and still adds a new name, over typing any name with no suggestions.
+Technologies are a field, not Content items, so a new order, an addition or a removal joins the item's Draft.
+- **Order:** a fieldset whose legend, in the Text field's label style, names the field, then the list 0.5rem under it,
+  then the add field 1rem under the list. The add field is the Text field's label, then the entry (the input and an Add
+  secondary Button, 0.5rem apart), then its error, 0.5rem apart. Every word is Content.
+- **Rows:** a list on a Hairline rule; each row is a Reorderable list item, with its handle, its Hairline rule under it
+  and its move buttons, and the name between them in Body, full ink, 0.75rem padding, wrapping anywhere. An empty list
+  is hidden.
+- **Remove:** a third button after the move buttons, in their look (`.reorderable-list__move`), with a cross
+  (`--icon-close`, a 1.5 stroke with round ends) at the icon size, unrotated. It is named by its `aria-label` and
+  described by its row's name with `aria-describedby`. Removing moves focus to the next row's remove button, or to the
+  field when the list empties.
+- **Moves:** the Reorderable list's handle, move buttons, `aria-disabled` ends and dragging, unchanged.
+- **Suggestions:** the input is a combobox (`role="combobox"`, `aria-autocomplete="list"`). Its list floats 0.25rem
+  under the input, its full width, on the Surface with the float shadow (`--shadow-float`), 8px corners and 0.25rem
+  padding. It lists the names already used that start with what is typed, those already in this list left out, and
+  last the typed name as a new one. Each option is Body text in Secondary Ink, padding 0.5rem by 0.75rem, 4px corners
+  (8px less the list's padding), with its use count at the end, 0.75rem away, in Martian Mono at label size and body
+  weight (`--weight-chip`), set as-is in Muted Ink. Hover: full ink on Tint Hover. Chosen (`aria-selected`): full ink
+  on Tint. The Wash would darken on the Surface, as it is mixed into the ground, so the options take the translucent
+  Tints instead. Focus stays in the field, which points at the chosen option with `aria-activedescendant`.
+- **Adding:** clears the field and keeps focus there.
+- **Error:** a name already in the list is an error: the input takes the Text field's error line (`aria-invalid`), and
+  a Small message in Error under the entry says so, tied to it with `aria-describedby`.
+- **Forced colours:** the suggestions, whose shadow is dropped, take a 1px edge in the system text colour, and the
+  chosen option a 2px inset outline in the system highlight colour. The arrows, the cross and the handle take the
+  Reorderable list's system colours.
+- **Reduced motion:** the options' colour and fill transitions run on `--duration-fast`, 0ms under reduced motion.
+- **Disabled:** the whole fieldset at 0.4 opacity, once: its Buttons and move buttons don't dim again. The handle and
+  the move and remove buttons drop any fill and take a not-allowed cursor, the handle in Muted Ink and the buttons in
+  Secondary Ink, so nothing answers a pointer.
+
 ### Toggles
 Built in the prototype (`prototype/components/toggle/`): a segmented control with exactly one option chosen. The theme
 switch, whose options are pressed buttons, and the language toggle, whose options are links to the Page's address in
@@ -1099,8 +1140,8 @@ placeholder and the About me Page leaves it out.
 - **Do** design the dark theme first and keep the light theme a complete equal, both at WCAG 2.2 AA.
 - **Do** open every Page in dark; show light only after the visitor picks it in the switch.
 - **Do** make the one primary action per view filled ink, and outline every other button in a hairline (a Reorderable
-  list's move buttons, icon buttons whose border and fill are transparent until the Wash on hover, are buttons this rule
-  doesn't cover).
+  list's and a Technology input's move and remove buttons, icon buttons whose border and fill are transparent until the
+  Wash on hover, are buttons this rule doesn't cover).
 - **Do** derive every secondary, muted, hairline and tint colour from the ink at its fixed alpha step.
 - **Do** lead Home with the facts: the role and seniority as the Masthead's largest type, and location, work model and
   technologies in the hairline facts panel beside it; keep the Owner's photo small and plain beside the name.
