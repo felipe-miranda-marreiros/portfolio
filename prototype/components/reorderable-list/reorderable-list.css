@@ -88,7 +88,7 @@
   place-items: center;
   margin: 0;
   padding: var(--space-2);
-  border: 0;
+  border: var(--line-width) solid transparent;
   border-radius: var(--radius-control);
   background: transparent;
   font-size: var(--text-small);
