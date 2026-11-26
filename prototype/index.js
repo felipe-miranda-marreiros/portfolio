@@ -228,7 +228,8 @@ const components = [
       "suggestion hover",
       "no match",
       "disabled",
-      "long content",
+      "one technology",
+      "long name",
     ],
   },
 ];
