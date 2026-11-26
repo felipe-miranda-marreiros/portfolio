@@ -312,6 +312,11 @@ a {
   align-self: stretch;
 }
 
+/* Room under a sample for a list that floats out of it, such as the technology input's suggestions. */
+.states__fill--float {
+  padding-block-end: calc(var(--space-10) + var(--space-4));
+}
+
 /* The CMS's side column, at its set width and a short Screen's height, so the foot shows at the bottom. */
 .frame--side {
   width: calc(var(--side-navigation-width) + 2 * var(--line-width));
