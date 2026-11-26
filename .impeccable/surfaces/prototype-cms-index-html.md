@@ -85,6 +85,9 @@ On 2026-11-24 the Owner chose, from structured options:
   order of Content items.
 - A full preview Screen behind an Edit | Preview switch, over a live split and both languages at a reduced scale.
 - A fixed action bar with the item's state and publish feedback, over publishing a whole Page at once.
+- On 2026-11-26, the action bar fixed at the editor's foot on the Surface while the fields scroll, over fixed under the
+  editor's header. It names each missing field with its language as a Link to that field, over a count of what is
+  missing.
 - Email and password sign-in, with password reset, over a single external-account button.
 - A Draft saves itself as the Owner types, with a saved indicator and no Save button.
 - One CV Content item holds both PDFs, English and Brazilian Portuguese, so it follows the rule that an item publishes
