@@ -133,7 +133,8 @@ a {
   .area-content-item-row,
   .area-bilingual-field,
   .area-period-field,
-  .area-image-field {
+  .area-image-field,
+  .area-file-field {
     grid-column: 1 / -1;
   }
 }

@@ -180,6 +180,13 @@ const components = [
     label: "Image field states",
     states: ["default", "hover", "focus", "empty", "uploading", "error", "disabled", "alt text missing"],
   },
+  {
+    slug: "file-field",
+    name: "File field",
+    note: "One file in each language side by side, such as the CV's two PDFs, each name opening its file. The CMS only.",
+    label: "File field states",
+    states: ["default", "hover", "focus", "missing", "uploading", "error", "disabled", "both missing"],
+  },
 ];
 
 // Built here rather than written in the page, so the page stays under the file size hook as components are added.
