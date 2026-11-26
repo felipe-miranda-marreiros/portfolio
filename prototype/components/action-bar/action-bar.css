@@ -20,7 +20,6 @@
  * repository link, has no Unpublish and no Delete. Each of them confirms in a dialog. While a publish is reaching the
  * Portfolio, Publish is loading; then the status says it's live, or that it failed, with a button to try again. Both
  * statuses stay in the page, empty until they have news, so screen readers hear them change.
- * `data-force` pins a state so the prototype page can show it without interaction.
  */
 .action-bar {
   position: sticky;
