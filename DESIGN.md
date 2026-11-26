@@ -198,9 +198,10 @@ through tokens alone; their place and behavior never change.
 **Key Characteristics:**
 - Dark by default, always; light a complete equal the visitor switches to; both WCAG 2.2 AA.
 - Monochrome: bone ink on near-black, ink on bone paper, secondary ink and hairlines by alpha steps of the ink.
-- No hued accent: the primary action is filled ink, every other button is outlined in a hairline, row links are
-  unboxed text (the Side navigation's Toggle-like entries and the Content item row, a whole row that leads into its
-  editor, are rows this doesn't cover), focus is an ink ring.
+- No hued accent: the primary action is filled ink, every other button is outlined in a hairline (a Reorderable list's
+  move buttons, whose border and fill are transparent, are buttons this doesn't cover), row links are unboxed text (the
+  Side navigation's Toggle-like entries and the Content item row, a whole row that leads into its editor, are rows this
+  doesn't cover), focus is an ink ring.
 - Bold display grotesk with tight tracking; monospace only for labels, tags, chips and numerals.
 - Hairline-bordered panel grids whose cells share borders, instead of cards and shadows.
 - Facts over the person: the role and seniority lead Home as its largest type, beside a hairline facts panel; the photo
@@ -277,9 +278,9 @@ at a lower alpha or mixed into the ground, and error is the only hue.
 - **Tint** (7%) and **Tint Hover** (4%): chip fills and a Published State indicator's, the chosen Toggle option, the
   pressed secondary button and the current Side navigation entry; the faint fill of a hovered secondary button and of
   a hovered Side navigation entry.
-- **Night Wash** and **Paper Wash** (2% of the ink mixed into the ground): the hovered or focused panel cell and
-  Content item row, the whole Reorderable list item around a hovered row, and a hovered move button. Opaque, because
-  the cell covers the hairline drawn behind the grid.
+- **Night Wash** and **Paper Wash** (2% of the ink mixed into the ground): the hovered or focused panel cell and Content
+  item row, the whole Reorderable list item around a hovered, focused or pressed row, and a hovered move button. Opaque,
+  because the cell covers the hairline drawn behind the grid.
 
 ### Error
 - **Error on Paper** and **Error on Night**: error borders and messages only, such as a Reorderable list's failed
@@ -287,9 +288,11 @@ at a lower alpha or mixed into the ground, and error is the only hue.
 
 ### Named Rules
 **The Ink Is The Action Rule.** There is no accent colour. The primary action is the ink filled, with the ground as its
-text: one per view. Secondary buttons are outlined in Hairline Control; row links stay unboxed (the Side navigation's
-Toggle-like entries and the Content item row, a whole row that leads into its editor, are rows this rule doesn't cover).
-Focus is an ink ring. If a view needs colour to show what to do next, the hierarchy is wrong, not the palette.
+text: one per view. Secondary buttons are outlined in Hairline Control (a Reorderable list's move buttons, icon buttons
+whose border and fill are transparent until the Wash on hover, are buttons this rule doesn't cover); row links stay
+unboxed (the Side navigation's Toggle-like entries and the Content item row, a whole row that leads into its editor, are
+rows this rule doesn't cover). Focus is an ink ring. If a view needs colour to show what to do next, the hierarchy is
+wrong, not the palette.
 
 **The Alpha Steps Rule.** Secondary, muted, hairline and tint colours are always the ink mixed toward transparent at
 their fixed steps (84, 64, 26, 22, 10, 7, 4), and the Wash is the ink at 2% mixed into the ground; never new greys. The
@@ -899,14 +902,16 @@ open it.
 Built in the prototype (`prototype/components/reorderable-list/`): Content items the Owner puts in order by hand, such
 as the Footer's links, the CMS's only, with no About me version. It is built from the Content item row and the Button.
 The Owner chose each row between a drag handle and up and down move buttons, always visible, over a reorder mode with
-move buttons and no links, and over a handle alone moved from the keyboard with Space and the arrow keys. Order isn't
-a Content item and has no Draft, so a new order reaches the Portfolio at once, over holding it as a Draft until the
-next publish. Core technologies, a field of Home's main Section rather than Content items, are ordered inside the
-technology input with the same handle and move buttons, not in this list.
+move buttons and no links, and over a handle alone moved from the keyboard with Space and the arrow keys. Order isn't a
+Content item and has no Draft, so a new order reaches the Portfolio at once, over holding it as a Draft until the next
+publish. Core technologies, a field of Home's main Section rather than Content items, are ordered inside the technology
+input with the same handle and move buttons, not in this list. The public repository link, which always comes first and
+can't be removed, is a plain Content item row above the Footer links' list, over pinning it first in the list with its
+moves disabled.
 - **Order:** the Content item rows' list, each item the drag handle, then its Content item row, then its move buttons,
   centred on one line, then the feedback under the list. Each item draws the Hairline rule under it, so the handle and
   the move buttons sit on it too, and the row inside draws none. Every word is Content.
-- **Handle:** a six-dot grip (`--icon-grip`, a 2px stroke with round ends), one line of Small tall and wide, 0.5rem from
+- **Handle:** a six-dot grip (`--icon-grip`, a 2 stroke with round ends), one line of Small tall and wide, 0.5rem from
   the item's start, in Muted Ink, full ink on hover, with a grab cursor. It is for a pointer only: `aria-hidden` and
   out of the tab order, as the move buttons do the same work from the keyboard.
 - **Move buttons:** up and down, 0.25rem apart, 0.5rem from the item's end. Each is as tall as a Button, 40.4px (0.5rem
@@ -914,8 +919,8 @@ technology input with the same handle and move buttons, not in this list.
   icon size (0.875em), rotated to point up or down, in Secondary Ink. Hover and active: full ink on the Wash. Focus: the
   shared 2px ink ring, inset so the next button and the item's edge don't cut it. Each is named by its `aria-label` and
   described by its row's name with `aria-describedby`, and keeps focus as its item moves. The first item can't move up
-  and the last can't move down: that button takes `aria-disabled`, not `disabled`, so focus stays on it, at 0.4 opacity
-  with no hover.
+  and the last can't move down: that button takes `aria-disabled`, not `disabled`, so focus stays on it, at 0.4 opacity,
+  a not-allowed cursor, no hover.
 - **Row hover:** when its Content item row is hovered, focused or pressed, the Wash spans the whole item, so the handle
   and the move buttons don't sit outside it.
 - **Dragging:** the item floats over the rows it passes: it lifts onto the Surface with the float shadow
@@ -925,6 +930,8 @@ technology input with the same handle and move buttons, not in this list.
   Small text in Error at the error weight (`--error-weight`), followed by a Try again secondary Button, 0.75rem apart,
   0.5rem when it wraps. The list keeps the new order while it fails.
 - **One item:** both move buttons take `aria-disabled`.
+- **Fixed item:** an item that can't move, such as the public repository link, sits before the list as a plain Content
+  item row, with no handle and no move buttons.
 - **Narrow rows:** a long name or address wraps, and the state wraps under the text, as in the Content item row, while
   the handle and the move buttons keep their places.
 - **Forced colours:** the arrows take the button text colour and the handle the system text colour, since their masks
