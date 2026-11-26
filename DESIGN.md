@@ -250,16 +250,18 @@ at a lower alpha or mixed into the ground, and error is the only hue.
 
 ### Neutral
 - **Night** and **Paper**: the ground of the dark and light themes; also the text colour on a filled-ink action.
-- **Night Raised** and **Paper Raised**: the surface for anything that floats above the page (menus, popovers), always
+- **Night Raised** and **Paper Raised**: the surface for anything that floats above the page (menus, popovers, the item
+  a Reorderable list is dragging), always
   paired with the float shadow, except a native select's list, which the browser draws and which can't take it, and a
   photo's ground while it loads (the Masthead's, the Image field's thumbnail), which doesn't float.
 - **Secondary Ink** (84% of the ink): supporting lines, ledes, body copy in panels, resting row links, inactive
   switch options, the Qualification list's small heading and note, the Side navigation's resting entries and
   sign-out, the Draft count on its current entry, a Published State indicator's text, a resting Content item
-  row's name, a Bilingual field's language names and a Period field's end names.
+  row's name, a Bilingual field's language names, a Period field's end names and a Reorderable list's resting move
+  buttons.
 - **Muted Ink** (64% of the ink): metadata, captions, a panel's note, the Side navigation's Draft counts, a Content item
-  row's detail, a Period field's dash, and an Image field's and a File field's detail. Still AA on the ground in both
-  themes, and on the Wash of a hovered row.
+  row's detail, a Period field's dash, an Image field's and a File field's detail, and a Reorderable list's handle and
+  status. Still AA on the ground in both themes, and on the Wash of a hovered row.
 - **Hairline** (10% of the ink): panel-grid borders, the Facts panel's border and the rule under its lead, the rule
   between role entries and between Qualification list items, the rule above a Section heading, the rules under the top
   bar and above the footer, the Footer's rule between its repository link and the rest, the Side navigation's
@@ -276,10 +278,12 @@ at a lower alpha or mixed into the ground, and error is the only hue.
   pressed secondary button and the current Side navigation entry; the faint fill of a hovered secondary button and of
   a hovered Side navigation entry.
 - **Night Wash** and **Paper Wash** (2% of the ink mixed into the ground): the hovered or focused panel cell and
-  Content item row. Opaque, because the cell covers the hairline drawn behind the grid.
+  Content item row, the whole Reorderable list item around a hovered row, and a hovered move button. Opaque, because
+  the cell covers the hairline drawn behind the grid.
 
 ### Error
-- **Error on Paper** and **Error on Night**: error borders and messages only, never decoration.
+- **Error on Paper** and **Error on Night**: error borders and messages only, such as a Reorderable list's failed
+  status, never decoration.
 
 ### Named Rules
 **The Ink Is The Action Rule.** There is no accent colour. The primary action is the ink filled, with the ground as its
@@ -373,7 +377,8 @@ monospace that labels facts the way a codebase labels things: commands, tags, co
   in a Text field, so Safari on iPhone doesn't zoom the page when the field takes focus, and, at the control weight
   (600) in full ink, a Facts panel fact's value, a Role entry's company and a Qualification list item's source.
 - **Small** (400, 0.875rem): captions, a panel's note, metadata (such as a Role entry's location and work model, and a
-  Qualification list item's place or credential ID), and a field's hint, in muted ink, and a field's error message;
+  Qualification list item's place or credential ID), a field's hint and a Reorderable list's status, in muted ink, and
+  a field's error message;
   also the size of row links, controls, field labels and the Qualification list's small heading, which take the
   control weight (600), kept apart from the title weight so each can change alone.
 - **Label** (Martian Mono 500, 0.6875rem, 0.08em, uppercase, tabular numerals): stat labels (the Facts panel's), dates
@@ -496,9 +501,9 @@ alone, without the illustration slot.
 
 Flat by default. Depth comes from hairlines and alpha tints, not shadows: a hovered or focused panel brightens its edge
 to Hairline Hover over the Wash, a hovered secondary button gains Tint Hover. Only a surface that floats above the page
-(menu, popover) takes the raised surface colour and the float shadow; a native select's list takes the colour alone,
-since the browser draws it and it can't take the shadow, and so does a photo's ground while it loads, which doesn't
-float. Nothing glows.
+(menu, popover, a Reorderable list's dragged item) takes the raised surface colour and the float shadow; a native
+select's list takes the colour alone, since the browser draws it and it can't take the shadow, and so does a photo's
+ground while it loads, which doesn't float. Nothing glows.
 
 ### Shadow Vocabulary
 - **Float** (`box-shadow: 0 0 0 1px <ring>, 0 12px 32px -12px <shadow>`): floating surfaces only. On night the ring is
@@ -538,13 +543,14 @@ row's key colour that thickens to 3px on hover, focus and press. The illustratio
 ## Components
 
 The Button, the Link, the Chip, the State indicator, the Content item row, the Toggle, the Top bar, the Side navigation,
-the Footer, the Text field, the Bilingual field, the Period field, the Image field, the File field, the Panel grid, the
-Page header, the Section heading, the Masthead, the Facts panel, the Role entry, the Qualification list and About me's
-Lineup are built in the prototype (`prototype/components/button/`, `link/`, `chip/`, `state-indicator/`,
-`content-item-row/`, `toggle/`, `top-bar/`, `side-navigation/`, `footer/`, `text-field/`, `bilingual-field/`,
-`period-field/`, `image-field/`, `file-field/`, `panel-grid/`, `page-header/`, `section-heading/`, `masthead/`,
-`facts-panel/`, `role-entry/`, `qualification-list/`, `lineup/`); the rest are the primitives the prototype's token specimens establish, to be confirmed by each component's
-own PR. Every component takes every visual value from tokens and holds no visible text.
+the Footer, the Text field, the Bilingual field, the Period field, the Image field, the File field, the Reorderable
+list, the Panel grid, the Page header, the Section heading, the Masthead, the Facts panel, the Role entry, the
+Qualification list and About me's Lineup are built in the prototype (`prototype/components/button/`, `link/`, `chip/`,
+`state-indicator/`, `content-item-row/`, `toggle/`, `top-bar/`, `side-navigation/`, `footer/`, `text-field/`,
+`bilingual-field/`, `period-field/`, `image-field/`, `file-field/`, `reorderable-list/`, `panel-grid/`, `page-header/`,
+`section-heading/`, `masthead/`, `facts-panel/`, `role-entry/`, `qualification-list/`, `lineup/`); the rest are the
+primitives the prototype's token specimens establish, to be confirmed by each component's own PR. Every component takes
+every visual value from tokens and holds no visible text.
 
 ### Buttons
 - **Shape:** gently rounded (8px), Small text at the control weight (600), padding 0.5rem by 1rem, inside a one-pixel
@@ -888,6 +894,44 @@ open it.
   dotted, so it can't pass for an error.
 - **Disabled:** the whole fieldset at 0.4 opacity, once: its buttons don't dim again. The names stay Links, as opening
   a file changes nothing.
+
+### Reorderable list
+Built in the prototype (`prototype/components/reorderable-list/`): Content items the Owner puts in order by hand, such
+as the Footer's links, the CMS's only, with no About me version. It is built from the Content item row and the Button.
+The Owner chose each row between a drag handle and up and down move buttons, always visible, over a reorder mode with
+move buttons and no links, and over a handle alone moved from the keyboard with Space and the arrow keys. Order isn't
+a Content item and has no Draft, so a new order reaches the Portfolio at once, over holding it as a Draft until the
+next publish. Core technologies, a field of Home's main Section rather than Content items, are ordered inside the
+technology input with the same handle and move buttons, not in this list.
+- **Order:** the Content item rows' list, each item the drag handle, then its Content item row, then its move buttons,
+  centred on one line, then the feedback under the list. Each item draws the Hairline rule under it, so the handle and
+  the move buttons sit on it too, and the row inside draws none. Every word is Content.
+- **Handle:** a six-dot grip (`--icon-grip`, a 2px stroke with round ends), one line of Small tall and wide, 0.5rem from
+  the item's start, in Muted Ink, full ink on hover, with a grab cursor. It is for a pointer only: `aria-hidden` and
+  out of the tab order, as the move buttons do the same work from the keyboard.
+- **Move buttons:** up and down, 0.25rem apart, 0.5rem from the item's end. Each is as tall as a Button, 40.4px (0.5rem
+  padding, a transparent 1px border, one line of Small), with 8px corners and the Link's arrow (`--icon-arrow`) at the
+  icon size (0.875em), rotated to point up or down, in Secondary Ink. Hover and active: full ink on the Wash. Focus: the
+  shared 2px ink ring, inset so the next button and the item's edge don't cut it. Each is named by its `aria-label` and
+  described by its row's name with `aria-describedby`, and keeps focus as its item moves. The first item can't move up
+  and the last can't move down: that button takes `aria-disabled`, not `disabled`, so focus stays on it, at 0.4 opacity
+  with no hover.
+- **Row hover:** when its Content item row is hovered, focused or pressed, the Wash spans the whole item, so the handle
+  and the move buttons don't sit outside it.
+- **Dragging:** the item floats over the rows it passes: it lifts onto the Surface with the float shadow
+  (`--shadow-float`) and 8px corners, its handle in full ink with a grabbing cursor.
+- **Feedback:** a status (`role="status"`) that is always in the page and empty until a move, so screen readers hear it
+  when it changes; 0.75rem under the list once it has words. Reaching, then live: Small text in Muted Ink. Failed:
+  Small text in Error at the error weight (`--error-weight`), followed by a Try again secondary Button, 0.75rem apart,
+  0.5rem when it wraps. The list keeps the new order while it fails.
+- **One item:** both move buttons take `aria-disabled`.
+- **Narrow rows:** a long name or address wraps, and the state wraps under the text, as in the Content item row, while
+  the handle and the move buttons keep their places.
+- **Forced colours:** the arrows take the button text colour and the handle the system text colour, since their masks
+  would otherwise be painted as the ground; the dragged item, whose shadow is dropped, takes a 1px outline in the
+  system text colour.
+- **Reduced motion:** the colour, Wash and shadow transitions run on `--duration-fast`, which is 0ms under reduced
+  motion, so a state changes at once.
 
 ### Toggles
 Built in the prototype (`prototype/components/toggle/`): a segmented control with exactly one option chosen. The theme
