@@ -1,0 +1,189 @@
+/**
+ * Reorderable list: Content items the Owner puts in order by hand, such as the Footer's links, from tokens only. Each
+ * item is a Content item row between a drag handle and a pair of move buttons, and it composes the Content item row and
+ * the Button.
+ * Markup: <ul class="content-item-rows reorderable-list"><li class="reorderable-list__item">
+ *   <span class="reorderable-list__handle" aria-hidden="true"></span>
+ *   <a class="content-item-row" href="…">… <span class="content-item-row__name" id="…-name">…</span> …</a>
+ *   <span class="reorderable-list__moves">
+ *     <button class="reorderable-list__move" type="button" data-direction="up" aria-label="…"
+ *       aria-describedby="…-name"></button>
+ *     <button class="reorderable-list__move" type="button" data-direction="down" …></button></span></li>…</ul>
+ *   <div class="reorderable-list__feedback"><p class="reorderable-list__status" role="status" data-state="…">…</p>
+ *     <button class="button button--secondary" type="button">…</button></div>.
+ * The handle is for a pointer: it drags the item, which floats while it moves. The move buttons are for the keyboard
+ * and for one-place moves, so the handle stays out of the tab order. A move button keeps focus as its item moves, and
+ * one that can't move further takes `aria-disabled` rather than `disabled`, so focus stays on it.
+ * Order isn't a Content item and has no Draft: a new order reaches the Portfolio at once. The status under the list
+ * says so: `reaching`, then `live`, or `failed` with a button to try again, the list keeping the new order.
+ * `data-force` pins a state so the prototype page can show it without interaction.
+ */
+.reorderable-list__item {
+  display: flex;
+  align-items: center;
+  border-block-end: var(--line-width) solid var(--color-hairline);
+  background: var(--color-ground);
+  transition:
+    background-color var(--duration-fast) var(--ease-out),
+    box-shadow var(--duration-fast) var(--ease-out);
+}
+
+/* The row's wash spans the item, so the handle and the move buttons don't sit outside it. */
+.reorderable-list__item:has(
+  > .content-item-row:where(
+      :hover,
+      :focus-visible,
+      :active,
+      [data-force~="hover"],
+      [data-force~="focus"],
+      [data-force~="active"]
+    )
+) {
+  background: var(--color-wash);
+}
+
+/* The item draws the rule, so the handle and the move buttons sit on it too. */
+.reorderable-list__item > .content-item-row {
+  flex: 1 1 auto;
+  min-inline-size: 0;
+  border-block-end: 0;
+}
+
+.reorderable-list__handle {
+  display: grid;
+  flex: none;
+  align-self: stretch;
+  place-items: center;
+  padding-inline-start: var(--space-2);
+  font-size: var(--text-small);
+  line-height: var(--leading-body);
+  color: var(--color-ink-muted);
+  cursor: grab;
+  touch-action: none;
+  transition: color var(--duration-fast) var(--ease-out);
+}
+
+.reorderable-list__handle::before {
+  content: "";
+  inline-size: 1lh;
+  block-size: 1lh;
+  background: currentColor;
+  mask: var(--icon-grip) center / contain no-repeat;
+}
+
+.reorderable-list__handle:where(:hover, [data-force~="hover"]) {
+  color: var(--color-ink);
+}
+
+.reorderable-list__moves {
+  display: flex;
+  flex: none;
+  gap: var(--space-1);
+  padding-inline-end: var(--space-2);
+}
+
+/* As tall as a Button, so the arrows line up with the Section's actions. */
+.reorderable-list__move {
+  display: grid;
+  place-items: center;
+  margin: 0;
+  padding: var(--space-2);
+  border: 0;
+  border-radius: var(--radius-control);
+  background: transparent;
+  font-size: var(--text-small);
+  line-height: var(--leading-body);
+  color: var(--color-ink-secondary);
+  cursor: pointer;
+  touch-action: manipulation;
+  -webkit-tap-highlight-color: transparent;
+  transition:
+    background-color var(--duration-fast) var(--ease-out),
+    color var(--duration-fast) var(--ease-out);
+}
+
+.reorderable-list__move::before {
+  content: "";
+  inline-size: 1lh;
+  block-size: 1lh;
+  background: currentColor;
+  mask: var(--icon-arrow) center / var(--icon-size) no-repeat;
+}
+
+.reorderable-list__move[data-direction="up"]::before {
+  rotate: -90deg;
+}
+
+.reorderable-list__move[data-direction="down"]::before {
+  rotate: 90deg;
+}
+
+.reorderable-list__move:where(:hover, :active, [data-force~="hover"], [data-force~="active"]):not(
+  [aria-disabled="true"]
+) {
+  background: var(--color-wash);
+  color: var(--color-ink);
+}
+
+.reorderable-list__move:is(:focus-visible, [data-force~="focus"]) {
+  outline: var(--focus-ring-width) solid var(--focus-ring-color);
+  outline-offset: calc(-1 * var(--focus-ring-width));
+}
+
+.reorderable-list__move[aria-disabled="true"] {
+  opacity: var(--disabled-opacity);
+  cursor: default;
+}
+
+/* The item being dragged floats over the rows it passes, so it lifts onto the Surface with the float shadow. */
+.reorderable-list__item:is([data-dragging], [data-force~="drag"]) {
+  position: relative;
+  z-index: 1;
+  border-radius: var(--radius-control);
+  background: var(--color-surface);
+  box-shadow: var(--shadow-float);
+}
+
+.reorderable-list__item:is([data-dragging], [data-force~="drag"]) .reorderable-list__handle {
+  color: var(--color-ink);
+  cursor: grabbing;
+}
+
+/* Always in the page, empty until a move, so screen readers hear the status when it changes. */
+.reorderable-list__feedback {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--space-2) var(--space-3);
+}
+
+.reorderable-list__feedback:has(.reorderable-list__status:not(:empty)) {
+  margin-block-start: var(--space-3);
+}
+
+.reorderable-list__status {
+  margin: 0;
+  font-size: var(--text-small);
+  line-height: var(--leading-body);
+  color: var(--color-ink-muted);
+}
+
+.reorderable-list__status[data-state="failed"] {
+  font-weight: var(--error-weight);
+  color: var(--error-color);
+}
+
+/* Forced colours drop the Wash and repaint masked icons as Canvas; paint the arrows and the handle in the text colour. */
+@media (forced-colors: active) {
+  .reorderable-list__move::before {
+    background: ButtonText;
+  }
+
+  .reorderable-list__handle::before {
+    background: CanvasText;
+  }
+
+  .reorderable-list__item:is([data-dragging], [data-force~="drag"]) {
+    outline: var(--line-width) solid CanvasText;
+  }
+}
