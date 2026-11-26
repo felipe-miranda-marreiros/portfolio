@@ -60,6 +60,15 @@
   color: var(--color-ink-muted);
 }
 
+/* An empty status stays in the page for screen readers, so it takes back the gap beside it rather than double it. */
+.action-bar__saved:empty {
+  margin-inline-end: calc(-1 * var(--space-4));
+}
+
+.action-bar__feedback:not(:has(.action-bar__publish:not(:empty))) {
+  margin-inline-start: calc(-1 * var(--space-4));
+}
+
 :is(.action-bar__saved, .action-bar__publish)[data-state="failed"] {
   font-weight: var(--error-weight);
   color: var(--error-color);
