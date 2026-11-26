@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>File field · Portfolio prototype</title>
+    <link rel="preload" href="../../fonts/schibsted-grotesk.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="preload" href="../../fonts/martian-mono.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="stylesheet" href="../../tokens.css" />
+    <link rel="stylesheet" href="../specimen.css" />
+    <link rel="stylesheet" href="../text-field/text-field.css" />
+    <link rel="stylesheet" href="../button/button.css" />
+    <link rel="stylesheet" href="../link/link.css" />
+    <link rel="stylesheet" href="../state-indicator/state-indicator.css" />
+    <link rel="stylesheet" href="../bilingual-field/bilingual-field.css" />
+    <link rel="stylesheet" href="file-field.css" />
+  </head>
+  <body>
+    <header class="specimen-bar">
+      <a href="../../index.html">Visual language</a>
+    </header>
+
+    <main>
+      <div class="specimen-intro">
+        <h1>File field</h1>
+        <p>
+          One file in each language, English and Brazilian Portuguese side by side, such as the CV's two PDFs: each a file
+          row with the file's name, which opens it, over its detail, then Replace and Remove. Default, and the name on
+          hover and focus, on both themes. The words are placeholders. The CMS only, so there is no About me version.
+        </p>
+      </div>
+
+      <div class="surfaces">
+        <section class="surface" data-scheme="dark" aria-labelledby="d-title">
+          <h2 id="d-title">Dark</h2>
+          <div class="variant">
+            <h3>States</h3>
+            <ul class="states states--rows-wide">
+              <li>
+                <fieldset class="bilingual-field file-field states__fill">
+                  <legend class="text-field__label">CV</legend>
+                  <p class="text-field__hint">Visitors download the one in the language they read.</p>
+                  <div class="bilingual-field__pair"><div class="bilingual-field__language"><div class="bilingual-field__head"><span class="bilingual-field__name" id="d-default-en-name">English</span></div><div class="file-field__file"><div class="file-field__meta"><a class="link" href="cv-en.pdf" target="_blank" rel="noopener">cv-en.pdf</a><span class="file-field__detail" id="d-default-en-detail">PDF · 2 pages · 184 KB</span></div><div class="file-field__actions"><button class="button button--secondary" type="button" aria-describedby="d-default-en-name d-default-en-detail"><span class="button__label">Replace</span></button><button class="button button--secondary" type="button" aria-describedby="d-default-en-name"><span class="button__label">Remove</span></button></div></div></div><div class="bilingual-field__language"><div class="bilingual-field__head"><span class="bilingual-field__name" id="d-default-pt-name">Brazilian Portuguese</span></div><div class="file-field__file"><div class="file-field__meta"><a class="link" href="cv-pt-br.pdf" target="_blank" rel="noopener">cv-pt-br.pdf</a><span class="file-field__detail" id="d-default-pt-detail">PDF · 3 pages · 196 KB</span></div><div class="file-field__actions"><button class="button button--secondary" type="button" aria-describedby="d-default-pt-name d-default-pt-detail"><span class="button__label">Replace</span></button><button class="button button--secondary" type="button" aria-describedby="d-default-pt-name"><span class="button__label">Remove</span></button></div></div></div></div>
+                </fieldset>
+                <code>default</code>
+              </li>
+              <li>
+                <fieldset class="bilingual-field file-field states__fill">
+                  <legend class="text-field__label">CV</legend>
+                  <p class="text-field__hint">Visitors download the one in the language they read.</p>
+                  <div class="bilingual-field__pair"><div class="bilingual-field__language"><div class="bilingual-field__head"><span class="bilingual-field__name" id="d-hover-en-name">English</span></div><div class="file-field__file"><div class="file-field__meta"><a class="link" href="cv-en.pdf" target="_blank" rel="noopener" data-force="hover">cv-en.pdf</a><span class="file-field__detail" id="d-hover-en-detail">PDF · 2 pages · 184 KB</span></div><div class="file-field__actions"><button class="button button--secondary" type="button" aria-describedby="d-hover-en-name d-hover-en-detail"><span class="button__label">Replace</span></button><button class="button button--secondary" type="button" aria-describedby="d-hover-en-name"><span class="button__label">Remove</span></button></div></div></div><div class="bilingual-field__language"><div class="bilingual-field__head"><span class="bilingual-field__name" id="d-hover-pt-name">Brazilian Portuguese</span></div><div class="file-field__file"><div class="file-field__meta"><a class="link" href="cv-pt-br.pdf" target="_blank" rel="noopener">cv-pt-br.pdf</a><span class="file-field__detail" id="d-hover-pt-detail">PDF · 3 pages · 196 KB</span></div><div class="file-field__actions"><button class="button button--secondary" type="button" aria-describedby="d-hover-pt-name d-hover-pt-detail"><span class="button__label">Replace</span></button><button class="button button--secondary" type="button" aria-describedby="d-hover-pt-name"><span class="button__label">Remove</span></button></div></div></div></div>
+                </fieldset>
+                <code>hover</code>
+              </li>
+              <li>
+                <fieldset class="bilingual-field file-field states__fill">
+                  <legend class="text-field__label">CV</legend>
+                  <p class="text-field__hint">Visitors download the one in the language they read.</p>
+                  <div class="bilingual-field__pair"><div class="bilingual-field__language"><div class="bilingual-field__head"><span class="bilingual-field__name" id="d-focus-en-name">English</span></div><div class="file-field__file"><div class="file-field__meta"><a class="link" href="cv-en.pdf" target="_blank" rel="noopener" data-force="focus">cv-en.pdf</a><span class="file-field__detail" id="d-focus-en-detail">PDF · 2 pages · 184 KB</span></div><div class="file-field__actions"><button class="button button--secondary" type="button" aria-describedby="d-focus-en-name d-focus-en-detail"><span class="button__label">Replace</span></button><button class="button button--secondary" type="button" aria-describedby="d-focus-en-name"><span class="button__label">Remove</span></button></div></div></div><div class="bilingual-field__language"><div class="bilingual-field__head"><span class="bilingual-field__name" id="d-focus-pt-name">Brazilian Portuguese</span></div><div class="file-field__file"><div class="file-field__meta"><a class="link" href="cv-pt-br.pdf" target="_blank" rel="noopener">cv-pt-br.pdf</a><span class="file-field__detail" id="d-focus-pt-detail">PDF · 3 pages · 196 KB</span></div><div class="file-field__actions"><button class="button button--secondary" type="button" aria-describedby="d-focus-pt-name d-focus-pt-detail"><span class="button__label">Replace</span></button><button class="button button--secondary" type="button" aria-describedby="d-focus-pt-name"><span class="button__label">Remove</span></button></div></div></div></div>
+                </fieldset>
+                <code>focus</code>
+              </li>
+            </ul>
+          </div>
+        </section>
+        <section class="surface" data-scheme="light" aria-labelledby="l-title">
+          <h2 id="l-title">Light</h2>
+          <div class="variant">
+            <h3>States</h3>
+            <ul class="states states--rows-wide">
+              <li>
+                <fieldset class="bilingual-field file-field states__fill">
+                  <legend class="text-field__label">CV</legend>
+                  <p class="text-field__hint">Visitors download the one in the language they read.</p>
+                  <div class="bilingual-field__pair"><div class="bilingual-field__language"><div class="bilingual-field__head"><span class="bilingual-field__name" id="l-default-en-name">English</span></div><div class="file-field__file"><div class="file-field__meta"><a class="link" href="cv-en.pdf" target="_blank" rel="noopener">cv-en.pdf</a><span class="file-field__detail" id="l-default-en-detail">PDF · 2 pages · 184 KB</span></div><div class="file-field__actions"><button class="button button--secondary" type="button" aria-describedby="l-default-en-name l-default-en-detail"><span class="button__label">Replace</span></button><button class="button button--secondary" type="button" aria-describedby="l-default-en-name"><span class="button__label">Remove</span></button></div></div></div><div class="bilingual-field__language"><div class="bilingual-field__head"><span class="bilingual-field__name" id="l-default-pt-name">Brazilian Portuguese</span></div><div class="file-field__file"><div class="file-field__meta"><a class="link" href="cv-pt-br.pdf" target="_blank" rel="noopener">cv-pt-br.pdf</a><span class="file-field__detail" id="l-default-pt-detail">PDF · 3 pages · 196 KB</span></div><div class="file-field__actions"><button class="button button--secondary" type="button" aria-describedby="l-default-pt-name l-default-pt-detail"><span class="button__label">Replace</span></button><button class="button button--secondary" type="button" aria-describedby="l-default-pt-name"><span class="button__label">Remove</span></button></div></div></div></div>
+                </fieldset>
+                <code>default</code>
+              </li>
+              <li>
+                <fieldset class="bilingual-field file-field states__fill">
+                  <legend class="text-field__label">CV</legend>
+                  <p class="text-field__hint">Visitors download the one in the language they read.</p>
+                  <div class="bilingual-field__pair"><div class="bilingual-field__language"><div class="bilingual-field__head"><span class="bilingual-field__name" id="l-hover-en-name">English</span></div><div class="file-field__file"><div class="file-field__meta"><a class="link" href="cv-en.pdf" target="_blank" rel="noopener" data-force="hover">cv-en.pdf</a><span class="file-field__detail" id="l-hover-en-detail">PDF · 2 pages · 184 KB</span></div><div class="file-field__actions"><button class="button button--secondary" type="button" aria-describedby="l-hover-en-name l-hover-en-detail"><span class="button__label">Replace</span></button><button class="button button--secondary" type="button" aria-describedby="l-hover-en-name"><span class="button__label">Remove</span></button></div></div></div><div class="bilingual-field__language"><div class="bilingual-field__head"><span class="bilingual-field__name" id="l-hover-pt-name">Brazilian Portuguese</span></div><div class="file-field__file"><div class="file-field__meta"><a class="link" href="cv-pt-br.pdf" target="_blank" rel="noopener">cv-pt-br.pdf</a><span class="file-field__detail" id="l-hover-pt-detail">PDF · 3 pages · 196 KB</span></div><div class="file-field__actions"><button class="button button--secondary" type="button" aria-describedby="l-hover-pt-name l-hover-pt-detail"><span class="button__label">Replace</span></button><button class="button button--secondary" type="button" aria-describedby="l-hover-pt-name"><span class="button__label">Remove</span></button></div></div></div></div>
+                </fieldset>
+                <code>hover</code>
+              </li>
+              <li>
+                <fieldset class="bilingual-field file-field states__fill">
+                  <legend class="text-field__label">CV</legend>
+                  <p class="text-field__hint">Visitors download the one in the language they read.</p>
+                  <div class="bilingual-field__pair"><div class="bilingual-field__language"><div class="bilingual-field__head"><span class="bilingual-field__name" id="l-focus-en-name">English</span></div><div class="file-field__file"><div class="file-field__meta"><a class="link" href="cv-en.pdf" target="_blank" rel="noopener" data-force="focus">cv-en.pdf</a><span class="file-field__detail" id="l-focus-en-detail">PDF · 2 pages · 184 KB</span></div><div class="file-field__actions"><button class="button button--secondary" type="button" aria-describedby="l-focus-en-name l-focus-en-detail"><span class="button__label">Replace</span></button><button class="button button--secondary" type="button" aria-describedby="l-focus-en-name"><span class="button__label">Remove</span></button></div></div></div><div class="bilingual-field__language"><div class="bilingual-field__head"><span class="bilingual-field__name" id="l-focus-pt-name">Brazilian Portuguese</span></div><div class="file-field__file"><div class="file-field__meta"><a class="link" href="cv-pt-br.pdf" target="_blank" rel="noopener">cv-pt-br.pdf</a><span class="file-field__detail" id="l-focus-pt-detail">PDF · 3 pages · 196 KB</span></div><div class="file-field__actions"><button class="button button--secondary" type="button" aria-describedby="l-focus-pt-name l-focus-pt-detail"><span class="button__label">Replace</span></button><button class="button button--secondary" type="button" aria-describedby="l-focus-pt-name"><span class="button__label">Remove</span></button></div></div></div></div>
+                </fieldset>
+                <code>focus</code>
+              </li>
+            </ul>
+          </div>
+        </section>
+      </div>
+    </main>
+
+    <footer class="foot">
+      <p>Design prototype. A reference for the front end, not production code. See the <a href="index.html">states</a>, <a href="missing-upload-error.html">missing, uploading, error and disabled</a>, and <a href="cases.html">cases and a phone</a>.</p>
+    </footer>
+  </body>
+</html>

@@ -1,0 +1,78 @@
+/**
+ * File field: one file in each language, English and Brazilian Portuguese side by side, such as the CV's two PDFs, from
+ * tokens only. It is a Bilingual field whose columns each hold a file row instead of an input, and it composes the Text
+ * field's label, hint and error, the State indicator's Missing tag, the Link and the Button.
+ * Markup: <fieldset class="bilingual-field file-field"><legend class="text-field__label">…</legend>
+ *   <p class="text-field__hint">…</p>
+ *   <div class="bilingual-field__pair">
+ *     <div class="bilingual-field__language" data-missing>
+ *       <div class="bilingual-field__head"><span class="bilingual-field__name" id="…-name">…</span>
+ *         <span class="state-indicator" data-state="missing" id="…-missing">…</span></div>
+ *       <div class="file-field__file"><div class="file-field__meta">
+ *           <a class="link" href="…" target="_blank" rel="noopener">…</a>
+ *           <span class="file-field__detail" id="…-detail">…</span></div>
+ *         <div class="file-field__actions"><button class="button button--secondary" type="button"
+ *           aria-describedby="…-name …-detail …-error">…</button>…</div></div>
+ *       <p class="text-field__error" id="…-error">…</p></div>…</div></fieldset>.
+ * Each button names its language in its description, as both columns hold the same buttons.
+ * The file's name is a Link that opens it in a new tab: the preview shows Pages, not files, so this is how the Owner
+ * checks one. A missing language's row is dashed, its name is a `<span class="file-field__name">` saying there is no
+ * file, the detail says what the field takes, and its one button chooses a file. A button opens the file picker;
+ * uploading sets it busy as the Button's loading state does, the name is plain text until the file is in, and the
+ * detail shows the progress. A file that is turned down leaves that language's file as it was, and the error names it.
+ * Disabled, the name stays a Link, as opening a file changes nothing.
+ */
+.file-field__file {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--space-3) var(--space-4);
+  padding: var(--space-3);
+  border: var(--line-width) solid var(--color-hairline-input);
+  border-radius: var(--radius-control);
+}
+
+/* A missing file takes a missing translation's edge, so forced colours turn it dotted and it can't pass for an error. */
+.bilingual-field__language[data-missing] .file-field__file {
+  border-style: var(--missing-line-style);
+}
+
+/* Items start at their own width, so the Link's arrow follows the name rather than the column's end. */
+.file-field__meta {
+  display: grid;
+  flex: 1 1 var(--file-field-meta-min);
+  justify-items: start;
+  gap: var(--space-1);
+  min-inline-size: 0;
+}
+
+/* Set as the Link is, so the name holds its size when an upload ends and it becomes one. */
+.file-field__name {
+  font-size: var(--text-link);
+  font-weight: var(--weight-link);
+  line-height: var(--leading-link);
+  letter-spacing: var(--tracking-link);
+  overflow-wrap: anywhere;
+}
+
+.file-field__detail {
+  font-family: var(--font-mono);
+  font-size: var(--text-label);
+  font-weight: var(--weight-chip);
+  line-height: var(--leading-label);
+  letter-spacing: var(--tracking-chip);
+  font-variant-numeric: tabular-nums;
+  color: var(--color-ink-muted);
+  overflow-wrap: anywhere;
+}
+
+.file-field__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+}
+
+/* The field dims as a whole, so its buttons don't dim a second time. */
+.file-field:disabled .button {
+  opacity: 1;
+}

@@ -1,0 +1,121 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>File field: missing, uploading, error and disabled · Portfolio prototype</title>
+    <link rel="preload" href="../../fonts/schibsted-grotesk.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="preload" href="../../fonts/martian-mono.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="stylesheet" href="../../tokens.css" />
+    <link rel="stylesheet" href="../specimen.css" />
+    <link rel="stylesheet" href="../text-field/text-field.css" />
+    <link rel="stylesheet" href="../button/button.css" />
+    <link rel="stylesheet" href="../link/link.css" />
+    <link rel="stylesheet" href="../state-indicator/state-indicator.css" />
+    <link rel="stylesheet" href="../bilingual-field/bilingual-field.css" />
+    <link rel="stylesheet" href="file-field.css" />
+  </head>
+  <body>
+    <header class="specimen-bar">
+      <a href="../../index.html">Visual language</a>
+    </header>
+
+    <main>
+      <div class="specimen-intro">
+        <h1>File field: missing, uploading, error and disabled</h1>
+        <p>
+          The file field on both themes with one language's file missing, as a Missing tag and a dashed row that says what
+          it takes; a file uploading, its button busy; a file that was turned down, which leaves that language's file as
+          it was; and the field disabled, where each name still opens its file.
+        </p>
+      </div>
+
+      <div class="surfaces">
+        <section class="surface" data-scheme="dark" aria-labelledby="d-title">
+          <h2 id="d-title">Dark</h2>
+          <div class="variant">
+            <h3>States</h3>
+            <ul class="states states--rows-wide">
+              <li>
+                <fieldset class="bilingual-field file-field states__fill">
+                  <legend class="text-field__label">CV</legend>
+                  <p class="text-field__hint">Visitors download the one in the language they read.</p>
+                  <div class="bilingual-field__pair"><div class="bilingual-field__language"><div class="bilingual-field__head"><span class="bilingual-field__name" id="d-missing-en-name">English</span></div><div class="file-field__file"><div class="file-field__meta"><a class="link" href="cv-en.pdf" target="_blank" rel="noopener">cv-en.pdf</a><span class="file-field__detail" id="d-missing-en-detail">PDF · 2 pages · 184 KB</span></div><div class="file-field__actions"><button class="button button--secondary" type="button" aria-describedby="d-missing-en-name d-missing-en-detail"><span class="button__label">Replace</span></button><button class="button button--secondary" type="button" aria-describedby="d-missing-en-name"><span class="button__label">Remove</span></button></div></div></div><div class="bilingual-field__language" data-missing><div class="bilingual-field__head"><span class="bilingual-field__name" id="d-missing-pt-name">Brazilian Portuguese</span><span class="state-indicator" data-state="missing" id="d-missing-pt-missing">Missing</span></div><div class="file-field__file"><div class="file-field__meta"><span class="file-field__name">No PDF</span><span class="file-field__detail" id="d-missing-pt-detail">PDF · up to 5 MB</span></div><div class="file-field__actions"><button class="button button--secondary" type="button" aria-describedby="d-missing-pt-name d-missing-pt-detail d-missing-pt-missing"><span class="button__label">Choose PDF</span></button></div></div></div></div>
+                </fieldset>
+                <code>missing</code>
+              </li>
+              <li>
+                <fieldset class="bilingual-field file-field states__fill">
+                  <legend class="text-field__label">CV</legend>
+                  <p class="text-field__hint">Visitors download the one in the language they read.</p>
+                  <div class="bilingual-field__pair"><div class="bilingual-field__language"><div class="bilingual-field__head"><span class="bilingual-field__name" id="d-uploading-en-name">English</span></div><div class="file-field__file"><div class="file-field__meta"><span class="file-field__name">cv-en-2026.pdf</span><span class="file-field__detail" id="d-uploading-en-detail">Uploading · 60%</span></div><div class="file-field__actions"><button class="button button--secondary" type="button" aria-describedby="d-uploading-en-name d-uploading-en-detail" aria-busy="true" aria-disabled="true"><span class="button__label">Replace</span></button><button class="button button--secondary" type="button" disabled><span class="button__label">Remove</span></button></div></div></div><div class="bilingual-field__language"><div class="bilingual-field__head"><span class="bilingual-field__name" id="d-uploading-pt-name">Brazilian Portuguese</span></div><div class="file-field__file"><div class="file-field__meta"><a class="link" href="cv-pt-br.pdf" target="_blank" rel="noopener">cv-pt-br.pdf</a><span class="file-field__detail" id="d-uploading-pt-detail">PDF · 3 pages · 196 KB</span></div><div class="file-field__actions"><button class="button button--secondary" type="button" aria-describedby="d-uploading-pt-name d-uploading-pt-detail"><span class="button__label">Replace</span></button><button class="button button--secondary" type="button" aria-describedby="d-uploading-pt-name"><span class="button__label">Remove</span></button></div></div></div></div>
+                </fieldset>
+                <code>uploading</code>
+              </li>
+              <li>
+                <fieldset class="bilingual-field file-field states__fill">
+                  <legend class="text-field__label">CV</legend>
+                  <p class="text-field__hint">Visitors download the one in the language they read.</p>
+                  <div class="bilingual-field__pair"><div class="bilingual-field__language"><div class="bilingual-field__head"><span class="bilingual-field__name" id="d-error-en-name">English</span></div><div class="file-field__file"><div class="file-field__meta"><a class="link" href="cv-en.pdf" target="_blank" rel="noopener">cv-en.pdf</a><span class="file-field__detail" id="d-error-en-detail">PDF · 2 pages · 184 KB</span></div><div class="file-field__actions"><button class="button button--secondary" type="button" aria-describedby="d-error-en-name d-error-en-detail"><span class="button__label">Replace</span></button><button class="button button--secondary" type="button" aria-describedby="d-error-en-name"><span class="button__label">Remove</span></button></div></div></div><div class="bilingual-field__language"><div class="bilingual-field__head"><span class="bilingual-field__name" id="d-error-pt-name">Brazilian Portuguese</span></div><div class="file-field__file"><div class="file-field__meta"><a class="link" href="cv-pt-br.pdf" target="_blank" rel="noopener">cv-pt-br.pdf</a><span class="file-field__detail" id="d-error-pt-detail">PDF · 3 pages · 196 KB</span></div><div class="file-field__actions"><button class="button button--secondary" type="button" aria-describedby="d-error-pt-name d-error-pt-detail d-error-pt-error"><span class="button__label">Replace</span></button><button class="button button--secondary" type="button" aria-describedby="d-error-pt-name"><span class="button__label">Remove</span></button></div></div><p class="text-field__error" id="d-error-pt-error">cv-pt-br.docx isn't a PDF, so the Brazilian Portuguese CV wasn't replaced. Choose a PDF up to 5 MB.</p></div></div>
+                </fieldset>
+                <code>error</code>
+              </li>
+              <li>
+                <fieldset class="bilingual-field file-field states__fill" disabled>
+                  <legend class="text-field__label">CV</legend>
+                  <p class="text-field__hint">Visitors download the one in the language they read.</p>
+                  <div class="bilingual-field__pair"><div class="bilingual-field__language"><div class="bilingual-field__head"><span class="bilingual-field__name" id="d-disabled-en-name">English</span></div><div class="file-field__file"><div class="file-field__meta"><a class="link" href="cv-en.pdf" target="_blank" rel="noopener">cv-en.pdf</a><span class="file-field__detail" id="d-disabled-en-detail">PDF · 2 pages · 184 KB</span></div><div class="file-field__actions"><button class="button button--secondary" type="button" aria-describedby="d-disabled-en-name d-disabled-en-detail"><span class="button__label">Replace</span></button><button class="button button--secondary" type="button" aria-describedby="d-disabled-en-name"><span class="button__label">Remove</span></button></div></div></div><div class="bilingual-field__language"><div class="bilingual-field__head"><span class="bilingual-field__name" id="d-disabled-pt-name">Brazilian Portuguese</span></div><div class="file-field__file"><div class="file-field__meta"><a class="link" href="cv-pt-br.pdf" target="_blank" rel="noopener">cv-pt-br.pdf</a><span class="file-field__detail" id="d-disabled-pt-detail">PDF · 3 pages · 196 KB</span></div><div class="file-field__actions"><button class="button button--secondary" type="button" aria-describedby="d-disabled-pt-name d-disabled-pt-detail"><span class="button__label">Replace</span></button><button class="button button--secondary" type="button" aria-describedby="d-disabled-pt-name"><span class="button__label">Remove</span></button></div></div></div></div>
+                </fieldset>
+                <code>disabled</code>
+              </li>
+            </ul>
+          </div>
+        </section>
+        <section class="surface" data-scheme="light" aria-labelledby="l-title">
+          <h2 id="l-title">Light</h2>
+          <div class="variant">
+            <h3>States</h3>
+            <ul class="states states--rows-wide">
+              <li>
+                <fieldset class="bilingual-field file-field states__fill">
+                  <legend class="text-field__label">CV</legend>
+                  <p class="text-field__hint">Visitors download the one in the language they read.</p>
+                  <div class="bilingual-field__pair"><div class="bilingual-field__language"><div class="bilingual-field__head"><span class="bilingual-field__name" id="l-missing-en-name">English</span></div><div class="file-field__file"><div class="file-field__meta"><a class="link" href="cv-en.pdf" target="_blank" rel="noopener">cv-en.pdf</a><span class="file-field__detail" id="l-missing-en-detail">PDF · 2 pages · 184 KB</span></div><div class="file-field__actions"><button class="button button--secondary" type="button" aria-describedby="l-missing-en-name l-missing-en-detail"><span class="button__label">Replace</span></button><button class="button button--secondary" type="button" aria-describedby="l-missing-en-name"><span class="button__label">Remove</span></button></div></div></div><div class="bilingual-field__language" data-missing><div class="bilingual-field__head"><span class="bilingual-field__name" id="l-missing-pt-name">Brazilian Portuguese</span><span class="state-indicator" data-state="missing" id="l-missing-pt-missing">Missing</span></div><div class="file-field__file"><div class="file-field__meta"><span class="file-field__name">No PDF</span><span class="file-field__detail" id="l-missing-pt-detail">PDF · up to 5 MB</span></div><div class="file-field__actions"><button class="button button--secondary" type="button" aria-describedby="l-missing-pt-name l-missing-pt-detail l-missing-pt-missing"><span class="button__label">Choose PDF</span></button></div></div></div></div>
+                </fieldset>
+                <code>missing</code>
+              </li>
+              <li>
+                <fieldset class="bilingual-field file-field states__fill">
+                  <legend class="text-field__label">CV</legend>
+                  <p class="text-field__hint">Visitors download the one in the language they read.</p>
+                  <div class="bilingual-field__pair"><div class="bilingual-field__language"><div class="bilingual-field__head"><span class="bilingual-field__name" id="l-uploading-en-name">English</span></div><div class="file-field__file"><div class="file-field__meta"><span class="file-field__name">cv-en-2026.pdf</span><span class="file-field__detail" id="l-uploading-en-detail">Uploading · 60%</span></div><div class="file-field__actions"><button class="button button--secondary" type="button" aria-describedby="l-uploading-en-name l-uploading-en-detail" aria-busy="true" aria-disabled="true"><span class="button__label">Replace</span></button><button class="button button--secondary" type="button" disabled><span class="button__label">Remove</span></button></div></div></div><div class="bilingual-field__language"><div class="bilingual-field__head"><span class="bilingual-field__name" id="l-uploading-pt-name">Brazilian Portuguese</span></div><div class="file-field__file"><div class="file-field__meta"><a class="link" href="cv-pt-br.pdf" target="_blank" rel="noopener">cv-pt-br.pdf</a><span class="file-field__detail" id="l-uploading-pt-detail">PDF · 3 pages · 196 KB</span></div><div class="file-field__actions"><button class="button button--secondary" type="button" aria-describedby="l-uploading-pt-name l-uploading-pt-detail"><span class="button__label">Replace</span></button><button class="button button--secondary" type="button" aria-describedby="l-uploading-pt-name"><span class="button__label">Remove</span></button></div></div></div></div>
+                </fieldset>
+                <code>uploading</code>
+              </li>
+              <li>
+                <fieldset class="bilingual-field file-field states__fill">
+                  <legend class="text-field__label">CV</legend>
+                  <p class="text-field__hint">Visitors download the one in the language they read.</p>
+                  <div class="bilingual-field__pair"><div class="bilingual-field__language"><div class="bilingual-field__head"><span class="bilingual-field__name" id="l-error-en-name">English</span></div><div class="file-field__file"><div class="file-field__meta"><a class="link" href="cv-en.pdf" target="_blank" rel="noopener">cv-en.pdf</a><span class="file-field__detail" id="l-error-en-detail">PDF · 2 pages · 184 KB</span></div><div class="file-field__actions"><button class="button button--secondary" type="button" aria-describedby="l-error-en-name l-error-en-detail"><span class="button__label">Replace</span></button><button class="button button--secondary" type="button" aria-describedby="l-error-en-name"><span class="button__label">Remove</span></button></div></div></div><div class="bilingual-field__language"><div class="bilingual-field__head"><span class="bilingual-field__name" id="l-error-pt-name">Brazilian Portuguese</span></div><div class="file-field__file"><div class="file-field__meta"><a class="link" href="cv-pt-br.pdf" target="_blank" rel="noopener">cv-pt-br.pdf</a><span class="file-field__detail" id="l-error-pt-detail">PDF · 3 pages · 196 KB</span></div><div class="file-field__actions"><button class="button button--secondary" type="button" aria-describedby="l-error-pt-name l-error-pt-detail l-error-pt-error"><span class="button__label">Replace</span></button><button class="button button--secondary" type="button" aria-describedby="l-error-pt-name"><span class="button__label">Remove</span></button></div></div><p class="text-field__error" id="l-error-pt-error">cv-pt-br.docx isn't a PDF, so the Brazilian Portuguese CV wasn't replaced. Choose a PDF up to 5 MB.</p></div></div>
+                </fieldset>
+                <code>error</code>
+              </li>
+              <li>
+                <fieldset class="bilingual-field file-field states__fill" disabled>
+                  <legend class="text-field__label">CV</legend>
+                  <p class="text-field__hint">Visitors download the one in the language they read.</p>
+                  <div class="bilingual-field__pair"><div class="bilingual-field__language"><div class="bilingual-field__head"><span class="bilingual-field__name" id="l-disabled-en-name">English</span></div><div class="file-field__file"><div class="file-field__meta"><a class="link" href="cv-en.pdf" target="_blank" rel="noopener">cv-en.pdf</a><span class="file-field__detail" id="l-disabled-en-detail">PDF · 2 pages · 184 KB</span></div><div class="file-field__actions"><button class="button button--secondary" type="button" aria-describedby="l-disabled-en-name l-disabled-en-detail"><span class="button__label">Replace</span></button><button class="button button--secondary" type="button" aria-describedby="l-disabled-en-name"><span class="button__label">Remove</span></button></div></div></div><div class="bilingual-field__language"><div class="bilingual-field__head"><span class="bilingual-field__name" id="l-disabled-pt-name">Brazilian Portuguese</span></div><div class="file-field__file"><div class="file-field__meta"><a class="link" href="cv-pt-br.pdf" target="_blank" rel="noopener">cv-pt-br.pdf</a><span class="file-field__detail" id="l-disabled-pt-detail">PDF · 3 pages · 196 KB</span></div><div class="file-field__actions"><button class="button button--secondary" type="button" aria-describedby="l-disabled-pt-name l-disabled-pt-detail"><span class="button__label">Replace</span></button><button class="button button--secondary" type="button" aria-describedby="l-disabled-pt-name"><span class="button__label">Remove</span></button></div></div></div></div>
+                </fieldset>
+                <code>disabled</code>
+              </li>
+            </ul>
+          </div>
+        </section>
+      </div>
+    </main>
+
+    <footer class="foot">
+      <p>Design prototype. A reference for the front end, not production code. See the <a href="index.html">states</a>, <a href="missing-upload-error.html">missing, uploading, error and disabled</a>, and <a href="cases.html">cases and a phone</a>.</p>
+    </footer>
+  </body>
+</html>
