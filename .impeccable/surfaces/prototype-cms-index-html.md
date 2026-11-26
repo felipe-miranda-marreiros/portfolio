@@ -63,6 +63,14 @@ On 2026-11-24 the Owner chose, from structured options:
   line per language and a portrait page standing in for the file. The name is a Link that opens the file in a new tab,
   over an Open button and no way to open it, as the preview shows Pages, not files. A missing file's row is dashed
   under the language's Missing tag, says what it takes and offers one button to choose a file.
+- On 2026-11-26, Content items ordered by hand, such as the Footer's links, as a reorderable list: each Content item
+  row between a drag handle and up and down move buttons, always visible, over a reorder mode with move buttons and no
+  links and a handle alone moved from the keyboard with Space and the arrow keys. The handle is for a pointer; the move
+  buttons are for the keyboard and one-place moves.
+- On 2026-11-26, core technologies, a field of Home's main Section rather than Content items, are ordered inside the
+  technology input, with the same handle and move buttons, over the reorderable list ordering them in the editor too.
+- On 2026-11-26, a new order reaches the Portfolio at once, as order isn't a Content item and has no Draft, and the list
+  shows it reaching, then live or failed with a way to try again, over holding it as a Draft until the next publish.
 - A full preview Screen behind an Edit | Preview switch, over a live split and both languages at a reduced scale.
 - A fixed action bar with the item's state and publish feedback, over publishing a whole Page at once.
 - Email and password sign-in, with password reset, over a single external-account button.
@@ -108,7 +116,8 @@ on top of the rendered Page.
 
 ## Unresolved
 
-The side navigation, the state indicator, the Content item row, the bilingual field, the period field, the image field
-and the file field are built (`prototype/components/side-navigation/`, `state-indicator/`, `content-item-row/`,
-`bilingual-field/`, `period-field/`, `image-field/`, `file-field/`); the other new components and every Screen are not. Which mechanism signs the Owner in, saves Drafts and carries a publish to the Portfolio is settled in
+The side navigation, the state indicator, the Content item row, the bilingual field, the period field, the image
+field, the file field and the reorderable list are built (`prototype/components/side-navigation/`, `state-indicator/`,
+`content-item-row/`, `bilingual-field/`, `period-field/`, `image-field/`, `file-field/`, `reorderable-list/`); the other
+new components and every Screen are not. Which mechanism signs the Owner in, saves Drafts and carries a publish to the Portfolio is settled in
 the ADRs after these Screens; the Screens show only states, never a mechanism.
