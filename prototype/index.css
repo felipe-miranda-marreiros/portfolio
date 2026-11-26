@@ -134,7 +134,8 @@ a {
   .area-bilingual-field,
   .area-period-field,
   .area-image-field,
-  .area-file-field {
+  .area-file-field,
+  .area-reorderable-list {
     grid-column: 1 / -1;
   }
 }

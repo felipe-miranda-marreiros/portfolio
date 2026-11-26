@@ -187,6 +187,23 @@ const components = [
     label: "File field states",
     states: ["default", "hover", "focus", "missing", "uploading", "error", "disabled", "both missing"],
   },
+  {
+    slug: "reorderable-list",
+    name: "Reorderable list",
+    note: "Content items the Owner orders by hand, such as the Footer's links, by handle or move buttons. The CMS only.",
+    label: "Reorderable list states",
+    states: [
+      "default",
+      "row hover",
+      "handle hover",
+      "move hover",
+      "move focus",
+      "dragging",
+      "reaching",
+      "live",
+      "failed",
+    ],
+  },
 ];
 
 // Built here rather than written in the page, so the page stays under the file size hook as components are added.
