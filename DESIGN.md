@@ -592,8 +592,8 @@ Built in the prototype (`prototype/components/chip/`).
 
 ### State indicator
 Built in the prototype (`prototype/components/state-indicator/`): a Content item's state in the CMS, in its rows, its
-editor's header and its action bar, and a translation a Bilingual field is missing. The CMS's only, with no About me
-version.
+editor's header and its action bar, a translation a Bilingual field is missing, and a file a File field is missing.
+The CMS's only, with no About me version.
 - **Style:** the Chip's look: Martian Mono at label size and body weight, as-is, with tabular numerals, 4px corners,
   and a one-pixel border inside the Chip's padding, so it stands the Chip's height.
 - **Published:** the Tint fill with Secondary Ink text and a transparent border, as a Chip.
@@ -875,7 +875,7 @@ open it.
   checks one. When it is plain text (a missing file, an upload in progress), it is still set in the Link's type (the
   link role's size, weight, leading and tracking), so it holds its size when an upload ends and it becomes a Link.
 - **Buttons:** both columns hold the same buttons, so each names its language with `aria-describedby`: the language's
-  name, then the detail (Replace and the choose button), then the Missing tag or the error when there is one.
+  name, then the detail (Replace and the choose button), then the Missing tag and the error, each when there is one.
 - **Missing:** a file is required: both languages must be in to publish. A language with no file takes the Bilingual
   field's Missing tag after its name, and its row takes the missing line style (`--missing-line-style`), dashed, in
   Hairline Input. Its name is plain text saying there is no file, the detail lists what the field takes as label terms
