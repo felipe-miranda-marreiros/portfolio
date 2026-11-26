@@ -132,7 +132,7 @@
 
 .reorderable-list__move[aria-disabled="true"] {
   opacity: var(--disabled-opacity);
-  cursor: default;
+  cursor: not-allowed;
 }
 
 /* The item being dragged floats over the rows it passes, so it lifts onto the Surface with the float shadow. */
