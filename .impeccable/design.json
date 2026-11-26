@@ -1,6 +1,6 @@
 {
   "schemaVersion": 2,
-  "generatedAt": "2026-11-26T13:00:00Z",
+  "generatedAt": "2026-11-26T14:00:00Z",
   "title": "Design System: Portfolio",
   "extensions": {
     "colorMeta": {
@@ -44,7 +44,7 @@
       { "name": "--color-ground", "value": "light-dark(#efe9dd, #141311)", "purpose": "Page ground; text on a filled-ink action." },
       { "name": "--color-surface", "value": "light-dark(#f6f2e9, #23211e)", "purpose": "Floating surfaces only, with --shadow-float, except a native select's list, which the browser draws and which can't take the shadow, and a photo's ground while it loads (the Masthead, the Image field's thumbnail), which doesn't float. A Reorderable list's dragged item and a Technology input's suggestions float on it." },
       { "name": "--color-ink", "value": "light-dark(#1a1815, #e8e2d6)", "purpose": "Text, primary action fill, focus ring, selection." },
-      { "name": "--color-wash", "value": "color-mix(in srgb, var(--color-ink) 2%, var(--color-ground))", "purpose": "Hovered or focused panel cell and Content item row, the whole Reorderable list item or fixed item around a hovered, focused or pressed row, and a hovered move button; opaque so it covers the grid's hairline." },
+      { "name": "--color-wash", "value": "color-mix(in srgb, var(--color-ink) 2%, var(--color-ground))", "purpose": "Hovered or focused panel cell and Content item row, the whole Reorderable list item or fixed item around a hovered, focused or pressed row, and a hovered move or remove button; opaque so it covers the grid's hairline." },
       { "name": "--color-display", "value": "var(--color-ink)", "purpose": "Display type and headlines; the ink on the Portfolio, a band colour on About me." },
       { "name": "--color-key", "value": "var(--color-ink)", "purpose": "Billing categories, underlines, resting and on hover, and odd rows' lineup separator squares; the ink on the Portfolio, a band's key colour on About me." },
       { "name": "--color-key-alt", "value": "var(--color-ink)", "purpose": "Alternate billing categories, an even-row linked lineup item's underline, resting and on hover, the underline under a hovered or pressed Top bar Page, and even rows' lineup separator squares; the ink on the Portfolio, a band's second key colour on About me." },

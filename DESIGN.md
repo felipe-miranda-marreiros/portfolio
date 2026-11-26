@@ -282,7 +282,7 @@ at a lower alpha or mixed into the ground, and error is the only hue.
   rather than the Wash because the Wash is mixed into the ground and would darken the raised surface.
 - **Night Wash** and **Paper Wash** (2% of the ink mixed into the ground): the hovered or focused panel cell and Content
   item row, the whole Reorderable list item or fixed item around a hovered, focused or pressed row, and a hovered move
-  button. Opaque, because the cell covers the hairline drawn behind the grid.
+  or remove button. Opaque, because the cell covers the hairline drawn behind the grid.
 
 ### Error
 - **Error on Paper** and **Error on Night**: error borders and messages only, such as a Reorderable list's failed
