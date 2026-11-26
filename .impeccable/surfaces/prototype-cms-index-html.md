@@ -58,6 +58,11 @@ On 2026-11-24 the Owner chose, from structured options:
   detail (type, pixels, size), then Replace and Remove, with the alt text pair from the bilingual field under it, over
   a larger preview beside the alt text and a large preview stage. Empty, the row is dashed, says what it takes and
   disables the alt text; a file that is turned down leaves the image as it was.
+- On 2026-11-26, a file in each language, such as the CV's two PDFs, as the bilingual field's two columns, each holding
+  a file row: its name over a muted detail (type, pages, size), then Replace and Remove, over one bordered list with a
+  line per language and a portrait page standing in for the file. The name is a Link that opens the file in a new tab,
+  over an Open button and no way to open it, as the preview shows Pages, not files. A missing file's row is dashed
+  under the language's Missing tag, says what it takes and offers one button to choose a file.
 - A full preview Screen behind an Edit | Preview switch, over a live split and both languages at a reduced scale.
 - A fixed action bar with the item's state and publish feedback, over publishing a whole Page at once.
 - Email and password sign-in, with password reset, over a single external-account button.
@@ -103,7 +108,7 @@ on top of the rendered Page.
 
 ## Unresolved
 
-The side navigation, the state indicator, the Content item row, the bilingual field, the period field and the image
-field are built (`prototype/components/side-navigation/`, `state-indicator/`, `content-item-row/`, `bilingual-field/`,
-`period-field/`, `image-field/`); the other new components and every Screen are not. Which mechanism signs the Owner in, saves Drafts and carries a publish to the Portfolio is settled in
+The side navigation, the state indicator, the Content item row, the bilingual field, the period field, the image field
+and the file field are built (`prototype/components/side-navigation/`, `state-indicator/`, `content-item-row/`,
+`bilingual-field/`, `period-field/`, `image-field/`, `file-field/`); the other new components and every Screen are not. Which mechanism signs the Owner in, saves Drafts and carries a publish to the Portfolio is settled in
 the ADRs after these Screens; the Screens show only states, never a mechanism.
